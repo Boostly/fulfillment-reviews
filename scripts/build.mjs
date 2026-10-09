@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Build the static fulfillment-reviews site.
 //
-//   node scripts/build.mjs [--run-root <dir>] [--limit 20] [--slug <dir-name>]... [--max-px 1600] [--no-upload]
+//   node scripts/build.mjs [--run-root <dir>] [--limit 20] [--slug <dir-name>]... [--max-px 1600] (design assets: 3200 px lossless PNG; evidence photos: 1200 px) [--no-upload]
 //
 // Reads the brand-design run root (read-only), picks the newest N runs that have a
 // review canvas, stages each canvas's assets under .staging/<slug>/ (git-ignored),
@@ -153,8 +153,17 @@ function stage(r, stagingDir, maxPx) {
     return `${attr}="@@${rel}@@"`;
   });
 
-  // Downsize raster images in place (1600 px long edge, JPEG q82, PNG only with alpha).
-  const rasters = [...staged.values()].filter((p) => /\.(png|jpe?g|webp)$/i.test(p)).map((p) => ({ path: path.join(slugDir, p), max_px: maxPx, quality: 82 }));
+  // Downsize raster images in place, tiered by what the image is (Travisse 2026-10-09: variants must
+  // stay high-res on the review pages; evidence photos can go lower).
+  //   design  (variants/, candidates/, signage/, fix/, review/, mockups/): 3200 px, PNG kept lossless, JPEG q92
+  //   evidence (evidence/, gbp, instagram, website, brand-environment):      1200 px, JPEG q78
+  //   other:                                                                 maxPx (1600), JPEG q82
+  const tierFor = (rel) => {
+    if (/^(variants|candidates|signage|fix|review|mockups)\//.test(rel)) return { max_px: Math.max(maxPx, 3200), quality: 92, keep_png: true };
+    if (/^evidence\//.test(rel) || /gbp|instagram|website|brand-environment|contact-sheet/i.test(rel)) return { max_px: Math.min(maxPx, 1200), quality: 78 };
+    return { max_px: maxPx, quality: 82 };
+  };
+  const rasters = [...staged.values()].filter((p) => /\.(png|jpe?g|webp)$/i.test(p)).map((p) => ({ path: path.join(slugDir, p), ...tierFor(p) }));
   let renamed = {};
   if (rasters.length) {
     const out = execFileSync("python3", [path.join(HERE, "shrink.py")], { input: JSON.stringify(rasters), maxBuffer: 64 * 1024 * 1024 }).toString();

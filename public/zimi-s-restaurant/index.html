@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Zimi's Pizza and Grill review</title>
+<style>
+  :root { color-scheme: light; scroll-behavior: auto; }
+  body { margin: 0; padding: 32px 40px 80px 280px; background: #fff; color: #111; font-family: Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.35; max-width: 2040px; box-sizing: border-box; }
+  h2 { font-size: 34px; margin: 0 0 4px; }
+  section { padding: 28px 0; border-bottom: 3px solid #ccc; scroll-margin-top: 16px; }
+  section:first-child { padding-top: 0; }
+  p[id] { scroll-margin-top: 16px; }
+  .toc { position: fixed; top: 0; left: 0; bottom: 0; width: 240px; box-sizing: border-box; padding: 24px 16px; overflow-y: auto; background: #f4f4f4; border-right: 1px solid #ddd; font-size: 15px; z-index: 10; }
+  .toc ol { list-style: none; margin: 0; padding: 0; }
+  .toc ol ol { margin: 2px 0 6px 14px; }
+  .toc ol ol a { font-size: 13px; color: #555; padding: 3px 8px; }
+  .toc a { display: block; padding: 6px 8px; border-radius: 4px; color: #222; line-height: 1.3; }
+  .toc a:hover { background: #e6e6e6; }
+  .toc a.active { background: #1b5e20; color: #fff; font-weight: 700; }
+  .toc a.top { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+  .toc-toggle { display: none; }
+  @media (max-width: 1000px) {
+    body { padding: 64px 20px 80px; }
+    .toc { position: sticky; top: 0; bottom: auto; width: auto; margin: -64px -20px 24px; padding: 8px 12px; border-right: 0; border-bottom: 1px solid #ddd; max-height: 80vh; }
+    .toc-toggle { display: block; font: inherit; font-weight: 700; background: none; border: 1px solid #bbb; border-radius: 4px; padding: 6px 12px; cursor: pointer; }
+    .toc-toggle::before { content: "\2630  "; }
+    .toc:not(.open) ol { display: none; }
+    .toc ol { padding-top: 8px; }
+  }
+  p { margin: 4px 0; }
+  p.sub { color: #555; font-size: 17px; margin-bottom: 14px; }
+  p.cap { color: #666; font-size: 15px; }
+  .gray { background: #ededed; color: #444; padding: 26px; font-size: 20px; border-radius: 4px; }
+  .hdr { display: flex; gap: 30px; align-items: flex-start; }
+  .hdr > div:first-child { flex: 1; }
+  .cell { flex: 0 0 auto; max-width: 520px; }
+  .cell img { display: block; max-width: 100%; border: 6px solid #1b5e20; box-sizing: border-box; }
+  .cell p { color: #1b5e20; font-weight: 700; font-size: 16px; }
+  .shot { border: 1px solid #ddd; overflow: auto; max-height: 90vh; }
+  .shot img { display: block; width: 100%; height: auto; }
+  /* 2026-10-01: a zoomable shot (the variant sheet) is never height-clipped: every row stays visible at page width,
+     and native size scrolls inside the container (overflow auto) instead of hiding rows below 90vh. */
+  .shot.zoom { max-height: none; }
+  .shot.zoom img { cursor: zoom-in; }
+  .cell img.zoom3x { margin-top: 10px; border: 3px solid #444; image-rendering: pixelated; }
+  .cell img.zoom3x.bad { border-color: #B71C1C; }
+  .cell.hold img:first-of-type { border-color: #B71C1C; }
+  .shot.zoom.native img { width: auto; max-width: none; cursor: zoom-out; }
+  .grid { display: grid; gap: 14px; }
+  .grid.cols3 { grid-template-columns: repeat(3, 1fr); }
+  .grid.cols4 { grid-template-columns: repeat(4, 1fr); }
+  .grid.cols5 { grid-template-columns: repeat(5, 1fr); }
+  .grid.cols6 { grid-template-columns: repeat(6, 1fr); }
+  figure { margin: 0; background: #ededed; }
+  figure.framed { outline: 6px solid #1b5e20; outline-offset: -6px; }
+  figure a { display: block; }
+  figure img { display: block; width: 100%; height: 360px; object-fit: contain; }
+  .grid.cols4 figure img { height: 280px; }
+  .grid.cols5 figure img, .grid.cols6 figure img { height: 220px; }
+  figcaption { font-size: 15px; padding: 6px 4px 10px; background: #fff; color: #222; }
+  a { color: inherit; text-decoration: none; }
+  a.ext { color: #0b57d0; text-decoration: underline; text-underline-offset: 2px; word-break: break-all; }
+  a.ext:hover { color: #083a8c; }
+  p.links { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 16px; font-size: 15px; }
+  p.links a.ext { background: #eef3fc; border: 1px solid #c9d8f5; border-radius: 4px; padding: 3px 10px; text-decoration: none; word-break: normal; }
+  p.links a.ext:hover { background: #dce7fb; }
+  table.links { border-collapse: collapse; width: 100%; font-size: 15px; margin-top: 8px; }
+  table.links th { text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: #666; padding: 6px 10px; border-bottom: 2px solid #ddd; }
+  table.links td { padding: 9px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top; }
+  table.links td.cat { font-weight: 700; white-space: nowrap; }
+  table.links td.url { max-width: 380px; word-break: break-all; }
+  table.links td.ev { color: #444; max-width: 520px; }
+  table.links .chip { display: inline-block; color: #fff; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
+  table.links .why { color: #444; font-size: 14px; margin-top: 5px; max-width: 420px; }
+  table.links .none { color: #999; }
+  table.links tr.st-held td { background: #fff8e8; }
+  table.links tr.st-rejected td { color: #777; }
+  table.links tr.st-rejected .chip { text-transform: none; letter-spacing: 0; white-space: normal; }
+  table.links tr.st-written td { background: #eef7ee; }
+</style></head><body id="top">
+<nav class="toc" id="toc"><a class="top" href="/" style="margin-bottom:12px">&larr; All locations</a><button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-list">Sections</button>
+<ol id="toc-list">
+<li><a href="#top" class="top">Top</a></li>
+<li><a href="#header">Overview</a><ol><li><a href="#header-1">Gates, per row of the sheet</a></li></ol></li>
+<li><a href="#website">Website</a></li>
+<li><a href="#gbp">Google Business Profile</a></li>
+<li><a href="#logo-search">Logo image search</a></li>
+<li><a href="#candidates">Logo candidates</a></li>
+<li><a href="#sheet">Variant sheet</a></li>
+<li><a href="#links">Links (3 held for review)</a></li>
+<li><a href="#previews">Previews</a><ol><li><a href="#previews-2">Cell L  TRAVISSE PICK, applied</a></li></ol></li>
+</ol></nav>
+<section id="header">
+<p class="links"><a class="ext" href="https://www.zimisrestaurant.com/" target="_blank" rel="noopener">Website &#8599;</a> <a class="ext" href="https://www.facebook.com/zimisonlincoln/" target="_blank" rel="noopener">facebook: facebook.com/zimisonlincoln/ &#8599;</a> <a class="ext" href="https://www.instagram.com/zimisonlincoln/" target="_blank" rel="noopener">instagram: instagram.com/zimisonlincoln/ &#8599;</a> <a class="ext" href="https://zimispizzaandgrill.toast.site/order" target="_blank" rel="noopener">ordering: zimispizzaandgrill.toast.site/order &#8599;</a> <a class="ext" href="https://zimisrestaurantil.com/" target="_blank" rel="noopener">ordering: zimisrestaurantil.com/ &#8599;</a> <a class="ext" href="https://zimisrestaurantil.com/#menu" target="_blank" rel="noopener">menu: zimisrestaurantil.com/#menu &#8599;</a> <a class="ext" href="https://www.zimisrestaurant.com/" target="_blank" rel="noopener">website: zimisrestaurant.com/ &#8599;</a> <a class="ext" href="https://www.facebook.com/profile.php?id=61555043948367" target="_blank" rel="noopener">facebook: facebook.com/profile.php?id=61555043948367 &#8599;</a> <a class="ext" href="https://www.instagram.com/paisanospizza/" target="_blank" rel="noopener">instagram: instagram.com/paisanospizza/ &#8599;</a> <a class="ext" href="https://www.facebook.com/LSRCC.Chicago" target="_blank" rel="noopener">facebook: facebook.com/LSRCC.Chicago &#8599;</a></p>
+<div class="hdr"><div><p style="font-size:44px;font-weight:700;">Zimi's Pizza and Grill</p>
+<p style="font-size:20px;color:#444444;margin-top:6px;">Chicago, IL   ·   request xnpitss0o2a6r9bwannh1z06   ·   full order</p>
+<p style="font-size:29px;font-weight:700;color:#1B5E20;margin-top:22px;">Fable's default: Q</p>
+<p style="font-size:19px;margin-top:6px;">full-color authored lockup on the brown card, gold band #E0AE62 (gradient family center), brown badge digit; sticker = lockup in a #1C110B circle panel</p>
+<p style="font-size:16px;color:#666666;margin-top:8px;">Confidence: high   ·   flags: brand_environment_unassessed, instagram_screenshots_unavailable</p>
+<p style="font-size:16px;color:#666666;margin-top:4px;">Cell Q = full color, sticker in a brown circle panel (Fable's sticker direction), primary #1C110B, band #E0AE62 (Fable's pick), text #FFFFFF, print digit #1C110B</p></div><div class="cell"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/2b18b2ccec4b-default-cell.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/2b18b2ccec4b-default-cell.png" alt="default cell"></a><p>Fable's default cell Q (native sheet pixels, click to open)</p><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/b61bd6a220a3-logo-3x.png" target="_blank" title="open the 3x crop"><img class="zoom3x" src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/b61bd6a220a3-logo-3x.png" alt="logo at 3x"></a><p><b>Logo at 3x (what prints).</b> Final upload 734x174px, source 734px (native), given on the command line, upscale 1x. Edge quality: ok. Soft-edge share 1, stair-step score 0.1827.</p></div></div>
+<p id="header-1" style="font-size:24px;font-weight:700;margin-top:18px;">Gates, per row of the sheet</p>
+<p style="font-size:18px;font-weight:700;color:#1B5E20;margin-top:8px;">card knockout: no gate results in run.json for fix/card-final.png</p>
+<p style="font-size:18px;font-weight:700;color:#1B5E20;margin-top:8px;">full color: no gate results in run.json for evidence/logo-candidates/01-first_party_header.png</p>
+<p style="font-size:18px;font-weight:700;color:#B71C1C;margin-top:8px;">words only: 13 of 17 gates pass, 2 blocking</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">holes (warning): no_enclosed_counters</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">whiteblob (warning): opaque near-white region(s) facing transparency — likely leftover back</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">ink-retention (blocks, can be overridden): authored_ink_lost</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">logo-crop (blocks, can be overridden): excess_canvas_padding</p>
+<p style="font-size:18px;font-weight:700;color:#1B5E20;margin-top:8px;">in-store: no gate results in run.json for fix/card-final.png</p>
+<p style="font-size:18px;font-weight:700;color:#1B5E20;margin-top:8px;">full color, sticker in a brown circle panel (Fable's sticker direction): no gate results in run.json for candidates/01-ownersite-transparent-lockup-734.png</p>
+</section>
+<section id="website">
+<h2>Website</h2><p class="sub"><a class="ext" href="https://www.zimisrestaurant.com/" target="_blank" rel="noopener">https://www.zimisrestaurant.com/</a></p>
+<p class="links"><a class="ext" href="https://www.zimisrestaurant.com/" target="_blank" rel="noopener">Open website &#8599;</a></p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/6421117752b2-desktop.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/6421117752b2-desktop.jpg" loading="lazy" alt="website desktop screenshot"></a></div><p class="cap">Desktop screenshot from the run's evidence (evidence/website-visual/desktop.png).</p>
+</section>
+<section id="gbp">
+<h2>Google Business Profile</h2><p class="sub">place id ChIJP2XWzvfRD4gR5QPMg_i7CVY</p>
+<p class="links"><a class="ext" href="https://www.google.com/maps/place/?q=place_id:ChIJP2XWzvfRD4gR5QPMg_i7CVY" target="_blank" rel="noopener">Google Maps place &#8599;</a> <a class="ext" href="https://www.google.com/search?q=Zimi's%20Pizza%20and%20Grill%20Chicago%2C%20IL" target="_blank" rel="noopener">Google search &#8599;</a></p>
+<p style="font-size:17px;">Place photos already downloaded for this run (10), at the size the run fetched. Green frame = a photo Fable cited for the sign or interior.</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/204673f75083-gbp-photo-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/204673f75083-gbp-photo-01.jpg" loading="lazy" alt="#1 by ZIMIS Restaurant  4032x2025"></a><figcaption>#1 by ZIMIS Restaurant  4032x2025</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/2702028be844-gbp-photo-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/2702028be844-gbp-photo-02.jpg" loading="lazy" alt="#2 by ZIMIS Restaurant  640x512"></a><figcaption>#2 by ZIMIS Restaurant  640x512</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/42df9c963beb-gbp-photo-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/42df9c963beb-gbp-photo-03.jpg" loading="lazy" alt="#3 by Damir  4800x3600"></a><figcaption>#3 by Damir  4800x3600</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/9f6aad57924f-gbp-photo-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/9f6aad57924f-gbp-photo-04.jpg" loading="lazy" alt="#4 by Charles Prasifka  3024x4032"></a><figcaption>#4 by Charles Prasifka  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/92ae69d0d44d-gbp-photo-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/92ae69d0d44d-gbp-photo-05.jpg" loading="lazy" alt="#5 by ZIMIS Restaurant  4032x3024"></a><figcaption>#5 by ZIMIS Restaurant  4032x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/60752850cc36-gbp-photo-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/60752850cc36-gbp-photo-06.jpg" loading="lazy" alt="#6 by Desare Dina  3024x4032"></a><figcaption>#6 by Desare Dina  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/fb99257107d9-gbp-photo-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/fb99257107d9-gbp-photo-07.jpg" loading="lazy" alt="#7 by Mike Kruser  2048x1536"></a><figcaption>#7 by Mike Kruser  2048x1536</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/c6aa85c795a3-gbp-photo-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/c6aa85c795a3-gbp-photo-08.jpg" loading="lazy" alt="#8 by T L  3672x2758"></a><figcaption>#8 by T L  3672x2758</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/b0992f31091b-gbp-photo-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/b0992f31091b-gbp-photo-09.jpg" loading="lazy" alt="#9 by Trudy Wenger  3000x4000"></a><figcaption>#9 by Trudy Wenger  3000x4000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/62b674bca37d-gbp-photo-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/62b674bca37d-gbp-photo-10.jpg" loading="lazy" alt="#10 by Lizelle Espiritu  2268x4032"></a><figcaption>#10 by Lizelle Espiritu  2268x4032</figcaption></figure></div>
+<p style="font-size:17px;margin-top:10px;">Google Maps &quot;Vibe&quot; photos from the evidence build (Google's own in-store/atmosphere category)</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/ef5ea626c087-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/ef5ea626c087-01.jpg" loading="lazy" alt="Vibe  4032x2268"></a><figcaption>Vibe  4032x2268</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/c4f0b08ba14e-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/c4f0b08ba14e-02.jpg" loading="lazy" alt="Vibe  4032x2268"></a><figcaption>Vibe  4032x2268</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/c187acd78a33-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/c187acd78a33-03.jpg" loading="lazy" alt="Vibe  4032x3024"></a><figcaption>Vibe  4032x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/f6e3f78750d1-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/f6e3f78750d1-04.jpg" loading="lazy" alt="Vibe  2160x3840"></a><figcaption>Vibe  2160x3840</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/022256bb49ba-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/022256bb49ba-05.jpg" loading="lazy" alt="Vibe  640x480"></a><figcaption>Vibe  640x480</figcaption></figure></div>
+<p style="font-size:17px;margin-top:10px;">Live Google Maps photo view, reused from the earlier capture under review/</p>
+<p style="font-size:14px;color:#666666;margin-top:4px;">reused the cached capture under review/</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/472b0185c69a-google-maps-photos.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/472b0185c69a-google-maps-photos.png" loading="lazy" alt="Google Maps photo view"></a></div>
+</section>
+<section id="logo-search">
+<h2>Logo image search</h2><p class="sub">&quot;Zimi's Pizza and Grill Chicago logo&quot;</p>
+<p class="links"><a class="ext" href="https://www.google.com/search?tbm=isch&amp;q=Zimi's%20Pizza%20and%20Grill%20Chicago%20logo" target="_blank" rel="noopener">Open Google Images &#8599;</a></p>
+<div class="gray">Logo image search skipped (--skip-google) and no cached results under review/logo-search/.</div>
+</section>
+<section id="candidates">
+<h2>Logo candidates</h2><p class="sub">from the evidence packet; green frame = the file Fable chose. Gray background so white knockouts stay visible.</p>
+<p class="links"><a class="ext" href="https://www.zimisrestaurant.com/" target="_blank" rel="noopener">Website &#8599;</a></p>
+<div class="grid cols3"><figure style="background:#8C8C8C" class="framed"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/1a8e3bd99bb3-01-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/1a8e3bd99bb3-01-first_party_header.png" loading="lazy" alt="01-first_party_header.png  734x712
+site header
+FABLE'S PICK"></a><figcaption style="font-weight:700">01-first_party_header.png  734x712<br>site header<br>FABLE'S PICK<br><a class="ext" href="https://www.zimisrestaurant.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/ad4742b4939c-02-social.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/ad4742b4939c-02-social.jpg" loading="lazy" alt="02-social.png  1254x1254
+Facebook avatar"></a><figcaption>02-social.png  1254x1254<br>Facebook avatar</figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/da2188a0620c-03-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/da2188a0620c-03-first_party_other.png" loading="lazy" alt="03-first_party_other.png  510x510
+favicon"></a><figcaption>03-first_party_other.png  510x510<br>favicon<br><a class="ext" href="https://www.zimisrestaurant.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/6b603f3c8ce5-04-social.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/6b603f3c8ce5-04-social.png" loading="lazy" alt="04-social.png  1000x953
+social, traced cut"></a><figcaption>04-social.png  1000x953<br>social, traced cut</figcaption></figure></div>
+</section>
+<section id="sheet">
+<h2>Variant sheet</h2><p class="sub">Fable's default Q framed in green. Reply with one letter.</p>
+<p class="links"></p>
+<div class="shot zoom" title="click to toggle native size"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/3f7733f10c48-variant-sheet-marked.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/3f7733f10c48-variant-sheet-marked.png" loading="lazy" alt="variant sheet"></a></div><p class="cap">variants/variant-sheet.png at native size, revision 8. In the HTML page click the sheet to toggle native size.</p>
+</section>
+<section id="links">
+<h2>Links</h2><p class="sub">the link automation results for this location, one row per category; held rows need a human decision. Click a URL to open it.</p>
+<p class="links"></p>
+<p style="font-size:15px;color:#444444;">Run: review stage no writes; no link writes applied; by fulfill-zimis (Claude fulfill-location agent) 2026-10-01.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Website bootstrap: unknown, Places says <a class="ext" href="http://zimisrestaurantil.com/" target="_blank" rel="noopener">http://zimisrestaurantil.com/</a>.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Ordering URL on file <a class="ext" href="https://zimispizzaandgrill.toast.site/order/zimis-pizza-and-grill-6954-north-western-avenue" target="_blank" rel="noopener">https://zimispizzaandgrill.toast.site/order/zimis-pizza-and-grill-6954-north-western-avenue</a>: does not match the website. MISMATCH.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Discovery report link-discovery-report.json (2026-10-01 17:18): 18 categories, 2 for manual review, 0 proposed field updates, 0 proposed events.</p>
+<p style="font-size:15px;color:#6B6B6B;margin-top:4px;">2 URLs still waiting on the live Chrome check.</p>
+<p style="font-size:15px;font-weight:700;margin-top:8px;">18 categories: 0 written, 0 verified or already live, 3 held for review, 0 pending browser, 2 rejected, 13 none found.</p>
+<table class="links"><thead><tr><th>Category</th><th>URL</th><th>Status</th><th>Evidence</th></tr></thead><tbody><tr class="st-held"><td class="cat">Website</td><td class="url"><a class="ext" href="https://www.zimisrestaurant.com/" target="_blank" rel="noopener">zimisrestaurant.com/</a></td><td><span class="chip" style="background:#B7791F">held for review</span><div class="why">See website_bootstrap: owner site vs Places websiteUri (Slice). Human call.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-held"><td class="cat">Online ordering</td><td class="url"><a class="ext" href="https://zimisrestaurantil.com/" target="_blank" rel="noopener">zimisrestaurantil.com/</a></td><td><span class="chip" style="background:#B7791F">held for review</span><div class="why">Slice-built site for 'Zimi's Pizza, 5077 N Lincoln Ave' with a working Order online cart and full menu; Google Business Profile links it. The owner said on the call he did not know it and may ask Slice to take it down. Same question as above: which ordering destination is canonical.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-held"><td class="cat">Menu</td><td class="url"><a class="ext" href="https://zimisrestaurantil.com/#menu" target="_blank" rel="noopener">zimisrestaurantil.com/#menu</a></td><td><span class="chip" style="background:#B7791F">held for review</span><div class="why">The only live menu is the Slice site's (the owner site /menu is a 404 placeholder). Hold with the website question: if the Slice site is not wanted as the website, its menu should not be written either.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-rejected"><td class="cat">Facebook</td><td class="url"><a class="ext" href="https://www.facebook.com/LSRCC.Chicago" target="_blank" rel="noopener">facebook.com/LSRCC.Chicago</a></td><td><span class="chip" style="background:#6B6B6B">rejected: Surfaced by DataForSEO on the last pass; not read; unrelated Chicago...</span><div class="why">Surfaced by DataForSEO on the last pass; not read; unrelated Chicago page.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-rejected"><td class="cat">Instagram</td><td class="url"><a class="ext" href="https://www.instagram.com/paisanospizza/" target="_blank" rel="noopener">instagram.com/paisanospizza/</a></td><td><span class="chip" style="background:#6B6B6B">rejected: Template leftover link on the owner site (Paisano's Pizza), not this...</span><div class="why">Template leftover link on the owner site (Paisano's Pizza), not this business.</div></td><td class="ev">already live in branding; verified in the live Boostly.com tab 2026-10-01</td></tr>
+<tr class="st-none"><td class="cat">X (Twitter)</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">TikTok</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span><div class="why">Search returned personal creator accounts, rejected.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">YouTube</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Careers</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span><div class="why">No careers page on either site; DataForSEO results were other restaurants (IHOP, Rosebud, Jimmy John's), rejected.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Catering</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span><div class="why">No catering page; search results were other restaurants, rejected.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Events</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span><div class="why">No events page; search results unrelated, rejected.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Reservations</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Gift cards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Loyalty / rewards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">iOS app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Android app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">App downloads</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Other</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr></tbody></table>
+</section>
+<section id="previews">
+<h2>Previews</h2><p class="sub">harness signage preview and AI mockups per letter; previews, not proofs (QR drift, invented phone content). Click any image to open the native file.</p>
+<p class="links"></p>
+<p id="previews-2" style="font-size:24px;font-weight:700;color:#B7791F;margin-top:14px;">Cell L  TRAVISSE PICK, applied</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">words only. card #1C110B on #B87D24, text #FFFFFF (band 20% darker step, synthetic (allowed when real ink fails contrast)). signage preview, 2 AI mockups.</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/5860fe5e4dbd-signage-preview-L.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/5860fe5e4dbd-signage-preview-L.png" loading="lazy" alt="signage preview L"></a></div><p class="cap">review/signage-preview-L.png: harness signage preview (POP, sticker, card, to-go), click to open.</p>
+<div class="grid cols4"><figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/895d3c66567c-box-L.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/895d3c66567c-box-L.png" loading="lazy" alt="box (AI)  box-L.png
+verdict not filled in yet (prompts.md)"></a><figcaption>box (AI)  box-L.png<br>verdict not filled in yet (prompts.md)</figcaption></figure>
+<figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/c608c4d33c49-scan-L.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zimi-s-restaurant/c608c4d33c49-scan-L.png" loading="lazy" alt="scan (AI)  scan-L.png
+verdict not filled in yet (prompts.md)"></a><figcaption>scan (AI)  scan-L.png<br>verdict not filled in yet (prompts.md)</figcaption></figure></div>
+<p style="font-size:15px;font-weight:700;color:#8A1C1C;margin-top:10px;">Not in review-canvas.png: the previews would add about 1.7 MB to a PNG already near 45 MB (budget 25 MB). This page and the files above are the review surface for them.</p>
+</section>
+<script>
+  for (const el of document.querySelectorAll('.shot.zoom')) {
+    el.addEventListener('click', (ev) => { ev.preventDefault(); el.classList.toggle('native'); });
+  }
+  // Sidebar: highlight the section in view, jump instantly on click (no scroll animation, Travisse 2026-09-29), hamburger below 1000px.
+  (() => {
+    const toc = document.getElementById('toc');
+    const links = new Map([...toc.querySelectorAll('a[href^="#"]')].map((a) => [a.getAttribute('href').slice(1), a]));
+    const sections = [...document.querySelectorAll('section[id]')];
+    const visible = new Set();
+    const setActive = () => {
+      const current = sections.find((s) => visible.has(s)) ?? sections.find((s) => s.getBoundingClientRect().bottom > 0) ?? sections[sections.length - 1];
+      for (const a of links.values()) a.classList.remove('active');
+      if (current) links.get(current.id)?.classList.add('active');
+    };
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); }
+      setActive();
+    }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+    for (const s of sections) io.observe(s);
+    setActive();
+    const toggle = toc.querySelector('.toc-toggle');
+    toggle.addEventListener('click', () => { const open = toc.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
+    for (const a of links.values()) a.addEventListener('click', (ev) => {
+      const target = document.getElementById(a.getAttribute('href').slice(1));
+      if (!target) return;
+      ev.preventDefault();
+      target.scrollIntoView({ behavior: 'instant', block: 'start' });
+      history.replaceState(null, '', a.getAttribute('href'));
+      toc.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
+    });
+  })();
+</script>
+</body></html>

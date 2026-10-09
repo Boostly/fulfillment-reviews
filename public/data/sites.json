@@ -1,7 +1,27 @@
 {
-  "generated_at": "2026-10-09T22:30:43.167Z",
-  "count": 20,
+  "generated_at": "2026-10-09T22:54:17.063Z",
+  "count": 25,
   "sites": [
+    {
+      "slug": "mad-fish-st-petersburg",
+      "name": "Mad Fish (St. Petersburg)",
+      "account": "MadFish",
+      "city": "St. Petersburg",
+      "state": "FL",
+      "requested_at": "2026-10-09T21:36:05.394",
+      "updated_at": "2026-10-09T22:48:35.753Z",
+      "cursor": "variants",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "A",
+      "picked_letter": null,
+      "review_url": "/mad-fish-st-petersburg/",
+      "figma_url": null,
+      "print_handoff_url": null,
+      "page_bytes": 39389,
+      "blob_bytes": 11317320,
+      "blob_assets": 31
+    },
     {
       "slug": "indian-kitchen-grill-madison",
       "name": "INDIAN KITCHEN & GRILL (Madison)",
@@ -19,7 +39,7 @@
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=526-2",
       "print_handoff_url": null,
       "page_bytes": 45068,
-      "blob_bytes": 6136529,
+      "blob_bytes": 6940132,
       "blob_assets": 32
     },
     {
@@ -39,7 +59,7 @@
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=528-2",
       "print_handoff_url": null,
       "page_bytes": 41000,
-      "blob_bytes": 10276610,
+      "blob_bytes": 9762396,
       "blob_assets": 32
     },
     {
@@ -59,7 +79,7 @@
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=522-2",
       "print_handoff_url": null,
       "page_bytes": 34596,
-      "blob_bytes": 3799335,
+      "blob_bytes": 3250105,
       "blob_assets": 21
     },
     {
@@ -79,7 +99,7 @@
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=524-2",
       "print_handoff_url": null,
       "page_bytes": 42880,
-      "blob_bytes": 5975392,
+      "blob_bytes": 6499524,
       "blob_assets": 32
     },
     {
@@ -99,7 +119,7 @@
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=535-2",
       "print_handoff_url": null,
       "page_bytes": 42230,
-      "blob_bytes": 5495246,
+      "blob_bytes": 8116341,
       "blob_assets": 34
     },
     {
@@ -119,7 +139,7 @@
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=537-2",
       "print_handoff_url": null,
       "page_bytes": 39156,
-      "blob_bytes": 7244721,
+      "blob_bytes": 7580199,
       "blob_assets": 30
     },
     {
@@ -139,7 +159,7 @@
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=539-2",
       "print_handoff_url": null,
       "page_bytes": 33890,
-      "blob_bytes": 6914315,
+      "blob_bytes": 7901057,
       "blob_assets": 27
     },
     {
@@ -159,7 +179,7 @@
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=532-2",
       "print_handoff_url": null,
       "page_bytes": 34550,
-      "blob_bytes": 7673674,
+      "blob_bytes": 7521616,
       "blob_assets": 29
     },
     {
@@ -179,7 +199,7 @@
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=479-2",
       "print_handoff_url": "https://drive.google.com/drive/folders/1aGfwqcrtDdsERwQDJzsScp2Erj1fQHiY",
       "page_bytes": 44121,
-      "blob_bytes": 6070253,
+      "blob_bytes": 14130371,
       "blob_assets": 36
     },
     {
@@ -199,7 +219,7 @@
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=484-2",
       "print_handoff_url": "https://drive.google.com/drive/folders/1O_9MZufGZ2wdkbDmyObqfSlyxSA_xUJm",
       "page_bytes": 46175,
-      "blob_bytes": 7006005,
+      "blob_bytes": 15440172,
       "blob_assets": 31
     },
     {
@@ -219,7 +239,7 @@
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=438-2",
       "print_handoff_url": null,
       "page_bytes": 38190,
-      "blob_bytes": 4726747,
+      "blob_bytes": 11145196,
       "blob_assets": 23
     },
     {
@@ -239,7 +259,7 @@
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=442-2",
       "print_handoff_url": null,
       "page_bytes": 44492,
-      "blob_bytes": 7485225,
+      "blob_bytes": 16534790,
       "blob_assets": 37
     },
     {
@@ -259,7 +279,7 @@
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=432-2",
       "print_handoff_url": null,
       "page_bytes": 47411,
-      "blob_bytes": 7726539,
+      "blob_bytes": 13676270,
       "blob_assets": 33
     },
     {
@@ -279,7 +299,7 @@
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=392-12357",
       "print_handoff_url": null,
       "page_bytes": 30489,
-      "blob_bytes": 4042185,
+      "blob_bytes": 8649851,
       "blob_assets": 16
     },
     {
@@ -299,7 +319,7 @@
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=387-2",
       "print_handoff_url": null,
       "page_bytes": 37139,
-      "blob_bytes": 7832157,
+      "blob_bytes": 10556339,
       "blob_assets": 29
     },
     {
@@ -319,7 +339,7 @@
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=392-2",
       "print_handoff_url": null,
       "page_bytes": 28079,
-      "blob_bytes": 2180536,
+      "blob_bytes": 6639036,
       "blob_assets": 13
     },
     {
@@ -339,7 +359,7 @@
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=395-2",
       "print_handoff_url": null,
       "page_bytes": 38378,
-      "blob_bytes": 4608687,
+      "blob_bytes": 11015559,
       "blob_assets": 23
     },
     {
@@ -359,7 +379,7 @@
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=383-2",
       "print_handoff_url": null,
       "page_bytes": 38374,
-      "blob_bytes": 8362871,
+      "blob_bytes": 13037339,
       "blob_assets": 31
     },
     {
@@ -379,7 +399,7 @@
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=383-24712",
       "print_handoff_url": null,
       "page_bytes": 38342,
-      "blob_bytes": 4771992,
+      "blob_bytes": 13007614,
       "blob_assets": 26
     },
     {
@@ -399,8 +419,88 @@
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=377-2",
       "print_handoff_url": null,
       "page_bytes": 37853,
-      "blob_bytes": 3894081,
+      "blob_bytes": 10616754,
       "blob_assets": 26
+    },
+    {
+      "slug": "valenti-s-italian-restaurant-vass",
+      "name": "Valenti's Italian Restaurant (Vass)",
+      "account": "Valenti's Italian Restaurant",
+      "city": "Vass",
+      "state": "NC",
+      "requested_at": "2026-10-01T15:47:19.761",
+      "updated_at": "2026-10-02T23:13:54.311Z",
+      "cursor": "write",
+      "status": "applied",
+      "status_label": "Branding applied",
+      "recommended_letter": "A",
+      "picked_letter": "C",
+      "review_url": "/valenti-s-italian-restaurant-vass/",
+      "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=358-14644",
+      "print_handoff_url": null,
+      "page_bytes": 46655,
+      "blob_bytes": 13979964,
+      "blob_assets": 34
+    },
+    {
+      "slug": "zimi-s-restaurant",
+      "name": "Zimi's Restaurant",
+      "account": "Zimi's Pizza and Grill",
+      "city": "Chicago",
+      "state": "IL",
+      "requested_at": "2026-10-01T15:31:13.429",
+      "updated_at": "2026-10-02T23:14:29.452Z",
+      "cursor": "write",
+      "status": "applied",
+      "status_label": "Branding applied",
+      "recommended_letter": "Q",
+      "picked_letter": "L",
+      "review_url": "/zimi-s-restaurant/",
+      "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=357-2",
+      "print_handoff_url": null,
+      "page_bytes": 34632,
+      "blob_bytes": 13874969,
+      "blob_assets": 27
+    },
+    {
+      "slug": "oogie-s-pizza-pub-gibsonburg-oh",
+      "name": "Oogie's Pizza Pub - Gibsonburg, OH",
+      "account": "Oogies Pizza Pub",
+      "city": "Gibsonburg",
+      "state": "OH",
+      "requested_at": "2026-09-30T20:49:02.469",
+      "updated_at": "2026-10-02T23:14:52.020Z",
+      "cursor": "write",
+      "status": "applied",
+      "status_label": "Branding applied",
+      "recommended_letter": "A",
+      "picked_letter": "Z",
+      "review_url": "/oogie-s-pizza-pub-gibsonburg-oh/",
+      "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=344-2",
+      "print_handoff_url": null,
+      "page_bytes": 38252,
+      "blob_bytes": 12059030,
+      "blob_assets": 29
+    },
+    {
+      "slug": "fox-s-pizza-den-moon-township",
+      "name": "Fox's Pizza Den (Moon Township)",
+      "account": "Fox’s Pizza Den (Samantha Serventi)",
+      "city": "Moon",
+      "state": "PA",
+      "requested_at": "2026-09-30T18:34:46.347",
+      "updated_at": "2026-10-02T23:14:40.595Z",
+      "cursor": "write",
+      "status": "applied",
+      "status_label": "Branding applied",
+      "recommended_letter": "I",
+      "picked_letter": "J",
+      "review_url": "/fox-s-pizza-den-moon-township/",
+      "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=353-2",
+      "print_handoff_url": null,
+      "page_bytes": 40062,
+      "blob_bytes": 11052496,
+      "blob_assets": 25
     }
   ]
 }

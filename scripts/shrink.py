@@ -30,7 +30,7 @@ def has_alpha(im):
     return False
 
 
-def shrink(path, max_px, quality):
+def shrink(path, max_px, quality, keep_png=False):
     ext = os.path.splitext(path)[1].lower()
     if ext not in RASTER:
         return None
@@ -46,8 +46,8 @@ def shrink(path, max_px, quality):
     im = ImageOps.exif_transpose(im)
     if too_big:
         im.thumbnail((max_px, max_px), Image.LANCZOS)
-    if has_alpha(im):
-        im = im.convert("RGBA")
+    if has_alpha(im) or (keep_png and ext == ".png"):
+        im = im.convert("RGBA") if has_alpha(im) else im.convert("RGB")
         im.save(path, "PNG", optimize=True)
         return path
     new = os.path.splitext(path)[0] + ".jpg"
@@ -62,7 +62,7 @@ def main():
     out = {}
     for job in jobs:
         p = job["path"]
-        new = shrink(p, int(job.get("max_px", 1600)), int(job.get("quality", 82)))
+        new = shrink(p, int(job.get("max_px", 1600)), int(job.get("quality", 82)), bool(job.get("keep_png", False)))
         if new is not None:
             out[p] = new
     json.dump(out, sys.stdout)
