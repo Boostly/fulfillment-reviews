@@ -22,8 +22,9 @@ Flags:
 - `--max-px <n>`: long-edge cap for bundled images (default 1600; evidence photos are capped at 1200).
 
 - `--no-upload`: fail instead of uploading if any asset is missing from the blob index.
+- `--prune`: wipe `public/` and the manifest and regenerate them from this run root only. This is how a page is removed.
 
-The build wipes and regenerates `public/` and `data/sites.json` every time. Images are downsized with Pillow (`python3` with `PIL` must be available; no npm dependencies): 1600 px long edge, progressive JPEG q82, PNG only when the image has transparency, SVGs untouched.
+The build merges: it loads the committed `data/sites.json`, rebuilds only the selected runs (the newest `--limit` N in the run root plus every `--slug`), replaces their manifest entries and `public/<slug>/`, and keeps every other entry and page untouched. Pages built on another machine therefore survive a build here; `--limit` counts the newly selected local runs, not the kept entries. A kept entry whose `public/<slug>/index.html` is missing is dropped with a warning. Images are downsized with Pillow (`python3` with `PIL` must be available; no npm dependencies): 1600 px long edge, progressive JPEG q82, PNG only when the image has transparency, SVGs untouched.
 
 ### Where the images live
 

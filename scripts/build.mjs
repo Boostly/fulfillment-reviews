@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Build the static fulfillment-reviews site.
 //
-//   node scripts/build.mjs [--run-root <dir>] [--limit 20] [--slug <dir-name>]... [--max-px 1600] (design assets: 3200 px lossless PNG; evidence photos: 1200 px) [--no-upload]
+//   node scripts/build.mjs [--run-root <dir>] [--limit 20] [--slug <dir-name>]... [--max-px 1600] (design assets: 3200 px lossless PNG; evidence photos: 1200 px) [--no-upload] [--prune]
 //
 // Reads the brand-design run root (read-only), picks the newest N runs that have a
 // review canvas, stages each canvas's assets under .staging/<slug>/ (git-ignored),
@@ -9,6 +9,13 @@
 // already in data/blob-index.json), and writes public/<slug>/index.html with the
 // references rewritten to the blob URLs. Small text/vector assets stay in public/.
 // data/sites.json is written and public/index.html is rendered from it.
+//
+// MERGE: the committed data/sites.json is loaded first. Only the selected runs (the newest
+// --limit N in this run root plus every --slug) are rebuilt and replace their manifest entry and
+// public/<slug>/. Every other entry, and its public/<slug>/index.html, is kept untouched, so
+// pages built on another machine survive a build here. --limit counts the newly selected local
+// runs, not the kept entries. --prune restores the old wipe: public/ and the manifest are
+// regenerated from this run root only, which is the way to remove a page.
 //
 // No npm dependencies. Image downsizing shells out to scripts/shrink.py (Pillow).
 // The blob token comes from BLOB_READ_WRITE_TOKEN or .env.local and is never printed.
@@ -34,7 +41,7 @@ const LOCAL_TYPES = new Set([".html", ".json", ".css", ".js", ".svg"]);
 const LOCAL_MAX_BYTES = 200 * 1024;
 
 function parseArgs(argv) {
-  const args = { runRoot: DEFAULT_RUN_ROOT, limit: 20, slugs: [], maxPx: 1600, out: path.join(ROOT, "public"), upload: true };
+  const args = { runRoot: DEFAULT_RUN_ROOT, limit: 20, slugs: [], maxPx: 1600, out: path.join(ROOT, "public"), upload: true, prune: false };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     const next = () => argv[++i];
@@ -44,6 +51,7 @@ function parseArgs(argv) {
     else if (a === "--max-px") args.maxPx = Number(next());
     else if (a === "--out") args.out = path.resolve(next());
     else if (a === "--no-upload") args.upload = false;
+    else if (a === "--prune") args.prune = true;
     else if (a === "--help" || a === "-h") { console.log(fs.readFileSync(fileURLToPath(import.meta.url), "utf8").split("\n").slice(1, 14).join("\n")); process.exit(0); }
     else throw new Error(`unknown argument: ${a}`);
   }
@@ -292,8 +300,25 @@ async function main() {
   const indexPath = path.join(ROOT, "data", "blob-index.json");
   const blobIndex = exists(indexPath) ? readJson(indexPath) : {};
   const stagingDir = path.join(ROOT, ".staging");
-  fs.rmSync(args.out, { recursive: true, force: true });
+
+  // Entries kept from the committed manifest: everything not rebuilt in this run, as long as its
+  // committed page still exists. --prune drops them all (old behaviour: wipe and regenerate).
+  const manifestPath = path.join(ROOT, "data", "sites.json");
+  const previous = !args.prune && exists(manifestPath) ? readJson(manifestPath).sites || [] : [];
+  const rebuilding = new Set(chosen.map((r) => r.slug));
+  const kept = [];
+  for (const e of previous) {
+    if (rebuilding.has(e.slug)) continue;
+    if (!exists(path.join(ROOT, "public", e.slug, "index.html"))) { console.warn(`drop ${e.slug}: in data/sites.json but public/${e.slug}/index.html is missing`); continue; }
+    kept.push(e);
+  }
+  if (args.prune) {
+    fs.rmSync(args.out, { recursive: true, force: true });
+  } else {
+    for (const r of chosen) fs.rmSync(path.join(args.out, r.slug), { recursive: true, force: true });
+  }
   fs.mkdirSync(args.out, { recursive: true });
+  console.log(args.prune ? "prune: public/ and the manifest are regenerated from this run root only" : `kept from data/sites.json: ${kept.length} pages not in this selection`);
 
   const sites = [];
   let uploaded = 0;
@@ -309,6 +334,8 @@ async function main() {
     console.log(`${r.slug.padEnd(42)} blob ${mb(p.blobBytes).padStart(8)} (${String(p.blobCount).padStart(2)} assets, ${p.uploaded} new)  page ${(p.pageBytes / 1024).toFixed(0).padStart(4)} KB  ${entry.status_label.padEnd(16)} rec ${entry.recommended_letter ?? "-"} pick ${entry.picked_letter ?? "-"}  stripped ${s.adminLinks} admin/${s.internalLinks} internal${warn ? "  !! " + warn : ""}`);
   }
 
+  sites.push(...kept);
+  sites.sort((a, b) => ((a.requested_at || "") < (b.requested_at || "") ? 1 : (a.requested_at || "") > (b.requested_at || "") ? -1 : 0));
   const manifest = { generated_at: new Date().toISOString(), count: sites.length, sites };
   fs.writeFileSync(path.join(ROOT, "data", "sites.json"), JSON.stringify(manifest, null, 2) + "\n");
   fs.mkdirSync(path.join(args.out, "data"), { recursive: true });
@@ -317,7 +344,7 @@ async function main() {
 
   const blobTotal = Object.values(blobIndex).reduce((a, b) => a + b.bytes, 0);
   const heaviest = [...sites].sort((a, b) => b.blob_bytes - a.blob_bytes).slice(0, 3);
-  console.log(`\npublic/: ${mb(dirSize(args.out))}  blob index: ${Object.keys(blobIndex).length} assets, ${mb(blobTotal)} (${uploaded} uploaded this run)\nheaviest (blob): ${heaviest.map((s) => `${s.slug} ${mb(s.blob_bytes)}`).join(", ")}`);
+  console.log(`\nmanifest: ${sites.length} pages (${chosen.length} rebuilt, ${kept.length} kept)\npublic/: ${mb(dirSize(args.out))}  blob index: ${Object.keys(blobIndex).length} assets, ${mb(blobTotal)} (${uploaded} uploaded this run)\nheaviest (blob): ${heaviest.map((s) => `${s.slug} ${mb(s.blob_bytes)}`).join(", ")}`);
 }
 
 function sortKeys(o) { return Object.fromEntries(Object.keys(o).sort().map((k) => [k, o[k]])); }
