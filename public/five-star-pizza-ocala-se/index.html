@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Five Star Pizza (Ocala SE) review</title>
+<style>
+  :root { color-scheme: light; scroll-behavior: auto; }
+  body { margin: 0; padding: 32px 40px 80px 280px; background: #fff; color: #111; font-family: Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.35; max-width: 2040px; box-sizing: border-box; }
+  h2 { font-size: 34px; margin: 0 0 4px; }
+  section { padding: 28px 0; border-bottom: 3px solid #ccc; scroll-margin-top: 16px; }
+  section:first-child { padding-top: 0; }
+  p[id] { scroll-margin-top: 16px; }
+  .toc { position: fixed; top: 0; left: 0; bottom: 0; width: 240px; box-sizing: border-box; padding: 24px 16px; overflow-y: auto; background: #f4f4f4; border-right: 1px solid #ddd; font-size: 15px; z-index: 10; }
+  .toc ol { list-style: none; margin: 0; padding: 0; }
+  .toc ol ol { margin: 2px 0 6px 14px; }
+  .toc ol ol a { font-size: 13px; color: #555; padding: 3px 8px; }
+  .toc a { display: block; padding: 6px 8px; border-radius: 4px; color: #222; line-height: 1.3; }
+  .toc a:hover { background: #e6e6e6; }
+  .toc a.active { background: #1b5e20; color: #fff; font-weight: 700; }
+  .toc a.top { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+  .toc-toggle { display: none; }
+  @media (max-width: 1000px) {
+    body { padding: 64px 20px 80px; }
+    .toc { position: sticky; top: 0; bottom: auto; width: auto; margin: -64px -20px 24px; padding: 8px 12px; border-right: 0; border-bottom: 1px solid #ddd; max-height: 80vh; }
+    .toc-toggle { display: block; font: inherit; font-weight: 700; background: none; border: 1px solid #bbb; border-radius: 4px; padding: 6px 12px; cursor: pointer; }
+    .toc-toggle::before { content: "\2630  "; }
+    .toc:not(.open) ol { display: none; }
+    .toc ol { padding-top: 8px; }
+  }
+  p { margin: 4px 0; }
+  p.sub { color: #555; font-size: 17px; margin-bottom: 14px; }
+  p.cap { color: #666; font-size: 15px; }
+  .gray { background: #ededed; color: #444; padding: 26px; font-size: 20px; border-radius: 4px; }
+  .hdr { display: flex; gap: 30px; align-items: flex-start; }
+  .hdr > div:first-child { flex: 1; }
+  .cell { flex: 0 0 auto; max-width: 520px; }
+  .cell img { display: block; max-width: 100%; border: 6px solid #1b5e20; box-sizing: border-box; }
+  .cell p { color: #1b5e20; font-weight: 700; font-size: 16px; }
+  .shot { border: 1px solid #ddd; overflow: auto; max-height: 90vh; }
+  .shot img { display: block; width: 100%; height: auto; }
+  /* 2026-10-01: a zoomable shot (the variant sheet) is never height-clipped: every row stays visible at page width,
+     and native size scrolls inside the container (overflow auto) instead of hiding rows below 90vh. */
+  .shot.zoom { max-height: none; }
+  .shot.zoom img { cursor: zoom-in; }
+  .cell img.zoom3x { margin-top: 10px; border: 3px solid #444; image-rendering: pixelated; }
+  .cell img.zoom3x.bad { border-color: #B71C1C; }
+  .cell.hold img:first-of-type { border-color: #B71C1C; }
+  .shot.zoom.native img { width: auto; max-width: none; cursor: zoom-out; }
+  .grid { display: grid; gap: 14px; }
+  .grid.cols3 { grid-template-columns: repeat(3, 1fr); }
+  .grid.cols4 { grid-template-columns: repeat(4, 1fr); }
+  .grid.cols5 { grid-template-columns: repeat(5, 1fr); }
+  .grid.cols6 { grid-template-columns: repeat(6, 1fr); }
+  figure { margin: 0; background: #ededed; }
+  figure.framed { outline: 6px solid #1b5e20; outline-offset: -6px; }
+  figure a { display: block; }
+  figure img { display: block; width: 100%; height: 360px; object-fit: contain; }
+  .grid.cols4 figure img { height: 280px; }
+  .grid.cols5 figure img, .grid.cols6 figure img { height: 220px; }
+  figcaption { font-size: 15px; padding: 6px 4px 10px; background: #fff; color: #222; }
+  a { color: inherit; text-decoration: none; }
+  a.ext { color: #0b57d0; text-decoration: underline; text-underline-offset: 2px; word-break: break-all; }
+  a.ext:hover { color: #083a8c; }
+  p.links { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 16px; font-size: 15px; }
+  p.links a.ext { background: #eef3fc; border: 1px solid #c9d8f5; border-radius: 4px; padding: 3px 10px; text-decoration: none; word-break: normal; }
+  p.links a.ext:hover { background: #dce7fb; }
+  table.links { border-collapse: collapse; width: 100%; font-size: 15px; margin-top: 8px; }
+  table.links th { text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: #666; padding: 6px 10px; border-bottom: 2px solid #ddd; }
+  table.links td { padding: 9px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top; }
+  table.links td.cat { font-weight: 700; white-space: nowrap; }
+  table.links td.url { max-width: 380px; word-break: break-all; }
+  table.links td.ev { color: #444; max-width: 520px; }
+  table.links .chip { display: inline-block; color: #fff; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
+  table.links .why { color: #444; font-size: 14px; margin-top: 5px; max-width: 420px; }
+  table.links .none { color: #999; }
+  table.links tr.st-held td { background: #fff8e8; }
+  table.links tr.st-rejected td { color: #777; }
+  table.links tr.st-rejected .chip { text-transform: none; letter-spacing: 0; white-space: normal; }
+  table.links tr.st-written td { background: #eef7ee; }
+</style></head><body id="top">
+<nav class="toc" id="toc"><a class="top" href="/" style="margin-bottom:12px">&larr; All locations</a><button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-list">Sections</button>
+<ol id="toc-list">
+<li><a href="#top" class="top">Top</a></li>
+<li><a href="#header">Overview</a><ol><li><a href="#header-1">Gates, per row of the sheet</a></li></ol></li>
+<li><a href="#website">Website</a></li>
+<li><a href="#gbp">Google Business Profile</a></li>
+<li><a href="#logo-search">Logo image search</a></li>
+<li><a href="#candidates">Logo candidates</a></li>
+<li><a href="#sheet">Variant sheet</a></li>
+<li><a href="#links">Links (0 held for review)</a></li>
+<li><a href="#previews">Previews</a><ol><li><a href="#previews-2">Cell P  TRAVISSE PICK, applied</a></li></ol></li>
+</ol></nav>
+<section id="header">
+<p class="links"><a class="ext" href="https://www.fivestarpizza.com/ocala-south-east-pizza/" target="_blank" rel="noopener">Website &#8599;</a> <a class="ext" href="https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=377-2" target="_blank" rel="noopener">Figma &#8599;</a> <a class="ext" href="https://www.fivestarpizza.com/ocala-south-east-pizza/" target="_blank" rel="noopener">website: fivestarpizza.com/ocala-south-east-pizza/ &#8599;</a> <a class="ext" href="https://fivestar.weborder.net/Items.aspx?store=2597" target="_blank" rel="noopener">ordering: fivestar.weborder.net/Items.aspx?store=2597 &#8599;</a> <a class="ext" href="https://fivestar.weborder.net/Items.aspx?store=2597" target="_blank" rel="noopener">order: fivestar.weborder.net/Items.aspx?store=2597 &#8599;</a> <a class="ext" href="https://www.fivestarpizza.com/ocala-se-menu/" target="_blank" rel="noopener">menu: fivestarpizza.com/ocala-se-menu/ &#8599;</a> <a class="ext" href="https://www.fivestarpizza.com/careers" target="_blank" rel="noopener">careers_jobs: fivestarpizza.com/careers &#8599;</a> <a class="ext" href="https://www.facebook.com/ocalafivestarpizzase" target="_blank" rel="noopener">facebook: facebook.com/ocalafivestarpizzase &#8599;</a> <a class="ext" href="https://www.instagram.com/ocalafivestarpizzase/" target="_blank" rel="noopener">instagram: instagram.com/ocalafivestarpizzase/ &#8599;</a> <a class="ext" href="https://x.com/ocalafivestarse" target="_blank" rel="noopener">x_twitter: x.com/ocalafivestarse &#8599;</a></p>
+<div class="hdr"><div><p style="font-size:44px;font-weight:700;">Five Star Pizza (Ocala SE)</p>
+<p style="font-size:20px;color:#444444;margin-top:6px;">Ocala, FL   ·   request p13s6gzynqqmo3vk5k02itqx   ·   full order</p>
+<p style="font-size:29px;font-weight:700;color:#1B5E20;margin-top:22px;">Fable's default: F</p>
+<p style="font-size:19px;margin-top:6px;">Fable's composition names the full-color retrace on the blue card as the card; the open white knockout (A) is its second option</p>
+<p style="font-size:16px;color:#666666;margin-top:8px;">Confidence: medium   ·   flags: brand_environment_evidence_insufficient, traced_candidate_from_soft_895px_source, footer_computed_style_disagrees_with_screenshot</p>
+<p style="font-size:16px;color:#666666;margin-top:4px;">Cell F = full color, primary #21207C, band #E2181E (Fable's pick), text #FFFFFF, print digit #FFFFFF</p></div><div class="cell"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/409e94276909-default-cell.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/409e94276909-default-cell.png" alt="default cell"></a><p>Fable's default cell F (native sheet pixels, click to open)</p><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/293a9a9dd63b-logo-3x.png" target="_blank" title="open the 3x crop"><img class="zoom3x" src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/293a9a9dd63b-logo-3x.png" alt="logo at 3x"></a><p><b>Logo at 3x (what prints).</b> Final upload 1100x572px, source 895px (trace), recorded on the candidate, upscale 1.229x. Edge quality: ok. Soft-edge share 0.7315, stair-step score 0.2709.</p></div></div>
+<p id="header-1" style="font-size:24px;font-weight:700;margin-top:18px;">Gates, per row of the sheet</p>
+<p style="font-size:18px;font-weight:700;color:#1B5E20;margin-top:8px;">card knockout: no gate results in run.json for candidates/02-knockout-white-open-hq.png</p>
+<p style="font-size:18px;font-weight:700;color:#8A5A00;margin-top:8px;">full color: 15 of 18 gates pass, nothing blocking</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">holes (warning): no_enclosed_counters</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">interior (overridden): fill-collision: apply full knockout (knockout cmd) — do NOT ship outli</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">text-legibility (warning): business_name_unreadable_at_product_size</p>
+<p style="font-size:18px;font-weight:700;color:#1B5E20;margin-top:8px;">words only: no gate results in run.json for candidates/04-words-white-hq.png</p>
+<p style="font-size:18px;font-weight:700;color:#8A5A00;margin-top:8px;">full color badge on NE's red card #E21D24, navy band #211F7F (Travisse pick for both Ocala stores): 15 of 18 gates pass, nothing blocking</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">holes (warning): no_enclosed_counters</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">interior (overridden): fill-collision: apply full knockout (knockout cmd) — do NOT ship outli</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">text-legibility (warning): business_name_unreadable_at_product_size</p>
+</section>
+<section id="website">
+<h2>Website</h2><p class="sub"><a class="ext" href="https://www.fivestarpizza.com/ocala-south-east-pizza/" target="_blank" rel="noopener">https://www.fivestarpizza.com/ocala-south-east-pizza/</a></p>
+<p class="links"><a class="ext" href="https://www.fivestarpizza.com/ocala-south-east-pizza/" target="_blank" rel="noopener">Open website &#8599;</a></p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/4db73644b29f-desktop.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/4db73644b29f-desktop.jpg" loading="lazy" alt="website desktop screenshot"></a></div><p class="cap">Desktop screenshot from the run's evidence (evidence/website-visual/desktop.png).</p>
+</section>
+<section id="gbp">
+<h2>Google Business Profile</h2><p class="sub">place id ChIJN8UQZyLT54gRqwTDKt9Ex-8</p>
+<p class="links"><a class="ext" href="https://www.google.com/maps/place/?q=place_id:ChIJN8UQZyLT54gRqwTDKt9Ex-8" target="_blank" rel="noopener">Google Maps place &#8599;</a> <a class="ext" href="https://www.google.com/search?q=Five%20Star%20Pizza%20(Ocala%20SE)%20Ocala%2C%20FL" target="_blank" rel="noopener">Google search &#8599;</a></p>
+<p style="font-size:17px;">Place photos already downloaded for this run (10), at the size the run fetched. Green frame = a photo Fable cited for the sign or interior.</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/fcbf49f103cd-gbp-photo-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/fcbf49f103cd-gbp-photo-01.jpg" loading="lazy" alt="#1 owner photo  2048x1365"></a><figcaption>#1 owner photo  2048x1365</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/e4cb2b25f51e-gbp-photo-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/e4cb2b25f51e-gbp-photo-02.jpg" loading="lazy" alt="#2 owner photo  596x476"></a><figcaption>#2 owner photo  596x476</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/85e2b63e48f5-gbp-photo-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/85e2b63e48f5-gbp-photo-03.jpg" loading="lazy" alt="#3 owner photo  2048x1365"></a><figcaption>#3 owner photo  2048x1365</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/712624ac216d-gbp-photo-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/712624ac216d-gbp-photo-04.jpg" loading="lazy" alt="#4 owner photo  730x511"></a><figcaption>#4 owner photo  730x511</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/a282ae8f702f-gbp-photo-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/a282ae8f702f-gbp-photo-05.jpg" loading="lazy" alt="#5 owner photo  588x494"></a><figcaption>#5 owner photo  588x494</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/385e47fe1cb1-gbp-photo-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/385e47fe1cb1-gbp-photo-06.jpg" loading="lazy" alt="#6 owner photo  1365x2048"></a><figcaption>#6 owner photo  1365x2048</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/f71617a58020-gbp-photo-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/f71617a58020-gbp-photo-07.jpg" loading="lazy" alt="#7 owner photo  4352x3030"></a><figcaption>#7 owner photo  4352x3030</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/b6cf609330fc-gbp-photo-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/b6cf609330fc-gbp-photo-08.jpg" loading="lazy" alt="#8 owner photo  2048x1536"></a><figcaption>#8 owner photo  2048x1536</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/2c5507927683-gbp-photo-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/2c5507927683-gbp-photo-09.jpg" loading="lazy" alt="#9 owner photo  800x800"></a><figcaption>#9 owner photo  800x800</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/2b5c15b4b6d9-gbp-photo-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/2b5c15b4b6d9-gbp-photo-10.jpg" loading="lazy" alt="#10 owner photo  2350x1691"></a><figcaption>#10 owner photo  2350x1691</figcaption></figure></div>
+<p style="font-size:17px;margin-top:10px;">Google Maps &quot;Vibe&quot; photos from the evidence build (Google's own in-store/atmosphere category)</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/039c30675514-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/039c30675514-01.jpg" loading="lazy" alt="All / branded_collateral · mixed  3024x4032"></a><figcaption>All / branded_collateral · mixed  3024x4032</figcaption></figure></div>
+<p style="font-size:17px;margin-top:10px;">Live Google Maps photo view, reused from the earlier capture under review/</p>
+<p style="font-size:14px;color:#666666;margin-top:4px;">reused the cached capture under review/</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/818d9fab2c27-google-maps-photos.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/818d9fab2c27-google-maps-photos.jpg" loading="lazy" alt="Google Maps photo view"></a></div>
+</section>
+<section id="logo-search">
+<h2>Logo image search</h2><p class="sub">&quot;Five Star Pizza (Ocala SE) Ocala logo&quot;</p>
+<p class="links"><a class="ext" href="https://www.google.com/search?tbm=isch&amp;q=Five%20Star%20Pizza%20(Ocala%20SE)%20Ocala%20logo" target="_blank" rel="noopener">Open Google Images &#8599;</a></p>
+<div class="gray">Logo image search skipped (--skip-google) and no cached results under review/logo-search/.</div>
+</section>
+<section id="candidates">
+<h2>Logo candidates</h2><p class="sub">from the evidence packet; green frame = the file Fable chose. Gray background so white knockouts stay visible.</p>
+<p class="links"><a class="ext" href="https://www.fivestarpizza.com/ocala-south-east-pizza/" target="_blank" rel="noopener">Website &#8599;</a></p>
+<div class="grid cols3"><figure style="background:#8C8C8C" class="framed"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/673a824cf497-01-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/673a824cf497-01-first_party_other.png" loading="lazy" alt="01-first_party_other.png  1100x572
+site header, traced cut
+FABLE'S PICK"></a><figcaption style="font-weight:700">01-first_party_other.png  1100x572<br>site header, traced cut<br>FABLE'S PICK<br><a class="ext" href="https://www.fivestarpizza.com/ocala-south-east-pizza/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/a7a596394c9e-02-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/a7a596394c9e-02-first_party_other.png" loading="lazy" alt="02-first_party_other.png  1100x545
+first_party_other, traced cut"></a><figcaption>02-first_party_other.png  1100x545<br>first_party_other, traced cut<br><a class="ext" href="https://www.fivestarpizza.com/ocala-south-east-pizza/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/7732d4acbf90-03-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/7732d4acbf90-03-first_party_other.png" loading="lazy" alt="03-first_party_other.png  1100x450
+first_party_other, traced cut"></a><figcaption>03-first_party_other.png  1100x450<br>first_party_other, traced cut<br><a class="ext" href="https://www.fivestarpizza.com/ocala-south-east-pizza/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/a941a8077b1e-04-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/a941a8077b1e-04-first_party_other.png" loading="lazy" alt="04-first_party_other.png  1038x1100
+first_party_other, traced cut"></a><figcaption>04-first_party_other.png  1038x1100<br>first_party_other, traced cut<br><a class="ext" href="https://www.fivestarpizza.com/ocala-south-east-pizza/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/7bb9c0b8fe86-05-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/7bb9c0b8fe86-05-first_party_header.png" loading="lazy" alt="05-first_party_header.png  227x118
+site header"></a><figcaption>05-first_party_header.png  227x118<br>site header<br><a class="ext" href="https://www.fivestarpizza.com/ocala-south-east-pizza/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/c8acd82a1bc6-06-first_party_other.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/c8acd82a1bc6-06-first_party_other.jpg" loading="lazy" alt="06-first_party_other.png  1024x1024
+first_party_other, traced cut"></a><figcaption>06-first_party_other.png  1024x1024<br>first_party_other, traced cut<br><a class="ext" href="https://www.fivestarpizza.com/ocala-south-east-pizza/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/073cf9a0a9cc-07-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/073cf9a0a9cc-07-first_party_other.png" loading="lazy" alt="07-first_party_other.png  173x90
+first_party_other"></a><figcaption>07-first_party_other.png  173x90<br>first_party_other<br><a class="ext" href="https://www.fivestarpizza.com/ocala-south-east-pizza/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure></div>
+</section>
+<section id="sheet">
+<h2>Variant sheet</h2><p class="sub">Fable's default F framed in green. Reply with one letter.</p>
+<p class="links"></p>
+<div class="shot zoom" title="click to toggle native size"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/47929384ad61-variant-sheet-marked.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/47929384ad61-variant-sheet-marked.jpg" loading="lazy" alt="variant sheet"></a></div><p class="cap">variants/variant-sheet.png at native size, revision 5. In the HTML page click the sheet to toggle native size.</p>
+</section>
+<section id="links">
+<h2>Links</h2><p class="sub">the link automation results for this location, one row per category; held rows need a human decision. Click a URL to open it.</p>
+<p class="links"></p>
+<p style="font-size:15px;color:#444444;">Run: closeout links written with branding; writes applied; by five-star-pizza-ocala-se fulfill-location (Claude Fable).</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Website bootstrap: written, Places says <a class="ext" href="https://fivestarpizza.com/" target="_blank" rel="noopener">https://fivestarpizza.com/</a>.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Ordering URL on file <a class="ext" href="https://www.fivestarpizza.com/ocala-south-east-pizza/" target="_blank" rel="noopener">https://www.fivestarpizza.com/ocala-south-east-pizza/</a>: not compared</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Discovery report link-discovery-report.json (2026-10-01 18:45): 18 categories, 1 for manual review, 0 proposed field updates, 1 proposed events.</p>
+<p style="font-size:15px;color:#6B6B6B;margin-top:4px;">3 URLs still waiting on the live Chrome check.</p>
+<p style="font-size:15px;font-weight:700;margin-top:8px;">20 categories: 1 written, 6 verified or already live, 0 held for review, 1 pending browser, 0 rejected, 12 none found.</p>
+<table class="links"><thead><tr><th>Category</th><th>URL</th><th>Status</th><th>Evidence</th></tr></thead><tbody><tr class="st-written"><td class="cat">Website</td><td class="url"><a class="ext" href="https://www.fivestarpizza.com/ocala-south-east-pizza/" target="_blank" rel="noopener">fivestarpizza.com/ocala-south-east-pizza/</a></td><td><span class="chip" style="background:#1B5E20">written</span><div class="why">200, title 'Ocala SE | Five Star Pizza | FL', H1 'Ocala SE', exact street address and phone on the page; the store's Facebook page links to it. Website bootstrap value (see website_bootstrap).</div></td><td class="ev">verified live (static fetch+playwright capture)</td></tr>
+<tr class="st-ready"><td class="cat">Online ordering</td><td class="url"><a class="ext" href="https://fivestar.weborder.net/Items.aspx?store=2597" target="_blank" rel="noopener">fivestar.weborder.net/Items.aspx?store=2597</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">Order Online custom event (new, no existing Order event): the store page's three Order Online buttons all point here; weborder page 200 (lands on /Groups menu). Keep the store=2597 parameter.</div></td><td class="ev">verified live (static fetch)</td></tr>
+<tr class="st-ready"><td class="cat">Menu</td><td class="url"><a class="ext" href="https://www.fivestarpizza.com/ocala-se-menu/" target="_blank" rel="noopener">fivestarpizza.com/ocala-se-menu/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">live chain site menu page for the Ocala SE slug, title 'Five Star Pizza | FL', read in the browser; slug matches the location. New Menu custom event.</div></td><td class="ev">title &quot;Five Star Pizza | FL&quot;; URL slug names the business</td></tr>
+<tr class="st-ready"><td class="cat">Facebook</td><td class="url"><a class="ext" href="https://www.facebook.com/ocalafivestarpizzase" target="_blank" rel="noopener">facebook.com/ocalafivestarpizzase</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">page 'Fivestarpizza-Ocala-Southeast', Pizza place, 1.2K followers, intro shows 3233 SE Maricamp Rd Suite #603, (352) 624-4624 and links fivestarpizza.com/ocala-south-east-pizza; linked from the store page. Branding facebook_url.</div></td><td class="ev">title &quot;Fivestarpizza-Ocala-Southeast | Facebook&quot;; the website links to it; social destination identity signal</td></tr>
+<tr class="st-ready"><td class="cat">Instagram</td><td class="url"><a class="ext" href="https://www.instagram.com/ocalafivestarpizzase/" target="_blank" rel="noopener">instagram.com/ocalafivestarpizzase/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">profile 'Ocala Five Star Pizza SE', 40 followers, 314 posts, linked from the store page (name + geo match + site backlink). Branding instagram_url.</div></td><td class="ev">title &quot;Ocala Five Star Pizza SE (@ocalafivestarpizzase) • Instagram photos an&quot;; the website links to it; social destination identity signal</td></tr>
+<tr class="st-ready"><td class="cat">X (Twitter)</td><td class="url"><a class="ext" href="https://x.com/ocalafivestarse" target="_blank" rel="noopener">x.com/ocalafivestarse</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">linked from the store page; verifier reports name + geo match, bio and external website link. Branding x_url.</div></td><td class="ev">title &quot;FiveStarPizzaOcalaSE (@OcalaFiveStarSE) / X&quot;; social destination identity signal</td></tr>
+<tr class="st-none"><td class="cat">TikTok</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">YouTube</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-ready"><td class="cat">Careers</td><td class="url"><a class="ext" href="https://www.fivestarpizza.com/careers" target="_blank" rel="noopener">fivestarpizza.com/careers</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">chain careers page in the site footer (#careers) and sitemap; live. New Careers custom event.</div></td><td class="ev">title &quot;Careers | Five Star Pizza | FL&quot;; URL slug names the business</td></tr>
+<tr class="st-pending"><td class="cat">Catering</td><td class="url"><a class="ext" href="https://www.fivestarpizza.com/catering" target="_blank" rel="noopener">fivestarpizza.com/catering</a></td><td><span class="chip" style="background:#6B6B6B">pending browser</span><div class="why">claude_chrome_result_missing: <a class="ext" href="https://www.fivestarpizza.com/catering" target="_blank" rel="noopener">https://www.fivestarpizza.com/catering</a></div></td><td class="ev">URL slug names the business; no live Chrome result yet for <a class="ext" href="https://www.fivestarpizza.com/catering" target="_blank" rel="noopener">https://www.fivestarpizza.com/catering</a></td></tr>
+<tr class="st-none"><td class="cat">Events</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Reservations</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Gift cards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Loyalty / rewards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">iOS app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Android app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">App downloads</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Other</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">ios app (the chain's sarasota store has an owner.com app; nothing for ocala se)</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">loyalty rewards (weborder shows a loyalty tile inside the ordering site, not a standalone link)</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr></tbody></table>
+</section>
+<section id="previews">
+<h2>Previews</h2><p class="sub">harness signage preview and AI mockups per letter; previews, not proofs (QR drift, invented phone content). Click any image to open the native file.</p>
+<p class="links"></p>
+<p id="previews-2" style="font-size:24px;font-weight:700;color:#B7791F;margin-top:14px;">Cell P  TRAVISSE PICK, applied</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">full color badge on NE's red card #E21D24, navy band #211F7F (Travisse pick for both Ocala stores). card #E21D24 on #211F7F, text #FFFFFF (band one-off: one-off #211F7F). signage preview, 2 AI mockups.</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/020a504a52ff-signage-preview-P.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/020a504a52ff-signage-preview-P.jpg" loading="lazy" alt="signage preview P"></a></div><p class="cap">review/signage-preview-P.png: harness signage preview (POP, sticker, card, to-go), click to open.</p>
+<div class="grid cols4"><figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/9be498542cda-box-P.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/9be498542cda-box-P.jpg" loading="lazy" alt="box (AI)  box-P.png
+verdict not filled in yet (prompts.md)"></a><figcaption>box (AI)  box-P.png<br>verdict not filled in yet (prompts.md)</figcaption></figure>
+<figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/dfaa5de04d34-scan-P.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/five-star-pizza-ocala-se/dfaa5de04d34-scan-P.jpg" loading="lazy" alt="scan (AI)  scan-P.png
+verdict not filled in yet (prompts.md)"></a><figcaption>scan (AI)  scan-P.png<br>verdict not filled in yet (prompts.md)</figcaption></figure></div>
+<p style="font-size:15px;font-weight:700;color:#8A1C1C;margin-top:10px;">Not in review-canvas.png: the previews would add about 1.9 MB to a PNG already near 31 MB (budget 25 MB). This page and the files above are the review surface for them.</p>
+</section>
+<script>
+  for (const el of document.querySelectorAll('.shot.zoom')) {
+    el.addEventListener('click', (ev) => { ev.preventDefault(); el.classList.toggle('native'); });
+  }
+  // Sidebar: highlight the section in view, jump instantly on click (no scroll animation, Travisse 2026-09-29), hamburger below 1000px.
+  (() => {
+    const toc = document.getElementById('toc');
+    const links = new Map([...toc.querySelectorAll('a[href^="#"]')].map((a) => [a.getAttribute('href').slice(1), a]));
+    const sections = [...document.querySelectorAll('section[id]')];
+    const visible = new Set();
+    const setActive = () => {
+      const current = sections.find((s) => visible.has(s)) ?? sections.find((s) => s.getBoundingClientRect().bottom > 0) ?? sections[sections.length - 1];
+      for (const a of links.values()) a.classList.remove('active');
+      if (current) links.get(current.id)?.classList.add('active');
+    };
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); }
+      setActive();
+    }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+    for (const s of sections) io.observe(s);
+    setActive();
+    const toggle = toc.querySelector('.toc-toggle');
+    toggle.addEventListener('click', () => { const open = toc.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
+    for (const a of links.values()) a.addEventListener('click', (ev) => {
+      const target = document.getElementById(a.getAttribute('href').slice(1));
+      if (!target) return;
+      ev.preventDefault();
+      target.scrollIntoView({ behavior: 'instant', block: 'start' });
+      history.replaceState(null, '', a.getAttribute('href'));
+      toc.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
+    });
+  })();
+</script>
+</body></html>

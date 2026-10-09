@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Brothers Sushi Burritos &amp; Rolls - Portland review</title>
+<style>
+  :root { color-scheme: light; scroll-behavior: auto; }
+  body { margin: 0; padding: 32px 40px 80px 280px; background: #fff; color: #111; font-family: Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.35; max-width: 2040px; box-sizing: border-box; }
+  h2 { font-size: 34px; margin: 0 0 4px; }
+  section { padding: 28px 0; border-bottom: 3px solid #ccc; scroll-margin-top: 16px; }
+  section:first-child { padding-top: 0; }
+  p[id] { scroll-margin-top: 16px; }
+  .toc { position: fixed; top: 0; left: 0; bottom: 0; width: 240px; box-sizing: border-box; padding: 24px 16px; overflow-y: auto; background: #f4f4f4; border-right: 1px solid #ddd; font-size: 15px; z-index: 10; }
+  .toc ol { list-style: none; margin: 0; padding: 0; }
+  .toc ol ol { margin: 2px 0 6px 14px; }
+  .toc ol ol a { font-size: 13px; color: #555; padding: 3px 8px; }
+  .toc a { display: block; padding: 6px 8px; border-radius: 4px; color: #222; line-height: 1.3; }
+  .toc a:hover { background: #e6e6e6; }
+  .toc a.active { background: #1b5e20; color: #fff; font-weight: 700; }
+  .toc a.top { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+  .toc-toggle { display: none; }
+  @media (max-width: 1000px) {
+    body { padding: 64px 20px 80px; }
+    .toc { position: sticky; top: 0; bottom: auto; width: auto; margin: -64px -20px 24px; padding: 8px 12px; border-right: 0; border-bottom: 1px solid #ddd; max-height: 80vh; }
+    .toc-toggle { display: block; font: inherit; font-weight: 700; background: none; border: 1px solid #bbb; border-radius: 4px; padding: 6px 12px; cursor: pointer; }
+    .toc-toggle::before { content: "\2630  "; }
+    .toc:not(.open) ol { display: none; }
+    .toc ol { padding-top: 8px; }
+  }
+  p { margin: 4px 0; }
+  p.sub { color: #555; font-size: 17px; margin-bottom: 14px; }
+  p.cap { color: #666; font-size: 15px; }
+  .gray { background: #ededed; color: #444; padding: 26px; font-size: 20px; border-radius: 4px; }
+  .hdr { display: flex; gap: 30px; align-items: flex-start; }
+  .hdr > div:first-child { flex: 1; }
+  .cell { flex: 0 0 auto; max-width: 520px; }
+  .cell img { display: block; max-width: 100%; border: 6px solid #1b5e20; box-sizing: border-box; }
+  .cell p { color: #1b5e20; font-weight: 700; font-size: 16px; }
+  .shot { border: 1px solid #ddd; overflow: auto; max-height: 90vh; }
+  .shot img { display: block; width: 100%; height: auto; }
+  /* 2026-10-01: a zoomable shot (the variant sheet) is never height-clipped: every row stays visible at page width,
+     and native size scrolls inside the container (overflow auto) instead of hiding rows below 90vh. */
+  .shot.zoom { max-height: none; }
+  .shot.zoom img { cursor: zoom-in; }
+  .cell img.zoom3x { margin-top: 10px; border: 3px solid #444; image-rendering: pixelated; }
+  .cell img.zoom3x.bad { border-color: #B71C1C; }
+  .cell.hold img:first-of-type { border-color: #B71C1C; }
+  .shot.zoom.native img { width: auto; max-width: none; cursor: zoom-out; }
+  .grid { display: grid; gap: 14px; }
+  .grid.cols3 { grid-template-columns: repeat(3, 1fr); }
+  .grid.cols4 { grid-template-columns: repeat(4, 1fr); }
+  .grid.cols5 { grid-template-columns: repeat(5, 1fr); }
+  .grid.cols6 { grid-template-columns: repeat(6, 1fr); }
+  figure { margin: 0; background: #ededed; }
+  figure.framed { outline: 6px solid #1b5e20; outline-offset: -6px; }
+  figure a { display: block; }
+  figure img { display: block; width: 100%; height: 360px; object-fit: contain; }
+  .grid.cols4 figure img { height: 280px; }
+  .grid.cols5 figure img, .grid.cols6 figure img { height: 220px; }
+  figcaption { font-size: 15px; padding: 6px 4px 10px; background: #fff; color: #222; }
+  a { color: inherit; text-decoration: none; }
+  a.ext { color: #0b57d0; text-decoration: underline; text-underline-offset: 2px; word-break: break-all; }
+  a.ext:hover { color: #083a8c; }
+  p.links { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 16px; font-size: 15px; }
+  p.links a.ext { background: #eef3fc; border: 1px solid #c9d8f5; border-radius: 4px; padding: 3px 10px; text-decoration: none; word-break: normal; }
+  p.links a.ext:hover { background: #dce7fb; }
+  table.links { border-collapse: collapse; width: 100%; font-size: 15px; margin-top: 8px; }
+  table.links th { text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: #666; padding: 6px 10px; border-bottom: 2px solid #ddd; }
+  table.links td { padding: 9px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top; }
+  table.links td.cat { font-weight: 700; white-space: nowrap; }
+  table.links td.url { max-width: 380px; word-break: break-all; }
+  table.links td.ev { color: #444; max-width: 520px; }
+  table.links .chip { display: inline-block; color: #fff; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
+  table.links .why { color: #444; font-size: 14px; margin-top: 5px; max-width: 420px; }
+  table.links .none { color: #999; }
+  table.links tr.st-held td { background: #fff8e8; }
+  table.links tr.st-rejected td { color: #777; }
+  table.links tr.st-rejected .chip { text-transform: none; letter-spacing: 0; white-space: normal; }
+  table.links tr.st-written td { background: #eef7ee; }
+</style></head><body id="top">
+<nav class="toc" id="toc"><a class="top" href="/" style="margin-bottom:12px">&larr; All locations</a><button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-list">Sections</button>
+<ol id="toc-list">
+<li><a href="#top" class="top">Top</a></li>
+<li><a href="#header">Overview</a><ol><li><a href="#header-1">Gates, per row of the sheet</a></li></ol></li>
+<li><a href="#website">Website</a></li>
+<li><a href="#gbp">Google Business Profile</a></li>
+<li><a href="#logo-search">Logo image search</a></li>
+<li><a href="#candidates">Logo candidates</a></li>
+<li><a href="#sheet">Variant sheet</a></li>
+<li><a href="#links">Links (0 held for review)</a></li>
+</ol></nav>
+<section id="header">
+<p class="links"><a class="ext" href="https://brotherssushisburritos.com/" target="_blank" rel="noopener">Website &#8599;</a> <a class="ext" href="https://orderdindin.com/menu-brother-sushi-burritos-amp-roll-3-rockwood" target="_blank" rel="noopener">ordering: orderdindin.com/menu-brother-sushi-burritos-amp- &#8599;</a> <a class="ext" href="https://www.ubereats.com/store/brothers-sushi-%26-burrito-%26-rolls-portland/eErM6X6RTIyoMnyoZAdnHg" target="_blank" rel="noopener">ordering_alternate: ubereats.com/store/brothers-sushi-%26-burrito-%2 &#8599;</a> <a class="ext" href="https://brotherssushisburritos.com/menu/hillsboros-menu/" target="_blank" rel="noopener">menu: brotherssushisburritos.com/menu/hillsboros-menu/ &#8599;</a> <a class="ext" href="https://www.facebook.com/BrothersSushiBurritosRolls" target="_blank" rel="noopener">facebook: facebook.com/BrothersSushiBurritosRolls &#8599;</a> <a class="ext" href="https://www.instagram.com/brotherssushiburritosrolls/" target="_blank" rel="noopener">instagram: instagram.com/brotherssushiburritosrolls/ &#8599;</a> <a class="ext" href="https://www.youtube.com/@brotherssushiburritosrolls" target="_blank" rel="noopener">youtube: youtube.com/@brotherssushiburritosrolls &#8599;</a> <a class="ext" href="https://www.tiktok.com/@brotherssushi_burritos" target="_blank" rel="noopener">tiktok: tiktok.com/@brotherssushi_burritos &#8599;</a> <a class="ext" href="https://onelink.to/dindin" target="_blank" rel="noopener">ios_app: onelink.to/dindin &#8599;</a></p>
+<div class="hdr"><div><p style="font-size:44px;font-weight:700;">Brothers Sushi Burritos &amp; Rolls - Portland</p>
+<p style="font-size:20px;color:#444444;margin-top:6px;">Portland, OR   ·   request po55sx84o0hz04dkfynx21ba   ·   full order</p>
+<p style="font-size:29px;font-weight:700;color:#1B5E20;margin-top:22px;">Fable's default: A</p>
+<p style="font-size:19px;margin-top:6px;">card knockout at Fable's pick</p>
+<p style="font-size:16px;color:#666666;margin-top:8px;">Confidence: high   ·   flags: mark_element_omitted, brand_environment_unassessed, brand_environment_classification_unavailable, searchapi_photo_download_failed</p>
+<p style="font-size:16px;color:#666666;margin-top:4px;">Cell A = card knockout, primary #2F5496, band #FDBA1D (Fable's pick), text #FFFFFF, print digit #000000</p></div><div class="cell"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/fe9a8c18fdc6-default-cell.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/fe9a8c18fdc6-default-cell.png" alt="default cell"></a><p>Fable's default cell A (native sheet pixels, click to open)</p><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/e055657c0adf-logo-3x.png" target="_blank" title="open the 3x crop"><img class="zoom3x" src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/e055657c0adf-logo-3x.png" alt="logo at 3x"></a><p><b>Logo at 3x (what prints).</b> Final upload 1586x408px, source 4080px (vector), recorded on the candidate, upscale 0.389x. Edge quality: ok. Soft-edge share 1, stair-step score 0.3187.</p></div></div>
+<p id="header-1" style="font-size:24px;font-weight:700;margin-top:18px;">Gates, per row of the sheet</p>
+<p style="font-size:18px;font-weight:700;color:#1B5E20;margin-top:8px;">card knockout: no gate results in run.json for evidence/logo-candidates/04-first_party_other.png</p>
+<p style="font-size:18px;font-weight:700;color:#1B5E20;margin-top:8px;">full color: no gate results in run.json for evidence/logo-candidates/01-first_party_other.png</p>
+<p style="font-size:18px;font-weight:700;color:#1B5E20;margin-top:8px;">name words block (Brothers + Sushi Burritos &amp; Rolls), white knockout, banner line is tiny text at card size: no gate results in run.json for candidates/04-wordblock-white-knockout.tinified.png</p>
+<p style="font-size:18px;font-weight:700;color:#1B5E20;margin-top:8px;">Brothers words in authored blue ink on the sun-yellow card: no gate results in run.json for candidates/05-brothers-words-authored-blue-1000.tinified.png</p>
+<p style="font-size:18px;font-weight:700;color:#1B5E20;margin-top:8px;">full-color lockup on a black card: no gate results in run.json for evidence/logo-candidates/01-first_party_other.png</p>
+</section>
+<section id="website">
+<h2>Website</h2><p class="sub"><a class="ext" href="https://brotherssushisburritos.com/" target="_blank" rel="noopener">https://brotherssushisburritos.com/</a></p>
+<p class="links"><a class="ext" href="https://brotherssushisburritos.com/" target="_blank" rel="noopener">Open website &#8599;</a></p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/f242191230cf-desktop.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/f242191230cf-desktop.jpg" loading="lazy" alt="website desktop screenshot"></a></div><p class="cap">Desktop screenshot from the run's evidence (evidence/website-visual/desktop.png).</p>
+</section>
+<section id="gbp">
+<h2>Google Business Profile</h2><p class="sub">place id ChIJG7h0MMSjlVQRw-dbnVVZV-E</p>
+<p class="links"><a class="ext" href="https://www.google.com/maps/place/?q=place_id:ChIJG7h0MMSjlVQRw-dbnVVZV-E" target="_blank" rel="noopener">Google Maps place &#8599;</a> <a class="ext" href="https://www.google.com/search?q=Brothers%20Sushi%20Burritos%20%26%20Rolls%20-%20Portland%20Portland%2C%20OR" target="_blank" rel="noopener">Google search &#8599;</a></p>
+<p style="font-size:17px;">Place photos already downloaded for this run (10), at the size the run fetched. Green frame = a photo Fable cited for the sign or interior.</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/ed624e56c003-gbp-photo-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/ed624e56c003-gbp-photo-01.jpg" loading="lazy" alt="#1 owner photo  1600x1066"></a><figcaption>#1 owner photo  1600x1066</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/7e5a2ce0732c-gbp-photo-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/7e5a2ce0732c-gbp-photo-02.jpg" loading="lazy" alt="#2 owner photo  1920x1280"></a><figcaption>#2 owner photo  1920x1280</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/f641cd40fa8c-gbp-photo-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/f641cd40fa8c-gbp-photo-03.jpg" loading="lazy" alt="#3 owner photo  1094x815"></a><figcaption>#3 owner photo  1094x815</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/b3c6a6d35d68-gbp-photo-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/b3c6a6d35d68-gbp-photo-04.jpg" loading="lazy" alt="#4 owner photo  1108x921"></a><figcaption>#4 owner photo  1108x921</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/6449f10964d5-gbp-photo-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/6449f10964d5-gbp-photo-05.jpg" loading="lazy" alt="#5 owner photo  1600x1067"></a><figcaption>#5 owner photo  1600x1067</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/d88342864b7a-gbp-photo-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/d88342864b7a-gbp-photo-06.jpg" loading="lazy" alt="#6 owner photo  1600x1067"></a><figcaption>#6 owner photo  1600x1067</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/607347a065b3-gbp-photo-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/607347a065b3-gbp-photo-07.jpg" loading="lazy" alt="#7 owner photo  1600x1067"></a><figcaption>#7 owner photo  1600x1067</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/753dd6607250-gbp-photo-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/753dd6607250-gbp-photo-08.jpg" loading="lazy" alt="#8 owner photo  1600x1067"></a><figcaption>#8 owner photo  1600x1067</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/92cb878b720e-gbp-photo-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/92cb878b720e-gbp-photo-09.jpg" loading="lazy" alt="#9 owner photo  1600x1067"></a><figcaption>#9 owner photo  1600x1067</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/902be04ac7a3-gbp-photo-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/902be04ac7a3-gbp-photo-10.jpg" loading="lazy" alt="#10 owner photo  1600x1067"></a><figcaption>#10 owner photo  1600x1067</figcaption></figure></div>
+<p style="font-size:17px;margin-top:10px;">In-store photos (search results): Google Maps photos fetched by the evidence build, no Vibe category was available</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/7e5a2ce0732c-searchapi-003.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/7e5a2ce0732c-searchapi-003.jpg" loading="lazy" alt="By owner / unclassified  1920x1280"></a><figcaption>By owner / unclassified  1920x1280</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/62a5eaeb732d-searchapi-004.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/62a5eaeb732d-searchapi-004.jpg" loading="lazy" alt="By owner / unclassified  1080x1920"></a><figcaption>By owner / unclassified  1080x1920</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/607347a065b3-searchapi-009.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/607347a065b3-searchapi-009.jpg" loading="lazy" alt="By owner / unclassified  1600x1067"></a><figcaption>By owner / unclassified  1600x1067</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/6449f10964d5-searchapi-007.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/6449f10964d5-searchapi-007.jpg" loading="lazy" alt="By owner / unclassified  1600x1067"></a><figcaption>By owner / unclassified  1600x1067</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/753dd6607250-searchapi-010.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/753dd6607250-searchapi-010.jpg" loading="lazy" alt="By owner / unclassified  1600x1067"></a><figcaption>By owner / unclassified  1600x1067</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/902be04ac7a3-searchapi-012.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/902be04ac7a3-searchapi-012.jpg" loading="lazy" alt="By owner / unclassified  1600x1067"></a><figcaption>By owner / unclassified  1600x1067</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/92cb878b720e-searchapi-011.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/92cb878b720e-searchapi-011.jpg" loading="lazy" alt="By owner / unclassified  1600x1067"></a><figcaption>By owner / unclassified  1600x1067</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/d88342864b7a-searchapi-008.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/d88342864b7a-searchapi-008.jpg" loading="lazy" alt="By owner / unclassified  1600x1067"></a><figcaption>By owner / unclassified  1600x1067</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/ed624e56c003-searchapi-001.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/ed624e56c003-searchapi-001.jpg" loading="lazy" alt="By owner / unclassified  1600x1066"></a><figcaption>By owner / unclassified  1600x1066</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/eb1b0e29f775-searchapi-002.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/eb1b0e29f775-searchapi-002.jpg" loading="lazy" alt="By owner / unclassified  1080x1080"></a><figcaption>By owner / unclassified  1080x1080</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/b3c6a6d35d68-searchapi-006.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/b3c6a6d35d68-searchapi-006.jpg" loading="lazy" alt="By owner / unclassified  1108x921"></a><figcaption>By owner / unclassified  1108x921</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/f641cd40fa8c-searchapi-005.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/f641cd40fa8c-searchapi-005.jpg" loading="lazy" alt="By owner / unclassified  1094x815"></a><figcaption>By owner / unclassified  1094x815</figcaption></figure></div>
+<p style="font-size:17px;margin-top:10px;">Live Google Maps photo view, reused from the earlier capture under review/</p>
+<p style="font-size:14px;color:#666666;margin-top:4px;">reused the cached capture under review/</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/639d57dc8221-google-maps-photos.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/639d57dc8221-google-maps-photos.jpg" loading="lazy" alt="Google Maps photo view"></a></div>
+</section>
+<section id="logo-search">
+<h2>Logo image search</h2><p class="sub">&quot;Brothers Sushi Burritos &amp; Rolls - Portland Portland logo&quot;</p>
+<p class="links"><a class="ext" href="https://www.google.com/search?tbm=isch&amp;q=Brothers%20Sushi%20Burritos%20%26%20Rolls%20-%20Portland%20Portland%20logo" target="_blank" rel="noopener">Open Google Images &#8599;</a></p>
+<div class="gray">Logo image search skipped (--skip-google) and no cached results under review/logo-search/.</div>
+</section>
+<section id="candidates">
+<h2>Logo candidates</h2><p class="sub">from the evidence packet; green frame = the file Fable chose. Gray background so white knockouts stay visible.</p>
+<p class="links"><a class="ext" href="https://brotherssushisburritos.com/" target="_blank" rel="noopener">Website &#8599;</a></p>
+<div class="grid cols3"><figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/a9b997e430ef-01-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/a9b997e430ef-01-first_party_other.png" loading="lazy" alt="01-first_party_other.png  1600x1362
+site header, traced cut"></a><figcaption>01-first_party_other.png  1600x1362<br>site header, traced cut<br><a class="ext" href="https://brotherssushisburritos.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/dea02c4e8c5d-02-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/dea02c4e8c5d-02-first_party_other.png" loading="lazy" alt="02-first_party_other.png  1000x851
+first_party_other, traced cut"></a><figcaption>02-first_party_other.png  1000x851<br>first_party_other, traced cut<br><a class="ext" href="https://brotherssushisburritos.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/afa4aa199757-03-social.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/afa4aa199757-03-social.png" loading="lazy" alt="03-social.png  726x627
+Facebook avatar"></a><figcaption>03-social.png  726x627<br>Facebook avatar</figcaption></figure>
+<figure style="background:#8C8C8C" class="framed"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/a47383efa647-04-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/a47383efa647-04-first_party_other.png" loading="lazy" alt="04-first_party_other.png  1586x408
+first_party_other, traced cut
+FABLE'S PICK"></a><figcaption style="font-weight:700">04-first_party_other.png  1586x408<br>first_party_other, traced cut<br>FABLE'S PICK<br><a class="ext" href="https://brotherssushisburritos.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/1525821f9b01-05-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/1525821f9b01-05-first_party_other.png" loading="lazy" alt="05-first_party_other.png  1596x515
+first_party_other, traced cut"></a><figcaption>05-first_party_other.png  1596x515<br>first_party_other, traced cut<br><a class="ext" href="https://brotherssushisburritos.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/10ea0f44c937-06-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/10ea0f44c937-06-first_party_other.png" loading="lazy" alt="06-first_party_other.png  1000x258
+first_party_other, traced cut"></a><figcaption>06-first_party_other.png  1000x258<br>first_party_other, traced cut<br><a class="ext" href="https://brotherssushisburritos.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/1f379d47b5b5-07-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/1f379d47b5b5-07-first_party_other.png" loading="lazy" alt="07-first_party_other.png  534x482
+first_party_other"></a><figcaption>07-first_party_other.png  534x482<br>first_party_other<br><a class="ext" href="https://brotherssushisburritos.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure></div>
+</section>
+<section id="sheet">
+<h2>Variant sheet</h2><p class="sub">Fable's default A framed in green. Reply with one letter.</p>
+<p class="links"></p>
+<div class="shot zoom" title="click to toggle native size"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/18d99f4dc06b-variant-sheet-marked.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/brothers-sushi-burritos-rolls-portland/18d99f4dc06b-variant-sheet-marked.jpg" loading="lazy" alt="variant sheet"></a></div><p class="cap">variants/variant-sheet.png at native size, revision 5. In the HTML page click the sheet to toggle native size.</p>
+</section>
+<section id="links">
+<h2>Links</h2><p class="sub">the link automation results for this location, one row per category; held rows need a human decision. Click a URL to open it.</p>
+<p class="links"></p>
+<p style="font-size:15px;color:#444444;">Run: review stage no writes; no link writes applied; by fulfill-location (Claude Fable 5.1) 2026-10-08. Transport: Codex handoff codex-discovery-handoff.mjs (codex-extension.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Website bootstrap: not_needed.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Discovery report link-discovery-report.json (2026-10-09 01:43): 18 categories, 0 for manual review, 4 proposed field updates, 2 proposed events.</p>
+<p style="font-size:15px;font-weight:700;margin-top:8px;">18 categories: 0 written, 4 verified or already live, 0 held for review, 0 pending browser, 11 rejected, 3 none found.</p>
+<table class="links"><thead><tr><th>Category</th><th>URL</th><th>Status</th><th>Evidence</th></tr></thead><tbody><tr class="st-ready"><td class="cat">Online ordering</td><td class="url"><a class="ext" href="https://orderdindin.com/menu-brother-sushi-burritos-amp-roll-3-rockwood" target="_blank" rel="noopener">orderdindin.com/menu-brother-sushi-burritos-amp-roll-3-rockwood</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">Website wins: the ordering link the customer's own site publishes for the Rockwood store (nav 'Rockwood Menu', the Rockwood location card, the menu hub). Static read HTTP 200: 'Rockwood - Online Ordering', address 'Portland OR 97233', Brothers lockup as og:image, DinDin menu with prices. Write as locations.ordering_url (fill-only, stored is null) and reconcile an Order Online custom event at closeout. The Menu category resolves to this same page (DinDin is the menu for this store), so one link, Order Online only.</div></td><td class="ev">verified live static (static fetch)</td></tr>
+<tr class="st-rejected"><td class="cat">Menu</td><td class="url"><a class="ext" href="https://brotherssushisburritos.com/menu/hillsboros-menu/" target="_blank" rel="noopener">brotherssushisburritos.com/menu/hillsboros-menu/</a></td><td><span class="chip" style="background:#6B6B6B">rejected: The report's menu pick is the HILLSBORO store's menu page (320 SE Bas...</span><div class="why">The report's menu pick is the HILLSBORO store's menu page (320 SE Baseline St; a PDF menu board for that store). Wrong store for this location. The site has no Rockwood menu page: 'Rockwood Menu' goes to the DinDin ordering page, which is the Order Online link above. No separate Menu link.</div></td><td class="ev">title &quot;Hillsboro&amp;#8217;s Menu &amp;#8211; Brothers Sushi Burritos &amp; Rolls&quot;; the website links to it; URL slug names the business; found as an anchor</td></tr>
+<tr class="st-ready"><td class="cat">Facebook</td><td class="url"><a class="ext" href="https://www.facebook.com/BrothersSushiBurritosRolls" target="_blank" rel="noopener">facebook.com/BrothersSushiBurritosRolls</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">Codex read it live in the Boostly.com profile: official site links it in the footer and the page links back to brotherssushisburritos.com; Graph avatar is the Brothers lockup (candidates/raw/fb-avatar.jpeg). Write via branding set --facebook-url at closeout.</div></td><td class="ev">title &quot;(20+) Facebook&quot;; the website links to it; social destination identity signal; canonical form of <a class="ext" href="https://www.facebook.com/BrothersSushiBurritosRolls/" target="_blank" rel="noopener">https://www.facebook.com/BrothersSushiBurritosRolls/</a>; found as an anchor</td></tr>
+<tr class="st-ready"><td class="cat">Instagram</td><td class="url"><a class="ext" href="https://www.instagram.com/brotherssushiburritosrolls/" target="_blank" rel="noopener">instagram.com/brotherssushiburritosrolls/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">Read in my own tab and by Codex: 'Brothers Sushi Burritos Rolls', Restaurant, 80 posts, 23 followers, bio names Fairview and Hillsboro and links brotherssushisburritos.com (website backlink + the site's footer link). Same brand, three-store account; write via branding set --instagram-url at closeout.</div></td><td class="ev">title &quot;(1) Instagram&quot;; the website links to it; social destination identity signal; found as an anchor</td></tr>
+<tr class="st-rejected"><td class="cat">X (Twitter)</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">rejected: none linked</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-rejected"><td class="cat">TikTok</td><td class="url"><a class="ext" href="https://www.tiktok.com/@brotherssushi_burritos" target="_blank" rel="noopener">tiktok.com/@brotherssushi_burritos</a></td><td><span class="chip" style="background:#6B6B6B">rejected: Linked from the site footer, but the profile itself carries no busine...</span><div class="why">Linked from the site footer, but the profile itself carries no business signal the verifier accepts: 13 followers, no website backlink, no address or phone (report: identity_mismatch style rejection). Standing rule: an unverifiable TikTok is rejected, not held.</div></td><td class="ev">title &quot;TikTok - Make Your Day&quot;; the website links to it; canonical form of <a class="ext" href="https://www.tiktok.com/@brotherssushi_burrito" target="_blank" rel="noopener">https://www.tiktok.com/@brotherssushi_burrito</a>; found as an anchor; Social profile links a different business website (lf16-tiktok-web.tiktokcdn-us.com, lf16-cdn-tos.tiktokcdn-us.com, lf16-tiktok-common.tiktokcdn-us.com), not brotherssushisburritos.com, with no address or phone match for this location</td></tr>
+<tr class="st-ready"><td class="cat">YouTube</td><td class="url"><a class="ext" href="https://www.youtube.com/@brotherssushiburritosrolls" target="_blank" rel="noopener">youtube.com/@brotherssushiburritosrolls</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">Codex read it live: channel @brotherssushiburritosrolls, linked from the site footer, channel links back to brotherssushisburritos.com (location_match_evidence candidate_links_to_official_domain). Write via branding set --youtube-url at closeout.</div></td><td class="ev">title &quot;Brothers Sushi Burritos &amp; Rolls - YouTube&quot;; the website links to it; social destination identity signal; canonical form of <a class="ext" href="https://www.youtube.com/@BrothersSushiBurritosRoll" target="_blank" rel="noopener">https://www.youtube.com/@BrothersSushiBurritosRoll</a>; found as an anchor</td></tr>
+<tr class="st-rejected"><td class="cat">Careers</td><td class="url"><a class="ext" href="https://brotherssushisburritos.com/careers" target="_blank" rel="noopener">brotherssushisburritos.com/careers</a></td><td><span class="chip" style="background:#6B6B6B">rejected: /careers, /jobs, /career, /employment all render the site's not-found...</span><div class="why">/careers, /jobs, /career, /employment all render the site's not-found page (Codex); no careers link anywhere on the site. Keep the Careers event configured but disabled.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-rejected"><td class="cat">Catering</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">rejected: no catering page or mention on the site</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-rejected"><td class="cat">Events</td><td class="url"><a class="ext" href="https://brotherssushisburritos.com/" target="_blank" rel="noopener">brotherssushisburritos.com/</a></td><td><span class="chip" style="background:#6B6B6B">rejected: No events page; the report's only candidate was the home page. Nothin...</span><div class="why">No events page; the report's only candidate was the home page. Nothing to activate.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-rejected"><td class="cat">Reservations</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">rejected: no reservations (a food-hall stall)</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-rejected"><td class="cat">Gift cards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">rejected: no gift card page on the site or DinDin</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-rejected"><td class="cat">Loyalty / rewards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">rejected: none</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-rejected"><td class="cat">iOS app</td><td class="url"><a class="ext" href="https://onelink.to/dindin" target="_blank" rel="noopener">onelink.to/dindin</a></td><td><span class="chip" style="background:#6B6B6B">rejected: The site's App Store / Play badges open onelink.to/dindin, the DinDin...</span><div class="why">The site's App Store / Play badges open onelink.to/dindin, the DinDin ordering platform's generic app, not a Brothers app. No app links.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Android app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">App downloads</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Other</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-rejected"><td class="cat">ordering alternate</td><td class="url"><a class="ext" href="https://www.ubereats.com/store/brothers-sushi-%26-burrito-%26-rolls-portland/eErM6X6RTIyoMnyoZAdnHg" target="_blank" rel="noopener">ubereats.com/store/brothers-sushi-%26-burrito-%26-rolls-portland/eErM6X6</a></td><td><span class="chip" style="background:#6B6B6B">rejected: Uber Eats marketplace listing of this store (read in my tab: title &quot;O...</span><div class="why">Uber Eats marketplace listing of this store (read in my tab: title &quot;Order Brother's Sushi &amp; Burrito &amp; Rolls (Portland)&quot;; Codex verified it live too). Not written: the website's own DinDin ordering wins and a second ordering URL is never proposed. Tracking parameter srsltid stripped in this record.</div></td><td class="ev">verified live (codex-extension)</td></tr></tbody></table>
+</section>
+<script>
+  for (const el of document.querySelectorAll('.shot.zoom')) {
+    el.addEventListener('click', (ev) => { ev.preventDefault(); el.classList.toggle('native'); });
+  }
+  // Sidebar: highlight the section in view, jump instantly on click (no scroll animation, Travisse 2026-09-29), hamburger below 1000px.
+  (() => {
+    const toc = document.getElementById('toc');
+    const links = new Map([...toc.querySelectorAll('a[href^="#"]')].map((a) => [a.getAttribute('href').slice(1), a]));
+    const sections = [...document.querySelectorAll('section[id]')];
+    const visible = new Set();
+    const setActive = () => {
+      const current = sections.find((s) => visible.has(s)) ?? sections.find((s) => s.getBoundingClientRect().bottom > 0) ?? sections[sections.length - 1];
+      for (const a of links.values()) a.classList.remove('active');
+      if (current) links.get(current.id)?.classList.add('active');
+    };
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); }
+      setActive();
+    }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+    for (const s of sections) io.observe(s);
+    setActive();
+    const toggle = toc.querySelector('.toc-toggle');
+    toggle.addEventListener('click', () => { const open = toc.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
+    for (const a of links.values()) a.addEventListener('click', (ev) => {
+      const target = document.getElementById(a.getAttribute('href').slice(1));
+      if (!target) return;
+      ev.preventDefault();
+      target.scrollIntoView({ behavior: 'instant', block: 'start' });
+      history.replaceState(null, '', a.getAttribute('href'));
+      toc.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
+    });
+  })();
+</script>
+</body></html>

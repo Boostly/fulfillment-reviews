@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Monza review</title>
+<style>
+  :root { color-scheme: light; scroll-behavior: auto; }
+  body { margin: 0; padding: 32px 40px 80px 280px; background: #fff; color: #111; font-family: Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.35; max-width: 2040px; box-sizing: border-box; }
+  h2 { font-size: 34px; margin: 0 0 4px; }
+  section { padding: 28px 0; border-bottom: 3px solid #ccc; scroll-margin-top: 16px; }
+  section:first-child { padding-top: 0; }
+  p[id] { scroll-margin-top: 16px; }
+  .toc { position: fixed; top: 0; left: 0; bottom: 0; width: 240px; box-sizing: border-box; padding: 24px 16px; overflow-y: auto; background: #f4f4f4; border-right: 1px solid #ddd; font-size: 15px; z-index: 10; }
+  .toc ol { list-style: none; margin: 0; padding: 0; }
+  .toc ol ol { margin: 2px 0 6px 14px; }
+  .toc ol ol a { font-size: 13px; color: #555; padding: 3px 8px; }
+  .toc a { display: block; padding: 6px 8px; border-radius: 4px; color: #222; line-height: 1.3; }
+  .toc a:hover { background: #e6e6e6; }
+  .toc a.active { background: #1b5e20; color: #fff; font-weight: 700; }
+  .toc a.top { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+  .toc-toggle { display: none; }
+  @media (max-width: 1000px) {
+    body { padding: 64px 20px 80px; }
+    .toc { position: sticky; top: 0; bottom: auto; width: auto; margin: -64px -20px 24px; padding: 8px 12px; border-right: 0; border-bottom: 1px solid #ddd; max-height: 80vh; }
+    .toc-toggle { display: block; font: inherit; font-weight: 700; background: none; border: 1px solid #bbb; border-radius: 4px; padding: 6px 12px; cursor: pointer; }
+    .toc-toggle::before { content: "\2630  "; }
+    .toc:not(.open) ol { display: none; }
+    .toc ol { padding-top: 8px; }
+  }
+  p { margin: 4px 0; }
+  p.sub { color: #555; font-size: 17px; margin-bottom: 14px; }
+  p.cap { color: #666; font-size: 15px; }
+  .gray { background: #ededed; color: #444; padding: 26px; font-size: 20px; border-radius: 4px; }
+  .hdr { display: flex; gap: 30px; align-items: flex-start; }
+  .hdr > div:first-child { flex: 1; }
+  .cell { flex: 0 0 auto; max-width: 520px; }
+  .cell img { display: block; max-width: 100%; border: 6px solid #1b5e20; box-sizing: border-box; }
+  .cell p { color: #1b5e20; font-weight: 700; font-size: 16px; }
+  .shot { border: 1px solid #ddd; overflow: auto; max-height: 90vh; }
+  .shot img { display: block; width: 100%; height: auto; }
+  /* 2026-10-01: a zoomable shot (the variant sheet) is never height-clipped: every row stays visible at page width,
+     and native size scrolls inside the container (overflow auto) instead of hiding rows below 90vh. */
+  .shot.zoom { max-height: none; }
+  .shot.zoom img { cursor: zoom-in; }
+  .cell img.zoom3x { margin-top: 10px; border: 3px solid #444; image-rendering: pixelated; }
+  .cell img.zoom3x.bad { border-color: #B71C1C; }
+  .cell.hold img:first-of-type { border-color: #B71C1C; }
+  .shot.zoom.native img { width: auto; max-width: none; cursor: zoom-out; }
+  .grid { display: grid; gap: 14px; }
+  .grid.cols3 { grid-template-columns: repeat(3, 1fr); }
+  .grid.cols4 { grid-template-columns: repeat(4, 1fr); }
+  .grid.cols5 { grid-template-columns: repeat(5, 1fr); }
+  .grid.cols6 { grid-template-columns: repeat(6, 1fr); }
+  figure { margin: 0; background: #ededed; }
+  figure.framed { outline: 6px solid #1b5e20; outline-offset: -6px; }
+  figure a { display: block; }
+  figure img { display: block; width: 100%; height: 360px; object-fit: contain; }
+  .grid.cols4 figure img { height: 280px; }
+  .grid.cols5 figure img, .grid.cols6 figure img { height: 220px; }
+  figcaption { font-size: 15px; padding: 6px 4px 10px; background: #fff; color: #222; }
+  a { color: inherit; text-decoration: none; }
+  a.ext { color: #0b57d0; text-decoration: underline; text-underline-offset: 2px; word-break: break-all; }
+  a.ext:hover { color: #083a8c; }
+  p.links { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 16px; font-size: 15px; }
+  p.links a.ext { background: #eef3fc; border: 1px solid #c9d8f5; border-radius: 4px; padding: 3px 10px; text-decoration: none; word-break: normal; }
+  p.links a.ext:hover { background: #dce7fb; }
+  table.links { border-collapse: collapse; width: 100%; font-size: 15px; margin-top: 8px; }
+  table.links th { text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: #666; padding: 6px 10px; border-bottom: 2px solid #ddd; }
+  table.links td { padding: 9px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top; }
+  table.links td.cat { font-weight: 700; white-space: nowrap; }
+  table.links td.url { max-width: 380px; word-break: break-all; }
+  table.links td.ev { color: #444; max-width: 520px; }
+  table.links .chip { display: inline-block; color: #fff; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
+  table.links .why { color: #444; font-size: 14px; margin-top: 5px; max-width: 420px; }
+  table.links .none { color: #999; }
+  table.links tr.st-held td { background: #fff8e8; }
+  table.links tr.st-rejected td { color: #777; }
+  table.links tr.st-rejected .chip { text-transform: none; letter-spacing: 0; white-space: normal; }
+  table.links tr.st-written td { background: #eef7ee; }
+</style></head><body id="top">
+<nav class="toc" id="toc"><a class="top" href="/" style="margin-bottom:12px">&larr; All locations</a><button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-list">Sections</button>
+<ol id="toc-list">
+<li><a href="#top" class="top">Top</a></li>
+<li><a href="#header">Overview</a><ol><li><a href="#header-1">Gates, per row of the sheet</a></li></ol></li>
+<li><a href="#website">Website</a></li>
+<li><a href="#gbp">Google Business Profile</a></li>
+<li><a href="#logo-search">Logo image search</a></li>
+<li><a href="#candidates">Logo candidates</a></li>
+<li><a href="#sheet">Variant sheet</a></li>
+<li><a href="#links">Links (2 held for review)</a></li>
+<li><a href="#previews">Previews</a><ol><li><a href="#previews-2">Cell N  TRAVISSE PICK, applied</a></li></ol></li>
+</ol></nav>
+<section id="header">
+<p class="links"><a class="ext" href="http://www.eatmonza.com/" target="_blank" rel="noopener">Website &#8599;</a> <a class="ext" href="https://order.toasttab.com/online/monza.carmellos" target="_blank" rel="noopener">ordering: order.toasttab.com/online/monza.carmellos &#8599;</a> <a class="ext" href="https://www.toasttab.com/monza.carmellos/giftcards?utm_source=undefined&amp;utm_content=online--monza.carmellos&amp;utm_medium=toast_sites&amp;utm_campaign=giftcards" target="_blank" rel="noopener">ordering: toasttab.com/monza.carmellos/giftcards?utm_sourc &#8599;</a> <a class="ext" href="https://www.eatmonza.com/order" target="_blank" rel="noopener">ordering: eatmonza.com/order &#8599;</a> <a class="ext" href="http://www.eatmonza.com/menu/" target="_blank" rel="noopener">menu: eatmonza.com/menu/ &#8599;</a> <a class="ext" href="https://carmellos.com/wp-content/uploads/2025/07/New-Monza-Menu-2025.pdf" target="_blank" rel="noopener">menu: carmellos.com/wp-content/uploads/2025/07/New-Mon &#8599;</a> <a class="ext" href="http://www.eatmonza.com/wp-content/uploads/2025/04/Monza-Menu-2025-Spring-Drinks-WEBSITE-1.pdf" target="_blank" rel="noopener">menu: eatmonza.com/wp-content/uploads/2025/04/Monza-Me &#8599;</a> <a class="ext" href="http://www.eatmonza.com/manassas-menu/" target="_blank" rel="noopener">menu: eatmonza.com/manassas-menu/ &#8599;</a> <a class="ext" href="http://www.eatmonza.com/express-catering/" target="_blank" rel="noopener">catering: eatmonza.com/express-catering/ &#8599;</a> <a class="ext" href="http://www.eatmonza.com/events/" target="_blank" rel="noopener">events: eatmonza.com/events/ &#8599;</a> <a class="ext" href="https://www.eatmonza.com/careers" target="_blank" rel="noopener">careers_jobs: eatmonza.com/careers &#8599;</a> <a class="ext" href="https://www.facebook.com/eatmonza" target="_blank" rel="noopener">facebook: facebook.com/eatmonza &#8599;</a> <a class="ext" href="https://www.instagram.com/eatmonza/" target="_blank" rel="noopener">instagram: instagram.com/eatmonza/ &#8599;</a> <a class="ext" href="https://x.com/eatmonza" target="_blank" rel="noopener">x_twitter: x.com/eatmonza &#8599;</a> <a class="ext" href="https://www.tiktok.com/@losgirasolescomida" target="_blank" rel="noopener">tiktok: tiktok.com/@losgirasolescomida &#8599;</a> <a class="ext" href="https://www.tiktok.com/@formulaonexedits_" target="_blank" rel="noopener">tiktok: tiktok.com/@formulaonexedits_ &#8599;</a> <a class="ext" href="https://order.toasttab.com/egiftcards/monza.carmellos" target="_blank" rel="noopener">gift_cards: order.toasttab.com/egiftcards/monza.carmellos &#8599;</a> <a class="ext" href="http://www.eatmonza.com/cards/" target="_blank" rel="noopener">loyalty_rewards: eatmonza.com/cards/ &#8599;</a></p>
+<div class="hdr"><div><p style="font-size:44px;font-weight:700;">Monza</p>
+<p style="font-size:20px;color:#444444;margin-top:6px;">Manassas, VA   ·   request ldlzh4nmfded6nq0qm34xx22   ·   full order</p>
+<p style="font-size:29px;font-weight:700;color:#1B5E20;margin-top:22px;">Fable's default: A</p>
+<p style="font-size:19px;margin-top:6px;">card knockout at Fable's pick</p>
+<p style="font-size:16px;color:#666666;margin-top:8px;">Confidence: medium   ·   flags: mark_element_omitted, brand_environment_minimum_evidence_unassessed, instagram_grid_not_captured</p>
+<p style="font-size:16px;color:#666666;margin-top:4px;">Cell A = card knockout, primary #BF431F, band #373435 (Fable's pick), text #FFFFFF, print digit #FFFFFF</p></div><div class="cell"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/d4bd4a85181b-default-cell.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/d4bd4a85181b-default-cell.png" alt="default cell"></a><p>Fable's default cell A (native sheet pixels, click to open)</p><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/d1a0f7b40867-logo-3x.png" target="_blank" title="open the 3x crop"><img class="zoom3x" src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/d1a0f7b40867-logo-3x.png" alt="logo at 3x"></a><p><b>Logo at 3x (what prints).</b> Final upload 1026x253px, source 1006px (native), recorded on the candidate, upscale 1.02x. Edge quality: ok. Soft-edge share 0.9191, stair-step score 0.275.</p></div></div>
+<p id="header-1" style="font-size:24px;font-weight:700;margin-top:18px;">Gates, per row of the sheet</p>
+<p style="font-size:18px;font-weight:700;color:#8A5A00;margin-top:8px;">card knockout: 16 of 17 gates pass, nothing blocking</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">whiteblob (warning): opaque near-white region(s) facing transparency — likely leftover back</p>
+<p style="font-size:18px;font-weight:700;color:#1B5E20;margin-top:8px;">full lockup, white letters with authored orange and red fills: no gate results in run.json for fix/card-lockup-white-accents.png</p>
+<p style="font-size:18px;font-weight:700;color:#8A5A00;margin-top:8px;">words only on the mark's charcoal ink: 16 of 17 gates pass, nothing blocking</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">whiteblob (warning): opaque near-white region(s) facing transparency — likely leftover back</p>
+<p style="font-size:18px;font-weight:700;color:#8A5A00;margin-top:8px;">words only on charcoal, brick-orange site band (site nav and CTA token): 16 of 17 gates pass, nothing blocking</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">whiteblob (warning): opaque near-white region(s) facing transparency — likely leftover back</p>
+<p style="font-size:18px;font-weight:700;color:#B71C1C;margin-top:8px;">stacked emblem only (rule and wordmark removed), white with authored orange and red fills, A's palette: 14 of 17 gates pass, 1 blocking</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">holes (warning): no_enclosed_counters</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">whiteblob (warning): opaque near-white region(s) facing transparency — likely leftover back</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">ink-retention (blocks, can be overridden): authored_ink_lost</p>
+<p style="font-size:18px;font-weight:700;color:#B71C1C;margin-top:8px;">stacked emblem only, white with authored fills, on the mark's charcoal with the brick-orange site band: 14 of 17 gates pass, 1 blocking</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">holes (warning): no_enclosed_counters</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">whiteblob (warning): opaque near-white region(s) facing transparency — likely leftover back</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">ink-retention (blocks, can be overridden): authored_ink_lost</p>
+<p style="font-size:18px;font-weight:700;color:#B71C1C;margin-top:8px;">stacked emblem only, white with authored fills, on black with the brick-orange band (substitute for the refused authored-ink cell): 14 of 17 gates pass, 1 blocking</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">holes (warning): no_enclosed_counters</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">whiteblob (warning): opaque near-white region(s) facing transparency — likely leftover back</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">ink-retention (blocks, can be overridden): authored_ink_lost</p>
+</section>
+<section id="website">
+<h2>Website</h2><p class="sub"><a class="ext" href="http://www.eatmonza.com/" target="_blank" rel="noopener">http://www.eatmonza.com/</a></p>
+<p class="links"><a class="ext" href="http://www.eatmonza.com/" target="_blank" rel="noopener">Open website &#8599;</a></p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/0ac7f5bda2d6-desktop.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/0ac7f5bda2d6-desktop.jpg" loading="lazy" alt="website desktop screenshot"></a></div><p class="cap">Desktop screenshot from the run's evidence (evidence/website-visual/desktop.png).</p>
+</section>
+<section id="gbp">
+<h2>Google Business Profile</h2><p class="sub">place id ChIJX3I2qHVctokRh74s3QpT0B4</p>
+<p class="links"><a class="ext" href="https://www.google.com/maps/place/?q=place_id:ChIJX3I2qHVctokRh74s3QpT0B4" target="_blank" rel="noopener">Google Maps place &#8599;</a> <a class="ext" href="https://www.google.com/search?q=Monza%20Manassas%2C%20VA" target="_blank" rel="noopener">Google search &#8599;</a></p>
+<p style="font-size:17px;">Place photos already downloaded for this run (10), at the size the run fetched. Green frame = a photo Fable cited for the sign or interior.</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/36aef87130de-gbp-photo-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/36aef87130de-gbp-photo-01.jpg" loading="lazy" alt="#1 owner photo  2048x1530"></a><figcaption>#1 owner photo  2048x1530</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/9c25ba10a01f-gbp-photo-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/9c25ba10a01f-gbp-photo-02.jpg" loading="lazy" alt="#2 owner photo  4032x3024"></a><figcaption>#2 owner photo  4032x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/53bc22ab7b18-gbp-photo-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/53bc22ab7b18-gbp-photo-03.jpg" loading="lazy" alt="#3 by Shaun Surette  4000x2252"></a><figcaption>#3 by Shaun Surette  4000x2252</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/99d195498227-gbp-photo-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/99d195498227-gbp-photo-04.jpg" loading="lazy" alt="#4 by Karisa Crawley  3000x4000"></a><figcaption>#4 by Karisa Crawley  3000x4000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/ad5cdb67f038-gbp-photo-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/ad5cdb67f038-gbp-photo-05.jpg" loading="lazy" alt="#5 by Haja's Galaxie  3024x4032"></a><figcaption>#5 by Haja's Galaxie  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/206b8decd78b-gbp-photo-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/206b8decd78b-gbp-photo-06.jpg" loading="lazy" alt="#6 by Jenn B  4032x3024"></a><figcaption>#6 by Jenn B  4032x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/e712aa84c87e-gbp-photo-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/e712aa84c87e-gbp-photo-07.jpg" loading="lazy" alt="#7 by Captain National Express  4032x3024"></a><figcaption>#7 by Captain National Express  4032x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/0b2da1355b81-gbp-photo-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/0b2da1355b81-gbp-photo-08.jpg" loading="lazy" alt="#8 by Kathy Ghadban  3600x4800"></a><figcaption>#8 by Kathy Ghadban  3600x4800</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/341eb5fd51af-gbp-photo-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/341eb5fd51af-gbp-photo-09.jpg" loading="lazy" alt="#9 by Claire Hedgespeth  3000x4000"></a><figcaption>#9 by Claire Hedgespeth  3000x4000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/7df478981a75-gbp-photo-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/7df478981a75-gbp-photo-10.jpg" loading="lazy" alt="#10 by Sarah  4080x3072"></a><figcaption>#10 by Sarah  4080x3072</figcaption></figure></div>
+<p style="font-size:17px;margin-top:10px;">Google Maps &quot;Vibe&quot; photos from the evidence build (Google's own in-store/atmosphere category)</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/6751f8b2a911-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/6751f8b2a911-01.jpg" loading="lazy" alt="Vibe  4032x3024"></a><figcaption>Vibe  4032x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/daa88fb441de-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/daa88fb441de-02.jpg" loading="lazy" alt="Vibe  13312x6656"></a><figcaption>Vibe  13312x6656</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/2bc1f7013576-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/2bc1f7013576-03.jpg" loading="lazy" alt="Vibe  4032x3024"></a><figcaption>Vibe  4032x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/e712aa84c87e-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/e712aa84c87e-04.jpg" loading="lazy" alt="Vibe  4032x3024"></a><figcaption>Vibe  4032x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/bcfc43ac5d84-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/bcfc43ac5d84-05.jpg" loading="lazy" alt="Vibe  13312x6656"></a><figcaption>Vibe  13312x6656</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/8b355e22893d-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/8b355e22893d-06.jpg" loading="lazy" alt="Vibe  4032x3024"></a><figcaption>Vibe  4032x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/8dc80cb8ff32-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/8dc80cb8ff32-07.jpg" loading="lazy" alt="Vibe  3024x4032"></a><figcaption>Vibe  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/ae536e18f4b0-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/ae536e18f4b0-08.jpg" loading="lazy" alt="Vibe  13312x6656"></a><figcaption>Vibe  13312x6656</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/7fa2e73c9406-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/7fa2e73c9406-09.jpg" loading="lazy" alt="Vibe  3213x5712"></a><figcaption>Vibe  3213x5712</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/03ea3afbffe0-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/03ea3afbffe0-10.jpg" loading="lazy" alt="Vibe  13312x6656"></a><figcaption>Vibe  13312x6656</figcaption></figure></div>
+<p style="font-size:17px;margin-top:10px;">Live Google Maps photo view, reused from the earlier capture under review/</p>
+<p style="font-size:14px;color:#666666;margin-top:4px;">reused the cached capture under review/</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/cc325229f9e5-google-maps-photos.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/cc325229f9e5-google-maps-photos.jpg" loading="lazy" alt="Google Maps photo view"></a></div>
+</section>
+<section id="logo-search">
+<h2>Logo image search</h2><p class="sub">&quot;Monza Manassas logo&quot;</p>
+<p class="links"><a class="ext" href="https://www.google.com/search?tbm=isch&amp;q=Monza%20Manassas%20logo" target="_blank" rel="noopener">Open Google Images &#8599;</a></p>
+<div class="gray">Logo image search skipped (--skip-google) and no cached results under review/logo-search/.</div>
+</section>
+<section id="candidates">
+<h2>Logo candidates</h2><p class="sub">from the evidence packet; green frame = the file Fable chose. Gray background so white knockouts stay visible.</p>
+<p class="links"><a class="ext" href="http://www.eatmonza.com/" target="_blank" rel="noopener">Website &#8599;</a></p>
+<div class="grid cols3"><figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/9e442f930a27-01-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/9e442f930a27-01-first_party_other.png" loading="lazy" alt="01-first_party_other.png  1046x2681
+first_party_other, traced cut"></a><figcaption>01-first_party_other.png  1046x2681<br>first_party_other, traced cut<br><a class="ext" href="http://www.eatmonza.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/ab913342df42-02-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/ab913342df42-02-first_party_other.png" loading="lazy" alt="02-first_party_other.png  1046x2681
+first_party_other, traced cut"></a><figcaption>02-first_party_other.png  1046x2681<br>first_party_other, traced cut<br><a class="ext" href="http://www.eatmonza.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/64cd22415444-03-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/64cd22415444-03-first_party_other.png" loading="lazy" alt="03-first_party_other.png  1046x2681
+first_party_other, traced cut"></a><figcaption>03-first_party_other.png  1046x2681<br>first_party_other, traced cut<br><a class="ext" href="http://www.eatmonza.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/518fd0d564f3-04-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/518fd0d564f3-04-first_party_other.png" loading="lazy" alt="04-first_party_other.png  1026x270
+first_party_other"></a><figcaption>04-first_party_other.png  1026x270<br>first_party_other<br><a class="ext" href="http://www.eatmonza.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C" class="framed"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/0abdc85505b7-05-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/0abdc85505b7-05-first_party_other.png" loading="lazy" alt="05-first_party_other.png  1026x270
+first_party_other, traced cut
+FABLE'S PICK"></a><figcaption style="font-weight:700">05-first_party_other.png  1026x270<br>first_party_other, traced cut<br>FABLE'S PICK<br><a class="ext" href="http://www.eatmonza.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/3ea0850c1050-06-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/3ea0850c1050-06-first_party_other.png" loading="lazy" alt="06-first_party_other.png  600x900
+first_party_other"></a><figcaption>06-first_party_other.png  600x900<br>first_party_other<br><a class="ext" href="http://www.eatmonza.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/6c170a6fd553-07-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/6c170a6fd553-07-first_party_header.png" loading="lazy" alt="07-first_party_header.png  56x150
+site header"></a><figcaption>07-first_party_header.png  56x150<br>site header<br><a class="ext" href="http://www.eatmonza.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/6398fa034aa6-08-social.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/6398fa034aa6-08-social.png" loading="lazy" alt="08-social.png  180x180
+social"></a><figcaption>08-social.png  180x180<br>social<br><a class="ext" href="https://facebook.com/eatmonza" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/8e5c2a967e15-09-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/8e5c2a967e15-09-first_party_other.png" loading="lazy" alt="09-first_party_other.png  1259x1536
+first_party_other"></a><figcaption>09-first_party_other.png  1259x1536<br>first_party_other<br><a class="ext" href="http://www.eatmonza.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure></div>
+</section>
+<section id="sheet">
+<h2>Variant sheet</h2><p class="sub">Fable's default A framed in green. Reply with one letter.</p>
+<p class="links"></p>
+<div class="shot zoom" title="click to toggle native size"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/3fb80a828a7e-variant-sheet-marked.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/3fb80a828a7e-variant-sheet-marked.jpg" loading="lazy" alt="variant sheet"></a></div><p class="cap">variants/variant-sheet.png at 3040 of 3158px wide, revision 11. In the HTML page click the sheet to toggle native size.</p>
+</section>
+<section id="links">
+<h2>Links</h2><p class="sub">the link automation results for this location, one row per category; held rows need a human decision. Click a URL to open it.</p>
+<p class="links"></p>
+<p style="font-size:15px;color:#444444;">Run: review stage no writes; no link writes applied; by fulfill-location (Claude Fable 5.1) 2026-10-02. Transport: Codex handoff (codex-extension.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Website bootstrap: not_needed.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Discovery report link-discovery-report.json (2026-10-02 22:02): 18 categories, 4 for manual review, 0 proposed field updates, 3 proposed events.</p>
+<p style="font-size:15px;font-weight:700;margin-top:8px;">20 categories: 0 written, 4 verified or already live, 2 held for review, 0 pending browser, 5 rejected, 9 none found.</p>
+<table class="links"><thead><tr><th>Category</th><th>URL</th><th>Status</th><th>Evidence</th></tr></thead><tbody><tr class="st-rejected"><td class="cat">Online ordering</td><td class="url"><a class="ext" href="https://www.eatmonza.com/order" target="_blank" rel="noopener">eatmonza.com/order</a></td><td><span class="chip" style="background:#6B6B6B">rejected: Site returns 'Nothing found for Order' (soft 404, Codex extension read).</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-rejected"><td class="cat">Menu</td><td class="url"><a class="ext" href="http://www.eatmonza.com/manassas-menu/" target="_blank" rel="noopener">eatmonza.com/manassas-menu/</a></td><td><span class="chip" style="background:#6B6B6B">rejected: Soft 404 ('Nothing found for Manassas Menu').</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-ready"><td class="cat">Facebook</td><td class="url"><a class="ext" href="https://www.facebook.com/eatmonza" target="_blank" rel="noopener">facebook.com/eatmonza</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">Linked from the site footer on every page; the Codex extension read it live (final URL facebook.com/eatmonza). Destination-side signal: the Graph API resolves the handle to a page whose avatar (180 px, is_silhouette false) is the Monza stacked lockup, the same mark as the site header. Write via branding set (facebook_url).</div></td><td class="ev">title &quot;(20+) Facebook&quot;; the website links to it; social destination identity signal</td></tr>
+<tr class="st-ready"><td class="cat">Instagram</td><td class="url"><a class="ext" href="https://www.instagram.com/eatmonza/" target="_blank" rel="noopener">instagram.com/eatmonza/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">Linked from the site footer; read by me in the live Boostly.com tab: 'EatMonza', 1,009 posts, 1,133 followers, bio 'Italian bistro in the heart of Old Town Manassas', address line 9405 Battle St, Manassas, Virginia 20110, link www.eatmonza.com. Write via branding set (instagram_url).</div></td><td class="ev">title &quot;Instagram&quot;; the website links to it; social destination identity signal</td></tr>
+<tr class="st-ready"><td class="cat">X (Twitter)</td><td class="url"><a class="ext" href="https://x.com/eatmonza" target="_blank" rel="noopener">x.com/eatmonza</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">Linked from the site footer (twitter icon); the Codex extension read it live with title 'Monza (@EatMonza) / X' (business name match plus the site backlink). Write via branding set (x_url).</div></td><td class="ev">title &quot;Monza (@EatMonza) / X&quot;; social destination identity signal</td></tr>
+<tr class="st-rejected"><td class="cat">TikTok</td><td class="url"><a class="ext" href="https://www.tiktok.com/@formulaonexedits_" target="_blank" rel="noopener">tiktok.com/@formulaonexedits_</a></td><td><span class="chip" style="background:#6B6B6B">rejected: Search result, a Formula 1 fan account (identity mismatch). No Monza...</span><div class="why">Search result, a Formula 1 fan account (identity mismatch). No Monza TikTok exists.</div></td><td class="ev">verified live (codex extension)</td></tr>
+<tr class="st-none"><td class="cat">YouTube</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-rejected"><td class="cat">Careers</td><td class="url"><a class="ext" href="https://www.eatmonza.com/careers" target="_blank" rel="noopener">eatmonza.com/careers</a></td><td><span class="chip" style="background:#6B6B6B">rejected: Soft 404; /jobs, /employment and /career also 'Nothing found'. No car...</span><div class="why">Soft 404; /jobs, /employment and /career also 'Nothing found'. No careers link exists.</div></td><td class="ev">title &quot;Nothing found for Careers&quot;; URL slug names the business; soft not found page detected; found as an anchor; official site careers candidate; careers page level; page broken; Destination rendered a not-found error page</td></tr>
+<tr class="st-ready"><td class="cat">Catering</td><td class="url"><a class="ext" href="http://www.eatmonza.com/express-catering/" target="_blank" rel="noopener">eatmonza.com/express-catering/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">Live first-party page (200, title 'Express Catering Services, Food Delivery Manassas VA'), linked from the home page and nav. Write as the Catering custom event.</div></td><td class="ev">title &quot;Express Catering Services, Food Delivery Manassas VA |&quot;; the website links to it; URL slug names the business</td></tr>
+<tr class="st-rejected"><td class="cat">Events</td><td class="url"><a class="ext" href="http://www.eatmonza.com/events/" target="_blank" rel="noopener">eatmonza.com/events/</a></td><td><span class="chip" style="background:#6B6B6B">rejected: Live Tribe Events calendar page ('Upcoming Events') but the page stat...</span><div class="why">Live Tribe Events calendar page ('Upcoming Events') but the page states there are no upcoming events and every dated entry is past (Luna review in the report agrees; the ?ical=1 feed and wp-json tribe endpoint were blocked or thin). Events stays disabled; recheck at a later run.</div></td><td class="ev">title &quot;Upcoming Events&quot;; the website links to it; URL slug names the business; found as an anchor</td></tr>
+<tr class="st-none"><td class="cat">Reservations</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-held"><td class="cat">Gift cards</td><td class="url"><a class="ext" href="https://order.toasttab.com/egiftcards/monza.carmellos" target="_blank" rel="noopener">order.toasttab.com/egiftcards/monza.carmellos</a></td><td><span class="chip" style="background:#B7791F">held for review</span><div class="why">Live Toast e-gift-card page for the shared Monza/Carmello's account (the site's 'Gift Cards' nav link). Gift cards are held by policy for a human decision; this is also what the stored ordering_url resolves to.</div></td><td class="ev">title &quot;Toast EGiftCards&quot;; the website links to it; URL slug names the business; found as an anchor</td></tr>
+<tr class="st-held"><td class="cat">Loyalty / rewards</td><td class="url"><a class="ext" href="http://www.eatmonza.com/cards/" target="_blank" rel="noopener">eatmonza.com/cards/</a></td><td><span class="chip" style="background:#B7791F">held for review</span><div class="why">Live first-party 'Cards &amp; Rewards' page (the site's CARDS &amp; REWARDS nav item). Loyalty links are held by policy for a human decision.</div></td><td class="ev">title &quot;Cards &amp; Rewards |&quot;; the website links to it; URL slug names the business; found as an anchor</td></tr>
+<tr class="st-none"><td class="cat">iOS app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Android app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">App downloads</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Other</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">careers jobs (404s)</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">events with a future date (calendar says none upcoming)</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">tiktok (no business account)</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr></tbody></table>
+</section>
+<section id="previews">
+<h2>Previews</h2><p class="sub">harness signage preview and AI mockups per letter; previews, not proofs (QR drift, invented phone content). Click any image to open the native file.</p>
+<p class="links"></p>
+<p id="previews-2" style="font-size:24px;font-weight:700;color:#B7791F;margin-top:14px;">Cell N  TRAVISSE PICK, applied</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">words only on charcoal, brick-orange site band (site nav and CTA token). card #373435 on #BF431F, text #FFFFFF (band one-off: one-off #BF431F). signage preview, 2 AI mockups.</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/83645b2994ff-signage-preview-N.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/83645b2994ff-signage-preview-N.jpg" loading="lazy" alt="signage preview N"></a></div><p class="cap">review/signage-preview-N.png: harness signage preview (POP, sticker, card, to-go), click to open.</p>
+<div class="grid cols4"><figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/87ff31b6126a-box-N.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/87ff31b6126a-box-N.jpg" loading="lazy" alt="box (AI)  box-N.png
+verdict not filled in yet (prompts.md)"></a><figcaption>box (AI)  box-N.png<br>verdict not filled in yet (prompts.md)</figcaption></figure>
+<figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/0452726fe021-scan-N.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/monza-manassas/0452726fe021-scan-N.jpg" loading="lazy" alt="scan (AI)  scan-N.png
+verdict not filled in yet (prompts.md)"></a><figcaption>scan (AI)  scan-N.png<br>verdict not filled in yet (prompts.md)</figcaption></figure></div>
+<p style="font-size:15px;font-weight:700;color:#8A1C1C;margin-top:10px;">Not in review-canvas.png: the previews would add about 1.6 MB to a PNG already near 51 MB (budget 25 MB). This page and the files above are the review surface for them.</p>
+</section>
+<script>
+  for (const el of document.querySelectorAll('.shot.zoom')) {
+    el.addEventListener('click', (ev) => { ev.preventDefault(); el.classList.toggle('native'); });
+  }
+  // Sidebar: highlight the section in view, jump instantly on click (no scroll animation, Travisse 2026-09-29), hamburger below 1000px.
+  (() => {
+    const toc = document.getElementById('toc');
+    const links = new Map([...toc.querySelectorAll('a[href^="#"]')].map((a) => [a.getAttribute('href').slice(1), a]));
+    const sections = [...document.querySelectorAll('section[id]')];
+    const visible = new Set();
+    const setActive = () => {
+      const current = sections.find((s) => visible.has(s)) ?? sections.find((s) => s.getBoundingClientRect().bottom > 0) ?? sections[sections.length - 1];
+      for (const a of links.values()) a.classList.remove('active');
+      if (current) links.get(current.id)?.classList.add('active');
+    };
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); }
+      setActive();
+    }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+    for (const s of sections) io.observe(s);
+    setActive();
+    const toggle = toc.querySelector('.toc-toggle');
+    toggle.addEventListener('click', () => { const open = toc.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
+    for (const a of links.values()) a.addEventListener('click', (ev) => {
+      const target = document.getElementById(a.getAttribute('href').slice(1));
+      if (!target) return;
+      ev.preventDefault();
+      target.scrollIntoView({ behavior: 'instant', block: 'start' });
+      history.replaceState(null, '', a.getAttribute('href'));
+      toc.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
+    });
+  })();
+</script>
+</body></html>

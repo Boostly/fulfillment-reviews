@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Boludo review</title>
+<style>
+  :root { color-scheme: light; scroll-behavior: auto; }
+  body { margin: 0; padding: 32px 40px 80px 280px; background: #fff; color: #111; font-family: Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.35; max-width: 2040px; box-sizing: border-box; }
+  h2 { font-size: 34px; margin: 0 0 4px; }
+  section { padding: 28px 0; border-bottom: 3px solid #ccc; scroll-margin-top: 16px; }
+  section:first-child { padding-top: 0; }
+  p[id] { scroll-margin-top: 16px; }
+  .toc { position: fixed; top: 0; left: 0; bottom: 0; width: 240px; box-sizing: border-box; padding: 24px 16px; overflow-y: auto; background: #f4f4f4; border-right: 1px solid #ddd; font-size: 15px; z-index: 10; }
+  .toc ol { list-style: none; margin: 0; padding: 0; }
+  .toc ol ol { margin: 2px 0 6px 14px; }
+  .toc ol ol a { font-size: 13px; color: #555; padding: 3px 8px; }
+  .toc a { display: block; padding: 6px 8px; border-radius: 4px; color: #222; line-height: 1.3; }
+  .toc a:hover { background: #e6e6e6; }
+  .toc a.active { background: #1b5e20; color: #fff; font-weight: 700; }
+  .toc a.top { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+  .toc-toggle { display: none; }
+  @media (max-width: 1000px) {
+    body { padding: 64px 20px 80px; }
+    .toc { position: sticky; top: 0; bottom: auto; width: auto; margin: -64px -20px 24px; padding: 8px 12px; border-right: 0; border-bottom: 1px solid #ddd; max-height: 80vh; }
+    .toc-toggle { display: block; font: inherit; font-weight: 700; background: none; border: 1px solid #bbb; border-radius: 4px; padding: 6px 12px; cursor: pointer; }
+    .toc-toggle::before { content: "\2630  "; }
+    .toc:not(.open) ol { display: none; }
+    .toc ol { padding-top: 8px; }
+  }
+  p { margin: 4px 0; }
+  p.sub { color: #555; font-size: 17px; margin-bottom: 14px; }
+  p.cap { color: #666; font-size: 15px; }
+  .gray { background: #ededed; color: #444; padding: 26px; font-size: 20px; border-radius: 4px; }
+  .hdr { display: flex; gap: 30px; align-items: flex-start; }
+  .hdr > div:first-child { flex: 1; }
+  .cell { flex: 0 0 auto; max-width: 520px; }
+  .cell img { display: block; max-width: 100%; border: 6px solid #1b5e20; box-sizing: border-box; }
+  .cell p { color: #1b5e20; font-weight: 700; font-size: 16px; }
+  .shot { border: 1px solid #ddd; overflow: auto; max-height: 90vh; }
+  .shot img { display: block; width: 100%; height: auto; }
+  /* 2026-10-01: a zoomable shot (the variant sheet) is never height-clipped: every row stays visible at page width,
+     and native size scrolls inside the container (overflow auto) instead of hiding rows below 90vh. */
+  .shot.zoom { max-height: none; }
+  .shot.zoom img { cursor: zoom-in; }
+  .cell img.zoom3x { margin-top: 10px; border: 3px solid #444; image-rendering: pixelated; }
+  .cell img.zoom3x.bad { border-color: #B71C1C; }
+  .cell.hold img:first-of-type { border-color: #B71C1C; }
+  .shot.zoom.native img { width: auto; max-width: none; cursor: zoom-out; }
+  .grid { display: grid; gap: 14px; }
+  .grid.cols3 { grid-template-columns: repeat(3, 1fr); }
+  .grid.cols4 { grid-template-columns: repeat(4, 1fr); }
+  .grid.cols5 { grid-template-columns: repeat(5, 1fr); }
+  .grid.cols6 { grid-template-columns: repeat(6, 1fr); }
+  figure { margin: 0; background: #ededed; }
+  figure.framed { outline: 6px solid #1b5e20; outline-offset: -6px; }
+  figure a { display: block; }
+  figure img { display: block; width: 100%; height: 360px; object-fit: contain; }
+  .grid.cols4 figure img { height: 280px; }
+  .grid.cols5 figure img, .grid.cols6 figure img { height: 220px; }
+  figcaption { font-size: 15px; padding: 6px 4px 10px; background: #fff; color: #222; }
+  a { color: inherit; text-decoration: none; }
+  a.ext { color: #0b57d0; text-decoration: underline; text-underline-offset: 2px; word-break: break-all; }
+  a.ext:hover { color: #083a8c; }
+  p.links { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 16px; font-size: 15px; }
+  p.links a.ext { background: #eef3fc; border: 1px solid #c9d8f5; border-radius: 4px; padding: 3px 10px; text-decoration: none; word-break: normal; }
+  p.links a.ext:hover { background: #dce7fb; }
+  table.links { border-collapse: collapse; width: 100%; font-size: 15px; margin-top: 8px; }
+  table.links th { text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: #666; padding: 6px 10px; border-bottom: 2px solid #ddd; }
+  table.links td { padding: 9px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top; }
+  table.links td.cat { font-weight: 700; white-space: nowrap; }
+  table.links td.url { max-width: 380px; word-break: break-all; }
+  table.links td.ev { color: #444; max-width: 520px; }
+  table.links .chip { display: inline-block; color: #fff; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
+  table.links .why { color: #444; font-size: 14px; margin-top: 5px; max-width: 420px; }
+  table.links .none { color: #999; }
+  table.links tr.st-held td { background: #fff8e8; }
+  table.links tr.st-rejected td { color: #777; }
+  table.links tr.st-rejected .chip { text-transform: none; letter-spacing: 0; white-space: normal; }
+  table.links tr.st-written td { background: #eef7ee; }
+</style></head><body id="top">
+<nav class="toc" id="toc"><a class="top" href="/" style="margin-bottom:12px">&larr; All locations</a><button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-list">Sections</button>
+<ol id="toc-list">
+<li><a href="#top" class="top">Top</a></li>
+<li><a href="#header">Overview</a><ol><li><a href="#header-1">Gates, per row of the sheet</a></li></ol></li>
+<li><a href="#website">Website</a></li>
+<li><a href="#gbp">Google Business Profile</a></li>
+<li><a href="#logo-search">Logo image search</a></li>
+<li><a href="#candidates">Logo candidates</a></li>
+<li><a href="#sheet">Variant sheet</a></li>
+<li><a href="#links">Links (1 held for review)</a></li>
+<li><a href="#previews">Previews</a><ol><li><a href="#previews-2">Cell U  TRAVISSE PICK, applied</a></li></ol></li>
+</ol></nav>
+<section id="header">
+<p class="links"><a class="ext" href="https://www.boludoempanadas.com/" target="_blank" rel="noopener">Website &#8599;</a> <a class="ext" href="https://www.boludoempanadas.com/" target="_blank" rel="noopener">website: boludoempanadas.com/ &#8599;</a> <a class="ext" href="https://www.boludoempanadas.com/store/23369/Boludo%20Downtown" target="_blank" rel="noopener">ordering: boludoempanadas.com/store/23369/Boludo%20Downtow &#8599;</a> <a class="ext" href="https://www.toasttab.com/local/order/boludo-downtown/r-f921dff0-d272-42f0-8ef9-8ec6fa394395" target="_blank" rel="noopener">ordering: toasttab.com/local/order/boludo-downtown/r-f921d &#8599;</a> <a class="ext" href="https://www.boludoempanadas.com/menu" target="_blank" rel="noopener">menu: boludoempanadas.com/menu &#8599;</a> <a class="ext" href="https://www.boludoempanadas.com/catering" target="_blank" rel="noopener">catering: boludoempanadas.com/catering &#8599;</a> <a class="ext" href="https://www.boludoempanadas.com/careers" target="_blank" rel="noopener">careers_jobs: boludoempanadas.com/careers &#8599;</a> <a class="ext" href="https://www.instagram.com/boludo.downtown" target="_blank" rel="noopener">instagram: instagram.com/boludo.downtown &#8599;</a> <a class="ext" href="https://www.facebook.com/profile.php?id=61588978114811" target="_blank" rel="noopener">facebook: facebook.com/profile.php?id=61588978114811 &#8599;</a> <a class="ext" href="https://www.boludoempanadas.com/private-events" target="_blank" rel="noopener">events: boludoempanadas.com/private-events &#8599;</a> <a class="ext" href="https://www.tiktok.com/@pao_minneapolis" target="_blank" rel="noopener">tiktok: tiktok.com/@pao_minneapolis &#8599;</a> <a class="ext" href="https://www.tiktok.com/@iluvmelissadanielle" target="_blank" rel="noopener">tiktok: tiktok.com/@iluvmelissadanielle &#8599;</a></p>
+<div class="hdr"><div><p style="font-size:44px;font-weight:700;">Boludo</p>
+<p style="font-size:20px;color:#444444;margin-top:6px;">Minneapolis, MN   ·   request uncfe0gmlyo3j6cnwy037wc2   ·   full order</p>
+<p style="font-size:29px;font-weight:700;color:#1B5E20;margin-top:22px;">Fable's default: S</p>
+<p style="font-size:19px;margin-top:6px;">Fable's decision as a pickable cell: authored gold wordmark on the black card, gold band #D09020, black print digit, and the sticker asset is the wordmark on its own black panel (gold on white alone is 2.73:1 and fails the sticker gate)</p>
+<p style="font-size:16px;color:#666666;margin-top:8px;">Confidence: high   ·   flags: mark_element_omitted, brand_environment_minimum_evidence_unassessed, sticker_on_white_low_contrast, opaque_panel_candidate_rejected</p>
+<p style="font-size:16px;color:#666666;margin-top:4px;">Cell S = gold wordmark card, sticker on black panel, primary #000000, band #D09020 (Fable's pick), text #FFFFFF, print digit #000000</p></div><div class="cell"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/025212c8c685-default-cell.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/025212c8c685-default-cell.png" alt="default cell"></a><p>Fable's default cell S (native sheet pixels, click to open)</p><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/e90f3366cbee-logo-3x.png" target="_blank" title="open the 3x crop"><img class="zoom3x" src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/e90f3366cbee-logo-3x.png" alt="logo at 3x"></a><p><b>Logo at 3x (what prints).</b> Final upload 1000x143px, source 1500px (native), recorded on the candidate, upscale 0.667x. Edge quality: ok. Soft-edge share 0.9999, stair-step score 0.3145.</p></div></div>
+<p id="header-1" style="font-size:24px;font-weight:700;margin-top:18px;">Gates, per row of the sheet</p>
+<p style="font-size:18px;font-weight:700;color:#1B5E20;margin-top:8px;">card knockout: no gate results in run.json for fix/card/card-knockout-white-1000.png</p>
+<p style="font-size:18px;font-weight:700;color:#1B5E20;margin-top:8px;">full color: all 16 gates pass</p>
+<p style="font-size:18px;font-weight:700;color:#1B5E20;margin-top:8px;">in-store: no gate results in run.json for fix/card/card-knockout-white-1000.png</p>
+<p style="font-size:18px;font-weight:700;color:#1B5E20;margin-top:8px;">gold wordmark card, sticker on black panel: all 16 gates pass</p>
+<p style="font-size:18px;font-weight:700;color:#1B5E20;margin-top:8px;">Travisse ask: G with gold text and tap icon (#D09020), black print digit; sticker on the black panel like S: all 16 gates pass</p>
+</section>
+<section id="website">
+<h2>Website</h2><p class="sub"><a class="ext" href="https://www.boludoempanadas.com/" target="_blank" rel="noopener">https://www.boludoempanadas.com/</a></p>
+<p class="links"><a class="ext" href="https://www.boludoempanadas.com/" target="_blank" rel="noopener">Open website &#8599;</a></p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/4177538e27f7-desktop.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/4177538e27f7-desktop.jpg" loading="lazy" alt="website desktop screenshot"></a></div><p class="cap">Desktop screenshot from the run's evidence (evidence/website-visual/desktop.png).</p>
+</section>
+<section id="gbp">
+<h2>Google Business Profile</h2><p class="sub">place id ChIJrxNBmPAzs1IRkV3SdUOd8QQ</p>
+<p class="links"><a class="ext" href="https://www.google.com/maps/place/?q=place_id:ChIJrxNBmPAzs1IRkV3SdUOd8QQ" target="_blank" rel="noopener">Google Maps place &#8599;</a> <a class="ext" href="https://www.google.com/search?q=Boludo%20Minneapolis%2C%20MN" target="_blank" rel="noopener">Google search &#8599;</a></p>
+<p style="font-size:17px;">Place photos already downloaded for this run (10), at the size the run fetched. Green frame = a photo Fable cited for the sign or interior.</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/ce86bec07e1a-gbp-photo-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/ce86bec07e1a-gbp-photo-01.jpg" loading="lazy" alt="#1 by Donald Boller  4000x3000"></a><figcaption>#1 by Donald Boller  4000x3000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/1fef55c72d09-gbp-photo-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/1fef55c72d09-gbp-photo-02.jpg" loading="lazy" alt="#2 owner photo  650x650"></a><figcaption>#2 owner photo  650x650</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/98ef3a085efb-gbp-photo-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/98ef3a085efb-gbp-photo-03.jpg" loading="lazy" alt="#3 by Cecil Kimaro  3024x3024"></a><figcaption>#3 by Cecil Kimaro  3024x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/88d323fe0a09-gbp-photo-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/88d323fe0a09-gbp-photo-04.jpg" loading="lazy" alt="#4 by Melinda Courter  1179x1094"></a><figcaption>#4 by Melinda Courter  1179x1094</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/a4090e74a384-gbp-photo-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/a4090e74a384-gbp-photo-05.jpg" loading="lazy" alt="#5 by JC Cross  3024x4032"></a><figcaption>#5 by JC Cross  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/3f9bcb7f8e65-gbp-photo-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/3f9bcb7f8e65-gbp-photo-06.jpg" loading="lazy" alt="#6 by Matt Lawellin  3024x4032"></a><figcaption>#6 by Matt Lawellin  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/1cd076a3ec20-gbp-photo-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/1cd076a3ec20-gbp-photo-07.jpg" loading="lazy" alt="#7 by Beau  3072x2304"></a><figcaption>#7 by Beau  3072x2304</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/5d6eb506dc3c-gbp-photo-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/5d6eb506dc3c-gbp-photo-08.jpg" loading="lazy" alt="#8 by Lera  4032x3024"></a><figcaption>#8 by Lera  4032x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/cd935202db96-gbp-photo-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/cd935202db96-gbp-photo-09.jpg" loading="lazy" alt="#9 by Raymond Berkoski  3000x4000"></a><figcaption>#9 by Raymond Berkoski  3000x4000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/acefed96bbba-gbp-photo-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/acefed96bbba-gbp-photo-10.jpg" loading="lazy" alt="#10 by Dan Hedin  4080x3072"></a><figcaption>#10 by Dan Hedin  4080x3072</figcaption></figure></div>
+<p style="font-size:17px;margin-top:10px;">Google Maps &quot;Vibe&quot; photos from the evidence build (Google's own in-store/atmosphere category)</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/23186887d6cf-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/23186887d6cf-01.jpg" loading="lazy" alt="Vibe  4032x2268"></a><figcaption>Vibe  4032x2268</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/de0a88094aa6-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/de0a88094aa6-02.jpg" loading="lazy" alt="Vibe  3024x4032"></a><figcaption>Vibe  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/64c2bc6f3c29-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/64c2bc6f3c29-03.jpg" loading="lazy" alt="Vibe  4000x3000"></a><figcaption>Vibe  4000x3000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/7178bc196076-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/7178bc196076-04.jpg" loading="lazy" alt="Vibe  4032x3024"></a><figcaption>Vibe  4032x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/f987d75e0a4c-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/f987d75e0a4c-05.jpg" loading="lazy" alt="Vibe  3024x4032"></a><figcaption>Vibe  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/92c00115eb84-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/92c00115eb84-06.jpg" loading="lazy" alt="Vibe  4032x2268"></a><figcaption>Vibe  4032x2268</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/e391409e44de-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/e391409e44de-07.jpg" loading="lazy" alt="Vibe  4032x2268"></a><figcaption>Vibe  4032x2268</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/c5a8be4b09b2-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/c5a8be4b09b2-08.jpg" loading="lazy" alt="Vibe  3024x4032"></a><figcaption>Vibe  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/6c2592d2297a-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/6c2592d2297a-09.jpg" loading="lazy" alt="Vibe  4000x3000"></a><figcaption>Vibe  4000x3000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/83b924a63a75-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/83b924a63a75-10.jpg" loading="lazy" alt="Vibe  3024x4032"></a><figcaption>Vibe  3024x4032</figcaption></figure></div>
+<div class="gray">Live Google Maps photo view skipped (--skip-google) and no earlier capture under review/ to reuse.</div>
+</section>
+<section id="logo-search">
+<h2>Logo image search</h2><p class="sub">&quot;Boludo Minneapolis logo&quot;</p>
+<p class="links"><a class="ext" href="https://www.google.com/search?tbm=isch&amp;q=Boludo%20Minneapolis%20logo" target="_blank" rel="noopener">Open Google Images &#8599;</a></p>
+<div class="gray">Logo image search skipped (--skip-google) and no cached results under review/logo-search/.</div>
+</section>
+<section id="candidates">
+<h2>Logo candidates</h2><p class="sub">from the evidence packet; green frame = the file Fable chose. Gray background so white knockouts stay visible.</p>
+<p class="links"><a class="ext" href="https://www.boludoempanadas.com/" target="_blank" rel="noopener">Website &#8599;</a></p>
+<div class="grid cols3"><figure style="background:#8C8C8C" class="framed"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/51642a55db67-01-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/51642a55db67-01-first_party_header.png" loading="lazy" alt="01-first_party_header.png  1500x214
+site header
+FABLE'S PICK"></a><figcaption style="font-weight:700">01-first_party_header.png  1500x214<br>site header<br>FABLE'S PICK<br><a class="ext" href="https://www.boludoempanadas.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/bec6e945a6ba-02-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/bec6e945a6ba-02-first_party_other.png" loading="lazy" alt="02-first_party_other.png  720x720
+favicon"></a><figcaption>02-first_party_other.png  720x720<br>favicon<br><a class="ext" href="https://www.boludoempanadas.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure></div>
+</section>
+<section id="sheet">
+<h2>Variant sheet</h2><p class="sub">Fable's default S framed in green. Reply with one letter.</p>
+<p class="links"></p>
+<div class="shot zoom" title="click to toggle native size"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/be33690d2573-variant-sheet-marked.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/be33690d2573-variant-sheet-marked.jpg" loading="lazy" alt="variant sheet"></a></div><p class="cap">variants/variant-sheet.png at native size, revision 8. In the HTML page click the sheet to toggle native size.</p>
+</section>
+<section id="links">
+<h2>Links</h2><p class="sub">the link automation results for this location, one row per category; held rows need a human decision. Click a URL to open it.</p>
+<p class="links"></p>
+<p style="font-size:15px;color:#444444;">Run: review stage no writes; no link writes applied; by fulfill-boludo (fulfill-location agent) 2026-10-01.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Website bootstrap: held_write.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Ordering URL on file <a class="ext" href="https://www.toasttab.com/local/order/boludo-downtown/r-f921dff0-d272-42f0-8ef9-8ec6fa394395" target="_blank" rel="noopener">https://www.toasttab.com/local/order/boludo-downtown/r-f921dff0-d272-42f0-8ef9-8ec6fa394395</a> (plus diningOption and rwg_token tracking params): not compared. The website's Order Now goes to its own Chowly ordering app at /stores (store picker), whose Downtown card links /store/23369/Boludo%20Downtown: read live, 'St…</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Discovery report link-discovery-report.json (2026-10-01 20:35): 18 categories, 1 for manual review, 0 proposed field updates, 0 proposed events.</p>
+<p style="font-size:15px;font-weight:700;margin-top:8px;">20 categories: 0 written, 6 verified or already live, 1 held for review, 0 pending browser, 2 rejected, 11 none found.</p>
+<table class="links"><thead><tr><th>Category</th><th>URL</th><th>Status</th><th>Evidence</th></tr></thead><tbody><tr class="st-ready"><td class="cat">Website</td><td class="url"><a class="ext" href="https://www.boludoempanadas.com/" target="_blank" rel="noopener">boludoempanadas.com/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">Places websiteUri; live 200; name, address and phone match; the only candidate. Held only because the write itself waits for closeout (website bootstrap).</div></td><td class="ev">verified live (static fetch)</td></tr>
+<tr class="st-held"><td class="cat">Online ordering</td><td class="url"><a class="ext" href="https://www.toasttab.com/local/order/boludo-downtown/r-f921dff0-d272-42f0-8ef9-8ec6fa394395" target="_blank" rel="noopener">toasttab.com/local/order/boludo-downtown/r-f921dff0-d272-42f0-8ef9-8ec6f</a></td><td><span class="chip" style="background:#B7791F">held for review</span><div class="why">Stored ordering_url (tracking params stripped). Right business and address on toast.app, but the ordering page said it is not currently accepting online orders when read, and the website publishes Chowly instead. Same decision as above.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-ready"><td class="cat">Menu</td><td class="url"><a class="ext" href="https://www.boludoempanadas.com/menu" target="_blank" rel="noopener">boludoempanadas.com/menu</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">site nav Menu link; 200; title 'Best Argentinian Restaurant Menu in Minneapolis | Boludo'; menu categories and items on the page.</div></td><td class="ev">title &quot;Best Argentinian Restaurant Menu in Minneapolis | Boludo | Empanadas &amp;&quot;; the website links to it; URL slug names the business</td></tr>
+<tr class="st-ready"><td class="cat">Facebook</td><td class="url"><a class="ext" href="https://www.facebook.com/profile.php?id=61588978114811" target="_blank" rel="noopener">facebook.com/profile.php?id=61588978114811</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">site footer link; the transport read it logged in (name match, Minneapolis, official domain backlink per the report's social_business_signals). Graph API has no profile picture for it (is_silhouette), so it is a new or sparse page; still the page the business itself links. Written through branding set at closeout.</div></td><td class="ev">title &quot;(20+) Facebook&quot;; the website links to it; social destination identity signal</td></tr>
+<tr class="st-ready"><td class="cat">Instagram</td><td class="url"><a class="ext" href="https://www.instagram.com/boludo.downtown" target="_blank" rel="noopener">instagram.com/boludo.downtown</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">site footer link; read live: 'Boludo Downtown Minneapolis', 1,160 followers, 77 posts, bio names Downtown Minneapolis and links boludoempanadas.com (site backlink). Written through branding set at closeout.</div></td><td class="ev">title &quot;Instagram&quot;; the website links to it; social destination identity signal</td></tr>
+<tr class="st-none"><td class="cat">X (Twitter)</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-rejected"><td class="cat">TikTok</td><td class="url"><a class="ext" href="https://www.tiktok.com/@iluvmelissadanielle" target="_blank" rel="noopener">tiktok.com/@iluvmelissadanielle</a></td><td><span class="chip" style="background:#6B6B6B">rejected: identity_mismatch: personal handle, no business signal in the search...</span><div class="why">identity_mismatch: personal handle, no business signal in the search evidence; the transport's navigation to it was refused by the harness, no read attempted.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">YouTube</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-ready"><td class="cat">Careers</td><td class="url"><a class="ext" href="https://www.boludoempanadas.com/careers" target="_blank" rel="noopener">boludoempanadas.com/careers</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">site footer Careers link; 200; title '... Careers in Minneapolis | Boludo'. The report's careers proposal pointed at the homepage; the dedicated /careers page is the right destination and is in the report's verified list.</div></td><td class="ev">title &quot;Best Argentinian Restaurant Careers in Minneapolis | Boludo | Empanada&quot;; the website links to it; URL slug names the business</td></tr>
+<tr class="st-ready"><td class="cat">Catering</td><td class="url"><a class="ext" href="https://www.boludoempanadas.com/catering" target="_blank" rel="noopener">boludoempanadas.com/catering</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">site nav and footer Catering link; 200; title '... Minneapolis Catering | Boludo'.</div></td><td class="ev">title &quot;Best Argentinian Restaurant in Minneapolis Catering | Boludo | Empanad&quot;; the website links to it; URL slug names the business</td></tr>
+<tr class="st-rejected"><td class="cat">Events</td><td class="url"><a class="ext" href="https://www.boludoempanadas.com/private-events" target="_blank" rel="noopener">boludoempanadas.com/private-events</a></td><td><span class="chip" style="background:#6B6B6B">rejected: Private Events is a booking inquiry page, not an events calendar; no...</span><div class="why">Private Events is a booking inquiry page, not an events calendar; no structured future event dates. No Events link. (The report held it only because the Luna check was unavailable.)</div></td><td class="ev">verified live not an events listing (static fetch)</td></tr>
+<tr class="st-none"><td class="cat">Reservations</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Gift cards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Loyalty / rewards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">iOS app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Android app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">App downloads</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Other</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">gift cards (toast e-gift page exists at order.toasttab.com/egiftcards/boludo-downtown but gift cards are held-by-policy, not proposed)</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">loyalty rewards (the chowly ordering app has its own rewards sign-up; not proposed)</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr></tbody></table>
+</section>
+<section id="previews">
+<h2>Previews</h2><p class="sub">harness signage preview and AI mockups per letter; previews, not proofs (QR drift, invented phone content). Click any image to open the native file.</p>
+<p class="links"></p>
+<p id="previews-2" style="font-size:24px;font-weight:700;color:#B7791F;margin-top:14px;">Cell U  TRAVISSE PICK, applied</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Travisse ask: G with gold text and tap icon (#D09020), black print digit; sticker on the black panel like S. card #000000 on #D09020, text #D09020 (band Fable's pick). signage preview, 2 AI mockups.</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/2cd4af9a0052-signage-preview-U.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/2cd4af9a0052-signage-preview-U.jpg" loading="lazy" alt="signage preview U"></a></div><p class="cap">review/signage-preview-U.png: harness signage preview (POP, sticker, card, to-go), click to open.</p>
+<div class="grid cols4"><figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/4903e4c60808-box-U.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/4903e4c60808-box-U.jpg" loading="lazy" alt="box (AI)  box-U.png
+verdict not filled in yet (prompts.md)"></a><figcaption>box (AI)  box-U.png<br>verdict not filled in yet (prompts.md)</figcaption></figure>
+<figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/8df7f77aa015-scan-U.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/boludo-downtown/8df7f77aa015-scan-U.jpg" loading="lazy" alt="scan (AI)  scan-U.png
+verdict not filled in yet (prompts.md)"></a><figcaption>scan (AI)  scan-U.png<br>verdict not filled in yet (prompts.md)</figcaption></figure></div>
+<p style="font-size:15px;font-weight:700;color:#8A1C1C;margin-top:10px;">Not in review-canvas.png: the previews would add about 1.4 MB to a PNG already near 49 MB (budget 25 MB). This page and the files above are the review surface for them.</p>
+</section>
+<script>
+  for (const el of document.querySelectorAll('.shot.zoom')) {
+    el.addEventListener('click', (ev) => { ev.preventDefault(); el.classList.toggle('native'); });
+  }
+  // Sidebar: highlight the section in view, jump instantly on click (no scroll animation, Travisse 2026-09-29), hamburger below 1000px.
+  (() => {
+    const toc = document.getElementById('toc');
+    const links = new Map([...toc.querySelectorAll('a[href^="#"]')].map((a) => [a.getAttribute('href').slice(1), a]));
+    const sections = [...document.querySelectorAll('section[id]')];
+    const visible = new Set();
+    const setActive = () => {
+      const current = sections.find((s) => visible.has(s)) ?? sections.find((s) => s.getBoundingClientRect().bottom > 0) ?? sections[sections.length - 1];
+      for (const a of links.values()) a.classList.remove('active');
+      if (current) links.get(current.id)?.classList.add('active');
+    };
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); }
+      setActive();
+    }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+    for (const s of sections) io.observe(s);
+    setActive();
+    const toggle = toc.querySelector('.toc-toggle');
+    toggle.addEventListener('click', () => { const open = toc.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
+    for (const a of links.values()) a.addEventListener('click', (ev) => {
+      const target = document.getElementById(a.getAttribute('href').slice(1));
+      if (!target) return;
+      ev.preventDefault();
+      target.scrollIntoView({ behavior: 'instant', block: 'start' });
+      history.replaceState(null, '', a.getAttribute('href'));
+      toc.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
+    });
+  })();
+</script>
+</body></html>

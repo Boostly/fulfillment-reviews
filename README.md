@@ -1,0 +1,51 @@
+# fulfillment-reviews
+
+Public, static review pages for Boostly in-store fulfillment orders (Tap Cards, table and bathroom stickers, POP signage, to-go labels).
+
+Each location gets one page: the branding evidence that was gathered, the logo candidates, the variant sheet with the recommended and picked cells, and the signage previews. The index lists every included location newest-first with its pipeline status, the recommended and picked variant letters, and links to the Figma production sheets and the print hand-off folder when they exist.
+
+Audience: Boostly fulfillment staff and the print vendor. **Every page on this site is public.** There is no login, no analytics, and nothing on the site should contain ship-to names, street addresses, session data, or Boostly admin links. The build strips the admin links and run-internal artifacts from the review canvases before publishing.
+
+## Rebuild
+
+The pages are generated from the brand-design run directories (one directory per location with a `run.json` and a `review/review-canvas.html`). The run root is never modified.
+
+```
+npm run build -- --run-root /Users/travisse/Programming/projects/brand-design-spike-2026-07-06/runs-prod-2026-09-18 --limit 20
+```
+
+Flags:
+
+- `--run-root <dir>`: run root to read (defaults to the path above).
+- `--limit <n>`: newest N runs by `request.created_at` that have a review canvas (default 20).
+- `--slug <dir-name>`: include a specific run in addition to the newest N. Repeatable.
+- `--max-px <n>`: long-edge cap for bundled images (default 1600; evidence photos are capped at 1200).
+
+- `--no-upload`: fail instead of uploading if any asset is missing from the blob index.
+
+The build wipes and regenerates `public/` and `data/sites.json` every time. Images are downsized with Pillow (`python3` with `PIL` must be available; no npm dependencies): 1600 px long edge, progressive JPEG q82, PNG only when the image has transparency, SVGs untouched.
+
+### Where the images live
+
+Images are not in git and not in the Vercel deployment. The build stages every asset under `.staging/` (git-ignored), hashes it, and uploads it once to the Vercel Blob store `fulfillment-reviews-assets` (boostly team, public read) under `assets/<slug>/<sha256 prefix>-<name>`. `data/blob-index.json` records every uploaded key with its URL and size and is committed, so a rebuild only uploads assets whose content changed. Page references are rewritten to the blob URLs. Small `.svg/.css/.js/.json` files (under 200 KB) stay next to the page.
+
+The upload token is `BLOB_READ_WRITE_TOKEN`, pulled into the git-ignored `.env.local` with:
+
+```
+vercel env pull .env.local --scope boostly
+```
+
+Never commit `.env.local` or print the token.
+
+Output:
+
+- `public/index.html`: the index, rendered from `data/sites.json`, with inline search, sort and status filter.
+- `public/<slug>/index.html`: one review page per location, images served from Blob.
+- `data/sites.json`: the manifest (also served at `/data/sites.json`).
+- `data/blob-index.json`: the upload cache.
+
+Status in the manifest comes from `run.json` `state.cursor`: before `write` is "Awaiting pick" (or "Pick recorded" when a pick letter exists), `write` through `figma` is "Branding applied", `slack` or `notion` is "Closed out". The recommended letter is `variants.fable_default_letter`; the picked letter is `variants.selection.letter`, falling back to `variants.applied_letter` and `write.inherited_branding.letter`. Request date is `request.created_at`; last updated is the newest `state.stages.*.written_at`.
+
+## Deploy
+
+The generated `public/` directory (HTML only) is committed. Vercel serves it as a prebuilt static site (`vercel.json`: no build command, output directory `public`). Pushes to the connected branch deploy automatically; `vercel --prod --scope boostly` deploys from the CLI.

@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Julia's Vegetarian Restaurant review</title>
+<style>
+  :root { color-scheme: light; scroll-behavior: auto; }
+  body { margin: 0; padding: 32px 40px 80px 280px; background: #fff; color: #111; font-family: Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.35; max-width: 2040px; box-sizing: border-box; }
+  h2 { font-size: 34px; margin: 0 0 4px; }
+  section { padding: 28px 0; border-bottom: 3px solid #ccc; scroll-margin-top: 16px; }
+  section:first-child { padding-top: 0; }
+  p[id] { scroll-margin-top: 16px; }
+  .toc { position: fixed; top: 0; left: 0; bottom: 0; width: 240px; box-sizing: border-box; padding: 24px 16px; overflow-y: auto; background: #f4f4f4; border-right: 1px solid #ddd; font-size: 15px; z-index: 10; }
+  .toc ol { list-style: none; margin: 0; padding: 0; }
+  .toc ol ol { margin: 2px 0 6px 14px; }
+  .toc ol ol a { font-size: 13px; color: #555; padding: 3px 8px; }
+  .toc a { display: block; padding: 6px 8px; border-radius: 4px; color: #222; line-height: 1.3; }
+  .toc a:hover { background: #e6e6e6; }
+  .toc a.active { background: #1b5e20; color: #fff; font-weight: 700; }
+  .toc a.top { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+  .toc-toggle { display: none; }
+  @media (max-width: 1000px) {
+    body { padding: 64px 20px 80px; }
+    .toc { position: sticky; top: 0; bottom: auto; width: auto; margin: -64px -20px 24px; padding: 8px 12px; border-right: 0; border-bottom: 1px solid #ddd; max-height: 80vh; }
+    .toc-toggle { display: block; font: inherit; font-weight: 700; background: none; border: 1px solid #bbb; border-radius: 4px; padding: 6px 12px; cursor: pointer; }
+    .toc-toggle::before { content: "\2630  "; }
+    .toc:not(.open) ol { display: none; }
+    .toc ol { padding-top: 8px; }
+  }
+  p { margin: 4px 0; }
+  p.sub { color: #555; font-size: 17px; margin-bottom: 14px; }
+  p.cap { color: #666; font-size: 15px; }
+  .gray { background: #ededed; color: #444; padding: 26px; font-size: 20px; border-radius: 4px; }
+  .hdr { display: flex; gap: 30px; align-items: flex-start; }
+  .hdr > div:first-child { flex: 1; }
+  .cell { flex: 0 0 auto; max-width: 520px; }
+  .cell img { display: block; max-width: 100%; border: 6px solid #1b5e20; box-sizing: border-box; }
+  .cell p { color: #1b5e20; font-weight: 700; font-size: 16px; }
+  .shot { border: 1px solid #ddd; overflow: auto; max-height: 90vh; }
+  .shot img { display: block; width: 100%; height: auto; }
+  /* 2026-10-01: a zoomable shot (the variant sheet) is never height-clipped: every row stays visible at page width,
+     and native size scrolls inside the container (overflow auto) instead of hiding rows below 90vh. */
+  .shot.zoom { max-height: none; }
+  .shot.zoom img { cursor: zoom-in; }
+  .cell img.zoom3x { margin-top: 10px; border: 3px solid #444; image-rendering: pixelated; }
+  .cell img.zoom3x.bad { border-color: #B71C1C; }
+  .cell.hold img:first-of-type { border-color: #B71C1C; }
+  .shot.zoom.native img { width: auto; max-width: none; cursor: zoom-out; }
+  .grid { display: grid; gap: 14px; }
+  .grid.cols3 { grid-template-columns: repeat(3, 1fr); }
+  .grid.cols4 { grid-template-columns: repeat(4, 1fr); }
+  .grid.cols5 { grid-template-columns: repeat(5, 1fr); }
+  .grid.cols6 { grid-template-columns: repeat(6, 1fr); }
+  figure { margin: 0; background: #ededed; }
+  figure.framed { outline: 6px solid #1b5e20; outline-offset: -6px; }
+  figure a { display: block; }
+  figure img { display: block; width: 100%; height: 360px; object-fit: contain; }
+  .grid.cols4 figure img { height: 280px; }
+  .grid.cols5 figure img, .grid.cols6 figure img { height: 220px; }
+  figcaption { font-size: 15px; padding: 6px 4px 10px; background: #fff; color: #222; }
+  a { color: inherit; text-decoration: none; }
+  a.ext { color: #0b57d0; text-decoration: underline; text-underline-offset: 2px; word-break: break-all; }
+  a.ext:hover { color: #083a8c; }
+  p.links { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 16px; font-size: 15px; }
+  p.links a.ext { background: #eef3fc; border: 1px solid #c9d8f5; border-radius: 4px; padding: 3px 10px; text-decoration: none; word-break: normal; }
+  p.links a.ext:hover { background: #dce7fb; }
+  table.links { border-collapse: collapse; width: 100%; font-size: 15px; margin-top: 8px; }
+  table.links th { text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: #666; padding: 6px 10px; border-bottom: 2px solid #ddd; }
+  table.links td { padding: 9px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top; }
+  table.links td.cat { font-weight: 700; white-space: nowrap; }
+  table.links td.url { max-width: 380px; word-break: break-all; }
+  table.links td.ev { color: #444; max-width: 520px; }
+  table.links .chip { display: inline-block; color: #fff; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
+  table.links .why { color: #444; font-size: 14px; margin-top: 5px; max-width: 420px; }
+  table.links .none { color: #999; }
+  table.links tr.st-held td { background: #fff8e8; }
+  table.links tr.st-rejected td { color: #777; }
+  table.links tr.st-rejected .chip { text-transform: none; letter-spacing: 0; white-space: normal; }
+  table.links tr.st-written td { background: #eef7ee; }
+</style></head><body id="top">
+<nav class="toc" id="toc"><a class="top" href="/" style="margin-bottom:12px">&larr; All locations</a><button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-list">Sections</button>
+<ol id="toc-list">
+<li><a href="#top" class="top">Top</a></li>
+<li><a href="#header">Overview</a><ol><li><a href="#header-1">Gates, per row of the sheet</a></li></ol></li>
+<li><a href="#website">Website</a></li>
+<li><a href="#gbp">Google Business Profile</a></li>
+<li><a href="#logo-search">Logo image search</a></li>
+<li><a href="#candidates">Logo candidates</a></li>
+<li><a href="#sheet">Variant sheet</a></li>
+<li><a href="#links">Links (1 held for review)</a></li>
+</ol></nav>
+<section id="header">
+<p class="links"><a class="ext" href="https://www.juliasveg.com/" target="_blank" rel="noopener">Website &#8599;</a> <a class="ext" href="https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=532-2" target="_blank" rel="noopener">Figma &#8599;</a></p>
+<div class="hdr"><div><p style="font-size:44px;font-weight:700;">Julia's Vegetarian Restaurant</p>
+<p style="font-size:20px;color:#444444;margin-top:6px;">Pacific Grove, CA   ·   request p12rj338wg5un60jfsman28a   ·   full order</p>
+<p style="font-size:29px;font-weight:700;color:#1B5E20;margin-top:22px;">Fable's default: A</p>
+<p style="font-size:19px;margin-top:6px;">card knockout at Fable's pick</p>
+<p style="font-size:16px;color:#666666;margin-top:8px;">Confidence: high   ·   flags: manual_review: neutral_mark_composition, brand_environment_minimum_evidence_unassessed, instagram_not_available</p>
+<p style="font-size:16px;color:#666666;margin-top:4px;">Cell A = card knockout, primary #000000, band #A4CF30 (Fable's pick), text #FFFFFF, print digit #000000</p></div><div class="cell"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/83375e0bbf36-default-cell.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/83375e0bbf36-default-cell.png" alt="default cell"></a><p>Fable's default cell A (native sheet pixels, click to open)</p><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/b4d67559f076-logo-3x.png" target="_blank" title="open the 3x crop"><img class="zoom3x" src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/b4d67559f076-logo-3x.png" alt="logo at 3x"></a><p><b>Logo at 3x (what prints).</b> Final upload 1952x670px, source 2297px (native), recorded on the candidate, upscale 0.85x. Edge quality: ok. Soft-edge share 0.9998, stair-step score 0.3298.</p></div></div>
+<p id="header-1" style="font-size:24px;font-weight:700;margin-top:18px;">Gates, per row of the sheet</p>
+<p style="font-size:18px;font-weight:700;color:#B71C1C;margin-top:8px;">card knockout: 13 of 16 gates pass, 1 blocking</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">whiteblob (warning): opaque near-white region(s) facing transparency — likely leftover back</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">render-legibility (blocks, can be overridden): illegible_at_product_size</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">text-legibility (warning): business_name_unreadable_at_product_size</p>
+<p style="font-size:18px;font-weight:700;color:#B71C1C;margin-top:8px;">full color: 12 of 16 gates pass, 2 blocking</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">whiteblob (warning): opaque near-white region(s) facing transparency — likely leftover back</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">render-legibility (blocks, can be overridden): illegible_at_product_size</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">text-legibility (warning): business_name_unreadable_at_product_size</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">upload-size (blocks, can be overridden): upload_over_byte_cap</p>
+<p style="font-size:18px;font-weight:700;color:#B71C1C;margin-top:8px;">in-store: 13 of 16 gates pass, 1 blocking</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">whiteblob (warning): opaque near-white region(s) facing transparency — likely leftover back</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">render-legibility (blocks, can be overridden): illegible_at_product_size</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">text-legibility (warning): business_name_unreadable_at_product_size</p>
+<p style="font-size:18px;font-weight:700;color:#8A5A00;margin-top:8px;">words only: JULIA'S (descriptor stays on the sticker and POP): 15 of 16 gates pass, nothing blocking</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">whiteblob (warning): opaque near-white region(s) facing transparency — likely leftover back</p>
+</section>
+<section id="website">
+<h2>Website</h2><p class="sub"><a class="ext" href="https://www.juliasveg.com/" target="_blank" rel="noopener">https://www.juliasveg.com/</a></p>
+<p class="links"><a class="ext" href="https://www.juliasveg.com/" target="_blank" rel="noopener">Open website &#8599;</a></p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/ce59b67ddc10-desktop.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/ce59b67ddc10-desktop.jpg" loading="lazy" alt="website desktop screenshot"></a></div><p class="cap">Desktop screenshot from the run's evidence (evidence/website-visual/desktop.png).</p>
+</section>
+<section id="gbp">
+<h2>Google Business Profile</h2><p class="sub">place id ChIJHz2YerfmjYAR-C0jY3CCaHs</p>
+<p class="links"><a class="ext" href="https://www.google.com/maps/place/?q=place_id:ChIJHz2YerfmjYAR-C0jY3CCaHs" target="_blank" rel="noopener">Google Maps place &#8599;</a> <a class="ext" href="https://www.google.com/search?q=Julia's%20Vegetarian%20Restaurant%20Pacific%20Grove%2C%20CA" target="_blank" rel="noopener">Google search &#8599;</a></p>
+<p style="font-size:17px;">Place photos already downloaded for this run (10), at the size the run fetched. Green frame = a photo Fable cited for the sign or interior.</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/c54310632183-gbp-photo-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/c54310632183-gbp-photo-01.jpg" loading="lazy" alt="#1 by Rob Haworth  3649x1816"></a><figcaption>#1 by Rob Haworth  3649x1816</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/a71c0306519d-gbp-photo-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/a71c0306519d-gbp-photo-02.jpg" loading="lazy" alt="#2 by Julia's  4800x3200"></a><figcaption>#2 by Julia's  4800x3200</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/4527a4862135-gbp-photo-03.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/4527a4862135-gbp-photo-03.png" loading="lazy" alt="#3 by Julia's  960x540"></a><figcaption>#3 by Julia's  960x540</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/c518bfbdf96a-gbp-photo-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/c518bfbdf96a-gbp-photo-04.jpg" loading="lazy" alt="#4 by Doug Felt  4080x3072"></a><figcaption>#4 by Doug Felt  4080x3072</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/1a8c8c4b2628-gbp-photo-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/1a8c8c4b2628-gbp-photo-05.jpg" loading="lazy" alt="#5 by Ravi Venkatesan  1440x1080"></a><figcaption>#5 by Ravi Venkatesan  1440x1080</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/f7ce27108fae-gbp-photo-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/f7ce27108fae-gbp-photo-06.jpg" loading="lazy" alt="#6 by Archit Bhandari  4080x3072"></a><figcaption>#6 by Archit Bhandari  4080x3072</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/6fdb419419c1-gbp-photo-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/6fdb419419c1-gbp-photo-07.jpg" loading="lazy" alt="#7 by Brock S  4032x3024"></a><figcaption>#7 by Brock S  4032x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/8bdd7b2e3d56-gbp-photo-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/8bdd7b2e3d56-gbp-photo-08.jpg" loading="lazy" alt="#8 by Rose Thomas  4800x3600"></a><figcaption>#8 by Rose Thomas  4800x3600</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/8cb6bd67c3d8-gbp-photo-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/8cb6bd67c3d8-gbp-photo-09.jpg" loading="lazy" alt="#9 by Sanora EP  1053x1126"></a><figcaption>#9 by Sanora EP  1053x1126</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/a5ef892937c9-gbp-photo-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/a5ef892937c9-gbp-photo-10.jpg" loading="lazy" alt="#10 by Ben Mo  3348x3000"></a><figcaption>#10 by Ben Mo  3348x3000</figcaption></figure></div>
+<p style="font-size:17px;margin-top:10px;">Google Maps &quot;Vibe&quot; photos from the evidence build (Google's own in-store/atmosphere category)</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/f794821d47b1-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/f794821d47b1-01.jpg" loading="lazy" alt="Vibe  4000x3000"></a><figcaption>Vibe  4000x3000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/af0c5eb8bb4a-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/af0c5eb8bb4a-02.jpg" loading="lazy" alt="Vibe  4032x3024"></a><figcaption>Vibe  4032x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/8e71073a0be0-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/8e71073a0be0-03.jpg" loading="lazy" alt="Vibe  4080x3072"></a><figcaption>Vibe  4080x3072</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/8a7fc584d09c-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/8a7fc584d09c-04.jpg" loading="lazy" alt="Vibe  3120x4160"></a><figcaption>Vibe  3120x4160</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/fcc3be4cbb49-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/fcc3be4cbb49-05.jpg" loading="lazy" alt="Vibe  3036x4048"></a><figcaption>Vibe  3036x4048</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/4e86c4cc4cdf-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/4e86c4cc4cdf-06.jpg" loading="lazy" alt="Vibe  3024x4032"></a><figcaption>Vibe  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/4fa68e85efe2-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/4fa68e85efe2-07.jpg" loading="lazy" alt="Vibe  3000x4000"></a><figcaption>Vibe  3000x4000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/6f344f651f82-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/6f344f651f82-08.jpg" loading="lazy" alt="Vibe  4000x3000"></a><figcaption>Vibe  4000x3000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/1d7c1fa83ad8-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/1d7c1fa83ad8-09.jpg" loading="lazy" alt="Vibe  3496x4656"></a><figcaption>Vibe  3496x4656</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/93fcf0cba853-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/93fcf0cba853-10.jpg" loading="lazy" alt="Vibe  3024x4032"></a><figcaption>Vibe  3024x4032</figcaption></figure></div>
+<p style="font-size:17px;margin-top:10px;">Live Google Maps photo view, reused from the earlier capture under review/</p>
+<p style="font-size:14px;color:#666666;margin-top:4px;">reused the cached capture under review/</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/b546e656a8ff-google-maps-photos.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/b546e656a8ff-google-maps-photos.jpg" loading="lazy" alt="Google Maps photo view"></a></div>
+</section>
+<section id="logo-search">
+<h2>Logo image search</h2><p class="sub">&quot;Julia's Vegetarian Restaurant Pacific Grove logo&quot;</p>
+<p class="links"><a class="ext" href="https://www.google.com/search?tbm=isch&amp;q=Julia's%20Vegetarian%20Restaurant%20Pacific%20Grove%20logo" target="_blank" rel="noopener">Open Google Images &#8599;</a></p>
+<div class="gray">Logo image search skipped (--skip-google) and no cached results under review/logo-search/.</div>
+</section>
+<section id="candidates">
+<h2>Logo candidates</h2><p class="sub">from the evidence packet; green frame = the file Fable chose. Gray background so white knockouts stay visible.</p>
+<p class="links"><a class="ext" href="https://www.juliasveg.com/" target="_blank" rel="noopener">Website &#8599;</a></p>
+<div class="grid cols3"><figure style="background:#8C8C8C" class="framed"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/2a2d3122bb87-01-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/2a2d3122bb87-01-first_party_header.png" loading="lazy" alt="01-first_party_header.png  2297x789
+site header
+WHITE WORDMARK, transparent, 2297x789: 'JULIA'S' in a high-contrast serif (
+FABLE'S PICK"></a><figcaption style="font-weight:700">01-first_party_header.png  2297x789<br>site header<br>WHITE WORDMARK, transparent, 2297x789: 'JULIA'S' in a high-contrast serif (<br>FABLE'S PICK<br><a class="ext" href="https://www.juliasveg.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/08a01f40c424-02-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/08a01f40c424-02-first_party_other.png" loading="lazy" alt="02-first_party_other.png  539x185
+first_party_other"></a><figcaption>02-first_party_other.png  539x185<br>first_party_other<br><a class="ext" href="https://www.juliasveg.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/d1f5efdac1eb-03-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/d1f5efdac1eb-03-first_party_header.png" loading="lazy" alt="03-first_party_header.png  2297x789
+site header"></a><figcaption>03-first_party_header.png  2297x789<br>site header<br><a class="ext" href="https://www.juliasveg.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/fd21c1312bec-04-social.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/fd21c1312bec-04-social.jpg" loading="lazy" alt="04-social.jpg  635x635
+social"></a><figcaption>04-social.jpg  635x635<br>social</figcaption></figure></div>
+</section>
+<section id="sheet">
+<h2>Variant sheet</h2><p class="sub">Fable's default A framed in green. Reply with one letter.</p>
+<p class="links"></p>
+<div class="shot zoom" title="click to toggle native size"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/40cd2359b388-variant-sheet-marked.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/julia-s-vegetarian-restaurant/40cd2359b388-variant-sheet-marked.jpg" loading="lazy" alt="variant sheet"></a></div><p class="cap">variants/variant-sheet.png at native size, revision 2. In the HTML page click the sheet to toggle native size.</p>
+</section>
+<section id="links">
+<h2>Links</h2><p class="sub">the link automation results for this location, one row per category; held rows need a human decision. Click a URL to open it.</p>
+<p class="links"></p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Discovery report link-discovery-report.json (2026-10-09 02:07): 18 categories, 1 for manual review, 1 proposed field updates, 4 proposed events.</p>
+<p style="font-size:15px;color:#6B6B6B;margin-top:4px;">1 URL still waiting on the live Chrome check.</p>
+<p style="font-size:15px;font-weight:700;margin-top:8px;">17 categories: 0 written, 6 verified or already live, 1 held for review, 1 pending browser, 2 rejected, 7 none found.</p>
+<table class="links"><thead><tr><th>Category</th><th>URL</th><th>Status</th><th>Evidence</th></tr></thead><tbody><tr class="st-existing"><td class="cat">Online ordering</td><td class="url"><a class="ext" href="https://order.toasttab.com/online/julias-vegetarian-restaurant-1180-forest-ave-suite-f" target="_blank" rel="noopener">order.toasttab.com/online/julias-vegetarian-restaurant-1180-forest-ave-s</a></td><td><span class="chip" style="background:#1B5E20">already live</span></td><td class="ev">title &quot;Order Online&quot;; the website links to it; URL slug names the business; found as an anchor; official site order candidate; order cta text</td></tr>
+<tr class="st-ready"><td class="cat">Menu</td><td class="url"><a class="ext" href="https://www.juliasveg.com/pacific-grove-menu/" target="_blank" rel="noopener">juliasveg.com/pacific-grove-menu/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev">title &quot;Julia's Vegetarian Restaurant&quot;; URL slug names the business</td></tr>
+<tr class="st-rejected"><td class="cat">Facebook</td><td class="url"><a class="ext" href="https://www.facebook.com/andrea.roe#" target="_blank" rel="noopener">facebook.com/andrea.roe#</a></td><td><span class="chip" style="background:#6B6B6B">rejected: No strong location or parent-brand match evidence found.</span></td><td class="ev">title &quot;(20+) Facebook&quot;; canonical form of <a class="ext" href="http://www.facebook.com/2008/fbml" target="_blank" rel="noopener">http://www.facebook.com/2008/fbml</a>; found as a script url; No strong location or parent-brand match evidence found</td></tr>
+<tr class="st-ready"><td class="cat">Instagram</td><td class="url"><a class="ext" href="https://www.instagram.com/juliasvegrestaurant/" target="_blank" rel="noopener">instagram.com/juliasvegrestaurant/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev">title &quot;(1) Instagram&quot;; the website links to it; social destination identity signal; found as an anchor</td></tr>
+<tr class="st-none"><td class="cat">X (Twitter)</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-rejected"><td class="cat">TikTok</td><td class="url"><a class="ext" href="https://www.tiktok.com/@juliamaj30" target="_blank" rel="noopener">tiktok.com/@juliamaj30</a></td><td><span class="chip" style="background:#6B6B6B">rejected: No strong location or parent-brand match evidence found.</span></td><td class="ev">title &quot;TikTok - Make Your Day&quot;; google organic candidate; No strong location or parent-brand match evidence found</td></tr>
+<tr class="st-none"><td class="cat">YouTube</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-ready"><td class="cat">Careers</td><td class="url"><a class="ext" href="https://www.juliasveg.com/careers" target="_blank" rel="noopener">juliasveg.com/careers</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev">title &quot;Julia's Vegetarian Restaurant&quot;; URL slug names the business; found as an anchor; official site careers candidate; careers page level</td></tr>
+<tr class="st-ready"><td class="cat">Catering</td><td class="url"><a class="ext" href="https://www.juliasveg.com/catering" target="_blank" rel="noopener">juliasveg.com/catering</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev">title &quot;Catering &amp;mdash; Julia's Vegetarian Restaurant&quot;; the website links to it; URL slug names the business; found as an anchor</td></tr>
+<tr class="st-held"><td class="cat">Events</td><td class="url"><a class="ext" href="https://www.juliasveg.com/classesandevent" target="_blank" rel="noopener">juliasveg.com/classesandevent</a></td><td><span class="chip" style="background:#B7791F">held for review</span><div class="why">needs manual review</div></td><td class="ev">title &quot;Julia's Vegetarian Restaurant&quot;; the website links to it; URL slug names the business; found as an anchor</td></tr>
+<tr class="st-pending"><td class="cat">Reservations</td><td class="url"><a class="ext" href="https://tables.toasttab.com/restaurants/640820d1-c823-4f0e-91e0-5e4044b6b80c/findTime" target="_blank" rel="noopener">tables.toasttab.com/restaurants/640820d1-c823-4f0e-91e0-5e4044b6b80c/fin</a></td><td><span class="chip" style="background:#6B6B6B">pending browser</span><div class="why">claude_chrome_result_missing: <a class="ext" href="https://tables.toasttab.com/restaurants/640820d1-c823-4f0e-91e0-5e4044b6b80c/findTime" target="_blank" rel="noopener">https://tables.toasttab.com/restaurants/640820d1-c823-4f0e-91e0-5e4044b6b80c/findTime</a></div></td><td class="ev">the website links to it; found as an anchor; page broken; no live Chrome result yet for <a class="ext" href="https://tables.toasttab.com/restaurants/640820d1-c823-4f0e-91e0-5e4044b6b80c/findTime" target="_blank" rel="noopener">https://tables.toasttab.com/restaurants/640820d1-c823-4f0e-91e0-5e4044b6b80c/findTime</a></td></tr>
+<tr class="st-ready"><td class="cat">Gift cards</td><td class="url"><a class="ext" href="https://www.juliasveg.com/gift-card" target="_blank" rel="noopener">juliasveg.com/gift-card</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev">title &quot;Julia's Vegetarian Restaurant&quot;; the website links to it; URL slug names the business; found as an anchor</td></tr>
+<tr class="st-none"><td class="cat">Loyalty / rewards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">iOS app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Android app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">App downloads</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Other</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr></tbody></table>
+</section>
+<script>
+  for (const el of document.querySelectorAll('.shot.zoom')) {
+    el.addEventListener('click', (ev) => { ev.preventDefault(); el.classList.toggle('native'); });
+  }
+  // Sidebar: highlight the section in view, jump instantly on click (no scroll animation, Travisse 2026-09-29), hamburger below 1000px.
+  (() => {
+    const toc = document.getElementById('toc');
+    const links = new Map([...toc.querySelectorAll('a[href^="#"]')].map((a) => [a.getAttribute('href').slice(1), a]));
+    const sections = [...document.querySelectorAll('section[id]')];
+    const visible = new Set();
+    const setActive = () => {
+      const current = sections.find((s) => visible.has(s)) ?? sections.find((s) => s.getBoundingClientRect().bottom > 0) ?? sections[sections.length - 1];
+      for (const a of links.values()) a.classList.remove('active');
+      if (current) links.get(current.id)?.classList.add('active');
+    };
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); }
+      setActive();
+    }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+    for (const s of sections) io.observe(s);
+    setActive();
+    const toggle = toc.querySelector('.toc-toggle');
+    toggle.addEventListener('click', () => { const open = toc.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
+    for (const a of links.values()) a.addEventListener('click', (ev) => {
+      const target = document.getElementById(a.getAttribute('href').slice(1));
+      if (!target) return;
+      ev.preventDefault();
+      target.scrollIntoView({ behavior: 'instant', block: 'start' });
+      history.replaceState(null, '', a.getAttribute('href'));
+      toc.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
+    });
+  })();
+</script>
+</body></html>

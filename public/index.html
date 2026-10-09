@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Boostly In-Store Fulfillment Reviews</title>
+<style>
+  :root { --bg: #f6f6f4; --card: #fff; --ink: #161616; --ink-2: #5c5c5c; --line: #e3e3df; --accent: #1f5eff; --accent-ink: #fff; --ok: #1b7a3d; --warn: #b26a00; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+  main { max-width: 1180px; margin: 0 auto; padding: 40px 16px 80px; }
+  header { margin-bottom: 20px; }
+  h1 { font-size: 26px; margin: 0 0 6px; letter-spacing: -0.01em; }
+  header p { margin: 0; color: var(--ink-2); max-width: 70ch; }
+  .controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 18px 0 14px; }
+  .controls input[type=search] { flex: 1 1 260px; min-width: 200px; font: inherit; padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--ink); }
+  .controls input[type=search]:focus, .controls select:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+  .controls select { font: inherit; padding: 9px 32px 9px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%235c5c5c'/%3E%3C/svg%3E") no-repeat right 12px center; color: var(--ink); -webkit-appearance: none; appearance: none; }
+  .controls label { font-size: 12px; color: var(--ink-2); text-transform: uppercase; letter-spacing: .05em; display: flex; flex-direction: column; gap: 4px; }
+  .count { color: var(--ink-2); font-size: 13px; margin: 0 0 10px; }
+  .count b { color: var(--ink); }
+  table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  thead th { text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-2); font-weight: 600; padding: 12px 14px; border-bottom: 1px solid var(--line); background: #fafaf8; white-space: nowrap; }
+  thead th.sortable { cursor: pointer; user-select: none; }
+  thead th.sortable:hover { color: var(--ink); }
+  thead th.sorted::after { content: " \2193"; color: var(--accent); }
+  td { padding: 13px 14px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  tr:last-child td { border-bottom: 0; }
+  .name { font-weight: 600; color: var(--ink); text-decoration: none; }
+  .name:hover { color: var(--accent); text-decoration: underline; }
+  .place { color: var(--ink-2); font-size: 13px; margin-top: 2px; }
+  .date { white-space: nowrap; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+  .date .lbl { display: none; }
+  .pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 999px; white-space: nowrap; border: 1px solid transparent; }
+  .pill.awaiting, .pill.picked { background: #fff4e0; color: var(--warn); border-color: #f1dcb0; }
+  .pill.applied { background: #e8f0ff; color: var(--accent); border-color: #c7d8ff; }
+  .pill.closed { background: #e6f4ea; color: var(--ok); border-color: #bfe0c9; }
+  .pill.unknown { background: #eee; color: var(--ink-2); }
+  .letters { white-space: nowrap; }
+  .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-2); margin: 0 6px 0 0; }
+  .lbl + .letter, .lbl + .muted { margin-right: 14px; }
+  .letter { display: inline-block; min-width: 26px; text-align: center; font-weight: 700; font-size: 13px; padding: 2px 6px; border-radius: 6px; border: 1px solid var(--line); background: #fafaf8; }
+  .letter.pick { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .muted { color: #b5b5b0; }
+  .links { white-space: nowrap; text-align: right; }
+  .btn { display: inline-block; font-size: 13px; font-weight: 600; padding: 6px 10px; border-radius: 6px; border: 1px solid var(--line); color: var(--ink); text-decoration: none; margin-left: 6px; background: var(--card); }
+  .btn:hover { border-color: #c9c9c4; background: #fafaf8; }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .btn.primary:hover { background: #164ad0; }
+  .empty { padding: 40px 14px; text-align: center; color: var(--ink-2); }
+  footer { margin-top: 20px; color: var(--ink-2); font-size: 12px; }
+  @media (max-width: 760px) {
+    main { padding-top: 24px; }
+    .controls label { flex: 1 1 45%; }
+    table, thead, tbody, tr, td { display: block; }
+    thead { display: none; }
+    tr { padding: 12px 14px; border-bottom: 1px solid var(--line); }
+    td { padding: 3px 0; border: 0; }
+    .date { display: inline-block; margin-right: 14px; font-size: 13px; }
+    .date .lbl { display: inline; }
+    .links { text-align: left; margin-top: 6px; white-space: normal; }
+    .btn { margin: 4px 6px 0 0; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Boostly In-Store Fulfillment Reviews</h1>
+    <p>Branding review pages for Tap Card, sticker, and signage orders. Each page shows the evidence, the variant sheet, the recommended and picked cells, and the signage previews for one location.</p>
+  </header>
+  <div class="controls">
+    <input type="search" id="q" placeholder="Search by location, city, or state" autocomplete="off" aria-label="Search locations">
+    <label>Status
+      <select id="status">
+        <option value="">All statuses</option>
+        <option value="awaiting">Awaiting pick</option>
+        <option value="picked">Pick recorded</option>
+        <option value="applied">Branding applied</option>
+        <option value="closed">Closed out</option>
+      </select>
+    </label>
+    <label>Sort by
+      <select id="sort">
+        <option value="updated">Last updated, newest first</option>
+        <option value="updated_asc">Last updated, oldest first</option>
+        <option value="requested">Request date, newest first</option>
+        <option value="requested_asc">Request date, oldest first</option>
+        <option value="name">Location name, A to Z</option>
+      </select>
+    </label>
+  </div>
+  <p class="count" id="count"></p>
+  <table>
+    <thead><tr><th class="sortable" data-sort="name">Location</th><th class="sortable" data-sort="requested">Requested</th><th class="sortable" data-sort="updated">Last updated</th><th>Status</th><th>Variant</th><th></th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <footer>Generated Oct 9, 2026. "Rec" is the default cell the pipeline recommended; "Pick" is the cell chosen for production. "Last updated" is the newest pipeline step recorded for the run. Figma opens the generated production sheets; Print files opens the vendor hand-off folder.</footer>
+</main>
+<script id="sites" type="application/json">[{"slug":"indian-kitchen-grill-madison","name":"INDIAN KITCHEN & GRILL (Madison)","city":"Madison","state":"NJ","requested_at":"2026-10-08T18:07:43.892","updated_at":"2026-10-09T02:46:29.863Z","status":"awaiting","status_label":"Awaiting pick","rec":"A","pick":null,"review_url":"/indian-kitchen-grill-madison/","figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=526-2","print_url":null},{"slug":"buz-and-ned-s-real-barbecue-richmond","name":"Buz and Ned's Real Barbecue (Richmond)","city":"Richmond","state":"VA","requested_at":"2026-10-08T15:55:38.384","updated_at":"2026-10-09T02:39:14.736Z","status":"awaiting","status_label":"Awaiting pick","rec":"A","pick":null,"review_url":"/buz-and-ned-s-real-barbecue-richmond/","figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=528-2","print_url":null},{"slug":"creamer-by-kay-league-city","name":"Creamer by Kay (League City)","city":"League City","state":"TX","requested_at":"2026-10-08T15:29:17.638","updated_at":"2026-10-09T01:07:36.083Z","status":"applied","status_label":"Branding applied","rec":"A","pick":null,"review_url":"/creamer-by-kay-league-city/","figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=522-2","print_url":null},{"slug":"dino-s-greek-italian-grill-goodyear","name":"Dino's Greek & Italian Grill (Goodyear)","city":"Goodyear","state":"AZ","requested_at":"2026-10-07T23:49:25.864","updated_at":"2026-10-09T01:10:21.020Z","status":"applied","status_label":"Branding applied","rec":"A","pick":null,"review_url":"/dino-s-greek-italian-grill-goodyear/","figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=524-2","print_url":null},{"slug":"brothers-sushi-burritos-rolls-portland","name":"Brothers Sushi Burritos & Rolls - Portland","city":"Portland","state":"OR","requested_at":"2026-10-07T18:20:23.251","updated_at":"2026-10-09T01:59:41.740Z","status":"applied","status_label":"Branding applied","rec":"A","pick":null,"review_url":"/brothers-sushi-burritos-rolls-portland/","figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=535-2","print_url":null},{"slug":"franks-pizza-italian-restaurant-easton","name":"Franks Pizza & Italian Restaurant (Easton)","city":"Easton","state":"PA","requested_at":"2026-10-07T14:56:17.491","updated_at":"2026-10-09T02:19:50.801Z","status":"applied","status_label":"Branding applied","rec":"A","pick":null,"review_url":"/franks-pizza-italian-restaurant-easton/","figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=537-2","print_url":null},{"slug":"the-pizza-gene","name":"The Pizza Gene","city":"Stuart","state":"FL","requested_at":"2026-10-06T19:11:01.738","updated_at":"2026-10-09T03:16:04.501Z","status":"awaiting","status_label":"Awaiting pick","rec":"A","pick":null,"review_url":"/the-pizza-gene/","figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=539-2","print_url":null},{"slug":"julia-s-vegetarian-restaurant","name":"Julia's Vegetarian Restaurant","city":"Pacific Grove","state":"CA","requested_at":"2026-10-06T15:04:27.39","updated_at":"2026-10-09T02:11:55.627Z","status":"awaiting","status_label":"Awaiting pick","rec":"A","pick":null,"review_url":"/julia-s-vegetarian-restaurant/","figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=532-2","print_url":null},{"slug":"pawsome-park-and-lodge-everett","name":"Pawsome Park and Lodge (Everett)","city":"Everett","state":"WA","requested_at":"2026-10-05T18:06:10.349","updated_at":"2026-10-06T17:22:25.692Z","status":"picked","status_label":"Pick recorded","rec":"A","pick":"H","review_url":"/pawsome-park-and-lodge-everett/","figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=479-2","print_url":"https://drive.google.com/drive/folders/1aGfwqcrtDdsERwQDJzsScp2Erj1fQHiY"},{"slug":"koshari-mama-somerville","name":"Koshari Mama (Somerville)","city":"Somerville","state":"MA","requested_at":"2026-10-05T16:11:38.611","updated_at":"2026-10-06T20:56:50.174Z","status":"closed","status_label":"Closed out","rec":"A","pick":"M","review_url":"/koshari-mama-somerville/","figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=484-2","print_url":"https://drive.google.com/drive/folders/1O_9MZufGZ2wdkbDmyObqfSlyxSA_xUJm"},{"slug":"carbone-s-pizzeria-inver-grove-heights","name":"Carbone's Pizzeria (Inver Grove Heights)","city":"Inver Grove Heights","state":"MN","requested_at":"2026-10-02T21:18:32.467","updated_at":"2026-10-02T23:12:40.338Z","status":"applied","status_label":"Branding applied","rec":"A","pick":"E","review_url":"/carbone-s-pizzeria-inver-grove-heights/","figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=438-2","print_url":null},{"slug":"monza-manassas","name":"Monza (Manassas)","city":"Manassas","state":"VA","requested_at":"2026-10-02T20:40:05.14","updated_at":"2026-10-02T23:11:54.950Z","status":"applied","status_label":"Branding applied","rec":"A","pick":"N","review_url":"/monza-manassas/","figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=442-2","print_url":null},{"slug":"yendidi-virginia-beach","name":"YENDIDI VIRGINIA BEACH","city":"Virginia Beach","state":"VA","requested_at":"2026-10-02T00:38:43.872","updated_at":"2026-10-02T23:06:54.282Z","status":"applied","status_label":"Branding applied","rec":"A","pick":"G","review_url":"/yendidi-virginia-beach/","figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=432-2","print_url":null},{"slug":"boludo-uptown","name":"Boludo (Uptown)","city":"Minneapolis","state":"MN","requested_at":"2026-10-01T19:08:45.892","updated_at":"2026-10-02T23:13:07.831Z","status":"applied","status_label":"Branding applied","rec":"S","pick":"U","review_url":"/boludo-uptown/","figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=392-12357","print_url":null},{"slug":"boludo-downtown","name":"Boludo (Downtown)","city":"Minneapolis","state":"MN","requested_at":"2026-10-01T19:08:04.62","updated_at":"2026-10-02T23:13:04.569Z","status":"applied","status_label":"Branding applied","rec":"S","pick":"U","review_url":"/boludo-downtown/","figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=387-2","print_url":null},{"slug":"boludo-como","name":"Boludo (Como)","city":"Minneapolis","state":"MN","requested_at":"2026-10-01T19:07:06.589","updated_at":"2026-10-02T23:13:06.200Z","status":"applied","status_label":"Branding applied","rec":null,"pick":"U","review_url":"/boludo-como/","figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=392-2","print_url":null},{"slug":"carbone-s-pizzeria-edina","name":"Carbone's Pizzeria (Edina)","city":"Edina","state":"MN","requested_at":"2026-10-01T17:55:17.625","updated_at":"2026-10-02T23:12:52.279Z","status":"applied","status_label":"Branding applied","rec":"A","pick":"F","review_url":"/carbone-s-pizzeria-edina/","figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=395-2","print_url":null},{"slug":"casa-amigos-bar-and-grill-las-vegas","name":"Casa Amigos Bar and Grill (Las Vegas)","city":"Las Vegas","state":"NV","requested_at":"2026-10-01T17:20:33.432","updated_at":"2026-10-02T23:13:42.731Z","status":"applied","status_label":"Branding applied","rec":"A","pick":"Z","review_url":"/casa-amigos-bar-and-grill-las-vegas/","figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=383-2","print_url":null},{"slug":"five-star-pizza-ocala-ne","name":"Five Star Pizza (Ocala NE)","city":"Ocala","state":"FL","requested_at":"2026-10-01T16:52:31.346","updated_at":"2026-10-02T23:13:30.415Z","status":"applied","status_label":"Branding applied","rec":"A","pick":"F","review_url":"/five-star-pizza-ocala-ne/","figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=383-24712","print_url":null},{"slug":"five-star-pizza-ocala-se","name":"Five Star Pizza (Ocala SE)","city":"Ocala","state":"FL","requested_at":"2026-10-01T16:51:58.671","updated_at":"2026-10-02T23:14:05.748Z","status":"applied","status_label":"Branding applied","rec":"F","pick":"P","review_url":"/five-star-pizza-ocala-se/","figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=377-2","print_url":null}]</script>
+<script>
+(function () {
+  var sites = JSON.parse(document.getElementById("sites").textContent);
+  var q = document.getElementById("q"), statusSel = document.getElementById("status"), sortSel = document.getElementById("sort");
+  var rows = document.getElementById("rows"), count = document.getElementById("count");
+  var fmt = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "America/Denver" });
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function parse(iso) { if (!iso) return 0; var t = Date.parse(/Z$|[+-]\d\d:\d\d$/.test(iso) ? iso : iso + "Z"); return isNaN(t) ? 0 : t; }
+  function fdate(iso) { var t = parse(iso); return t ? fmt.format(new Date(t)) : ""; }
+  function letter(l, kind) { return l ? '<span class="letter ' + kind + '">' + esc(l) + '</span>' : '<span class="muted">&ndash;</span>'; }
+  function norm(s) { return String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
+  sites.forEach(function (s) { s._hay = norm([s.name, s.city, s.state, s.slug].join(" ")); s._req = parse(s.requested_at); s._upd = parse(s.updated_at); });
+  var sorters = {
+    updated: function (a, b) { return b._upd - a._upd; },
+    updated_asc: function (a, b) { return a._upd - b._upd; },
+    requested: function (a, b) { return b._req - a._req; },
+    requested_asc: function (a, b) { return a._req - b._req; },
+    name: function (a, b) { return a.name.localeCompare(b.name); }
+  };
+  function row(s) {
+    var place = [s.city, s.state].filter(Boolean).join(", ");
+    var links = '<a class="btn primary" href="' + esc(s.review_url) + '">Review page</a>'
+      + (s.figma_url ? '<a class="btn" href="' + esc(s.figma_url) + '" target="_blank" rel="noopener">Figma</a>' : "")
+      + (s.print_url ? '<a class="btn" href="' + esc(s.print_url) + '" target="_blank" rel="noopener">Print files</a>' : "");
+    return '<tr>'
+      + '<td class="loc"><a href="' + esc(s.review_url) + '" class="name">' + esc(s.name) + '</a><div class="place">' + esc(place) + '</div></td>'
+      + '<td class="date"><span class="lbl">Requested</span>' + esc(fdate(s.requested_at)) + '</td>'
+      + '<td class="date"><span class="lbl">Updated</span>' + esc(fdate(s.updated_at)) + '</td>'
+      + '<td><span class="pill ' + esc(s.status) + '">' + esc(s.status_label) + '</span></td>'
+      + '<td class="letters"><span class="lbl">Rec</span>' + letter(s.rec, "rec") + '<span class="lbl">Pick</span>' + letter(s.pick, "pick") + '</td>'
+      + '<td class="links">' + links + '</td></tr>';
+  }
+  function render() {
+    var terms = norm(q.value).split(/\s+/).filter(Boolean), st = statusSel.value, sort = sortSel.value;
+    var list = sites.filter(function (s) {
+      if (st && s.status !== st) return false;
+      return terms.every(function (t) { return s._hay.indexOf(t) !== -1; });
+    }).sort(sorters[sort] || sorters.updated);
+    rows.innerHTML = list.length ? list.map(row).join("") : '<tr><td class="empty" colspan="6">No locations match.</td></tr>';
+    count.innerHTML = "<b>" + list.length + "</b> of " + sites.length + " locations";
+    Array.prototype.forEach.call(document.querySelectorAll("th.sortable"), function (th) { th.classList.toggle("sorted", sort.replace(/_asc$/, "") === th.dataset.sort); });
+  }
+  q.addEventListener("input", render); statusSel.addEventListener("change", render); sortSel.addEventListener("change", render);
+  Array.prototype.forEach.call(document.querySelectorAll("th.sortable"), function (th) {
+    th.addEventListener("click", function () { var k = th.dataset.sort; sortSel.value = (sortSel.value === k && k !== "name") ? k + "_asc" : k; render(); });
+  });
+  render();
+})();
+</script>
+</body>
+</html>

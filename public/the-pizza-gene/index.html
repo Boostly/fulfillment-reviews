@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>The Pizza Gene review</title>
+<style>
+  :root { color-scheme: light; scroll-behavior: auto; }
+  body { margin: 0; padding: 32px 40px 80px 280px; background: #fff; color: #111; font-family: Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.35; max-width: 2040px; box-sizing: border-box; }
+  h2 { font-size: 34px; margin: 0 0 4px; }
+  section { padding: 28px 0; border-bottom: 3px solid #ccc; scroll-margin-top: 16px; }
+  section:first-child { padding-top: 0; }
+  p[id] { scroll-margin-top: 16px; }
+  .toc { position: fixed; top: 0; left: 0; bottom: 0; width: 240px; box-sizing: border-box; padding: 24px 16px; overflow-y: auto; background: #f4f4f4; border-right: 1px solid #ddd; font-size: 15px; z-index: 10; }
+  .toc ol { list-style: none; margin: 0; padding: 0; }
+  .toc ol ol { margin: 2px 0 6px 14px; }
+  .toc ol ol a { font-size: 13px; color: #555; padding: 3px 8px; }
+  .toc a { display: block; padding: 6px 8px; border-radius: 4px; color: #222; line-height: 1.3; }
+  .toc a:hover { background: #e6e6e6; }
+  .toc a.active { background: #1b5e20; color: #fff; font-weight: 700; }
+  .toc a.top { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+  .toc-toggle { display: none; }
+  @media (max-width: 1000px) {
+    body { padding: 64px 20px 80px; }
+    .toc { position: sticky; top: 0; bottom: auto; width: auto; margin: -64px -20px 24px; padding: 8px 12px; border-right: 0; border-bottom: 1px solid #ddd; max-height: 80vh; }
+    .toc-toggle { display: block; font: inherit; font-weight: 700; background: none; border: 1px solid #bbb; border-radius: 4px; padding: 6px 12px; cursor: pointer; }
+    .toc-toggle::before { content: "\2630  "; }
+    .toc:not(.open) ol { display: none; }
+    .toc ol { padding-top: 8px; }
+  }
+  p { margin: 4px 0; }
+  p.sub { color: #555; font-size: 17px; margin-bottom: 14px; }
+  p.cap { color: #666; font-size: 15px; }
+  .gray { background: #ededed; color: #444; padding: 26px; font-size: 20px; border-radius: 4px; }
+  .hdr { display: flex; gap: 30px; align-items: flex-start; }
+  .hdr > div:first-child { flex: 1; }
+  .cell { flex: 0 0 auto; max-width: 520px; }
+  .cell img { display: block; max-width: 100%; border: 6px solid #1b5e20; box-sizing: border-box; }
+  .cell p { color: #1b5e20; font-weight: 700; font-size: 16px; }
+  .shot { border: 1px solid #ddd; overflow: auto; max-height: 90vh; }
+  .shot img { display: block; width: 100%; height: auto; }
+  /* 2026-10-01: a zoomable shot (the variant sheet) is never height-clipped: every row stays visible at page width,
+     and native size scrolls inside the container (overflow auto) instead of hiding rows below 90vh. */
+  .shot.zoom { max-height: none; }
+  .shot.zoom img { cursor: zoom-in; }
+  .cell img.zoom3x { margin-top: 10px; border: 3px solid #444; image-rendering: pixelated; }
+  .cell img.zoom3x.bad { border-color: #B71C1C; }
+  .cell.hold img:first-of-type { border-color: #B71C1C; }
+  .shot.zoom.native img { width: auto; max-width: none; cursor: zoom-out; }
+  .grid { display: grid; gap: 14px; }
+  .grid.cols3 { grid-template-columns: repeat(3, 1fr); }
+  .grid.cols4 { grid-template-columns: repeat(4, 1fr); }
+  .grid.cols5 { grid-template-columns: repeat(5, 1fr); }
+  .grid.cols6 { grid-template-columns: repeat(6, 1fr); }
+  figure { margin: 0; background: #ededed; }
+  figure.framed { outline: 6px solid #1b5e20; outline-offset: -6px; }
+  figure a { display: block; }
+  figure img { display: block; width: 100%; height: 360px; object-fit: contain; }
+  .grid.cols4 figure img { height: 280px; }
+  .grid.cols5 figure img, .grid.cols6 figure img { height: 220px; }
+  figcaption { font-size: 15px; padding: 6px 4px 10px; background: #fff; color: #222; }
+  a { color: inherit; text-decoration: none; }
+  a.ext { color: #0b57d0; text-decoration: underline; text-underline-offset: 2px; word-break: break-all; }
+  a.ext:hover { color: #083a8c; }
+  p.links { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 16px; font-size: 15px; }
+  p.links a.ext { background: #eef3fc; border: 1px solid #c9d8f5; border-radius: 4px; padding: 3px 10px; text-decoration: none; word-break: normal; }
+  p.links a.ext:hover { background: #dce7fb; }
+  table.links { border-collapse: collapse; width: 100%; font-size: 15px; margin-top: 8px; }
+  table.links th { text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: #666; padding: 6px 10px; border-bottom: 2px solid #ddd; }
+  table.links td { padding: 9px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top; }
+  table.links td.cat { font-weight: 700; white-space: nowrap; }
+  table.links td.url { max-width: 380px; word-break: break-all; }
+  table.links td.ev { color: #444; max-width: 520px; }
+  table.links .chip { display: inline-block; color: #fff; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
+  table.links .why { color: #444; font-size: 14px; margin-top: 5px; max-width: 420px; }
+  table.links .none { color: #999; }
+  table.links tr.st-held td { background: #fff8e8; }
+  table.links tr.st-rejected td { color: #777; }
+  table.links tr.st-rejected .chip { text-transform: none; letter-spacing: 0; white-space: normal; }
+  table.links tr.st-written td { background: #eef7ee; }
+</style></head><body id="top">
+<nav class="toc" id="toc"><a class="top" href="/" style="margin-bottom:12px">&larr; All locations</a><button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-list">Sections</button>
+<ol id="toc-list">
+<li><a href="#top" class="top">Top</a></li>
+<li><a href="#header">Overview</a><ol><li><a href="#header-1">Gates, per row of the sheet</a></li></ol></li>
+<li><a href="#website">Website</a></li>
+<li><a href="#gbp">Google Business Profile</a></li>
+<li><a href="#logo-search">Logo image search</a></li>
+<li><a href="#candidates">Logo candidates</a></li>
+<li><a href="#sheet">Variant sheet</a></li>
+<li><a href="#links">Links (9 held for review)</a></li>
+</ol></nav>
+<section id="header">
+<p class="links"><a class="ext" href="https://www.pizzagene.com/" target="_blank" rel="noopener">Website &#8599;</a> <a class="ext" href="https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=539-2" target="_blank" rel="noopener">Figma &#8599;</a></p>
+<div class="hdr"><div><p style="font-size:44px;font-weight:700;">The Pizza Gene</p>
+<p style="font-size:20px;color:#444444;margin-top:6px;">Stuart, FL   ·   request ku0i8juvfxcp89ll45qgq2lp   ·   full order</p>
+<p style="font-size:29px;font-weight:700;color:#1B5E20;margin-top:22px;">Fable's default: A</p>
+<p style="font-size:19px;margin-top:6px;">Identity: the only first-party mark is the Wix site image (hero and menus page): a white circular badge on an opaque #FF5129 orange ground, exact-location verified (site footer address 424 SE Monterey Rd, Toast and Inst…</p>
+<p style="font-size:16px;color:#666666;margin-top:8px;">Confidence: medium   ·   flags: traced_from_small_source, brand_environment_minimum_evidence_unassessed</p>
+<p style="font-size:16px;color:#666666;margin-top:4px;">Cell A = card knockout, primary #FF5129, band #000000 (Fable's pick), text #000000, print digit #FFFFFF</p></div><div class="cell"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/8dadbe154d04-default-cell.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/8dadbe154d04-default-cell.png" alt="default cell"></a><p>Fable's default cell A (native sheet pixels, click to open)</p><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/b956ac82f983-logo-3x.png" target="_blank" title="open the 3x crop"><img class="zoom3x bad" src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/b956ac82f983-logo-3x.png" alt="logo at 3x"></a><p><b>Logo at 3x (what prints).</b> Final upload 1198x1200px, source 580px (trace), given on the command line, upscale 2.069x. Edge quality: traced_from_small_source (trace from a 580px source (2.069x to 1200px); sources under 700px add wobble on curves. Exhaust references/logo-source-ladder.json before shipping; a human may override this verdict knowingly.). Soft-edge share 0.9966, stair-step score 0.3085.</p></div></div>
+<p id="header-1" style="font-size:24px;font-weight:700;margin-top:18px;">Gates, per row of the sheet</p>
+<p style="font-size:18px;font-weight:700;color:#B71C1C;margin-top:8px;">card knockout: 15 of 17 gates pass, 1 blocking</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">whiteblob (warning): opaque near-white region(s) facing transparency — likely leftover back</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">edge-quality (blocks, can be overridden): traced_from_small_source</p>
+<p style="font-size:18px;font-weight:700;color:#B71C1C;margin-top:8px;">orange badge (authored ground ink #FF5129) on a black card, the interior sign treatment: 16 of 17 gates pass, 1 blocking</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">edge-quality (blocks, can be overridden): traced_from_small_source</p>
+</section>
+<section id="website">
+<h2>Website</h2><p class="sub"><a class="ext" href="https://www.pizzagene.com/" target="_blank" rel="noopener">https://www.pizzagene.com/</a></p>
+<p class="links"><a class="ext" href="https://www.pizzagene.com/" target="_blank" rel="noopener">Open website &#8599;</a></p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/c675743d476a-desktop.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/c675743d476a-desktop.jpg" loading="lazy" alt="website desktop screenshot"></a></div><p class="cap">Desktop screenshot from the run's evidence (evidence/website-visual/desktop.png).</p>
+</section>
+<section id="gbp">
+<h2>Google Business Profile</h2><p class="sub">place id ChIJ74tFT5Pd3ogRpF2s8Pb3nic</p>
+<p class="links"><a class="ext" href="https://www.google.com/maps/place/?q=place_id:ChIJ74tFT5Pd3ogRpF2s8Pb3nic" target="_blank" rel="noopener">Google Maps place &#8599;</a> <a class="ext" href="https://www.google.com/search?q=The%20Pizza%20Gene%20Stuart%2C%20FL" target="_blank" rel="noopener">Google search &#8599;</a></p>
+<p style="font-size:17px;">Place photos already downloaded for this run (10), at the size the run fetched. Green frame = a photo Fable cited for the sign or interior.</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/f5867a2a9ae5-gbp-photo-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/f5867a2a9ae5-gbp-photo-01.jpg" loading="lazy" alt="#1 owner photo  4000x3000"></a><figcaption>#1 owner photo  4000x3000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/cfbcaa577f50-gbp-photo-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/cfbcaa577f50-gbp-photo-02.jpg" loading="lazy" alt="#2 owner photo  800x800"></a><figcaption>#2 owner photo  800x800</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/aac000039f87-gbp-photo-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/aac000039f87-gbp-photo-03.jpg" loading="lazy" alt="#3 by Michael Omen  3024x3024"></a><figcaption>#3 by Michael Omen  3024x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/7a4a7a6720c3-gbp-photo-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/7a4a7a6720c3-gbp-photo-04.jpg" loading="lazy" alt="#4 by Mariana Payne  4800x3600"></a><figcaption>#4 by Mariana Payne  4800x3600</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/666548b48006-gbp-photo-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/666548b48006-gbp-photo-05.jpg" loading="lazy" alt="#5 owner photo  800x800"></a><figcaption>#5 owner photo  800x800</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/cc305539491a-gbp-photo-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/cc305539491a-gbp-photo-06.jpg" loading="lazy" alt="#6 by AmondaRose Igoe  3024x4032"></a><figcaption>#6 by AmondaRose Igoe  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/7c346d165131-gbp-photo-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/7c346d165131-gbp-photo-07.jpg" loading="lazy" alt="#7 by Lucia Seton  3024x4032"></a><figcaption>#7 by Lucia Seton  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/716371a7868b-gbp-photo-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/716371a7868b-gbp-photo-08.jpg" loading="lazy" alt="#8 by Noreen Perez  3024x4032"></a><figcaption>#8 by Noreen Perez  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/ce8931a40fce-gbp-photo-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/ce8931a40fce-gbp-photo-09.jpg" loading="lazy" alt="#9 by Michelle Flanagan  3600x4800"></a><figcaption>#9 by Michelle Flanagan  3600x4800</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/81c60106fa35-gbp-photo-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/81c60106fa35-gbp-photo-10.jpg" loading="lazy" alt="#10 by ALAN DEE  4000x3000"></a><figcaption>#10 by ALAN DEE  4000x3000</figcaption></figure></div>
+<p style="font-size:17px;margin-top:10px;">Google Maps &quot;Vibe&quot; photos from the evidence build (Google's own in-store/atmosphere category)</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/e2b0625d61ed-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/e2b0625d61ed-01.jpg" loading="lazy" alt="Vibe  5712x4284"></a><figcaption>Vibe  5712x4284</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/8facf86eb974-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/8facf86eb974-02.jpg" loading="lazy" alt="Vibe  3000x4000"></a><figcaption>Vibe  3000x4000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/3348fd02902e-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/3348fd02902e-03.jpg" loading="lazy" alt="Vibe  3456x3456"></a><figcaption>Vibe  3456x3456</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/81c60106fa35-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/81c60106fa35-04.jpg" loading="lazy" alt="Vibe  4000x3000"></a><figcaption>Vibe  4000x3000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/d139bb0858b7-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/d139bb0858b7-05.jpg" loading="lazy" alt="Vibe  4000x3000"></a><figcaption>Vibe  4000x3000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/90bf0690d511-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/90bf0690d511-06.jpg" loading="lazy" alt="Vibe  3024x4032"></a><figcaption>Vibe  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/47c8647b0c54-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/47c8647b0c54-07.jpg" loading="lazy" alt="Vibe  3024x3017"></a><figcaption>Vibe  3024x3017</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/8f657f22a686-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/8f657f22a686-08.jpg" loading="lazy" alt="Vibe  3456x3456"></a><figcaption>Vibe  3456x3456</figcaption></figure></div>
+<p style="font-size:17px;margin-top:10px;">Live Google Maps photo view, reused from the earlier capture under review/</p>
+<p style="font-size:14px;color:#666666;margin-top:4px;">reused the cached capture under review/</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/6eb548fabcf3-google-maps-photos.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/6eb548fabcf3-google-maps-photos.jpg" loading="lazy" alt="Google Maps photo view"></a></div>
+</section>
+<section id="logo-search">
+<h2>Logo image search</h2><p class="sub">&quot;The Pizza Gene Stuart logo&quot;</p>
+<p class="links"><a class="ext" href="https://www.google.com/search?tbm=isch&amp;q=The%20Pizza%20Gene%20Stuart%20logo" target="_blank" rel="noopener">Open Google Images &#8599;</a></p>
+<div class="gray">Logo image search skipped (--skip-google) and no cached results under review/logo-search/.</div>
+</section>
+<section id="candidates">
+<h2>Logo candidates</h2><p class="sub">from the evidence packet; green frame = the file Fable chose. Gray background so white knockouts stay visible.</p>
+<p class="links"><a class="ext" href="https://www.pizzagene.com/" target="_blank" rel="noopener">Website &#8599;</a></p>
+<div class="grid cols3"><figure style="background:#8C8C8C" class="framed"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/49f62b249fed-01-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/49f62b249fed-01-first_party_other.png" loading="lazy" alt="01-first_party_other.png  1198x1200
+first_party_other, traced cut
+FULL authored badge as a WHITE KNOCKOUT: the white ink keyed out of the si
+FABLE'S PICK"></a><figcaption style="font-weight:700">01-first_party_other.png  1198x1200<br>first_party_other, traced cut<br>FULL authored badge as a WHITE KNOCKOUT: the white ink keyed out of the si<br>FABLE'S PICK<br><a class="ext" href="https://www.pizzagene.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/26675017b9a4-02-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/26675017b9a4-02-first_party_other.png" loading="lazy" alt="02-first_party_other.png  1198x1200
+first_party_other, traced cut
+FULL badge, same vector, filled with the authored ground orange #FF5129 on"></a><figcaption>02-first_party_other.png  1198x1200<br>first_party_other, traced cut<br>FULL badge, same vector, filled with the authored ground orange #FF5129 on<br><a class="ext" href="https://www.pizzagene.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/69f209d6bbf8-03-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/69f209d6bbf8-03-first_party_other.png" loading="lazy" alt="03-first_party_other.png  1200x1200
+first_party_other, traced cut
+FULL badge white knockout inside a circular #FF5129 panel (sticker-panel"></a><figcaption>03-first_party_other.png  1200x1200<br>first_party_other, traced cut<br>FULL badge white knockout inside a circular #FF5129 panel (sticker-panel<br><a class="ext" href="https://www.pizzagene.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/3e9a068cb411-04-first_party_other.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/3e9a068cb411-04-first_party_other.jpg" loading="lazy" alt="04-first_party_other.jpg  1019x1020
+first_party_other"></a><figcaption>04-first_party_other.jpg  1019x1020<br>first_party_other<br><a class="ext" href="https://www.pizzagene.com/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure></div>
+</section>
+<section id="sheet">
+<h2>Variant sheet</h2><p class="sub">Fable's default A framed in green. Reply with one letter.</p>
+<p class="links"></p>
+<div class="shot zoom" title="click to toggle native size"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/ab6a5ad797d4-variant-sheet-marked.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/the-pizza-gene/ab6a5ad797d4-variant-sheet-marked.jpg" loading="lazy" alt="variant sheet"></a></div><p class="cap">variants/variant-sheet.png at native size, revision 3. In the HTML page click the sheet to toggle native size.</p>
+</section>
+<section id="links">
+<h2>Links</h2><p class="sub">the link automation results for this location, one row per category; held rows need a human decision. Click a URL to open it.</p>
+<p class="links"></p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Ordering URL on file <a class="ext" href="https://order.toasttab.com/online/the-pizza-gene-424-se-monterey-road" target="_blank" rel="noopener">https://order.toasttab.com/online/the-pizza-gene-424-se-monterey-road</a>: matches the website</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Discovery report link-discovery-report.json (2026-10-09 03:07): 18 categories, 1 for manual review, 1 proposed field updates, 0 proposed events.</p>
+<p style="font-size:15px;color:#6B6B6B;margin-top:4px;">1 URL still waiting on the live Chrome check.</p>
+<p style="font-size:15px;font-weight:700;margin-top:8px;">19 categories: 0 written, 2 verified or already live, 9 held for review, 0 pending browser, 1 rejected, 7 none found.</p>
+<table class="links"><thead><tr><th>Category</th><th>URL</th><th>Status</th><th>Evidence</th></tr></thead><tbody><tr class="st-held"><td class="cat">Website</td><td class="url"><a class="ext" href="https://www.pizzagene.com/" target="_blank" rel="noopener">pizzagene.com/</a></td><td><span class="chip" style="background:#B7791F">held for review</span><div class="why">V2 website_url is NULL. Places websiteUri for place ChIJ74tFT5Pd3ogRpF2s8Pb3nic is <a class="ext" href="http://pizzagene.com/" target="_blank" rel="noopener">http://pizzagene.com/</a> (redirects to <a class="ext" href="https://www.pizzagene.com/" target="_blank" rel="noopener">https://www.pizzagene.com/</a>, Wix site, footer address 424 SE Monterey Rd, Stuart, FL 34994, phone 772-888-3338). Dry run saved as website-bootstrap-dryrun.json; the bootstrap write is a production write and waits for closeout (process hold, not an identity doubt).</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-existing"><td class="cat">Online ordering</td><td class="url"><a class="ext" href="https://order.toasttab.com/online/the-pizza-gene-424-se-monterey-road" target="_blank" rel="noopener">order.toasttab.com/online/the-pizza-gene-424-se-monterey-road</a></td><td><span class="chip" style="background:#1B5E20">already live</span></td><td class="ev">stored ordering URL matches the website; title &quot;Order Online&quot;; the website links to it; URL slug names the business; found as an anchor; official site order candidate; order cta text</td></tr>
+<tr class="st-rejected"><td class="cat">Menu</td><td class="url"><a class="ext" href="https://www.pizzagene.com/stuart-menu" target="_blank" rel="noopener">pizzagene.com/stuart-menu</a></td><td><span class="chip" style="background:#6B6B6B">rejected: Destination rendered a not-found error page.</span></td><td class="ev">title &quot;404 Error: Page Not Found&quot;; soft not found page detected; page broken; Destination rendered a not-found error page</td></tr>
+<tr class="st-held"><td class="cat">Facebook</td><td class="url"><a class="ext" href="https://www.facebook.com/profile.php?id=100093882550912" target="_blank" rel="noopener">facebook.com/profile.php?id=100093882550912</a></td><td><span class="chip" style="background:#B7791F">held for review</span><div class="why">HOLD (lead's direction 2026-10-08): the discovery transport could not record the page after two reads (same length, different checksum each load from injected invisible Unicode; not a login wall), so the report lists it as browser_results_pending. Linked from the site footer; my own plain read in a Boostly.com tab showed 'The Pizza Gene', 922 followers, Pizza place, 424 SE Monterey Rd, Stuart, FL 34994, so the identity looks right. Question: write facebook_url from that read, or wait for a recorded transport read?</div></td><td class="ev">the website links to it; found as an anchor; The official website links to this social profile, but the destination did not independently confirm the exact business or location</td></tr>
+<tr class="st-ready"><td class="cat">Instagram</td><td class="url"><a class="ext" href="https://www.instagram.com/thepizzagene/" target="_blank" rel="noopener">instagram.com/thepizzagene/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev">title &quot;(1) Instagram&quot;; the website links to it; social destination identity signal; canonical form of <a class="ext" href="https://www.instagram.com/thepizzagene?igsh" target="_blank" rel="noopener">https://www.instagram.com/thepizzagene?igsh</a>; found as an anchor</td></tr>
+<tr class="st-none"><td class="cat">X (Twitter)</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-held"><td class="cat">TikTok</td><td class="url"><a class="ext" href="https://www.tiktok.com/@itscayleesmith" target="_blank" rel="noopener">tiktok.com/@itscayleesmith</a></td><td><span class="chip" style="background:#B7791F">held for review</span><div class="why">REJECT: external search surfaced a personal handle (@itscayleesmith), not a business profile; no name, address, or site backlink for The Pizza Gene. Unverifiable TikTok is rejected per the standing rule. No TikTok link is written.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">YouTube</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-held"><td class="cat">Careers</td><td class="url"><a class="ext" href="https://www.pizzagene.com/career" target="_blank" rel="noopener">pizzagene.com/career</a></td><td><span class="chip" style="background:#B7791F">held for review</span><div class="why">No careers page: /careers, /career, /jobs, /job, /employment on the site all return the Wix 404; nothing in the nav, footer, or sitemap.</div></td><td class="ev">title &quot;404 Error: Page Not Found&quot;; soft not found page detected; page broken; Destination rendered a not-found error page</td></tr>
+<tr class="st-held"><td class="cat">Catering</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#B7791F">held for review</span><div class="why">Not found on the site (sitemap: home, menus, about-4, portfolio, blog) or in the external search.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-held"><td class="cat">Events</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#B7791F">held for review</span><div class="why">No events page on the site or in the external search.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-held"><td class="cat">Reservations</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#B7791F">held for review</span><div class="why">No reservations page; the Toast page is ordering only.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-held"><td class="cat">Gift cards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#B7791F">held for review</span><div class="why">No gift card page on the site; Toast page shows no gift card module in the read.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Loyalty / rewards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">iOS app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Android app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">App downloads</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Other</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-held"><td class="cat">youtube x apps</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#B7791F">held for review</span><div class="why">No YouTube, X, or app links on the site, GBP, or in discovery.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr></tbody></table>
+</section>
+<script>
+  for (const el of document.querySelectorAll('.shot.zoom')) {
+    el.addEventListener('click', (ev) => { ev.preventDefault(); el.classList.toggle('native'); });
+  }
+  // Sidebar: highlight the section in view, jump instantly on click (no scroll animation, Travisse 2026-09-29), hamburger below 1000px.
+  (() => {
+    const toc = document.getElementById('toc');
+    const links = new Map([...toc.querySelectorAll('a[href^="#"]')].map((a) => [a.getAttribute('href').slice(1), a]));
+    const sections = [...document.querySelectorAll('section[id]')];
+    const visible = new Set();
+    const setActive = () => {
+      const current = sections.find((s) => visible.has(s)) ?? sections.find((s) => s.getBoundingClientRect().bottom > 0) ?? sections[sections.length - 1];
+      for (const a of links.values()) a.classList.remove('active');
+      if (current) links.get(current.id)?.classList.add('active');
+    };
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); }
+      setActive();
+    }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+    for (const s of sections) io.observe(s);
+    setActive();
+    const toggle = toc.querySelector('.toc-toggle');
+    toggle.addEventListener('click', () => { const open = toc.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
+    for (const a of links.values()) a.addEventListener('click', (ev) => {
+      const target = document.getElementById(a.getAttribute('href').slice(1));
+      if (!target) return;
+      ev.preventDefault();
+      target.scrollIntoView({ behavior: 'instant', block: 'start' });
+      history.replaceState(null, '', a.getAttribute('href'));
+      toc.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
+    });
+  })();
+</script>
+</body></html>

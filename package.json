@@ -1,0 +1,11 @@
+{
+  "name": "fulfillment-reviews",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static, public review pages for Boostly in-store fulfillment (Tap Cards, stickers, signage). Built from the brand-design run directories.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
