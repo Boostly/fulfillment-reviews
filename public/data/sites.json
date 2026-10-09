@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T22:54:17.063Z",
+  "generated_at": "2026-10-09T23:01:15.200Z",
   "count": 25,
   "sites": [
     {
@@ -29,12 +29,12 @@
       "city": "Madison",
       "state": "NJ",
       "requested_at": "2026-10-08T18:07:43.892",
-      "updated_at": "2026-10-09T02:46:29.863Z",
-      "cursor": "variants",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-09T22:57:50.277Z",
+      "cursor": "overrides",
+      "status": "picked",
+      "status_label": "Pick recorded",
       "recommended_letter": "A",
-      "picked_letter": null,
+      "picked_letter": "A",
       "review_url": "/indian-kitchen-grill-madison/",
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=526-2",
       "print_handoff_url": null,
@@ -149,8 +149,8 @@
       "city": "Stuart",
       "state": "FL",
       "requested_at": "2026-10-06T19:11:01.738",
-      "updated_at": "2026-10-09T03:16:04.501Z",
-      "cursor": "links",
+      "updated_at": "2026-10-09T22:57:38.583Z",
+      "cursor": "variants",
       "status": "awaiting",
       "status_label": "Awaiting pick",
       "recommended_letter": "A",
@@ -158,8 +158,8 @@
       "review_url": "/the-pizza-gene/",
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=539-2",
       "print_handoff_url": null,
-      "page_bytes": 33890,
-      "blob_bytes": 7901057,
+      "page_bytes": 35769,
+      "blob_bytes": 8499244,
       "blob_assets": 27
     },
     {
