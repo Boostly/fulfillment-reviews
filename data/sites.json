@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T23:27:15.465Z",
+  "generated_at": "2026-10-10T21:02:16.385Z",
   "count": 25,
   "sites": [
     {
@@ -49,7 +49,7 @@
       "city": "Madison",
       "state": "NJ",
       "requested_at": "2026-10-08T18:07:43.892",
-      "updated_at": "2026-10-09T23:17:32.872Z",
+      "updated_at": "2026-10-10T20:59:13.422Z",
       "cursor": "figma",
       "status": "applied",
       "status_label": "Branding applied",
@@ -58,8 +58,8 @@
       "review_url": "/indian-kitchen-grill-madison/",
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=526-2",
       "print_handoff_url": null,
-      "page_bytes": 47452,
-      "blob_bytes": 12543441,
+      "page_bytes": 47449,
+      "blob_bytes": 12534154,
       "blob_assets": 35
     },
     {
@@ -189,8 +189,8 @@
       "city": "Pacific Grove",
       "state": "CA",
       "requested_at": "2026-10-06T15:04:27.39",
-      "updated_at": "2026-10-09T23:20:06.218Z",
-      "cursor": "slack",
+      "updated_at": "2026-10-09T23:24:34.378Z",
+      "cursor": "notion",
       "status": "closed",
       "status_label": "Closed out",
       "recommended_letter": "A",
