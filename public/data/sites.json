@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T17:46:39.538Z",
+  "generated_at": "2026-10-12T18:45:34.960Z",
   "count": 26,
   "sites": [
     {
@@ -9,7 +9,7 @@
       "city": "Harbor Springs",
       "state": "MI",
       "requested_at": "2026-10-12T15:25:03.831",
-      "updated_at": "2026-10-12T17:43:59.634Z",
+      "updated_at": "2026-10-12T18:43:06.249Z",
       "cursor": "variants",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -18,8 +18,8 @@
       "review_url": "/harbor-springs-b-c-pizza/",
       "figma_url": null,
       "print_handoff_url": null,
-      "page_bytes": 39194,
-      "blob_bytes": 6018556,
+      "page_bytes": 40026,
+      "blob_bytes": 7512112,
       "blob_assets": 27
     },
     {
