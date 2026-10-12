@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Harbor Springs B.C. Pizza review</title>
+<style>
+  :root { color-scheme: light; scroll-behavior: auto; }
+  body { margin: 0; padding: 32px 40px 80px 280px; background: #fff; color: #111; font-family: Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.35; max-width: 2040px; box-sizing: border-box; }
+  h2 { font-size: 34px; margin: 0 0 4px; }
+  section { padding: 28px 0; border-bottom: 3px solid #ccc; scroll-margin-top: 16px; }
+  section:first-child { padding-top: 0; }
+  p[id] { scroll-margin-top: 16px; }
+  .toc { position: fixed; top: 0; left: 0; bottom: 0; width: 240px; box-sizing: border-box; padding: 24px 16px; overflow-y: auto; background: #f4f4f4; border-right: 1px solid #ddd; font-size: 15px; z-index: 10; }
+  .toc ol { list-style: none; margin: 0; padding: 0; }
+  .toc ol ol { margin: 2px 0 6px 14px; }
+  .toc ol ol a { font-size: 13px; color: #555; padding: 3px 8px; }
+  .toc a { display: block; padding: 6px 8px; border-radius: 4px; color: #222; line-height: 1.3; }
+  .toc a:hover { background: #e6e6e6; }
+  .toc a.active { background: #1b5e20; color: #fff; font-weight: 700; }
+  .toc a.top { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+  .toc-toggle { display: none; }
+  @media (max-width: 1000px) {
+    body { padding: 64px 20px 80px; }
+    .toc { position: sticky; top: 0; bottom: auto; width: auto; margin: -64px -20px 24px; padding: 8px 12px; border-right: 0; border-bottom: 1px solid #ddd; max-height: 80vh; }
+    .toc-toggle { display: block; font: inherit; font-weight: 700; background: none; border: 1px solid #bbb; border-radius: 4px; padding: 6px 12px; cursor: pointer; }
+    .toc-toggle::before { content: "\2630  "; }
+    .toc:not(.open) ol { display: none; }
+    .toc ol { padding-top: 8px; }
+  }
+  p { margin: 4px 0; }
+  p.sub { color: #555; font-size: 17px; margin-bottom: 14px; }
+  p.cap { color: #666; font-size: 15px; }
+  .gray { background: #ededed; color: #444; padding: 26px; font-size: 20px; border-radius: 4px; }
+  .hdr { display: flex; gap: 30px; align-items: flex-start; }
+  .hdr > div:first-child { flex: 1; }
+  .cell { flex: 0 0 auto; max-width: 520px; }
+  .cell img { display: block; max-width: 100%; border: 6px solid #1b5e20; box-sizing: border-box; }
+  .cell p { color: #1b5e20; font-weight: 700; font-size: 16px; }
+  .shot { border: 1px solid #ddd; overflow: auto; max-height: 90vh; }
+  .shot img { display: block; width: 100%; height: auto; }
+  /* 2026-10-01: a zoomable shot (the variant sheet) is never height-clipped: every row stays visible at page width,
+     and native size scrolls inside the container (overflow auto) instead of hiding rows below 90vh. */
+  .shot.zoom { max-height: none; }
+  .shot.zoom img { cursor: zoom-in; }
+  .cell img.zoom3x { margin-top: 10px; border: 3px solid #444; image-rendering: pixelated; }
+  .cell img.zoom3x.bad { border-color: #B71C1C; }
+  .cell.hold img:first-of-type { border-color: #B71C1C; }
+  .shot.zoom.native img { width: auto; max-width: none; cursor: zoom-out; }
+  .grid { display: grid; gap: 14px; }
+  .grid.cols3 { grid-template-columns: repeat(3, 1fr); }
+  .grid.cols4 { grid-template-columns: repeat(4, 1fr); }
+  .grid.cols5 { grid-template-columns: repeat(5, 1fr); }
+  .grid.cols6 { grid-template-columns: repeat(6, 1fr); }
+  figure { margin: 0; background: #ededed; }
+  figure.framed { outline: 6px solid #1b5e20; outline-offset: -6px; }
+  figure a { display: block; }
+  figure img { display: block; width: 100%; height: 360px; object-fit: contain; }
+  .grid.cols4 figure img { height: 280px; }
+  .grid.cols5 figure img, .grid.cols6 figure img { height: 220px; }
+  figcaption { font-size: 15px; padding: 6px 4px 10px; background: #fff; color: #222; }
+  a { color: inherit; text-decoration: none; }
+  a.ext { color: #0b57d0; text-decoration: underline; text-underline-offset: 2px; word-break: break-all; }
+  a.ext:hover { color: #083a8c; }
+  p.links { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 16px; font-size: 15px; }
+  p.links a.ext { background: #eef3fc; border: 1px solid #c9d8f5; border-radius: 4px; padding: 3px 10px; text-decoration: none; word-break: normal; }
+  p.links a.ext:hover { background: #dce7fb; }
+  table.links { border-collapse: collapse; width: 100%; font-size: 15px; margin-top: 8px; }
+  table.links th { text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: #666; padding: 6px 10px; border-bottom: 2px solid #ddd; }
+  table.links td { padding: 9px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top; }
+  table.links td.cat { font-weight: 700; white-space: nowrap; }
+  table.links td.url { max-width: 380px; word-break: break-all; }
+  table.links td.ev { color: #444; max-width: 520px; }
+  table.links .chip { display: inline-block; color: #fff; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
+  table.links .why { color: #444; font-size: 14px; margin-top: 5px; max-width: 420px; }
+  table.links .none { color: #999; }
+  table.links tr.st-held td { background: #fff8e8; }
+  table.links tr.st-rejected td { color: #777; }
+  table.links tr.st-rejected .chip { text-transform: none; letter-spacing: 0; white-space: normal; }
+  table.links tr.st-written td { background: #eef7ee; }
+</style></head><body id="top">
+<nav class="toc" id="toc"><a class="top" href="/" style="margin-bottom:12px">&larr; All locations</a><button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-list">Sections</button>
+<ol id="toc-list">
+<li><a href="#top" class="top">Top</a></li>
+<li><a href="#header">Overview</a><ol><li><a href="#header-1">Gates, per row of the sheet</a></li></ol></li>
+<li><a href="#website">Website</a></li>
+<li><a href="#gbp">Google Business Profile</a></li>
+<li><a href="#logo-search">Logo image search</a></li>
+<li><a href="#candidates">Logo candidates</a></li>
+<li><a href="#sheet">Variant sheet</a></li>
+<li><a href="#links">Links (1 held for review)</a></li>
+</ol></nav>
+<section id="header">
+<p class="links"><a class="ext" href="https://bc.pizza/" target="_blank" rel="noopener">Website &#8599;</a> <a class="ext" href="https://bc.pizza/" target="_blank" rel="noopener">website: bc.pizza/ &#8599;</a> <a class="ext" href="https://bcpizzaus.hungerrush.com/Order/Menu/1009" target="_blank" rel="noopener">ordering: bcpizzaus.hungerrush.com/Order/Menu/1009 &#8599;</a> <a class="ext" href="https://bc.pizza/locations-bc-pizza-near-me/" target="_blank" rel="noopener">ordering_rejected_franchisor_picker: bc.pizza/locations-bc-pizza-near-me/ &#8599;</a> <a class="ext" href="https://bcpizzaus.hungerrush.com/Account/LogOn" target="_blank" rel="noopener">ordering_rejected_stored_login_page: bcpizzaus.hungerrush.com/Account/LogOn &#8599;</a> <a class="ext" href="https://bc.pizza/bc-pizza-menu/" target="_blank" rel="noopener">menu: bc.pizza/bc-pizza-menu/ &#8599;</a> <a class="ext" href="https://bc.pizza/join-the-team/" target="_blank" rel="noopener">careers_jobs: bc.pizza/join-the-team/ &#8599;</a> <a class="ext" href="https://www.facebook.com/HarborSpringsBCPizza/" target="_blank" rel="noopener">facebook: facebook.com/HarborSpringsBCPizza/ &#8599;</a> <a class="ext" href="https://www.facebook.com/tr" target="_blank" rel="noopener">facebook_rejected_pixel: facebook.com/tr &#8599;</a> <a class="ext" href="https://www.instagram.com/hsbcpizza/" target="_blank" rel="noopener">instagram: instagram.com/hsbcpizza/ &#8599;</a> <a class="ext" href="https://www.theknot.com/marketplace/catering-harbor-springs-mi/food-truck" target="_blank" rel="noopener">catering: theknot.com/marketplace/catering-harbor-springs- &#8599;</a></p>
+<div class="hdr"><div><p style="font-size:44px;font-weight:700;">Harbor Springs B.C. Pizza</p>
+<p style="font-size:20px;color:#444444;margin-top:6px;">Harbor Springs, MI   ·   request l8f467jj28vswi4x81myk2d8   ·   full order</p>
+<p style="font-size:29px;font-weight:700;color:#1B5E20;margin-top:22px;">Fable's default: A</p>
+<p style="font-size:19px;margin-top:6px;">card knockout at Fable's pick</p>
+<p style="font-size:16px;color:#666666;margin-top:8px;">Confidence: medium   ·   flags: brand_environment_unassessed, authored_panel_ground, band_light_for_white_digit</p>
+<p style="font-size:16px;color:#666666;margin-top:4px;">Cell A = card knockout, primary #0171BE, band #FFCC00 (Fable's pick), text #FFFFFF, print digit #1B1B1B</p></div><div class="cell"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/626c39c18357-default-cell.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/626c39c18357-default-cell.png" alt="default cell"></a><p>Fable's default cell A (native sheet pixels, click to open)</p><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/f6d9674cfba2-logo-3x.png" target="_blank" title="open the 3x crop"><img class="zoom3x" src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/f6d9674cfba2-logo-3x.png" alt="logo at 3x"></a><p><b>Logo at 3x (what prints).</b> Final upload 1678x369px, source 1745px (native), given on the command line, upscale 0.962x. Edge quality: ok. Soft-edge share 0.9919, stair-step score 0.3289.</p></div></div>
+<p id="header-1" style="font-size:24px;font-weight:700;margin-top:18px;">Gates, per row of the sheet</p>
+<p style="font-size:18px;font-weight:700;color:#8A5A00;margin-top:8px;">card knockout: 16 of 17 gates pass, nothing blocking</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">whiteblob (warning): opaque near-white region(s) facing transparency — likely leftover back</p>
+<p style="font-size:18px;font-weight:700;color:#B71C1C;margin-top:8px;">full color: 11 of 16 gates pass, 2 blocking</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">holes (warning): no_enclosed_counters</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">interior (blocks, can be overridden): fill-collision: apply full knockout (knockout cmd) — do NOT ship outli</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">whiteblob (warning): opaque near-white region(s) facing transparency — likely leftover back</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">text-legibility (warning): business_name_unreadable_at_product_size</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">upload-size (blocks, can be overridden): upload_over_byte_cap</p>
+<p style="font-size:18px;font-weight:700;color:#8A5A00;margin-top:8px;">in-store: 16 of 17 gates pass, nothing blocking</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">whiteblob (warning): opaque near-white region(s) facing transparency — likely leftover back</p>
+<p style="font-size:18px;font-weight:700;color:#B71C1C;margin-top:8px;">full authored lockup on the site footer navy (theme-authored #21253A), band candidates as columns: 11 of 16 gates pass, 2 blocking</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">holes (warning): no_enclosed_counters</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">interior (blocks, can be overridden): fill-collision: apply full knockout (knockout cmd) — do NOT ship outli</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">whiteblob (warning): opaque near-white region(s) facing transparency — likely leftover back</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">text-legibility (warning): business_name_unreadable_at_product_size</p>
+<p style="font-size:15px;color:#333333;margin-left:28px;margin-top:2px;">upload-size (blocks, can be overridden): upload_over_byte_cap</p>
+</section>
+<section id="website">
+<h2>Website</h2><p class="sub"><a class="ext" href="https://bc.pizza/" target="_blank" rel="noopener">https://bc.pizza/</a></p>
+<p class="links"><a class="ext" href="https://bc.pizza/" target="_blank" rel="noopener">Open website &#8599;</a></p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/79fc5fdd9755-desktop.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/79fc5fdd9755-desktop.jpg" loading="lazy" alt="website desktop screenshot"></a></div><p class="cap">Desktop screenshot from the run's evidence (evidence/website-visual/desktop.png).</p>
+</section>
+<section id="gbp">
+<h2>Google Business Profile</h2><p class="sub">place id ChIJ7yZgz0CGSk0RCQjM-jWT05I</p>
+<p class="links"><a class="ext" href="https://www.google.com/maps/place/?q=place_id:ChIJ7yZgz0CGSk0RCQjM-jWT05I" target="_blank" rel="noopener">Google Maps place &#8599;</a> <a class="ext" href="https://www.google.com/search?q=Harbor%20Springs%20B.C.%20Pizza%20Harbor%20Springs%2C%20MI" target="_blank" rel="noopener">Google search &#8599;</a></p>
+<p style="font-size:17px;">Place photos already downloaded for this run (10), at the size the run fetched. Green frame = a photo Fable cited for the sign or interior.</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/d2e4d3550176-gbp-photo-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/d2e4d3550176-gbp-photo-01.jpg" loading="lazy" alt="#1 owner photo  3024x4032"></a><figcaption>#1 owner photo  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/e32e8e277e06-gbp-photo-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/e32e8e277e06-gbp-photo-02.jpg" loading="lazy" alt="#2 owner photo  1440x960"></a><figcaption>#2 owner photo  1440x960</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/57ee8c0dda4e-gbp-photo-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/57ee8c0dda4e-gbp-photo-03.jpg" loading="lazy" alt="#3 owner photo  1080x1080"></a><figcaption>#3 owner photo  1080x1080</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/10731a9e563a-gbp-photo-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/10731a9e563a-gbp-photo-04.jpg" loading="lazy" alt="#4 owner photo  1536x2048"></a><figcaption>#4 owner photo  1536x2048</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/961b1b66efca-gbp-photo-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/961b1b66efca-gbp-photo-05.jpg" loading="lazy" alt="#5 owner photo  2048x1365"></a><figcaption>#5 owner photo  2048x1365</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/10a731c50c2e-gbp-photo-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/10a731c50c2e-gbp-photo-06.jpg" loading="lazy" alt="#6 owner photo  1080x1080"></a><figcaption>#6 owner photo  1080x1080</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/7a03ef4823f8-gbp-photo-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/7a03ef4823f8-gbp-photo-07.jpg" loading="lazy" alt="#7 owner photo  1440x960"></a><figcaption>#7 owner photo  1440x960</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/5f0d8b13934e-gbp-photo-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/5f0d8b13934e-gbp-photo-08.jpg" loading="lazy" alt="#8 owner photo  1080x1080"></a><figcaption>#8 owner photo  1080x1080</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/28e3401fe837-gbp-photo-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/28e3401fe837-gbp-photo-09.jpg" loading="lazy" alt="#9 owner photo  1440x960"></a><figcaption>#9 owner photo  1440x960</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/f3cbf0df1f88-gbp-photo-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/f3cbf0df1f88-gbp-photo-10.jpg" loading="lazy" alt="#10 owner photo  1440x960"></a><figcaption>#10 owner photo  1440x960</figcaption></figure></div>
+<p style="font-size:17px;margin-top:10px;">Google Maps &quot;Vibe&quot; photos from the evidence build (Google's own in-store/atmosphere category)</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/a8e7f666f693-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/a8e7f666f693-01.jpg" loading="lazy" alt="Vibe  3072x4080"></a><figcaption>Vibe  3072x4080</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/4240284b4e6a-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/4240284b4e6a-02.jpg" loading="lazy" alt="Vibe  4000x6000"></a><figcaption>Vibe  4000x6000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/52899685bdf1-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/52899685bdf1-03.jpg" loading="lazy" alt="Vibe  4080x3072"></a><figcaption>Vibe  4080x3072</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/5313d0fa174f-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/5313d0fa174f-04.jpg" loading="lazy" alt="Vibe  4080x3072"></a><figcaption>Vibe  4080x3072</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/c3e07c14ef0f-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/c3e07c14ef0f-05.jpg" loading="lazy" alt="Vibe  1836x3264"></a><figcaption>Vibe  1836x3264</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/87e897dca897-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/87e897dca897-06.jpg" loading="lazy" alt="Vibe  1440x960"></a><figcaption>Vibe  1440x960</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/7e8f31b04348-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/7e8f31b04348-07.jpg" loading="lazy" alt="Vibe  720x1280"></a><figcaption>Vibe  720x1280</figcaption></figure></div>
+<p style="font-size:17px;margin-top:10px;">Live Google Maps photo view, reused from the earlier capture under review/</p>
+<p style="font-size:14px;color:#666666;margin-top:4px;">reused the cached capture under review/</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/c5f876ecb0b6-google-maps-photos.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/c5f876ecb0b6-google-maps-photos.png" loading="lazy" alt="Google Maps photo view"></a></div>
+</section>
+<section id="logo-search">
+<h2>Logo image search</h2><p class="sub">&quot;Harbor Springs B.C. Pizza Harbor Springs logo&quot;</p>
+<p class="links"><a class="ext" href="https://www.google.com/search?tbm=isch&amp;q=Harbor%20Springs%20B.C.%20Pizza%20Harbor%20Springs%20logo" target="_blank" rel="noopener">Open Google Images &#8599;</a></p>
+<div class="gray">Logo image search skipped (--skip-google) and no cached results under review/logo-search/.</div>
+</section>
+<section id="candidates">
+<h2>Logo candidates</h2><p class="sub">from the evidence packet; green frame = the file Fable chose. Gray background so white knockouts stay visible.</p>
+<p class="links"><a class="ext" href="https://bc.pizza/" target="_blank" rel="noopener">Website &#8599;</a></p>
+<div class="grid cols3"><figure style="background:#8C8C8C" class="framed"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/1923b9483716-01-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/1923b9483716-01-first_party_other.png" loading="lazy" alt="01-first_party_other.png  2337x681
+first_party_other, traced cut
+FABLE'S PICK"></a><figcaption style="font-weight:700">01-first_party_other.png  2337x681<br>first_party_other, traced cut<br>FABLE'S PICK<br><a class="ext" href="https://bc.pizza/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/1fca134299a8-02-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/1fca134299a8-02-first_party_other.png" loading="lazy" alt="02-first_party_other.png  1000x1000
+first_party_other, traced cut"></a><figcaption>02-first_party_other.png  1000x1000<br>first_party_other, traced cut<br><a class="ext" href="https://bc.pizza/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/6c307559e1b0-03-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/6c307559e1b0-03-first_party_other.png" loading="lazy" alt="03-first_party_other.png  720x720
+first_party_other"></a><figcaption>03-first_party_other.png  720x720<br>first_party_other<br><a class="ext" href="https://bc.pizza/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/c25093887c1d-04-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/c25093887c1d-04-first_party_other.png" loading="lazy" alt="04-first_party_other.png  1745x369
+first_party_other, traced cut"></a><figcaption>04-first_party_other.png  1745x369<br>first_party_other, traced cut<br><a class="ext" href="https://bc.pizza/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/20ad5d90e637-05-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/20ad5d90e637-05-first_party_header.png" loading="lazy" alt="05-first_party_header.png  700x233
+site header"></a><figcaption>05-first_party_header.png  700x233<br>site header<br><a class="ext" href="https://bc.pizza/" target="_blank" rel="noopener">source &#8599;</a></figcaption></figure></div>
+</section>
+<section id="sheet">
+<h2>Variant sheet</h2><p class="sub">Fable's default A framed in green. Reply with one letter.</p>
+<p class="links"></p>
+<div class="shot zoom" title="click to toggle native size"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/49647294343c-variant-sheet-marked.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/harbor-springs-b-c-pizza/49647294343c-variant-sheet-marked.png" loading="lazy" alt="variant sheet"></a></div><p class="cap">variants/variant-sheet.png at native size, revision 2. In the HTML page click the sheet to toggle native size.</p>
+</section>
+<section id="links">
+<h2>Links</h2><p class="sub">the link automation results for this location, one row per category; held rows need a human decision. Click a URL to open it.</p>
+<p class="links"></p>
+<p style="font-size:15px;color:#444444;">Run: review stage no writes; no link writes applied; by fulfill-location agent (Claude) 2026-10-12.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Website bootstrap: unknown, Places says <a class="ext" href="https://bc.pizza/" target="_blank" rel="noopener">https://bc.pizza/</a>.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Ordering URL on file <a class="ext" href="https://bcpizzaus.hungerrush.com/Account/LogOn" target="_blank" rel="noopener">https://bcpizzaus.hungerrush.com/Account/LogOn</a>: does not match the website. MISMATCH.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Discovery report link-discovery-report.json (2026-10-12 17:37): 18 categories, 3 for manual review, 1 proposed field updates, 3 proposed events.</p>
+<p style="font-size:15px;color:#6B6B6B;margin-top:4px;">2 URLs still waiting on the live Chrome check.</p>
+<p style="font-size:15px;font-weight:700;margin-top:8px;">22 categories: 0 written, 5 verified or already live, 1 held for review, 0 pending browser, 4 rejected, 12 none found.</p>
+<table class="links"><thead><tr><th>Category</th><th>URL</th><th>Status</th><th>Evidence</th></tr></thead><tbody><tr class="st-ready"><td class="cat">Website</td><td class="url"><a class="ext" href="https://bc.pizza/" target="_blank" rel="noopener">bc.pizza/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">Website bootstrap, see website_bootstrap. Not a hold: Places bootstrap of an empty website_url.</div></td><td class="ev">verified (static fetch, Places websiteUri, store page present)</td></tr>
+<tr class="st-held"><td class="cat">Online ordering</td><td class="url"><a class="ext" href="https://bcpizzaus.hungerrush.com/Order/Menu/1009" target="_blank" rel="noopener">bcpizzaus.hungerrush.com/Order/Menu/1009</a></td><td><span class="chip" style="background:#B7791F">held for review</span><div class="why">Question for Travisse: replace the stored ordering_url (the HungerRush LogOn page, a login wall) with the store-specific ordering menu <a class="ext" href="https://bcpizzaus.hungerrush.com/Order/Menu/1009" target="_blank" rel="noopener">https://bcpizzaus.hungerrush.com/Order/Menu/1009</a> that bc.pizza/locations/harbor-springs/ publishes? It overwrites a different existing URL. The Order Online custom event would then point at the same URL (never a second ordering URL). The discovery report's proposed Order Online -&gt; <a class="ext" href="https://bc.pizza/locations-bc-pizza-near-me/" target="_blank" rel="noopener">https://bc.pizza/locations-bc-pizza-near-me/</a> is the franchisor's location picker (header ORDER NOW), not this store's ordering: rejected.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-ready"><td class="cat">Menu</td><td class="url"><a class="ext" href="https://bc.pizza/bc-pizza-menu/" target="_blank" rel="noopener">bc.pizza/bc-pizza-menu/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">Franchise menu; the Harbor Springs page's View Menu button links it. Write as the Menu custom event at closeout (Order Online is held, so Menu stays active; if ordering is later written, enforce-linktree-defaults disables Menu).</div></td><td class="ev">title &quot;Check out our Tantalizing Offerings on the BC Pizza Menu&quot;; the website links to it; found as an anchor</td></tr>
+<tr class="st-ready"><td class="cat">Facebook</td><td class="url"><a class="ext" href="https://www.facebook.com/HarborSpringsBCPizza/" target="_blank" rel="noopener">facebook.com/HarborSpringsBCPizza/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">Page title 'Harbor Springs B.C. Pizza | Harbor Springs MI', 1.3K followers, intro 'Hometown, Handmade, Gourmet', address 930 State St Unit 9 Harbor Springs MI, phone (231) 526-2424 (matches Places), email hsbcpizza@gmail.com, website bc.pizza, avatar is the franchise badge. Discovery only surfaced facebook.com/tr (the site's tracking pixel): rejected. Write via branding set --facebook-url at closeout.</div></td><td class="ev">verified in the live Chrome tab 2026-10-12 (logged-out public page)</td></tr>
+<tr class="st-ready"><td class="cat">Instagram</td><td class="url"><a class="ext" href="https://www.instagram.com/hsbcpizza/" target="_blank" rel="noopener">instagram.com/hsbcpizza/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">'Harbor Springs BC Pizza (@hsbcpizza)', 1,393 followers, 1,074 posts, bio 'GOURMET pizza just a phone call away! 231-526-2424 Pickup/Delivery/Dine-In', link bcpizza.net (redirects to bc.pizza). Name, phone and brand site match. The verifier's 'lacks official-site backing' hold is overruled by the phone and brand-site match. Write via branding set --instagram-url at closeout.</div></td><td class="ev">title &quot;Harbor Springs BC Pizza (@hsbcpizza) • Instagram photos and videos&quot;; social destination identity signal; canonical form of <a class="ext" href="https://www.instagram.com/hsbcpizza/reels/?hl" target="_blank" rel="noopener">https://www.instagram.com/hsbcpizza/reels/?hl</a>; google organic candidate</td></tr>
+<tr class="st-none"><td class="cat">X (Twitter)</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">TikTok</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span><div class="why">No TikTok found; unverifiable TikTok is a no by rule.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">YouTube</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-ready"><td class="cat">Careers</td><td class="url"><a class="ext" href="https://bc.pizza/join-the-team/" target="_blank" rel="noopener">bc.pizza/join-the-team/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span><div class="why">Franchise-wide application page; the Harbor Springs page itself says WE'RE HIRING. Write as the Careers custom event at closeout.</div></td><td class="ev">title &quot;Join The Team - BC Pizza&quot;; the website links to it; found as an anchor; official site careers candidate; careers page level</td></tr>
+<tr class="st-rejected"><td class="cat">Catering</td><td class="url"><a class="ext" href="https://www.theknot.com/marketplace/catering-harbor-springs-mi/food-truck" target="_blank" rel="noopener">theknot.com/marketplace/catering-harbor-springs-mi/food-truck</a></td><td><span class="chip" style="background:#6B6B6B">rejected: The Knot marketplace listing for Harbor Springs food trucks, not this...</span><div class="why">The Knot marketplace listing for Harbor Springs food trucks, not this business.</div></td><td class="ev">title &quot;Catering With Prices in Harbor Springs, MI - The Knot&quot;; URL slug names the business; google organic candidate</td></tr>
+<tr class="st-none"><td class="cat">Events</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span><div class="why">No events page on the franchisor site or the store page; no visible upcoming events. No Events link.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Reservations</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Gift cards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span><div class="why">No first-party gift card page found.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Loyalty / rewards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">iOS app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Android app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">App downloads</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Other</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">apps</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span><div class="why">No app links on the franchisor site; app links are held by rule anyway.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-rejected"><td class="cat">facebook rejected pixel</td><td class="url"><a class="ext" href="https://www.facebook.com/tr" target="_blank" rel="noopener">facebook.com/tr</a></td><td><span class="chip" style="background:#6B6B6B">rejected: Meta pixel endpoint from the site's script tag, not a page.</span></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-rejected"><td class="cat">ordering rejected franchisor picker</td><td class="url"><a class="ext" href="https://bc.pizza/locations-bc-pizza-near-me/" target="_blank" rel="noopener">bc.pizza/locations-bc-pizza-near-me/</a></td><td><span class="chip" style="background:#6B6B6B">rejected: The header ORDER NOW on bc.pizza goes to the all-locations list, not...</span><div class="why">The header ORDER NOW on bc.pizza goes to the all-locations list, not to Harbor Springs ordering. Not a storefront.</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-rejected"><td class="cat">ordering rejected stored login page</td><td class="url"><a class="ext" href="https://bcpizzaus.hungerrush.com/Account/LogOn" target="_blank" rel="noopener">bcpizzaus.hungerrush.com/Account/LogOn</a></td><td><span class="chip" style="background:#6B6B6B">rejected: Stored ordering_url is the HungerRush account login page, not a custo...</span><div class="why">Stored ordering_url is the HungerRush account login page, not a customer-facing ordering link; superseded by the site-published Order/Menu/1009 (held above).</div></td><td class="ev"><span class="none">no evidence recorded</span></td></tr></tbody></table>
+</section>
+<script>
+  for (const el of document.querySelectorAll('.shot.zoom')) {
+    el.addEventListener('click', (ev) => { ev.preventDefault(); el.classList.toggle('native'); });
+  }
+  // Sidebar: highlight the section in view, jump instantly on click (no scroll animation, Travisse 2026-09-29), hamburger below 1000px.
+  (() => {
+    const toc = document.getElementById('toc');
+    const links = new Map([...toc.querySelectorAll('a[href^="#"]')].map((a) => [a.getAttribute('href').slice(1), a]));
+    const sections = [...document.querySelectorAll('section[id]')];
+    const visible = new Set();
+    const setActive = () => {
+      const current = sections.find((s) => visible.has(s)) ?? sections.find((s) => s.getBoundingClientRect().bottom > 0) ?? sections[sections.length - 1];
+      for (const a of links.values()) a.classList.remove('active');
+      if (current) links.get(current.id)?.classList.add('active');
+    };
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); }
+      setActive();
+    }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+    for (const s of sections) io.observe(s);
+    setActive();
+    const toggle = toc.querySelector('.toc-toggle');
+    toggle.addEventListener('click', () => { const open = toc.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
+    for (const a of links.values()) a.addEventListener('click', (ev) => {
+      const target = document.getElementById(a.getAttribute('href').slice(1));
+      if (!target) return;
+      ev.preventDefault();
+      target.scrollIntoView({ behavior: 'instant', block: 'start' });
+      history.replaceState(null, '', a.getAttribute('href'));
+      toc.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
+    });
+  })();
+</script>
+</body></html>

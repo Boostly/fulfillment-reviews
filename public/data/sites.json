@@ -1,7 +1,27 @@
 {
-  "generated_at": "2026-10-10T21:02:16.385Z",
-  "count": 25,
+  "generated_at": "2026-10-12T17:46:39.538Z",
+  "count": 26,
   "sites": [
+    {
+      "slug": "harbor-springs-b-c-pizza",
+      "name": "Harbor Springs B.C. Pizza",
+      "account": "Harbor Springs B.C. Pizza",
+      "city": "Harbor Springs",
+      "state": "MI",
+      "requested_at": "2026-10-12T15:25:03.831",
+      "updated_at": "2026-10-12T17:43:59.634Z",
+      "cursor": "variants",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "A",
+      "picked_letter": null,
+      "review_url": "/harbor-springs-b-c-pizza/",
+      "figma_url": null,
+      "print_handoff_url": null,
+      "page_bytes": 39194,
+      "blob_bytes": 6018556,
+      "blob_assets": 27
+    },
     {
       "slug": "mad-fish-st-petersburg",
       "name": "Mad Fish (St. Petersburg)",
