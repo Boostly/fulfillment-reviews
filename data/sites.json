@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T21:17:13.681Z",
+  "generated_at": "2026-10-12T21:21:39.356Z",
   "count": 26,
   "sites": [
     {
@@ -9,12 +9,12 @@
       "city": "Harbor Springs",
       "state": "MI",
       "requested_at": "2026-10-12T15:25:03.831",
-      "updated_at": "2026-10-12T21:14:18.742Z",
-      "cursor": "gates",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-12T21:17:28.809Z",
+      "cursor": "variants",
+      "status": "picked",
+      "status_label": "Pick recorded",
       "recommended_letter": "A",
-      "picked_letter": null,
+      "picked_letter": "AH",
       "review_url": "/harbor-springs-b-c-pizza/",
       "figma_url": null,
       "print_handoff_url": null,
@@ -109,7 +109,7 @@
       "city": "League City",
       "state": "TX",
       "requested_at": "2026-10-08T15:29:17.638",
-      "updated_at": "2026-10-12T20:53:34.402Z",
+      "updated_at": "2026-10-12T21:18:31.493Z",
       "cursor": "variants",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -119,7 +119,7 @@
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=522-2",
       "print_handoff_url": null,
       "page_bytes": 38468,
-      "blob_bytes": 3583383,
+      "blob_bytes": 3417556,
       "blob_assets": 21
     },
     {
@@ -149,8 +149,8 @@
       "city": "Portland",
       "state": "OR",
       "requested_at": "2026-10-07T18:20:23.251",
-      "updated_at": "2026-10-12T21:06:06.682Z",
-      "cursor": "slack",
+      "updated_at": "2026-10-12T21:18:24.133Z",
+      "cursor": "notion",
       "status": "closed",
       "status_label": "Closed out",
       "recommended_letter": "A",
