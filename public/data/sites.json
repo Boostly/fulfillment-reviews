@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T20:56:22.792Z",
+  "generated_at": "2026-10-12T21:00:09.989Z",
   "count": 26,
   "sites": [
     {
@@ -9,7 +9,7 @@
       "city": "Harbor Springs",
       "state": "MI",
       "requested_at": "2026-10-12T15:25:03.831",
-      "updated_at": "2026-10-12T19:36:39.761Z",
+      "updated_at": "2026-10-12T20:57:15.355Z",
       "cursor": "variants",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -18,8 +18,8 @@
       "review_url": "/harbor-springs-b-c-pizza/",
       "figma_url": null,
       "print_handoff_url": null,
-      "page_bytes": 39440,
-      "blob_bytes": 7512112,
+      "page_bytes": 39441,
+      "blob_bytes": 6958052,
       "blob_assets": 27
     },
     {
@@ -29,18 +29,18 @@
       "city": "St. Petersburg",
       "state": "FL",
       "requested_at": "2026-10-09T21:36:05.394",
-      "updated_at": "2026-10-12T20:42:56.421Z",
-      "cursor": "gates",
+      "updated_at": "2026-10-12T20:56:55.951Z",
+      "cursor": "links",
       "status": "picked",
       "status_label": "Pick recorded",
       "recommended_letter": "A",
       "picked_letter": "AE",
       "review_url": "/mad-fish-st-petersburg/",
-      "figma_url": null,
+      "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=591-2",
       "print_handoff_url": null,
-      "page_bytes": 41565,
-      "blob_bytes": 11765722,
-      "blob_assets": 31
+      "page_bytes": 44058,
+      "blob_bytes": 18145697,
+      "blob_assets": 34
     },
     {
       "slug": "pagliai-s-pizza-johnston",
