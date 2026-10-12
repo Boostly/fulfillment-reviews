@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T21:50:58.677Z",
+  "generated_at": "2026-10-12T21:51:49.378Z",
   "count": 26,
   "sites": [
     {
@@ -69,15 +69,15 @@
       "city": "Madison",
       "state": "NJ",
       "requested_at": "2026-10-08T18:07:43.892",
-      "updated_at": "2026-10-12T21:45:36.855Z",
-      "cursor": "slack",
+      "updated_at": "2026-10-12T21:49:53.567Z",
+      "cursor": "notion",
       "status": "closed",
       "status_label": "Closed out",
       "recommended_letter": "A",
       "picked_letter": "A",
       "review_url": "/indian-kitchen-grill-madison/",
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=526-2",
-      "print_handoff_url": null,
+      "print_handoff_url": "https://drive.google.com/drive/folders/15hEDMzOtCMiWyT1dG-zyCUsSyc36yhAK",
       "page_bytes": 49233,
       "blob_bytes": 12534154,
       "blob_assets": 35
