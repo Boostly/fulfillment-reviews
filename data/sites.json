@@ -1,7 +1,27 @@
 {
-  "generated_at": "2026-10-13T19:04:03.510Z",
-  "count": 26,
+  "generated_at": "2026-10-13T19:24:52.128Z",
+  "count": 27,
   "sites": [
+    {
+      "slug": "senor-bird-s-tacos-tequila-bar-spartanburg",
+      "name": "Senor Bird's Tacos + Tequila Bar (Spartanburg)",
+      "account": "Señor Bird’s tacos and tequila ",
+      "city": "Spartanburg",
+      "state": "SC",
+      "requested_at": "2026-10-12T19:33:09.848",
+      "updated_at": "2026-10-13T19:23:58.711Z",
+      "cursor": "variants",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "E",
+      "picked_letter": null,
+      "review_url": "/senor-bird-s-tacos-tequila-bar-spartanburg/",
+      "figma_url": null,
+      "print_handoff_url": null,
+      "page_bytes": 40216,
+      "blob_bytes": 7385457,
+      "blob_assets": 25
+    },
     {
       "slug": "harbor-springs-b-c-pizza",
       "name": "Harbor Springs B.C. Pizza",

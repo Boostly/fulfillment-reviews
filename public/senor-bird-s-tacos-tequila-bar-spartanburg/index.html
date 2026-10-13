@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Señor Bird’s tacos and tequila  review</title>
+<style>
+  :root { color-scheme: light; scroll-behavior: auto; }
+  body { margin: 0; padding: 32px 40px 80px 280px; background: #fff; color: #111; font-family: Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.35; max-width: 2040px; box-sizing: border-box; }
+  h2 { font-size: 34px; margin: 0 0 4px; }
+  section { padding: 28px 0; border-bottom: 3px solid #ccc; scroll-margin-top: 16px; }
+  section:first-child { padding-top: 0; }
+  p[id] { scroll-margin-top: 16px; }
+  .toc { position: fixed; top: 0; left: 0; bottom: 0; width: 240px; box-sizing: border-box; padding: 24px 16px; overflow-y: auto; background: #f4f4f4; border-right: 1px solid #ddd; font-size: 15px; z-index: 10; }
+  .toc ol { list-style: none; margin: 0; padding: 0; }
+  .toc ol ol { margin: 2px 0 6px 14px; }
+  .toc ol ol a { font-size: 13px; color: #555; padding: 3px 8px; }
+  .toc a { display: block; padding: 6px 8px; border-radius: 4px; color: #222; line-height: 1.3; }
+  .toc a:hover { background: #e6e6e6; }
+  .toc a.active { background: #1b5e20; color: #fff; font-weight: 700; }
+  .toc a.top { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+  .toc-toggle { display: none; }
+  @media (max-width: 1000px) {
+    body { padding: 64px 20px 80px; }
+    .toc { position: sticky; top: 0; bottom: auto; width: auto; margin: -64px -20px 24px; padding: 8px 12px; border-right: 0; border-bottom: 1px solid #ddd; max-height: 80vh; }
+    .toc-toggle { display: block; font: inherit; font-weight: 700; background: none; border: 1px solid #bbb; border-radius: 4px; padding: 6px 12px; cursor: pointer; }
+    .toc-toggle::before { content: "\2630  "; }
+    .toc:not(.open) ol { display: none; }
+    .toc ol { padding-top: 8px; }
+  }
+  p { margin: 4px 0; }
+  p.sub { color: #555; font-size: 17px; margin-bottom: 14px; }
+  p.cap { color: #666; font-size: 15px; }
+  .gray { background: #ededed; color: #444; padding: 26px; font-size: 20px; border-radius: 4px; }
+  .hdr { display: flex; gap: 30px; align-items: flex-start; }
+  .hdr > div:first-child { flex: 1; }
+  .cell { flex: 0 0 auto; max-width: 520px; }
+  .cell img { display: block; max-width: 100%; border: 6px solid #1b5e20; box-sizing: border-box; }
+  .cell p { color: #1b5e20; font-weight: 700; font-size: 16px; }
+  .shot { border: 1px solid #ddd; overflow: auto; max-height: 90vh; }
+  .shot img { display: block; width: 100%; height: auto; }
+  /* 2026-10-01: a zoomable shot (the variant sheet) is never height-clipped: every row stays visible at page width,
+     and native size scrolls inside the container (overflow auto) instead of hiding rows below 90vh. */
+  .shot.zoom { max-height: none; }
+  .shot.zoom img { cursor: zoom-in; }
+  .cell img.zoom3x { margin-top: 10px; border: 3px solid #444; image-rendering: pixelated; }
+  .cell img.zoom3x.bad { border-color: #B71C1C; }
+  .cell.hold img:first-of-type { border-color: #B71C1C; }
+  .shot.zoom.native img { width: auto; max-width: none; cursor: zoom-out; }
+  .grid { display: grid; gap: 14px; }
+  .grid.cols3 { grid-template-columns: repeat(3, 1fr); }
+  .grid.cols4 { grid-template-columns: repeat(4, 1fr); }
+  .grid.cols5 { grid-template-columns: repeat(5, 1fr); }
+  .grid.cols6 { grid-template-columns: repeat(6, 1fr); }
+  figure { margin: 0; background: #ededed; }
+  figure.framed { outline: 6px solid #1b5e20; outline-offset: -6px; }
+  figure a { display: block; }
+  figure img { display: block; width: 100%; height: 360px; object-fit: contain; }
+  .grid.cols4 figure img { height: 280px; }
+  .grid.cols5 figure img, .grid.cols6 figure img { height: 220px; }
+  figcaption { font-size: 15px; padding: 6px 4px 10px; background: #fff; color: #222; }
+  a { color: inherit; text-decoration: none; }
+  a.ext { color: #0b57d0; text-decoration: underline; text-underline-offset: 2px; word-break: break-all; }
+  a.ext:hover { color: #083a8c; }
+  p.links { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 16px; font-size: 15px; }
+  p.links a.ext { background: #eef3fc; border: 1px solid #c9d8f5; border-radius: 4px; padding: 3px 10px; text-decoration: none; word-break: normal; }
+  p.links a.ext:hover { background: #dce7fb; }
+  p.links a.chip b { font-weight: 700; margin-right: 4px; }
+  p.links a.chip.held { background: #fff4d6; border-color: #e3c37a; }
+  p.links a.chip em { font-style: normal; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: #8a5a00; margin-left: 4px; }
+  figcaption .src { color: #666; }
+  .grid figure.more { display: none; }
+  .grid.expanded figure.more { display: block; }
+  p.show-all { margin: 10px 0 0; }
+  button.show-all { font: inherit; font-size: 14px; font-weight: 700; background: #f4f4f4; border: 1px solid #bbb; border-radius: 4px; padding: 6px 14px; cursor: pointer; }
+  button.show-all:hover { background: #e6e6e6; }
+  table.links .verdict { color: #222; max-width: 560px; }
+  table.links details { margin-top: 5px; font-size: 13px; color: #666; max-width: 560px; }
+  table.links details summary { cursor: pointer; color: #0b57d0; }
+  table.links .raw { margin-top: 4px; }
+  table.links { border-collapse: collapse; width: 100%; font-size: 15px; margin-top: 8px; }
+  table.links th { text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: #666; padding: 6px 10px; border-bottom: 2px solid #ddd; }
+  table.links td { padding: 9px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top; }
+  table.links td.cat { font-weight: 700; white-space: nowrap; }
+  table.links td.url { max-width: 380px; word-break: break-all; }
+  table.links td.ev { color: #444; max-width: 520px; }
+  table.links .chip { display: inline-block; color: #fff; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
+  table.links .why { color: #444; font-size: 14px; margin-top: 5px; max-width: 420px; }
+  table.links .none { color: #999; }
+  table.links tr.st-held td { background: #fff8e8; }
+  table.links tr.st-rejected td { color: #777; }
+  table.links tr.st-written td { background: #eef7ee; }
+</style></head><body id="top">
+<nav class="toc" id="toc"><a class="top" href="/" style="margin-bottom:12px">&larr; All locations</a><button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-list">Sections</button>
+<ol id="toc-list">
+<li><a href="#top" class="top">Top</a></li>
+<li><a href="#header">Overview</a></li>
+<li><a href="#website">Website</a></li>
+<li><a href="#gbp">Google Business Profile</a></li>
+<li><a href="#logo-search">Logo image search</a></li>
+<li><a href="#candidates">Logo candidates</a></li>
+<li><a href="#sheet">Variant sheet</a></li>
+<li><a href="#links">Links (2 held for review)</a></li>
+</ol></nav>
+<section id="header">
+<p class="links"><a class="ext chip held" href="https://senorbirds.com/spartanburg?utm_source=google" target="_blank" rel="noopener"><b>Website</b> senorbirds.com/spartanburg?utm_source=google <em>held</em></a> <a class="ext chip" href="https://senorbirds.com/menu/spartanburg" target="_blank" rel="noopener"><b>Ordering</b> senorbirds.com/menu/spartanburg</a> <a class="ext chip" href="https://senorbirds.com/careers" target="_blank" rel="noopener"><b>Careers</b> senorbirds.com/careers</a> <a class="ext chip" href="https://senorbirds.com/menu/catering" target="_blank" rel="noopener"><b>Catering</b> senorbirds.com/menu/catering</a> <a class="ext chip" href="https://senorbirds.com/gift-cards" target="_blank" rel="noopener"><b>Gift cards</b> senorbirds.com/gift-cards</a> <a class="ext chip held" href="https://apps.apple.com/us/app/se%C3%B1or-birds/id6802705814" target="_blank" rel="noopener"><b>iOS app</b> apps.apple.com/us/app/se%C…irds/id6802705814 <em>held</em></a></p>
+<div class="hdr"><div><p style="font-size:44px;font-weight:700;">Señor Bird’s tacos and tequila </p>
+<p style="font-size:20px;color:#444444;margin-top:6px;">Spartanburg, SC   ·   request s2izefixenwm3q3b7ym5bzva   ·   full order</p>
+<p style="font-size:29px;font-weight:700;color:#1B5E20;margin-top:22px;">Fable's default: E</p>
+<p style="font-size:19px;margin-top:6px;">Fable's sanctioned alternative: words-only white cut at Fable's band #01286C; the words cut SHIPs every gate on #143C8C (gates-run-words-on-143C8C.log)</p>
+<p style="font-size:16px;color:#666666;margin-top:8px;">Confidence: medium   ·   flags: website_screenshots_unavailable, palette_not_visually_corroborated, brand_environment_minimum_evidence_unassessed, interior_contrast_collision_knockout_required, social_profiles_unavailable</p>
+<p style="font-size:16px;color:#666666;margin-top:4px;">Cell E = words only, primary #143C8C, band #01286C (Fable's pick), text #FFFFFF, print digit #FFFFFF</p></div><div class="cell"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/45f0c671a12a-default-cell.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/45f0c671a12a-default-cell.png" alt="default cell"></a><p>Fable's default cell E (native sheet pixels, click to open)</p><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/0d316506e716-logo-3x.png" target="_blank" title="open the 3x crop"><img class="zoom3x" src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/0d316506e716-logo-3x.png" alt="logo at 3x"></a><p><b>Logo at 3x (what prints).</b> Final upload 1470x208px, source 2000px (native), given on the command line, upscale 0.735x. Edge quality: ok. Soft-edge share 1, stair-step score 0.3133.</p></div></div>
+</section>
+<section id="website">
+<h2>Website</h2><p class="sub"><a class="ext" href="https://senorbirds.com/spartanburg?utm_source=google" target="_blank" rel="noopener">https://senorbirds.com/spartanburg?utm_source=google</a></p>
+
+<div class="gray">Website not captured. Cloudflare managed challenge: curl and headless Playwright both get 403 'Just a moment' on every senorbirds.com path (website-capture.log); no bypass attempted. The site was READ in the live Chrome tab (Boostly.com profile) but this session has no screenshot tool, so there is no desktop/mobile capture. Observed surfaces (website/live-tab-observations.json): Owner.com template, white nav and body, #F6F6F6 footer, black text, one saturated authored surface: the 'Order online' CTA at #143C8C (navy) with white text; secondary buttons grey text. The header logo is the one-ink navy lockup (#01286C) served at 64 px from the 2000 px CDN master. The og:image is a 1920x1200 food/hero photo. Site-wide the brand system is navy on white; no red, no second brand color on the site.</div>
+</section>
+<section id="gbp">
+<h2>Google Business Profile</h2><p class="sub">place id ChIJxR7nBpV1V4gRrd-VCCpaX1k</p>
+<p class="links"><a class="ext" href="https://www.google.com/maps/place/?q=place_id:ChIJxR7nBpV1V4gRrd-VCCpaX1k" target="_blank" rel="noopener">Google Maps place &#8599;</a> <a class="ext" href="https://www.google.com/search?q=Se%C3%B1or%20Bird%E2%80%99s%20tacos%20and%20tequila%20%20Spartanburg%2C%20SC" target="_blank" rel="noopener">Google search &#8599;</a></p>
+<p style="font-size:17px;">Place photos already downloaded for this run (10), photos Fable cited first, then the rest. Green frame = a photo Fable cited for the sign or interior.</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/d052fa8674ba-gbp-photo-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/d052fa8674ba-gbp-photo-01.jpg" loading="lazy" alt="#1 by Senor Bird's Tacos + Tequila Bar  1170x659"></a><figcaption>#1 by Senor Bird's Tacos + Tequila Bar  1170x659</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/bf78d59cac59-gbp-photo-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/bf78d59cac59-gbp-photo-02.jpg" loading="lazy" alt="#2 by Senor Bird's Tacos + Tequila Bar  2048x2048"></a><figcaption>#2 by Senor Bird's Tacos + Tequila Bar  2048x2048</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/11969758a7bc-gbp-photo-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/11969758a7bc-gbp-photo-03.jpg" loading="lazy" alt="#3 by Terry Adams  3600x4800"></a><figcaption>#3 by Terry Adams  3600x4800</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/7353b21f47da-gbp-photo-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/7353b21f47da-gbp-photo-04.jpg" loading="lazy" alt="#4 by Senor Bird's Tacos + Tequila Bar  2000x2000"></a><figcaption>#4 by Senor Bird's Tacos + Tequila Bar  2000x2000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/dd641ae0f223-gbp-photo-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/dd641ae0f223-gbp-photo-05.jpg" loading="lazy" alt="#5 by Senor Bird's Tacos + Tequila Bar  2048x2048"></a><figcaption>#5 by Senor Bird's Tacos + Tequila Bar  2048x2048</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/4059915b280b-gbp-photo-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/4059915b280b-gbp-photo-06.jpg" loading="lazy" alt="#6 by Senor Bird's Tacos + Tequila Bar  2000x2000"></a><figcaption>#6 by Senor Bird's Tacos + Tequila Bar  2000x2000</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/1d376d9be287-gbp-photo-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/1d376d9be287-gbp-photo-07.jpg" loading="lazy" alt="#7 by Senor Bird's Tacos + Tequila Bar  2000x2000"></a><figcaption>#7 by Senor Bird's Tacos + Tequila Bar  2000x2000</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/bf53d62f86cf-gbp-photo-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/bf53d62f86cf-gbp-photo-08.jpg" loading="lazy" alt="#8 by Senor Bird's Tacos + Tequila Bar  2000x2000"></a><figcaption>#8 by Senor Bird's Tacos + Tequila Bar  2000x2000</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/3bea095312e5-gbp-photo-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/3bea095312e5-gbp-photo-09.jpg" loading="lazy" alt="#9 by Senor Bird's Tacos + Tequila Bar  2000x2000"></a><figcaption>#9 by Senor Bird's Tacos + Tequila Bar  2000x2000</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/c4efa2df15c3-gbp-photo-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/c4efa2df15c3-gbp-photo-10.jpg" loading="lazy" alt="#10 by Senor Bird's Tacos + Tequila Bar  2000x2000"></a><figcaption>#10 by Senor Bird's Tacos + Tequila Bar  2000x2000</figcaption></figure></div><p class="show-all"><button type="button" class="show-all" data-all="Show all 10" data-less="Show fewer (6 of 10)">Show all 10</button></p>
+<p style="font-size:17px;margin-top:10px;">Google Maps &quot;Vibe&quot; photos from the evidence build (Google's own in-store/atmosphere category)</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/da83dc3e69a9-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/da83dc3e69a9-01.jpg" loading="lazy" alt="Vibe  4000x2252"></a><figcaption>Vibe  4000x2252</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/49ac494bde3d-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/49ac494bde3d-02.jpg" loading="lazy" alt="Vibe  3468x4624"></a><figcaption>Vibe  3468x4624</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/865e43757011-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/865e43757011-03.jpg" loading="lazy" alt="Vibe  3168x4752"></a><figcaption>Vibe  3168x4752</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/f0facc8b0380-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/f0facc8b0380-04.jpg" loading="lazy" alt="Vibe  2268x4032"></a><figcaption>Vibe  2268x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/7678a50120f7-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/7678a50120f7-05.jpg" loading="lazy" alt="Vibe  3024x4032"></a><figcaption>Vibe  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/405c08f72378-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/405c08f72378-06.jpg" loading="lazy" alt="Vibe  4032x2268"></a><figcaption>Vibe  4032x2268</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/455202abb892-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/455202abb892-07.jpg" loading="lazy" alt="Vibe  4032x2268"></a><figcaption>Vibe  4032x2268</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/f3258029aedc-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/f3258029aedc-08.jpg" loading="lazy" alt="Vibe  4032x2268"></a><figcaption>Vibe  4032x2268</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/566bbe811c55-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/566bbe811c55-09.jpg" loading="lazy" alt="Vibe  3168x4752"></a><figcaption>Vibe  3168x4752</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/b42a9c72e5a7-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/b42a9c72e5a7-10.jpg" loading="lazy" alt="Vibe  4000x2252"></a><figcaption>Vibe  4000x2252</figcaption></figure></div><p class="show-all"><button type="button" class="show-all" data-all="Show all 10" data-less="Show fewer (6 of 10)">Show all 10</button></p>
+<p style="font-size:17px;margin-top:10px;">Live Google Maps, photo view (no Vibe tab found)</p>
+<p style="font-size:14px;color:#666666;margin-top:4px;">attempt 1: opened Photo of Senor Bird's Tacos + Tequila Bar</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/b09bf34d1b76-google-maps-photos.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/b09bf34d1b76-google-maps-photos.png" loading="lazy" alt="Google Maps photo view"></a></div>
+</section>
+<section id="logo-search">
+<h2>Logo image search</h2><p class="sub">&quot;Señor Bird’s tacos and tequila  Spartanburg logo&quot;</p>
+<p class="links"><a class="ext" href="https://www.google.com/search?tbm=isch&amp;q=Se%C3%B1or%20Bird%E2%80%99s%20tacos%20and%20tequila%20%20Spartanburg%20logo" target="_blank" rel="noopener">Open Google Images &#8599;</a></p>
+<div class="gray">Logo image search not captured. Google Images: blocked (<a class="ext" href="https://www.google.com/sorry/index?continue=https://www.goog" target="_blank" rel="noopener">https://www.google.com/sorry/index?continue=https://www.goog</a>) · Bing Images: only 1 result images rendered · DuckDuckGo Images: served a bot check</div>
+</section>
+<section id="candidates">
+<h2>Logo candidates</h2><p class="sub">from the evidence packet; green frame = the file Fable chose. Gray background so white knockouts stay visible.</p>
+<p class="links"><a class="ext" href="https://senorbirds.com/spartanburg?utm_source=google" target="_blank" rel="noopener">Website &#8599;</a></p>
+<div class="grid cols3"><figure style="background:#8C8C8C" class="framed"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/66ebf61731ad-01-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/66ebf61731ad-01-first_party_header.png" loading="lazy" alt="01-first_party_header.png  1789x1945
+site header
+FABLE'S PICK"></a><figcaption style="font-weight:700">01-first_party_header.png  1789x1945<br>site header<br>FABLE'S PICK<br><a class="ext" href="https://senorbirds.com/spartanburg?utm_source=google" target="_blank" rel="noopener">senorbirds.com/spartanburg?utm_source=google &#8599;</a></figcaption></figure></div>
+</section>
+<section id="sheet">
+<h2>Variant sheet</h2><p class="sub">Fable's default E framed in green. Reply with one letter.</p>
+<p class="links"></p>
+<div class="shot zoom" title="click to toggle native size"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/1600d47c556a-variant-sheet-marked.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/senor-bird-s-tacos-tequila-bar-spartanburg/1600d47c556a-variant-sheet-marked.png" loading="eager" alt="variant sheet"></a></div><p class="cap">variants/variant-sheet.png at native size, revision 7. In the HTML page click the sheet to toggle native size.</p>
+</section>
+<section id="links">
+<h2>Links</h2><p class="sub">the link automation results for this location, one row per category; held rows need a human decision. Click a URL to open it.</p>
+<p class="links"></p>
+<p style="font-size:15px;color:#444444;">Run: review stage no writes; no link writes applied; by fulfill-location agent (Claude) 2026-10-13.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Website bootstrap: unknown, Places says <a class="ext" href="https://senorbirds.com/spartanburg?utm_source=google" target="_blank" rel="noopener">https://senorbirds.com/spartanburg?utm_source=google</a>.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Discovery report link-discovery-report.json (2026-10-13 19:14): 18 categories, 0 for manual review, 1 proposed field updates, 2 proposed events.</p>
+<p style="font-size:15px;font-weight:700;margin-top:8px;">18 categories: 0 written, 4 verified or already live, 2 held for review, 0 pending browser, 5 rejected, 7 none found.</p>
+<table class="links"><thead><tr><th>Category</th><th>URL</th><th>Status</th><th>Verdict</th></tr></thead><tbody><tr class="st-held"><td class="cat">Website</td><td class="url"><a class="ext" href="https://senorbirds.com/spartanburg?utm_source=google" target="_blank" rel="noopener">senorbirds.com/spartanburg?utm_source=google</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: needs a human decision</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-ready"><td class="cat">Online ordering</td><td class="url"><a class="ext" href="https://senorbirds.com/menu/spartanburg" target="_blank" rel="noopener">senorbirds.com/menu/spartanburg</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Linked from the store's own website.</div><details><summary>raw evidence</summary><div class="raw">verified live by the Codex transport: title 'Señor Birds - Spartanburg - Menu | Order Online', H1 'Señor Birds Spartanburg', first-party Owner.com ordering with Pickup/Delivery/Start order and 'Pickup from 149 S Daniel Morgan Ave' (the exact location); linked from the site's 'Order From Our Website' section; the stored ordering_url is empty so there is no conflict</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">Menu</td><td class="url"><a class="ext" href="https://senorbirds.com/menu" target="_blank" rel="noopener">senorbirds.com/menu</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: the Codex-selected /menu is the brand-wide Owner.com ordering menu root (same ordering surface as the Order Online link, not a separate plain menu);…</div><details><summary>raw evidence</summary><div class="raw">the Codex-selected /menu is the brand-wide Owner.com ordering menu root (same ordering surface as the Order Online link, not a separate plain menu); the location page /menu/spartanburg is written once as Order Online and a second link to the same ordering surface is not wanted (one ordering URL rule)<br>title &quot;Señor Birds Online Menu | Best Mexican Food in Town&quot;<br>the website links to it<br>URL slug names the business<br>found as an anchor</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">Facebook</td><td class="url"><a class="ext" href="https://www.facebook.com/elpasospartanburg" target="_blank" rel="noopener">facebook.com/elpasospartanburg</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: the only Facebook the site links is unavailable ('This content isn't available right now' in both reads; the Graph API says the object does not exist…</div><details><summary>raw evidence</summary><div class="raw">the only Facebook the site links is unavailable ('This content isn't available right now' in both reads; the Graph API says the object does not exist); no other page for this location was found; nothing to write<br>title &quot;(20+) Facebook&quot;<br>the website links to it<br>platform says the page is unavailable<br>canonical form of <a class="ext" href="https://www.facebook.com/elpasospartanburg/photo" target="_blank" rel="noopener">https://www.facebook.com/elpasospartanburg/photo</a><br>found as an anchor<br>page broken</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">Instagram</td><td class="url"><a class="ext" href="https://www.instagram.com/elpasospartanburg/" target="_blank" rel="noopener">instagram.com/elpasospartanburg/</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: the only Instagram the site links is a removed profile ('Profile isn't available' in both the transport read and the evidence tab); no other Instagra…</div><details><summary>raw evidence</summary><div class="raw">the only Instagram the site links is a removed profile ('Profile isn't available' in both the transport read and the evidence tab); no other Instagram for this location was found by the Google search pass; nothing to write<br>title &quot;Instagram&quot;<br>the website links to it<br>social display name empty<br>platform says the page is unavailable<br>found as an anchor<br>page broken</div></details></td></tr>
+<tr class="st-none"><td class="cat">X (Twitter)</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. not found</div><details><summary>raw evidence</summary><div class="raw">not found</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">TikTok</td><td class="url"><a class="ext" href="https://www.tiktok.com/@srbirdsclemson" target="_blank" rel="noopener">tiktok.com/@srbirdsclemson</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: search-found TikTok accounts are the Clemson (@srbirdsclemson) and Augusta (@elpasoaugustaa) sibling locations, not Spartanburg, with no website or a…</div><details><summary>raw evidence</summary><div class="raw">search-found TikTok accounts are the Clemson (@srbirdsclemson) and Augusta (@elpasoaugustaa) sibling locations, not Spartanburg, with no website or address match; an unverifiable TikTok is a no by standing default<br>title &quot;TikTok - Make Your Day&quot;<br>canonical form of <a class="ext" href="https://www.tiktok.com/@srbirdsclemson/video/7691080560181267742" target="_blank" rel="noopener">https://www.tiktok.com/@srbirdsclemson/video/7691080560181267742</a><br>google organic candidate<br>Social profile links a different business website (lf16-tiktok-web.tiktokcdn-us.com, lf16-cdn-tos.tiktokcdn-us.com, lf16-tiktok-common.tiktokcdn-us.com), not senorbirds.com, with no address or phone match for this location</div></details></td></tr>
+<tr class="st-none"><td class="cat">YouTube</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. not found</div><details><summary>raw evidence</summary><div class="raw">not found</div></details></td></tr>
+<tr class="st-ready"><td class="cat">Careers</td><td class="url"><a class="ext" href="https://senorbirds.com/careers" target="_blank" rel="noopener">senorbirds.com/careers</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Linked from the store's own website.</div><details><summary>raw evidence</summary><div class="raw">verified live by the Codex transport: title 'Careers at Señor Birds', H1 'Join a growing team with a love for food', site nav 'We're Hiring'<br>title &quot;Careers at Señor Birds&quot;<br>the website links to it<br>URL slug names the business<br>found as an anchor<br>official site careers candidate<br>careers page level</div></details></td></tr>
+<tr class="st-ready"><td class="cat">Catering</td><td class="url"><a class="ext" href="https://senorbirds.com/menu/catering" target="_blank" rel="noopener">senorbirds.com/menu/catering</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Linked from the store's own website.</div><details><summary>raw evidence</summary><div class="raw">verified live by the Codex transport: H1 'Señor Birds Catering Menu', first-party Owner.com catering ordering menu linked from the site nav (Catering)</div></details></td></tr>
+<tr class="st-none"><td class="cat">Events</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. no events page on the site; the Google events search found nothing first-party</div><details><summary>raw evidence</summary><div class="raw">no events page on the site; the Google events search found nothing first-party</div></details></td></tr>
+<tr class="st-none"><td class="cat">Reservations</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. no reservations surface on the site</div><details><summary>raw evidence</summary><div class="raw">no reservations surface on the site</div></details></td></tr>
+<tr class="st-ready"><td class="cat">Gift cards</td><td class="url"><a class="ext" href="https://senorbirds.com/gift-cards" target="_blank" rel="noopener">senorbirds.com/gift-cards</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Linked from the store's own website.</div><details><summary>raw evidence</summary><div class="raw">first-party gift card page (Travisse's standing default: first-party gift cards are a yes): title 'Señor Birds Gift Cards', H1 'Give the Perfect Gift for Any Occasion', 'Buy Card' button, linked from the site nav; the transport's canonicalized /gift-card (singular) 404s and is rejected, the plural nav URL is the live one (title-checked in the fulfill agent's own Boostly.com tab)</div></details></td></tr>
+<tr class="st-none"><td class="cat">Loyalty / rewards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. the site's 'Señor Bird's Tacos &amp; Tequila Bar Rewards' section is the Owner.com app rewards program with no standalone page; nothing to link (loyalty…</div><details><summary>raw evidence</summary><div class="raw">the site's 'Señor Bird's Tacos &amp; Tequila Bar Rewards' section is the Owner.com app rewards program with no standalone page; nothing to link (loyalty is held by rule anyway)</div></details></td></tr>
+<tr class="st-held"><td class="cat">iOS app</td><td class="url"><a class="ext" href="https://apps.apple.com/us/app/se%C3%B1or-birds/id6802705814" target="_blank" rel="noopener">apps.apple.com/us/app/se%C3%B1or-birds/id6802705814</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: verified live App Store listing 'Señor Birds App' linked from the site footer; app links are held by rule (apps need a human decision before they go… Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">verified live App Store listing 'Señor Birds App' linked from the site footer; app links are held by rule (apps need a human decision before they go on the link tree)<br>title &quot;‎Señor Birds App - App Store&quot;<br>the website links to it<br>found as an anchor</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">Android app</td><td class="url"><a class="ext" href="https://play.google.com/store/apps/details?id=com.owner.seorbird" target="_blank" rel="noopener">play.google.com/store/apps/details?id=com.owner.seorbird</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: the Play Store URL the site links renders 'Not Found' (404) in the transport read; no listing to write</div><details><summary>raw evidence</summary><div class="raw">the Play Store URL the site links renders 'Not Found' (404) in the transport read; no listing to write<br>title &quot;Not Found&quot;<br>the website links to it<br>soft not found page detected<br>found as an anchor<br>page broken<br>Destination rendered a not-found error page</div></details></td></tr>
+<tr class="st-none"><td class="cat">App downloads</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Other</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr></tbody></table>
+</section>
+<script>
+  for (const el of document.querySelectorAll('.shot.zoom')) {
+    el.addEventListener('click', (ev) => { ev.preventDefault(); el.classList.toggle('native'); });
+  }
+  // "Show all N" on capped photo grids: reveal the hidden figures in the grid just above the button.
+  for (const btn of document.querySelectorAll('button.show-all')) {
+    btn.addEventListener('click', () => {
+      const grid = btn.parentElement.previousElementSibling;
+      if (!grid) return;
+      const open = grid.classList.toggle('expanded');
+      btn.textContent = open ? btn.dataset.less : btn.dataset.all;
+    });
+  }
+  // Sidebar: highlight the section in view, jump instantly on click (no scroll animation, Travisse 2026-09-29), hamburger below 1000px.
+  (() => {
+    const toc = document.getElementById('toc');
+    const links = new Map([...toc.querySelectorAll('a[href^="#"]')].map((a) => [a.getAttribute('href').slice(1), a]));
+    const sections = [...document.querySelectorAll('section[id]')];
+    const visible = new Set();
+    const setActive = () => {
+      const current = sections.find((s) => visible.has(s)) ?? sections.find((s) => s.getBoundingClientRect().bottom > 0) ?? sections[sections.length - 1];
+      for (const a of links.values()) a.classList.remove('active');
+      if (current) links.get(current.id)?.classList.add('active');
+    };
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); }
+      setActive();
+    }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+    for (const s of sections) io.observe(s);
+    setActive();
+    const toggle = toc.querySelector('.toc-toggle');
+    toggle.addEventListener('click', () => { const open = toc.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
+    for (const a of links.values()) a.addEventListener('click', (ev) => {
+      const target = document.getElementById(a.getAttribute('href').slice(1));
+      if (!target) return;
+      ev.preventDefault();
+      target.scrollIntoView({ behavior: 'instant', block: 'start' });
+      history.replaceState(null, '', a.getAttribute('href'));
+      toc.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
+    });
+  })();
+</script>
+</body></html>
