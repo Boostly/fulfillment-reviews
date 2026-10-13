@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T20:14:44.839Z",
+  "generated_at": "2026-10-13T20:43:56.094Z",
   "count": 28,
   "sites": [
     {
@@ -149,18 +149,18 @@
       "city": "League City",
       "state": "TX",
       "requested_at": "2026-10-08T15:29:17.638",
-      "updated_at": "2026-10-12T21:30:54.342Z",
-      "cursor": "variants",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-13T20:40:10.821Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "A",
-      "picked_letter": null,
+      "picked_letter": "AE",
       "review_url": "/creamer-by-kay-league-city/",
-      "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=522-2",
-      "print_handoff_url": null,
-      "page_bytes": 39497,
-      "blob_bytes": 7768605,
-      "blob_assets": 23
+      "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=600-2",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1unpRQwDZe2iRPxSSi0uJEEtMocQwjwke",
+      "page_bytes": 41456,
+      "blob_bytes": 11042535,
+      "blob_assets": 25
     },
     {
       "slug": "dino-s-greek-italian-grill-goodyear",
