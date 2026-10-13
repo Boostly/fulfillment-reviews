@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Slice of the 80's review</title>
+<style>
+  :root { color-scheme: light; scroll-behavior: auto; }
+  body { margin: 0; padding: 32px 40px 80px 280px; background: #fff; color: #111; font-family: Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.35; max-width: 2040px; box-sizing: border-box; }
+  h2 { font-size: 34px; margin: 0 0 4px; }
+  section { padding: 28px 0; border-bottom: 3px solid #ccc; scroll-margin-top: 16px; }
+  section:first-child { padding-top: 0; }
+  p[id] { scroll-margin-top: 16px; }
+  .toc { position: fixed; top: 0; left: 0; bottom: 0; width: 240px; box-sizing: border-box; padding: 24px 16px; overflow-y: auto; background: #f4f4f4; border-right: 1px solid #ddd; font-size: 15px; z-index: 10; }
+  .toc ol { list-style: none; margin: 0; padding: 0; }
+  .toc ol ol { margin: 2px 0 6px 14px; }
+  .toc ol ol a { font-size: 13px; color: #555; padding: 3px 8px; }
+  .toc a { display: block; padding: 6px 8px; border-radius: 4px; color: #222; line-height: 1.3; }
+  .toc a:hover { background: #e6e6e6; }
+  .toc a.active { background: #1b5e20; color: #fff; font-weight: 700; }
+  .toc a.top { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+  .toc-toggle { display: none; }
+  @media (max-width: 1000px) {
+    body { padding: 64px 20px 80px; }
+    .toc { position: sticky; top: 0; bottom: auto; width: auto; margin: -64px -20px 24px; padding: 8px 12px; border-right: 0; border-bottom: 1px solid #ddd; max-height: 80vh; }
+    .toc-toggle { display: block; font: inherit; font-weight: 700; background: none; border: 1px solid #bbb; border-radius: 4px; padding: 6px 12px; cursor: pointer; }
+    .toc-toggle::before { content: "\2630  "; }
+    .toc:not(.open) ol { display: none; }
+    .toc ol { padding-top: 8px; }
+  }
+  p { margin: 4px 0; }
+  p.sub { color: #555; font-size: 17px; margin-bottom: 14px; }
+  p.cap { color: #666; font-size: 15px; }
+  .gray { background: #ededed; color: #444; padding: 26px; font-size: 20px; border-radius: 4px; }
+  .hdr { display: flex; gap: 30px; align-items: flex-start; }
+  .hdr > div:first-child { flex: 1; }
+  .cell { flex: 0 0 auto; max-width: 520px; }
+  .cell img { display: block; max-width: 100%; border: 6px solid #1b5e20; box-sizing: border-box; }
+  .cell p { color: #1b5e20; font-weight: 700; font-size: 16px; }
+  .shot { border: 1px solid #ddd; overflow: auto; max-height: 90vh; }
+  .shot img { display: block; width: 100%; height: auto; }
+  /* 2026-10-01: a zoomable shot (the variant sheet) is never height-clipped: every row stays visible at page width,
+     and native size scrolls inside the container (overflow auto) instead of hiding rows below 90vh. */
+  .shot.zoom { max-height: none; }
+  .shot.zoom img { cursor: zoom-in; }
+  .cell img.zoom3x { margin-top: 10px; border: 3px solid #444; image-rendering: pixelated; }
+  .cell img.zoom3x.bad { border-color: #B71C1C; }
+  .cell.hold img:first-of-type { border-color: #B71C1C; }
+  .shot.zoom.native img { width: auto; max-width: none; cursor: zoom-out; }
+  .grid { display: grid; gap: 14px; }
+  .grid.cols3 { grid-template-columns: repeat(3, 1fr); }
+  .grid.cols4 { grid-template-columns: repeat(4, 1fr); }
+  .grid.cols5 { grid-template-columns: repeat(5, 1fr); }
+  .grid.cols6 { grid-template-columns: repeat(6, 1fr); }
+  figure { margin: 0; background: #ededed; }
+  figure.framed { outline: 6px solid #1b5e20; outline-offset: -6px; }
+  figure a { display: block; }
+  figure img { display: block; width: 100%; height: 360px; object-fit: contain; }
+  .grid.cols4 figure img { height: 280px; }
+  .grid.cols5 figure img, .grid.cols6 figure img { height: 220px; }
+  figcaption { font-size: 15px; padding: 6px 4px 10px; background: #fff; color: #222; }
+  a { color: inherit; text-decoration: none; }
+  a.ext { color: #0b57d0; text-decoration: underline; text-underline-offset: 2px; word-break: break-all; }
+  a.ext:hover { color: #083a8c; }
+  p.links { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 16px; font-size: 15px; }
+  p.links a.ext { background: #eef3fc; border: 1px solid #c9d8f5; border-radius: 4px; padding: 3px 10px; text-decoration: none; word-break: normal; }
+  p.links a.ext:hover { background: #dce7fb; }
+  p.links a.chip b { font-weight: 700; margin-right: 4px; }
+  p.links a.chip.held { background: #fff4d6; border-color: #e3c37a; }
+  p.links a.chip em { font-style: normal; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: #8a5a00; margin-left: 4px; }
+  figcaption .src { color: #666; }
+  .grid figure.more { display: none; }
+  .grid.expanded figure.more { display: block; }
+  p.show-all { margin: 10px 0 0; }
+  button.show-all { font: inherit; font-size: 14px; font-weight: 700; background: #f4f4f4; border: 1px solid #bbb; border-radius: 4px; padding: 6px 14px; cursor: pointer; }
+  button.show-all:hover { background: #e6e6e6; }
+  table.links .verdict { color: #222; max-width: 560px; }
+  table.links details { margin-top: 5px; font-size: 13px; color: #666; max-width: 560px; }
+  table.links details summary { cursor: pointer; color: #0b57d0; }
+  table.links .raw { margin-top: 4px; }
+  table.links { border-collapse: collapse; width: 100%; font-size: 15px; margin-top: 8px; }
+  table.links th { text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: #666; padding: 6px 10px; border-bottom: 2px solid #ddd; }
+  table.links td { padding: 9px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top; }
+  table.links td.cat { font-weight: 700; white-space: nowrap; }
+  table.links td.url { max-width: 380px; word-break: break-all; }
+  table.links td.ev { color: #444; max-width: 520px; }
+  table.links .chip { display: inline-block; color: #fff; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
+  table.links .why { color: #444; font-size: 14px; margin-top: 5px; max-width: 420px; }
+  table.links .none { color: #999; }
+  table.links tr.st-held td { background: #fff8e8; }
+  table.links tr.st-rejected td { color: #777; }
+  table.links tr.st-written td { background: #eef7ee; }
+</style></head><body id="top">
+<nav class="toc" id="toc"><a class="top" href="/" style="margin-bottom:12px">&larr; All locations</a><button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-list">Sections</button>
+<ol id="toc-list">
+<li><a href="#top" class="top">Top</a></li>
+<li><a href="#header">Overview</a></li>
+<li><a href="#website">Website</a></li>
+<li><a href="#gbp">Google Business Profile</a></li>
+<li><a href="#logo-search">Logo image search</a></li>
+<li><a href="#candidates">Logo candidates</a></li>
+<li><a href="#sheet">Variant sheet</a></li>
+<li><a href="#links">Links (0 held for review)</a></li>
+</ol></nav>
+<section id="header">
+<p class="links"><a class="ext chip" href="https://www.sliceofthe80s.com/" target="_blank" rel="noopener"><b>Website</b> sliceofthe80s.com/</a> <a class="ext chip" href="https://www.facebook.com/SliceOfThe80s" target="_blank" rel="noopener"><b>Facebook</b> facebook.com/SliceOfThe80s</a> <a class="ext chip" href="https://www.instagram.com/sliceofthe80spizza/" target="_blank" rel="noopener"><b>Instagram</b> instagram.com/sliceofthe80spizza/</a> <a class="ext chip" href="https://www.sliceofthe80s.com/careers/" target="_blank" rel="noopener"><b>Careers</b> sliceofthe80s.com/careers/</a></p>
+<div class="hdr"><div><p style="font-size:44px;font-weight:700;">Slice of the 80's</p>
+<p style="font-size:20px;color:#444444;margin-top:6px;">Westland, MI   ·   request wzs464d8bhzvqdfvrvdez13m   ·   full order</p>
+<p style="font-size:29px;font-weight:700;color:#1B5E20;margin-top:22px;">Fable's default: M</p>
+<p style="font-size:19px;margin-top:6px;">Fable's composition: full-color chrome wordmark on the blue #0517B8 card, band #B56CAD; sticker and POP carry the blue one-ink full lockup</p>
+<p style="font-size:16px;color:#666666;margin-top:8px;">Confidence: medium   ·   flags: mark_element_omitted, band_darker_step_of_brand_ink, brand_environment_minimum_evidence_unassessed</p>
+<p style="font-size:16px;color:#666666;margin-top:4px;">Cell M = full color, blue lockup sticker, primary #0517B8, band #B56CAD (Fable's pick), text #FFFFFF, print digit #FFFFFF</p></div><div class="cell"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/b50f87dd1af7-default-cell.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/b50f87dd1af7-default-cell.png" alt="default cell"></a><p>Fable's default cell M (native sheet pixels, click to open)</p><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/cb580b3093bb-logo-3x.png" target="_blank" title="open the 3x crop"><img class="zoom3x" src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/cb580b3093bb-logo-3x.png" alt="logo at 3x"></a><p><b>Logo at 3x (what prints).</b> Final upload 1200x426px, source 1949px (native), given on the command line, upscale 0.616x. Edge quality: ok. Soft-edge share 0.9306, stair-step score 0.3133.</p></div></div>
+</section>
+<section id="website">
+<h2>Website</h2><p class="sub"><a class="ext" href="https://www.sliceofthe80s.com/" target="_blank" rel="noopener">https://www.sliceofthe80s.com/</a></p>
+
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/df945bb9b56b-desktop.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/df945bb9b56b-desktop.jpg" loading="lazy" alt="website desktop screenshot"></a></div><p class="cap">Desktop screenshot from the run's evidence (evidence/website-visual/desktop.png).</p>
+</section>
+<section id="gbp">
+<h2>Google Business Profile</h2><p class="sub">place id ChIJQ6BOMB9NO4gRFtF2xTTMgTE</p>
+<p class="links"><a class="ext" href="https://www.google.com/maps/place/?q=place_id:ChIJQ6BOMB9NO4gRFtF2xTTMgTE" target="_blank" rel="noopener">Google Maps place &#8599;</a> <a class="ext" href="https://www.google.com/search?q=Slice%20of%20the%2080's%20Westland%2C%20MI" target="_blank" rel="noopener">Google search &#8599;</a></p>
+<p style="font-size:17px;">Place photos already downloaded for this run (10), photos Fable cited first, then the rest. Green frame = a photo Fable cited for the sign or interior.</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/5a76368c809f-gbp-photo-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/5a76368c809f-gbp-photo-01.jpg" loading="lazy" alt="#1 owner photo  559x576"></a><figcaption>#1 owner photo  559x576</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/7d04dba3630e-gbp-photo-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/7d04dba3630e-gbp-photo-02.jpg" loading="lazy" alt="#2 owner photo  600x400"></a><figcaption>#2 owner photo  600x400</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/ae5a216c39c3-gbp-photo-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/ae5a216c39c3-gbp-photo-03.jpg" loading="lazy" alt="#3 by Earl Williams  3024x4032"></a><figcaption>#3 by Earl Williams  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/b6a2ac9e2f8d-gbp-photo-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/b6a2ac9e2f8d-gbp-photo-04.jpg" loading="lazy" alt="#4 by Joshua I  4284x4402"></a><figcaption>#4 by Joshua I  4284x4402</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/092fe272e6a2-gbp-photo-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/092fe272e6a2-gbp-photo-05.jpg" loading="lazy" alt="#5 owner photo  450x300"></a><figcaption>#5 owner photo  450x300</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/a476089bd544-gbp-photo-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/a476089bd544-gbp-photo-06.jpg" loading="lazy" alt="#6 owner photo  2000x1333"></a><figcaption>#6 owner photo  2000x1333</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/e96f578c1d98-gbp-photo-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/e96f578c1d98-gbp-photo-07.jpg" loading="lazy" alt="#7 by Ariana Smith  4032x3024"></a><figcaption>#7 by Ariana Smith  4032x3024</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/a12f811262ce-gbp-photo-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/a12f811262ce-gbp-photo-08.jpg" loading="lazy" alt="#8 by Madeline Chamberlain  3024x4032"></a><figcaption>#8 by Madeline Chamberlain  3024x4032</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/7af0b6122ca3-gbp-photo-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/7af0b6122ca3-gbp-photo-09.jpg" loading="lazy" alt="#9 owner photo  1024x683"></a><figcaption>#9 owner photo  1024x683</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/f9022f368a5a-gbp-photo-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/f9022f368a5a-gbp-photo-10.jpg" loading="lazy" alt="#10 owner photo  1200x800"></a><figcaption>#10 owner photo  1200x800</figcaption></figure></div><p class="show-all"><button type="button" class="show-all" data-all="Show all 10" data-less="Show fewer (6 of 10)">Show all 10</button></p>
+<p style="font-size:17px;margin-top:10px;">Google Maps &quot;Vibe&quot; photos from the evidence build (Google's own in-store/atmosphere category)</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/4fcfada2b0de-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/4fcfada2b0de-01.jpg" loading="lazy" alt="Vibe  3024x3024"></a><figcaption>Vibe  3024x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/e9177c9e8125-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/e9177c9e8125-02.jpg" loading="lazy" alt="Vibe  4032x3024"></a><figcaption>Vibe  4032x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/7abafd2790cd-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/7abafd2790cd-03.jpg" loading="lazy" alt="Vibe  4032x3024"></a><figcaption>Vibe  4032x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/13c6244a21a6-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/13c6244a21a6-04.jpg" loading="lazy" alt="Vibe  3024x4032"></a><figcaption>Vibe  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/caa8e92be711-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/caa8e92be711-05.jpg" loading="lazy" alt="Vibe  3024x4032"></a><figcaption>Vibe  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/8f42e9311d11-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/8f42e9311d11-06.jpg" loading="lazy" alt="Vibe  2268x4032"></a><figcaption>Vibe  2268x4032</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/dfbd34566e19-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/dfbd34566e19-07.jpg" loading="lazy" alt="Vibe  3006x5344"></a><figcaption>Vibe  3006x5344</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/cf93ee4a85d8-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/cf93ee4a85d8-08.jpg" loading="lazy" alt="Vibe  4032x3024"></a><figcaption>Vibe  4032x3024</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/e71ed066d75e-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/e71ed066d75e-09.jpg" loading="lazy" alt="Vibe  4032x3024"></a><figcaption>Vibe  4032x3024</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/56b66165297b-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/56b66165297b-10.jpg" loading="lazy" alt="Vibe  4032x3024"></a><figcaption>Vibe  4032x3024</figcaption></figure></div><p class="show-all"><button type="button" class="show-all" data-all="Show all 10" data-less="Show fewer (6 of 10)">Show all 10</button></p>
+<p style="font-size:17px;margin-top:10px;">Live Google Maps, photo view (no Vibe tab found)</p>
+<p style="font-size:14px;color:#666666;margin-top:4px;">attempt 1: opened Photo of Slice of the 80s</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/b58424381481-google-maps-photos.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/b58424381481-google-maps-photos.png" loading="lazy" alt="Google Maps photo view"></a></div>
+</section>
+<section id="logo-search">
+<h2>Logo image search</h2><p class="sub">&quot;Slice of the 80's Westland logo&quot;</p>
+<p class="links"><a class="ext" href="https://www.google.com/search?tbm=isch&amp;q=Slice%20of%20the%2080's%20Westland%20logo" target="_blank" rel="noopener">Open Google Images &#8599;</a></p>
+<div class="gray">Logo image search not captured. Google Images: blocked (<a class="ext" href="https://www.google.com/sorry/index?continue=https://www.goog" target="_blank" rel="noopener">https://www.google.com/sorry/index?continue=https://www.goog</a>) · Bing Images: only 1 result images rendered · DuckDuckGo Images: served a bot check</div>
+</section>
+<section id="candidates">
+<h2>Logo candidates</h2><p class="sub">from the evidence packet; green frame = the file Fable chose. Gray background so white knockouts stay visible.</p>
+<p class="links"><a class="ext" href="https://www.sliceofthe80s.com/" target="_blank" rel="noopener">Website &#8599;</a></p>
+<div class="grid cols3"><figure style="background:#8C8C8C" class="framed"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/ebed2d72a6c3-01-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/ebed2d72a6c3-01-first_party_header.png" loading="lazy" alt="01-first_party_header.png  1907x677
+site header
+FABLE'S PICK"></a><figcaption style="font-weight:700">01-first_party_header.png  1907x677<br>site header<br>FABLE'S PICK<br><a class="ext" href="https://www.sliceofthe80s.com/" target="_blank" rel="noopener">sliceofthe80s.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/90b2f35d6d75-02-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/90b2f35d6d75-02-first_party_header.png" loading="lazy" alt="02-first_party_header.png  1907x677
+site header
+WHITE KNOCKOUT of the wordmark: candidate 00's exact alpha with every pixel"></a><figcaption>02-first_party_header.png  1907x677<br>site header<br>WHITE KNOCKOUT of the wordmark: candidate 00's exact alpha with every pixel<br><a class="ext" href="https://www.sliceofthe80s.com/" target="_blank" rel="noopener">sliceofthe80s.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/8e88299c0669-03-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/8e88299c0669-03-first_party_other.png" loading="lazy" alt="03-first_party_other.png  1221x512
+first_party_other
+FULL LOCKUP, one ink, transparent: the rocker mascot holding a pizza box,"></a><figcaption>03-first_party_other.png  1221x512<br>first_party_other<br>FULL LOCKUP, one ink, transparent: the rocker mascot holding a pizza box,<br><a class="ext" href="https://www.sliceofthe80s.com/" target="_blank" rel="noopener">sliceofthe80s.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/0ab07305c95f-04-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/0ab07305c95f-04-first_party_other.png" loading="lazy" alt="04-first_party_other.png  1221x512
+first_party_other, traced cut
+WHITE KNOCKOUT of the full lockup (candidate 02's alpha, white ink)"></a><figcaption>04-first_party_other.png  1221x512<br>first_party_other, traced cut<br>WHITE KNOCKOUT of the full lockup (candidate 02's alpha, white ink)<br><a class="ext" href="https://www.sliceofthe80s.com/" target="_blank" rel="noopener">sliceofthe80s.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/ec986b538a29-05-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/ec986b538a29-05-first_party_header.png" loading="lazy" alt="05-first_party_header.png  600x519
+site header"></a><figcaption>05-first_party_header.png  600x519<br>site header<br><a class="ext" href="https://www.sliceofthe80s.com/" target="_blank" rel="noopener">sliceofthe80s.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/58fec9c2c8d6-06-social.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/58fec9c2c8d6-06-social.jpg" loading="lazy" alt="06-social.jpg  1406x1405
+Facebook avatar"></a><figcaption>06-social.jpg  1406x1405<br>Facebook avatar<br><span class="src">file 06-social.jpg</span></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/ce86c65f2694-07-first_party_other.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/ce86c65f2694-07-first_party_other.jpg" loading="lazy" alt="07-first_party_other.jpg  1221x512
+first_party_other"></a><figcaption>07-first_party_other.jpg  1221x512<br>first_party_other<br><a class="ext" href="https://www.sliceofthe80s.com/" target="_blank" rel="noopener">sliceofthe80s.com/ &#8599;</a></figcaption></figure></div>
+</section>
+<section id="sheet">
+<h2>Variant sheet</h2><p class="sub">Fable's default M framed in green. Reply with one letter.</p>
+<p class="links"></p>
+<div class="shot zoom" title="click to toggle native size"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/a31c15082c7f-variant-sheet-marked.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/slice-of-the-80-s-westland/a31c15082c7f-variant-sheet-marked.png" loading="eager" alt="variant sheet"></a></div><p class="cap">variants/variant-sheet.png at native size, revision 10. In the HTML page click the sheet to toggle native size.</p>
+</section>
+<section id="links">
+<h2>Links</h2><p class="sub">the link automation results for this location, one row per category; held rows need a human decision. Click a URL to open it.</p>
+<p class="links"></p>
+<p style="font-size:15px;color:#444444;">Run: discovery only no writes review stage; no link writes applied; by slice-of-the-80-s-westland fulfill-location (Claude Fable): Codex transport (codex exec with the codex-discovery-handoff.mjs prompt plus website-url-override.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Website bootstrap: held_write_dry_run_only, Places says <a class="ext" href="http://www.sliceofthe80s.com/" target="_blank" rel="noopener">http://www.sliceofthe80s.com/</a>.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Ordering URL on file <a class="ext" href="https://sliceofthe80s.hungerrush.com/Order/Menu/1#pizza" target="_blank" rel="noopener">https://sliceofthe80s.hungerrush.com/Order/Menu/1#pizza</a>: not compared</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Discovery report link-discovery-report.json (2026-10-13 19:21): 18 categories, 1 for manual review, 1 proposed field updates, 2 proposed events.</p>
+<p style="font-size:15px;font-weight:700;margin-top:8px;">18 categories: 0 written, 4 verified or already live, 0 held for review, 0 pending browser, 12 rejected, 2 none found.</p>
+<table class="links"><thead><tr><th>Category</th><th>URL</th><th>Status</th><th>Verdict</th></tr></thead><tbody><tr class="st-ready"><td class="cat">Website</td><td class="url"><a class="ext" href="https://www.sliceofthe80s.com/" target="_blank" rel="noopener">sliceofthe80s.com/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout.</div><details><summary>raw evidence</summary><div class="raw">Places websiteUri for the exact place id, live first-party site naming the location and phone; fill of the empty locations.website_url (see website_bootstrap)<br>verified live (static fetch+playwright capture)</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">Online ordering</td><td class="url"><a class="ext" href="https://slicelife.com/restaurants/mi/westland/48185/slice-of-the-80-s-westland/menu" target="_blank" rel="noopener">slicelife.com/restaurants/mi/westland/48185…ce-of-the-80-s-westland/menu</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: a second ordering provider (Slice) linked from the site footer as 'Order via Slice (may include additional fees)'; never a second ordering URL, and i…</div><details><summary>raw evidence</summary><div class="raw">a second ordering provider (Slice) linked from the site footer as 'Order via Slice (may include additional fees)'; never a second ordering URL, and it is an ordering checkout, not a menu page, so it is not a Menu link either<br>verified live (static fetch)</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">Menu</td><td class="url"><a class="ext" href="https://slicelife.com/restaurants/mi/westland/48185/slice-of-the-80-s-westland/menu" target="_blank" rel="noopener">slicelife.com/restaurants/mi/westland/48185…ce-of-the-80-s-westland/menu</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: no single first-party menu page: /menu, /westland-menu/ and /menu/main-menu-westland/ are 404 soft errors; the site splits the menu into category pag…</div><details><summary>raw evidence</summary><div class="raw">no single first-party menu page: /menu, /westland-menu/ and /menu/main-menu-westland/ are 404 soft errors; the site splits the menu into category pages (/pizza-2/, /calzones/, ...) and the HungerRush storefront already carries the full menu under Order Online</div></details></td></tr>
+<tr class="st-ready"><td class="cat">Facebook</td><td class="url"><a class="ext" href="https://www.facebook.com/SliceOfThe80s" target="_blank" rel="noopener">facebook.com/SliceOfThe80s</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Linked from the store's own website.</div><details><summary>raw evidence</summary><div class="raw">linked from the site footer; page 'Slice of the 80s Pizza', 21K followers, intro 'Serving Westland, Livonia', phone (734) 728-1980 (the Westland store phone), link sliceofthe80s.com; read in the live tab and by Codex<br>title &quot;(20+) Facebook&quot;<br>the website links to it<br>social destination identity signal<br>canonical form of <a class="ext" href="https://www.facebook.com/SliceOfThe80" target="_blank" rel="noopener">https://www.facebook.com/SliceOfThe80</a><br>found as an anchor</div></details></td></tr>
+<tr class="st-ready"><td class="cat">Instagram</td><td class="url"><a class="ext" href="https://www.instagram.com/sliceofthe80spizza/" target="_blank" rel="noopener">instagram.com/sliceofthe80spizza/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Linked from the store's own website.</div><details><summary>raw evidence</summary><div class="raw">not linked from the site (discovery reports not_found) but named in the Facebook intro; profile 'SLICE OF THE 80s', 1,100 followers, bio links www.sliceofthe80s.com (official-domain backlink), same handle as the verified TikTok; read in the live tab<br>verified live (claude chrome live tab)</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">X (Twitter)</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: none found</div><details><summary>raw evidence</summary><div class="raw">none found</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">TikTok</td><td class="url"><a class="ext" href="https://www.tiktok.com/@chowdowndetroit" target="_blank" rel="noopener">tiktok.com/@chowdowndetroit</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: a Detroit food photographer's account (identity_mismatch)</div><details><summary>raw evidence</summary><div class="raw">a Detroit food photographer's account (identity_mismatch)</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">YouTube</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: none found</div><details><summary>raw evidence</summary><div class="raw">none found</div></details></td></tr>
+<tr class="st-ready"><td class="cat">Careers</td><td class="url"><a class="ext" href="https://www.sliceofthe80s.com/careers/" target="_blank" rel="noopener">sliceofthe80s.com/careers/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Linked from the store's own website.</div><details><summary>raw evidence</summary><div class="raw">first-party careers page on the official domain, linked from the header ('CAREER') and footer ('Work at Slice of 80's'); 200, titled careers page<br>title &quot;Apply Online - Slice of the 80s&quot;<br>the website links to it<br>URL slug names the business<br>found as an anchor<br>official site careers candidate<br>careers page level</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">Catering</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: no catering page</div><details><summary>raw evidence</summary><div class="raw">no catering page</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">Events</td><td class="url"><a class="ext" href="https://www.meetup.com/find/us--mi--westland/social-activities/" target="_blank" rel="noopener">meetup.com/find/us--mi--westland/social-activities/</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: a Meetup directory, not the business; no first-party events page and no visible upcoming events on the site, so no Events link</div><details><summary>raw evidence</summary><div class="raw">a Meetup directory, not the business; no first-party events page and no visible upcoming events on the site, so no Events link<br>title &quot;Find Events &amp; Groups in Westland, MI&quot;<br>google organic candidate<br>No strong location or parent-brand match evidence found</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">Reservations</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: carryout and delivery pizzeria, no reservations</div><details><summary>raw evidence</summary><div class="raw">carryout and delivery pizzeria, no reservations</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">Gift cards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: no gift card link on the site, the storefront or GBP</div><details><summary>raw evidence</summary><div class="raw">no gift card link on the site, the storefront or GBP</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">Loyalty / rewards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: the 'AWESOME REWARDS' tab lives inside the HungerRush storefront (same URL as ordering); no separate first-party loyalty page</div><details><summary>raw evidence</summary><div class="raw">the 'AWESOME REWARDS' tab lives inside the HungerRush storefront (same URL as ordering); no separate first-party loyalty page</div></details></td></tr>
+<tr class="st-none"><td class="cat">iOS app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Android app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-rejected"><td class="cat">App downloads</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: no app links; app links are held by rule anyway</div><details><summary>raw evidence</summary><div class="raw">no app links; app links are held by rule anyway</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">Other</td><td class="url"><a class="ext" href="https://www.sliceofthe80s.com/email-club/" target="_blank" rel="noopener">sliceofthe80s.com/email-club/</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: the site's email-club signup competes with the Boostly text club on the same touchpoint; not a supported category, not proposed</div><details><summary>raw evidence</summary><div class="raw">the site's email-club signup competes with the Boostly text club on the same touchpoint; not a supported category, not proposed<br>verified live (static fetch)</div></details></td></tr></tbody></table>
+</section>
+<script>
+  for (const el of document.querySelectorAll('.shot.zoom')) {
+    el.addEventListener('click', (ev) => { ev.preventDefault(); el.classList.toggle('native'); });
+  }
+  // "Show all N" on capped photo grids: reveal the hidden figures in the grid just above the button.
+  for (const btn of document.querySelectorAll('button.show-all')) {
+    btn.addEventListener('click', () => {
+      const grid = btn.parentElement.previousElementSibling;
+      if (!grid) return;
+      const open = grid.classList.toggle('expanded');
+      btn.textContent = open ? btn.dataset.less : btn.dataset.all;
+    });
+  }
+  // Sidebar: highlight the section in view, jump instantly on click (no scroll animation, Travisse 2026-09-29), hamburger below 1000px.
+  (() => {
+    const toc = document.getElementById('toc');
+    const links = new Map([...toc.querySelectorAll('a[href^="#"]')].map((a) => [a.getAttribute('href').slice(1), a]));
+    const sections = [...document.querySelectorAll('section[id]')];
+    const visible = new Set();
+    const setActive = () => {
+      const current = sections.find((s) => visible.has(s)) ?? sections.find((s) => s.getBoundingClientRect().bottom > 0) ?? sections[sections.length - 1];
+      for (const a of links.values()) a.classList.remove('active');
+      if (current) links.get(current.id)?.classList.add('active');
+    };
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); }
+      setActive();
+    }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+    for (const s of sections) io.observe(s);
+    setActive();
+    const toggle = toc.querySelector('.toc-toggle');
+    toggle.addEventListener('click', () => { const open = toc.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
+    for (const a of links.values()) a.addEventListener('click', (ev) => {
+      const target = document.getElementById(a.getAttribute('href').slice(1));
+      if (!target) return;
+      ev.preventDefault();
+      target.scrollIntoView({ behavior: 'instant', block: 'start' });
+      history.replaceState(null, '', a.getAttribute('href'));
+      toc.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
+    });
+  })();
+</script>
+</body></html>

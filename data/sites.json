@@ -1,7 +1,27 @@
 {
-  "generated_at": "2026-10-13T19:24:52.128Z",
-  "count": 27,
+  "generated_at": "2026-10-13T19:28:18.772Z",
+  "count": 28,
   "sites": [
+    {
+      "slug": "slice-of-the-80-s-westland",
+      "name": "Slice of the 80's (Westland)",
+      "account": "Slice of the 80's",
+      "city": "Westland",
+      "state": "MI",
+      "requested_at": "2026-10-13T15:18:08.169",
+      "updated_at": "2026-10-13T19:27:02.204Z",
+      "cursor": "variants",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "M",
+      "picked_letter": null,
+      "review_url": "/slice-of-the-80-s-westland/",
+      "figma_url": null,
+      "print_handoff_url": null,
+      "page_bytes": 40531,
+      "blob_bytes": 8063564,
+      "blob_assets": 32
+    },
     {
       "slug": "senor-bird-s-tacos-tequila-bar-spartanburg",
       "name": "Senor Bird's Tacos + Tequila Bar (Spartanburg)",
