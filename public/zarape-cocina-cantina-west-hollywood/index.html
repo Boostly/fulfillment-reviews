@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Zarape' Cocina &amp; Cantina review</title>
+<style>
+  :root { color-scheme: light; scroll-behavior: auto; }
+  body { margin: 0; padding: 32px 40px 80px 280px; background: #fff; color: #111; font-family: Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.35; max-width: 2040px; box-sizing: border-box; }
+  h2 { font-size: 34px; margin: 0 0 4px; }
+  section { padding: 28px 0; border-bottom: 3px solid #ccc; scroll-margin-top: 16px; }
+  section:first-child { padding-top: 0; }
+  p[id] { scroll-margin-top: 16px; }
+  .toc { position: fixed; top: 0; left: 0; bottom: 0; width: 240px; box-sizing: border-box; padding: 24px 16px; overflow-y: auto; background: #f4f4f4; border-right: 1px solid #ddd; font-size: 15px; z-index: 10; }
+  .toc ol { list-style: none; margin: 0; padding: 0; }
+  .toc ol ol { margin: 2px 0 6px 14px; }
+  .toc ol ol a { font-size: 13px; color: #555; padding: 3px 8px; }
+  .toc a { display: block; padding: 6px 8px; border-radius: 4px; color: #222; line-height: 1.3; }
+  .toc a:hover { background: #e6e6e6; }
+  .toc a.active { background: #1b5e20; color: #fff; font-weight: 700; }
+  .toc a.top { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+  .toc-toggle { display: none; }
+  @media (max-width: 1000px) {
+    body { padding: 64px 20px 80px; }
+    .toc { position: sticky; top: 0; bottom: auto; width: auto; margin: -64px -20px 24px; padding: 8px 12px; border-right: 0; border-bottom: 1px solid #ddd; max-height: 80vh; }
+    .toc-toggle { display: block; font: inherit; font-weight: 700; background: none; border: 1px solid #bbb; border-radius: 4px; padding: 6px 12px; cursor: pointer; }
+    .toc-toggle::before { content: "\2630  "; }
+    .toc:not(.open) ol { display: none; }
+    .toc ol { padding-top: 8px; }
+  }
+  p { margin: 4px 0; }
+  p.sub { color: #555; font-size: 17px; margin-bottom: 14px; }
+  p.cap { color: #666; font-size: 15px; }
+  .gray { background: #ededed; color: #444; padding: 26px; font-size: 20px; border-radius: 4px; }
+  .hdr { display: flex; gap: 30px; align-items: flex-start; }
+  .hdr > div:first-child { flex: 1; }
+  .cell { flex: 0 0 auto; max-width: 520px; }
+  .cell img { display: block; max-width: 100%; border: 6px solid #1b5e20; box-sizing: border-box; }
+  .cell p { color: #1b5e20; font-weight: 700; font-size: 16px; }
+  .shot { border: 1px solid #ddd; overflow: auto; max-height: 90vh; }
+  .shot img { display: block; width: 100%; height: auto; }
+  /* 2026-10-01: a zoomable shot (the variant sheet) is never height-clipped: every row stays visible at page width,
+     and native size scrolls inside the container (overflow auto) instead of hiding rows below 90vh. */
+  .shot.zoom { max-height: none; }
+  .shot.zoom img { cursor: zoom-in; }
+  .cell img.zoom3x { margin-top: 10px; border: 3px solid #444; image-rendering: pixelated; }
+  .cell img.zoom3x.bad { border-color: #B71C1C; }
+  .cell.hold img:first-of-type { border-color: #B71C1C; }
+  .shot.zoom.native img { width: auto; max-width: none; cursor: zoom-out; }
+  .grid { display: grid; gap: 14px; }
+  .grid.cols3 { grid-template-columns: repeat(3, 1fr); }
+  .grid.cols4 { grid-template-columns: repeat(4, 1fr); }
+  .grid.cols5 { grid-template-columns: repeat(5, 1fr); }
+  .grid.cols6 { grid-template-columns: repeat(6, 1fr); }
+  figure { margin: 0; background: #ededed; }
+  figure.framed { outline: 6px solid #1b5e20; outline-offset: -6px; }
+  figure a { display: block; }
+  figure img { display: block; width: 100%; height: 360px; object-fit: contain; }
+  .grid.cols4 figure img { height: 280px; }
+  .grid.cols5 figure img, .grid.cols6 figure img { height: 220px; }
+  figcaption { font-size: 15px; padding: 6px 4px 10px; background: #fff; color: #222; }
+  a { color: inherit; text-decoration: none; }
+  a.ext { color: #0b57d0; text-decoration: underline; text-underline-offset: 2px; word-break: break-all; }
+  a.ext:hover { color: #083a8c; }
+  p.links { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 16px; font-size: 15px; }
+  p.links a.ext { background: #eef3fc; border: 1px solid #c9d8f5; border-radius: 4px; padding: 3px 10px; text-decoration: none; word-break: normal; }
+  p.links a.ext:hover { background: #dce7fb; }
+  p.links a.chip b { font-weight: 700; margin-right: 4px; }
+  p.links a.chip.held { background: #fff4d6; border-color: #e3c37a; }
+  p.links a.chip em { font-style: normal; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: #8a5a00; margin-left: 4px; }
+  figcaption .src { color: #666; }
+  .grid figure.more { display: none; }
+  .grid.expanded figure.more { display: block; }
+  p.show-all { margin: 10px 0 0; }
+  button.show-all { font: inherit; font-size: 14px; font-weight: 700; background: #f4f4f4; border: 1px solid #bbb; border-radius: 4px; padding: 6px 14px; cursor: pointer; }
+  button.show-all:hover { background: #e6e6e6; }
+  table.links .verdict { color: #222; max-width: 560px; }
+  table.links details { margin-top: 5px; font-size: 13px; color: #666; max-width: 560px; }
+  table.links details summary { cursor: pointer; color: #0b57d0; }
+  table.links .raw { margin-top: 4px; }
+  table.links { border-collapse: collapse; width: 100%; font-size: 15px; margin-top: 8px; }
+  table.links th { text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: #666; padding: 6px 10px; border-bottom: 2px solid #ddd; }
+  table.links td { padding: 9px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top; }
+  table.links td.cat { font-weight: 700; white-space: nowrap; }
+  table.links td.url { max-width: 380px; word-break: break-all; }
+  table.links td.ev { color: #444; max-width: 520px; }
+  table.links .chip { display: inline-block; color: #fff; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
+  table.links .why { color: #444; font-size: 14px; margin-top: 5px; max-width: 420px; }
+  table.links .none { color: #999; }
+  table.links tr.st-held td { background: #fff8e8; }
+  table.links tr.st-rejected td { color: #777; }
+  table.links tr.st-written td { background: #eef7ee; }
+</style><style>
+  .ss { font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: #161616; }
+  .ss .pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 999px; white-space: nowrap; border: 1px solid transparent; vertical-align: middle; }
+  .ss .pill.awaiting, .ss .pill.picked { background: #fff4e0; color: #b26a00; border-color: #f1dcb0; }
+  .ss .pill.applied { background: #e8f0ff; color: #1f5eff; border-color: #c7d8ff; }
+  .ss .pill.closed { background: #e6f4ea; color: #1b7a3d; border-color: #bfe0c9; }
+  .ss .pill.unknown { background: #eee; color: #5c5c5c; }
+  .ss .need { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 6px; background: #fdecec; color: #b3261e; border: 1px solid #f3c2bd; margin: 2px 6px 2px 0; white-space: nowrap; }
+  .ss .need.soft { background: #f3f3f0; color: #5c5c5c; border-color: #e3e3df; }
+  .ss .hold { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 6px; background: #fff4e0; color: #b26a00; border: 1px solid #f1dcb0; margin: 2px 6px 2px 0; }
+  .ss .steps { display: inline-flex; gap: 3px; vertical-align: middle; margin-right: 8px; }
+  .ss .steps i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: #e3e3df; }
+  .ss .steps i.on { background: #1b7a3d; }
+  .ss .steps i.next { background: #fff; border: 2px solid #b26a00; box-sizing: border-box; }
+  .ss .next { color: #5c5c5c; font-size: 13px; }
+  .ss .meta { color: #5c5c5c; font-size: 13px; }
+  .ss .note { color: #161616; font-size: 13px; margin-top: 4px; max-width: 90ch; }
+  .ss .stage { font-size: 12px; color: #5c5c5c; text-transform: uppercase; letter-spacing: .05em; }
+  .site-status { position: sticky; top: 8px; z-index: 20; background: #fffdf7; border: 1px solid #ecdfb8; border-radius: 10px; padding: 10px 14px; margin: 0 0 20px; display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+  .site-status .grp { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; }
+  .site-status .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: #5c5c5c; }
+  .site-status .live { margin-left: auto; font-size: 12px; color: #5c5c5c; }
+  .site-status .live.off { color: #b26a00; }
+  @media (max-width: 1000px) { .site-status { position: static; } }
+</style></head><body id="top">
+<nav class="toc" id="toc"><a class="top" href="/" style="margin-bottom:12px">&larr; All locations</a><button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-list">Sections</button>
+<ol id="toc-list">
+<li><a href="#top" class="top">Top</a></li>
+<li><a href="#header">Overview</a></li>
+<li><a href="#website">Website</a></li>
+<li><a href="#gbp">Google Business Profile</a></li>
+<li><a href="#logo-search">Logo image search</a></li>
+<li><a href="#candidates">Logo candidates</a></li>
+<li><a href="#sheet">Variant sheet</a></li>
+<li><a href="#links">Links (5 held for review)</a></li>
+<li><a href="#previews">Previews</a><ol><li><a href="#previews-1">Cell U  TRAVISSE PICK</a></li><li><a href="#previews-2">Cell V  TRAVISSE PICK, applied</a></li></ol></li>
+</ol></nav>
+<div class="site-status ss" id="site-status" data-slug="zarape-cocina-cantina-west-hollywood"></div>
+<script id="site-status-data" type="application/json">{"slug":"zarape-cocina-cantina-west-hollywood","status":"closed","status_label":"Closed out","boostly_status":null,"steps":null,"needs_you":null,"gaps":null,"hold":null,"done":null,"note":"Done: V is live, signage approved, Slack posted, branding complete (now in physical fulfillment); Notion entry 49 appended. 0 links written; 5 held for your call and catering ready. Customer still has not seen the branding (asked to pre-approve). CSM open: tables/stalls unconfirmed, 25% OFF promotion shows a recorded value of 20. Long Beach location is a separate run, still unbranded, not touched. To-go labels updated (offer + logo), review in Figma: https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=254-11677","review_status":null,"figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=254-2"}</script>
+<script>
+window.BoostlyStatus = (function () {
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function stepsHtml(steps) {
+    if (!steps || !steps.length) return "";
+    var done = 0, nextIdx = -1, html = "";
+    for (var i = 0; i < steps.length; i++) { if (steps[i][1]) done++; else if (nextIdx < 0) nextIdx = i; }
+    for (var j = 0; j < steps.length; j++) html += '<i class="' + (steps[j][1] ? "on" : (j === nextIdx ? "next" : "")) + '" title="' + esc(steps[j][0]) + (steps[j][1] ? " (done)" : "") + '"></i>';
+    var next = nextIdx < 0 ? "all steps done" : "next: " + steps[nextIdx][0].charAt(0).toLowerCase() + steps[nextIdx][0].slice(1);
+    return '<span class="steps" title="' + done + " of " + steps.length + ' steps done">' + html + '</span><span class="next">' + done + "/" + steps.length + ", " + esc(next) + '</span>';
+  }
+  function needsHtml(s) {
+    var out = "";
+    (s.needs_you || []).forEach(function (n) { out += '<span class="need">' + esc(n.replace("(s)", "s")) + '</span>'; });
+    (s.gaps || []).forEach(function (g) { out += '<span class="need soft">' + esc(g) + '</span>'; });
+    if (s.hold) out += '<span class="hold" title="' + esc(s.hold) + '">HOLD</span>';
+    if (!out && s.done) out += '<span class="need soft">review complete</span>';
+    if (!out && s.status !== "closed") out += '<span class="need soft">with the agents, nothing for you</span>';
+    return out;
+  }
+  function stageLabel(st) { return st ? String(st).replace(/_/g, " ").replace(/^./, function (c) { return c.toUpperCase(); }) : ""; }
+  function metaHtml(s) {
+    var rs = s.review_status || {}, parts = [];
+    if (rs.waiting_on && rs.status !== "done") parts.push("waiting on " + esc(rs.waiting_on));
+    if (rs.ease) parts.push("ease " + esc(rs.ease) + "/5");
+    return parts.join(" \u00b7 ");
+  }
+  function strip(el, s, live) {
+    if (!el) return;
+    var stage = stageLabel(s.boostly_status);
+    el.innerHTML =
+      '<div class="grp"><span class="pill ' + esc(s.status) + '">' + esc(s.status_label) + '</span>' + (stage ? '<span class="stage">' + esc(stage) + '</span>' : "") + '</div>' +
+      '<div class="grp">' + stepsHtml(s.steps) + '</div>' +
+      '<div class="grp"><span class="lbl">Needs you</span>' + needsHtml(s) + '</div>' +
+      (metaHtml(s) ? '<div class="grp meta">' + metaHtml(s) + '</div>' : "") +
+      (s.note ? '<div class="note" style="flex-basis:100%">' + esc(s.note) + '</div>' : "") +
+      '<span class="live' + (live ? "" : " off") + '">' + (live ? "live " + esc(live) : "as of the last site build") + '</span>';
+  }
+  function merge(s, it) {
+    s.boostly_status = it.status || s.boostly_status; s.steps = it.steps || s.steps; s.needs_you = it.needs_you || s.needs_you;
+    s.gaps = it.gaps || s.gaps; s.hold = it.hold == null ? s.hold : it.hold; s.done = it.done == null ? s.done : it.done;
+    s.note = it.note == null ? s.note : it.note; s.review_status = it.review_status || s.review_status;
+    if (it.figma_url && !s.figma_url) s.figma_url = it.figma_url;
+    return s;
+  }
+  function overlay(url, cb) {
+    if (!url || !window.fetch) { cb(null); return; }
+    fetch(url + (url.indexOf("?") < 0 ? "?" : "&") + "t=" + Math.floor(Date.now() / 60000), { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { cb(j && j.items ? j : null); })
+      .catch(function () { cb(null); });
+  }
+  function fmtTime(iso) { var t = Date.parse(iso); return isNaN(t) ? "" : new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/Denver" }).format(new Date(t)); }
+  return { esc: esc, stepsHtml: stepsHtml, needsHtml: needsHtml, metaHtml: metaHtml, strip: strip, merge: merge, overlay: overlay, fmtTime: fmtTime, stageLabel: stageLabel };
+})();
+
+(function () {
+  var el = document.getElementById("site-status"), s = JSON.parse(document.getElementById("site-status-data").textContent);
+  window.BoostlyStatus.strip(el, s, null);
+  window.BoostlyStatus.overlay("https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json", function (j) {
+    if (!j) return;
+    var it = null; for (var i = 0; i < j.items.length; i++) if (j.items[i].run_dir === s.slug) it = j.items[i];
+    if (it) window.BoostlyStatus.strip(el, window.BoostlyStatus.merge(s, it), window.BoostlyStatus.fmtTime(j.generated_at));
+    else window.BoostlyStatus.strip(el, s, window.BoostlyStatus.fmtTime(j.generated_at) + " (not on the open list)");
+  });
+})();
+</script>
+<section id="header">
+<p class="links"><a class="ext" href="https://slack.com/archives/C09MSM8MA9Y/p1790779098748229?thread_ts=1790370994.215029&amp;cid=C09MSM8MA9Y" target="_blank" rel="noopener">Slack thread &#8599;</a> <a class="ext" href="https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=254-2" target="_blank" rel="noopener">Figma &#8599;</a> <a class="ext chip" href="http://zarapecocinacantina.com/" target="_blank" rel="noopener"><b>Website</b> zarapecocinacantina.com/</a> <a class="ext chip" href="https://www.toasttab.com/local/order/zarape-west-hollywood-8351-santa-monica-boulevard/r-f3c9155c-13b0-49cd-8101-2614c1715015" target="_blank" rel="noopener"><b>Ordering</b> toasttab.com/local/order/z…8101-2614c1715015</a> <a class="ext chip" href="https://zarapecocinacantina.com/west-hollywood-west-hollywood-zarape-cocina-and-cantina-food-menu" target="_blank" rel="noopener"><b>Menu</b> zarapecocinacantina.com/we…cantina-food-menu</a> <a class="ext chip held" href="https://www.facebook.com/389567647566651" target="_blank" rel="noopener"><b>Facebook</b> facebook.com/389567647566651 <em>held</em></a> <a class="ext chip" href="https://www.instagram.com/zarapecocinacantina" target="_blank" rel="noopener"><b>Instagram</b> instagram.com/zarapecocinacantina</a> <a class="ext chip held" href="https://www.tiktok.com/@zarapecocinacantina" target="_blank" rel="noopener"><b>TikTok</b> tiktok.com/@zarapecocinacantina <em>held</em></a> <a class="ext chip" href="https://tmt.spotapps.co/job-listings?spot_id=268851" target="_blank" rel="noopener"><b>Careers</b> tmt.spotapps.co/job-listings?spot_id=268851</a> <a class="ext chip" href="https://zarapecocinacantina.com/west-hollywood-west-hollywood-zarape-cocina-and-cantina-catering" target="_blank" rel="noopener"><b>Catering</b> zarapecocinacantina.com/we…-cantina-catering</a> <a class="ext chip held" href="https://zarapecocinacantina.com/west-hollywood-west-hollywood-zarape-cocina-and-cantina-events" target="_blank" rel="noopener"><b>Events</b> zarapecocinacantina.com/we…nd-cantina-events <em>held</em></a> <a class="ext chip held" href="https://zarapecocinacantina.com/west-hollywood-west-hollywood-zarape-cocina-and-cantina-reservations" target="_blank" rel="noopener"><b>Reservations</b> zarapecocinacantina.com/we…tina-reservations <em>held</em></a> <a class="ext chip held" href="https://order.toasttab.com/egiftcards/zarape-west-hollywood-8351-santa-monica-boulevard" target="_blank" rel="noopener"><b>Gift cards</b> order.toasttab.com/egiftca…-monica-boulevard <em>held</em></a></p>
+<div class="hdr"><div><p style="font-size:44px;font-weight:700;">Zarape' Cocina &amp; Cantina</p>
+<p style="font-size:20px;color:#444444;margin-top:6px;">West Hollywood, CA   ·   request b5xq33wjici7q4nore7fgq9e   ·   full order</p>
+<p style="font-size:29px;font-weight:700;color:#1B5E20;margin-top:22px;">Fable's default: A</p>
+<p style="font-size:19px;margin-top:6px;">card knockout at Fable's pick</p>
+<p style="font-size:16px;color:#666666;margin-top:8px;">Confidence: medium   ·   flags: logo_interior_collides_with_primary, full_white_knockout_recommended, opaque_panel_risk_candidate_02_rejected, brand_environment_minimum_evidence_unassessed, instagram_not_available, website_capture_partial_lazy_sections_unpainted, band_from_site_accent_mark_has_single_ink</p>
+<p style="font-size:16px;color:#666666;margin-top:4px;">Cell A = card knockout, primary #603814, band #AC8E46 (Fable's pick), text #FFFFFF, print digit #0E0E0E</p></div><div class="cell"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/7febbc2c0307-default-cell.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/7febbc2c0307-default-cell.png" alt="default cell"></a><p>Fable's default cell A (native sheet pixels, click to open)</p><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/70c97c7b554f-logo-3x.png" target="_blank" title="open the 3x crop"><img class="zoom3x" src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/70c97c7b554f-logo-3x.png" alt="logo at 3x"></a><p><b>Logo at 3x (what prints).</b> Final upload 1000x354px, source 2772px (native), given on the command line, upscale 0.361x. Edge quality: ok. Soft-edge share 0.95, stair-step score 0.402.</p></div></div>
+</section>
+<section id="website">
+<h2>Website</h2><p class="sub"><a class="ext" href="http://zarapecocinacantina.com/" target="_blank" rel="noopener">http://zarapecocinacantina.com/</a></p>
+
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/b2af559475f1-desktop.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/b2af559475f1-desktop.jpg" loading="lazy" alt="website desktop screenshot"></a></div><p class="cap">Desktop screenshot from the run's evidence (evidence/website-visual/desktop.png).</p>
+</section>
+<section id="gbp">
+<h2>Google Business Profile</h2><p class="sub">place id ChIJv39kpoy_woAR6lQeoq84MKQ</p>
+<p class="links"><a class="ext" href="https://www.google.com/maps/place/?q=place_id:ChIJv39kpoy_woAR6lQeoq84MKQ" target="_blank" rel="noopener">Google Maps place &#8599;</a> <a class="ext" href="https://www.google.com/search?q=Zarape'%20Cocina%20%26%20Cantina%20West%20Hollywood%2C%20CA" target="_blank" rel="noopener">Google search &#8599;</a></p>
+<p style="font-size:17px;">Place photos already downloaded for this run (10), storefront, interior and signage photos first, then the rest. Green frame = a photo Fable cited for the sign or interior.</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/cd1b826eb7ab-gbp-photo-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/cd1b826eb7ab-gbp-photo-01.jpg" loading="lazy" alt="#1 owner photo  · vibe  800x800"></a><figcaption>#1 owner photo  · vibe  800x800</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/29a2aedbd2e1-gbp-photo-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/29a2aedbd2e1-gbp-photo-02.jpg" loading="lazy" alt="#2 owner photo  800x800"></a><figcaption>#2 owner photo  800x800</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/1a74984d9174-gbp-photo-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/1a74984d9174-gbp-photo-03.jpg" loading="lazy" alt="#3 owner photo  800x800"></a><figcaption>#3 owner photo  800x800</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/b4bdae0b3eae-gbp-photo-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/b4bdae0b3eae-gbp-photo-04.jpg" loading="lazy" alt="#4 owner photo  800x800"></a><figcaption>#4 owner photo  800x800</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/e4ac48bff982-gbp-photo-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/e4ac48bff982-gbp-photo-05.jpg" loading="lazy" alt="#5 owner photo  800x800"></a><figcaption>#5 owner photo  800x800</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/83be2f50b28d-gbp-photo-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/83be2f50b28d-gbp-photo-06.jpg" loading="lazy" alt="#6 owner photo  800x800"></a><figcaption>#6 owner photo  800x800</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/eaccb54bae02-gbp-photo-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/eaccb54bae02-gbp-photo-07.jpg" loading="lazy" alt="#7 owner photo  800x800"></a><figcaption>#7 owner photo  800x800</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/703c60676ba6-gbp-photo-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/703c60676ba6-gbp-photo-08.jpg" loading="lazy" alt="#8 owner photo  800x800"></a><figcaption>#8 owner photo  800x800</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/09003d4abe95-gbp-photo-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/09003d4abe95-gbp-photo-09.jpg" loading="lazy" alt="#9 owner photo  800x800"></a><figcaption>#9 owner photo  800x800</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/3145e60b9932-gbp-photo-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/3145e60b9932-gbp-photo-10.jpg" loading="lazy" alt="#10 by C  3600x4800"></a><figcaption>#10 by C  3600x4800</figcaption></figure></div><p class="show-all"><button type="button" class="show-all" data-all="Show all 10" data-less="Show fewer (4 of 10)">Show all 10</button></p>
+<p style="font-size:17px;margin-top:10px;">Google Maps &quot;Vibe&quot; photos from the evidence build (Google's own in-store/atmosphere category)</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/2c770bcb9e33-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/2c770bcb9e33-01.jpg" loading="lazy" alt="Vibe  3000x4000"></a><figcaption>Vibe  3000x4000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/6d1159e0e9eb-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/6d1159e0e9eb-02.jpg" loading="lazy" alt="Vibe  5635x4226"></a><figcaption>Vibe  5635x4226</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/cb975d3e6db3-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/cb975d3e6db3-03.jpg" loading="lazy" alt="Vibe  4032x2268"></a><figcaption>Vibe  4032x2268</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/24bc7a808b75-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/24bc7a808b75-04.jpg" loading="lazy" alt="Vibe  4032x3024"></a><figcaption>Vibe  4032x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/ed766d1da04f-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/ed766d1da04f-05.jpg" loading="lazy" alt="Vibe  4284x5712"></a><figcaption>Vibe  4284x5712</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/daeae7287d98-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/daeae7287d98-06.jpg" loading="lazy" alt="Vibe  4284x5712"></a><figcaption>Vibe  4284x5712</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/672f5f898e6b-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/672f5f898e6b-07.jpg" loading="lazy" alt="Vibe  3024x4032"></a><figcaption>Vibe  3024x4032</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/359e5ad4f691-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/359e5ad4f691-08.jpg" loading="lazy" alt="Vibe  3000x4000"></a><figcaption>Vibe  3000x4000</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/603bce993a48-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/603bce993a48-09.jpg" loading="lazy" alt="Vibe  4000x2252"></a><figcaption>Vibe  4000x2252</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/a3d8f00f3696-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/a3d8f00f3696-10.jpg" loading="lazy" alt="Vibe  5712x4284"></a><figcaption>Vibe  5712x4284</figcaption></figure></div><p class="show-all"><button type="button" class="show-all" data-all="Show all 10" data-less="Show fewer (6 of 10)">Show all 10</button></p>
+<p style="font-size:17px;margin-top:10px;">Live Google Maps photo view, reused from the earlier capture under review/</p>
+<p style="font-size:14px;color:#666666;margin-top:4px;">reused the cached capture under review/</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/d6e573d6dd4c-google-maps-photos.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/d6e573d6dd4c-google-maps-photos.png" loading="lazy" alt="Google Maps photo view"></a></div>
+</section>
+<section id="logo-search">
+<h2>Logo image search</h2><p class="sub">&quot;Zarape' Cocina &amp; Cantina West Hollywood logo&quot;</p>
+<p class="links"><a class="ext" href="https://www.google.com/search?tbm=isch&amp;q=Zarape'%20Cocina%20%26%20Cantina%20West%20Hollywood%20logo" target="_blank" rel="noopener">Open Google Images &#8599;</a></p>
+<div class="gray">Logo image search skipped (--skip-google) and no cached results under review/logo-search/.</div>
+</section>
+<section id="candidates">
+<h2>Logo candidates</h2><p class="sub">from the evidence packet; green frame = the file Fable chose. Gray background so white knockouts stay visible.</p>
+<p class="links"><a class="ext" href="http://zarapecocinacantina.com/" target="_blank" rel="noopener">Website &#8599;</a></p>
+<div class="grid cols3"><figure style="background:#8C8C8C" class="framed"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/b4689540877d-01-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/b4689540877d-01-first_party_other.png" loading="lazy" alt="01-first_party_other.png  2752x1109
+site header, traced cut
+FABLE'S PICK"></a><figcaption style="font-weight:700">01-first_party_other.png  2752x1109<br>site header, traced cut<br>FABLE'S PICK<br><a class="ext" href="http://zarapecocinacantina.com/" target="_blank" rel="noopener">zarapecocinacantina.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/da0f4745e9a6-02-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/da0f4745e9a6-02-first_party_header.png" loading="lazy" alt="02-first_party_header.png  600x400
+site header"></a><figcaption>02-first_party_header.png  600x400<br>site header<br><a class="ext" href="http://zarapecocinacantina.com/" target="_blank" rel="noopener">zarapecocinacantina.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/575f51bd0a43-03-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/575f51bd0a43-03-first_party_other.png" loading="lazy" alt="03-first_party_other.png  600x298
+first_party_other, traced cut"></a><figcaption>03-first_party_other.png  600x298<br>first_party_other, traced cut<br><a class="ext" href="http://zarapecocinacantina.com/" target="_blank" rel="noopener">zarapecocinacantina.com/ &#8599;</a></figcaption></figure></div>
+</section>
+<section id="sheet">
+<h2>Variant sheet</h2><p class="sub">Fable's default A framed in green. Reply with one letter.</p>
+<p class="links"></p>
+<div class="shot zoom" title="click to toggle native size"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/6081cfc0be69-variant-sheet-marked.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/6081cfc0be69-variant-sheet-marked.png" loading="lazy" alt="variant sheet"></a></div><p class="cap">variants/variant-sheet.png at 3040 of 3592px wide, revision 24. In the HTML page click the sheet to toggle native size.</p>
+</section>
+<section id="links">
+<h2>Links</h2><p class="sub">the link automation results for this location, one row per category; held rows need a human decision. Click a URL to open it.</p>
+<p class="links"></p>
+<p style="font-size:15px;color:#444444;">Run: discovery only no writes review stage; no link writes applied; by zarape fulfill-location (Claude).</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Website bootstrap: not_needed.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Ordering URL on file <a class="ext" href="https://www.toasttab.com/local/order/zarape-west-hollywood-8351-santa-monica-boulevard/r-f3c9155c-13b0-49cd-8101-2614c1715015?source=pop_up&amp;amp;spot_id=268851&amp;amp;destination=order&amp;amp;promotion=order_online" target="_blank" rel="noopener">https://www.toasttab.com/local/order/zarape-west-hollywood-8351-santa-monica-boulevard/r-f3c9155c-13b0-49cd-8101-2614c1715015?source=pop_up&amp;spot_id=268851&amp;destination=order&amp;promotion=order_online</a>: not compared</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Discovery report link-discovery-report.codex-trial-2026-09-29.json (2026-09-29 22:48): 18 categories, 1 for manual review, 0 proposed field updates, 3 proposed events.</p>
+<p style="font-size:15px;font-weight:700;margin-top:8px;">17 categories: 0 written, 5 verified or already live, 5 held for review, 0 pending browser, 0 rejected, 7 none found.</p>
+<table class="links"><thead><tr><th>Category</th><th>URL</th><th>Status</th><th>Verdict</th></tr></thead><tbody><tr class="st-ready"><td class="cat">Online ordering</td><td class="url"><a class="ext" href="https://www.toasttab.com/local/order/zarape-west-hollywood-8351-santa-monica-boulevard/r-f3c9155c-13b0-49cd-8101-2614c1715015" target="_blank" rel="noopener">toasttab.com/local/order/zarape-west-hollyw…-13b0-49cd-8101-2614c1715015</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. already stored on the location and as the active Order event; matches what the website publishes; live Toast store for 8351 Santa Monica Boulevard, W…</div><details><summary>raw evidence</summary><div class="raw">already stored on the location and as the active Order event; matches what the website publishes; live Toast store for 8351 Santa Monica Boulevard, West Hollywood with a working menu. No write needed beyond the closeout's idempotent Order Online reconcile.<br>verified live (claude chrome)</div></details></td></tr>
+<tr class="st-ready"><td class="cat">Menu</td><td class="url"><a class="ext" href="https://zarapecocinacantina.com/west-hollywood-west-hollywood-zarape-cocina-and-cantina-food-menu" target="_blank" rel="noopener">zarapecocinacantina.com/west-hollywood-west…cocina-and-cantina-food-menu</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Linked from the store's own website.</div><details><summary>raw evidence</summary><div class="raw">already an active Menu event with this URL; site nav MENU link; 200, title 'Zarape' Cocina &amp; Cantina - Food Menu', full priced menu in the page. No write needed.<br>title &quot;Zarape&amp;apos; Cocina &amp; Cantina - Food Menu&quot;<br>the website links to it<br>URL slug names the business</div></details></td></tr>
+<tr class="st-held"><td class="cat">Facebook</td><td class="url"><a class="ext" href="https://www.facebook.com/389567647566651" target="_blank" rel="noopener">facebook.com/389567647566651</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: QUESTION: replace the stored Facebook URL with this one? Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">QUESTION: replace the stored Facebook URL with this one? The stored facebook.com/zarapecocinacantina now shows 'This content isn't available right now'. The page the website links is live: name 'Zarape' Cocina &amp; Cantina', category Mexican Restaurant, the site's own tagline, and its picture is the West Hollywood storefront; but it has 19 followers, no address, phone, or website link, and replacing a different existing value is never automatic. The page could not be recorded in browser-results.json: the Chrome tool blocks one chunk of the plain read (Cookie/query string data) on three separate loads, and no workaround was used.<br>verified live (claude chrome)</div></details></td></tr>
+<tr class="st-ready"><td class="cat">Instagram</td><td class="url"><a class="ext" href="https://www.instagram.com/zarapecocinacantina" target="_blank" rel="noopener">instagram.com/zarapecocinacantina</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Name matches the business.</div><details><summary>raw evidence</summary><div class="raw">already stored; live profile 'Zarape' Cocina &amp; Cantina: #1 for Authentic Mexican Food', 1,226 posts, about 2,320 followers, bio links zarapecocinacantina.com. Brand account for both locations. No write needed.<br>title &quot;(1) Instagram&quot;<br>social destination identity signal</div></details></td></tr>
+<tr class="st-none"><td class="cat">X (Twitter)</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-held"><td class="cat">TikTok</td><td class="url"><a class="ext" href="https://www.tiktok.com/@zarapecocinacantina" target="_blank" rel="noopener">tiktok.com/@zarapecocinacantina</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: QUESTION: use the brand TikTok on the West Hollywood link tree? Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">QUESTION: use the brand TikTok on the West Hollywood link tree? Live, 294 followers, links zarapecocinacantina.com, but its bio pins the LONG BEACH address (4702 E 2nd St). Same brand, other location's address.<br>title &quot;zarapecocinacantina (@zarapecocinacantina) | TikTok&quot;<br>social destination identity signal<br>canonical form of <a class="ext" href="https://www.tiktok.com/@zarapecocinacantina/video/7652654460115684639" target="_blank" rel="noopener">https://www.tiktok.com/@zarapecocinacantina/video/7652654460115684639</a><br>google organic candidate</div></details></td></tr>
+<tr class="st-none"><td class="cat">YouTube</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-ready"><td class="cat">Careers</td><td class="url"><a class="ext" href="https://tmt.spotapps.co/job-listings?spot_id=268851" target="_blank" rel="noopener">tmt.spotapps.co/job-listings?spot_id=268851</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. already an active Careers event (stored with a callback_url parameter); site nav JOBS link; SpotHopper job listings for spot 268851, the West Hollywo…</div><details><summary>raw evidence</summary><div class="raw">already an active Careers event (stored with a callback_url parameter); site nav JOBS link; SpotHopper job listings for spot 268851, the West Hollywood spot id. spot_id is identity-critical and must be kept. No write needed.<br>verified live (static fetch)</div></details></td></tr>
+<tr class="st-ready"><td class="cat">Catering</td><td class="url"><a class="ext" href="https://zarapecocinacantina.com/west-hollywood-west-hollywood-zarape-cocina-and-cantina-catering" target="_blank" rel="noopener">zarapecocinacantina.com/west-hollywood-west…-cocina-and-cantina-catering</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Linked from the store's own website.</div><details><summary>raw evidence</summary><div class="raw">site nav Catering &gt; West Hollywood; 200, title 'Zarape' Cocina &amp; Cantina - Catering'; embeds the SpotHopper catering form for spot_id 268851; discovery found_verified. Evidence: the static fetch and a plain in-tab read (browser-pages/catering, 11 chunks); no evidence from the packed transport is relied on.<br>title &quot;Zarape&amp;apos; Cocina &amp; Cantina - Catering&quot;<br>the website links to it<br>URL slug names the business<br>found as an anchor</div></details></td></tr>
+<tr class="st-held"><td class="cat">Events</td><td class="url"><a class="ext" href="https://zarapecocinacantina.com/west-hollywood-west-hollywood-zarape-cocina-and-cantina-events" target="_blank" rel="noopener">zarapecocinacantina.com/west-hollywood-west…pe-cocina-and-cantina-events</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: QUESTION: confirm the events URL before it is written. Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">QUESTION: confirm the events URL before it is written. The discovery report and this block do not agree: the report selected a promo link with tracking parameters (zarapecocinacantina.com/-events with source, spot_id, destination, promotion) and this is the site nav's canonical EVENTS page. Same held standard as reservations. What I saw: 200, title 'Zarape' Cocina &amp; Cantina - Events', dated entries ahead of today (National Taco Day Oct 6, National Dessert Day Oct 14, more through November); the entries are SpotHopper calendar promos rather than ticketed events.<br>verified live (static fetch)</div></details></td></tr>
+<tr class="st-held"><td class="cat">Reservations</td><td class="url"><a class="ext" href="https://zarapecocinacantina.com/west-hollywood-west-hollywood-zarape-cocina-and-cantina-reservations" target="_blank" rel="noopener">zarapecocinacantina.com/west-hollywood-west…ina-and-cantina-reservations</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: QUESTION: confirm West Hollywood's own reservations page before it is written. Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">QUESTION: confirm West Hollywood's own reservations page before it is written. The discovery report and this block do not agree, and the report cannot be edited by hand: the report selected the LONG BEACH page (<a class="ext" href="https://zarapecocinacantina.com/west-hollywood-west-hollywood-zarape-cocina-and-cantina-reservations-long-beach" target="_blank" rel="noopener">https://zarapecocinacantina.com/west-hollywood-west-hollywood-zarape-cocina-and-cantina-reservations-long-beach</a>) and never verified this one (it was found from the nav but skipped before verify). What I saw: this page is the site nav's Reserve &gt; West Hollywood link, returns 200, and embeds the SpotHopper reservation form for spot_id 268851, the West Hollywood spot id (the Long Beach page embeds 717901); the form works in the live tab. Its browser-tab title reads 'Reservations | Long Beach, CA' on both location pages.<br>verified live (static fetch+claude chrome)</div></details></td></tr>
+<tr class="st-held"><td class="cat">Gift cards</td><td class="url"><a class="ext" href="https://order.toasttab.com/egiftcards/zarape-west-hollywood-8351-santa-monica-boulevard" target="_blank" rel="noopener">order.toasttab.com/egiftcards/zarape-west-h…-8351-santa-monica-boulevard</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: gift cards are always held for review by policy. Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">gift cards are always held for review by policy. Live Toast e-gift card page 'Zarape' Cocina &amp; Cantina Gift Card' for the West Hollywood store, linked as Gift Cards from the Toast ordering page.<br>verified live (claude chrome)</div></details></td></tr>
+<tr class="st-none"><td class="cat">Loyalty / rewards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">iOS app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Android app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">App downloads</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Other</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr></tbody></table>
+</section>
+<section id="previews">
+<h2>Previews</h2><p class="sub">harness signage preview and AI mockups per letter; previews, not proofs (QR drift, invented phone content). Click any image to open the native file.</p>
+<p class="links"></p>
+<p id="previews-1" style="font-size:24px;font-weight:700;color:#B7791F;margin-top:14px;">Cell U  TRAVISSE PICK</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Travisse 2026-09-29: ZARAPE wordmark only (no descriptor), white on site black, patio chair green band (S with.... card #0E0E0E on #7A973E, text #FFFFFF (band one-off: patio chair green, sampled from the site hero video (daylight)). signage preview, 2 AI mockups.</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/7158ca55168d-signage-preview-U.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/7158ca55168d-signage-preview-U.png" loading="lazy" alt="signage preview U"></a></div><p class="cap">review/signage-preview-U.png: harness signage preview (POP, sticker, card, to-go), click to open.</p>
+<div class="grid cols4"><figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/c9933f235c84-box-U.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/c9933f235c84-box-U.png" loading="lazy" alt="box (AI)  box-U.png
+verdict not filled in yet (prompts.md)"></a><figcaption>box (AI)  box-U.png<br>verdict not filled in yet (prompts.md)</figcaption></figure>
+<figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/1d69241fd4fa-scan-U.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/1d69241fd4fa-scan-U.png" loading="lazy" alt="scan (AI)  scan-U.png
+verdict not filled in yet (prompts.md)"></a><figcaption>scan (AI)  scan-U.png<br>verdict not filled in yet (prompts.md)</figcaption></figure></div>
+<p id="previews-2" style="font-size:24px;font-weight:700;color:#B7791F;margin-top:14px;">Cell V  TRAVISSE PICK, applied</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Travisse 2026-09-29 color options: U with a BLACK wordmark on the white stickers (black and white set, chair g.... card #0E0E0E on #7A973E, text #FFFFFF (band one-off: patio chair green, sampled from the site hero video (daylight)). signage preview, 0 AI mockups.</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/7bea2db77639-signage-preview-V.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/zarape-cocina-cantina-west-hollywood/7bea2db77639-signage-preview-V.png" loading="lazy" alt="signage preview V"></a></div><p class="cap">review/signage-preview-V.png: harness signage preview (POP, sticker, card, to-go), click to open.</p>
+<p style="font-size:15px;font-weight:700;color:#8A1C1C;margin-top:10px;">Not in review-canvas.png: the previews would add about 2.1 MB to a PNG already near 47 MB (budget 25 MB). This page and the files above are the review surface for them.</p>
+</section>
+<script>
+  for (const el of document.querySelectorAll('.shot.zoom')) {
+    el.addEventListener('click', (ev) => { ev.preventDefault(); el.classList.toggle('native'); });
+  }
+  // "Show all N" on capped photo grids: reveal the hidden figures in the grid just above the button.
+  for (const btn of document.querySelectorAll('button.show-all')) {
+    btn.addEventListener('click', () => {
+      const grid = btn.parentElement.previousElementSibling;
+      if (!grid) return;
+      const open = grid.classList.toggle('expanded');
+      btn.textContent = open ? btn.dataset.less : btn.dataset.all;
+    });
+  }
+  // Sidebar: highlight the section in view, jump instantly on click (no scroll animation, Travisse 2026-09-29), hamburger below 1000px.
+  (() => {
+    const toc = document.getElementById('toc');
+    const links = new Map([...toc.querySelectorAll('a[href^="#"]')].map((a) => [a.getAttribute('href').slice(1), a]));
+    const sections = [...document.querySelectorAll('section[id]')];
+    const visible = new Set();
+    const setActive = () => {
+      const current = sections.find((s) => visible.has(s)) ?? sections.find((s) => s.getBoundingClientRect().bottom > 0) ?? sections[sections.length - 1];
+      for (const a of links.values()) a.classList.remove('active');
+      if (current) links.get(current.id)?.classList.add('active');
+    };
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); }
+      setActive();
+    }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+    for (const s of sections) io.observe(s);
+    setActive();
+    const toggle = toc.querySelector('.toc-toggle');
+    toggle.addEventListener('click', () => { const open = toc.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
+    for (const a of links.values()) a.addEventListener('click', (ev) => {
+      const target = document.getElementById(a.getAttribute('href').slice(1));
+      if (!target) return;
+      ev.preventDefault();
+      target.scrollIntoView({ behavior: 'instant', block: 'start' });
+      history.replaceState(null, '', a.getAttribute('href'));
+      toc.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
+    });
+  })();
+</script>
+</body></html>

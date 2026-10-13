@@ -27,6 +27,7 @@ import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { renderIndex } from "./index-page.mjs";
 import { loadToken, putBlob } from "./blob.mjs";
+import { STATUS_CSS, pageStrip } from "./status-ui.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, "..");
@@ -76,6 +77,44 @@ function listRuns(runRoot) {
   }
   runs.sort((a, b) => (a.createdAt < b.createdAt ? 1 : a.createdAt > b.createdAt ? -1 : 0));
   return runs;
+}
+
+// Status board inputs (Travisse 2026-10-13: statuses live on this site, not in Notion or an Apple
+// Note). checklist/checklist.json is written by boostly-box-fulfillment/scripts/review-checklist.py
+// (steps, what Travisse owes, gaps, hold), checklist/notes.json holds the one-line note per run
+// dir, and <run>/review/status.json (review-status.mjs) carries status, waiting_on and ease.
+// None of these may carry ship-to data; the strings are published as-is.
+function loadBoard(runRoot) {
+  const dir = path.join(runRoot, "checklist");
+  const items = new Map();
+  try { for (const it of readJson(path.join(dir, "checklist.json")).items || []) if (it.run_dir) items.set(it.run_dir, it); } catch {}
+  let notes = {};
+  try { notes = readJson(path.join(dir, "notes.json")); } catch {}
+  return { items, notes };
+}
+
+function boardFields(r, board) {
+  const it = board.items.get(r.slug) || null;
+  let reviewStatus = null;
+  try { reviewStatus = readJson(path.join(r.dir, "review", "status.json")); } catch {}
+  const note = board.notes[r.slug] || it?.note || null;
+  return {
+    boostly_status: it?.status ?? null,
+    steps: it?.steps ?? null,
+    needs_you: it?.needs_you ?? null,
+    gaps: it?.gaps ?? null,
+    hold: it?.hold ?? null,
+    done: it?.done ?? null,
+    note: typeof note === "string" ? note : null,
+    review_status: reviewStatus ? { status: reviewStatus.status ?? null, waiting_on: reviewStatus.waiting_on ?? null, ease: reviewStatus.ease ?? null, updated_at: reviewStatus.updated_at ?? null } : null,
+  };
+}
+
+// Public URL of the live board, next to the assets in the same Blob store.
+function liveStatusUrl(blobIndex) {
+  const first = Object.values(blobIndex).find((e) => e?.url);
+  if (!first) return null;
+  try { return new URL(first.url).origin + "/status/checklist.json"; } catch { return null; }
 }
 
 function selectRuns(all, { limit, slugs }) {
@@ -235,7 +274,7 @@ async function publish(r, s, outDir, blobIndex, token, upload) {
   return { pageBytes: Buffer.byteLength(html) + localBytes, blobBytes, blobCount: jobs.length, uploaded, reused, localCount: s.assets.length - jobs.length };
 }
 
-function siteEntry(r, p) {
+function siteEntry(r, p, board) {
   const req = r.run.request || {};
   const id = req.identity || {};
   const fig = r.run.figma || {};
@@ -260,10 +299,22 @@ function siteEntry(r, p) {
     review_url: `/${r.slug}/`,
     figma_url: fig.section_url || null,
     print_handoff_url: handoffUrl,
+    ...boardFields(r, board),
     page_bytes: p.pageBytes,
     blob_bytes: p.blobBytes,
     blob_assets: p.blobCount,
   };
+}
+
+// The status strip is the first in-flow element of the page: right after the canvas's TOC nav
+// (fixed on wide screens, sticky with a negative top margin on narrow ones), else after <body>.
+function injectStrip(html, entry, liveUrl) {
+  const withCss = html.replace(/<\/head>/i, `<style>${STATUS_CSS}</style></head>`);
+  const strip = pageStrip(entry, liveUrl);
+  let out = withCss.replace(/(<\/nav>)/i, `$1\n${strip}`);
+  if (out === withCss) out = withCss.replace(/(<body[^>]*>)/i, `$1\n${strip}`);
+  if (out === withCss) console.warn(`${entry.slug}: no </nav> or <body> found, status strip not injected`);
+  return out;
 }
 
 function findKey(obj, key) {
@@ -300,6 +351,9 @@ async function main() {
   const indexPath = path.join(ROOT, "data", "blob-index.json");
   const blobIndex = exists(indexPath) ? readJson(indexPath) : {};
   const stagingDir = path.join(ROOT, ".staging");
+  const board = loadBoard(args.runRoot);
+  const liveUrl = liveStatusUrl(blobIndex);
+  console.log(`status board: ${board.items.size} open items in checklist/checklist.json, ${Object.keys(board.notes).filter((k) => k !== "_comment").length} notes; live overlay ${liveUrl || "(no blob index yet, none)"}`);
 
   // Entries kept from the committed manifest: everything not rebuilt in this run, as long as its
   // committed page still exists. --prune drops them all (old behaviour: wipe and regenerate).
@@ -328,7 +382,9 @@ async function main() {
     uploaded += p.uploaded;
     fs.mkdirSync(path.dirname(indexPath), { recursive: true });
     fs.writeFileSync(indexPath, JSON.stringify(sortKeys(blobIndex), null, 1) + "\n"); // checkpoint after every page
-    const entry = siteEntry(r, p);
+    const entry = siteEntry(r, p, board);
+    const pagePath = path.join(args.out, r.slug, "index.html");
+    fs.writeFileSync(pagePath, injectStrip(fs.readFileSync(pagePath, "utf8"), entry, liveUrl));
     sites.push(entry);
     const warn = [s.missing.length ? `missing refs: ${s.missing.join(", ")}` : "", s.outside.length ? `refs outside run dir (left as-is): ${s.outside.join(", ")}` : ""].filter(Boolean).join("; ");
     console.log(`${r.slug.padEnd(42)} blob ${mb(p.blobBytes).padStart(8)} (${String(p.blobCount).padStart(2)} assets, ${p.uploaded} new)  page ${(p.pageBytes / 1024).toFixed(0).padStart(4)} KB  ${entry.status_label.padEnd(16)} rec ${entry.recommended_letter ?? "-"} pick ${entry.picked_letter ?? "-"}  stripped ${s.adminLinks} admin/${s.internalLinks} internal${warn ? "  !! " + warn : ""}`);
@@ -336,7 +392,7 @@ async function main() {
 
   sites.push(...kept);
   sites.sort((a, b) => ((a.requested_at || "") < (b.requested_at || "") ? 1 : (a.requested_at || "") > (b.requested_at || "") ? -1 : 0));
-  const manifest = { generated_at: new Date().toISOString(), count: sites.length, sites };
+  const manifest = { generated_at: new Date().toISOString(), count: sites.length, live_status_url: liveUrl, sites };
   fs.writeFileSync(path.join(ROOT, "data", "sites.json"), JSON.stringify(manifest, null, 2) + "\n");
   fs.mkdirSync(path.join(args.out, "data"), { recursive: true });
   fs.writeFileSync(path.join(args.out, "data", "sites.json"), JSON.stringify(manifest, null, 2) + "\n");

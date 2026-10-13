@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>La Veracruzana review</title>
+<style>
+  :root { color-scheme: light; scroll-behavior: auto; }
+  body { margin: 0; padding: 32px 40px 80px 280px; background: #fff; color: #111; font-family: Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.35; max-width: 2040px; box-sizing: border-box; }
+  h2 { font-size: 34px; margin: 0 0 4px; }
+  section { padding: 28px 0; border-bottom: 3px solid #ccc; scroll-margin-top: 16px; }
+  section:first-child { padding-top: 0; }
+  p[id] { scroll-margin-top: 16px; }
+  .toc { position: fixed; top: 0; left: 0; bottom: 0; width: 240px; box-sizing: border-box; padding: 24px 16px; overflow-y: auto; background: #f4f4f4; border-right: 1px solid #ddd; font-size: 15px; z-index: 10; }
+  .toc ol { list-style: none; margin: 0; padding: 0; }
+  .toc ol ol { margin: 2px 0 6px 14px; }
+  .toc ol ol a { font-size: 13px; color: #555; padding: 3px 8px; }
+  .toc a { display: block; padding: 6px 8px; border-radius: 4px; color: #222; line-height: 1.3; }
+  .toc a:hover { background: #e6e6e6; }
+  .toc a.active { background: #1b5e20; color: #fff; font-weight: 700; }
+  .toc a.top { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+  .toc-toggle { display: none; }
+  @media (max-width: 1000px) {
+    body { padding: 64px 20px 80px; }
+    .toc { position: sticky; top: 0; bottom: auto; width: auto; margin: -64px -20px 24px; padding: 8px 12px; border-right: 0; border-bottom: 1px solid #ddd; max-height: 80vh; }
+    .toc-toggle { display: block; font: inherit; font-weight: 700; background: none; border: 1px solid #bbb; border-radius: 4px; padding: 6px 12px; cursor: pointer; }
+    .toc-toggle::before { content: "\2630  "; }
+    .toc:not(.open) ol { display: none; }
+    .toc ol { padding-top: 8px; }
+  }
+  p { margin: 4px 0; }
+  p.sub { color: #555; font-size: 17px; margin-bottom: 14px; }
+  p.cap { color: #666; font-size: 15px; }
+  .gray { background: #ededed; color: #444; padding: 26px; font-size: 20px; border-radius: 4px; }
+  .hdr { display: flex; gap: 30px; align-items: flex-start; }
+  .hdr > div:first-child { flex: 1; }
+  .cell { flex: 0 0 auto; max-width: 520px; }
+  .cell img { display: block; max-width: 100%; border: 6px solid #1b5e20; box-sizing: border-box; }
+  .cell p { color: #1b5e20; font-weight: 700; font-size: 16px; }
+  .shot { border: 1px solid #ddd; overflow: auto; max-height: 90vh; }
+  .shot img { display: block; width: 100%; height: auto; }
+  /* 2026-10-01: a zoomable shot (the variant sheet) is never height-clipped: every row stays visible at page width,
+     and native size scrolls inside the container (overflow auto) instead of hiding rows below 90vh. */
+  .shot.zoom { max-height: none; }
+  .shot.zoom img { cursor: zoom-in; }
+  .cell img.zoom3x { margin-top: 10px; border: 3px solid #444; image-rendering: pixelated; }
+  .cell img.zoom3x.bad { border-color: #B71C1C; }
+  .cell.hold img:first-of-type { border-color: #B71C1C; }
+  .shot.zoom.native img { width: auto; max-width: none; cursor: zoom-out; }
+  .grid { display: grid; gap: 14px; }
+  .grid.cols3 { grid-template-columns: repeat(3, 1fr); }
+  .grid.cols4 { grid-template-columns: repeat(4, 1fr); }
+  .grid.cols5 { grid-template-columns: repeat(5, 1fr); }
+  .grid.cols6 { grid-template-columns: repeat(6, 1fr); }
+  figure { margin: 0; background: #ededed; }
+  figure.framed { outline: 6px solid #1b5e20; outline-offset: -6px; }
+  figure a { display: block; }
+  figure img { display: block; width: 100%; height: 360px; object-fit: contain; }
+  .grid.cols4 figure img { height: 280px; }
+  .grid.cols5 figure img, .grid.cols6 figure img { height: 220px; }
+  figcaption { font-size: 15px; padding: 6px 4px 10px; background: #fff; color: #222; }
+  a { color: inherit; text-decoration: none; }
+  a.ext { color: #0b57d0; text-decoration: underline; text-underline-offset: 2px; word-break: break-all; }
+  a.ext:hover { color: #083a8c; }
+  p.links { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 16px; font-size: 15px; }
+  p.links a.ext { background: #eef3fc; border: 1px solid #c9d8f5; border-radius: 4px; padding: 3px 10px; text-decoration: none; word-break: normal; }
+  p.links a.ext:hover { background: #dce7fb; }
+  p.links a.chip b { font-weight: 700; margin-right: 4px; }
+  p.links a.chip.held { background: #fff4d6; border-color: #e3c37a; }
+  p.links a.chip em { font-style: normal; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: #8a5a00; margin-left: 4px; }
+  figcaption .src { color: #666; }
+  .grid figure.more { display: none; }
+  .grid.expanded figure.more { display: block; }
+  p.show-all { margin: 10px 0 0; }
+  button.show-all { font: inherit; font-size: 14px; font-weight: 700; background: #f4f4f4; border: 1px solid #bbb; border-radius: 4px; padding: 6px 14px; cursor: pointer; }
+  button.show-all:hover { background: #e6e6e6; }
+  table.links .verdict { color: #222; max-width: 560px; }
+  table.links details { margin-top: 5px; font-size: 13px; color: #666; max-width: 560px; }
+  table.links details summary { cursor: pointer; color: #0b57d0; }
+  table.links .raw { margin-top: 4px; }
+  table.links { border-collapse: collapse; width: 100%; font-size: 15px; margin-top: 8px; }
+  table.links th { text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: #666; padding: 6px 10px; border-bottom: 2px solid #ddd; }
+  table.links td { padding: 9px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top; }
+  table.links td.cat { font-weight: 700; white-space: nowrap; }
+  table.links td.url { max-width: 380px; word-break: break-all; }
+  table.links td.ev { color: #444; max-width: 520px; }
+  table.links .chip { display: inline-block; color: #fff; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
+  table.links .why { color: #444; font-size: 14px; margin-top: 5px; max-width: 420px; }
+  table.links .none { color: #999; }
+  table.links tr.st-held td { background: #fff8e8; }
+  table.links tr.st-rejected td { color: #777; }
+  table.links tr.st-written td { background: #eef7ee; }
+</style><style>
+  .ss { font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: #161616; }
+  .ss .pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 999px; white-space: nowrap; border: 1px solid transparent; vertical-align: middle; }
+  .ss .pill.awaiting, .ss .pill.picked { background: #fff4e0; color: #b26a00; border-color: #f1dcb0; }
+  .ss .pill.applied { background: #e8f0ff; color: #1f5eff; border-color: #c7d8ff; }
+  .ss .pill.closed { background: #e6f4ea; color: #1b7a3d; border-color: #bfe0c9; }
+  .ss .pill.unknown { background: #eee; color: #5c5c5c; }
+  .ss .need { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 6px; background: #fdecec; color: #b3261e; border: 1px solid #f3c2bd; margin: 2px 6px 2px 0; white-space: nowrap; }
+  .ss .need.soft { background: #f3f3f0; color: #5c5c5c; border-color: #e3e3df; }
+  .ss .hold { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 6px; background: #fff4e0; color: #b26a00; border: 1px solid #f1dcb0; margin: 2px 6px 2px 0; }
+  .ss .steps { display: inline-flex; gap: 3px; vertical-align: middle; margin-right: 8px; }
+  .ss .steps i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: #e3e3df; }
+  .ss .steps i.on { background: #1b7a3d; }
+  .ss .steps i.next { background: #fff; border: 2px solid #b26a00; box-sizing: border-box; }
+  .ss .next { color: #5c5c5c; font-size: 13px; }
+  .ss .meta { color: #5c5c5c; font-size: 13px; }
+  .ss .note { color: #161616; font-size: 13px; margin-top: 4px; max-width: 90ch; }
+  .ss .stage { font-size: 12px; color: #5c5c5c; text-transform: uppercase; letter-spacing: .05em; }
+  .site-status { position: sticky; top: 8px; z-index: 20; background: #fffdf7; border: 1px solid #ecdfb8; border-radius: 10px; padding: 10px 14px; margin: 0 0 20px; display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+  .site-status .grp { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; }
+  .site-status .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: #5c5c5c; }
+  .site-status .live { margin-left: auto; font-size: 12px; color: #5c5c5c; }
+  .site-status .live.off { color: #b26a00; }
+  @media (max-width: 1000px) { .site-status { position: static; } }
+</style></head><body id="top">
+<nav class="toc" id="toc"><a class="top" href="/" style="margin-bottom:12px">&larr; All locations</a><button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-list">Sections</button>
+<ol id="toc-list">
+<li><a href="#top" class="top">Top</a></li>
+<li><a href="#header">Overview</a></li>
+<li><a href="#website">Website</a></li>
+<li><a href="#gbp">Google Business Profile</a></li>
+<li><a href="#logo-search">Logo image search</a></li>
+<li><a href="#candidates">Logo candidates</a></li>
+<li><a href="#sheet">Variant sheet</a></li>
+<li><a href="#links">Links (5 held for review)</a></li>
+</ol></nav>
+<div class="site-status ss" id="site-status" data-slug="la-veracruzana-menomonie"></div>
+<script id="site-status-data" type="application/json">{"slug":"la-veracruzana-menomonie","status":"closed","status_label":"Closed out","boostly_status":null,"steps":null,"needs_you":null,"gaps":null,"hold":null,"done":null,"note":"Done: AA (your Z with the Taqueria outline matched) is live on the account, the Figma signage is approved, the Slack result is posted, and branding is marked complete, so the request is in physical fulfillment. No links are written: they wait for your review and the discovery check still fails. Your calls still open: website choice (laveracruzanawi.com or laveracruzanagrocerystore.com), DoorDash as a delivery link, and quantities are wizard defaults.","review_status":null,"figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=228-2"}</script>
+<script>
+window.BoostlyStatus = (function () {
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function stepsHtml(steps) {
+    if (!steps || !steps.length) return "";
+    var done = 0, nextIdx = -1, html = "";
+    for (var i = 0; i < steps.length; i++) { if (steps[i][1]) done++; else if (nextIdx < 0) nextIdx = i; }
+    for (var j = 0; j < steps.length; j++) html += '<i class="' + (steps[j][1] ? "on" : (j === nextIdx ? "next" : "")) + '" title="' + esc(steps[j][0]) + (steps[j][1] ? " (done)" : "") + '"></i>';
+    var next = nextIdx < 0 ? "all steps done" : "next: " + steps[nextIdx][0].charAt(0).toLowerCase() + steps[nextIdx][0].slice(1);
+    return '<span class="steps" title="' + done + " of " + steps.length + ' steps done">' + html + '</span><span class="next">' + done + "/" + steps.length + ", " + esc(next) + '</span>';
+  }
+  function needsHtml(s) {
+    var out = "";
+    (s.needs_you || []).forEach(function (n) { out += '<span class="need">' + esc(n.replace("(s)", "s")) + '</span>'; });
+    (s.gaps || []).forEach(function (g) { out += '<span class="need soft">' + esc(g) + '</span>'; });
+    if (s.hold) out += '<span class="hold" title="' + esc(s.hold) + '">HOLD</span>';
+    if (!out && s.done) out += '<span class="need soft">review complete</span>';
+    if (!out && s.status !== "closed") out += '<span class="need soft">with the agents, nothing for you</span>';
+    return out;
+  }
+  function stageLabel(st) { return st ? String(st).replace(/_/g, " ").replace(/^./, function (c) { return c.toUpperCase(); }) : ""; }
+  function metaHtml(s) {
+    var rs = s.review_status || {}, parts = [];
+    if (rs.waiting_on && rs.status !== "done") parts.push("waiting on " + esc(rs.waiting_on));
+    if (rs.ease) parts.push("ease " + esc(rs.ease) + "/5");
+    return parts.join(" \u00b7 ");
+  }
+  function strip(el, s, live) {
+    if (!el) return;
+    var stage = stageLabel(s.boostly_status);
+    el.innerHTML =
+      '<div class="grp"><span class="pill ' + esc(s.status) + '">' + esc(s.status_label) + '</span>' + (stage ? '<span class="stage">' + esc(stage) + '</span>' : "") + '</div>' +
+      '<div class="grp">' + stepsHtml(s.steps) + '</div>' +
+      '<div class="grp"><span class="lbl">Needs you</span>' + needsHtml(s) + '</div>' +
+      (metaHtml(s) ? '<div class="grp meta">' + metaHtml(s) + '</div>' : "") +
+      (s.note ? '<div class="note" style="flex-basis:100%">' + esc(s.note) + '</div>' : "") +
+      '<span class="live' + (live ? "" : " off") + '">' + (live ? "live " + esc(live) : "as of the last site build") + '</span>';
+  }
+  function merge(s, it) {
+    s.boostly_status = it.status || s.boostly_status; s.steps = it.steps || s.steps; s.needs_you = it.needs_you || s.needs_you;
+    s.gaps = it.gaps || s.gaps; s.hold = it.hold == null ? s.hold : it.hold; s.done = it.done == null ? s.done : it.done;
+    s.note = it.note == null ? s.note : it.note; s.review_status = it.review_status || s.review_status;
+    if (it.figma_url && !s.figma_url) s.figma_url = it.figma_url;
+    return s;
+  }
+  function overlay(url, cb) {
+    if (!url || !window.fetch) { cb(null); return; }
+    fetch(url + (url.indexOf("?") < 0 ? "?" : "&") + "t=" + Math.floor(Date.now() / 60000), { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { cb(j && j.items ? j : null); })
+      .catch(function () { cb(null); });
+  }
+  function fmtTime(iso) { var t = Date.parse(iso); return isNaN(t) ? "" : new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/Denver" }).format(new Date(t)); }
+  return { esc: esc, stepsHtml: stepsHtml, needsHtml: needsHtml, metaHtml: metaHtml, strip: strip, merge: merge, overlay: overlay, fmtTime: fmtTime, stageLabel: stageLabel };
+})();
+
+(function () {
+  var el = document.getElementById("site-status"), s = JSON.parse(document.getElementById("site-status-data").textContent);
+  window.BoostlyStatus.strip(el, s, null);
+  window.BoostlyStatus.overlay("https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json", function (j) {
+    if (!j) return;
+    var it = null; for (var i = 0; i < j.items.length; i++) if (j.items[i].run_dir === s.slug) it = j.items[i];
+    if (it) window.BoostlyStatus.strip(el, window.BoostlyStatus.merge(s, it), window.BoostlyStatus.fmtTime(j.generated_at));
+    else window.BoostlyStatus.strip(el, s, window.BoostlyStatus.fmtTime(j.generated_at) + " (not on the open list)");
+  });
+})();
+</script>
+<section id="header">
+<p class="links"><a class="ext" href="https://slack.com/archives/C09MSM8MA9Y/p1790723065782839?thread_ts=1790606180.453859&amp;cid=C09MSM8MA9Y" target="_blank" rel="noopener">Slack thread &#8599;</a> <a class="ext" href="https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=228-2" target="_blank" rel="noopener">Figma &#8599;</a> <a class="ext chip" href="https://laveracruzanawi.com/" target="_blank" rel="noopener"><b>Website</b> laveracruzanawi.com/</a> <a class="ext chip held" href="https://laveracruzanawi.com/la-veracruzana/" target="_blank" rel="noopener"><b>Ordering</b> laveracruzanawi.com/la-veracruzana/ <em>held</em></a> <a class="ext chip held" href="https://laveracruzanawi.com/la-veracruzana/" target="_blank" rel="noopener"><b>Menu</b> laveracruzanawi.com/la-veracruzana/ <em>held</em></a> <a class="ext chip held" href="https://www.facebook.com/laveracruzanagrocery" target="_blank" rel="noopener"><b>Facebook</b> facebook.com/laveracruzanagrocery <em>held</em></a> <a class="ext chip held" href="https://laveracruzanagrocerystore.com/" target="_blank" rel="noopener"><b>Other</b> laveracruzanagrocerystore.com/ <em>held</em></a> <a class="ext chip held" href="https://www.doordash.com/store/la-veracruzana-taqueria-menomonie-31288939/" target="_blank" rel="noopener"><b>doordash</b> doordash.com/store/la-vera…nomonie-31288939/ <em>held</em></a></p>
+<div class="hdr"><div><p style="font-size:44px;font-weight:700;">La Veracruzana</p>
+<p style="font-size:20px;color:#444444;margin-top:6px;">Menomonie, WI   ·   request a2zovnqcb0prmeoy3g8xh9ei   ·   full order</p>
+<p style="font-size:29px;font-weight:700;color:#1B5E20;margin-top:22px;">Fable's default: A</p>
+<p style="font-size:19px;margin-top:6px;">IDENTITY: the mark in use is the green Aztec bird + 'Tienda y Taqueria' + tricolor 'La Veracruzana' lockup (candidate 01, header of the customer's own laveracruzanagrocerystore.com; the same lockup is the ordering-site …</p>
+<p style="font-size:16px;color:#666666;margin-top:8px;">Confidence: medium   ·   flags: traced_from_small_source, descriptor_omitted_on_card, environment_sign_conflicts_current_identity, brand_environment_unassessed, sibling_location_mark_differs, palette_cross_site_disagreement_resolved</p>
+<p style="font-size:16px;color:#666666;margin-top:4px;">Cell A = card knockout, primary #BD2027, band #539D3C (Fable's pick), text #FFFFFF, print digit #FFFFFF</p></div><div class="cell"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/99941a972966-default-cell.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/99941a972966-default-cell.png" alt="default cell"></a><p>Fable's default cell A (native sheet pixels, click to open)</p><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/c89cce642176-logo-3x.png" target="_blank" title="open the 3x crop"><img class="zoom3x bad" src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/c89cce642176-logo-3x.png" alt="logo at 3x"></a><p><b>Logo at 3x (what prints).</b> Final upload 1600x776px, source 512px (trace), recorded on the candidate, upscale 3.125x. Edge quality: traced_from_small_source (trace from a 512px source (3.125x to 1600px); sources under 700px add wobble on curves. Exhaust references/logo-source-ladder.json before shipping; a human may override this verdict knowingly.). Soft-edge share 0.9995, stair-step score 0.3263.</p></div></div>
+</section>
+<section id="website">
+<h2>Website</h2><p class="sub"><a class="ext" href="https://laveracruzanawi.com/" target="_blank" rel="noopener">https://laveracruzanawi.com/</a></p>
+
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/d687963adbae-desktop.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/d687963adbae-desktop.jpg" loading="lazy" alt="website desktop screenshot"></a></div><p class="cap">Desktop screenshot from the run's evidence (evidence/website-visual/desktop.png).</p>
+</section>
+<section id="gbp">
+<h2>Google Business Profile</h2><p class="sub">place id ChIJBeecyLF5-IcROe_1dokakG8</p>
+<p class="links"><a class="ext" href="https://www.google.com/maps/place/?q=place_id:ChIJBeecyLF5-IcROe_1dokakG8" target="_blank" rel="noopener">Google Maps place &#8599;</a> <a class="ext" href="https://www.google.com/search?q=La%20Veracruzana%20Menomonie%2C%20WI" target="_blank" rel="noopener">Google search &#8599;</a></p>
+<p style="font-size:17px;">Place photos already downloaded for this run (10), photos Fable cited first, then the rest. Green frame = a photo Fable cited for the sign or interior.</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/0c8fdfd7249b-gbp-photo-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/0c8fdfd7249b-gbp-photo-01.jpg" loading="lazy" alt="#1 owner photo  2048x1536"></a><figcaption>#1 owner photo  2048x1536</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/4cfd7b29482c-gbp-photo-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/4cfd7b29482c-gbp-photo-02.jpg" loading="lazy" alt="#2 owner photo  640x480"></a><figcaption>#2 owner photo  640x480</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/bf05c402e38b-gbp-photo-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/bf05c402e38b-gbp-photo-03.jpg" loading="lazy" alt="#3 owner photo  3060x4080"></a><figcaption>#3 owner photo  3060x4080</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/d988accf086f-gbp-photo-04.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/d988accf086f-gbp-photo-04.png" loading="lazy" alt="#4 owner photo  500x283"></a><figcaption>#4 owner photo  500x283</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/49f035cb33de-gbp-photo-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/49f035cb33de-gbp-photo-05.jpg" loading="lazy" alt="#5 owner photo  3060x4080"></a><figcaption>#5 owner photo  3060x4080</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/527275fdc213-gbp-photo-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/527275fdc213-gbp-photo-06.jpg" loading="lazy" alt="#6 owner photo  3060x4080"></a><figcaption>#6 owner photo  3060x4080</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/5d34e4ca228c-gbp-photo-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/5d34e4ca228c-gbp-photo-07.jpg" loading="lazy" alt="#7 owner photo  3060x4080"></a><figcaption>#7 owner photo  3060x4080</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/a04e63b92e92-gbp-photo-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/a04e63b92e92-gbp-photo-08.jpg" loading="lazy" alt="#8 owner photo  3060x4080"></a><figcaption>#8 owner photo  3060x4080</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/527275fdc213-gbp-photo-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/527275fdc213-gbp-photo-09.jpg" loading="lazy" alt="#9 owner photo  3060x4080"></a><figcaption>#9 owner photo  3060x4080</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/f133fb483485-gbp-photo-10.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/f133fb483485-gbp-photo-10.png" loading="lazy" alt="#10 owner photo  500x289"></a><figcaption>#10 owner photo  500x289</figcaption></figure></div><p class="show-all"><button type="button" class="show-all" data-all="Show all 10" data-less="Show fewer (6 of 10)">Show all 10</button></p>
+<p style="font-size:17px;margin-top:10px;">In-store photos (search results): Google Maps photos fetched by the evidence build, no Vibe category was available</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/a391092c7802-searchapi-006.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/a391092c7802-searchapi-006.jpg" loading="lazy" alt="By owner / unclassified  3060x4080"></a><figcaption>By owner / unclassified  3060x4080</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/81732ad033e7-searchapi-013.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/81732ad033e7-searchapi-013.jpg" loading="lazy" alt="By owner / unclassified  3060x4080"></a><figcaption>By owner / unclassified  3060x4080</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/b35ffe5690d8-searchapi-015.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/b35ffe5690d8-searchapi-015.jpg" loading="lazy" alt="By owner / unclassified  4080x3060"></a><figcaption>By owner / unclassified  4080x3060</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/266601722a0e-searchapi-005.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/266601722a0e-searchapi-005.jpg" loading="lazy" alt="By owner / unclassified  3060x4080"></a><figcaption>By owner / unclassified  3060x4080</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/05f25c7f60f0-searchapi-003.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/05f25c7f60f0-searchapi-003.jpg" loading="lazy" alt="By owner / unclassified  3060x4080"></a><figcaption>By owner / unclassified  3060x4080</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/337fbb041b25-searchapi-009.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/337fbb041b25-searchapi-009.jpg" loading="lazy" alt="By owner / unclassified  3060x4080"></a><figcaption>By owner / unclassified  3060x4080</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/fd58bdd60c00-searchapi-012.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/fd58bdd60c00-searchapi-012.jpg" loading="lazy" alt="By owner / unclassified  3060x4080"></a><figcaption>By owner / unclassified  3060x4080</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/6f473638f6d4-searchapi-014.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/6f473638f6d4-searchapi-014.jpg" loading="lazy" alt="By owner / unclassified  4032x3024"></a><figcaption>By owner / unclassified  4032x3024</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/b0a46967e5e6-searchapi-017.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/b0a46967e5e6-searchapi-017.jpg" loading="lazy" alt="By owner / unclassified  4032x3024"></a><figcaption>By owner / unclassified  4032x3024</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/2e08b8885d6e-searchapi-010.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/2e08b8885d6e-searchapi-010.jpg" loading="lazy" alt="By owner / unclassified  3060x4080"></a><figcaption>By owner / unclassified  3060x4080</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/58c4b586b99c-searchapi-020.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/58c4b586b99c-searchapi-020.jpg" loading="lazy" alt="By owner / unclassified  4608x3456"></a><figcaption>By owner / unclassified  4608x3456</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/8e14512e128c-searchapi-008.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/8e14512e128c-searchapi-008.jpg" loading="lazy" alt="By owner / unclassified  1530x2040"></a><figcaption>By owner / unclassified  1530x2040</figcaption></figure></div><p class="show-all"><button type="button" class="show-all" data-all="Show all 12" data-less="Show fewer (6 of 12)">Show all 12</button></p>
+<div class="gray">Live Google Maps photo view skipped (--skip-google) and no earlier capture under review/ to reuse.</div>
+</section>
+<section id="logo-search">
+<h2>Logo image search</h2><p class="sub">&quot;La Veracruzana Menomonie logo&quot;</p>
+<p class="links"><a class="ext" href="https://www.google.com/search?tbm=isch&amp;q=La%20Veracruzana%20Menomonie%20logo" target="_blank" rel="noopener">Open Google Images &#8599;</a></p>
+<div class="gray">Logo image search skipped (--skip-google) and no cached results under review/logo-search/.</div>
+</section>
+<section id="candidates">
+<h2>Logo candidates</h2><p class="sub">from the evidence packet; green frame = the file Fable chose. Gray background so white knockouts stay visible.</p>
+<p class="links"><a class="ext" href="https://laveracruzanawi.com/" target="_blank" rel="noopener">Website &#8599;</a></p>
+<div class="grid cols3"><figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/d3fb890fee01-01-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/d3fb890fee01-01-first_party_header.png" loading="lazy" alt="01-first_party_header.png  500x96
+site header"></a><figcaption>01-first_party_header.png  500x96<br>site header<br><a class="ext" href="https://facebook.com/laveracruzanagrocery" target="_blank" rel="noopener">facebook.com/laveracruzanagrocery &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/b8b357db86a0-02-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/b8b357db86a0-02-first_party_other.png" loading="lazy" alt="02-first_party_other.png  512x512
+favicon, traced cut"></a><figcaption>02-first_party_other.png  512x512<br>favicon, traced cut<br><a class="ext" href="https://laveracruzanawi.com/" target="_blank" rel="noopener">laveracruzanawi.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/64f764ae2574-03-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/64f764ae2574-03-first_party_header.png" loading="lazy" alt="03-first_party_header.png  500x500
+site header"></a><figcaption>03-first_party_header.png  500x500<br>site header<br><a class="ext" href="https://laveracruzanawi.com/" target="_blank" rel="noopener">laveracruzanawi.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/fb61851a3f26-04-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/fb61851a3f26-04-first_party_header.png" loading="lazy" alt="04-first_party_header.png  500x500
+site header"></a><figcaption>04-first_party_header.png  500x500<br>site header<br><a class="ext" href="https://laveracruzanawi.com/" target="_blank" rel="noopener">laveracruzanawi.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/05dcbd89310d-05-social.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/05dcbd89310d-05-social.jpg" loading="lazy" alt="05-social.jpg  1254x1254
+social"></a><figcaption>05-social.jpg  1254x1254<br>social<br><span class="src">file 05-social.jpg</span></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/bdfac714c46b-06-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/bdfac714c46b-06-first_party_header.png" loading="lazy" alt="06-first_party_header.png  1600x333
+site header"></a><figcaption>06-first_party_header.png  1600x333<br>site header<br><a class="ext" href="https://laveracruzanawi.com/" target="_blank" rel="noopener">laveracruzanawi.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/bf0f80ce87cf-07-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/bf0f80ce87cf-07-first_party_header.png" loading="lazy" alt="07-first_party_header.png  1600x333
+site header"></a><figcaption>07-first_party_header.png  1600x333<br>site header<br><a class="ext" href="https://laveracruzanawi.com/" target="_blank" rel="noopener">laveracruzanawi.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C" class="framed"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/5d6c4be7281b-08-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/5d6c4be7281b-08-first_party_header.png" loading="lazy" alt="08-first_party_header.png  1600x333
+site header
+FABLE'S PICK"></a><figcaption style="font-weight:700">08-first_party_header.png  1600x333<br>site header<br>FABLE'S PICK<br><a class="ext" href="https://laveracruzanawi.com/" target="_blank" rel="noopener">laveracruzanawi.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/371f342705db-09-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/371f342705db-09-first_party_header.png" loading="lazy" alt="09-first_party_header.png  1600x167
+site header"></a><figcaption>09-first_party_header.png  1600x167<br>site header<br><a class="ext" href="https://laveracruzanawi.com/" target="_blank" rel="noopener">laveracruzanawi.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/54d092da8ed3-10-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/54d092da8ed3-10-first_party_header.png" loading="lazy" alt="10-first_party_header.png  1600x333
+site header"></a><figcaption>10-first_party_header.png  1600x333<br>site header<br><a class="ext" href="https://laveracruzanawi.com/" target="_blank" rel="noopener">laveracruzanawi.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/3a7c68ccb186-11-gbp.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/3a7c68ccb186-11-gbp.png" loading="lazy" alt="11-gbp.png  590x240
+GBP photo trace (sign/menu)"></a><figcaption>11-gbp.png  590x240<br>GBP photo trace (sign/menu)<br><span class="src">file 11-gbp.png</span></figcaption></figure></div>
+</section>
+<section id="sheet">
+<h2>Variant sheet</h2><p class="sub">Fable's default A framed in green. Reply with one letter.</p>
+<p class="links"></p>
+<div class="shot zoom" title="click to toggle native size"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/4d930f2102df-variant-sheet-marked.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/la-veracruzana-menomonie/4d930f2102df-variant-sheet-marked.png" loading="lazy" alt="variant sheet"></a></div><p class="cap">variants/variant-sheet.png at 3040 of 3158px wide, revision 11. In the HTML page click the sheet to toggle native size.</p>
+</section>
+<section id="links">
+<h2>Links</h2><p class="sub">the link automation results for this location, one row per category; held rows need a human decision. Click a URL to open it.</p>
+<p class="links"></p>
+<p style="font-size:15px;color:#444444;">Run: closeout no link writes validator blocked; no link writes applied; by fulfill-location agent (Claude).</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Website bootstrap: not_needed.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Ordering URL on file <a class="ext" href="https://laveracruzanawi.com/la-veracruzana/" target="_blank" rel="noopener">https://laveracruzanawi.com/la-veracruzana/</a>: matches the website. MATCH: every Menu / Order Online control on the customer's website (nav, hero button, footer button) links /la-veracruzana/, exactly the stored ordering_url; i…</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Discovery report link-discovery-report.json (2026-09-29 23:29): 18 categories, 4 for manual review, 0 proposed field updates, 0 proposed events.</p>
+<p style="font-size:15px;color:#6B6B6B;margin-top:4px;">4 URLs still waiting on the live Chrome check.</p>
+<p style="font-size:15px;font-weight:700;margin-top:8px;">18 categories: 0 written, 0 verified or already live, 5 held for review, 0 pending browser, 2 rejected, 11 none found.</p>
+<table class="links"><thead><tr><th>Category</th><th>URL</th><th>Status</th><th>Verdict</th></tr></thead><tbody><tr class="st-held"><td class="cat">Online ordering</td><td class="url"><a class="ext" href="https://laveracruzanawi.com/la-veracruzana/" target="_blank" rel="noopener">laveracruzanawi.com/la-veracruzana/</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: stored ordering_url equals the website's own Order Online link; live (200 -&gt; /la-veracruzana/locations/, title 'La Veracruzana | Online Ordering | Lo… Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">stored ordering_url equals the website's own Order Online link; live (200 -&gt; /la-veracruzana/locations/, title 'La Veracruzana | Online Ordering | Locations', official_website_links_to_candidate=true). Reconcile an Order Online custom event to the same URL at close-out (fill-only).<br>stored ordering URL matches the website<br>existing verified (static fetch)</div></details></td></tr>
+<tr class="st-held"><td class="cat">Menu</td><td class="url"><a class="ext" href="https://laveracruzanawi.com/la-veracruzana/" target="_blank" rel="noopener">laveracruzanawi.com/la-veracruzana/</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: the site's Menu nav link is the same URL as Order Online; per the link write gate keep it only as Order Online, do not also create a Menu event. /men… Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">the site's Menu nav link is the same URL as Order Online; per the link write gate keep it only as Order Online, do not also create a Menu event. /menu, /menomonie-menu/ and the other high-signal paths are platform 404s (found_broken).<br>verified (static fetch)</div></details></td></tr>
+<tr class="st-held"><td class="cat">Facebook</td><td class="url"><a class="ext" href="https://www.facebook.com/laveracruzanagrocery" target="_blank" rel="noopener">facebook.com/laveracruzanagrocery</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: destination identity confirmed statically: page title 'La Veracruzana Grocery Store | Menomonie WI', og:description 'La Veracruzana Grocery Store, Me… Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">destination identity confirmed statically: page title 'La Veracruzana Grocery Store | Menomonie WI', og:description 'La Veracruzana Grocery Store, Menomonie. 592 followers', business category, AND a backlink from the customer's own first-party site laveracruzanagrocerystore.com (footer social icon; the domain printed on the storefront sign). The crawler's needs_manual_review ('lacks official-site backing') only looked at laveracruzanawi.com. Write to branding.facebook_url at close-out (account-level branding: see account_social_scope).<br>title &quot;(20+) Facebook&quot;<br>social destination identity signal<br>canonical form of <a class="ext" href="https://www.facebook.com/laveracruzanagrocery/" target="_blank" rel="noopener">https://www.facebook.com/laveracruzanagrocery/</a><br>google organic candidate</div></details></td></tr>
+<tr class="st-none"><td class="cat">Instagram</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. no Instagram link on either first-party site, the Facebook page or GBP; the crawler's only search hit was instagram.com/popular (rejected, identity_m…</div><details><summary>raw evidence</summary><div class="raw">no Instagram link on either first-party site, the Facebook page or GBP; the crawler's only search hit was instagram.com/popular (rejected, identity_mismatch); guessed handles could not be read without the live tab (static Instagram returns a generic shell). Not held: nothing to decide.</div></details></td></tr>
+<tr class="st-none"><td class="cat">X (Twitter)</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. none found</div><details><summary>raw evidence</summary><div class="raw">none found</div></details></td></tr>
+<tr class="st-none"><td class="cat">TikTok</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. three TikTok searches empty</div><details><summary>raw evidence</summary><div class="raw">three TikTok searches empty</div></details></td></tr>
+<tr class="st-none"><td class="cat">YouTube</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. none found</div><details><summary>raw evidence</summary><div class="raw">none found</div></details></td></tr>
+<tr class="st-none"><td class="cat">Careers</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. /careers /jobs /employment /career on the ordering site are platform 404s; the grocery site has no hiring page</div><details><summary>raw evidence</summary><div class="raw">/careers /jobs /employment /career on the ordering site are platform 404s; the grocery site has no hiring page</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">Catering</td><td class="url"><a class="ext" href="https://www.laveracruzana.com/catering" target="_blank" rel="noopener">laveracruzana.com/catering</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: Re-checked 2026-09-29 (live Chrome, plain read): Different business: 'La Veracruzana Mexican Restaurant' with order buttons for Amherst, Northampton,…</div><details><summary>raw evidence</summary><div class="raw">Re-checked 2026-09-29 (live Chrome, plain read): Different business: 'La Veracruzana Mexican Restaurant' with order buttons for Amherst, Northampton, Easthampton and Clemson, catering 'in western ma'. Not the Wisconsin customer.<br>unverified (static fetch failed)</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">Events</td><td class="url"><a class="ext" href="https://volumeone.org/sites/menomonie/articles/2023/11/21/330900-menomonie-welcomes-first-mexican-grocery-store" target="_blank" rel="noopener">volumeone.org/sites/menomonie/articles/2023…-first-mexican-grocery-store</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: a 2023 Volume One news article about the store opening, not an events page (no structured future event); found_rejected</div><details><summary>raw evidence</summary><div class="raw">a 2023 Volume One news article about the store opening, not an events page (no structured future event); found_rejected<br>title &quot;Menomonie Welcomes First Mexican Grocery Store - La Veracruzana...&quot;<br>google organic candidate</div></details></td></tr>
+<tr class="st-none"><td class="cat">Reservations</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. none (counter-service taqueria and grocery)</div><details><summary>raw evidence</summary><div class="raw">none (counter-service taqueria and grocery)</div></details></td></tr>
+<tr class="st-none"><td class="cat">Gift cards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. none found</div><details><summary>raw evidence</summary><div class="raw">none found</div></details></td></tr>
+<tr class="st-none"><td class="cat">Loyalty / rewards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. none found</div><details><summary>raw evidence</summary><div class="raw">none found</div></details></td></tr>
+<tr class="st-none"><td class="cat">iOS app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. no app links on either site</div><details><summary>raw evidence</summary><div class="raw">no app links on either site</div></details></td></tr>
+<tr class="st-none"><td class="cat">Android app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. no app links on either site</div><details><summary>raw evidence</summary><div class="raw">no app links on either site</div></details></td></tr>
+<tr class="st-none"><td class="cat">App downloads</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. none</div><details><summary>raw evidence</summary><div class="raw">none</div></details></td></tr>
+<tr class="st-held"><td class="cat">Other</td><td class="url"><a class="ext" href="https://laveracruzanagrocerystore.com/" target="_blank" rel="noopener">laveracruzanagrocerystore.com/</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: Re-checked 2026-09-29 (live Chrome, plain read): Live first-party site 'Tienda y Taqueria La Veracruzana', 2521 Hils Court Menomonie, Wisconsin 54751… Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">Re-checked 2026-09-29 (live Chrome, plain read): Live first-party site 'Tienda y Taqueria La Veracruzana', 2521 Hils Court Menomonie, Wisconsin 54751, (715) 505-1659. Its Order Online button goes to DoorDash, not to the stored laveracruzanawi.com ordering page. QUESTION: Keep website_url as laveracruzanawi.com (the ordering site) or point it at laveracruzanagrocerystore.com, whose own Order Online button sends customers to DoorDash?<br>verified (static fetch)</div></details></td></tr>
+<tr class="st-held"><td class="cat">doordash</td><td class="url"><a class="ext" href="https://www.doordash.com/store/la-veracruzana-taqueria-menomonie-31288939/" target="_blank" rel="noopener">doordash.com/store/la-veracruzana-taqueria-menomonie-31288939/</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: Re-checked 2026-09-29 (live Chrome, plain read): DoorDash 'La veracruzana Taqueria', Menomonie WI; Store Info shows 2521 Hils Ct, Menomonie, WI and 7… Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">Re-checked 2026-09-29 (live Chrome, plain read): DoorDash 'La veracruzana Taqueria', Menomonie WI; Store Info shows 2521 Hils Ct, Menomonie, WI and 7155051659. The customer's grocery site Order Online button links DoorDash. Menomonie store, not Elmwood. Not an auto-write category: the stored ordering_url stays; add only as a delivery custom link if wanted.<br>unverified (static fetch failed)</div></details></td></tr></tbody></table>
+</section>
+<script>
+  for (const el of document.querySelectorAll('.shot.zoom')) {
+    el.addEventListener('click', (ev) => { ev.preventDefault(); el.classList.toggle('native'); });
+  }
+  // "Show all N" on capped photo grids: reveal the hidden figures in the grid just above the button.
+  for (const btn of document.querySelectorAll('button.show-all')) {
+    btn.addEventListener('click', () => {
+      const grid = btn.parentElement.previousElementSibling;
+      if (!grid) return;
+      const open = grid.classList.toggle('expanded');
+      btn.textContent = open ? btn.dataset.less : btn.dataset.all;
+    });
+  }
+  // Sidebar: highlight the section in view, jump instantly on click (no scroll animation, Travisse 2026-09-29), hamburger below 1000px.
+  (() => {
+    const toc = document.getElementById('toc');
+    const links = new Map([...toc.querySelectorAll('a[href^="#"]')].map((a) => [a.getAttribute('href').slice(1), a]));
+    const sections = [...document.querySelectorAll('section[id]')];
+    const visible = new Set();
+    const setActive = () => {
+      const current = sections.find((s) => visible.has(s)) ?? sections.find((s) => s.getBoundingClientRect().bottom > 0) ?? sections[sections.length - 1];
+      for (const a of links.values()) a.classList.remove('active');
+      if (current) links.get(current.id)?.classList.add('active');
+    };
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); }
+      setActive();
+    }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+    for (const s of sections) io.observe(s);
+    setActive();
+    const toggle = toc.querySelector('.toc-toggle');
+    toggle.addEventListener('click', () => { const open = toc.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
+    for (const a of links.values()) a.addEventListener('click', (ev) => {
+      const target = document.getElementById(a.getAttribute('href').slice(1));
+      if (!target) return;
+      ev.preventDefault();
+      target.scrollIntoView({ behavior: 'instant', block: 'start' });
+      history.replaceState(null, '', a.getAttribute('href'));
+      toc.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
+    });
+  })();
+</script>
+</body></html>

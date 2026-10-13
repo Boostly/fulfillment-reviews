@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Mollies San Juan review</title>
+<style>
+  :root { color-scheme: light; scroll-behavior: auto; }
+  body { margin: 0; padding: 32px 40px 80px 280px; background: #fff; color: #111; font-family: Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.35; max-width: 2040px; box-sizing: border-box; }
+  h2 { font-size: 34px; margin: 0 0 4px; }
+  section { padding: 28px 0; border-bottom: 3px solid #ccc; scroll-margin-top: 16px; }
+  section:first-child { padding-top: 0; }
+  p[id] { scroll-margin-top: 16px; }
+  .toc { position: fixed; top: 0; left: 0; bottom: 0; width: 240px; box-sizing: border-box; padding: 24px 16px; overflow-y: auto; background: #f4f4f4; border-right: 1px solid #ddd; font-size: 15px; z-index: 10; }
+  .toc ol { list-style: none; margin: 0; padding: 0; }
+  .toc ol ol { margin: 2px 0 6px 14px; }
+  .toc ol ol a { font-size: 13px; color: #555; padding: 3px 8px; }
+  .toc a { display: block; padding: 6px 8px; border-radius: 4px; color: #222; line-height: 1.3; }
+  .toc a:hover { background: #e6e6e6; }
+  .toc a.active { background: #1b5e20; color: #fff; font-weight: 700; }
+  .toc a.top { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+  .toc-toggle { display: none; }
+  @media (max-width: 1000px) {
+    body { padding: 64px 20px 80px; }
+    .toc { position: sticky; top: 0; bottom: auto; width: auto; margin: -64px -20px 24px; padding: 8px 12px; border-right: 0; border-bottom: 1px solid #ddd; max-height: 80vh; }
+    .toc-toggle { display: block; font: inherit; font-weight: 700; background: none; border: 1px solid #bbb; border-radius: 4px; padding: 6px 12px; cursor: pointer; }
+    .toc-toggle::before { content: "\2630  "; }
+    .toc:not(.open) ol { display: none; }
+    .toc ol { padding-top: 8px; }
+  }
+  p { margin: 4px 0; }
+  p.sub { color: #555; font-size: 17px; margin-bottom: 14px; }
+  p.cap { color: #666; font-size: 15px; }
+  .gray { background: #ededed; color: #444; padding: 26px; font-size: 20px; border-radius: 4px; }
+  .hdr { display: flex; gap: 30px; align-items: flex-start; }
+  .hdr > div:first-child { flex: 1; }
+  .cell { flex: 0 0 auto; max-width: 520px; }
+  .cell img { display: block; max-width: 100%; border: 6px solid #1b5e20; box-sizing: border-box; }
+  .cell p { color: #1b5e20; font-weight: 700; font-size: 16px; }
+  .shot { border: 1px solid #ddd; overflow: auto; max-height: 90vh; }
+  .shot img { display: block; width: 100%; height: auto; }
+  /* 2026-10-01: a zoomable shot (the variant sheet) is never height-clipped: every row stays visible at page width,
+     and native size scrolls inside the container (overflow auto) instead of hiding rows below 90vh. */
+  .shot.zoom { max-height: none; }
+  .shot.zoom img { cursor: zoom-in; }
+  .cell img.zoom3x { margin-top: 10px; border: 3px solid #444; image-rendering: pixelated; }
+  .cell img.zoom3x.bad { border-color: #B71C1C; }
+  .cell.hold img:first-of-type { border-color: #B71C1C; }
+  .shot.zoom.native img { width: auto; max-width: none; cursor: zoom-out; }
+  .grid { display: grid; gap: 14px; }
+  .grid.cols3 { grid-template-columns: repeat(3, 1fr); }
+  .grid.cols4 { grid-template-columns: repeat(4, 1fr); }
+  .grid.cols5 { grid-template-columns: repeat(5, 1fr); }
+  .grid.cols6 { grid-template-columns: repeat(6, 1fr); }
+  figure { margin: 0; background: #ededed; }
+  figure.framed { outline: 6px solid #1b5e20; outline-offset: -6px; }
+  figure a { display: block; }
+  figure img { display: block; width: 100%; height: 360px; object-fit: contain; }
+  .grid.cols4 figure img { height: 280px; }
+  .grid.cols5 figure img, .grid.cols6 figure img { height: 220px; }
+  figcaption { font-size: 15px; padding: 6px 4px 10px; background: #fff; color: #222; }
+  a { color: inherit; text-decoration: none; }
+  a.ext { color: #0b57d0; text-decoration: underline; text-underline-offset: 2px; word-break: break-all; }
+  a.ext:hover { color: #083a8c; }
+  p.links { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 16px; font-size: 15px; }
+  p.links a.ext { background: #eef3fc; border: 1px solid #c9d8f5; border-radius: 4px; padding: 3px 10px; text-decoration: none; word-break: normal; }
+  p.links a.ext:hover { background: #dce7fb; }
+  p.links a.chip b { font-weight: 700; margin-right: 4px; }
+  p.links a.chip.held { background: #fff4d6; border-color: #e3c37a; }
+  p.links a.chip em { font-style: normal; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: #8a5a00; margin-left: 4px; }
+  figcaption .src { color: #666; }
+  .grid figure.more { display: none; }
+  .grid.expanded figure.more { display: block; }
+  p.show-all { margin: 10px 0 0; }
+  button.show-all { font: inherit; font-size: 14px; font-weight: 700; background: #f4f4f4; border: 1px solid #bbb; border-radius: 4px; padding: 6px 14px; cursor: pointer; }
+  button.show-all:hover { background: #e6e6e6; }
+  table.links .verdict { color: #222; max-width: 560px; }
+  table.links details { margin-top: 5px; font-size: 13px; color: #666; max-width: 560px; }
+  table.links details summary { cursor: pointer; color: #0b57d0; }
+  table.links .raw { margin-top: 4px; }
+  table.links { border-collapse: collapse; width: 100%; font-size: 15px; margin-top: 8px; }
+  table.links th { text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: #666; padding: 6px 10px; border-bottom: 2px solid #ddd; }
+  table.links td { padding: 9px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top; }
+  table.links td.cat { font-weight: 700; white-space: nowrap; }
+  table.links td.url { max-width: 380px; word-break: break-all; }
+  table.links td.ev { color: #444; max-width: 520px; }
+  table.links .chip { display: inline-block; color: #fff; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
+  table.links .why { color: #444; font-size: 14px; margin-top: 5px; max-width: 420px; }
+  table.links .none { color: #999; }
+  table.links tr.st-held td { background: #fff8e8; }
+  table.links tr.st-rejected td { color: #777; }
+  table.links tr.st-written td { background: #eef7ee; }
+</style><style>
+  .ss { font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: #161616; }
+  .ss .pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 999px; white-space: nowrap; border: 1px solid transparent; vertical-align: middle; }
+  .ss .pill.awaiting, .ss .pill.picked { background: #fff4e0; color: #b26a00; border-color: #f1dcb0; }
+  .ss .pill.applied { background: #e8f0ff; color: #1f5eff; border-color: #c7d8ff; }
+  .ss .pill.closed { background: #e6f4ea; color: #1b7a3d; border-color: #bfe0c9; }
+  .ss .pill.unknown { background: #eee; color: #5c5c5c; }
+  .ss .need { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 6px; background: #fdecec; color: #b3261e; border: 1px solid #f3c2bd; margin: 2px 6px 2px 0; white-space: nowrap; }
+  .ss .need.soft { background: #f3f3f0; color: #5c5c5c; border-color: #e3e3df; }
+  .ss .hold { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 6px; background: #fff4e0; color: #b26a00; border: 1px solid #f1dcb0; margin: 2px 6px 2px 0; }
+  .ss .steps { display: inline-flex; gap: 3px; vertical-align: middle; margin-right: 8px; }
+  .ss .steps i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: #e3e3df; }
+  .ss .steps i.on { background: #1b7a3d; }
+  .ss .steps i.next { background: #fff; border: 2px solid #b26a00; box-sizing: border-box; }
+  .ss .next { color: #5c5c5c; font-size: 13px; }
+  .ss .meta { color: #5c5c5c; font-size: 13px; }
+  .ss .note { color: #161616; font-size: 13px; margin-top: 4px; max-width: 90ch; }
+  .ss .stage { font-size: 12px; color: #5c5c5c; text-transform: uppercase; letter-spacing: .05em; }
+  .site-status { position: sticky; top: 8px; z-index: 20; background: #fffdf7; border: 1px solid #ecdfb8; border-radius: 10px; padding: 10px 14px; margin: 0 0 20px; display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+  .site-status .grp { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; }
+  .site-status .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: #5c5c5c; }
+  .site-status .live { margin-left: auto; font-size: 12px; color: #5c5c5c; }
+  .site-status .live.off { color: #b26a00; }
+  @media (max-width: 1000px) { .site-status { position: static; } }
+</style></head><body id="top">
+<nav class="toc" id="toc"><a class="top" href="/" style="margin-bottom:12px">&larr; All locations</a><button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-list">Sections</button>
+<ol id="toc-list">
+<li><a href="#top" class="top">Top</a></li>
+<li><a href="#header">Overview</a></li>
+<li><a href="#website">Website</a></li>
+<li><a href="#gbp">Google Business Profile</a></li>
+<li><a href="#logo-search">Logo image search</a></li>
+<li><a href="#candidates">Logo candidates</a></li>
+<li><a href="#sheet">Variant sheet</a></li>
+<li><a href="#links">Links (0 held for review)</a></li>
+<li><a href="#previews">Previews</a><ol><li><a href="#previews-1">Cell W  TRAVISSE PICK, applied</a></li></ol></li>
+</ol></nav>
+<div class="site-status ss" id="site-status" data-slug="mollies-san-juan-san-juan-capistrano"></div>
+<script id="site-status-data" type="application/json">{"slug":"mollies-san-juan-san-juan-capistrano","status":"closed","status_label":"Closed out","boostly_status":null,"steps":null,"needs_you":null,"gaps":null,"hold":null,"done":null,"note":"Done: clean logo on the W colors, red band signage, corrected 9/29 to Get 15% Off! and 35 tables (you said keep 15). Slack correction posted 9/30 08:37 MDT telling production not to print the earlier 20% sheets. Branding complete 9/29, Notion entry 38. Open: the signup keyword still pays 20% OFF (say 'set Mollies to 15' or leave it to the CSM).","review_status":null,"figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=131-2"}</script>
+<script>
+window.BoostlyStatus = (function () {
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function stepsHtml(steps) {
+    if (!steps || !steps.length) return "";
+    var done = 0, nextIdx = -1, html = "";
+    for (var i = 0; i < steps.length; i++) { if (steps[i][1]) done++; else if (nextIdx < 0) nextIdx = i; }
+    for (var j = 0; j < steps.length; j++) html += '<i class="' + (steps[j][1] ? "on" : (j === nextIdx ? "next" : "")) + '" title="' + esc(steps[j][0]) + (steps[j][1] ? " (done)" : "") + '"></i>';
+    var next = nextIdx < 0 ? "all steps done" : "next: " + steps[nextIdx][0].charAt(0).toLowerCase() + steps[nextIdx][0].slice(1);
+    return '<span class="steps" title="' + done + " of " + steps.length + ' steps done">' + html + '</span><span class="next">' + done + "/" + steps.length + ", " + esc(next) + '</span>';
+  }
+  function needsHtml(s) {
+    var out = "";
+    (s.needs_you || []).forEach(function (n) { out += '<span class="need">' + esc(n.replace("(s)", "s")) + '</span>'; });
+    (s.gaps || []).forEach(function (g) { out += '<span class="need soft">' + esc(g) + '</span>'; });
+    if (s.hold) out += '<span class="hold" title="' + esc(s.hold) + '">HOLD</span>';
+    if (!out && s.done) out += '<span class="need soft">review complete</span>';
+    if (!out && s.status !== "closed") out += '<span class="need soft">with the agents, nothing for you</span>';
+    return out;
+  }
+  function stageLabel(st) { return st ? String(st).replace(/_/g, " ").replace(/^./, function (c) { return c.toUpperCase(); }) : ""; }
+  function metaHtml(s) {
+    var rs = s.review_status || {}, parts = [];
+    if (rs.waiting_on && rs.status !== "done") parts.push("waiting on " + esc(rs.waiting_on));
+    if (rs.ease) parts.push("ease " + esc(rs.ease) + "/5");
+    return parts.join(" \u00b7 ");
+  }
+  function strip(el, s, live) {
+    if (!el) return;
+    var stage = stageLabel(s.boostly_status);
+    el.innerHTML =
+      '<div class="grp"><span class="pill ' + esc(s.status) + '">' + esc(s.status_label) + '</span>' + (stage ? '<span class="stage">' + esc(stage) + '</span>' : "") + '</div>' +
+      '<div class="grp">' + stepsHtml(s.steps) + '</div>' +
+      '<div class="grp"><span class="lbl">Needs you</span>' + needsHtml(s) + '</div>' +
+      (metaHtml(s) ? '<div class="grp meta">' + metaHtml(s) + '</div>' : "") +
+      (s.note ? '<div class="note" style="flex-basis:100%">' + esc(s.note) + '</div>' : "") +
+      '<span class="live' + (live ? "" : " off") + '">' + (live ? "live " + esc(live) : "as of the last site build") + '</span>';
+  }
+  function merge(s, it) {
+    s.boostly_status = it.status || s.boostly_status; s.steps = it.steps || s.steps; s.needs_you = it.needs_you || s.needs_you;
+    s.gaps = it.gaps || s.gaps; s.hold = it.hold == null ? s.hold : it.hold; s.done = it.done == null ? s.done : it.done;
+    s.note = it.note == null ? s.note : it.note; s.review_status = it.review_status || s.review_status;
+    if (it.figma_url && !s.figma_url) s.figma_url = it.figma_url;
+    return s;
+  }
+  function overlay(url, cb) {
+    if (!url || !window.fetch) { cb(null); return; }
+    fetch(url + (url.indexOf("?") < 0 ? "?" : "&") + "t=" + Math.floor(Date.now() / 60000), { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { cb(j && j.items ? j : null); })
+      .catch(function () { cb(null); });
+  }
+  function fmtTime(iso) { var t = Date.parse(iso); return isNaN(t) ? "" : new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/Denver" }).format(new Date(t)); }
+  return { esc: esc, stepsHtml: stepsHtml, needsHtml: needsHtml, metaHtml: metaHtml, strip: strip, merge: merge, overlay: overlay, fmtTime: fmtTime, stageLabel: stageLabel };
+})();
+
+(function () {
+  var el = document.getElementById("site-status"), s = JSON.parse(document.getElementById("site-status-data").textContent);
+  window.BoostlyStatus.strip(el, s, null);
+  window.BoostlyStatus.overlay("https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json", function (j) {
+    if (!j) return;
+    var it = null; for (var i = 0; i < j.items.length; i++) if (j.items[i].run_dir === s.slug) it = j.items[i];
+    if (it) window.BoostlyStatus.strip(el, window.BoostlyStatus.merge(s, it), window.BoostlyStatus.fmtTime(j.generated_at));
+    else window.BoostlyStatus.strip(el, s, window.BoostlyStatus.fmtTime(j.generated_at) + " (not on the open list)");
+  });
+})();
+</script>
+<section id="header">
+<p class="links"><a class="ext" href="https://slack.com/archives/C09MSM8MA9Y/p1790779060443979?thread_ts=1790204041.683049&amp;cid=C09MSM8MA9Y" target="_blank" rel="noopener">Slack thread &#8599;</a> <a class="ext" href="https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=131-2" target="_blank" rel="noopener">Figma &#8599;</a> <a class="ext chip" href="http://molliessanjuan.com/" target="_blank" rel="noopener"><b>Website</b> molliessanjuan.com/</a> <a class="ext chip" href="https://molliessanjuanca.com/mollies-san-juan-restaurant/locations/" target="_blank" rel="noopener"><b>Ordering</b> molliessanjuanca.com/molli…aurant/locations/</a> <a class="ext chip" href="https://molliessanjuan.com/san-juan-capistrano-mollies-san-juan-food-menu" target="_blank" rel="noopener"><b>Menu</b> molliessanjuan.com/san-jua…an-juan-food-menu</a> <a class="ext chip" href="https://www.facebook.com/MolliesSanJuan/" target="_blank" rel="noopener"><b>Facebook</b> facebook.com/MolliesSanJuan/</a> <a class="ext chip" href="https://www.instagram.com/molliessanjuan/" target="_blank" rel="noopener"><b>Instagram</b> instagram.com/molliessanjuan/</a> <a class="ext chip" href="https://molliessanjuan.com/san-juan-capistrano-mollies-san-juan-catering" target="_blank" rel="noopener"><b>Catering</b> molliessanjuan.com/san-jua…san-juan-catering</a> <a class="ext chip" href="https://molliessanjuan.com/san-juan-capistrano-mollies-san-juan-reservations" target="_blank" rel="noopener"><b>Reservations</b> molliessanjuan.com/san-jua…juan-reservations</a></p>
+<div class="hdr"><div><p style="font-size:44px;font-weight:700;">Mollies San Juan</p>
+<p style="font-size:20px;color:#444444;margin-top:6px;">San Juan Capistrano, CA   ·   request kguy1i9s42ruxwbwd69fhhct   ·   full order</p>
+<p style="font-size:29px;font-weight:700;color:#1B5E20;margin-top:22px;">Fable's default: A</p>
+<p style="font-size:19px;margin-top:6px;">card knockout at Fable's pick</p>
+<p style="font-size:16px;color:#666666;margin-top:8px;">Confidence: high   ·   flags: mark_element_omitted, brand_environment_minimum_evidence_unassessed, words_only_cut_defective</p>
+<p style="font-size:16px;color:#666666;margin-top:4px;">Cell A = card knockout, primary #8E1B05, band #000000 (Fable's pick), text #FFFFFF, print digit #FFFFFF</p></div><div class="cell"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/d2e30543a923-default-cell.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/d2e30543a923-default-cell.png" alt="default cell"></a><p>Fable's default cell A (native sheet pixels, click to open)</p><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/3da5972d763c-logo-3x.png" target="_blank" title="open the 3x crop"><img class="zoom3x bad" src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/3da5972d763c-logo-3x.png" alt="logo at 3x"></a><p><b>Logo at 3x (what prints).</b> Final upload 1600x350px, source 342px (trace), given on the command line, upscale 4.678x. Edge quality: traced_from_small_source (trace from a 342px source (4.678x to 1600px); sources under 700px add wobble on curves. Exhaust references/logo-source-ladder.json before shipping; a human may override this verdict knowingly.). Soft-edge share 1, stair-step score 0.324.</p></div></div>
+</section>
+<section id="website">
+<h2>Website</h2><p class="sub"><a class="ext" href="http://molliessanjuan.com/" target="_blank" rel="noopener">http://molliessanjuan.com/</a></p>
+
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/0b280e08e11e-desktop.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/0b280e08e11e-desktop.jpg" loading="lazy" alt="website desktop screenshot"></a></div><p class="cap">Desktop screenshot from the run's evidence (evidence/website-visual/desktop.png).</p>
+</section>
+<section id="gbp">
+<h2>Google Business Profile</h2><p class="sub">place id ChIJdSdX_Ojx3IAR9JUYUrC0FsY</p>
+<p class="links"><a class="ext" href="https://www.google.com/maps/place/?q=place_id:ChIJdSdX_Ojx3IAR9JUYUrC0FsY" target="_blank" rel="noopener">Google Maps place &#8599;</a> <a class="ext" href="https://www.google.com/search?q=Mollies%20San%20Juan%20San%20Juan%20Capistrano%2C%20CA" target="_blank" rel="noopener">Google search &#8599;</a></p>
+<p style="font-size:17px;">Place photos already downloaded for this run (10), storefront, interior and signage photos first, then the rest. Green frame = a photo Fable cited for the sign or interior.</p>
+<div class="grid cols3"><figure class="framed"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/b7e2e39c8cce-gbp-photo-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/b7e2e39c8cce-gbp-photo-10.jpg" loading="lazy" alt="#10 by Sean P. Cunningham  · vibe  3537x2652  &lt;- cited by Fable"></a><figcaption style="font-weight:700">#10 by Sean P. Cunningham  · vibe  3537x2652  &lt;- cited by Fable</figcaption></figure>
+<figure class="framed"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/145bda1a2233-gbp-photo-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/145bda1a2233-gbp-photo-01.jpg" loading="lazy" alt="#1 owner photo  824x544  &lt;- cited by Fable"></a><figcaption style="font-weight:700">#1 owner photo  824x544  &lt;- cited by Fable</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/2a3d948f0344-gbp-photo-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/2a3d948f0344-gbp-photo-02.jpg" loading="lazy" alt="#2 owner photo  800x800"></a><figcaption>#2 owner photo  800x800</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/6b47122cb882-gbp-photo-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/6b47122cb882-gbp-photo-03.jpg" loading="lazy" alt="#3 owner photo  1080x2340"></a><figcaption>#3 owner photo  1080x2340</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/f6fcc78a4bc5-gbp-photo-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/f6fcc78a4bc5-gbp-photo-04.jpg" loading="lazy" alt="#4 owner photo  926x618"></a><figcaption>#4 owner photo  926x618</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/28300f857b1a-gbp-photo-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/28300f857b1a-gbp-photo-05.jpg" loading="lazy" alt="#5 by JimBug  4000x3000"></a><figcaption>#5 by JimBug  4000x3000</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/0acbb9c26b8b-gbp-photo-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/0acbb9c26b8b-gbp-photo-06.jpg" loading="lazy" alt="#6 owner photo  926x617"></a><figcaption>#6 owner photo  926x617</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/b5a5e3f73205-gbp-photo-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/b5a5e3f73205-gbp-photo-07.jpg" loading="lazy" alt="#7 by Ashkan Mani  3024x4032"></a><figcaption>#7 by Ashkan Mani  3024x4032</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/eb05332eee49-gbp-photo-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/eb05332eee49-gbp-photo-08.jpg" loading="lazy" alt="#8 by Michael Lui  4080x3072"></a><figcaption>#8 by Michael Lui  4080x3072</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/0ed9c1444095-gbp-photo-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/0ed9c1444095-gbp-photo-09.jpg" loading="lazy" alt="#9 owner photo  800x800"></a><figcaption>#9 owner photo  800x800</figcaption></figure></div><p class="show-all"><button type="button" class="show-all" data-all="Show all 10" data-less="Show fewer (5 of 10)">Show all 10</button></p>
+<p style="font-size:17px;margin-top:10px;">Google Maps &quot;Vibe&quot; photos from the evidence build (Google's own in-store/atmosphere category)</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/63a6d30e7122-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/63a6d30e7122-01.jpg" loading="lazy" alt="Vibe  3024x4032"></a><figcaption>Vibe  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/497c9d72709c-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/497c9d72709c-02.jpg" loading="lazy" alt="Vibe  4032x3024"></a><figcaption>Vibe  4032x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/b76941221d24-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/b76941221d24-03.jpg" loading="lazy" alt="Vibe  3024x4032"></a><figcaption>Vibe  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/a111d57094c1-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/a111d57094c1-04.jpg" loading="lazy" alt="Vibe  4032x3024"></a><figcaption>Vibe  4032x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/b7e2e39c8cce-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/b7e2e39c8cce-05.jpg" loading="lazy" alt="Vibe  3537x2652"></a><figcaption>Vibe  3537x2652</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/4226b06c77c7-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/4226b06c77c7-06.jpg" loading="lazy" alt="Vibe  4032x3024"></a><figcaption>Vibe  4032x3024</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/22ce9556b3f0-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/22ce9556b3f0-07.jpg" loading="lazy" alt="Vibe  3024x4032"></a><figcaption>Vibe  3024x4032</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/acf99fcbbdb0-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/acf99fcbbdb0-08.jpg" loading="lazy" alt="Vibe  3000x4000"></a><figcaption>Vibe  3000x4000</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/3b400879851b-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/3b400879851b-09.jpg" loading="lazy" alt="Vibe  4032x3024"></a><figcaption>Vibe  4032x3024</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/2d08e1402f48-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/2d08e1402f48-10.jpg" loading="lazy" alt="Vibe  3036x4048"></a><figcaption>Vibe  3036x4048</figcaption></figure></div><p class="show-all"><button type="button" class="show-all" data-all="Show all 10" data-less="Show fewer (6 of 10)">Show all 10</button></p>
+<div class="gray">Live Google Maps photo view skipped (--skip-google) and no earlier capture under review/ to reuse.</div>
+</section>
+<section id="logo-search">
+<h2>Logo image search</h2><p class="sub">&quot;Mollies San Juan San Juan Capistrano logo&quot;</p>
+<p class="links"><a class="ext" href="https://www.google.com/search?tbm=isch&amp;q=Mollies%20San%20Juan%20San%20Juan%20Capistrano%20logo" target="_blank" rel="noopener">Open Google Images &#8599;</a></p>
+<div class="gray">Logo image search skipped (--skip-google) and no cached results under review/logo-search/.</div>
+</section>
+<section id="candidates">
+<h2>Logo candidates</h2><p class="sub">from the evidence packet; green frame = the file Fable chose. Gray background so white knockouts stay visible.</p>
+<p class="links"><a class="ext" href="http://molliessanjuan.com/" target="_blank" rel="noopener">Website &#8599;</a></p>
+<div class="grid cols3"><figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/23b4d7cd5fcd-01-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/23b4d7cd5fcd-01-first_party_other.png" loading="lazy" alt="01-first_party_other.png  348x105
+site header"></a><figcaption>01-first_party_other.png  348x105<br>site header<br><a class="ext" href="http://molliessanjuan.com/" target="_blank" rel="noopener">molliessanjuan.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/6a7fd2c20e10-02-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/6a7fd2c20e10-02-first_party_other.png" loading="lazy" alt="02-first_party_other.png  734x222
+first_party_other, traced cut"></a><figcaption>02-first_party_other.png  734x222<br>first_party_other, traced cut<br><a class="ext" href="http://molliessanjuan.com/" target="_blank" rel="noopener">molliessanjuan.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C" class="framed"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/56651c287a98-03-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/56651c287a98-03-first_party_header.png" loading="lazy" alt="03-first_party_header.png  1622x354
+site header
+FULL WHITE KNOCKOUT rendered from the site's own vector mask icon (safari-
+FABLE'S PICK"></a><figcaption style="font-weight:700">03-first_party_header.png  1622x354<br>site header<br>FULL WHITE KNOCKOUT rendered from the site's own vector mask icon (safari-<br>FABLE'S PICK<br><a class="ext" href="http://molliessanjuan.com/" target="_blank" rel="noopener">molliessanjuan.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/7493149d2f42-04-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/7493149d2f42-04-first_party_header.png" loading="lazy" alt="04-first_party_header.png  1622x354
+site header
+ONE-INK RED version of the same vector lockup, ink #881808 (the dominant fill"></a><figcaption>04-first_party_header.png  1622x354<br>site header<br>ONE-INK RED version of the same vector lockup, ink #881808 (the dominant fill<br><a class="ext" href="http://molliessanjuan.com/" target="_blank" rel="noopener">molliessanjuan.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/35fd5016bb87-05-social.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/35fd5016bb87-05-social.jpg" loading="lazy" alt="05-social.png  960x958
+Facebook avatar"></a><figcaption>05-social.png  960x958<br>Facebook avatar<br><span class="src">file 05-social.png</span></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/15ca05e61e5c-06-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/15ca05e61e5c-06-first_party_header.png" loading="lazy" alt="06-first_party_header.png  1078x228
+site header
+WORDS-ONLY cut of candidate 03 by cut-words"></a><figcaption>06-first_party_header.png  1078x228<br>site header<br>WORDS-ONLY cut of candidate 03 by cut-words<br><a class="ext" href="http://molliessanjuan.com/" target="_blank" rel="noopener">molliessanjuan.com/ &#8599;</a></figcaption></figure></div>
+</section>
+<section id="sheet">
+<h2>Variant sheet</h2><p class="sub">Fable's default A framed in green. Reply with one letter.</p>
+<p class="links"></p>
+<div class="shot zoom" title="click to toggle native size"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/1ce1956fcbef-variant-sheet-marked.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/1ce1956fcbef-variant-sheet-marked.png" loading="lazy" alt="variant sheet"></a></div><p class="cap">variants/variant-sheet.png at native size, revision 46. In the HTML page click the sheet to toggle native size.</p>
+</section>
+<section id="links">
+<h2>Links</h2><p class="sub">the link automation results for this location, one row per category; held rows need a human decision. Click a URL to open it.</p>
+<p class="links"></p>
+<p style="font-size:15px;color:#444444;">Run: closeout account scope manual cli; writes applied; by discovery: fulfill-location agent (Claude) 2026-09-23 (no writes); writes: closeout-mollies (Claude) 2026-09-24.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Website on file: <a class="ext" href="http://molliessanjuan.com/" target="_blank" rel="noopener">http://molliessanjuan.com/</a>.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Discovery report link-discovery-report.json (2026-09-24 03:35): 18 categories, 0 for manual review, 3 proposed field updates, 4 proposed events.</p>
+<p style="font-size:15px;color:#1B5E20;margin-top:4px;">Validator links-port/validate-discovery-final.json: valid.</p>
+<p style="font-size:15px;font-weight:700;margin-top:8px;">17 categories: 0 written, 6 verified or already live, 0 held for review, 0 pending browser, 2 rejected, 9 none found.</p>
+<table class="links"><thead><tr><th>Category</th><th>URL</th><th>Status</th><th>Verdict</th></tr></thead><tbody><tr class="st-ready"><td class="cat">Online ordering</td><td class="url"><a class="ext" href="https://molliessanjuanca.com/mollies-san-juan-restaurant/locations/" target="_blank" rel="noopener">molliessanjuanca.com/mollies-san-juan-restaurant/locations/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Re-checked live 2026-09-24: every Order/ORDER/Order Online link on molliessanjuan.com lands on this SpotHopper-hosted ordering page (the restaurant's…</div><details><summary>raw evidence</summary><div class="raw">Re-checked live 2026-09-24: every Order/ORDER/Order Online link on molliessanjuan.com lands on this SpotHopper-hosted ordering page (the restaurant's own second domain, molliessanjuanca.com). It lists only 32033 Camino Capistrano, San Juan Capistrano with Pickup and Delivery, SJC menu items and hours; no Dallas text. This is NOT the Dallas template, which is a different page (molliessanjuan.com/locations, rejected). Write locations.ordering_url at closeout.<br>verified live chrome (claude chrome)</div></details></td></tr>
+<tr class="st-ready"><td class="cat">Menu</td><td class="url"><a class="ext" href="https://molliessanjuan.com/san-juan-capistrano-mollies-san-juan-food-menu" target="_blank" rel="noopener">molliessanjuan.com/san-juan-capistrano-mollies-san-juan-food-menu</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. First-party food menu page (sitemap + MENU nav), verified 200.</div><details><summary>raw evidence</summary><div class="raw">First-party food menu page (sitemap + MENU nav), verified 200. Discovery auto-picked the drink menu; the food menu is the right Menu link.<br>verified static (static fetch)</div></details></td></tr>
+<tr class="st-ready"><td class="cat">Facebook</td><td class="url"><a class="ext" href="https://www.facebook.com/MolliesSanJuan/" target="_blank" rel="noopener">facebook.com/MolliesSanJuan/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Linked from the store's own website.</div><details><summary>raw evidence</summary><div class="raw">Site links facebook.com/788123754536384, which lands on /MolliesSanJuan/: American Restaurant, 32033 Camino Capistrano, San Juan Capistrano CA 92675, 232 reviews. Write branding.facebook_url at closeout (either form resolves to the same page).<br>title &quot;(20+) Facebook&quot;<br>the website links to it<br>social destination identity signal<br>found as an anchor</div></details></td></tr>
+<tr class="st-ready"><td class="cat">Instagram</td><td class="url"><a class="ext" href="https://www.instagram.com/molliessanjuan/" target="_blank" rel="noopener">instagram.com/molliessanjuan/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Linked from the store's own website.</div><details><summary>raw evidence</summary><div class="raw">Live profile Mollies San Juan (@molliessanjuan), 160 posts; bio lists 32033 Camino Capistrano and links www.molliessanjuan.com; the site nav links this profile. Write branding.instagram_url at closeout.<br>title &quot;(2) Instagram&quot;<br>the website links to it<br>social destination identity signal<br>canonical form of <a class="ext" href="https://www.instagram.com/molliessanjuan" target="_blank" rel="noopener">https://www.instagram.com/molliessanjuan</a><br>found as an anchor</div></details></td></tr>
+<tr class="st-none"><td class="cat">X (Twitter)</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. none found</div><details><summary>raw evidence</summary><div class="raw">none found</div></details></td></tr>
+<tr class="st-none"><td class="cat">TikTok</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. none linked from the site; search empty</div><details><summary>raw evidence</summary><div class="raw">none linked from the site; search empty</div></details></td></tr>
+<tr class="st-none"><td class="cat">YouTube</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. none found</div><details><summary>raw evidence</summary><div class="raw">none found</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">Careers</td><td class="url"><a class="ext" href="https://molliessanjuan.com/career" target="_blank" rel="noopener">molliessanjuan.com/career</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: not found page: Every careers path (/careers, /jobs, /employment, /career, /job) renders the site's 'This page does not exist' 404 in live Chrome; no…</div><details><summary>raw evidence</summary><div class="raw">not found page: Every careers path (/careers, /jobs, /employment, /career, /job) renders the site's 'This page does not exist' 404 in live Chrome; no careers page in the sitemap.</div></details></td></tr>
+<tr class="st-ready"><td class="cat">Catering</td><td class="url"><a class="ext" href="https://molliessanjuan.com/san-juan-capistrano-mollies-san-juan-catering" target="_blank" rel="noopener">molliessanjuan.com/san-juan-capistrano-mollies-san-juan-catering</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Linked from the store's own website.</div><details><summary>raw evidence</summary><div class="raw">First-party catering page in the site nav and sitemap, verified 200.<br>title &quot;Mollies San Juan - Catering&quot;<br>the website links to it<br>URL slug names the business<br>found as an anchor</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">Events</td><td class="url"><a class="ext" href="https://www.missionsjc.com/events/" target="_blank" rel="noopener">missionsjc.com/events/</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: no business match: sanjuancapistrano.org Calendar EID=1314 is an HTTP 404; bandsintown city page and missionsjc.com events never mention Mollies.</div><details><summary>raw evidence</summary><div class="raw">no business match: sanjuancapistrano.org Calendar EID=1314 is an HTTP 404; bandsintown city page and missionsjc.com events never mention Mollies. No first-party events page.</div></details></td></tr>
+<tr class="st-ready"><td class="cat">Reservations</td><td class="url"><a class="ext" href="https://molliessanjuan.com/san-juan-capistrano-mollies-san-juan-reservations" target="_blank" rel="noopener">molliessanjuan.com/san-juan-capistrano-mollies-san-juan-reservations</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Linked from the store's own website.</div><details><summary>raw evidence</summary><div class="raw">First-party RESERVE page in the site nav and sitemap, verified 200. The singular /-reservation and /...-reservation variants are 404s (rejected in the report).<br>title &quot;Mollies San Juan - Reservations&quot;<br>the website links to it<br>URL slug names the business<br>found as an anchor</div></details></td></tr>
+<tr class="st-none"><td class="cat">Gift cards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. none found</div><details><summary>raw evidence</summary><div class="raw">none found</div></details></td></tr>
+<tr class="st-none"><td class="cat">Loyalty / rewards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. none found (SpotHopper vouchers script only, no public page)</div><details><summary>raw evidence</summary><div class="raw">none found (SpotHopper vouchers script only, no public page)</div></details></td></tr>
+<tr class="st-none"><td class="cat">iOS app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. none found</div><details><summary>raw evidence</summary><div class="raw">none found</div></details></td></tr>
+<tr class="st-none"><td class="cat">Android app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. none found</div><details><summary>raw evidence</summary><div class="raw">none found</div></details></td></tr>
+<tr class="st-none"><td class="cat">App downloads</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Other</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr></tbody></table>
+</section>
+<section id="previews">
+<h2>Previews</h2><p class="sub">harness signage preview and AI mockups per letter; previews, not proofs (QR drift, invented phone content). Click any image to open the native file.</p>
+<p class="links"></p>
+<p id="previews-1" style="font-size:24px;font-weight:700;color:#B7791F;margin-top:14px;">Cell W  TRAVISSE PICK, applied</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">fullcolor: site logo rebuilt from vector, thin white inline (07c, 1600px) on black #000000. card #000000 on #8E1B05, text #FFFFFF (band human override: logo ink / site theme red (the card primary; for the charcoal full-color row)). signage preview, 2 AI mockups.</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/cd58f2e193fb-signage-preview-W.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/cd58f2e193fb-signage-preview-W.png" loading="lazy" alt="signage preview W"></a></div><p class="cap">review/signage-preview-W.png: harness signage preview (POP, sticker, card, to-go), click to open.</p>
+<div class="grid cols4"><figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/ac318258e859-box-W.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/ac318258e859-box-W.png" loading="lazy" alt="box (AI)  box-W.png
+verdict not filled in yet (prompts.md)"></a><figcaption>box (AI)  box-W.png<br>verdict not filled in yet (prompts.md)</figcaption></figure>
+<figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/5c38d65c32e0-scan-W.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/mollies-san-juan-san-juan-capistrano/5c38d65c32e0-scan-W.png" loading="lazy" alt="scan (AI)  scan-W.png
+verdict not filled in yet (prompts.md)"></a><figcaption>scan (AI)  scan-W.png<br>verdict not filled in yet (prompts.md)</figcaption></figure></div>
+<p style="font-size:15px;font-weight:700;color:#8A1C1C;margin-top:10px;">Not in review-canvas.png: the previews would add about 1.5 MB to a PNG already near 43 MB (budget 25 MB). This page and the files above are the review surface for them.</p>
+</section>
+<script>
+  for (const el of document.querySelectorAll('.shot.zoom')) {
+    el.addEventListener('click', (ev) => { ev.preventDefault(); el.classList.toggle('native'); });
+  }
+  // "Show all N" on capped photo grids: reveal the hidden figures in the grid just above the button.
+  for (const btn of document.querySelectorAll('button.show-all')) {
+    btn.addEventListener('click', () => {
+      const grid = btn.parentElement.previousElementSibling;
+      if (!grid) return;
+      const open = grid.classList.toggle('expanded');
+      btn.textContent = open ? btn.dataset.less : btn.dataset.all;
+    });
+  }
+  // Sidebar: highlight the section in view, jump instantly on click (no scroll animation, Travisse 2026-09-29), hamburger below 1000px.
+  (() => {
+    const toc = document.getElementById('toc');
+    const links = new Map([...toc.querySelectorAll('a[href^="#"]')].map((a) => [a.getAttribute('href').slice(1), a]));
+    const sections = [...document.querySelectorAll('section[id]')];
+    const visible = new Set();
+    const setActive = () => {
+      const current = sections.find((s) => visible.has(s)) ?? sections.find((s) => s.getBoundingClientRect().bottom > 0) ?? sections[sections.length - 1];
+      for (const a of links.values()) a.classList.remove('active');
+      if (current) links.get(current.id)?.classList.add('active');
+    };
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); }
+      setActive();
+    }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+    for (const s of sections) io.observe(s);
+    setActive();
+    const toggle = toc.querySelector('.toc-toggle');
+    toggle.addEventListener('click', () => { const open = toc.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
+    for (const a of links.values()) a.addEventListener('click', (ev) => {
+      const target = document.getElementById(a.getAttribute('href').slice(1));
+      if (!target) return;
+      ev.preventDefault();
+      target.scrollIntoView({ behavior: 'instant', block: 'start' });
+      history.replaceState(null, '', a.getAttribute('href'));
+      toc.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
+    });
+  })();
+</script>
+</body></html>

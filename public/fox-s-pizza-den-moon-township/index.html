@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Fox’s Pizza Den (Samantha Serventi) review</title>
+<style>
+  :root { color-scheme: light; scroll-behavior: auto; }
+  body { margin: 0; padding: 32px 40px 80px 280px; background: #fff; color: #111; font-family: Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.35; max-width: 2040px; box-sizing: border-box; }
+  h2 { font-size: 34px; margin: 0 0 4px; }
+  section { padding: 28px 0; border-bottom: 3px solid #ccc; scroll-margin-top: 16px; }
+  section:first-child { padding-top: 0; }
+  p[id] { scroll-margin-top: 16px; }
+  .toc { position: fixed; top: 0; left: 0; bottom: 0; width: 240px; box-sizing: border-box; padding: 24px 16px; overflow-y: auto; background: #f4f4f4; border-right: 1px solid #ddd; font-size: 15px; z-index: 10; }
+  .toc ol { list-style: none; margin: 0; padding: 0; }
+  .toc ol ol { margin: 2px 0 6px 14px; }
+  .toc ol ol a { font-size: 13px; color: #555; padding: 3px 8px; }
+  .toc a { display: block; padding: 6px 8px; border-radius: 4px; color: #222; line-height: 1.3; }
+  .toc a:hover { background: #e6e6e6; }
+  .toc a.active { background: #1b5e20; color: #fff; font-weight: 700; }
+  .toc a.top { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+  .toc-toggle { display: none; }
+  @media (max-width: 1000px) {
+    body { padding: 64px 20px 80px; }
+    .toc { position: sticky; top: 0; bottom: auto; width: auto; margin: -64px -20px 24px; padding: 8px 12px; border-right: 0; border-bottom: 1px solid #ddd; max-height: 80vh; }
+    .toc-toggle { display: block; font: inherit; font-weight: 700; background: none; border: 1px solid #bbb; border-radius: 4px; padding: 6px 12px; cursor: pointer; }
+    .toc-toggle::before { content: "\2630  "; }
+    .toc:not(.open) ol { display: none; }
+    .toc ol { padding-top: 8px; }
+  }
+  p { margin: 4px 0; }
+  p.sub { color: #555; font-size: 17px; margin-bottom: 14px; }
+  p.cap { color: #666; font-size: 15px; }
+  .gray { background: #ededed; color: #444; padding: 26px; font-size: 20px; border-radius: 4px; }
+  .hdr { display: flex; gap: 30px; align-items: flex-start; }
+  .hdr > div:first-child { flex: 1; }
+  .cell { flex: 0 0 auto; max-width: 520px; }
+  .cell img { display: block; max-width: 100%; border: 6px solid #1b5e20; box-sizing: border-box; }
+  .cell p { color: #1b5e20; font-weight: 700; font-size: 16px; }
+  .shot { border: 1px solid #ddd; overflow: auto; max-height: 90vh; }
+  .shot img { display: block; width: 100%; height: auto; }
+  /* 2026-10-01: a zoomable shot (the variant sheet) is never height-clipped: every row stays visible at page width,
+     and native size scrolls inside the container (overflow auto) instead of hiding rows below 90vh. */
+  .shot.zoom { max-height: none; }
+  .shot.zoom img { cursor: zoom-in; }
+  .cell img.zoom3x { margin-top: 10px; border: 3px solid #444; image-rendering: pixelated; }
+  .cell img.zoom3x.bad { border-color: #B71C1C; }
+  .cell.hold img:first-of-type { border-color: #B71C1C; }
+  .shot.zoom.native img { width: auto; max-width: none; cursor: zoom-out; }
+  .grid { display: grid; gap: 14px; }
+  .grid.cols3 { grid-template-columns: repeat(3, 1fr); }
+  .grid.cols4 { grid-template-columns: repeat(4, 1fr); }
+  .grid.cols5 { grid-template-columns: repeat(5, 1fr); }
+  .grid.cols6 { grid-template-columns: repeat(6, 1fr); }
+  figure { margin: 0; background: #ededed; }
+  figure.framed { outline: 6px solid #1b5e20; outline-offset: -6px; }
+  figure a { display: block; }
+  figure img { display: block; width: 100%; height: 360px; object-fit: contain; }
+  .grid.cols4 figure img { height: 280px; }
+  .grid.cols5 figure img, .grid.cols6 figure img { height: 220px; }
+  figcaption { font-size: 15px; padding: 6px 4px 10px; background: #fff; color: #222; }
+  a { color: inherit; text-decoration: none; }
+  a.ext { color: #0b57d0; text-decoration: underline; text-underline-offset: 2px; word-break: break-all; }
+  a.ext:hover { color: #083a8c; }
+  p.links { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 16px; font-size: 15px; }
+  p.links a.ext { background: #eef3fc; border: 1px solid #c9d8f5; border-radius: 4px; padding: 3px 10px; text-decoration: none; word-break: normal; }
+  p.links a.ext:hover { background: #dce7fb; }
+  p.links a.chip b { font-weight: 700; margin-right: 4px; }
+  p.links a.chip.held { background: #fff4d6; border-color: #e3c37a; }
+  p.links a.chip em { font-style: normal; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: #8a5a00; margin-left: 4px; }
+  figcaption .src { color: #666; }
+  .grid figure.more { display: none; }
+  .grid.expanded figure.more { display: block; }
+  p.show-all { margin: 10px 0 0; }
+  button.show-all { font: inherit; font-size: 14px; font-weight: 700; background: #f4f4f4; border: 1px solid #bbb; border-radius: 4px; padding: 6px 14px; cursor: pointer; }
+  button.show-all:hover { background: #e6e6e6; }
+  table.links .verdict { color: #222; max-width: 560px; }
+  table.links details { margin-top: 5px; font-size: 13px; color: #666; max-width: 560px; }
+  table.links details summary { cursor: pointer; color: #0b57d0; }
+  table.links .raw { margin-top: 4px; }
+  table.links { border-collapse: collapse; width: 100%; font-size: 15px; margin-top: 8px; }
+  table.links th { text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: #666; padding: 6px 10px; border-bottom: 2px solid #ddd; }
+  table.links td { padding: 9px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top; }
+  table.links td.cat { font-weight: 700; white-space: nowrap; }
+  table.links td.url { max-width: 380px; word-break: break-all; }
+  table.links td.ev { color: #444; max-width: 520px; }
+  table.links .chip { display: inline-block; color: #fff; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
+  table.links .why { color: #444; font-size: 14px; margin-top: 5px; max-width: 420px; }
+  table.links .none { color: #999; }
+  table.links tr.st-held td { background: #fff8e8; }
+  table.links tr.st-rejected td { color: #777; }
+  table.links tr.st-written td { background: #eef7ee; }
+</style><style>
+  .ss { font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: #161616; }
+  .ss .pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 999px; white-space: nowrap; border: 1px solid transparent; vertical-align: middle; }
+  .ss .pill.awaiting, .ss .pill.picked { background: #fff4e0; color: #b26a00; border-color: #f1dcb0; }
+  .ss .pill.applied { background: #e8f0ff; color: #1f5eff; border-color: #c7d8ff; }
+  .ss .pill.closed { background: #e6f4ea; color: #1b7a3d; border-color: #bfe0c9; }
+  .ss .pill.unknown { background: #eee; color: #5c5c5c; }
+  .ss .need { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 6px; background: #fdecec; color: #b3261e; border: 1px solid #f3c2bd; margin: 2px 6px 2px 0; white-space: nowrap; }
+  .ss .need.soft { background: #f3f3f0; color: #5c5c5c; border-color: #e3e3df; }
+  .ss .hold { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 6px; background: #fff4e0; color: #b26a00; border: 1px solid #f1dcb0; margin: 2px 6px 2px 0; }
+  .ss .steps { display: inline-flex; gap: 3px; vertical-align: middle; margin-right: 8px; }
+  .ss .steps i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: #e3e3df; }
+  .ss .steps i.on { background: #1b7a3d; }
+  .ss .steps i.next { background: #fff; border: 2px solid #b26a00; box-sizing: border-box; }
+  .ss .next { color: #5c5c5c; font-size: 13px; }
+  .ss .meta { color: #5c5c5c; font-size: 13px; }
+  .ss .note { color: #161616; font-size: 13px; margin-top: 4px; max-width: 90ch; }
+  .ss .stage { font-size: 12px; color: #5c5c5c; text-transform: uppercase; letter-spacing: .05em; }
+  .site-status { position: sticky; top: 8px; z-index: 20; background: #fffdf7; border: 1px solid #ecdfb8; border-radius: 10px; padding: 10px 14px; margin: 0 0 20px; display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+  .site-status .grp { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; }
+  .site-status .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: #5c5c5c; }
+  .site-status .live { margin-left: auto; font-size: 12px; color: #5c5c5c; }
+  .site-status .live.off { color: #b26a00; }
+  @media (max-width: 1000px) { .site-status { position: static; } }
+</style></head><body id="top">
+<nav class="toc" id="toc"><a class="top" href="/" style="margin-bottom:12px">&larr; All locations</a><button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-list">Sections</button>
+<ol id="toc-list">
+<li><a href="#top" class="top">Top</a></li>
+<li><a href="#header">Overview</a></li>
+<li><a href="#website">Website</a></li>
+<li><a href="#gbp">Google Business Profile</a></li>
+<li><a href="#logo-search">Logo image search</a></li>
+<li><a href="#candidates">Logo candidates</a></li>
+<li><a href="#sheet">Variant sheet</a></li>
+<li><a href="#links">Links (5 held for review)</a></li>
+<li><a href="#previews">Previews</a><ol><li><a href="#previews-1">Cell J  TRAVISSE PICK, applied</a></li></ol></li>
+</ol></nav>
+<div class="site-status ss" id="site-status" data-slug="fox-s-pizza-den-moon-township"></div>
+<script id="site-status-data" type="application/json">{"slug":"fox-s-pizza-den-moon-township","status":"applied","status_label":"Branding applied","boostly_status":null,"steps":null,"needs_you":null,"gaps":null,"hold":null,"done":null,"note":"Done: J is live, signage approved, Slack posted, branding complete (state store_details, store details unconfirmed so short of physical fulfillment); 5 link categories held for Travisse's call To-go labels updated (offer + logo), review in Figma: https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=353-11677","review_status":null,"figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=353-2"}</script>
+<script>
+window.BoostlyStatus = (function () {
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function stepsHtml(steps) {
+    if (!steps || !steps.length) return "";
+    var done = 0, nextIdx = -1, html = "";
+    for (var i = 0; i < steps.length; i++) { if (steps[i][1]) done++; else if (nextIdx < 0) nextIdx = i; }
+    for (var j = 0; j < steps.length; j++) html += '<i class="' + (steps[j][1] ? "on" : (j === nextIdx ? "next" : "")) + '" title="' + esc(steps[j][0]) + (steps[j][1] ? " (done)" : "") + '"></i>';
+    var next = nextIdx < 0 ? "all steps done" : "next: " + steps[nextIdx][0].charAt(0).toLowerCase() + steps[nextIdx][0].slice(1);
+    return '<span class="steps" title="' + done + " of " + steps.length + ' steps done">' + html + '</span><span class="next">' + done + "/" + steps.length + ", " + esc(next) + '</span>';
+  }
+  function needsHtml(s) {
+    var out = "";
+    (s.needs_you || []).forEach(function (n) { out += '<span class="need">' + esc(n.replace("(s)", "s")) + '</span>'; });
+    (s.gaps || []).forEach(function (g) { out += '<span class="need soft">' + esc(g) + '</span>'; });
+    if (s.hold) out += '<span class="hold" title="' + esc(s.hold) + '">HOLD</span>';
+    if (!out && s.done) out += '<span class="need soft">review complete</span>';
+    if (!out && s.status !== "closed") out += '<span class="need soft">with the agents, nothing for you</span>';
+    return out;
+  }
+  function stageLabel(st) { return st ? String(st).replace(/_/g, " ").replace(/^./, function (c) { return c.toUpperCase(); }) : ""; }
+  function metaHtml(s) {
+    var rs = s.review_status || {}, parts = [];
+    if (rs.waiting_on && rs.status !== "done") parts.push("waiting on " + esc(rs.waiting_on));
+    if (rs.ease) parts.push("ease " + esc(rs.ease) + "/5");
+    return parts.join(" \u00b7 ");
+  }
+  function strip(el, s, live) {
+    if (!el) return;
+    var stage = stageLabel(s.boostly_status);
+    el.innerHTML =
+      '<div class="grp"><span class="pill ' + esc(s.status) + '">' + esc(s.status_label) + '</span>' + (stage ? '<span class="stage">' + esc(stage) + '</span>' : "") + '</div>' +
+      '<div class="grp">' + stepsHtml(s.steps) + '</div>' +
+      '<div class="grp"><span class="lbl">Needs you</span>' + needsHtml(s) + '</div>' +
+      (metaHtml(s) ? '<div class="grp meta">' + metaHtml(s) + '</div>' : "") +
+      (s.note ? '<div class="note" style="flex-basis:100%">' + esc(s.note) + '</div>' : "") +
+      '<span class="live' + (live ? "" : " off") + '">' + (live ? "live " + esc(live) : "as of the last site build") + '</span>';
+  }
+  function merge(s, it) {
+    s.boostly_status = it.status || s.boostly_status; s.steps = it.steps || s.steps; s.needs_you = it.needs_you || s.needs_you;
+    s.gaps = it.gaps || s.gaps; s.hold = it.hold == null ? s.hold : it.hold; s.done = it.done == null ? s.done : it.done;
+    s.note = it.note == null ? s.note : it.note; s.review_status = it.review_status || s.review_status;
+    if (it.figma_url && !s.figma_url) s.figma_url = it.figma_url;
+    return s;
+  }
+  function overlay(url, cb) {
+    if (!url || !window.fetch) { cb(null); return; }
+    fetch(url + (url.indexOf("?") < 0 ? "?" : "&") + "t=" + Math.floor(Date.now() / 60000), { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { cb(j && j.items ? j : null); })
+      .catch(function () { cb(null); });
+  }
+  function fmtTime(iso) { var t = Date.parse(iso); return isNaN(t) ? "" : new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/Denver" }).format(new Date(t)); }
+  return { esc: esc, stepsHtml: stepsHtml, needsHtml: needsHtml, metaHtml: metaHtml, strip: strip, merge: merge, overlay: overlay, fmtTime: fmtTime, stageLabel: stageLabel };
+})();
+
+(function () {
+  var el = document.getElementById("site-status"), s = JSON.parse(document.getElementById("site-status-data").textContent);
+  window.BoostlyStatus.strip(el, s, null);
+  window.BoostlyStatus.overlay("https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json", function (j) {
+    if (!j) return;
+    var it = null; for (var i = 0; i < j.items.length; i++) if (j.items[i].run_dir === s.slug) it = j.items[i];
+    if (it) window.BoostlyStatus.strip(el, window.BoostlyStatus.merge(s, it), window.BoostlyStatus.fmtTime(j.generated_at));
+    else window.BoostlyStatus.strip(el, s, window.BoostlyStatus.fmtTime(j.generated_at) + " (not on the open list)");
+  });
+})();
+</script>
+<section id="header">
+<p class="links"><a class="ext" href="https://slack.com/archives/C09MSM8MA9Y/p1790875652462489?thread_ts=1790793287.570779&amp;cid=C09MSM8MA9Y" target="_blank" rel="noopener">Slack thread &#8599;</a> <a class="ext" href="https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=353-2" target="_blank" rel="noopener">Figma &#8599;</a> <a class="ext chip held" href="https://www.foxspizza.com/store/pennsylvania/moon-township-pa/" target="_blank" rel="noopener"><b>Website</b> foxspizza.com/store/pennsy…moon-township-pa/ <em>held</em></a> <a class="ext chip" href="https://foxspizza.hungerrush.com/Order/Menu/1147#groups" target="_blank" rel="noopener"><b>Ordering</b> foxspizza.hungerrush.com/O…/Menu/1147#groups</a> <a class="ext chip held" href="https://www.facebook.com/foxspizzaden" target="_blank" rel="noopener"><b>Facebook</b> facebook.com/foxspizzaden <em>held</em></a> <a class="ext chip held" href="https://www.instagram.com/foxspizzaden/" target="_blank" rel="noopener"><b>Instagram</b> instagram.com/foxspizzaden/ <em>held</em></a> <a class="ext chip" href="https://x.com/FoxsPizzaDen" target="_blank" rel="noopener"><b>X (Twitter)</b> x.com/FoxsPizzaDen</a> <a class="ext chip" href="https://www.foxspizza.com/job-opportunities/" target="_blank" rel="noopener"><b>Careers</b> foxspizza.com/job-opportunities/</a> <a class="ext chip held" href="https://apps.apple.com/us/app/foxs-pizza/id6443570830" target="_blank" rel="noopener"><b>iOS app</b> apps.apple.com/us/app/foxs…izza/id6443570830 <em>held</em></a> <a class="ext chip held" href="https://play.google.com/store/apps/details?id=com.foxspizza.foxspizza" target="_blank" rel="noopener"><b>Android app</b> play.google.com/store/apps…xspizza.foxspizza <em>held</em></a></p>
+<div class="hdr"><div><p style="font-size:44px;font-weight:700;">Fox’s Pizza Den (Samantha Serventi)</p>
+<p style="font-size:20px;color:#444444;margin-top:6px;">Moon, PA   ·   request l9a1sgdsgfle1i08pqtnn6ob   ·   full order</p>
+<p style="font-size:29px;font-weight:700;color:#1B5E20;margin-top:22px;">Fable's default: I</p>
+<p style="font-size:19px;margin-top:6px;">Fable default per decision.json: candidate 01, the authored full-colour vector lockup on the #C70A10 red card, yellow #F6EC09 band (chef-hat ink, 4.86:1), black badge digit; the open white knockout (row 1) is a second option for a dark card only</p>
+<p style="font-size:16px;color:#666666;margin-top:8px;">Confidence: high   ·   flags: green_disc_ink_below_3_on_red_enclosed_by_keyline, website_visual_evidence_marked_unavailable_but_chain_store_page_captured, brand_environment_five_of_seven_selected_images_are_food_only</p>
+<p style="font-size:16px;color:#666666;margin-top:4px;">Cell I = full color, primary #C70A10, band #F6EC09 (Fable's pick), text #FFFFFF, print digit #000000</p></div><div class="cell"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/988d5cd6ef26-default-cell.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/988d5cd6ef26-default-cell.png" alt="default cell"></a><p>Fable's default cell I (native sheet pixels, click to open)</p><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/5db021530ee4-logo-3x.png" target="_blank" title="open the 3x crop"><img class="zoom3x" src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/5db021530ee4-logo-3x.png" alt="logo at 3x"></a><p><b>Logo at 3x (what prints).</b> Final upload 1100x970px, source 2000px (vector), recorded on the candidate, upscale 0.55x. Edge quality: ok. Soft-edge share 1, stair-step score 0.3681.</p></div></div>
+</section>
+<section id="website">
+<h2>Website</h2><p class="sub">no website on the request</p>
+
+<div class="gray">Website not captured. no_official_website</div>
+</section>
+<section id="gbp">
+<h2>Google Business Profile</h2><p class="sub">place id ChIJp771gJhdNIgRi9xg5N_qpcQ</p>
+<p class="links"><a class="ext" href="https://www.google.com/maps/place/?q=place_id:ChIJp771gJhdNIgRi9xg5N_qpcQ" target="_blank" rel="noopener">Google Maps place &#8599;</a> <a class="ext" href="https://www.google.com/search?q=Fox%E2%80%99s%20Pizza%20Den%20(Samantha%20Serventi)%20Moon%2C%20PA" target="_blank" rel="noopener">Google search &#8599;</a></p>
+<p style="font-size:17px;">Place photos already downloaded for this run (10), storefront, interior and signage photos first, then the rest. Green frame = a photo Fable cited for the sign or interior.</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/25a9eaa150d6-gbp-photo-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/25a9eaa150d6-gbp-photo-01.jpg" loading="lazy" alt="#1 owner photo  · branded collateral  1962x1308"></a><figcaption>#1 owner photo  · branded collateral  1962x1308</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/bbd2af8d1905-gbp-photo-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/bbd2af8d1905-gbp-photo-05.jpg" loading="lazy" alt="#5 owner photo  · branded collateral  480x480"></a><figcaption>#5 owner photo  · branded collateral  480x480</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/57b141e702ba-gbp-photo-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/57b141e702ba-gbp-photo-06.jpg" loading="lazy" alt="#6 owner photo  · interior fixture  1080x1080"></a><figcaption>#6 owner photo  · interior fixture  1080x1080</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/4007af5051e4-gbp-photo-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/4007af5051e4-gbp-photo-07.jpg" loading="lazy" alt="#7 owner photo  · storefront  1080x1080"></a><figcaption>#7 owner photo  · storefront  1080x1080</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/2e7f8361a447-gbp-photo-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/2e7f8361a447-gbp-photo-08.jpg" loading="lazy" alt="#8 owner photo  · branded collateral  776x752"></a><figcaption>#8 owner photo  · branded collateral  776x752</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/610edf15fd4e-gbp-photo-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/610edf15fd4e-gbp-photo-09.jpg" loading="lazy" alt="#9 owner photo  · branded collateral  1080x1080"></a><figcaption>#9 owner photo  · branded collateral  1080x1080</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/117033a1d946-gbp-photo-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/117033a1d946-gbp-photo-02.jpg" loading="lazy" alt="#2 owner photo  3000x2000"></a><figcaption>#2 owner photo  3000x2000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/de85f3f4a1b5-gbp-photo-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/de85f3f4a1b5-gbp-photo-03.jpg" loading="lazy" alt="#3 owner photo  3000x2000"></a><figcaption>#3 owner photo  3000x2000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/160a2b02c5bc-gbp-photo-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/160a2b02c5bc-gbp-photo-04.jpg" loading="lazy" alt="#4 owner photo  630x430"></a><figcaption>#4 owner photo  630x430</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/58c3b37d70a3-gbp-photo-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/58c3b37d70a3-gbp-photo-10.jpg" loading="lazy" alt="#10 owner photo  1080x1080"></a><figcaption>#10 owner photo  1080x1080</figcaption></figure></div><p class="show-all"><button type="button" class="show-all" data-all="Show all 10" data-less="Show fewer (9 of 10)">Show all 10</button></p>
+<p style="font-size:17px;margin-top:10px;">Google Maps &quot;Vibe&quot; photos from the evidence build (Google's own in-store/atmosphere category)</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/44cfcab504ef-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/44cfcab504ef-01.jpg" loading="lazy" alt="By owner / menu_signage · brand_environment  1632x1008"></a><figcaption>By owner / menu_signage · brand_environment  1632x1008</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/25a9eaa150d6-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/25a9eaa150d6-02.jpg" loading="lazy" alt="By owner / branded_collateral · mixed  1962x1308"></a><figcaption>By owner / branded_collateral · mixed  1962x1308</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/d3819e6ccd48-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/d3819e6ccd48-03.jpg" loading="lazy" alt="All / interior_fixture · mixed  4000x2252"></a><figcaption>All / interior_fixture · mixed  4000x2252</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/4007af5051e4-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/4007af5051e4-04.jpg" loading="lazy" alt="All / storefront · mixed  1080x1080"></a><figcaption>All / storefront · mixed  1080x1080</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/57b141e702ba-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/57b141e702ba-05.jpg" loading="lazy" alt="All / interior_fixture · mixed  1080x1080"></a><figcaption>All / interior_fixture · mixed  1080x1080</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/48bd70e2bbf9-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/48bd70e2bbf9-06.jpg" loading="lazy" alt="All / branded_collateral · mixed  3000x4000"></a><figcaption>All / branded_collateral · mixed  3000x4000</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/610edf15fd4e-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/610edf15fd4e-07.jpg" loading="lazy" alt="All / branded_collateral · mixed  1080x1080"></a><figcaption>All / branded_collateral · mixed  1080x1080</figcaption></figure></div><p class="show-all"><button type="button" class="show-all" data-all="Show all 7" data-less="Show fewer (6 of 7)">Show all 7</button></p>
+<div class="gray">Live Google Maps photo view skipped (--skip-google) and no earlier capture under review/ to reuse.</div>
+</section>
+<section id="logo-search">
+<h2>Logo image search</h2><p class="sub">&quot;Fox’s Pizza Den (Samantha Serventi) Moon logo&quot;</p>
+<p class="links"><a class="ext" href="https://www.google.com/search?tbm=isch&amp;q=Fox%E2%80%99s%20Pizza%20Den%20(Samantha%20Serventi)%20Moon%20logo" target="_blank" rel="noopener">Open Google Images &#8599;</a></p>
+<div class="gray">Logo image search skipped (--skip-google) and no cached results under review/logo-search/.</div>
+</section>
+<section id="candidates">
+<h2>Logo candidates</h2><p class="sub">from the evidence packet; green frame = the file Fable chose. Gray background so white knockouts stay visible.</p>
+
+<div class="grid cols3"><figure style="background:#8C8C8C" class="framed"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/8347ffa14e24-01-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/8347ffa14e24-01-first_party_other.png" loading="lazy" alt="01-first_party_other.png  1600x1410
+site header, traced cut
+FABLE'S PICK"></a><figcaption style="font-weight:700">01-first_party_other.png  1600x1410<br>site header, traced cut<br>FABLE'S PICK<br><span class="src">file 01-first_party_other.png</span></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/c5dbea98a87a-02-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/c5dbea98a87a-02-first_party_other.png" loading="lazy" alt="02-first_party_other.png  1600x1398
+first_party_other, traced cut"></a><figcaption>02-first_party_other.png  1600x1398<br>first_party_other, traced cut<br><span class="src">file 02-first_party_other.png</span></figcaption></figure></div>
+</section>
+<section id="sheet">
+<h2>Variant sheet</h2><p class="sub">Fable's default I framed in green. Reply with one letter.</p>
+<p class="links"></p>
+<div class="shot zoom" title="click to toggle native size"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/9037885e810b-variant-sheet-marked.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/9037885e810b-variant-sheet-marked.png" loading="lazy" alt="variant sheet"></a></div><p class="cap">variants/variant-sheet.png at 3040 of 4026px wide, revision 6. In the HTML page click the sheet to toggle native size.</p>
+</section>
+<section id="links">
+<h2>Links</h2><p class="sub">the link automation results for this location, one row per category; held rows need a human decision. Click a URL to open it.</p>
+<p class="links"></p>
+<p style="font-size:15px;color:#444444;">Run: review stage no writes; no link writes applied; by fulfill-location (Claude Fable 5.1) 2026-09-30: static pass only. The Claude Chrome extension reported no connected browser (list_connected_browsers empty.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Website bootstrap: held_write, Places says <a class="ext" href="https://www.foxspizza.com/store/pennsylvania/moon-township-pa/" target="_blank" rel="noopener">https://www.foxspizza.com/store/pennsylvania/moon-township-pa/</a>.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Ordering URL on file <a class="ext" href="https://foxspizza.hungerrush.com/Order/Menu/1147#groups" target="_blank" rel="noopener">https://foxspizza.hungerrush.com/Order/Menu/1147#groups</a>: not compared</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Discovery report link-discovery-report.json (2026-09-30 21:57): 18 categories, 13 for manual review, 3 proposed field updates, 3 proposed events.</p>
+<p style="font-size:15px;color:#6B6B6B;margin-top:4px;">26 URLs still waiting on the live Chrome check.</p>
+<p style="font-size:15px;font-weight:700;margin-top:8px;">18 categories: 0 written, 3 verified or already live, 5 held for review, 0 pending browser, 4 rejected, 6 none found.</p>
+<table class="links"><thead><tr><th>Category</th><th>URL</th><th>Status</th><th>Verdict</th></tr></thead><tbody><tr class="st-held"><td class="cat">Website</td><td class="url"><a class="ext" href="https://www.foxspizza.com/store/pennsylvania/moon-township-pa/" target="_blank" rel="noopener">foxspizza.com/store/pennsylvania/moon-township-pa/</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: HELD BOOTSTRAP WRITE (no production writes at this stage): V2 website_url is null; the Places websiteUri is this chain locator page for the store (st… Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">HELD BOOTSTRAP WRITE (no production writes at this stage): V2 website_url is null; the Places websiteUri is this chain locator page for the store (static fetch 200, title 'Moon Township, PA - Fox's Pizza', 998 Brodhead Road, 724-457-3697, map pin). The restaurant has no site of its own (the owner called the website corporate-owned on the 2026-09-22 call). Dry run saved as website-bootstrap-dryrun.json; write it at closeout.<br>verified live (static fetch and headless capture (website/capture))</div></details></td></tr>
+<tr class="st-ready"><td class="cat">Online ordering</td><td class="url"><a class="ext" href="https://foxspizza.hungerrush.com/Order/Menu/1147#groups" target="_blank" rel="noopener">foxspizza.hungerrush.com/Order/Menu/1147#groups</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Linked from the store's own website.</div><details><summary>raw evidence</summary><div class="raw">The stored ordering_url is exactly the Order Now link the customer's own store page and the chain PA locator publish for 998 Brodhead Road (HungerRush store 1147); the in-store menu says 'ORDER ONLINE @ FOXSPIZZA.COM', which routes to the same HungerRush store. HungerRush serves a Cloudflare 'Just a moment' to curl (403), so the page itself was not read; the backlink from the verified official page is the evidence. Already stored; reconcile the Order Online custom event to it at closeout.<br>verified by site backlink (static fetch (site backlink); destination behind Cloudflare)</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">Menu</td><td class="url"><a class="ext" href="https://www.foxspizza.com/menu/gourmet-pizza/" target="_blank" rel="noopener">foxspizza.com/menu/gourmet-pizza/</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: Generic chain menu category page (Gourmet Pizza); the store-specific 2026 menu PDF is the better menu link, and Order Online (HungerRush) already car…</div><details><summary>raw evidence</summary><div class="raw">Generic chain menu category page (Gourmet Pizza); the store-specific 2026 menu PDF is the better menu link, and Order Online (HungerRush) already carries the store menu. Same for /menu/pizza, /menu/hoagie, /menu/dessert (unread, chain category pages).<br>verified live (static fetch and pdfinfo)</div></details></td></tr>
+<tr class="st-held"><td class="cat">Facebook</td><td class="url"><a class="ext" href="https://www.facebook.com/foxspizzaden" target="_blank" rel="noopener">facebook.com/foxspizzaden</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: Chain Facebook page linked from the site footer; unread (400 to curl, no live tab). Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">Chain Facebook page linked from the site footer; unread (400 to curl, no live tab). Alternative to the store page above; same decision.</div></details></td></tr>
+<tr class="st-held"><td class="cat">Instagram</td><td class="url"><a class="ext" href="https://www.instagram.com/foxspizzaden/" target="_blank" rel="noopener">instagram.com/foxspizzaden/</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: Chain Instagram linked from the site footer; the logged-out fetch returns the generic 'Instagram' login shell with no profile data and the live tab w… Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">Chain Instagram linked from the site footer; the logged-out fetch returns the generic 'Instagram' login shell with no profile data and the live tab was unavailable, so the destination could not confirm the business. No store-level Instagram found. Hold until read live.<br>the website links to it<br>found as an anchor<br>The official website links to this social profile, but the destination did not independently confirm the exact business or location</div></details></td></tr>
+<tr class="st-ready"><td class="cat">X (Twitter)</td><td class="url"><a class="ext" href="https://x.com/FoxsPizzaDen" target="_blank" rel="noopener">x.com/FoxsPizzaDen</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Linked from the store's own website.</div><details><summary>raw evidence</summary><div class="raw">Linked from the store page footer; static fetch 200, title 'Fox's Pizza Den (@FoxsPizzaDen) / X', the chain account. Chain social for a franchise store, same as the site footer publishes.<br>title &quot;Fox&amp;#x27;s Pizza Den (@FoxsPizzaDen) / X&quot;<br>social destination identity signal<br>canonical form of <a class="ext" href="https://twitter.com/FoxsPizzaDen" target="_blank" rel="noopener">https://twitter.com/FoxsPizzaDen</a><br>found as an anchor</div></details></td></tr>
+<tr class="st-none"><td class="cat">TikTok</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">YouTube</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-ready"><td class="cat">Careers</td><td class="url"><a class="ext" href="https://www.foxspizza.com/job-opportunities/" target="_blank" rel="noopener">foxspizza.com/job-opportunities/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Linked from the store's own website.</div><details><summary>raw evidence</summary><div class="raw">Chain job page linked from the site nav (CAREERS): 200, title 'Job Opportunities - Fox's Pizza', mentions Moon; it is the only careers destination the brand publishes. Keep configured; activate only if the page shows open positions when written.<br>title &quot;Job Opportunities - Fox&amp;#039;s Pizza&quot;<br>the website links to it<br>URL slug names the business<br>found as an anchor<br>official site careers candidate<br>careers page level</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">Catering</td><td class="url"><a class="ext" href="https://www.foxspizza.com/store/pennsylvania/moon-township-pa/" target="_blank" rel="noopener">foxspizza.com/store/pennsylvania/moon-township-pa/</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: The report's catering candidate is the store page itself (anchor text match only); it has no catering content.</div><details><summary>raw evidence</summary><div class="raw">The report's catering candidate is the store page itself (anchor text match only); it has no catering content. No catering page exists.<br>title &quot;Moon Township, PA - Fox&amp;#039;s Pizza&quot;<br>the website links to it<br>URL slug names the business</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">Events</td><td class="url"><a class="ext" href="https://runsignup.com/Race/Sponsors/PA/Coraopolis/ScoutingtheMoon" target="_blank" rel="noopener">runsignup.com/Race/Sponsors/PA/Coraopolis/ScoutingtheMoon</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: A 5K sponsors page that lists the store as a sponsor; not the restaurant's events page.</div><details><summary>raw evidence</summary><div class="raw">A 5K sponsors page that lists the store as a sponsor; not the restaurant's events page. The mindtrip.ai concert listing and the Yelp search page are not first-party either. No events link.<br>title &quot;Scouting the Moon: Sponsors&quot;<br>google organic candidate</div></details></td></tr>
+<tr class="st-none"><td class="cat">Reservations</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-rejected"><td class="cat">Gift cards</td><td class="url"><a class="ext" href="https://www.storecard.com/" target="_blank" rel="noopener">storecard.com/</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: The site's GIFT CARD nav item points at the storecard.com root (403 to curl, title 'Card Manager' in the report), a generic card-manager portal with…</div><details><summary>raw evidence</summary><div class="raw">The site's GIFT CARD nav item points at the storecard.com root (403 to curl, title 'Card Manager' in the report), a generic card-manager portal with no Fox's or store identity; gift cards are a hold category anyway and this destination is not store specific.<br>title &quot;Card Manager&quot;<br>the website links to it<br>found as an anchor</div></details></td></tr>
+<tr class="st-none"><td class="cat">Loyalty / rewards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-held"><td class="cat">iOS app</td><td class="url"><a class="ext" href="https://apps.apple.com/us/app/foxs-pizza/id6443570830" target="_blank" rel="noopener">apps.apple.com/us/app/foxs-pizza/id6443570830</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: Chain ordering app (App Store 200, 'Foxs Pizza App', links foxspizza.com). Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">Chain ordering app (App Store 200, 'Foxs Pizza App', links foxspizza.com). Apps are a hold category by the write gate; the chain app orders through HungerRush for every store.<br>title &quot;‎Foxs Pizza App - App Store&quot;<br>the website links to it<br>found as an anchor</div></details></td></tr>
+<tr class="st-held"><td class="cat">Android app</td><td class="url"><a class="ext" href="https://play.google.com/store/apps/details?id=com.foxspizza.foxspizza" target="_blank" rel="noopener">play.google.com/store/apps/details?id=com.foxspizza.foxspizza</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: Chain ordering app (Google Play 200, 'Fox's Pizza Den - Apps on Google Play'). Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">Chain ordering app (Google Play 200, 'Fox's Pizza Den - Apps on Google Play'). Apps are a hold category by the write gate.<br>title &quot;Fox's Pizza Den - Apps on Google Play&quot;<br>the website links to it<br>found as an anchor</div></details></td></tr>
+<tr class="st-none"><td class="cat">App downloads</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Other</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr></tbody></table>
+</section>
+<section id="previews">
+<h2>Previews</h2><p class="sub">harness signage preview and AI mockups per letter; previews, not proofs (QR drift, invented phone content). Click any image to open the native file.</p>
+<p class="links"></p>
+<p id="previews-1" style="font-size:24px;font-weight:700;color:#B7791F;margin-top:14px;">Cell J  TRAVISSE PICK, applied</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">full color. card #C70A10 on #100F0D, text #FFFFFF (band logo ink 19%). signage preview, 2 AI mockups.</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/9c341bf65fd5-signage-preview-J.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/9c341bf65fd5-signage-preview-J.png" loading="lazy" alt="signage preview J"></a></div><p class="cap">review/signage-preview-J.png: harness signage preview (POP, sticker, card, to-go), click to open.</p>
+<div class="grid cols4"><figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/c1e231c1edd1-box-J.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/c1e231c1edd1-box-J.png" loading="lazy" alt="box (AI)  box-J.png
+verdict not filled in yet (prompts.md)"></a><figcaption>box (AI)  box-J.png<br>verdict not filled in yet (prompts.md)</figcaption></figure>
+<figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/105032614fd6-scan-J.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/fox-s-pizza-den-moon-township/105032614fd6-scan-J.png" loading="lazy" alt="scan (AI)  scan-J.png
+verdict not filled in yet (prompts.md)"></a><figcaption>scan (AI)  scan-J.png<br>verdict not filled in yet (prompts.md)</figcaption></figure></div>
+<p style="font-size:15px;font-weight:700;color:#8A1C1C;margin-top:10px;">Not in review-canvas.png: the previews would add about 1.8 MB to a PNG already near 37 MB (budget 25 MB). This page and the files above are the review surface for them.</p>
+</section>
+<script>
+  for (const el of document.querySelectorAll('.shot.zoom')) {
+    el.addEventListener('click', (ev) => { ev.preventDefault(); el.classList.toggle('native'); });
+  }
+  // "Show all N" on capped photo grids: reveal the hidden figures in the grid just above the button.
+  for (const btn of document.querySelectorAll('button.show-all')) {
+    btn.addEventListener('click', () => {
+      const grid = btn.parentElement.previousElementSibling;
+      if (!grid) return;
+      const open = grid.classList.toggle('expanded');
+      btn.textContent = open ? btn.dataset.less : btn.dataset.all;
+    });
+  }
+  // Sidebar: highlight the section in view, jump instantly on click (no scroll animation, Travisse 2026-09-29), hamburger below 1000px.
+  (() => {
+    const toc = document.getElementById('toc');
+    const links = new Map([...toc.querySelectorAll('a[href^="#"]')].map((a) => [a.getAttribute('href').slice(1), a]));
+    const sections = [...document.querySelectorAll('section[id]')];
+    const visible = new Set();
+    const setActive = () => {
+      const current = sections.find((s) => visible.has(s)) ?? sections.find((s) => s.getBoundingClientRect().bottom > 0) ?? sections[sections.length - 1];
+      for (const a of links.values()) a.classList.remove('active');
+      if (current) links.get(current.id)?.classList.add('active');
+    };
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); }
+      setActive();
+    }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+    for (const s of sections) io.observe(s);
+    setActive();
+    const toggle = toc.querySelector('.toc-toggle');
+    toggle.addEventListener('click', () => { const open = toc.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
+    for (const a of links.values()) a.addEventListener('click', (ev) => {
+      const target = document.getElementById(a.getAttribute('href').slice(1));
+      if (!target) return;
+      ev.preventDefault();
+      target.scrollIntoView({ behavior: 'instant', block: 'start' });
+      history.replaceState(null, '', a.getAttribute('href'));
+      toc.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
+    });
+  })();
+</script>
+</body></html>

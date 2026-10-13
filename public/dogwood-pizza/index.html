@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Dogwood Pizza review</title>
+<style>
+  :root { color-scheme: light; scroll-behavior: auto; }
+  body { margin: 0; padding: 32px 40px 80px 280px; background: #fff; color: #111; font-family: Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.35; max-width: 2040px; box-sizing: border-box; }
+  h2 { font-size: 34px; margin: 0 0 4px; }
+  section { padding: 28px 0; border-bottom: 3px solid #ccc; scroll-margin-top: 16px; }
+  section:first-child { padding-top: 0; }
+  p[id] { scroll-margin-top: 16px; }
+  .toc { position: fixed; top: 0; left: 0; bottom: 0; width: 240px; box-sizing: border-box; padding: 24px 16px; overflow-y: auto; background: #f4f4f4; border-right: 1px solid #ddd; font-size: 15px; z-index: 10; }
+  .toc ol { list-style: none; margin: 0; padding: 0; }
+  .toc ol ol { margin: 2px 0 6px 14px; }
+  .toc ol ol a { font-size: 13px; color: #555; padding: 3px 8px; }
+  .toc a { display: block; padding: 6px 8px; border-radius: 4px; color: #222; line-height: 1.3; }
+  .toc a:hover { background: #e6e6e6; }
+  .toc a.active { background: #1b5e20; color: #fff; font-weight: 700; }
+  .toc a.top { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+  .toc-toggle { display: none; }
+  @media (max-width: 1000px) {
+    body { padding: 64px 20px 80px; }
+    .toc { position: sticky; top: 0; bottom: auto; width: auto; margin: -64px -20px 24px; padding: 8px 12px; border-right: 0; border-bottom: 1px solid #ddd; max-height: 80vh; }
+    .toc-toggle { display: block; font: inherit; font-weight: 700; background: none; border: 1px solid #bbb; border-radius: 4px; padding: 6px 12px; cursor: pointer; }
+    .toc-toggle::before { content: "\2630  "; }
+    .toc:not(.open) ol { display: none; }
+    .toc ol { padding-top: 8px; }
+  }
+  p { margin: 4px 0; }
+  p.sub { color: #555; font-size: 17px; margin-bottom: 14px; }
+  p.cap { color: #666; font-size: 15px; }
+  .gray { background: #ededed; color: #444; padding: 26px; font-size: 20px; border-radius: 4px; }
+  .hdr { display: flex; gap: 30px; align-items: flex-start; }
+  .hdr > div:first-child { flex: 1; }
+  .cell { flex: 0 0 auto; max-width: 520px; }
+  .cell img { display: block; max-width: 100%; border: 6px solid #1b5e20; box-sizing: border-box; }
+  .cell p { color: #1b5e20; font-weight: 700; font-size: 16px; }
+  .shot { border: 1px solid #ddd; overflow: auto; max-height: 90vh; }
+  .shot img { display: block; width: 100%; height: auto; }
+  /* 2026-10-01: a zoomable shot (the variant sheet) is never height-clipped: every row stays visible at page width,
+     and native size scrolls inside the container (overflow auto) instead of hiding rows below 90vh. */
+  .shot.zoom { max-height: none; }
+  .shot.zoom img { cursor: zoom-in; }
+  .cell img.zoom3x { margin-top: 10px; border: 3px solid #444; image-rendering: pixelated; }
+  .cell img.zoom3x.bad { border-color: #B71C1C; }
+  .cell.hold img:first-of-type { border-color: #B71C1C; }
+  .shot.zoom.native img { width: auto; max-width: none; cursor: zoom-out; }
+  .grid { display: grid; gap: 14px; }
+  .grid.cols3 { grid-template-columns: repeat(3, 1fr); }
+  .grid.cols4 { grid-template-columns: repeat(4, 1fr); }
+  .grid.cols5 { grid-template-columns: repeat(5, 1fr); }
+  .grid.cols6 { grid-template-columns: repeat(6, 1fr); }
+  figure { margin: 0; background: #ededed; }
+  figure.framed { outline: 6px solid #1b5e20; outline-offset: -6px; }
+  figure a { display: block; }
+  figure img { display: block; width: 100%; height: 360px; object-fit: contain; }
+  .grid.cols4 figure img { height: 280px; }
+  .grid.cols5 figure img, .grid.cols6 figure img { height: 220px; }
+  figcaption { font-size: 15px; padding: 6px 4px 10px; background: #fff; color: #222; }
+  a { color: inherit; text-decoration: none; }
+  a.ext { color: #0b57d0; text-decoration: underline; text-underline-offset: 2px; word-break: break-all; }
+  a.ext:hover { color: #083a8c; }
+  p.links { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 16px; font-size: 15px; }
+  p.links a.ext { background: #eef3fc; border: 1px solid #c9d8f5; border-radius: 4px; padding: 3px 10px; text-decoration: none; word-break: normal; }
+  p.links a.ext:hover { background: #dce7fb; }
+  p.links a.chip b { font-weight: 700; margin-right: 4px; }
+  p.links a.chip.held { background: #fff4d6; border-color: #e3c37a; }
+  p.links a.chip em { font-style: normal; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: #8a5a00; margin-left: 4px; }
+  figcaption .src { color: #666; }
+  .grid figure.more { display: none; }
+  .grid.expanded figure.more { display: block; }
+  p.show-all { margin: 10px 0 0; }
+  button.show-all { font: inherit; font-size: 14px; font-weight: 700; background: #f4f4f4; border: 1px solid #bbb; border-radius: 4px; padding: 6px 14px; cursor: pointer; }
+  button.show-all:hover { background: #e6e6e6; }
+  table.links .verdict { color: #222; max-width: 560px; }
+  table.links details { margin-top: 5px; font-size: 13px; color: #666; max-width: 560px; }
+  table.links details summary { cursor: pointer; color: #0b57d0; }
+  table.links .raw { margin-top: 4px; }
+  table.links { border-collapse: collapse; width: 100%; font-size: 15px; margin-top: 8px; }
+  table.links th { text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: #666; padding: 6px 10px; border-bottom: 2px solid #ddd; }
+  table.links td { padding: 9px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top; }
+  table.links td.cat { font-weight: 700; white-space: nowrap; }
+  table.links td.url { max-width: 380px; word-break: break-all; }
+  table.links td.ev { color: #444; max-width: 520px; }
+  table.links .chip { display: inline-block; color: #fff; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
+  table.links .why { color: #444; font-size: 14px; margin-top: 5px; max-width: 420px; }
+  table.links .none { color: #999; }
+  table.links tr.st-held td { background: #fff8e8; }
+  table.links tr.st-rejected td { color: #777; }
+  table.links tr.st-written td { background: #eef7ee; }
+</style><style>
+  .ss { font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: #161616; }
+  .ss .pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 999px; white-space: nowrap; border: 1px solid transparent; vertical-align: middle; }
+  .ss .pill.awaiting, .ss .pill.picked { background: #fff4e0; color: #b26a00; border-color: #f1dcb0; }
+  .ss .pill.applied { background: #e8f0ff; color: #1f5eff; border-color: #c7d8ff; }
+  .ss .pill.closed { background: #e6f4ea; color: #1b7a3d; border-color: #bfe0c9; }
+  .ss .pill.unknown { background: #eee; color: #5c5c5c; }
+  .ss .need { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 6px; background: #fdecec; color: #b3261e; border: 1px solid #f3c2bd; margin: 2px 6px 2px 0; white-space: nowrap; }
+  .ss .need.soft { background: #f3f3f0; color: #5c5c5c; border-color: #e3e3df; }
+  .ss .hold { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 6px; background: #fff4e0; color: #b26a00; border: 1px solid #f1dcb0; margin: 2px 6px 2px 0; }
+  .ss .steps { display: inline-flex; gap: 3px; vertical-align: middle; margin-right: 8px; }
+  .ss .steps i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: #e3e3df; }
+  .ss .steps i.on { background: #1b7a3d; }
+  .ss .steps i.next { background: #fff; border: 2px solid #b26a00; box-sizing: border-box; }
+  .ss .next { color: #5c5c5c; font-size: 13px; }
+  .ss .meta { color: #5c5c5c; font-size: 13px; }
+  .ss .note { color: #161616; font-size: 13px; margin-top: 4px; max-width: 90ch; }
+  .ss .stage { font-size: 12px; color: #5c5c5c; text-transform: uppercase; letter-spacing: .05em; }
+  .site-status { position: sticky; top: 8px; z-index: 20; background: #fffdf7; border: 1px solid #ecdfb8; border-radius: 10px; padding: 10px 14px; margin: 0 0 20px; display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+  .site-status .grp { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; }
+  .site-status .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: #5c5c5c; }
+  .site-status .live { margin-left: auto; font-size: 12px; color: #5c5c5c; }
+  .site-status .live.off { color: #b26a00; }
+  @media (max-width: 1000px) { .site-status { position: static; } }
+</style></head><body id="top">
+<nav class="toc" id="toc"><a class="top" href="/" style="margin-bottom:12px">&larr; All locations</a><button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-list">Sections</button>
+<ol id="toc-list">
+<li><a href="#top" class="top">Top</a></li>
+<li><a href="#header">Overview</a></li>
+<li><a href="#website">Website</a></li>
+<li><a href="#gbp">Google Business Profile</a></li>
+<li><a href="#logo-search">Logo image search</a></li>
+<li><a href="#candidates">Logo candidates</a><ol><li><a href="#candidates-1">Raw source files the candidates were cut from</a></li></ol></li>
+<li><a href="#sheet">Variant sheet</a></li>
+<li><a href="#links">Links (3 held for review)</a></li>
+<li><a href="#previews">Previews</a><ol><li><a href="#previews-2">Cell A  FABLE PICK</a></li><li><a href="#previews-3">Cell K</a></li><li><a href="#previews-4">Cell Q</a></li><li><a href="#previews-5">Cell R  TRAVISSE PICK, applied</a></li></ol></li>
+</ol></nav>
+<div class="site-status ss" id="site-status" data-slug="dogwood-pizza"></div>
+<script id="site-status-data" type="application/json">{"slug":"dogwood-pizza","status":"picked","status_label":"Pick recorded","boostly_status":null,"steps":null,"needs_you":null,"gaps":null,"hold":null,"done":null,"note":null,"review_status":null,"figma_url":"https://www.figma.com/design/mvSzxcTjVVba0adI4ge06a/In-Store-Fulfillment-7?node-id=2949-2"}</script>
+<script>
+window.BoostlyStatus = (function () {
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function stepsHtml(steps) {
+    if (!steps || !steps.length) return "";
+    var done = 0, nextIdx = -1, html = "";
+    for (var i = 0; i < steps.length; i++) { if (steps[i][1]) done++; else if (nextIdx < 0) nextIdx = i; }
+    for (var j = 0; j < steps.length; j++) html += '<i class="' + (steps[j][1] ? "on" : (j === nextIdx ? "next" : "")) + '" title="' + esc(steps[j][0]) + (steps[j][1] ? " (done)" : "") + '"></i>';
+    var next = nextIdx < 0 ? "all steps done" : "next: " + steps[nextIdx][0].charAt(0).toLowerCase() + steps[nextIdx][0].slice(1);
+    return '<span class="steps" title="' + done + " of " + steps.length + ' steps done">' + html + '</span><span class="next">' + done + "/" + steps.length + ", " + esc(next) + '</span>';
+  }
+  function needsHtml(s) {
+    var out = "";
+    (s.needs_you || []).forEach(function (n) { out += '<span class="need">' + esc(n.replace("(s)", "s")) + '</span>'; });
+    (s.gaps || []).forEach(function (g) { out += '<span class="need soft">' + esc(g) + '</span>'; });
+    if (s.hold) out += '<span class="hold" title="' + esc(s.hold) + '">HOLD</span>';
+    if (!out && s.done) out += '<span class="need soft">review complete</span>';
+    if (!out && s.status !== "closed") out += '<span class="need soft">with the agents, nothing for you</span>';
+    return out;
+  }
+  function stageLabel(st) { return st ? String(st).replace(/_/g, " ").replace(/^./, function (c) { return c.toUpperCase(); }) : ""; }
+  function metaHtml(s) {
+    var rs = s.review_status || {}, parts = [];
+    if (rs.waiting_on && rs.status !== "done") parts.push("waiting on " + esc(rs.waiting_on));
+    if (rs.ease) parts.push("ease " + esc(rs.ease) + "/5");
+    return parts.join(" \u00b7 ");
+  }
+  function strip(el, s, live) {
+    if (!el) return;
+    var stage = stageLabel(s.boostly_status);
+    el.innerHTML =
+      '<div class="grp"><span class="pill ' + esc(s.status) + '">' + esc(s.status_label) + '</span>' + (stage ? '<span class="stage">' + esc(stage) + '</span>' : "") + '</div>' +
+      '<div class="grp">' + stepsHtml(s.steps) + '</div>' +
+      '<div class="grp"><span class="lbl">Needs you</span>' + needsHtml(s) + '</div>' +
+      (metaHtml(s) ? '<div class="grp meta">' + metaHtml(s) + '</div>' : "") +
+      (s.note ? '<div class="note" style="flex-basis:100%">' + esc(s.note) + '</div>' : "") +
+      '<span class="live' + (live ? "" : " off") + '">' + (live ? "live " + esc(live) : "as of the last site build") + '</span>';
+  }
+  function merge(s, it) {
+    s.boostly_status = it.status || s.boostly_status; s.steps = it.steps || s.steps; s.needs_you = it.needs_you || s.needs_you;
+    s.gaps = it.gaps || s.gaps; s.hold = it.hold == null ? s.hold : it.hold; s.done = it.done == null ? s.done : it.done;
+    s.note = it.note == null ? s.note : it.note; s.review_status = it.review_status || s.review_status;
+    if (it.figma_url && !s.figma_url) s.figma_url = it.figma_url;
+    return s;
+  }
+  function overlay(url, cb) {
+    if (!url || !window.fetch) { cb(null); return; }
+    fetch(url + (url.indexOf("?") < 0 ? "?" : "&") + "t=" + Math.floor(Date.now() / 60000), { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { cb(j && j.items ? j : null); })
+      .catch(function () { cb(null); });
+  }
+  function fmtTime(iso) { var t = Date.parse(iso); return isNaN(t) ? "" : new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/Denver" }).format(new Date(t)); }
+  return { esc: esc, stepsHtml: stepsHtml, needsHtml: needsHtml, metaHtml: metaHtml, strip: strip, merge: merge, overlay: overlay, fmtTime: fmtTime, stageLabel: stageLabel };
+})();
+
+(function () {
+  var el = document.getElementById("site-status"), s = JSON.parse(document.getElementById("site-status-data").textContent);
+  window.BoostlyStatus.strip(el, s, null);
+  window.BoostlyStatus.overlay("https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json", function (j) {
+    if (!j) return;
+    var it = null; for (var i = 0; i < j.items.length; i++) if (j.items[i].run_dir === s.slug) it = j.items[i];
+    if (it) window.BoostlyStatus.strip(el, window.BoostlyStatus.merge(s, it), window.BoostlyStatus.fmtTime(j.generated_at));
+    else window.BoostlyStatus.strip(el, s, window.BoostlyStatus.fmtTime(j.generated_at) + " (not on the open list)");
+  });
+})();
+</script>
+<section id="header">
+<p class="links"><a class="ext" href="https://slack.com/archives/C09MSM8MA9Y/p1790097054807299?thread_ts=1790021647.887589&amp;cid=C09MSM8MA9Y" target="_blank" rel="noopener">Slack thread &#8599;</a> <a class="ext" href="https://www.figma.com/design/mvSzxcTjVVba0adI4ge06a/In-Store-Fulfillment-7?node-id=2949-2" target="_blank" rel="noopener">Figma &#8599;</a> <a class="ext chip" href="http://dogwood.pizza/" target="_blank" rel="noopener"><b>Website</b> dogwood.pizza/</a> <a class="ext chip" href="https://order.toasttab.com/online/dogwoodpizza" target="_blank" rel="noopener"><b>Ordering</b> order.toasttab.com/online/dogwoodpizza</a> <a class="ext chip held" href="https://www.dogwood.pizza/#section-5482" target="_blank" rel="noopener"><b>Menu</b> dogwood.pizza/#section-5482 <em>held</em></a> <a class="ext chip" href="https://www.facebook.com/dogwoodpizza/" target="_blank" rel="noopener"><b>Facebook</b> facebook.com/dogwoodpizza/</a> <a class="ext chip" href="https://www.instagram.com/dogwoodpizza/" target="_blank" rel="noopener"><b>Instagram</b> instagram.com/dogwoodpizza/</a> <a class="ext chip held" href="https://x.com/dogwoodpizza" target="_blank" rel="noopener"><b>X (Twitter)</b> x.com/dogwoodpizza <em>held</em></a> <a class="ext chip held" href="https://www.dogwood.pizza/#section-5483" target="_blank" rel="noopener"><b>Loyalty / rewards</b> dogwood.pizza/#section-5483 <em>held</em></a></p>
+<div class="hdr"><div><p style="font-size:44px;font-weight:700;">Dogwood Pizza</p>
+<p style="font-size:20px;color:#444444;margin-top:6px;">Lawrenceville, GA   ·   request tvwn98n9i4j8mjge48m2bzd4   ·   full order</p>
+<p style="font-size:29px;font-weight:700;color:#1B5E20;margin-top:22px;">Fable's default: A</p>
+<p style="font-size:19px;margin-top:6px;">card knockout at Fable's pick</p>
+<p style="font-size:16px;color:#666666;margin-top:8px;">Confidence: medium   ·   flags: mark_element_omitted, brand_environment_unassessed, interior_collision_full_color_on_red</p>
+<p style="font-size:16px;color:#666666;margin-top:4px;">Cell A = card knockout, primary #CF000B, band #E2A838 (Fable's pick), text #FFFFFF, print digit #333333</p></div><div class="cell"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/f9c56dc84024-default-cell.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/f9c56dc84024-default-cell.png" alt="default cell"></a><p>Fable's default cell A (native sheet pixels, click to open)</p><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/3d6c9344f4b2-logo-3x.png" target="_blank" title="open the 3x crop"><img class="zoom3x" src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/3d6c9344f4b2-logo-3x.png" alt="logo at 3x"></a><p><b>Logo at 3x (what prints).</b> Final upload 1400x385px, source 2000px (native), recorded on the candidate, upscale 0.7x. Edge quality: ok. Soft-edge share 0.9995, stair-step score 0.3264.</p></div></div>
+</section>
+<section id="website">
+<h2>Website</h2><p class="sub"><a class="ext" href="https://www.dogwood.pizza/" target="_blank" rel="noopener">https://www.dogwood.pizza/</a></p>
+
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/52f593280403-desktop.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/52f593280403-desktop.jpg" loading="lazy" alt="website desktop screenshot"></a></div><p class="cap">Desktop screenshot from the run's evidence (evidence/website-visual/desktop.png).</p>
+</section>
+<section id="gbp">
+<h2>Google Business Profile</h2><p class="sub">place id ChIJ5UwaUwi79YgRGbDKikbZSV8</p>
+<p class="links"><a class="ext" href="https://www.google.com/maps/place/?q=place_id:ChIJ5UwaUwi79YgRGbDKikbZSV8" target="_blank" rel="noopener">Google Maps place &#8599;</a> <a class="ext" href="https://www.google.com/search?q=Dogwood%20Pizza%20Lawrenceville%2C%20GA" target="_blank" rel="noopener">Google search &#8599;</a></p>
+<p style="font-size:17px;">Place photos already downloaded for this run (10), storefront, interior and signage photos first, then the rest. Green frame = a photo Fable cited for the sign or interior.</p>
+<div class="grid cols3"><figure class="framed"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/5ba5e5a584e6-gbp-photo-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/5ba5e5a584e6-gbp-photo-08.jpg" loading="lazy" alt="#8 by Tom Brice  · vibe  4080x3072  &lt;- cited by Fable"></a><figcaption style="font-weight:700">#8 by Tom Brice  · vibe  4080x3072  &lt;- cited by Fable</figcaption></figure>
+<figure class="framed"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/90c768188124-gbp-photo-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/90c768188124-gbp-photo-07.jpg" loading="lazy" alt="#7 by Lara Tran  4032x3024  &lt;- cited by Fable"></a><figcaption style="font-weight:700">#7 by Lara Tran  4032x3024  &lt;- cited by Fable</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/adcb08262f9a-gbp-photo-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/adcb08262f9a-gbp-photo-01.jpg" loading="lazy" alt="#1 by Amy O  4000x3000"></a><figcaption>#1 by Amy O  4000x3000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/8896b4e7a890-gbp-photo-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/8896b4e7a890-gbp-photo-02.jpg" loading="lazy" alt="#2 owner photo  1920x1280"></a><figcaption>#2 owner photo  1920x1280</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/e16188316bd8-gbp-photo-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/e16188316bd8-gbp-photo-03.jpg" loading="lazy" alt="#3 owner photo  1920x1280"></a><figcaption>#3 owner photo  1920x1280</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/f8097d0cdabe-gbp-photo-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/f8097d0cdabe-gbp-photo-04.jpg" loading="lazy" alt="#4 by Tom Brice  4080x3072"></a><figcaption>#4 by Tom Brice  4080x3072</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/51d2eedaa6e4-gbp-photo-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/51d2eedaa6e4-gbp-photo-05.jpg" loading="lazy" alt="#5 by Keena B  3000x4000"></a><figcaption>#5 by Keena B  3000x4000</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/b10749eca9de-gbp-photo-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/b10749eca9de-gbp-photo-06.jpg" loading="lazy" alt="#6 by Sandro Figueroa  4000x3000"></a><figcaption>#6 by Sandro Figueroa  4000x3000</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/f30742da4f04-gbp-photo-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/f30742da4f04-gbp-photo-09.jpg" loading="lazy" alt="#9 owner photo  1920x1280"></a><figcaption>#9 owner photo  1920x1280</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/4a4dfff87eec-gbp-photo-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/4a4dfff87eec-gbp-photo-10.jpg" loading="lazy" alt="#10 by Tom Brice  4080x3072"></a><figcaption>#10 by Tom Brice  4080x3072</figcaption></figure></div><p class="show-all"><button type="button" class="show-all" data-all="Show all 10" data-less="Show fewer (5 of 10)">Show all 10</button></p>
+<p style="font-size:17px;margin-top:10px;">Google Maps &quot;Vibe&quot; photos from the evidence build (Google's own in-store/atmosphere category)</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/1b03f0b36aaf-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/1b03f0b36aaf-01.jpg" loading="lazy" alt="Vibe  3024x4032"></a><figcaption>Vibe  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/711f32cc2109-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/711f32cc2109-02.jpg" loading="lazy" alt="Vibe  3000x4000"></a><figcaption>Vibe  3000x4000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/5ba5e5a584e6-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/5ba5e5a584e6-03.jpg" loading="lazy" alt="Vibe  4080x3072"></a><figcaption>Vibe  4080x3072</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/428bee8ede1f-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/428bee8ede1f-04.jpg" loading="lazy" alt="Vibe  4032x3024"></a><figcaption>Vibe  4032x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/25d8b9101f23-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/25d8b9101f23-05.jpg" loading="lazy" alt="Vibe  4032x3024"></a><figcaption>Vibe  4032x3024</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/87cb16c3d34f-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/87cb16c3d34f-06.jpg" loading="lazy" alt="Vibe  4032x3024"></a><figcaption>Vibe  4032x3024</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/eb2a6ffa08a0-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/eb2a6ffa08a0-07.jpg" loading="lazy" alt="Vibe  2992x2992"></a><figcaption>Vibe  2992x2992</figcaption></figure></div><p class="show-all"><button type="button" class="show-all" data-all="Show all 7" data-less="Show fewer (6 of 7)">Show all 7</button></p>
+<p style="font-size:17px;margin-top:10px;">Live Google Maps photo view, reused from the earlier capture under review/</p>
+<p style="font-size:14px;color:#666666;margin-top:4px;">reused the cached capture under review/</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/473fc3797e24-google-maps-photos.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/473fc3797e24-google-maps-photos.png" loading="lazy" alt="Google Maps photo view"></a></div>
+</section>
+<section id="logo-search">
+<h2>Logo image search</h2><p class="sub">&quot;Dogwood Pizza Lawrenceville logo&quot;</p>
+<p class="links"><a class="ext" href="https://www.google.com/search?tbm=isch&amp;q=Dogwood%20Pizza%20Lawrenceville%20logo" target="_blank" rel="noopener">Open Google Images &#8599;</a></p>
+<p style="font-size:17px;">Google Images via the live Chrome session (boostly profile), cached 2026-09-21: first 24 results, thumbnails at the size Google serves them. Captions are Google's alt text.</p>
+<div class="grid cols4"><figure><a href="https://www.dogwood.pizza/" target="_blank" rel="noopener" title="open the source page: https://www.dogwood.pizza/"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/37511b519862-01.jpg" loading="lazy" alt="Home - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  738x252"></a><figcaption><a class="ext" href="https://www.dogwood.pizza/" target="_blank" rel="noopener"><b>dogwood.pizza</b> &#8599;</a><br>Home - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  738x252</figcaption></figure>
+<figure><a href="https://www.facebook.com/dogwoodpizza/" target="_blank" rel="noopener" title="open the source page: https://www.facebook.com/dogwoodpizza/"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/d352439a446b-02.jpg" loading="lazy" alt="Dogwood Pizza | Lawrenceville GA  225x225"></a><figcaption><a class="ext" href="https://www.facebook.com/dogwoodpizza/" target="_blank" rel="noopener"><b>facebook.com</b> &#8599;</a><br>Dogwood Pizza | Lawrenceville GA  225x225</figcaption></figure>
+<figure><a href="https://www.facebook.com/dogwoodpizza/" target="_blank" rel="noopener" title="open the source page: https://www.facebook.com/dogwoodpizza/"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/56db5b31e6e7-03.jpg" loading="lazy" alt="Dogwood Pizza | Lawrenceville GA  229x221"></a><figcaption><a class="ext" href="https://www.facebook.com/dogwoodpizza/" target="_blank" rel="noopener"><b>facebook.com</b> &#8599;</a><br>Dogwood Pizza | Lawrenceville GA  229x221</figcaption></figure>
+<figure><a href="https://www.facebook.com/dogwoodpizza/" target="_blank" rel="noopener" title="open the source page: https://www.facebook.com/dogwoodpizza/"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/3f46f757d5dd-04.jpg" loading="lazy" alt="Dogwood Pizza | Lawrenceville GA  225x225"></a><figcaption><a class="ext" href="https://www.facebook.com/dogwoodpizza/" target="_blank" rel="noopener"><b>facebook.com</b> &#8599;</a><br>Dogwood Pizza | Lawrenceville GA  225x225</figcaption></figure>
+<figure><a href="https://www.dogwood.pizza/posts" target="_blank" rel="noopener" title="open the source page: https://www.dogwood.pizza/posts"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/cd4edc80092a-05.jpg" loading="lazy" alt="What's Up Brookwood - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  225x225"></a><figcaption><a class="ext" href="https://www.dogwood.pizza/posts" target="_blank" rel="noopener"><b>dogwood.pizza</b> &#8599;</a><br>What's Up Brookwood - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  225x225</figcaption></figure>
+<figure><a href="https://www.facebook.com/dogwoodpizza/" target="_blank" rel="noopener" title="open the source page: https://www.facebook.com/dogwoodpizza/"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/a4c0d0bfc89c-06.jpg" loading="lazy" alt="Dogwood Pizza | Lawrenceville GA  225x225"></a><figcaption><a class="ext" href="https://www.facebook.com/dogwoodpizza/" target="_blank" rel="noopener"><b>facebook.com</b> &#8599;</a><br>Dogwood Pizza | Lawrenceville GA  225x225</figcaption></figure>
+<figure><a href="https://www.instagram.com/dogwoodpizza/" target="_blank" rel="noopener" title="open the source page: https://www.instagram.com/dogwoodpizza/"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/897e6d136d18-07.jpg" loading="lazy" alt="Dogwood Pizza 🍕 (@dogwoodpizza) • Instagram photos and videos  215x234"></a><figcaption><a class="ext" href="https://www.instagram.com/dogwoodpizza/" target="_blank" rel="noopener"><b>instagram.com</b> &#8599;</a><br>Dogwood Pizza 🍕 (@dogwoodpizza) • Instagram photos and videos  215x234</figcaption></figure>
+<figure><a href="https://www.dogwood.pizza/" target="_blank" rel="noopener" title="open the source page: https://www.dogwood.pizza/"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/d0cfd2664fb5-08.jpg" loading="lazy" alt="Home - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  310x163"></a><figcaption><a class="ext" href="https://www.dogwood.pizza/" target="_blank" rel="noopener"><b>dogwood.pizza</b> &#8599;</a><br>Home - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  310x163</figcaption></figure>
+<figure><a href="https://www.instagram.com/p/DdCXDOImuB0/" target="_blank" rel="noopener" title="open the source page: https://www.instagram.com/p/DdCXDOImuB0/"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/73b921c8c9c3-09.jpg" loading="lazy" alt="Support our school by ordering Dogwood Pizza TONIGHT! Don't forget to tell them your teacher's name. The class with the   447x447"></a><figcaption><a class="ext" href="https://www.instagram.com/p/DdCXDOImuB0/" target="_blank" rel="noopener"><b>instagram.com</b> &#8599;</a><br>Support our school by ordering Dogwood Pizza TONIGHT! Don't forget to tell them your teacher's name. The class with the   447x447</figcaption></figure>
+<figure><a href="https://m.yelp.com/search?find_desc=Domino%27s+Pizza&amp;find_loc=Lawrenceville%2C+GA+30044" target="_blank" rel="noopener" title="open the source page: https://m.yelp.com/search?find_desc=Domino%27s+Pizza&amp;find_loc=Lawrenceville%2C+GA+30044"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/1be312e2cbdc-10.jpg" loading="lazy" alt="Domino's Pizza Lawrenceville, GA 30044 - Last Updated September 2026 - Yelp  225x225"></a><figcaption><a class="ext" href="https://m.yelp.com/search?find_desc=Domino%27s+Pizza&amp;find_loc=Lawrenceville%2C+GA+30044" target="_blank" rel="noopener"><b>m.yelp.com</b> &#8599;</a><br>Domino's Pizza Lawrenceville, GA 30044 - Last Updated September 2026 - Yelp  225x225</figcaption></figure>
+<figure><a href="https://www.dogwood.pizza/" target="_blank" rel="noopener" title="open the source page: https://www.dogwood.pizza/"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/af2feb2cb35c-11.jpg" loading="lazy" alt="Home - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  275x183"></a><figcaption><a class="ext" href="https://www.dogwood.pizza/" target="_blank" rel="noopener"><b>dogwood.pizza</b> &#8599;</a><br>Home - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  275x183</figcaption></figure>
+<figure><a href="https://www.dogwood.pizza/items/buffalo-chicken" target="_blank" rel="noopener" title="open the source page: https://www.dogwood.pizza/items/buffalo-chicken"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/ed572cd311ea-12.jpg" loading="lazy" alt="BUFFALO CHICKEN - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  617x324"></a><figcaption><a class="ext" href="https://www.dogwood.pizza/items/buffalo-chicken" target="_blank" rel="noopener"><b>dogwood.pizza</b> &#8599;</a><br>BUFFALO CHICKEN - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  617x324</figcaption></figure>
+<figure><a href="https://www.dogwood.pizza/items/cheese-stix" target="_blank" rel="noopener" title="open the source page: https://www.dogwood.pizza/items/cheese-stix"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/42408705a190-13.jpg" loading="lazy" alt="CHEESE STIX - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  547x365"></a><figcaption><a class="ext" href="https://www.dogwood.pizza/items/cheese-stix" target="_blank" rel="noopener"><b>dogwood.pizza</b> &#8599;</a><br>CHEESE STIX - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  547x365</figcaption></figure>
+<figure><a href="https://www.instagram.com/dogwoodpizza/" target="_blank" rel="noopener" title="open the source page: https://www.instagram.com/dogwoodpizza/"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/a2a717d04cef-14.jpg" loading="lazy" alt="Dogwood Pizza 🍕 (@dogwoodpizza) • Instagram photos and videos  225x225"></a><figcaption><a class="ext" href="https://www.instagram.com/dogwoodpizza/" target="_blank" rel="noopener"><b>instagram.com</b> &#8599;</a><br>Dogwood Pizza 🍕 (@dogwoodpizza) • Instagram photos and videos  225x225</figcaption></figure>
+<figure><a href="https://www.dogwood.pizza/items/mediterranean" target="_blank" rel="noopener" title="open the source page: https://www.dogwood.pizza/items/mediterranean"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/0de5a4548353-15.jpg" loading="lazy" alt="MEDITERRANEAN - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  310x163"></a><figcaption><a class="ext" href="https://www.dogwood.pizza/items/mediterranean" target="_blank" rel="noopener"><b>dogwood.pizza</b> &#8599;</a><br>MEDITERRANEAN - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  310x163</figcaption></figure>
+<figure><a href="https://www.giftly.com/gift-card/dogwood-pizza-lawrenceville?srsltid=AU7gw4UjSEZANUDNyPveHYDJaqZrfnIrRfl-EJj6SJkSx2aZOuniUKvG" target="_blank" rel="noopener" title="open the source page: https://www.giftly.com/gift-card/dogwood-pizza-lawrenceville?srsltid=AU7gw4UjSEZANUDNyPveHYDJaqZrfnIrRfl-EJj6SJkSx2aZOuniUKvG"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/bdd6d310ca01-16.jpg" loading="lazy" alt="Dogwood Pizza Giftly  250x250"></a><figcaption><a class="ext" href="https://www.giftly.com/gift-card/dogwood-pizza-lawrenceville?srsltid=AU7gw4UjSEZANUDNyPveHYDJaqZrfnIrRfl-EJj6SJkSx2aZOuniUKvG" target="_blank" rel="noopener"><b>giftly.com</b> &#8599;</a><br>Dogwood Pizza Giftly  250x250</figcaption></figure>
+<figure><a href="https://www.dogwood.pizza/items/old-world" target="_blank" rel="noopener" title="open the source page: https://www.dogwood.pizza/items/old-world"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/82435a7e6ce0-17.jpg" loading="lazy" alt="OLD WORLD - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  275x183"></a><figcaption><a class="ext" href="https://www.dogwood.pizza/items/old-world" target="_blank" rel="noopener"><b>dogwood.pizza</b> &#8599;</a><br>OLD WORLD - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  275x183</figcaption></figure>
+<figure><a href="https://www.dogwood.pizza/items/philly-steak" target="_blank" rel="noopener" title="open the source page: https://www.dogwood.pizza/items/philly-steak"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/71a9488ed64b-18.jpg" loading="lazy" alt="PHILLY STEAK - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  547x365"></a><figcaption><a class="ext" href="https://www.dogwood.pizza/items/philly-steak" target="_blank" rel="noopener"><b>dogwood.pizza</b> &#8599;</a><br>PHILLY STEAK - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  547x365</figcaption></figure>
+<figure><a href="https://www.instagram.com/dogwoodpizza/" target="_blank" rel="noopener" title="open the source page: https://www.instagram.com/dogwoodpizza/"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/ef70a3d8367c-19.jpg" loading="lazy" alt="Dogwood Pizza 🍕 (@dogwoodpizza) • Instagram photos and videos  168x300"></a><figcaption><a class="ext" href="https://www.instagram.com/dogwoodpizza/" target="_blank" rel="noopener"><b>instagram.com</b> &#8599;</a><br>Dogwood Pizza 🍕 (@dogwoodpizza) • Instagram photos and videos  168x300</figcaption></figure>
+<figure><a href="https://www.dogwood.pizza/items/vegi-delight-2" target="_blank" rel="noopener" title="open the source page: https://www.dogwood.pizza/items/vegi-delight-2"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/cdce885c4e79-20.jpg" loading="lazy" alt="VEGI-DELIGHT - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  275x183"></a><figcaption><a class="ext" href="https://www.dogwood.pizza/items/vegi-delight-2" target="_blank" rel="noopener"><b>dogwood.pizza</b> &#8599;</a><br>VEGI-DELIGHT - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  275x183</figcaption></figure>
+<figure><a href="https://www.dogwood.pizza/" target="_blank" rel="noopener" title="open the source page: https://www.dogwood.pizza/"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/9125ae823685-21.jpg" loading="lazy" alt="Home - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  275x183"></a><figcaption><a class="ext" href="https://www.dogwood.pizza/" target="_blank" rel="noopener"><b>dogwood.pizza</b> &#8599;</a><br>Home - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  275x183</figcaption></figure>
+<figure><a href="https://m.yelp.com/biz/dogwood-pizza-lawrenceville" target="_blank" rel="noopener" title="open the source page: https://m.yelp.com/biz/dogwood-pizza-lawrenceville"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/50818bf3c9e1-22.jpg" loading="lazy" alt="DOGWOOD PIZZA - Updated September 2026 - 84 Photos &amp; 151 Reviews - 850 Dogwood Rd, Lawrenceville, Georgia - Pizza - Rest  225x225"></a><figcaption><a class="ext" href="https://m.yelp.com/biz/dogwood-pizza-lawrenceville" target="_blank" rel="noopener"><b>m.yelp.com</b> &#8599;</a><br>DOGWOOD PIZZA - Updated September 2026 - 84 Photos &amp; 151 Reviews - 850 Dogwood Rd, Lawrenceville, Georgia - Pizza - Rest  225x225</figcaption></figure>
+<figure><a href="https://www.dogwood.pizza/items/create-your-own" target="_blank" rel="noopener" title="open the source page: https://www.dogwood.pizza/items/create-your-own"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/8dfa41b0b0c2-23.jpg" loading="lazy" alt="CREATE YOUR OWN - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  617x324"></a><figcaption><a class="ext" href="https://www.dogwood.pizza/items/create-your-own" target="_blank" rel="noopener"><b>dogwood.pizza</b> &#8599;</a><br>CREATE YOUR OWN - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  617x324</figcaption></figure>
+<figure><a href="https://www.dogwood.pizza/reviews" target="_blank" rel="noopener" title="open the source page: https://www.dogwood.pizza/reviews"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/51df2e96de19-24.jpg" loading="lazy" alt="Raves &amp; Reviews - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  275x183"></a><figcaption><a class="ext" href="https://www.dogwood.pizza/reviews" target="_blank" rel="noopener"><b>dogwood.pizza</b> &#8599;</a><br>Raves &amp; Reviews - Dogwood Pizza - Pizza Restaurant in Lawrenceville, GA  275x183</figcaption></figure></div>
+</section>
+<section id="candidates">
+<h2>Logo candidates</h2><p class="sub">from the evidence packet; green frame = the file Fable chose. Gray background so white knockouts stay visible.</p>
+<p class="links"><a class="ext" href="https://www.dogwood.pizza/" target="_blank" rel="noopener">Website &#8599;</a></p>
+<div class="grid cols3"><figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/be83dd3ca372-01-first_party_other.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/be83dd3ca372-01-first_party_other.jpg" loading="lazy" alt="01-first_party_other.png  1776x1734
+site header, traced cut"></a><figcaption>01-first_party_other.png  1776x1734<br>site header, traced cut<br><a class="ext" href="https://www.dogwood.pizza/" target="_blank" rel="noopener">dogwood.pizza/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/f6da238639b6-02-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/f6da238639b6-02-first_party_header.png" loading="lazy" alt="02-first_party_header.png  1821x530
+site header"></a><figcaption>02-first_party_header.png  1821x530<br>site header<br><a class="ext" href="https://www.dogwood.pizza/" target="_blank" rel="noopener">dogwood.pizza/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C" class="framed"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/a3525f6eb5a5-03-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/a3525f6eb5a5-03-first_party_header.png" loading="lazy" alt="03-first_party_header.png  1821x530
+site header
+FABLE'S PICK"></a><figcaption style="font-weight:700">03-first_party_header.png  1821x530<br>site header<br>FABLE'S PICK<br><a class="ext" href="https://www.dogwood.pizza/" target="_blank" rel="noopener">dogwood.pizza/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/d418163ade8c-04-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/d418163ade8c-04-first_party_other.png" loading="lazy" alt="04-first_party_other.png  1817x1738
+first_party_other"></a><figcaption>04-first_party_other.png  1817x1738<br>first_party_other<br><a class="ext" href="https://www.dogwood.pizza/" target="_blank" rel="noopener">dogwood.pizza/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/98251cfab13a-05-social.bin" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/98251cfab13a-05-social.bin" loading="lazy" alt="05-social.bin  480x480
+Facebook avatar"></a><figcaption>05-social.bin  480x480<br>Facebook avatar<br><a class="ext" href="https://facebook.com/dogwoodpizza" target="_blank" rel="noopener">facebook.com/dogwoodpizza &#8599;</a></figcaption></figure></div>
+<p id="candidates-1" style="font-size:19px;font-weight:700;margin-top:12px;">Raw source files the candidates were cut from</p>
+<div class="grid cols4"><figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/2849ec83721b-favicon.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/2849ec83721b-favicon.png" loading="lazy" alt="favicon.png
+favicon"></a><figcaption>favicon.png<br>favicon</figcaption></figure></div>
+</section>
+<section id="sheet">
+<h2>Variant sheet</h2><p class="sub">Fable's default A framed in green. Reply with one letter.</p>
+<p class="links"></p>
+<div class="shot zoom" title="click to toggle native size"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/313fe07765c5-variant-sheet-marked.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/313fe07765c5-variant-sheet-marked.png" loading="lazy" alt="variant sheet"></a></div><p class="cap">variants/variant-sheet.png at 3040 of 3158px wide, revision 9. In the HTML page click the sheet to toggle native size.</p>
+</section>
+<section id="links">
+<h2>Links</h2><p class="sub">the link automation results for this location, one row per category; held rows need a human decision. Click a URL to open it.</p>
+<p class="links"></p>
+<p style="font-size:15px;color:#444444;">Run: closeout typed plan; writes applied; by dogwood-runner (Claude fulfill-location).</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Website bootstrap: applied, Places says <a class="ext" href="http://dogwood.pizza/" target="_blank" rel="noopener">http://dogwood.pizza/</a> (<a class="ext" href="https://www.dogwood.pizza/" target="_blank" rel="noopener">https://www.dogwood.pizza/</a>).</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Ordering URL on file <a class="ext" href="https://order.toasttab.com/online/dogwoodpizza" target="_blank" rel="noopener">https://order.toasttab.com/online/dogwoodpizza</a>: matches the website. the site's ORDER ONLINE nav item and both 'Order Online' buttons link the stored Toast URL; www.toasttab.com/dogwoodpizza 301s to it; the Instagram bio links i…</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Discovery report links-port/link-discovery-report-pass2.json (2026-09-21 22:07): 18 categories, 13 for manual review, 1 proposed field updates, 0 proposed events.</p>
+<p style="font-size:15px;color:#6B6B6B;margin-top:4px;">17 URLs still waiting on the live Chrome check (links-port/browser-needed-pass2.json).</p>
+<p style="font-size:15px;color:#B7791F;margin-top:4px;">Validator links-port/validate-pass2.json: not valid (browser results pending:17; website url override unwritten).</p>
+<p style="font-size:15px;font-weight:700;margin-top:8px;">18 categories: 4 written, 0 verified or already live, 3 held for review, 0 pending browser, 0 rejected, 11 none found.</p>
+<table class="links"><thead><tr><th>Category</th><th>URL</th><th>Status</th><th>Verdict</th></tr></thead><tbody><tr class="st-written"><td class="cat">Website</td><td class="url"><a class="ext" href="http://dogwood.pizza/" target="_blank" rel="noopener">dogwood.pizza/</a></td><td><span class="chip" style="background:#1B5E20">written</span></td><td class="ev"><div class="verdict">Written to the location.</div><details><summary>raw evidence</summary><div class="raw">verified live tab (live chrome tab)</div></details></td></tr>
+<tr class="st-written"><td class="cat">Online ordering</td><td class="url"><a class="ext" href="https://order.toasttab.com/online/dogwoodpizza" target="_blank" rel="noopener">order.toasttab.com/online/dogwoodpizza</a></td><td><span class="chip" style="background:#1B5E20">written</span></td><td class="ev"><div class="verdict">Written to the location.</div><details><summary>raw evidence</summary><div class="raw">stored ordering URL matches the website<br>verified live tab (live chrome tab)</div></details></td></tr>
+<tr class="st-held"><td class="cat">Menu</td><td class="url"><a class="ext" href="https://www.dogwood.pizza/#section-5482" target="_blank" rel="noopener">dogwood.pizza/#section-5482</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: site MENU nav is an in-page anchor; the menu is the Toast ordering page Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">site MENU nav is an in-page anchor; the menu is the Toast ordering page</div></details></td></tr>
+<tr class="st-written"><td class="cat">Facebook</td><td class="url"><a class="ext" href="https://www.facebook.com/dogwoodpizza/" target="_blank" rel="noopener">facebook.com/dogwoodpizza/</a></td><td><span class="chip" style="background:#1B5E20">written</span></td><td class="ev"><div class="verdict">Written to the location.</div><details><summary>raw evidence</summary><div class="raw">canonical form of <a class="ext" href="https://www.facebook.com/dogwoodpizza/" target="_blank" rel="noopener">https://www.facebook.com/dogwoodpizza/</a><br>found as a script url<br>Loaded destination exposed little or no business identity evidence</div></details></td></tr>
+<tr class="st-written"><td class="cat">Instagram</td><td class="url"><a class="ext" href="https://www.instagram.com/dogwoodpizza/" target="_blank" rel="noopener">instagram.com/dogwoodpizza/</a></td><td><span class="chip" style="background:#1B5E20">written</span></td><td class="ev"><div class="verdict">Written to the location.</div><details><summary>raw evidence</summary><div class="raw">found as a script url<br>Loaded destination exposed little or no business identity evidence</div></details></td></tr>
+<tr class="st-held"><td class="cat">X (Twitter)</td><td class="url"><a class="ext" href="https://x.com/dogwoodpizza" target="_blank" rel="noopener">x.com/dogwoodpizza</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: destination identity not confirmed Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">destination identity not confirmed<br>title &quot;Dogwood Pizza (@DogwoodPizza) / X&quot;<br>social destination identity signal<br>canonical form of <a class="ext" href="https://twitter.com/dogwoodpizza/" target="_blank" rel="noopener">https://twitter.com/dogwoodpizza/</a><br>found as a script url</div></details></td></tr>
+<tr class="st-none"><td class="cat">TikTok</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. no TikTok link on the site, Toast page, or GBP</div><details><summary>raw evidence</summary><div class="raw">no TikTok link on the site, Toast page, or GBP</div></details></td></tr>
+<tr class="st-none"><td class="cat">YouTube</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. none</div><details><summary>raw evidence</summary><div class="raw">none</div></details></td></tr>
+<tr class="st-none"><td class="cat">Careers</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. no careers page on the site (nav: Home, Order Online, Menu, Contact Us, What's Up Brookwood, Become a VIP, Sign In); /careers returns the Cloudflare…</div><details><summary>raw evidence</summary><div class="raw">no careers page on the site (nav: Home, Order Online, Menu, Contact Us, What's Up Brookwood, Become a VIP, Sign In); /careers returns the Cloudflare challenge to curl; the storefront photo shows 'Now hiring cooks / drivers' window signs but no URL</div></details></td></tr>
+<tr class="st-none"><td class="cat">Catering</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. site copy says 'ask about catering for schools and events' with no page or link</div><details><summary>raw evidence</summary><div class="raw">site copy says 'ask about catering for schools and events' with no page or link</div></details></td></tr>
+<tr class="st-none"><td class="cat">Events</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. no events page; /posts is the Popmenu blog</div><details><summary>raw evidence</summary><div class="raw">no events page; /posts is the Popmenu blog</div></details></td></tr>
+<tr class="st-none"><td class="cat">Reservations</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. none on site</div><details><summary>raw evidence</summary><div class="raw">none on site</div></details></td></tr>
+<tr class="st-none"><td class="cat">Gift cards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. none on site</div><details><summary>raw evidence</summary><div class="raw">none on site</div></details></td></tr>
+<tr class="st-held"><td class="cat">Loyalty / rewards</td><td class="url"><a class="ext" href="https://www.dogwood.pizza/#section-5483" target="_blank" rel="noopener">dogwood.pizza/#section-5483</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: Popmenu in-page signup anchor; loyalty hold-only Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">Popmenu in-page signup anchor; loyalty hold-only</div></details></td></tr>
+<tr class="st-none"><td class="cat">iOS app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. none</div><details><summary>raw evidence</summary><div class="raw">none</div></details></td></tr>
+<tr class="st-none"><td class="cat">Android app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found. none</div><details><summary>raw evidence</summary><div class="raw">none</div></details></td></tr>
+<tr class="st-none"><td class="cat">App downloads</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Other</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr></tbody></table>
+</section>
+<section id="previews">
+<h2>Previews</h2><p class="sub">harness signage preview and AI mockups per letter; previews, not proofs (QR drift, invented phone content). Click any image to open the native file.</p>
+<p class="links"></p>
+<p id="previews-2" style="font-size:24px;font-weight:700;color:#1B5E20;margin-top:14px;">Cell A  FABLE PICK</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">card knockout. card #CF000B on #E2A838, text #FFFFFF (band Fable's pick). signage preview, 2 AI mockups.</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/ebba3ca6a5de-signage-preview-A.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/ebba3ca6a5de-signage-preview-A.png" loading="lazy" alt="signage preview A"></a></div><p class="cap">review/signage-preview-A.png: harness signage preview (POP, sticker, card, to-go), click to open.</p>
+<div class="grid cols4"><figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/23e8b14537f5-box-A.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/23e8b14537f5-box-A.png" loading="lazy" alt="box (AI)  box-A.png
+verdict not filled in yet (prompts.md)"></a><figcaption>box (AI)  box-A.png<br>verdict not filled in yet (prompts.md)</figcaption></figure>
+<figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/d36a0b5c4d19-scan-A.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/d36a0b5c4d19-scan-A.png" loading="lazy" alt="scan (AI)  scan-A.png
+verdict not filled in yet (prompts.md)"></a><figcaption>scan (AI)  scan-A.png<br>verdict not filled in yet (prompts.md)</figcaption></figure></div>
+<p id="previews-3" style="font-size:24px;font-weight:700;color:#111111;margin-top:14px;">Cell K</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">card knockout. card #CF000B on #263950, text #FFFFFF (band human override: sampled from in-store photo gbp-photo-10, painted upper wall between the plaques). signage preview, 2 AI mockups.</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/4ecdde1f150c-signage-preview-K.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/4ecdde1f150c-signage-preview-K.png" loading="lazy" alt="signage preview K"></a></div><p class="cap">review/signage-preview-K.png: harness signage preview (POP, sticker, card, to-go), click to open.</p>
+<div class="grid cols4"><figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/c29d0a8e31dc-box-K.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/c29d0a8e31dc-box-K.png" loading="lazy" alt="box (AI)  box-K.png
+HELD: layout, colors, copy, wordmark exact; QR modules track source with minor drift"></a><figcaption>box (AI)  box-K.png<br>HELD: layout, colors, copy, wordmark exact; QR modules track source with minor drift</figcaption></figure>
+<figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/3c437f6e9093-table-K.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/3c437f6e9093-table-K.png" loading="lazy" alt="table (AI)  table-K.png
+HELD: sticker exact, wordmark exact, QR modules match closely"></a><figcaption>table (AI)  table-K.png<br>HELD: sticker exact, wordmark exact, QR modules match closely</figcaption></figure></div>
+<p id="previews-4" style="font-size:24px;font-weight:700;color:#111111;margin-top:14px;">Cell Q</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">web card red with blue band (K); SIGNAGE on in-store wall blue (sampled from in-store photo gbp-photo-10), whi.... card #CF000B on #263950, text #FFFFFF (band human override: sampled from in-store photo gbp-photo-10, painted upper wall between the plaques). signage preview, 0 AI mockups.</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/e80c65e5278b-signage-preview-Q.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/e80c65e5278b-signage-preview-Q.png" loading="lazy" alt="signage preview Q"></a></div><p class="cap">review/signage-preview-Q.png: harness signage preview (POP, sticker, card, to-go), click to open.</p>
+<p id="previews-5" style="font-size:24px;font-weight:700;color:#B7791F;margin-top:14px;">Cell R  TRAVISSE PICK, applied</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">web card red with blue band (K); SIGNAGE on in-store wall blue (sampled from in-store photo gbp-photo-10), whi.... card #CF000B on #263950, text #FFFFFF (band human override: sampled from in-store photo gbp-photo-10, painted upper wall between the plaques). signage preview, 3 AI mockups.</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/86f5e9e5815a-signage-preview-R.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/86f5e9e5815a-signage-preview-R.png" loading="lazy" alt="signage preview R"></a></div><p class="cap">review/signage-preview-R.png: harness signage preview (POP, sticker, card, to-go), click to open.</p>
+<div class="grid cols4"><figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/072d02abe05f-box-R.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/072d02abe05f-box-R.png" loading="lazy" alt="box (AI)  box-R.png
+HELD: card, sticker, POP, to-go all faithful; wordmark exact"></a><figcaption>box (AI)  box-R.png<br>HELD: card, sticker, POP, to-go all faithful; wordmark exact</figcaption></figure>
+<figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/56864584e86b-scan-R.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/56864584e86b-scan-R.png" loading="lazy" alt="scan (AI)  scan-R.png
+Sticker HELD. Phone INVENTED: same fake domain, &quot;Welcome to the club!&quot; and three rows; phone wordmark repainted with heavy white outline (drift)"></a><figcaption>scan (AI)  scan-R.png<br>Sticker HELD. Phone INVENTED: same fake domain, &quot;Welcome to the club!&quot; and three rows; phone wordmark repainted with heavy white outline (drift)</figcaption></figure>
+<figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/5a3d0da903c0-table-R.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/dogwood-pizza/5a3d0da903c0-table-R.png" loading="lazy" alt="table (AI)  table-R.png
+HELD: sticker exact; model added a &quot;PIZZA PEOPLE BETTER TOGETHER&quot; sign in the background (invented set dressing, not on our asset)"></a><figcaption>table (AI)  table-R.png<br>HELD: sticker exact; model added a &quot;PIZZA PEOPLE BETTER TOGETHER&quot; sign in the background (invented set dressing, not on our asset)</figcaption></figure></div>
+<p style="font-size:15px;font-weight:700;color:#8A1C1C;margin-top:10px;">Not in review-canvas.png: the previews would add about 8.0 MB to a PNG already near 72 MB (budget 25 MB). This page and the files above are the review surface for them.</p>
+</section>
+<script>
+  for (const el of document.querySelectorAll('.shot.zoom')) {
+    el.addEventListener('click', (ev) => { ev.preventDefault(); el.classList.toggle('native'); });
+  }
+  // "Show all N" on capped photo grids: reveal the hidden figures in the grid just above the button.
+  for (const btn of document.querySelectorAll('button.show-all')) {
+    btn.addEventListener('click', () => {
+      const grid = btn.parentElement.previousElementSibling;
+      if (!grid) return;
+      const open = grid.classList.toggle('expanded');
+      btn.textContent = open ? btn.dataset.less : btn.dataset.all;
+    });
+  }
+  // Sidebar: highlight the section in view, jump instantly on click (no scroll animation, Travisse 2026-09-29), hamburger below 1000px.
+  (() => {
+    const toc = document.getElementById('toc');
+    const links = new Map([...toc.querySelectorAll('a[href^="#"]')].map((a) => [a.getAttribute('href').slice(1), a]));
+    const sections = [...document.querySelectorAll('section[id]')];
+    const visible = new Set();
+    const setActive = () => {
+      const current = sections.find((s) => visible.has(s)) ?? sections.find((s) => s.getBoundingClientRect().bottom > 0) ?? sections[sections.length - 1];
+      for (const a of links.values()) a.classList.remove('active');
+      if (current) links.get(current.id)?.classList.add('active');
+    };
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); }
+      setActive();
+    }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+    for (const s of sections) io.observe(s);
+    setActive();
+    const toggle = toc.querySelector('.toc-toggle');
+    toggle.addEventListener('click', () => { const open = toc.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
+    for (const a of links.values()) a.addEventListener('click', (ev) => {
+      const target = document.getElementById(a.getAttribute('href').slice(1));
+      if (!target) return;
+      ev.preventDefault();
+      target.scrollIntoView({ behavior: 'instant', block: 'start' });
+      history.replaceState(null, '', a.getAttribute('href'));
+      toc.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
+    });
+  })();
+</script>
+</body></html>

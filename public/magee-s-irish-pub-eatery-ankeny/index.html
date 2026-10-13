@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Magee's Irish Pub review</title>
+<style>
+  :root { color-scheme: light; scroll-behavior: auto; }
+  body { margin: 0; padding: 32px 40px 80px 280px; background: #fff; color: #111; font-family: Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.35; max-width: 2040px; box-sizing: border-box; }
+  h2 { font-size: 34px; margin: 0 0 4px; }
+  section { padding: 28px 0; border-bottom: 3px solid #ccc; scroll-margin-top: 16px; }
+  section:first-child { padding-top: 0; }
+  p[id] { scroll-margin-top: 16px; }
+  .toc { position: fixed; top: 0; left: 0; bottom: 0; width: 240px; box-sizing: border-box; padding: 24px 16px; overflow-y: auto; background: #f4f4f4; border-right: 1px solid #ddd; font-size: 15px; z-index: 10; }
+  .toc ol { list-style: none; margin: 0; padding: 0; }
+  .toc ol ol { margin: 2px 0 6px 14px; }
+  .toc ol ol a { font-size: 13px; color: #555; padding: 3px 8px; }
+  .toc a { display: block; padding: 6px 8px; border-radius: 4px; color: #222; line-height: 1.3; }
+  .toc a:hover { background: #e6e6e6; }
+  .toc a.active { background: #1b5e20; color: #fff; font-weight: 700; }
+  .toc a.top { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+  .toc-toggle { display: none; }
+  @media (max-width: 1000px) {
+    body { padding: 64px 20px 80px; }
+    .toc { position: sticky; top: 0; bottom: auto; width: auto; margin: -64px -20px 24px; padding: 8px 12px; border-right: 0; border-bottom: 1px solid #ddd; max-height: 80vh; }
+    .toc-toggle { display: block; font: inherit; font-weight: 700; background: none; border: 1px solid #bbb; border-radius: 4px; padding: 6px 12px; cursor: pointer; }
+    .toc-toggle::before { content: "\2630  "; }
+    .toc:not(.open) ol { display: none; }
+    .toc ol { padding-top: 8px; }
+  }
+  p { margin: 4px 0; }
+  p.sub { color: #555; font-size: 17px; margin-bottom: 14px; }
+  p.cap { color: #666; font-size: 15px; }
+  .gray { background: #ededed; color: #444; padding: 26px; font-size: 20px; border-radius: 4px; }
+  .hdr { display: flex; gap: 30px; align-items: flex-start; }
+  .hdr > div:first-child { flex: 1; }
+  .cell { flex: 0 0 auto; max-width: 520px; }
+  .cell img { display: block; max-width: 100%; border: 6px solid #1b5e20; box-sizing: border-box; }
+  .cell p { color: #1b5e20; font-weight: 700; font-size: 16px; }
+  .shot { border: 1px solid #ddd; overflow: auto; max-height: 90vh; }
+  .shot img { display: block; width: 100%; height: auto; }
+  /* 2026-10-01: a zoomable shot (the variant sheet) is never height-clipped: every row stays visible at page width,
+     and native size scrolls inside the container (overflow auto) instead of hiding rows below 90vh. */
+  .shot.zoom { max-height: none; }
+  .shot.zoom img { cursor: zoom-in; }
+  .cell img.zoom3x { margin-top: 10px; border: 3px solid #444; image-rendering: pixelated; }
+  .cell img.zoom3x.bad { border-color: #B71C1C; }
+  .cell.hold img:first-of-type { border-color: #B71C1C; }
+  .shot.zoom.native img { width: auto; max-width: none; cursor: zoom-out; }
+  .grid { display: grid; gap: 14px; }
+  .grid.cols3 { grid-template-columns: repeat(3, 1fr); }
+  .grid.cols4 { grid-template-columns: repeat(4, 1fr); }
+  .grid.cols5 { grid-template-columns: repeat(5, 1fr); }
+  .grid.cols6 { grid-template-columns: repeat(6, 1fr); }
+  figure { margin: 0; background: #ededed; }
+  figure.framed { outline: 6px solid #1b5e20; outline-offset: -6px; }
+  figure a { display: block; }
+  figure img { display: block; width: 100%; height: 360px; object-fit: contain; }
+  .grid.cols4 figure img { height: 280px; }
+  .grid.cols5 figure img, .grid.cols6 figure img { height: 220px; }
+  figcaption { font-size: 15px; padding: 6px 4px 10px; background: #fff; color: #222; }
+  a { color: inherit; text-decoration: none; }
+  a.ext { color: #0b57d0; text-decoration: underline; text-underline-offset: 2px; word-break: break-all; }
+  a.ext:hover { color: #083a8c; }
+  p.links { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 16px; font-size: 15px; }
+  p.links a.ext { background: #eef3fc; border: 1px solid #c9d8f5; border-radius: 4px; padding: 3px 10px; text-decoration: none; word-break: normal; }
+  p.links a.ext:hover { background: #dce7fb; }
+  p.links a.chip b { font-weight: 700; margin-right: 4px; }
+  p.links a.chip.held { background: #fff4d6; border-color: #e3c37a; }
+  p.links a.chip em { font-style: normal; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: #8a5a00; margin-left: 4px; }
+  figcaption .src { color: #666; }
+  .grid figure.more { display: none; }
+  .grid.expanded figure.more { display: block; }
+  p.show-all { margin: 10px 0 0; }
+  button.show-all { font: inherit; font-size: 14px; font-weight: 700; background: #f4f4f4; border: 1px solid #bbb; border-radius: 4px; padding: 6px 14px; cursor: pointer; }
+  button.show-all:hover { background: #e6e6e6; }
+  table.links .verdict { color: #222; max-width: 560px; }
+  table.links details { margin-top: 5px; font-size: 13px; color: #666; max-width: 560px; }
+  table.links details summary { cursor: pointer; color: #0b57d0; }
+  table.links .raw { margin-top: 4px; }
+  table.links { border-collapse: collapse; width: 100%; font-size: 15px; margin-top: 8px; }
+  table.links th { text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: #666; padding: 6px 10px; border-bottom: 2px solid #ddd; }
+  table.links td { padding: 9px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top; }
+  table.links td.cat { font-weight: 700; white-space: nowrap; }
+  table.links td.url { max-width: 380px; word-break: break-all; }
+  table.links td.ev { color: #444; max-width: 520px; }
+  table.links .chip { display: inline-block; color: #fff; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
+  table.links .why { color: #444; font-size: 14px; margin-top: 5px; max-width: 420px; }
+  table.links .none { color: #999; }
+  table.links tr.st-held td { background: #fff8e8; }
+  table.links tr.st-rejected td { color: #777; }
+  table.links tr.st-written td { background: #eef7ee; }
+</style><style>
+  .ss { font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: #161616; }
+  .ss .pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 999px; white-space: nowrap; border: 1px solid transparent; vertical-align: middle; }
+  .ss .pill.awaiting, .ss .pill.picked { background: #fff4e0; color: #b26a00; border-color: #f1dcb0; }
+  .ss .pill.applied { background: #e8f0ff; color: #1f5eff; border-color: #c7d8ff; }
+  .ss .pill.closed { background: #e6f4ea; color: #1b7a3d; border-color: #bfe0c9; }
+  .ss .pill.unknown { background: #eee; color: #5c5c5c; }
+  .ss .need { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 6px; background: #fdecec; color: #b3261e; border: 1px solid #f3c2bd; margin: 2px 6px 2px 0; white-space: nowrap; }
+  .ss .need.soft { background: #f3f3f0; color: #5c5c5c; border-color: #e3e3df; }
+  .ss .hold { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 6px; background: #fff4e0; color: #b26a00; border: 1px solid #f1dcb0; margin: 2px 6px 2px 0; }
+  .ss .steps { display: inline-flex; gap: 3px; vertical-align: middle; margin-right: 8px; }
+  .ss .steps i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: #e3e3df; }
+  .ss .steps i.on { background: #1b7a3d; }
+  .ss .steps i.next { background: #fff; border: 2px solid #b26a00; box-sizing: border-box; }
+  .ss .next { color: #5c5c5c; font-size: 13px; }
+  .ss .meta { color: #5c5c5c; font-size: 13px; }
+  .ss .note { color: #161616; font-size: 13px; margin-top: 4px; max-width: 90ch; }
+  .ss .stage { font-size: 12px; color: #5c5c5c; text-transform: uppercase; letter-spacing: .05em; }
+  .site-status { position: sticky; top: 8px; z-index: 20; background: #fffdf7; border: 1px solid #ecdfb8; border-radius: 10px; padding: 10px 14px; margin: 0 0 20px; display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+  .site-status .grp { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; }
+  .site-status .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: #5c5c5c; }
+  .site-status .live { margin-left: auto; font-size: 12px; color: #5c5c5c; }
+  .site-status .live.off { color: #b26a00; }
+  @media (max-width: 1000px) { .site-status { position: static; } }
+</style></head><body id="top">
+<nav class="toc" id="toc"><a class="top" href="/" style="margin-bottom:12px">&larr; All locations</a><button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-list">Sections</button>
+<ol id="toc-list">
+<li><a href="#top" class="top">Top</a></li>
+<li><a href="#header">Overview</a></li>
+<li><a href="#website">Website</a></li>
+<li><a href="#gbp">Google Business Profile</a></li>
+<li><a href="#logo-search">Logo image search</a></li>
+<li><a href="#candidates">Logo candidates</a></li>
+<li><a href="#sheet">Variant sheet</a></li>
+<li><a href="#links">Links (0 held for review)</a></li>
+<li><a href="#previews">Previews</a><ol><li><a href="#previews-1">Cell S  TRAVISSE PICK, applied</a></li></ol></li>
+</ol></nav>
+<div class="site-status ss" id="site-status" data-slug="magee-s-irish-pub-eatery-ankeny"></div>
+<script id="site-status-data" type="application/json">{"slug":"magee-s-irish-pub-eatery-ankeny","status":"closed","status_label":"Closed out","boostly_status":null,"steps":null,"needs_you":null,"gaps":null,"hold":null,"done":null,"note":null,"review_status":null,"figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=122-2"}</script>
+<script>
+window.BoostlyStatus = (function () {
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function stepsHtml(steps) {
+    if (!steps || !steps.length) return "";
+    var done = 0, nextIdx = -1, html = "";
+    for (var i = 0; i < steps.length; i++) { if (steps[i][1]) done++; else if (nextIdx < 0) nextIdx = i; }
+    for (var j = 0; j < steps.length; j++) html += '<i class="' + (steps[j][1] ? "on" : (j === nextIdx ? "next" : "")) + '" title="' + esc(steps[j][0]) + (steps[j][1] ? " (done)" : "") + '"></i>';
+    var next = nextIdx < 0 ? "all steps done" : "next: " + steps[nextIdx][0].charAt(0).toLowerCase() + steps[nextIdx][0].slice(1);
+    return '<span class="steps" title="' + done + " of " + steps.length + ' steps done">' + html + '</span><span class="next">' + done + "/" + steps.length + ", " + esc(next) + '</span>';
+  }
+  function needsHtml(s) {
+    var out = "";
+    (s.needs_you || []).forEach(function (n) { out += '<span class="need">' + esc(n.replace("(s)", "s")) + '</span>'; });
+    (s.gaps || []).forEach(function (g) { out += '<span class="need soft">' + esc(g) + '</span>'; });
+    if (s.hold) out += '<span class="hold" title="' + esc(s.hold) + '">HOLD</span>';
+    if (!out && s.done) out += '<span class="need soft">review complete</span>';
+    if (!out && s.status !== "closed") out += '<span class="need soft">with the agents, nothing for you</span>';
+    return out;
+  }
+  function stageLabel(st) { return st ? String(st).replace(/_/g, " ").replace(/^./, function (c) { return c.toUpperCase(); }) : ""; }
+  function metaHtml(s) {
+    var rs = s.review_status || {}, parts = [];
+    if (rs.waiting_on && rs.status !== "done") parts.push("waiting on " + esc(rs.waiting_on));
+    if (rs.ease) parts.push("ease " + esc(rs.ease) + "/5");
+    return parts.join(" \u00b7 ");
+  }
+  function strip(el, s, live) {
+    if (!el) return;
+    var stage = stageLabel(s.boostly_status);
+    el.innerHTML =
+      '<div class="grp"><span class="pill ' + esc(s.status) + '">' + esc(s.status_label) + '</span>' + (stage ? '<span class="stage">' + esc(stage) + '</span>' : "") + '</div>' +
+      '<div class="grp">' + stepsHtml(s.steps) + '</div>' +
+      '<div class="grp"><span class="lbl">Needs you</span>' + needsHtml(s) + '</div>' +
+      (metaHtml(s) ? '<div class="grp meta">' + metaHtml(s) + '</div>' : "") +
+      (s.note ? '<div class="note" style="flex-basis:100%">' + esc(s.note) + '</div>' : "") +
+      '<span class="live' + (live ? "" : " off") + '">' + (live ? "live " + esc(live) : "as of the last site build") + '</span>';
+  }
+  function merge(s, it) {
+    s.boostly_status = it.status || s.boostly_status; s.steps = it.steps || s.steps; s.needs_you = it.needs_you || s.needs_you;
+    s.gaps = it.gaps || s.gaps; s.hold = it.hold == null ? s.hold : it.hold; s.done = it.done == null ? s.done : it.done;
+    s.note = it.note == null ? s.note : it.note; s.review_status = it.review_status || s.review_status;
+    if (it.figma_url && !s.figma_url) s.figma_url = it.figma_url;
+    return s;
+  }
+  function overlay(url, cb) {
+    if (!url || !window.fetch) { cb(null); return; }
+    fetch(url + (url.indexOf("?") < 0 ? "?" : "&") + "t=" + Math.floor(Date.now() / 60000), { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { cb(j && j.items ? j : null); })
+      .catch(function () { cb(null); });
+  }
+  function fmtTime(iso) { var t = Date.parse(iso); return isNaN(t) ? "" : new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/Denver" }).format(new Date(t)); }
+  return { esc: esc, stepsHtml: stepsHtml, needsHtml: needsHtml, metaHtml: metaHtml, strip: strip, merge: merge, overlay: overlay, fmtTime: fmtTime, stageLabel: stageLabel };
+})();
+
+(function () {
+  var el = document.getElementById("site-status"), s = JSON.parse(document.getElementById("site-status-data").textContent);
+  window.BoostlyStatus.strip(el, s, null);
+  window.BoostlyStatus.overlay("https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json", function (j) {
+    if (!j) return;
+    var it = null; for (var i = 0; i < j.items.length; i++) if (j.items[i].run_dir === s.slug) it = j.items[i];
+    if (it) window.BoostlyStatus.strip(el, window.BoostlyStatus.merge(s, it), window.BoostlyStatus.fmtTime(j.generated_at));
+    else window.BoostlyStatus.strip(el, s, window.BoostlyStatus.fmtTime(j.generated_at) + " (not on the open list)");
+  });
+})();
+</script>
+<section id="header">
+<p class="links"><a class="ext" href="https://slack.com/archives/C09MSM8MA9Y/p1790263497207979?thread_ts=1790198868.578599&amp;cid=C09MSM8MA9Y" target="_blank" rel="noopener">Slack thread &#8599;</a> <a class="ext" href="https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=122-2" target="_blank" rel="noopener">Figma &#8599;</a> <a class="ext chip" href="http://www.mageesirishpub.com/" target="_blank" rel="noopener"><b>Website</b> mageesirishpub.com/</a> <a class="ext chip" href="https://tmt.spotapps.co/ordering-menu/" target="_blank" rel="noopener"><b>Ordering</b> tmt.spotapps.co/ordering-menu/</a> <a class="ext chip" href="https://www.mageesirishpub.com/menu" target="_blank" rel="noopener"><b>Menu</b> mageesirishpub.com/menu</a> <a class="ext chip" href="https://www.facebook.com/mageesirishpub/" target="_blank" rel="noopener"><b>Facebook</b> facebook.com/mageesirishpub/</a> <a class="ext chip" href="https://www.instagram.com/mageesirishpub/" target="_blank" rel="noopener"><b>Instagram</b> instagram.com/mageesirishpub/</a> <a class="ext chip" href="https://tmt.spotapps.co/job-listings?spot_id=89161" target="_blank" rel="noopener"><b>Careers</b> tmt.spotapps.co/job-listings?spot_id=89161</a> <a class="ext chip" href="https://tmt.spotapps.co/catering?spot_id=89161" target="_blank" rel="noopener"><b>Catering</b> tmt.spotapps.co/catering?spot_id=89161</a> <a class="ext chip" href="https://www.mageesirishpub.com/ankeny-the-district-at-prairie-trail-magee-s-irish-pub-and-eatery-event" target="_blank" rel="noopener"><b>Events</b> mageesirishpub.com/ankeny-…-and-eatery-event</a> <a class="ext chip" href="https://tmt.spotapps.co/reservations?spot_id=89161" target="_blank" rel="noopener"><b>Reservations</b> tmt.spotapps.co/reservations?spot_id=89161</a> <a class="ext chip" href="https://www.mageesirishpub.com/ankeny-menus/" target="_blank" rel="noopener"><b>Gift cards</b> mageesirishpub.com/ankeny-menus/</a></p>
+<div class="hdr"><div><p style="font-size:44px;font-weight:700;">Magee's Irish Pub</p>
+<p style="font-size:20px;color:#444444;margin-top:6px;">Ankeny, IA   ·   request cw0x0yn2sxr5cxprci3x38wf   ·   full order</p>
+<p style="font-size:29px;font-weight:700;color:#1B5E20;margin-top:22px;">Fable's default: D</p>
+<p style="font-size:19px;margin-top:6px;">IDENTITY: one mark everywhere.</p>
+<p style="font-size:16px;color:#666666;margin-top:8px;">Confidence: medium   ·   flags: traced_from_small_source, mark_element_omitted, brand_environment_minimum_evidence_unassessed, instagram_screenshots_not_captured</p>
+<p style="font-size:16px;color:#666666;margin-top:4px;">Cell D = full color, primary #231F20, band #FCCB11 (Fable's pick), text #FFFFFF, print digit #231F20</p></div><div class="cell"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/8242d0ac07b8-default-cell.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/8242d0ac07b8-default-cell.png" alt="default cell"></a><p>Fable's default cell D (native sheet pixels, click to open)</p><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/d26eda4ab71a-logo-3x.png" target="_blank" title="open the 3x crop"><img class="zoom3x" src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/d26eda4ab71a-logo-3x.png" alt="logo at 3x"></a><p><b>Logo at 3x (what prints).</b> Final upload 1800x539px, source 1135px (trace), given on the command line, upscale 1.586x. Edge quality: ok. Soft-edge share 0.9994, stair-step score 0.325.</p></div></div>
+</section>
+<section id="website">
+<h2>Website</h2><p class="sub"><a class="ext" href="http://www.mageesirishpub.com/" target="_blank" rel="noopener">http://www.mageesirishpub.com/</a></p>
+
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/4958abb419c5-desktop.jpg" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/4958abb419c5-desktop.jpg" loading="lazy" alt="website desktop screenshot"></a></div><p class="cap">Desktop screenshot from the run's evidence (evidence/website-visual/desktop.png).</p>
+</section>
+<section id="gbp">
+<h2>Google Business Profile</h2><p class="sub">place id ChIJ0TowRcWF7ocR5lQRLjkRO0Q</p>
+<p class="links"><a class="ext" href="https://www.google.com/maps/place/?q=place_id:ChIJ0TowRcWF7ocR5lQRLjkRO0Q" target="_blank" rel="noopener">Google Maps place &#8599;</a> <a class="ext" href="https://www.google.com/search?q=Magee's%20Irish%20Pub%20Ankeny%2C%20IA" target="_blank" rel="noopener">Google search &#8599;</a></p>
+<p style="font-size:17px;">Place photos already downloaded for this run (10), storefront, interior and signage photos first, then the rest. Green frame = a photo Fable cited for the sign or interior.</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/0ce47dd40bef-gbp-photo-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/0ce47dd40bef-gbp-photo-01.jpg" loading="lazy" alt="#1 owner photo  · vibe  1280x721"></a><figcaption>#1 owner photo  · vibe  1280x721</figcaption></figure>
+<figure class="framed"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/054fa0e48c2f-gbp-photo-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/054fa0e48c2f-gbp-photo-06.jpg" loading="lazy" alt="#6 owner photo  4800x3420  &lt;- cited by Fable"></a><figcaption style="font-weight:700">#6 owner photo  4800x3420  &lt;- cited by Fable</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/a60438293c33-gbp-photo-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/a60438293c33-gbp-photo-02.jpg" loading="lazy" alt="#2 owner photo  4800x3242"></a><figcaption>#2 owner photo  4800x3242</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/146837885854-gbp-photo-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/146837885854-gbp-photo-03.jpg" loading="lazy" alt="#3 by CJ Wisconsin  4000x2252"></a><figcaption>#3 by CJ Wisconsin  4000x2252</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/04bd2a05a6c4-gbp-photo-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/04bd2a05a6c4-gbp-photo-04.jpg" loading="lazy" alt="#4 owner photo  800x800"></a><figcaption>#4 owner photo  800x800</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/d83167d37e32-gbp-photo-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/d83167d37e32-gbp-photo-05.jpg" loading="lazy" alt="#5 owner photo  800x800"></a><figcaption>#5 owner photo  800x800</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/1a724dbb09f1-gbp-photo-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/1a724dbb09f1-gbp-photo-07.jpg" loading="lazy" alt="#7 owner photo  800x800"></a><figcaption>#7 owner photo  800x800</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/b2d755aa4942-gbp-photo-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/b2d755aa4942-gbp-photo-08.jpg" loading="lazy" alt="#8 by JC Johnson  2854x2834"></a><figcaption>#8 by JC Johnson  2854x2834</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/a9cc1ce67783-gbp-photo-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/a9cc1ce67783-gbp-photo-09.jpg" loading="lazy" alt="#9 owner photo  800x800"></a><figcaption>#9 owner photo  800x800</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/ed4e2f1bd550-gbp-photo-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/ed4e2f1bd550-gbp-photo-10.jpg" loading="lazy" alt="#10 owner photo  800x800"></a><figcaption>#10 owner photo  800x800</figcaption></figure></div><p class="show-all"><button type="button" class="show-all" data-all="Show all 10" data-less="Show fewer (5 of 10)">Show all 10</button></p>
+<p style="font-size:17px;margin-top:10px;">Google Maps &quot;Vibe&quot; photos from the evidence build (Google's own in-store/atmosphere category)</p>
+<div class="grid cols3"><figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/95f713b39bc1-01.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/95f713b39bc1-01.jpg" loading="lazy" alt="Vibe  3072x4080"></a><figcaption>Vibe  3072x4080</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/d18b3b596c2a-02.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/d18b3b596c2a-02.jpg" loading="lazy" alt="Vibe  4496x3000"></a><figcaption>Vibe  4496x3000</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/a436ce14b8a2-03.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/a436ce14b8a2-03.jpg" loading="lazy" alt="Vibe  3024x4032"></a><figcaption>Vibe  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/e56ee7451635-04.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/e56ee7451635-04.jpg" loading="lazy" alt="Vibe  3072x4096"></a><figcaption>Vibe  3072x4096</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/9103b2932640-05.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/9103b2932640-05.jpg" loading="lazy" alt="Vibe  3024x4032"></a><figcaption>Vibe  3024x4032</figcaption></figure>
+<figure><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/c88d39300734-06.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/c88d39300734-06.jpg" loading="lazy" alt="Vibe  3024x4032"></a><figcaption>Vibe  3024x4032</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/3f0bb4135347-07.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/3f0bb4135347-07.jpg" loading="lazy" alt="Vibe  3000x4000"></a><figcaption>Vibe  3000x4000</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/1f3f2ac5e1e1-08.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/1f3f2ac5e1e1-08.jpg" loading="lazy" alt="Vibe  4496x3000"></a><figcaption>Vibe  4496x3000</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/c6a9a45450da-09.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/c6a9a45450da-09.jpg" loading="lazy" alt="Vibe  4496x3000"></a><figcaption>Vibe  4496x3000</figcaption></figure>
+<figure class="more"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/0ce47dd40bef-10.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/0ce47dd40bef-10.jpg" loading="lazy" alt="Vibe  1280x721"></a><figcaption>Vibe  1280x721</figcaption></figure></div><p class="show-all"><button type="button" class="show-all" data-all="Show all 10" data-less="Show fewer (6 of 10)">Show all 10</button></p>
+<p style="font-size:17px;margin-top:10px;">Live Google Maps photo view, reused from the earlier capture under review/</p>
+<p style="font-size:14px;color:#666666;margin-top:4px;">reused the cached capture under review/</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/dfe9a6894dbc-google-maps-photos.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/dfe9a6894dbc-google-maps-photos.png" loading="lazy" alt="Google Maps photo view"></a></div>
+</section>
+<section id="logo-search">
+<h2>Logo image search</h2><p class="sub">&quot;Magee's Irish Pub Ankeny logo&quot;</p>
+<p class="links"><a class="ext" href="https://www.google.com/search?tbm=isch&amp;q=Magee's%20Irish%20Pub%20Ankeny%20logo" target="_blank" rel="noopener">Open Google Images &#8599;</a></p>
+<div class="gray">Logo image search skipped (--skip-google) and no cached results under review/logo-search/.</div>
+</section>
+<section id="candidates">
+<h2>Logo candidates</h2><p class="sub">from the evidence packet; green frame = the file Fable chose. Gray background so white knockouts stay visible.</p>
+<p class="links"><a class="ext" href="http://www.mageesirishpub.com/" target="_blank" rel="noopener">Website &#8599;</a></p>
+<div class="grid cols3"><figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/3696b911b4d1-01-first_party_other.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/3696b911b4d1-01-first_party_other.png" loading="lazy" alt="01-first_party_other.png  195x258
+site header"></a><figcaption>01-first_party_other.png  195x258<br>site header<br><a class="ext" href="http://www.mageesirishpub.com/" target="_blank" rel="noopener">mageesirishpub.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/362a67705bc8-02-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/362a67705bc8-02-first_party_header.png" loading="lazy" alt="02-first_party_header.png  163x200
+site header"></a><figcaption>02-first_party_header.png  163x200<br>site header<br><a class="ext" href="http://www.mageesirishpub.com/" target="_blank" rel="noopener">mageesirishpub.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C" class="framed"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/cf889159aa18-03-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/cf889159aa18-03-first_party_header.png" loading="lazy" alt="03-first_party_header.png  1555x1914
+site header
+FABLE'S PICK"></a><figcaption style="font-weight:700">03-first_party_header.png  1555x1914<br>site header<br>FABLE'S PICK<br><a class="ext" href="http://www.mageesirishpub.com/" target="_blank" rel="noopener">mageesirishpub.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/8e48b409c8d0-04-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/8e48b409c8d0-04-first_party_header.png" loading="lazy" alt="04-first_party_header.png  1514x1872
+site header"></a><figcaption>04-first_party_header.png  1514x1872<br>site header<br><a class="ext" href="http://www.mageesirishpub.com/" target="_blank" rel="noopener">mageesirishpub.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/9357dff15b61-05-first_party_header.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/9357dff15b61-05-first_party_header.png" loading="lazy" alt="05-first_party_header.png  1514x1872
+site header"></a><figcaption>05-first_party_header.png  1514x1872<br>site header<br><a class="ext" href="http://www.mageesirishpub.com/" target="_blank" rel="noopener">mageesirishpub.com/ &#8599;</a></figcaption></figure>
+<figure style="background:#8C8C8C"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/f892dc36afa9-06-social.jpg" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/f892dc36afa9-06-social.jpg" loading="lazy" alt="06-social.png  1254x1254
+Instagram avatar, traced cut"></a><figcaption>06-social.png  1254x1254<br>Instagram avatar, traced cut<br><span class="src">file 06-social.png</span></figcaption></figure></div>
+</section>
+<section id="sheet">
+<h2>Variant sheet</h2><p class="sub">Fable's default D framed in green. Reply with one letter.</p>
+<p class="links"></p>
+<div class="shot zoom" title="click to toggle native size"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/9c709f9b6297-variant-sheet-marked.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/9c709f9b6297-variant-sheet-marked.png" loading="lazy" alt="variant sheet"></a></div><p class="cap">variants/variant-sheet.png at native size, revision 19. In the HTML page click the sheet to toggle native size.</p>
+</section>
+<section id="links">
+<h2>Links</h2><p class="sub">the link automation results for this location, one row per category; held rows need a human decision. Click a URL to open it.</p>
+<p class="links"></p>
+<p style="font-size:15px;color:#444444;">Run: closeout account scope manual cli; writes applied; by fulfill-location agent (Claude).</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Website bootstrap: not_needed.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Ordering URL on file <a class="ext" href="https://www.toasttab.com/mageesirishpub?source=pop_up&amp;amp;spot_id=89161&amp;amp;destination=order&amp;amp;promotion=order_online" target="_blank" rel="noopener">https://www.toasttab.com/mageesirishpub?source=pop_up&amp;spot_id=89161&amp;destination=order&amp;promotion=order_online</a>: does not match the website. Same Toast store, different form: the stored URL is the Toast local-site path carrying SpotHopper pop-up tracking params (source, spot_id, destination, promoti…</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Discovery report link-discovery-report.json (2026-09-24 03:25): 18 categories, 0 for manual review, 2 proposed field updates, 5 proposed events.</p>
+<p style="font-size:15px;font-weight:700;margin-top:8px;">19 categories: 9 written, 2 verified or already live, 0 held for review, 0 pending browser, 1 rejected, 7 none found.</p>
+<table class="links"><thead><tr><th>Category</th><th>URL</th><th>Status</th><th>Verdict</th></tr></thead><tbody><tr class="st-written"><td class="cat">Online ordering</td><td class="url"><a class="ext" href="https://tmt.spotapps.co/ordering-menu/" target="_blank" rel="noopener">tmt.spotapps.co/ordering-menu/</a></td><td><span class="chip" style="background:#1B5E20">written</span></td><td class="ev"><div class="verdict">Written to the location. fix/live-S/event-ordering-apply.json (dry event-ordering-dryrun.json; readback events-after.json)</div><details><summary>raw evidence</summary><div class="raw">fix/live-S/event-ordering-apply.json (dry event-ordering-dryrun.json; readback events-after.json)</div></details></td></tr>
+<tr class="st-written"><td class="cat">Menu</td><td class="url"><a class="ext" href="https://www.mageesirishpub.com/menu" target="_blank" rel="noopener">mageesirishpub.com/menu</a></td><td><span class="chip" style="background:#1B5E20">written</span></td><td class="ev"><div class="verdict">Written to the location. fix/live-S/event-menu-apply.json (dry event-menu-dryrun.json; readback events-after.json)</div><details><summary>raw evidence</summary><div class="raw">fix/live-S/event-menu-apply.json (dry event-menu-dryrun.json; readback events-after.json)</div></details></td></tr>
+<tr class="st-ready"><td class="cat">Facebook</td><td class="url"><a class="ext" href="https://www.facebook.com/mageesirishpub/" target="_blank" rel="noopener">facebook.com/mageesirishpub/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Linked from the store's own website.</div><details><summary>raw evidence</summary><div class="raw">title &quot;(20+) Facebook&quot;<br>the website links to it<br>social destination identity signal<br>found as an anchor</div></details></td></tr>
+<tr class="st-ready"><td class="cat">Instagram</td><td class="url"><a class="ext" href="https://www.instagram.com/mageesirishpub/" target="_blank" rel="noopener">instagram.com/mageesirishpub/</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Linked from the store's own website.</div><details><summary>raw evidence</summary><div class="raw">title &quot;(2) Instagram&quot;<br>the website links to it<br>social destination identity signal<br>canonical form of <a class="ext" href="https://www.instagram.com/mageesirishpub" target="_blank" rel="noopener">https://www.instagram.com/mageesirishpub</a><br>found as an anchor</div></details></td></tr>
+<tr class="st-none"><td class="cat">X (Twitter)</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-rejected"><td class="cat">TikTok</td><td class="url"><a class="ext" href="https://www.tiktok.com/@discoveringdesmoines" target="_blank" rel="noopener">tiktok.com/@discoveringdesmoines</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: Des Moines travel-guide influencer account, not the business</div><details><summary>raw evidence</summary><div class="raw">Des Moines travel-guide influencer account, not the business</div></details></td></tr>
+<tr class="st-none"><td class="cat">YouTube</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-written"><td class="cat">Careers</td><td class="url"><a class="ext" href="https://tmt.spotapps.co/job-listings?spot_id=89161" target="_blank" rel="noopener">tmt.spotapps.co/job-listings?spot_id=89161</a></td><td><span class="chip" style="background:#1B5E20">written</span></td><td class="ev"><div class="verdict">Written to the location. fix/live-S/event-careers-apply.json (dry event-careers-dryrun.json; readback events-after.json)</div><details><summary>raw evidence</summary><div class="raw">fix/live-S/event-careers-apply.json (dry event-careers-dryrun.json; readback events-after.json)<br>verified (static fetch then claude chrome)</div></details></td></tr>
+<tr class="st-written"><td class="cat">Catering</td><td class="url"><a class="ext" href="https://tmt.spotapps.co/catering?spot_id=89161" target="_blank" rel="noopener">tmt.spotapps.co/catering?spot_id=89161</a></td><td><span class="chip" style="background:#1B5E20">written</span></td><td class="ev"><div class="verdict">Written to the location. Linked from the store's own website.</div><details><summary>raw evidence</summary><div class="raw">fix/live-S/event-catering-apply.json (dry event-catering-dryrun.json; readback events-after.json)<br>title &quot;Catering&quot;<br>the website links to it<br>found as a script url</div></details></td></tr>
+<tr class="st-written"><td class="cat">Events</td><td class="url"><a class="ext" href="https://www.mageesirishpub.com/ankeny-the-district-at-prairie-trail-magee-s-irish-pub-and-eatery-event" target="_blank" rel="noopener">mageesirishpub.com/ankeny-the-district-at-p…s-irish-pub-and-eatery-event</a></td><td><span class="chip" style="background:#1B5E20">written</span></td><td class="ev"><div class="verdict">Written to the location. fix/live-S/event-events-apply.json (dry event-events-dryrun.json; readback events-after.json)</div><details><summary>raw evidence</summary><div class="raw">fix/live-S/event-events-apply.json (dry event-events-dryrun.json; readback events-after.json)<br>verified static (static fetch)</div></details></td></tr>
+<tr class="st-written"><td class="cat">Reservations</td><td class="url"><a class="ext" href="https://tmt.spotapps.co/reservations?spot_id=89161" target="_blank" rel="noopener">tmt.spotapps.co/reservations?spot_id=89161</a></td><td><span class="chip" style="background:#1B5E20">written</span></td><td class="ev"><div class="verdict">Written to the location. Linked from the store's own website.</div><details><summary>raw evidence</summary><div class="raw">fix/live-S/event-reservations-apply.json (dry event-reservations-dryrun.json; readback events-after.json)<br>title &quot;Reservations&quot;<br>the website links to it<br>found as a script url</div></details></td></tr>
+<tr class="st-written"><td class="cat">Gift cards</td><td class="url"><a class="ext" href="https://www.mageesirishpub.com/ankeny-menus/" target="_blank" rel="noopener">mageesirishpub.com/ankeny-menus/</a></td><td><span class="chip" style="background:#1B5E20">written</span></td><td class="ev"><div class="verdict">Written to the location. fix/live-S/event-giftcards-apply.json (dry event-giftcards-dryrun.json; readback events-after.json)</div><details><summary>raw evidence</summary><div class="raw">fix/live-S/event-giftcards-apply.json (dry event-giftcards-dryrun.json; readback events-after.json)<br>verified live tab (live chrome tab)</div></details></td></tr>
+<tr class="st-none"><td class="cat">Loyalty / rewards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">iOS app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Android app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">App downloads</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Other</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-written"><td class="cat">linktree defaults</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#1B5E20">written</span></td><td class="ev"><div class="verdict">Written to the location. fix/live-S/linktree-defaults-apply.json (dry linktree-defaults-dryrun.json): socials activated, menu off, cap enforced</div><details><summary>raw evidence</summary><div class="raw">fix/live-S/linktree-defaults-apply.json (dry linktree-defaults-dryrun.json): socials activated, menu off, cap enforced</div></details></td></tr>
+<tr class="st-written"><td class="cat">Socials</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#1B5E20">written</span></td><td class="ev"><div class="verdict">Written to the location.</div><details><summary>raw evidence</summary><div class="raw">fix/live-S/apply.json (dry fix/live-S/dry-run.json), with the logo and palette</div></details></td></tr></tbody></table>
+</section>
+<section id="previews">
+<h2>Previews</h2><p class="sub">harness signage preview and AI mockups per letter; previews, not proofs (QR drift, invented phone content). Click any image to open the native file.</p>
+<p class="links"></p>
+<p id="previews-1" style="font-size:24px;font-weight:700;color:#B7791F;margin-top:14px;">Cell S  TRAVISSE PICK, applied</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">storefront-sign wordmark v2 rebuild (letters separated, soft alpha), yellow on near-black, black band; full ba.... card #231F20 on #000000, text #FFFFFF (band one-off: one-off #000000). signage preview, 2 AI mockups.</p>
+<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/034edb1430ed-signage-preview-S.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/034edb1430ed-signage-preview-S.png" loading="lazy" alt="signage preview S"></a></div><p class="cap">review/signage-preview-S.png: harness signage preview (POP, sticker, card, to-go), click to open.</p>
+<div class="grid cols4"><figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/b6d57dc46925-box-S.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/b6d57dc46925-box-S.png" loading="lazy" alt="box (AI)  box-S.png
+verdict not filled in yet (prompts.md)"></a><figcaption>box (AI)  box-S.png<br>verdict not filled in yet (prompts.md)</figcaption></figure>
+<figure style="background:#EDEDED"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/40432a2e6280-scan-S.png" target="_blank" title="open the file"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/magee-s-irish-pub-eatery-ankeny/40432a2e6280-scan-S.png" loading="lazy" alt="scan (AI)  scan-S.png
+verdict not filled in yet (prompts.md)"></a><figcaption>scan (AI)  scan-S.png<br>verdict not filled in yet (prompts.md)</figcaption></figure></div>
+<p style="font-size:15px;font-weight:700;color:#8A1C1C;margin-top:10px;">Not in review-canvas.png: the previews would add about 1.6 MB to a PNG already near 50 MB (budget 25 MB). This page and the files above are the review surface for them.</p>
+</section>
+<script>
+  for (const el of document.querySelectorAll('.shot.zoom')) {
+    el.addEventListener('click', (ev) => { ev.preventDefault(); el.classList.toggle('native'); });
+  }
+  // "Show all N" on capped photo grids: reveal the hidden figures in the grid just above the button.
+  for (const btn of document.querySelectorAll('button.show-all')) {
+    btn.addEventListener('click', () => {
+      const grid = btn.parentElement.previousElementSibling;
+      if (!grid) return;
+      const open = grid.classList.toggle('expanded');
+      btn.textContent = open ? btn.dataset.less : btn.dataset.all;
+    });
+  }
+  // Sidebar: highlight the section in view, jump instantly on click (no scroll animation, Travisse 2026-09-29), hamburger below 1000px.
+  (() => {
+    const toc = document.getElementById('toc');
+    const links = new Map([...toc.querySelectorAll('a[href^="#"]')].map((a) => [a.getAttribute('href').slice(1), a]));
+    const sections = [...document.querySelectorAll('section[id]')];
+    const visible = new Set();
+    const setActive = () => {
+      const current = sections.find((s) => visible.has(s)) ?? sections.find((s) => s.getBoundingClientRect().bottom > 0) ?? sections[sections.length - 1];
+      for (const a of links.values()) a.classList.remove('active');
+      if (current) links.get(current.id)?.classList.add('active');
+    };
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); }
+      setActive();
+    }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+    for (const s of sections) io.observe(s);
+    setActive();
+    const toggle = toc.querySelector('.toc-toggle');
+    toggle.addEventListener('click', () => { const open = toc.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
+    for (const a of links.values()) a.addEventListener('click', (ev) => {
+      const target = document.getElementById(a.getAttribute('href').slice(1));
+      if (!target) return;
+      ev.preventDefault();
+      target.scrollIntoView({ behavior: 'instant', block: 'start' });
+      history.replaceState(null, '', a.getAttribute('href'));
+      toc.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
+    });
+  })();
+</script>
+</body></html>
