@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T20:11:43.981Z",
+  "generated_at": "2026-10-13T20:14:44.839Z",
   "count": 28,
   "sites": [
     {
@@ -9,7 +9,7 @@
       "city": "Westland",
       "state": "MI",
       "requested_at": "2026-10-13T15:18:08.169",
-      "updated_at": "2026-10-13T20:11:09.525Z",
+      "updated_at": "2026-10-13T20:14:24.039Z",
       "cursor": "variants",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -18,8 +18,8 @@
       "review_url": "/slice-of-the-80-s-westland/",
       "figma_url": null,
       "print_handoff_url": null,
-      "page_bytes": 40321,
-      "blob_bytes": 8446414,
+      "page_bytes": 40329,
+      "blob_bytes": 10223725,
       "blob_assets": 32
     },
     {
