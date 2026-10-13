@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T20:08:59.098Z",
+  "generated_at": "2026-10-13T20:11:43.981Z",
   "count": 28,
   "sites": [
     {
@@ -9,7 +9,7 @@
       "city": "Westland",
       "state": "MI",
       "requested_at": "2026-10-13T15:18:08.169",
-      "updated_at": "2026-10-13T20:07:41.753Z",
+      "updated_at": "2026-10-13T20:11:09.525Z",
       "cursor": "variants",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -19,7 +19,7 @@
       "figma_url": null,
       "print_handoff_url": null,
       "page_bytes": 40321,
-      "blob_bytes": 8188382,
+      "blob_bytes": 8446414,
       "blob_assets": 32
     },
     {
