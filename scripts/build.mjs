@@ -106,6 +106,7 @@ function boardFields(r, board) {
     hold: it?.hold ?? null,
     done: it?.done ?? null,
     note: typeof note === "string" ? note : null,
+    progress: it?.progress ?? null,
     review_status: reviewStatus ? { status: reviewStatus.status ?? null, waiting_on: reviewStatus.waiting_on ?? null, ease: reviewStatus.ease ?? null, updated_at: reviewStatus.updated_at ?? null } : null,
   };
 }

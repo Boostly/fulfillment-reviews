@@ -24,6 +24,9 @@ export const STATUS_CSS = `
   .ss .meta { color: #5c5c5c; font-size: 13px; }
   .ss .note { color: #161616; font-size: 13px; margin-top: 4px; max-width: 90ch; }
   .ss .stage { font-size: 12px; color: #5c5c5c; text-transform: uppercase; letter-spacing: .05em; }
+  .ss .pstage { display: inline-block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; padding: 2px 7px; border-radius: 4px; background: #eef2f7; color: #334155; border: 1px solid #d5dde8; margin-right: 6px; }
+  .ss .pnext { font-size: 13px; color: #161616; margin-right: 8px; }
+  .ss .pwho { font-size: 12px; color: #5c5c5c; }
   .site-status { position: sticky; top: 8px; z-index: 20; background: #fffdf7; border: 1px solid #ecdfb8; border-radius: 10px; padding: 10px 14px; margin: 0 0 20px; display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
   .site-status .grp { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; }
   .site-status .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: #5c5c5c; }
@@ -61,6 +64,16 @@ window.BoostlyStatus = (function () {
     if (rs.ease) parts.push("ease " + esc(rs.ease) + "/5");
     return parts.join(" \\u00b7 ");
   }
+  function progressHtml(s) {
+    var p = s.progress;
+    if (!p || !p.stage) return "";
+    var out = '<span class="pstage" title="pipeline stage">' + esc(p.stage) + '</span>';
+    if (p.next_step && p.stage !== "done") out += '<span class="pnext"> next: ' + esc(p.next_step) + '</span>';
+    if (p.blocked_on) out += '<span class="need" title="what Travisse owes">' + esc(p.blocked_on) + '</span>';
+    var who = [p.by, p.host ? "on " + p.host : "", p.updated_at ? fmtTime(p.updated_at) : ""].filter(Boolean).join(" ");
+    if (who) out += '<span class="pwho" title="last stamped by">' + esc(who) + '</span>';
+    return out;
+  }
   function strip(el, s, live) {
     if (!el) return;
     var stage = stageLabel(s.boostly_status);
@@ -69,6 +82,7 @@ window.BoostlyStatus = (function () {
       '<div class="grp">' + stepsHtml(s.steps) + '</div>' +
       '<div class="grp"><span class="lbl">Needs you</span>' + needsHtml(s) + '</div>' +
       (metaHtml(s) ? '<div class="grp meta">' + metaHtml(s) + '</div>' : "") +
+      (progressHtml(s) ? '<div class="grp prog">' + progressHtml(s) + '</div>' : "") +
       (s.note ? '<div class="note" style="flex-basis:100%">' + esc(s.note) + '</div>' : "") +
       '<span class="live' + (live ? "" : " off") + '">' + (live ? "live " + esc(live) : "as of the last site build") + '</span>';
   }
@@ -76,6 +90,7 @@ window.BoostlyStatus = (function () {
     s.boostly_status = it.status || s.boostly_status; s.steps = it.steps || s.steps; s.needs_you = it.needs_you || s.needs_you;
     s.gaps = it.gaps || s.gaps; s.hold = it.hold == null ? s.hold : it.hold; s.done = it.done == null ? s.done : it.done;
     s.note = it.note == null ? s.note : it.note; s.review_status = it.review_status || s.review_status;
+    if (it.progress && (!s.progress || String(it.progress.updated_at || "") >= String(s.progress.updated_at || ""))) s.progress = it.progress;
     if (it.figma_url && !s.figma_url) s.figma_url = it.figma_url;
     return s;
   }
@@ -86,8 +101,13 @@ window.BoostlyStatus = (function () {
       .then(function (j) { cb(j && j.items ? j : null); })
       .catch(function () { cb(null); });
   }
+  function overlayOne(url, cb) {
+    if (!url || !window.fetch) { cb(null); return; }
+    fetch(url + "?t=" + Math.floor(Date.now() / 60000), { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; }).then(cb).catch(function () { cb(null); });
+  }
   function fmtTime(iso) { var t = Date.parse(iso); return isNaN(t) ? "" : new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/Denver" }).format(new Date(t)); }
-  return { esc: esc, stepsHtml: stepsHtml, needsHtml: needsHtml, metaHtml: metaHtml, strip: strip, merge: merge, overlay: overlay, fmtTime: fmtTime, stageLabel: stageLabel };
+  return { esc: esc, stepsHtml: stepsHtml, needsHtml: needsHtml, metaHtml: metaHtml, progressHtml: progressHtml, strip: strip, merge: merge, overlay: overlay, overlayOne: overlayOne, fmtTime: fmtTime, stageLabel: stageLabel };
 })();
 `;
 
@@ -98,7 +118,7 @@ export function statusFields(e) {
   return {
     slug: e.slug, status: e.status, status_label: e.status_label, boostly_status: e.boostly_status ?? null,
     steps: e.steps ?? null, needs_you: e.needs_you ?? null, gaps: e.gaps ?? null, hold: e.hold ?? null,
-    done: e.done ?? null, note: e.note ?? null, review_status: e.review_status ?? null, figma_url: e.figma_url ?? null,
+    done: e.done ?? null, note: e.note ?? null, review_status: e.review_status ?? null, progress: e.progress ?? null, figma_url: e.figma_url ?? null,
   };
 }
 
@@ -118,6 +138,15 @@ export function pageStrip(entry, liveUrl) {
     var it = null; for (var i = 0; i < j.items.length; i++) if (j.items[i].run_dir === s.slug) it = j.items[i];
     if (it) window.BoostlyStatus.strip(el, window.BoostlyStatus.merge(s, it), window.BoostlyStatus.fmtTime(j.generated_at));
     else window.BoostlyStatus.strip(el, s, window.BoostlyStatus.fmtTime(j.generated_at) + " (not on the open list)");
+  });
+  // per-location progress file, stamped by run-progress.mjs from whichever machine ran the step
+  var liveUrl = ${JSON.stringify(liveUrl || "")};
+  if (liveUrl) window.BoostlyStatus.overlayOne(liveUrl.replace(/status\/checklist\.json$/, "status/" + s.slug + ".json"), function (p) {
+    if (!p || !p.progress) return;
+    var cur = s.progress;
+    if (cur && String(cur.updated_at || "") > String(p.progress.updated_at || "")) return;
+    s.progress = p.progress; if (p.review_status) s.review_status = p.review_status;
+    window.BoostlyStatus.strip(el, s, "live " + window.BoostlyStatus.fmtTime(p.generated_at));
   });
 })();
 </script>`;
