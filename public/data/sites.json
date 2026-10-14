@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T21:34:30.813Z",
+  "generated_at": "2026-10-14T21:39:53.615Z",
   "count": 50,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -10,15 +10,15 @@
       "city": "Westland",
       "state": "MI",
       "requested_at": "2026-10-13T15:18:08.169",
-      "updated_at": "2026-10-14T21:34:14.756Z",
-      "cursor": "figma",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "updated_at": "2026-10-14T21:37:37.682Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "M",
       "picked_letter": "AK",
       "review_url": "/slice-of-the-80-s-westland/",
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=614-2",
-      "print_handoff_url": null,
+      "print_handoff_url": "https://drive.google.com/drive/folders/1aS4kwcaymspHf1ExmwhE2G-tkz2zskMm",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -43,11 +43,11 @@
         ],
         [
           "Figma approved by you",
-          false
+          true
         ],
         [
           "Slack result posted",
-          false
+          true
         ],
         [
           "Status posted to the review site",
@@ -58,28 +58,26 @@
           false
         ]
       ],
-      "needs_you": [
-        "approve the Figma signage"
-      ],
+      "needs_you": [],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "AK applied (branding, socials, Careers, Order Online written; website held for your yes). Beaded outline fixed: the slash trace was carrying a copy of the wordmark outline; all 14 lockup fills in row 6 col 1 re-pointed, waiting for your signage review; secondary logo asset is candidates/12 (rebuilt 1000 px claw lockup).",
+      "note": "Done: AK is live, signage approved, Slack posted, print hand-off emailed, branding complete, store details confirmed; website write still held for your yes/no.",
       "progress": {
-        "stage": "closeout",
-        "last_step": "Figma signage built; wordmark outline cleaned; lockup bead fix in progress",
-        "next_step": "closeout-finish after approval (secondary logo must be candidates/12)",
-        "blocked_on": "Figma signage approval and the website yes or no",
-        "by": "lead",
+        "stage": "closeout-finish",
+        "last_step": "Figma approved",
+        "next_step": "secondary logo, Slack, branding complete",
+        "blocked_on": null,
+        "by": "slice-finish",
         "host": "MacBook-Pro-2.local",
-        "updated_at": "2026-10-14T21:16:06.518Z",
-        "bundle_pushed_at": "2026-10-14T21:16:06.804Z"
+        "updated_at": "2026-10-14T21:36:44.971Z",
+        "bundle_pushed_at": "2026-10-14T21:36:45.563Z"
       },
       "review_status": {
         "status": "waiting",
-        "waiting_on": "Figma signage approval (claw lockup), website yes",
+        "waiting_on": "website write yes/no",
         "ease": null,
-        "updated_at": "2026-10-14T15:44:30.845Z"
+        "updated_at": "2026-10-14T21:39:20.402Z"
       },
       "page_bytes": 15785074,
       "blob_bytes": 14290911,
