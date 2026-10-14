@@ -129,6 +129,16 @@ function selectRuns(all, { limit, slugs }) {
   return chosen;
 }
 
+// The effective stage is the furthest one recorded, not only state.cursor: a later write can reset
+// the cursor (Frank's Pizza 2026-10-14 showed "Pick recorded" with slack and notion stages present).
+function effectiveCursor(run) {
+  const st = run.state || {};
+  let i = STAGES.indexOf(st.cursor);
+  for (const k of Object.keys(st.stages || {})) i = Math.max(i, STAGES.indexOf(k));
+  if (run.slack?.message_ts || run.slack?.posted_at) i = Math.max(i, STAGES.indexOf("slack"));
+  return i < 0 ? null : STAGES[i];
+}
+
 function statusFor(cursor, picked) {
   const i = STAGES.indexOf(cursor);
   if (i < 0) return { key: "unknown", label: "Unknown" };
@@ -282,7 +292,7 @@ function siteEntry(r, p, board) {
   let handoffUrl = null;
   if (exists(handoffPath)) { try { handoffUrl = findKey(readJson(handoffPath), "folder_link"); } catch {} }
   const { recommended, picked } = letters(r.run);
-  const status = statusFor(r.run.state?.cursor, picked);
+  const status = statusFor(effectiveCursor(r.run), picked);
   return {
     slug: r.slug,
     name: req.location_name || id.location_name || r.slug,
@@ -291,7 +301,7 @@ function siteEntry(r, p, board) {
     state: id.state || null,
     requested_at: r.createdAt || null,
     updated_at: lastUpdated(r),
-    cursor: r.run.state?.cursor || null,
+    cursor: effectiveCursor(r.run),
     status: status.key,
     status_label: status.label,
     recommended_letter: recommended,

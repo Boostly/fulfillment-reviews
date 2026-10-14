@@ -124,7 +124,7 @@
 <li><a href="#previews">Previews</a><ol><li><a href="#previews-1">Cell N  TRAVISSE PICK, applied</a></li></ol></li>
 </ol></nav>
 <div class="site-status ss" id="site-status" data-slug="monza-manassas"></div>
-<script id="site-status-data" type="application/json">{"slug":"monza-manassas","status":"applied","status_label":"Branding applied","boostly_status":null,"steps":null,"needs_you":null,"gaps":null,"hold":null,"done":null,"note":"Done: N (web/print split, orange signage) is live, signage approved 2026-10-02, Slack posted, branding complete, store details already confirmed; request moved directly to physical_fulfillment. 7 links written (Toast ordering corrected to the online-ordering page, Order Online, Menu disabled by order rule, Catering, Facebook, Instagram, X). 2 held for your call: gift cards, loyalty page. Notion entry 67 appended. Open: 100 tables / 4 stalls edited in the app 2026-10-02, no transcript confirms the count; ops to confirm before 200 table stickers print. Offer 'Get 20% Off!' has no promotion id (signup keyword already pays 20% OFF, matches the sign). To-go labels updated (offer + logo), review in Figma: https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=442-11677","review_status":null,"figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=442-2"}</script>
+<script id="site-status-data" type="application/json">{"slug":"monza-manassas","status":"closed","status_label":"Closed out","boostly_status":null,"steps":null,"needs_you":null,"gaps":null,"hold":null,"done":null,"note":"Done: N (web/print split, orange signage) is live, signage approved 2026-10-02, Slack posted, branding complete, store details already confirmed; request moved directly to physical_fulfillment. 7 links written (Toast ordering corrected to the online-ordering page, Order Online, Menu disabled by order rule, Catering, Facebook, Instagram, X). 2 held for your call: gift cards, loyalty page. Notion entry 67 appended. Open: 100 tables / 4 stalls edited in the app 2026-10-02, no transcript confirms the count; ops to confirm before 200 table stickers print. Offer 'Get 20% Off!' has no promotion id (signup keyword already pays 20% OFF, matches the sign). To-go labels updated (offer + logo), review in Figma: https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=442-11677","review_status":null,"figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=442-2"}</script>
 <script>
 window.BoostlyStatus = (function () {
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
@@ -142,7 +142,8 @@ window.BoostlyStatus = (function () {
     (s.gaps || []).forEach(function (g) { out += '<span class="need soft">' + esc(g) + '</span>'; });
     if (s.hold) out += '<span class="hold" title="' + esc(s.hold) + '">HOLD</span>';
     if (!out && s.done) out += '<span class="need soft">review complete</span>';
-    if (!out && s.status !== "closed") out += '<span class="need soft">with the agents, nothing for you</span>';
+    else if (!out && !s.steps) out += '<span class="need soft">' + (s.status === "closed" ? "closed out" : "not on the open-request list") + '</span>';
+    else if (!out && s.status !== "closed") out += '<span class="need soft">with the agents, nothing for you</span>';
     return out;
   }
   function stageLabel(st) { return st ? String(st).replace(/_/g, " ").replace(/^./, function (c) { return c.toUpperCase(); }) : ""; }

@@ -50,7 +50,8 @@ window.BoostlyStatus = (function () {
     (s.gaps || []).forEach(function (g) { out += '<span class="need soft">' + esc(g) + '</span>'; });
     if (s.hold) out += '<span class="hold" title="' + esc(s.hold) + '">HOLD</span>';
     if (!out && s.done) out += '<span class="need soft">review complete</span>';
-    if (!out && s.status !== "closed") out += '<span class="need soft">with the agents, nothing for you</span>';
+    else if (!out && !s.steps) out += '<span class="need soft">' + (s.status === "closed" ? "closed out" : "not on the open-request list") + '</span>';
+    else if (!out && s.status !== "closed") out += '<span class="need soft">with the agents, nothing for you</span>';
     return out;
   }
   function stageLabel(st) { return st ? String(st).replace(/_/g, " ").replace(/^./, function (c) { return c.toUpperCase(); }) : ""; }

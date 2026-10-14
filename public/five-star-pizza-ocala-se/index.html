@@ -124,7 +124,7 @@
 <li><a href="#previews">Previews</a><ol><li><a href="#previews-1">Cell P  TRAVISSE PICK, applied</a></li></ol></li>
 </ol></nav>
 <div class="site-status ss" id="site-status" data-slug="five-star-pizza-ocala-se"></div>
-<script id="site-status-data" type="application/json">{"slug":"five-star-pizza-ocala-se","status":"applied","status_label":"Branding applied","boostly_status":null,"steps":null,"needs_you":null,"gaps":null,"hold":null,"done":null,"note":"Done: P (full-color chain badge on red #E21D24, navy #211F7F band) is live, signage approved, Slack posted, branding complete; request moved to store_details (store_details_confirmed_at still null, so it is short of physical fulfillment, not a bug). 7 links written, ordering_url overwrite held for your call. James Lowder still needs store details confirmation and quantities (wizard values, 09/28 transcript pending). To-go labels updated (offer + logo), review in Figma: https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=377-11677","review_status":null,"figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=377-2"}</script>
+<script id="site-status-data" type="application/json">{"slug":"five-star-pizza-ocala-se","status":"closed","status_label":"Closed out","boostly_status":null,"steps":null,"needs_you":null,"gaps":null,"hold":null,"done":null,"note":"Done: P (full-color chain badge on red #E21D24, navy #211F7F band) is live, signage approved, Slack posted, branding complete; request moved to store_details (store_details_confirmed_at still null, so it is short of physical fulfillment, not a bug). 7 links written, ordering_url overwrite held for your call. James Lowder still needs store details confirmation and quantities (wizard values, 09/28 transcript pending). To-go labels updated (offer + logo), review in Figma: https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=377-11677","review_status":null,"figma_url":"https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=377-2"}</script>
 <script>
 window.BoostlyStatus = (function () {
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
@@ -142,7 +142,8 @@ window.BoostlyStatus = (function () {
     (s.gaps || []).forEach(function (g) { out += '<span class="need soft">' + esc(g) + '</span>'; });
     if (s.hold) out += '<span class="hold" title="' + esc(s.hold) + '">HOLD</span>';
     if (!out && s.done) out += '<span class="need soft">review complete</span>';
-    if (!out && s.status !== "closed") out += '<span class="need soft">with the agents, nothing for you</span>';
+    else if (!out && !s.steps) out += '<span class="need soft">' + (s.status === "closed" ? "closed out" : "not on the open-request list") + '</span>';
+    else if (!out && s.status !== "closed") out += '<span class="need soft">with the agents, nothing for you</span>';
     return out;
   }
   function stageLabel(st) { return st ? String(st).replace(/_/g, " ").replace(/^./, function (c) { return c.toUpperCase(); }) : ""; }

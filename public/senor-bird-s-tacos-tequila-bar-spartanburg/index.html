@@ -163,7 +163,7 @@
 <li><a href="#links">Links (2 held for review)</a></li>
 </ol></nav>
 <div class="site-status ss" id="site-status" data-slug="senor-bird-s-tacos-tequila-bar-spartanburg"></div>
-<script id="site-status-data" type="application/json">{"slug":"senor-bird-s-tacos-tequila-bar-spartanburg","status":"awaiting","status_label":"Awaiting pick","boostly_status":"digital_fulfillment","steps":[["Review sheet ready",true],["Branding pick (Fable default E)",false],["Branding applied in prod",false],["Links written (4 ready, 1 need a call)",false],["Figma signage built",false],["Figma approved by you",false],["Slack result posted",false],["Status posted to the review site",false],["Store details confirmed",true]],"needs_you":["pick a letter","1 link decision(s)"],"gaps":[],"hold":null,"done":false,"note":"Review stage: Fable default E (words-only white cut on navy #143C8C, band #01286C); M adds an in-store red band option; full-lockup knockout row A-D rejected (fails card legibility, full lockup goes on sticker and POP). Links: Order Online, Catering, Careers, Gift Cards ready; iOS app held by rule; socials dead. Offer unconfirmed (call says 5%, keyword pays 20%); ship-to now complete on the location row.","review_status":null,"figma_url":null}</script>
+<script id="site-status-data" type="application/json">{"slug":"senor-bird-s-tacos-tequila-bar-spartanburg","status":"awaiting","status_label":"Awaiting pick","boostly_status":"digital_fulfillment","steps":[["Review sheet ready",true],["Branding pick (Fable default E)",false],["Branding applied in prod",false],["Links written (4 ready, 1 need a call)",false],["Figma signage built",false],["Figma approved by you",false],["Slack result posted",false],["Status posted to the review site",true],["Store details confirmed",true]],"needs_you":["pick a letter","1 link decision(s)"],"gaps":[],"hold":null,"done":false,"note":"Review stage: Fable default E (words-only white cut on navy #143C8C, band #01286C); M adds an in-store red band option; full-lockup knockout row A-D rejected (fails card legibility, full lockup goes on sticker and POP). Links: Order Online, Catering, Careers, Gift Cards ready; iOS app held by rule; socials dead. Offer unconfirmed (call says 5%, keyword pays 20%); ship-to now complete on the location row.","review_status":{"status":"waiting","waiting_on":"letter pick (Fable default E), offer and quantities flags","ease":null,"updated_at":"2026-10-13T23:51:12.768Z"},"figma_url":null}</script>
 <script>
 window.BoostlyStatus = (function () {
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
@@ -181,7 +181,8 @@ window.BoostlyStatus = (function () {
     (s.gaps || []).forEach(function (g) { out += '<span class="need soft">' + esc(g) + '</span>'; });
     if (s.hold) out += '<span class="hold" title="' + esc(s.hold) + '">HOLD</span>';
     if (!out && s.done) out += '<span class="need soft">review complete</span>';
-    if (!out && s.status !== "closed") out += '<span class="need soft">with the agents, nothing for you</span>';
+    else if (!out && !s.steps) out += '<span class="need soft">' + (s.status === "closed" ? "closed out" : "not on the open-request list") + '</span>';
+    else if (!out && s.status !== "closed") out += '<span class="need soft">with the agents, nothing for you</span>';
     return out;
   }
   function stageLabel(st) { return st ? String(st).replace(/_/g, " ").replace(/^./, function (c) { return c.toUpperCase(); }) : ""; }
