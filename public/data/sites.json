@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T20:29:30.801Z",
+  "generated_at": "2026-10-14T20:56:18.024Z",
   "count": 50,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -10,7 +10,7 @@
       "city": "Westland",
       "state": "MI",
       "requested_at": "2026-10-13T15:18:08.169",
-      "updated_at": "2026-10-13T20:39:53.041Z",
+      "updated_at": "2026-10-14T20:55:59.532Z",
       "cursor": "figma",
       "status": "applied",
       "status_label": "Branding applied",
@@ -64,12 +64,12 @@
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "AK applied (branding, socials, Careers, Order Online written; website held for your yes). Signage built in Figma row 6 col 1, waiting for your review; sticker on-white render-legibility needs your override call.",
+      "note": "AK applied (branding, socials, Careers, Order Online written; website held for your yes). Wordmark outlines cleaned (transparent slit filled) and all 15 Figma logo fills re-pointed in row 6 col 1, waiting for your review; secondary logo asset is now candidates/12 (cleaned 1000 px claw lockup).",
       "review_status": {
         "status": "waiting",
-        "waiting_on": "Figma signage approval, website yes, sticker-logo legibility override",
+        "waiting_on": "Figma signage approval (claw lockup), website yes",
         "ease": null,
-        "updated_at": "2026-10-13T23:51:12.723Z"
+        "updated_at": "2026-10-14T15:44:30.845Z"
       },
       "page_bytes": 15785074,
       "blob_bytes": 14290911,
