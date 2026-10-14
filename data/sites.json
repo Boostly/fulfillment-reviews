@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T17:10:26.480Z",
+  "generated_at": "2026-10-14T17:20:33.887Z",
   "count": 50,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -82,15 +82,15 @@
       "city": "Spartanburg",
       "state": "SC",
       "requested_at": "2026-10-12T19:33:09.848",
-      "updated_at": "2026-10-14T17:08:21.930Z",
-      "cursor": "figma",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "updated_at": "2026-10-14T17:17:39.283Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "E",
       "picked_letter": "N",
       "review_url": "/senor-bird-s-tacos-tequila-bar-spartanburg/",
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=627-2",
-      "print_handoff_url": null,
+      "print_handoff_url": "https://drive.google.com/drive/folders/1Ij0ybtknMII8MsyeXfCLQxe2KIjrpmFE",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -115,11 +115,11 @@
         ],
         [
           "Figma approved by you",
-          false
+          true
         ],
         [
           "Slack result posted",
-          false
+          true
         ],
         [
           "Status posted to the review site",
@@ -130,18 +130,16 @@
           true
         ]
       ],
-      "needs_you": [
-        "approve the Figma signage"
-      ],
+      "needs_you": [],
       "gaps": [],
       "hold": null,
-      "done": false,
-      "note": "N applied (branding, iOS app, Order Online, Catering, Careers, Gift Cards written; website clean-URL held for your yes). Signage built in Figma row 6 cols 2-3 (38 tables, 4 stalls, live counts), waiting for your review; open flags: 5% vs 20% offer, birthday promo, table count, Text Club section inactive.",
+      "done": true,
+      "note": "Done: N is live, signage approved 2026-10-14, Slack posted, print hand-off drafted, branding complete, website clean URL written; 5% vs 20% offer, birthday promo, table count (38 vs 10) open for your call, transcripts pending",
       "review_status": {
-        "status": "waiting",
-        "waiting_on": "Figma signage approval",
-        "ease": null,
-        "updated_at": "2026-10-14T17:10:04.563Z"
+        "status": "done",
+        "waiting_on": null,
+        "ease": 3,
+        "updated_at": "2026-10-14T17:19:53.472Z"
       },
       "page_bytes": 6124303,
       "blob_bytes": 13737901,
