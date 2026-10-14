@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T21:15:34.333Z",
+  "generated_at": "2026-10-14T21:34:30.813Z",
   "count": 50,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -10,7 +10,7 @@
       "city": "Westland",
       "state": "MI",
       "requested_at": "2026-10-13T15:18:08.169",
-      "updated_at": "2026-10-14T20:55:59.532Z",
+      "updated_at": "2026-10-14T21:34:14.756Z",
       "cursor": "figma",
       "status": "applied",
       "status_label": "Branding applied",
@@ -64,7 +64,17 @@
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "AK applied (branding, socials, Careers, Order Online written; website held for your yes). Wordmark outlines cleaned (transparent slit filled) and all 15 Figma logo fills re-pointed in row 6 col 1, waiting for your review; secondary logo asset is now candidates/12 (cleaned 1000 px claw lockup).",
+      "note": "AK applied (branding, socials, Careers, Order Online written; website held for your yes). Beaded outline fixed: the slash trace was carrying a copy of the wordmark outline; all 14 lockup fills in row 6 col 1 re-pointed, waiting for your signage review; secondary logo asset is candidates/12 (rebuilt 1000 px claw lockup).",
+      "progress": {
+        "stage": "closeout",
+        "last_step": "Figma signage built; wordmark outline cleaned; lockup bead fix in progress",
+        "next_step": "closeout-finish after approval (secondary logo must be candidates/12)",
+        "blocked_on": "Figma signage approval and the website yes or no",
+        "by": "lead",
+        "host": "MacBook-Pro-2.local",
+        "updated_at": "2026-10-14T21:16:06.518Z",
+        "bundle_pushed_at": "2026-10-14T21:16:06.804Z"
+      },
       "review_status": {
         "status": "waiting",
         "waiting_on": "Figma signage approval (claw lockup), website yes",
