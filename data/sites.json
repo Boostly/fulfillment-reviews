@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T20:28:28.123Z",
+  "generated_at": "2026-10-14T20:29:30.801Z",
   "count": 50,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -204,7 +204,7 @@
       "gaps": [],
       "hold": null,
       "done": true,
-      "note": "Done: AH is live, full-color signage approved 2026-10-14, Slack posted, print hand-off sent, branding complete; 2 open flags for your call (ordering URL swap, table count 8 vs 10 pending transcripts).",
+      "note": "Done: AH live, signage approved 2026-10-14, Slack posted, vendor emailed, branding complete; ordering URL swap held, table count 8 vs 10 open (transcripts pending).",
       "review_status": {
         "status": "done",
         "waiting_on": null,
