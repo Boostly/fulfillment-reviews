@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T17:20:33.887Z",
+  "generated_at": "2026-10-14T20:28:28.123Z",
   "count": 50,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -152,15 +152,15 @@
       "city": "Harbor Springs",
       "state": "MI",
       "requested_at": "2026-10-12T15:25:03.831",
-      "updated_at": "2026-10-12T21:43:58.046Z",
-      "cursor": "figma",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "updated_at": "2026-10-14T20:25:50.654Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "A",
       "picked_letter": "AH",
       "review_url": "/harbor-springs-b-c-pizza/",
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=595-2",
-      "print_handoff_url": null,
+      "print_handoff_url": "https://drive.google.com/drive/folders/1X2mUFxV0cv9d27DOqYzVLNFokKgTmkC1",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -185,11 +185,11 @@
         ],
         [
           "Figma approved by you",
-          false
+          true
         ],
         [
           "Slack result posted",
-          false
+          true
         ],
         [
           "Status posted to the review site",
@@ -200,18 +200,16 @@
           true
         ]
       ],
-      "needs_you": [
-        "approve the Figma signage"
-      ],
+      "needs_you": [],
       "gaps": [],
       "hold": null,
-      "done": false,
-      "note": "AH applied (branding, 5 links written, ordering swap held); signage rebuilt with the native lockup in a gradient box, Figma row 5 col 2, waiting for your review",
+      "done": true,
+      "note": "Done: AH is live, full-color signage approved 2026-10-14, Slack posted, print hand-off sent, branding complete; 2 open flags for your call (ordering URL swap, table count 8 vs 10 pending transcripts).",
       "review_status": {
-        "status": "waiting",
-        "waiting_on": "Figma signage approval, ordering link swap",
-        "ease": null,
-        "updated_at": "2026-10-13T23:51:12.802Z"
+        "status": "done",
+        "waiting_on": null,
+        "ease": 3,
+        "updated_at": "2026-10-14T20:27:41.584Z"
       },
       "page_bytes": 41948,
       "blob_bytes": 14035710,
