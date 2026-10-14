@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T15:44:56.106Z",
+  "generated_at": "2026-10-14T15:45:41.470Z",
   "count": 50,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -82,7 +82,7 @@
       "city": "Spartanburg",
       "state": "SC",
       "requested_at": "2026-10-12T19:33:09.848",
-      "updated_at": "2026-10-13T19:23:58.711Z",
+      "updated_at": "2026-10-14T15:45:30.427Z",
       "cursor": "links",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -144,9 +144,9 @@
         "ease": null,
         "updated_at": "2026-10-13T23:51:12.768Z"
       },
-      "page_bytes": 5688213,
-      "blob_bytes": 7063277,
-      "blob_assets": 26
+      "page_bytes": 6087787,
+      "blob_bytes": 7112314,
+      "blob_assets": 27
     },
     {
       "slug": "harbor-springs-b-c-pizza",
