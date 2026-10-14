@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T15:45:41.470Z",
+  "generated_at": "2026-10-14T17:10:26.480Z",
   "count": 50,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -82,14 +82,14 @@
       "city": "Spartanburg",
       "state": "SC",
       "requested_at": "2026-10-12T19:33:09.848",
-      "updated_at": "2026-10-14T15:45:30.427Z",
-      "cursor": "links",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-14T17:08:21.930Z",
+      "cursor": "figma",
+      "status": "applied",
+      "status_label": "Branding applied",
       "recommended_letter": "E",
-      "picked_letter": null,
+      "picked_letter": "N",
       "review_url": "/senor-bird-s-tacos-tequila-bar-spartanburg/",
-      "figma_url": null,
+      "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=627-2",
       "print_handoff_url": null,
       "boostly_status": "digital_fulfillment",
       "steps": [
@@ -98,20 +98,20 @@
           true
         ],
         [
-          "Branding pick (Fable default E)",
-          false
+          "Branding pick: N",
+          true
         ],
         [
           "Branding applied in prod",
-          false
+          true
         ],
         [
-          "Links written (4 ready, 1 need a call)",
-          false
+          "Links written (0 still held)",
+          true
         ],
         [
           "Figma signage built",
-          false
+          true
         ],
         [
           "Figma approved by you",
@@ -131,22 +131,21 @@
         ]
       ],
       "needs_you": [
-        "pick a letter",
-        "1 link decision(s)"
+        "approve the Figma signage"
       ],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Review stage: Fable default E (words-only white cut on navy #143C8C, band #01286C); M adds an in-store red band option; full-lockup knockout row A-D rejected (fails card legibility, full lockup goes on sticker and POP). Links: Order Online, Catering, Careers, Gift Cards ready; iOS app held by rule; socials dead. Offer unconfirmed (call says 5%, keyword pays 20%); ship-to now complete on the location row.",
+      "note": "N applied (branding, iOS app, Order Online, Catering, Careers, Gift Cards written; website clean-URL held for your yes). Signage built in Figma row 6 cols 2-3 (38 tables, 4 stalls, live counts), waiting for your review; open flags: 5% vs 20% offer, birthday promo, table count, Text Club section inactive.",
       "review_status": {
         "status": "waiting",
-        "waiting_on": "letter pick (Fable default E), offer and quantities flags",
+        "waiting_on": "Figma signage approval",
         "ease": null,
-        "updated_at": "2026-10-13T23:51:12.768Z"
+        "updated_at": "2026-10-14T17:10:04.563Z"
       },
-      "page_bytes": 6087787,
-      "blob_bytes": 7112314,
-      "blob_assets": 27
+      "page_bytes": 6124303,
+      "blob_bytes": 13737901,
+      "blob_assets": 29
     },
     {
       "slug": "harbor-springs-b-c-pizza",
