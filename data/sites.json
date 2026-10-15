@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T16:52:00.295Z",
+  "generated_at": "2026-10-15T16:52:58.587Z",
   "count": 56,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -249,7 +249,7 @@
       "city": "Ocean City",
       "state": "MD",
       "requested_at": "2026-10-14T19:07:46.99",
-      "updated_at": "2026-10-15T16:00:33.297Z",
+      "updated_at": "2026-10-15T16:52:49.173Z",
       "cursor": "links",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -306,19 +306,19 @@
       "done": false,
       "note": "Pick a letter (account-level branding for all 3 stores; judgment by Opus, Fable limit hit). Default B: the round black badge on a teal #157E82 card with a black band; C is white words on teal, D white words on black with a teal band. The full badge is 188 KB against the 70 KB upload cap (illustrated mark, your override call); words-only rows pass. Links: menu, Instagram and Facebook verified and already live; Toast ordering held (page unread by both paths); quantities conflict (call 35 tables, request 45+45).",
       "progress": {
-        "stage": "fulfill",
-        "last_step": "variant sheet",
-        "next_step": "review canvas and link discovery",
-        "blocked_on": null,
+        "stage": "review",
+        "last_step": "review canvas built, site published",
+        "next_step": "Travisse picks a letter",
+        "blocked_on": "letter pick",
         "by": "fulfill-location",
         "host": "MacBook-Pro-2.domain",
-        "updated_at": "2026-10-15T15:57:35.039Z",
-        "bundle_pushed_at": "2026-10-15T15:57:35.349Z"
+        "updated_at": "2026-10-15T16:01:09.695Z",
+        "bundle_pushed_at": "2026-10-15T16:01:09.999Z"
       },
       "review_status": null,
-      "page_bytes": 2119577,
-      "blob_bytes": 7022627,
-      "blob_assets": 29
+      "page_bytes": 2930498,
+      "blob_bytes": 7209822,
+      "blob_assets": 31
     },
     {
       "slug": "scoops-ice-cream",
