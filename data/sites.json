@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T16:59:18.916Z",
+  "generated_at": "2026-10-15T17:35:56.979Z",
   "count": 56,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -327,15 +327,15 @@
       "city": null,
       "state": null,
       "requested_at": "2026-10-14T15:34:41.993",
-      "updated_at": "2026-10-15T16:50:10.456Z",
-      "cursor": "figma",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "updated_at": "2026-10-15T17:34:05.593Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "A",
       "picked_letter": "D",
       "review_url": "/scoops-ice-cream/",
       "figma_url": "https://www.figma.com/design/5LsXaingsVCdMuJhWzR0g3/In-Store-Fulfillment-9?node-id=3-2",
-      "print_handoff_url": null,
+      "print_handoff_url": "https://drive.google.com/drive/folders/1ihfFl-Ypd4OyJkNRk24O9g5LUt4nQydW",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -360,11 +360,11 @@
         ],
         [
           "Figma approved by you",
-          false
+          true
         ],
         [
           "Slack result posted",
-          false
+          true
         ],
         [
           "Status posted to the review site",
@@ -375,28 +375,26 @@
           true
         ]
       ],
-      "needs_you": [
-        "approve the Figma signage"
-      ],
+      "needs_you": [],
       "gaps": [],
       "hold": null,
-      "done": false,
-      "note": "D applied (raspberry card, blue band), menu and careers written, Place ID fixed; signage built in Figma, waiting for your review; GloriaFood ordering, Facebook and TikTok held.",
+      "done": true,
+      "note": "Done: D is live, the Figma signage is approved, the secondary logo is written (sticker lockup, account scope), the Slack result is posted, and branding is marked complete, so the request is in physical fulfillment. Print files sent to customstickers.com (10 vector pages, Drive folder and summary row updated, vendor email sent). 2 links written (menu, careers); 3 held for your call (GloriaFood ordering, Facebook, TikTok), still being browser-read by dt-scoops. Google Place ID corrected. CSM open: 2026-10-13 Ella demo transcripts pending; tables/stalls unconfirmed by any call.",
       "progress": {
-        "stage": "closeout",
-        "last_step": "Figma signage built",
-        "next_step": "closeout-finish after approval",
-        "blocked_on": "Figma signage approval",
-        "by": "closeout-location",
+        "stage": "closeout-finish",
+        "last_step": "Figma approved",
+        "next_step": "secondary logo, Slack, branding complete",
+        "blocked_on": null,
+        "by": "closeout-finish",
         "host": "Unknown.domain",
-        "updated_at": "2026-10-15T16:51:32.003Z",
-        "bundle_pushed_at": "2026-10-15T16:51:32.345Z"
+        "updated_at": "2026-10-15T17:33:06.736Z",
+        "bundle_pushed_at": "2026-10-15T17:33:07.022Z"
       },
       "review_status": {
-        "status": "waiting",
-        "waiting_on": "Figma signage approval",
-        "ease": null,
-        "updated_at": "2026-10-15T16:51:31.968Z"
+        "status": "done",
+        "waiting_on": null,
+        "ease": 4,
+        "updated_at": "2026-10-15T17:35:28.311Z"
       },
       "page_bytes": 8039552,
       "blob_bytes": 8518636,
