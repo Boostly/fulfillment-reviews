@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T16:52:58.587Z",
+  "generated_at": "2026-10-15T16:59:18.916Z",
   "count": 56,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -409,14 +409,14 @@
       "city": "Hoboken",
       "state": "NJ",
       "requested_at": "2026-10-13T21:55:35.987",
-      "updated_at": "2026-10-15T16:39:55.375Z",
-      "cursor": "links",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-15T16:57:21.915Z",
+      "cursor": "figma",
+      "status": "applied",
+      "status_label": "Branding applied",
       "recommended_letter": "A",
-      "picked_letter": null,
+      "picked_letter": "K",
       "review_url": "/the-pig-parrot-hoboken/",
-      "figma_url": null,
+      "figma_url": "https://www.figma.com/design/5LsXaingsVCdMuJhWzR0g3/In-Store-Fulfillment-9?node-id=5-2",
       "print_handoff_url": null,
       "boostly_status": "digital_fulfillment",
       "steps": [
@@ -425,12 +425,12 @@
           true
         ],
         [
-          "Branding pick (Fable default A)",
-          false
+          "Branding pick: K",
+          true
         ],
         [
           "Branding applied in prod",
-          false
+          true
         ],
         [
           "Links written (0 ready, 6 need a call)",
@@ -438,7 +438,7 @@
         ],
         [
           "Figma signage built",
-          false
+          true
         ],
         [
           "Figma approved by you",
@@ -450,7 +450,7 @@
         ],
         [
           "Status posted to the review site",
-          false
+          true
         ],
         [
           "Store details confirmed",
@@ -458,29 +458,34 @@
         ]
       ],
       "needs_you": [
-        "pick a letter",
+        "approve the Figma signage",
         "6 link decision(s)"
       ],
       "gaps": [
         "ship-to missing"
       ],
-      "hold": null,
+      "hold": "PICK 2026-10-15 (Travisse): K, account scope, open facts for the signage review",
       "done": false,
-      "note": "Account-level branding for all 3 Pig & Parrot locations (judged by Opus, Fable limit hit): default A, white roundel without the place line on charcoal #333333 with turquoise #42C0D2 band, HOLD until the 500px-source trace is accepted; site colors came from an unproven-profile browser read; ship-to missing; all links held until browser reads rerun in a proven profile.",
+      "note": "K applied at account scope (siblings inherit) and signage built in Figma, waiting for your review; ship-to missing, tap cards 10 vs 75 and offer 10% vs 20% open.",
       "progress": {
-        "stage": "review",
-        "last_step": "review canvas built, site published",
-        "next_step": "Travisse picks a letter",
-        "blocked_on": "letter pick",
-        "by": "fulfill-location",
-        "host": "MacBook-Pro-2.domain",
-        "updated_at": "2026-10-15T16:00:41.367Z",
-        "bundle_pushed_at": "2026-10-15T16:00:41.634Z"
+        "stage": "closeout",
+        "last_step": "Figma signage built",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "Figma signage approval",
+        "by": "closeout-location",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-15T16:58:46.367Z",
+        "bundle_pushed_at": "2026-10-15T16:58:46.700Z"
       },
-      "review_status": null,
-      "page_bytes": 5687765,
-      "blob_bytes": 3446383,
-      "blob_assets": 25
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "Figma signage approval",
+        "ease": null,
+        "updated_at": "2026-10-15T16:58:46.329Z"
+      },
+      "page_bytes": 5724267,
+      "blob_bytes": 8918404,
+      "blob_assets": 27
     },
     {
       "slug": "slice-of-the-80-s-westland",
