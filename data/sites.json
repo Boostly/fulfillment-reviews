@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-15T15:59:07.716Z",
-  "count": 54,
+  "generated_at": "2026-10-15T16:00:04.801Z",
+  "count": 55,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -319,6 +319,86 @@
       "page_bytes": 4441952,
       "blob_bytes": 2623015,
       "blob_assets": 24
+    },
+    {
+      "slug": "the-pig-parrot-hoboken",
+      "name": "The Pig & Parrot (Hoboken)",
+      "account": "The Pig & Parrot",
+      "city": "Hoboken",
+      "state": "NJ",
+      "requested_at": "2026-10-13T21:55:35.987",
+      "updated_at": "2026-10-15T15:59:44.101Z",
+      "cursor": "links",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "A",
+      "picked_letter": null,
+      "review_url": "/the-pig-parrot-hoboken/",
+      "figma_url": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick (Fable default A)",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (3 ready, 1 need a call)",
+          false
+        ],
+        [
+          "Figma signage built",
+          false
+        ],
+        [
+          "Figma approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [
+        "pick a letter",
+        "1 link decision(s)"
+      ],
+      "gaps": [
+        "ship-to missing"
+      ],
+      "hold": null,
+      "done": false,
+      "note": "Account-level branding for all 3 Pig & Parrot locations (judged by Opus, Fable limit hit): default A, white roundel without the place line on charcoal #333333 with turquoise #42C0D2 band, HOLD until the 500px-source trace is accepted; ship-to missing; 3 links ready, Facebook held (18+ login wall).",
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "variant sheet",
+        "next_step": "review canvas and link discovery",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "MacBook-Pro-2.domain",
+        "updated_at": "2026-10-15T15:58:59.664Z",
+        "bundle_pushed_at": "2026-10-15T15:58:59.904Z"
+      },
+      "review_status": null,
+      "page_bytes": 5285659,
+      "blob_bytes": 3446383,
+      "blob_assets": 25
     },
     {
       "slug": "slice-of-the-80-s-westland",
