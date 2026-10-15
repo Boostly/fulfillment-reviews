@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T15:56:07.422Z",
+  "generated_at": "2026-10-15T15:56:12.737Z",
   "count": 53,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -12,8 +12,8 @@
       "requested_at": "2026-10-14T19:07:47.398",
       "updated_at": "2026-10-15T15:52:23.641Z",
       "cursor": "write",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "status": "inherits",
+      "status_label": "Branding: inherits surfin-betty-s-burger-bar-downtown (pending pick)",
       "recommended_letter": null,
       "picked_letter": null,
       "review_url": "/surfin-betty-s-burger-bar-uptown-ocean-city-127th/",
