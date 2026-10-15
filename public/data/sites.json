@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T16:01:07.674Z",
+  "generated_at": "2026-10-15T16:01:29.205Z",
   "count": 56,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -405,7 +405,7 @@
       "city": "Hoboken",
       "state": "NJ",
       "requested_at": "2026-10-13T21:55:35.987",
-      "updated_at": "2026-10-15T15:59:44.101Z",
+      "updated_at": "2026-10-15T16:01:20.630Z",
       "cursor": "links",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -429,7 +429,7 @@
           false
         ],
         [
-          "Links written (3 ready, 1 need a call)",
+          "Links written (0 ready, 6 need a call)",
           false
         ],
         [
@@ -455,26 +455,26 @@
       ],
       "needs_you": [
         "pick a letter",
-        "1 link decision(s)"
+        "6 link decision(s)"
       ],
       "gaps": [
         "ship-to missing"
       ],
       "hold": null,
       "done": false,
-      "note": "Account-level branding for all 3 Pig & Parrot locations (judged by Opus, Fable limit hit): default A, white roundel without the place line on charcoal #333333 with turquoise #42C0D2 band, HOLD until the 500px-source trace is accepted; ship-to missing; 3 links ready, Facebook held (18+ login wall).",
+      "note": "Account-level branding for all 3 Pig & Parrot locations (judged by Opus, Fable limit hit): default A, white roundel without the place line on charcoal #333333 with turquoise #42C0D2 band, HOLD until the 500px-source trace is accepted; site colors came from an unproven-profile browser read; ship-to missing; all links held until browser reads rerun in a proven profile.",
       "progress": {
-        "stage": "fulfill",
-        "last_step": "variant sheet",
-        "next_step": "review canvas and link discovery",
-        "blocked_on": null,
+        "stage": "review",
+        "last_step": "review canvas built, site published",
+        "next_step": "Travisse picks a letter",
+        "blocked_on": "letter pick",
         "by": "fulfill-location",
         "host": "MacBook-Pro-2.domain",
-        "updated_at": "2026-10-15T15:58:59.664Z",
-        "bundle_pushed_at": "2026-10-15T15:58:59.904Z"
+        "updated_at": "2026-10-15T16:00:41.367Z",
+        "bundle_pushed_at": "2026-10-15T16:00:41.634Z"
       },
       "review_status": null,
-      "page_bytes": 5285659,
+      "page_bytes": 5287618,
       "blob_bytes": 3446383,
       "blob_assets": 25
     },
