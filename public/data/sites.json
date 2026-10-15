@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T18:58:17.704Z",
+  "generated_at": "2026-10-15T19:10:02.591Z",
   "count": 56,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -10,14 +10,14 @@
       "city": "Chicago",
       "state": "IL",
       "requested_at": "2026-10-14T20:53:23.989",
-      "updated_at": "2026-10-15T18:44:53.085Z",
-      "cursor": "links",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-15T19:07:58.144Z",
+      "cursor": "figma",
+      "status": "applied",
+      "status_label": "Branding applied",
       "recommended_letter": "A",
-      "picked_letter": null,
+      "picked_letter": "U",
       "review_url": "/shawarma-inn-chicago/",
-      "figma_url": null,
+      "figma_url": "https://www.figma.com/design/5LsXaingsVCdMuJhWzR0g3/In-Store-Fulfillment-9?node-id=14-2",
       "print_handoff_url": null,
       "boostly_status": "digital_fulfillment",
       "steps": [
@@ -26,20 +26,20 @@
           true
         ],
         [
-          "Branding pick (Fable default A)",
-          false
+          "Branding pick: U",
+          true
         ],
         [
           "Branding applied in prod",
-          false
+          true
         ],
         [
-          "Links written (0 ready, 8 need a call)",
-          false
+          "Links written (8 still held)",
+          true
         ],
         [
           "Figma signage built",
-          false
+          true
         ],
         [
           "Figma approved by you",
@@ -59,32 +59,31 @@
         ]
       ],
       "needs_you": [
-        "pick a letter",
-        "8 link decision(s)"
+        "approve the Figma signage"
       ],
       "gaps": [],
-      "hold": null,
+      "hold": "PICK 2026-10-15 (Travisse): U, account scope, open facts for the signage review",
       "done": false,
-      "note": "Review ready, HOLD: no cell passes the gates (A open wordmark is thin, F full lockup's black descriptor vanishes on black); lean F if a clean wordmark rebuild is approved, or P if the newer Facebook badge is the real identity. Ordering held: owner wants SpotOn, site uses Owner. Judgment by Opus (Fable limit).",
+      "note": "U applied (Instagram badge on black, FB/IG/careers written); signage built in Figma, waiting for your review. Held: menu/ordering (SpotOn), TikTok, events, gift cards; birthday baklava flag.",
       "progress": {
-        "stage": "review",
-        "last_step": "review canvas built, site published",
-        "next_step": "Travisse picks a letter",
-        "blocked_on": "letter pick",
-        "by": "fulfill-location",
-        "host": "MacBook-Pro-2.domain",
-        "updated_at": "2026-10-15T16:00:02.212Z",
-        "bundle_pushed_at": "2026-10-15T16:00:02.475Z"
+        "stage": "closeout",
+        "last_step": "Figma signage built",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "Figma signage approval",
+        "by": "closeout-location",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-15T19:09:24.387Z",
+        "bundle_pushed_at": "2026-10-15T19:09:25.021Z"
       },
       "review_status": {
         "status": "waiting",
-        "waiting_on": "letter pick (HOLD: logo rebuild or badge decision)",
+        "waiting_on": "Figma signage approval",
         "ease": null,
-        "updated_at": "2026-10-15T15:58:57.176Z"
+        "updated_at": "2026-10-15T19:09:24.347Z"
       },
-      "page_bytes": 9624231,
-      "blob_bytes": 4340796,
-      "blob_assets": 27
+      "page_bytes": 9660817,
+      "blob_bytes": 9668065,
+      "blob_assets": 29
     },
     {
       "slug": "surfin-betty-s-burger-bar-uptown-ocean-city-127th",
