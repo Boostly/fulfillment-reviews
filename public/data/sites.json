@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T16:21:52.190Z",
+  "generated_at": "2026-10-15T16:40:26.290Z",
   "count": 56,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -405,7 +405,7 @@
       "city": "Hoboken",
       "state": "NJ",
       "requested_at": "2026-10-13T21:55:35.987",
-      "updated_at": "2026-10-15T16:01:20.630Z",
+      "updated_at": "2026-10-15T16:39:55.375Z",
       "cursor": "links",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -474,7 +474,7 @@
         "bundle_pushed_at": "2026-10-15T16:00:41.634Z"
       },
       "review_status": null,
-      "page_bytes": 5287618,
+      "page_bytes": 5687765,
       "blob_bytes": 3446383,
       "blob_assets": 25
     },
