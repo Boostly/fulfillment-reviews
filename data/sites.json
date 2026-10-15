@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-15T16:00:04.801Z",
-  "count": 55,
+  "generated_at": "2026-10-15T16:00:59.044Z",
+  "count": 56,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -241,6 +241,84 @@
       "page_bytes": 86013,
       "blob_bytes": 4784494,
       "blob_assets": 1
+    },
+    {
+      "slug": "surfin-betty-s-burger-bar-downtown",
+      "name": "Surfin Betty’s Burger Bar (Downtown)",
+      "account": "Surfin Betty's Burger Bar",
+      "city": "Ocean City",
+      "state": "MD",
+      "requested_at": "2026-10-14T19:07:46.99",
+      "updated_at": "2026-10-15T16:00:33.297Z",
+      "cursor": "links",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "B",
+      "picked_letter": null,
+      "review_url": "/surfin-betty-s-burger-bar-downtown/",
+      "figma_url": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick (Fable default B)",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (3 ready, 1 need a call)",
+          false
+        ],
+        [
+          "Figma signage built",
+          false
+        ],
+        [
+          "Figma approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          true
+        ]
+      ],
+      "needs_you": [
+        "pick a letter",
+        "1 link decision(s)"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": "Pick a letter (account-level branding for all 3 stores; judgment by Opus, Fable limit hit). Default B: the round black badge on a teal #157E82 card with a black band; C is white words on teal, D white words on black with a teal band. The full badge is 188 KB against the 70 KB upload cap (illustrated mark, your override call); words-only rows pass. Links: menu, Instagram and Facebook verified and already live; Toast ordering held (page unread by both paths); quantities conflict (call 35 tables, request 45+45).",
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "variant sheet",
+        "next_step": "review canvas and link discovery",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "MacBook-Pro-2.domain",
+        "updated_at": "2026-10-15T15:57:35.039Z",
+        "bundle_pushed_at": "2026-10-15T15:57:35.349Z"
+      },
+      "review_status": null,
+      "page_bytes": 2119577,
+      "blob_bytes": 7022627,
+      "blob_assets": 29
     },
     {
       "slug": "scoops-ice-cream",
