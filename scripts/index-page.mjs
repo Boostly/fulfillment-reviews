@@ -105,6 +105,7 @@ export function renderIndex(manifest) {
         <option value="open">Open (not closed out)</option>
         <option value="awaiting">Awaiting pick</option>
         <option value="picked">Pick recorded</option>
+        <option value="inherits">Inherits branding (pending)</option>
         <option value="applied">Branding applied</option>
         <option value="closed">Closed out</option>
       </select>

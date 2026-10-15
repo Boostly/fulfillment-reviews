@@ -9,7 +9,7 @@
 export const STATUS_CSS = `
   .ss { font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: #161616; }
   .ss .pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 999px; white-space: nowrap; border: 1px solid transparent; vertical-align: middle; }
-  .ss .pill.awaiting, .ss .pill.picked { background: #fff4e0; color: #b26a00; border-color: #f1dcb0; }
+  .ss .pill.awaiting, .ss .pill.picked, .ss .pill.inherits { background: #fff4e0; color: #b26a00; border-color: #f1dcb0; }
   .ss .pill.applied { background: #e8f0ff; color: #1f5eff; border-color: #c7d8ff; }
   .ss .pill.closed { background: #e6f4ea; color: #1b7a3d; border-color: #bfe0c9; }
   .ss .pill.unknown { background: #eee; color: #5c5c5c; }

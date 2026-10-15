@@ -45,7 +45,7 @@ Output:
 - `data/sites.json`: the manifest (also served at `/data/sites.json`).
 - `data/blob-index.json`: the upload cache.
 
-Status in the manifest comes from `run.json` `state.cursor`: before `write` is "Awaiting pick" (or "Pick recorded" when a pick letter exists), `write` through `figma` is "Branding applied", `slack` or `notion` is "Closed out". The recommended letter is `variants.fable_default_letter`; the picked letter is `variants.selection.letter`, falling back to `variants.applied_letter` and `write.inherited_branding.letter`. Request date is `request.created_at`; last updated is the newest `state.stages.*.written_at`.
+Status in the manifest comes from `run.json` `state.cursor`: before `write` is "Awaiting pick" (or "Pick recorded" when a pick letter exists), `write` through `figma` is "Branding applied" only when `write.status` is `applied` or `applied+inherited` (otherwise a run with `write.branding_source_run` reads "Branding: inherits <source> (pending pick)", else "Awaiting pick" or "Pick recorded"), `slack` or `notion` is "Closed out". The recommended letter is `variants.fable_default_letter`; the picked letter is `variants.selection.letter`, falling back to `variants.applied_letter` and `write.inherited_branding.letter`. Request date is `request.created_at`; last updated is the newest `state.stages.*.written_at`.
 
 ## Deploy
 

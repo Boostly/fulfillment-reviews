@@ -140,12 +140,22 @@ function effectiveCursor(run) {
   return i < 0 ? null : STAGES[i];
 }
 
-function statusFor(cursor, picked) {
+// "Branding applied" needs this location's own write.status applied (or applied+inherited), not just a
+// write stage timestamp: links-only siblings record a write stage while write.status is held/pending
+// (Surfin' Betty's Bethany and Uptown 2026-10-15 showed "Branding applied" with nothing applied).
+const APPLIED = new Set(["applied", "applied+inherited"]);
+
+function statusFor(cursor, picked, run = {}) {
   const i = STAGES.indexOf(cursor);
   if (i < 0) return { key: "unknown", label: "Unknown" };
-  if (i < STAGES.indexOf("write")) return picked ? { key: "picked", label: "Pick recorded" } : { key: "awaiting", label: "Awaiting pick" };
-  if (i < STAGES.indexOf("slack")) return { key: "applied", label: "Branding applied" };
-  return { key: "closed", label: "Closed out" };
+  if (i >= STAGES.indexOf("slack")) return { key: "closed", label: "Closed out" };
+  const w = run.write || {};
+  if (APPLIED.has(w.status)) return { key: "applied", label: "Branding applied" };
+  if (w.branding_source_run) {
+    const src = path.basename(String(w.branding_source_run));
+    return { key: "inherits", label: `Branding: inherits ${src} (${picked ? "pending apply" : "pending pick"})` };
+  }
+  return picked ? { key: "picked", label: "Pick recorded" } : { key: "awaiting", label: "Awaiting pick" };
 }
 
 // Recommended letter: variants.fable_default_letter (Fable's default cell), falling back to
@@ -293,7 +303,7 @@ function siteEntry(r, p, board) {
   let handoffUrl = null;
   if (exists(handoffPath)) { try { handoffUrl = findKey(readJson(handoffPath), "folder_link"); } catch {} }
   const { recommended, picked } = letters(r.run);
-  const status = statusFor(effectiveCursor(r.run), picked);
+  const status = statusFor(effectiveCursor(r.run), picked, r.run);
   return {
     slug: r.slug,
     name: req.location_name || id.location_name || r.slug,
