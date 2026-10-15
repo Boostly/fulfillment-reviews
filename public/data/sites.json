@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T17:56:48.258Z",
+  "generated_at": "2026-10-15T18:44:58.980Z",
   "count": 56,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -10,7 +10,7 @@
       "city": "Chicago",
       "state": "IL",
       "requested_at": "2026-10-14T20:53:23.989",
-      "updated_at": "2026-10-15T16:00:51.117Z",
+      "updated_at": "2026-10-15T18:44:53.085Z",
       "cursor": "links",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -34,7 +34,7 @@
           false
         ],
         [
-          "Links written (3 ready, 5 need a call)",
+          "Links written (0 ready, 8 need a call)",
           false
         ],
         [
@@ -60,7 +60,7 @@
       ],
       "needs_you": [
         "pick a letter",
-        "5 link decision(s)"
+        "8 link decision(s)"
       ],
       "gaps": [],
       "hold": null,
@@ -82,9 +82,9 @@
         "ease": null,
         "updated_at": "2026-10-15T15:58:57.176Z"
       },
-      "page_bytes": 8430405,
-      "blob_bytes": 4222831,
-      "blob_assets": 25
+      "page_bytes": 9624231,
+      "blob_bytes": 4340796,
+      "blob_assets": 27
     },
     {
       "slug": "surfin-betty-s-burger-bar-uptown-ocean-city-127th",
