@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T16:40:26.290Z",
+  "generated_at": "2026-10-15T16:41:41.252Z",
   "count": 56,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -327,12 +327,12 @@
       "city": null,
       "state": null,
       "requested_at": "2026-10-14T15:34:41.993",
-      "updated_at": "2026-10-15T16:21:33.201Z",
+      "updated_at": "2026-10-15T16:37:02.051Z",
       "cursor": "links",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "status": "picked",
+      "status_label": "Pick recorded",
       "recommended_letter": "A",
-      "picked_letter": null,
+      "picked_letter": "D",
       "review_url": "/scoops-ice-cream/",
       "figma_url": null,
       "print_handoff_url": null,
@@ -343,8 +343,8 @@
           true
         ],
         [
-          "Branding pick (Fable default A)",
-          false
+          "Branding pick: D",
+          true
         ],
         [
           "Branding applied in prod",
@@ -376,7 +376,6 @@
         ]
       ],
       "needs_you": [
-        "pick a letter",
         "3 link decision(s)"
       ],
       "gaps": [],
@@ -384,14 +383,14 @@
       "done": false,
       "note": "Review: Opus (Fable limit) recommends A, the cone and Scoops lockup without the tagline on raspberry #B24570 with a sky blue band; added K (raspberry with scoop pink #FF8DB3 band, black text), L (scoop pink card with raspberry band, a light ground), M (D with the cone stacked above Scoops), and from the website's own pinks N (D on rose #E381A8) and O (D on blossom #F7C5DA), plus two-tones P (berry with rose band), Q (berry with blossom band), R (rose with berry band) and S (blossom with berry band); L, N, O, R and S are light grounds; menu and careers ready, ordering (GloriaFood), Facebook and TikTok held; logo upload is over 70 KB, a closeout override call.",
       "progress": {
-        "stage": "review",
-        "last_step": "added K, L (two-tone scoop pink) and M (stacked D); canvas rebuilt, site republished",
-        "next_step": "Travisse picks a letter",
-        "blocked_on": "letter pick",
-        "by": "fulfill-location",
-        "host": "MacBook-Pro-2.domain",
-        "updated_at": "2026-10-15T16:05:33.692Z",
-        "bundle_pushed_at": "2026-10-15T16:05:34.008Z"
+        "stage": "closeout",
+        "last_step": "branding written",
+        "next_step": "proofs and Figma signage",
+        "blocked_on": null,
+        "by": "closeout-location",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-15T16:41:19.974Z",
+        "bundle_pushed_at": "2026-10-15T16:34:32.736Z"
       },
       "review_status": null,
       "page_bytes": 8003594,
