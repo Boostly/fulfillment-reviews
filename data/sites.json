@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T18:44:58.980Z",
+  "generated_at": "2026-10-15T18:58:17.704Z",
   "count": 56,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -249,14 +249,14 @@
       "city": "Ocean City",
       "state": "MD",
       "requested_at": "2026-10-14T19:07:46.99",
-      "updated_at": "2026-10-15T17:56:41.403Z",
-      "cursor": "links",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-15T18:52:39.097Z",
+      "cursor": "figma",
+      "status": "applied",
+      "status_label": "Branding applied",
       "recommended_letter": "B",
-      "picked_letter": null,
+      "picked_letter": "F",
       "review_url": "/surfin-betty-s-burger-bar-downtown/",
-      "figma_url": null,
+      "figma_url": "https://www.figma.com/design/5LsXaingsVCdMuJhWzR0g3/In-Store-Fulfillment-9?node-id=12-3",
       "print_handoff_url": null,
       "boostly_status": "digital_fulfillment",
       "steps": [
@@ -265,12 +265,12 @@
           true
         ],
         [
-          "Branding pick (Fable default B)",
-          false
+          "Branding pick: F",
+          true
         ],
         [
           "Branding applied in prod",
-          false
+          true
         ],
         [
           "Links written (3 ready, 1 need a call)",
@@ -278,7 +278,7 @@
         ],
         [
           "Figma signage built",
-          false
+          true
         ],
         [
           "Figma approved by you",
@@ -290,7 +290,7 @@
         ],
         [
           "Status posted to the review site",
-          false
+          true
         ],
         [
           "Store details confirmed",
@@ -298,27 +298,32 @@
         ]
       ],
       "needs_you": [
-        "pick a letter",
+        "approve the Figma signage",
         "1 link decision(s)"
       ],
       "gaps": [],
-      "hold": null,
+      "hold": "PICK 2026-10-15 (Travisse): F, account scope, open facts for the signage review",
       "done": false,
-      "note": "Pick a letter (account-level branding for all 3 stores; judgment by Opus, Fable limit hit). Default B: the round black badge on a teal #157E82 card with a black band; C is white words on teal, D white words on black with a teal band. The full badge is 188 KB against the 70 KB upload cap (illustrated mark, your override call); words-only rows pass. Links: menu, Instagram and Facebook verified and already live; Toast ordering held (page unread by both paths); quantities conflict (call 35 tables, request 45+45).",
+      "note": "Branding F applied at account level and signage built in Figma (45 tables, two sections), waiting for your review; table count looks triple counted across the three stores.",
       "progress": {
-        "stage": "review",
-        "last_step": "review canvas built, site published",
-        "next_step": "Travisse picks a letter",
-        "blocked_on": "letter pick",
-        "by": "fulfill-location",
-        "host": "MacBook-Pro-2.domain",
-        "updated_at": "2026-10-15T16:01:09.695Z",
-        "bundle_pushed_at": "2026-10-15T16:01:09.999Z"
+        "stage": "closeout",
+        "last_step": "Figma signage built",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "Figma signage approval",
+        "by": "closeout-location",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-15T18:57:47.460Z",
+        "bundle_pushed_at": "2026-10-15T18:57:47.768Z"
       },
-      "review_status": null,
-      "page_bytes": 3741913,
-      "blob_bytes": 7245895,
-      "blob_assets": 32
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "Figma signage approval",
+        "ease": null,
+        "updated_at": "2026-10-15T18:57:47.422Z"
+      },
+      "page_bytes": 3778551,
+      "blob_bytes": 12229616,
+      "blob_assets": 34
     },
     {
       "slug": "scoops-ice-cream",
