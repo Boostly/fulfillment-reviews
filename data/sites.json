@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T17:36:21.729Z",
+  "generated_at": "2026-10-15T17:37:44.140Z",
   "count": 56,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -416,7 +416,7 @@
       "review_url": "/the-pig-parrot-hoboken/",
       "figma_url": "https://www.figma.com/design/5LsXaingsVCdMuJhWzR0g3/In-Store-Fulfillment-9?node-id=5-2",
       "print_handoff_url": "https://drive.google.com/drive/folders/1QHkPTpUL7weKawXb9I3PSuloi7qYu_QG",
-      "boostly_status": "digital_fulfillment",
+      "boostly_status": "store_details",
       "steps": [
         [
           "Review sheet ready",
@@ -439,7 +439,7 @@
           true
         ],
         [
-          "Figma approved by you",
+          "Figma approved by you (closed out before the approval step existed)",
           true
         ],
         [
@@ -456,29 +456,30 @@
         ]
       ],
       "needs_you": [
-        "6 link decision(s)"
+        "6 link decision(s)",
+        "confirm store details (ship-to, quantities)"
       ],
       "gaps": [
         "ship-to missing"
       ],
-      "hold": "PICK 2026-10-15 (Travisse): K, account scope, open facts for the signage review",
+      "hold": "PRINT HOLD 2026-10-15 (Shaun Young, CSM): hold printing until Shaun confirms details with each GM. Vendor email already went out at 17:35Z before the hold; vend",
       "done": false,
       "note": "Done: K is live (account scope, siblings inherit), secondary logo written, signage approved, Slack posted, print hand-off emailed, branding complete; ship-to missing (DM sent to Shaun), tap cards 10 vs 75, offer 10% vs 20%, 6 held links for your call.",
       "progress": {
-        "stage": "closeout-finish",
-        "last_step": "Figma approved",
-        "next_step": "secondary logo, Slack, branding complete",
+        "stage": "done",
+        "last_step": "branding complete, Slack posted, status set",
+        "next_step": "nothing; open decisions are on the notes line",
         "blocked_on": null,
         "by": "closeout-finish",
         "host": "Unknown.domain",
-        "updated_at": "2026-10-15T17:33:02.656Z",
-        "bundle_pushed_at": "2026-10-15T17:33:03.000Z"
+        "updated_at": "2026-10-15T17:36:06.057Z",
+        "bundle_pushed_at": "2026-10-15T17:36:06.439Z"
       },
       "review_status": {
         "status": "waiting",
-        "waiting_on": "missing shipping address; tap card count; offer percent; 6 held links",
+        "waiting_on": "Print hold: CSM confirming details with each GM; tap card count and held links open",
         "ease": 3,
-        "updated_at": "2026-10-15T17:35:47.363Z"
+        "updated_at": "2026-10-15T17:37:30.828Z"
       },
       "page_bytes": 5724267,
       "blob_bytes": 8918404,
