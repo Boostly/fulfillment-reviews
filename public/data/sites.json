@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T17:42:34.396Z",
+  "generated_at": "2026-10-15T17:56:48.258Z",
   "count": 56,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -249,7 +249,7 @@
       "city": "Ocean City",
       "state": "MD",
       "requested_at": "2026-10-14T19:07:46.99",
-      "updated_at": "2026-10-15T16:52:49.173Z",
+      "updated_at": "2026-10-15T17:56:41.403Z",
       "cursor": "links",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -316,9 +316,9 @@
         "bundle_pushed_at": "2026-10-15T16:01:09.999Z"
       },
       "review_status": null,
-      "page_bytes": 2930498,
-      "blob_bytes": 7209822,
-      "blob_assets": 31
+      "page_bytes": 3741913,
+      "blob_bytes": 7245895,
+      "blob_assets": 32
     },
     {
       "slug": "scoops-ice-cream",
