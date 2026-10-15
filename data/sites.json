@@ -1,8 +1,91 @@
 {
-  "generated_at": "2026-10-15T15:56:12.737Z",
-  "count": 53,
+  "generated_at": "2026-10-15T15:59:07.716Z",
+  "count": 54,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
+    {
+      "slug": "shawarma-inn-chicago",
+      "name": "Shawarma Inn (Chicago)",
+      "account": "Shawarma Inn",
+      "city": "Chicago",
+      "state": "IL",
+      "requested_at": "2026-10-14T20:53:23.989",
+      "updated_at": "2026-10-15T15:58:57.088Z",
+      "cursor": "links",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "A",
+      "picked_letter": null,
+      "review_url": "/shawarma-inn-chicago/",
+      "figma_url": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick (Fable default A)",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (3 ready, 5 need a call)",
+          false
+        ],
+        [
+          "Figma signage built",
+          false
+        ],
+        [
+          "Figma approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          true
+        ],
+        [
+          "Store details confirmed",
+          true
+        ]
+      ],
+      "needs_you": [
+        "pick a letter",
+        "5 link decision(s)"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": "Review ready, HOLD: no cell passes the gates (A open wordmark is thin, F full lockup's black descriptor vanishes on black); lean F if a clean wordmark rebuild is approved, or P if the newer Facebook badge is the real identity. Ordering held: owner wants SpotOn, site uses Owner. Judgment by Opus (Fable limit).",
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "variant sheet",
+        "next_step": "review canvas and link discovery",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "MacBook-Pro-2.domain",
+        "updated_at": "2026-10-15T15:57:13.053Z",
+        "bundle_pushed_at": "2026-10-15T15:57:13.345Z"
+      },
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "letter pick (HOLD: logo rebuild or badge decision)",
+        "ease": null,
+        "updated_at": "2026-10-15T15:58:57.176Z"
+      },
+      "page_bytes": 8430369,
+      "blob_bytes": 4222831,
+      "blob_assets": 25
+    },
     {
       "slug": "surfin-betty-s-burger-bar-uptown-ocean-city-127th",
       "name": "Surfin' Betty's Burger Bar (Uptown Ocean City 127th)",
