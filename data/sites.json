@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-15T15:53:07.600Z",
-  "count": 52,
+  "generated_at": "2026-10-15T15:55:39.359Z",
+  "count": 53,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -158,6 +158,84 @@
       "page_bytes": 86013,
       "blob_bytes": 4784494,
       "blob_assets": 1
+    },
+    {
+      "slug": "scoops-ice-cream",
+      "name": "Scoops Ice Cream",
+      "account": "Scoops Ice Cream",
+      "city": null,
+      "state": null,
+      "requested_at": "2026-10-14T15:34:41.993",
+      "updated_at": "2026-10-15T15:55:17.562Z",
+      "cursor": "links",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "A",
+      "picked_letter": null,
+      "review_url": "/scoops-ice-cream/",
+      "figma_url": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick (Fable default A)",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (2 ready, 3 need a call)",
+          false
+        ],
+        [
+          "Figma signage built",
+          false
+        ],
+        [
+          "Figma approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          true
+        ]
+      ],
+      "needs_you": [
+        "pick a letter",
+        "3 link decision(s)"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": "Review: Opus (Fable limit) recommends A, the cone and Scoops lockup without the tagline on raspberry #B24570 with a sky blue band; menu and careers ready, ordering (GloriaFood), Facebook and TikTok held; logo upload is over 70 KB, a closeout override call.",
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "variant sheet",
+        "next_step": "review canvas and link discovery",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "MacBook-Pro-2.domain",
+        "updated_at": "2026-10-15T15:54:06.685Z",
+        "bundle_pushed_at": "2026-10-15T15:54:06.987Z"
+      },
+      "review_status": null,
+      "page_bytes": 4441952,
+      "blob_bytes": 2623015,
+      "blob_assets": 24
     },
     {
       "slug": "slice-of-the-80-s-westland",
