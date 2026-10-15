@@ -1,8 +1,164 @@
 {
-  "generated_at": "2026-10-14T21:39:53.615Z",
-  "count": 50,
+  "generated_at": "2026-10-15T15:53:07.600Z",
+  "count": 52,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
+    {
+      "slug": "surfin-betty-s-burger-bar-uptown-ocean-city-127th",
+      "name": "Surfin' Betty's Burger Bar (Uptown Ocean City 127th)",
+      "account": "Surfin Betty's Burger Bar",
+      "city": "OCEAN CITY",
+      "state": "MD",
+      "requested_at": "2026-10-14T19:07:47.398",
+      "updated_at": "2026-10-15T15:52:23.641Z",
+      "cursor": "write",
+      "status": "applied",
+      "status_label": "Branding applied",
+      "recommended_letter": null,
+      "picked_letter": null,
+      "review_url": "/surfin-betty-s-burger-bar-uptown-ocean-city-127th/",
+      "figma_url": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          false
+        ],
+        [
+          "Branding pick [account-level, from surfin-betty-s-burger-bar-downtown]",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (2 ready, 5 need a call)",
+          false
+        ],
+        [
+          "Figma signage built",
+          false
+        ],
+        [
+          "Figma approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          true
+        ]
+      ],
+      "needs_you": [
+        "pick a letter",
+        "5 link decision(s)"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": "Links only, branding inherits the Downtown pick. Ready: menu and the store's own Google review link (V2 has a manual Place ID placeholder). Held: Toast ordering, Facebook, Instagram, TikTok and gift cards because both browser transports failed today (Codex reads error; duplicate Boostly.com Chrome profiles block the fallback). Call gives 10 tables vs 10 requested.",
+      "progress": {
+        "stage": "review",
+        "last_step": "links-only review page built (static pass; browser reads blocked)",
+        "next_step": "Downtown branding pick, then rerun browser reads for held links",
+        "blocked_on": "Downtown branding pick",
+        "by": "fulfill-location",
+        "host": "MacBook-Pro-2.domain",
+        "updated_at": "2026-10-15T15:52:46.192Z",
+        "bundle_pushed_at": "2026-10-15T15:52:46.460Z"
+      },
+      "review_status": null,
+      "page_bytes": 86004,
+      "blob_bytes": 4784494,
+      "blob_assets": 1
+    },
+    {
+      "slug": "surfin-betty-s-burger-bar-bethany",
+      "name": "Surfin' Betty's Burger Bar (Bethany)",
+      "account": "Surfin Betty's Burger Bar",
+      "city": "Bethany Beach",
+      "state": "DE",
+      "requested_at": "2026-10-14T19:07:47.273",
+      "updated_at": "2026-10-15T15:52:23.401Z",
+      "cursor": "write",
+      "status": "applied",
+      "status_label": "Branding applied",
+      "recommended_letter": null,
+      "picked_letter": null,
+      "review_url": "/surfin-betty-s-burger-bar-bethany/",
+      "figma_url": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          false
+        ],
+        [
+          "Branding pick [account-level, from surfin-betty-s-burger-bar-downtown]",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (2 ready, 5 need a call)",
+          false
+        ],
+        [
+          "Figma signage built",
+          false
+        ],
+        [
+          "Figma approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          true
+        ]
+      ],
+      "needs_you": [
+        "pick a letter",
+        "5 link decision(s)"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": "Links only, branding inherits the Downtown pick. Ready: menu and the store's own Google review link (V2 has a manual Place ID placeholder). Held: Toast ordering, Facebook, Instagram, TikTok and gift cards because both browser transports failed today (Codex reads error; duplicate Boostly.com Chrome profiles block the fallback). Call gives 12 tables vs 10 requested.",
+      "progress": {
+        "stage": "review",
+        "last_step": "links-only review page built (static pass; browser reads blocked)",
+        "next_step": "Downtown branding pick, then rerun browser reads for held links",
+        "blocked_on": "Downtown branding pick",
+        "by": "fulfill-location",
+        "host": "MacBook-Pro-2.domain",
+        "updated_at": "2026-10-15T15:52:44.049Z",
+        "bundle_pushed_at": "2026-10-15T15:52:44.329Z"
+      },
+      "review_status": null,
+      "page_bytes": 86013,
+      "blob_bytes": 4784494,
+      "blob_assets": 1
+    },
     {
       "slug": "slice-of-the-80-s-westland",
       "name": "Slice of the 80's (Westland)",
