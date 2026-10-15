@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T16:00:59.044Z",
+  "generated_at": "2026-10-15T16:01:07.674Z",
   "count": 56,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -10,7 +10,7 @@
       "city": "Chicago",
       "state": "IL",
       "requested_at": "2026-10-14T20:53:23.989",
-      "updated_at": "2026-10-15T15:58:57.088Z",
+      "updated_at": "2026-10-15T16:00:51.117Z",
       "cursor": "links",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -67,14 +67,14 @@
       "done": false,
       "note": "Review ready, HOLD: no cell passes the gates (A open wordmark is thin, F full lockup's black descriptor vanishes on black); lean F if a clean wordmark rebuild is approved, or P if the newer Facebook badge is the real identity. Ordering held: owner wants SpotOn, site uses Owner. Judgment by Opus (Fable limit).",
       "progress": {
-        "stage": "fulfill",
-        "last_step": "variant sheet",
-        "next_step": "review canvas and link discovery",
-        "blocked_on": null,
+        "stage": "review",
+        "last_step": "review canvas built, site published",
+        "next_step": "Travisse picks a letter",
+        "blocked_on": "letter pick",
         "by": "fulfill-location",
         "host": "MacBook-Pro-2.domain",
-        "updated_at": "2026-10-15T15:57:13.053Z",
-        "bundle_pushed_at": "2026-10-15T15:57:13.345Z"
+        "updated_at": "2026-10-15T16:00:02.212Z",
+        "bundle_pushed_at": "2026-10-15T16:00:02.475Z"
       },
       "review_status": {
         "status": "waiting",
@@ -82,7 +82,7 @@
         "ease": null,
         "updated_at": "2026-10-15T15:58:57.176Z"
       },
-      "page_bytes": 8430369,
+      "page_bytes": 8430405,
       "blob_bytes": 4222831,
       "blob_assets": 25
     },
