@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T16:01:29.205Z",
+  "generated_at": "2026-10-15T16:05:25.608Z",
   "count": 56,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -327,7 +327,7 @@
       "city": null,
       "state": null,
       "requested_at": "2026-10-14T15:34:41.993",
-      "updated_at": "2026-10-15T15:55:17.562Z",
+      "updated_at": "2026-10-15T16:04:53.271Z",
       "cursor": "links",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -382,21 +382,21 @@
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Review: Opus (Fable limit) recommends A, the cone and Scoops lockup without the tagline on raspberry #B24570 with a sky blue band; menu and careers ready, ordering (GloriaFood), Facebook and TikTok held; logo upload is over 70 KB, a closeout override call.",
+      "note": "Review: Opus (Fable limit) recommends A, the cone and Scoops lockup without the tagline on raspberry #B24570 with a sky blue band; added K (raspberry with scoop pink #FF8DB3 band, black text), L (scoop pink card with raspberry band, a light ground) and M (D with the cone stacked above Scoops); menu and careers ready, ordering (GloriaFood), Facebook and TikTok held; logo upload is over 70 KB, a closeout override call.",
       "progress": {
-        "stage": "fulfill",
-        "last_step": "variant sheet",
-        "next_step": "review canvas and link discovery",
-        "blocked_on": null,
+        "stage": "review",
+        "last_step": "review canvas built, site published",
+        "next_step": "Travisse picks a letter",
+        "blocked_on": "letter pick",
         "by": "fulfill-location",
         "host": "MacBook-Pro-2.domain",
-        "updated_at": "2026-10-15T15:54:06.685Z",
-        "bundle_pushed_at": "2026-10-15T15:54:06.987Z"
+        "updated_at": "2026-10-15T15:56:10.638Z",
+        "bundle_pushed_at": "2026-10-15T15:56:10.925Z"
       },
       "review_status": null,
-      "page_bytes": 4441952,
-      "blob_bytes": 2623015,
-      "blob_assets": 24
+      "page_bytes": 5629471,
+      "blob_bytes": 2693994,
+      "blob_assets": 25
     },
     {
       "slug": "the-pig-parrot-hoboken",
