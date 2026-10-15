@@ -35,7 +35,7 @@ const DEFAULT_RUN_ROOT =
   "/Users/travisse/Programming/projects/brand-design-spike-2026-07-06/runs-prod-2026-09-18";
 
 // Pipeline stage order, used to derive a human status from state.cursor.
-const STAGES = ["request", "evidence", "decision", "gates", "variants", "links", "overrides", "write", "proofs", "figma", "slack", "notion"];
+const STAGES = ["request", "evidence", "decision", "gates", "variants", "links", "overrides", "write", "proofs", "figma", "signage", "slack", "notion"];
 
 // Assets of these types stay in public/ when under this size; everything else goes to Blob.
 const LOCAL_TYPES = new Set([".html", ".json", ".css", ".js", ".svg"]);
@@ -137,6 +137,8 @@ function effectiveCursor(run) {
   let i = STAGES.indexOf(st.cursor);
   for (const k of Object.keys(st.stages || {})) i = Math.max(i, STAGES.indexOf(k));
   if (run.slack?.message_ts || run.slack?.posted_at) i = Math.max(i, STAGES.indexOf("slack"));
+  // the direct PDF render (run.json signage.direct, default since 2026-10-15) is the signage stage too
+  if (run.signage?.direct?.status) i = Math.max(i, STAGES.indexOf("figma"));
   return i < 0 ? null : STAGES[i];
 }
 
@@ -319,6 +321,7 @@ function siteEntry(r, p, board) {
     picked_letter: picked,
     review_url: `/${r.slug}/`,
     figma_url: fig.section_url || null,
+    signage_direct: r.run.signage?.direct?.status || null,
     print_handoff_url: handoffUrl,
     ...boardFields(r, board),
     page_bytes: p.pageBytes,
