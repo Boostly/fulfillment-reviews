@@ -25,7 +25,7 @@ export function renderIndex(manifest) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Boostly In-Store Fulfillment Reviews</title>
+<title>Boostly Branding Fulfillment</title>
 <style>
   :root { --bg: #f6f6f4; --card: #fff; --ink: #161616; --ink-2: #5c5c5c; --line: #e3e3df; --accent: #1f5eff; --accent-ink: #fff; --ok: #1b7a3d; --warn: #b26a00; }
   * { box-sizing: border-box; }
@@ -92,7 +92,7 @@ export function renderIndex(manifest) {
 <body class="ss">
 <main>
   <header>
-    <h1>Boostly In-Store Fulfillment Reviews</h1>
+    <h1>Boostly Branding Fulfillment</h1>
     <p>Branding review pages and the status board for Tap Card, sticker, and signage orders. Each page shows the evidence, the variant sheet, the recommended and picked cells, and the signage previews for one location. Rows marked "Needs you" wait on a decision.</p>
     <div class="summary" id="summary"></div>
   </header>
