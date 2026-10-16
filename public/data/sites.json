@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T16:05:35.746Z",
+  "generated_at": "2026-10-16T16:06:02.406Z",
   "count": 58,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -365,7 +365,7 @@
       "city": "Boynton Beach",
       "state": "FL",
       "requested_at": "2026-10-13T23:21:46.152Z",
-      "updated_at": "2026-10-16T16:04:33.352Z",
+      "updated_at": "2026-10-16T16:05:50.825Z",
       "cursor": "signage",
       "status": "applied",
       "status_label": "Branding applied",
@@ -437,8 +437,8 @@
         "ease": null,
         "updated_at": "2026-10-16T16:05:23.521Z"
       },
-      "page_bytes": 11915490,
-      "blob_bytes": 3526208,
+      "page_bytes": 11509942,
+      "blob_bytes": 5013644,
       "blob_assets": 27
     },
     {
