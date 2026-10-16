@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T16:13:22.734Z",
+  "generated_at": "2026-10-16T16:27:04.100Z",
   "count": 58,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -365,7 +365,7 @@
       "city": "Boynton Beach",
       "state": "FL",
       "requested_at": "2026-10-13T23:21:46.152Z",
-      "updated_at": "2026-10-16T16:05:50.825Z",
+      "updated_at": "2026-10-16T16:26:53.179Z",
       "cursor": "signage",
       "status": "applied",
       "status_label": "Branding applied",
@@ -373,7 +373,7 @@
       "picked_letter": null,
       "review_url": "/park-avenue-bbq-grille-boynton-beach/",
       "figma_url": null,
-      "signage_direct": "preview_blocked",
+      "signage_direct": "built",
       "print_handoff_url": null,
       "boostly_status": "digital_fulfillment",
       "steps": [
@@ -382,15 +382,15 @@
           true
         ],
         [
-          "Branding pick (Fable default None)",
-          false
+          "Branding pick: existing",
+          true
         ],
         [
           "Branding applied in prod",
           true
         ],
         [
-          "Links written (2 still held)",
+          "Links written (0 still held)",
           true
         ],
         [
@@ -415,30 +415,30 @@
         ]
       ],
       "needs_you": [
-        "pick a letter"
+        "approve the signage (direct PDF preview)"
       ],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Existing account branding kept (no pick); socials, menu and catering links written; signage preview rendered at 10 of 40 tables and blocked on page count, a headline overlap and logo edge quality, waiting for your call.",
+      "note": "Existing branding kept (no pick); links written incl. ordering; signage PDFs built at 40 tables with the smooth logo, waiting for your review; the account-wide logo swap is not done and needs an account-scope go.",
       "progress": {
         "stage": "closeout",
-        "last_step": "signage preview rendered (blocked)",
-        "next_step": "closeout-finish after approval",
-        "blocked_on": "signage: 40-table pages, headline overlap, logo edge quality",
+        "last_step": "existing branding kept, smooth logo prepared (account upload pending), signage built",
+        "next_step": "signage review",
+        "blocked_on": null,
         "by": "closeout-location",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-16T16:05:23.597Z",
-        "bundle_pushed_at": "2026-10-16T16:05:23.927Z"
+        "updated_at": "2026-10-16T16:26:25.530Z",
+        "bundle_pushed_at": "2026-10-16T16:26:25.916Z"
       },
       "review_status": {
         "status": "waiting",
-        "waiting_on": "signage blockers (40 tables, headline overlap, logo edges)",
+        "waiting_on": "signage approval",
         "ease": null,
-        "updated_at": "2026-10-16T16:05:23.521Z"
+        "updated_at": "2026-10-16T16:26:25.457Z"
       },
-      "page_bytes": 11509942,
-      "blob_bytes": 5013644,
+      "page_bytes": 11509673,
+      "blob_bytes": 3661145,
       "blob_assets": 27
     },
     {
