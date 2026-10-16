@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T16:36:13.773Z",
+  "generated_at": "2026-10-16T18:39:53.132Z",
   "count": 58,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -533,8 +533,8 @@
       "city": "Independence",
       "state": "MO",
       "requested_at": "2026-10-13T21:19:18.321Z",
-      "updated_at": "2026-10-16T16:35:22.853Z",
-      "cursor": "links",
+      "updated_at": "2026-10-16T18:39:32.417Z",
+      "cursor": "overrides",
       "status": "awaiting",
       "status_label": "Awaiting pick",
       "recommended_letter": "S",
@@ -591,16 +591,16 @@
       "note": "Second logo pass 2026-10-16 (Karissa: crest too detailed for tap card; A-P marked rejected, letters kept): new cells Q-X cut from the crest's own lettering, traced crisp (potrace from the 546px popmenu original). Q/R V's monogram black on parchment (red / black band); S Fable default: V's monogram white on sign green #00301E, red band (the neon pylon sign's own mark and colors, GBP 01/06/10); T/U white monogram on black / on crown red; V/W 'V's Italiano' wordmark (flag dropped) on parchment; X white wordmark on green. Every gate passes on card and sticker except edge-quality traced_from_small_source (546px source; soft-edge/stair-step pass), a human override at pick. No simpler first-party mark exists anywhere (site, IG, FB, Toast, Bing locator all carry the crest; IG 1080 avatar read blocked); sign trace not clean (neon on a white tricolor stripe). No new typeset wordmark was built. Links: 8 ready, 2 holds (Tock events date, gift cards).",
       "progress": {
         "stage": "review",
-        "last_step": "review canvas built, site published",
-        "next_step": "Travisse picks a letter",
+        "last_step": "logo second pass",
+        "next_step": "letter pick",
         "blocked_on": "letter pick",
-        "by": "fulfill-location",
+        "by": "logo-second-pass",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-16T16:13:25.741Z",
-        "bundle_pushed_at": "2026-10-16T16:13:26.065Z"
+        "updated_at": "2026-10-16T16:35:22.923Z",
+        "bundle_pushed_at": "2026-10-16T16:35:23.255Z"
       },
       "review_status": null,
-      "page_bytes": 10056768,
+      "page_bytes": 10455958,
       "blob_bytes": 4874976,
       "blob_assets": 34
     },
