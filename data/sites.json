@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-16T15:46:31.748Z",
-  "count": 57,
+  "generated_at": "2026-10-16T15:53:11.606Z",
+  "count": 58,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -521,6 +521,84 @@
       "page_bytes": 5724267,
       "blob_bytes": 8918404,
       "blob_assets": 27
+    },
+    {
+      "slug": "v-s-italiano-ristorante-independence",
+      "name": "V's Italiano Ristorante (Independence)",
+      "account": "V's Italiano Ristorante",
+      "city": "Independence",
+      "state": "MO",
+      "requested_at": "2026-10-13T21:19:18.321Z",
+      "updated_at": "2026-10-16T15:52:53.455Z",
+      "cursor": "variants",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "A",
+      "picked_letter": null,
+      "review_url": "/v-s-italiano-ristorante-independence/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick (Fable default A)",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (0 ready, 0 need a call)",
+          false
+        ],
+        [
+          "Signage built",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          true
+        ]
+      ],
+      "needs_you": [
+        "pick a letter"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": "HOLD: crest best source is 546px (ladder complete, HQ resample to 1000px), Fable directs the full-color crest on its parchment cream (E) and needs a human accept; taste pass (fable) added M (crest on ribbon green), plus hand-built white open knockouts N, O, P on black and red; link discovery in progress.",
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "taste pass",
+        "next_step": "review canvas and link discovery",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "Karissas-MacBook-Pro.local",
+        "updated_at": "2026-10-16T15:52:46.701Z",
+        "bundle_pushed_at": "2026-10-16T15:52:47.078Z"
+      },
+      "review_status": null,
+      "page_bytes": 6860997,
+      "blob_bytes": 4601478,
+      "blob_assets": 28
     },
     {
       "slug": "slice-of-the-80-s-westland",
