@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-16T14:34:05.981Z",
-  "count": 56,
+  "generated_at": "2026-10-16T15:46:31.748Z",
+  "count": 57,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -356,6 +356,85 @@
       },
       "page_bytes": 8040072,
       "blob_bytes": 8518636,
+      "blob_assets": 27
+    },
+    {
+      "slug": "park-avenue-bbq-grille-boynton-beach",
+      "name": "Park Avenue BBQ Grille (Boynton Beach)",
+      "account": "Park Avenue BBQ Grille",
+      "city": "Boynton Beach",
+      "state": "FL",
+      "requested_at": "2026-10-13T23:21:46.152Z",
+      "updated_at": "2026-10-16T15:46:14.827Z",
+      "cursor": "write",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "A",
+      "picked_letter": null,
+      "review_url": "/park-avenue-bbq-grille-boynton-beach/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick (Fable default A)",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (6 ready, 2 need a call)",
+          false
+        ],
+        [
+          "Signage built",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [
+        "pick a letter",
+        "2 link decision(s)"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": "Account-wide branding source for all Park Avenue BBQ locations: Fable (no fallback) default A, the native 724px first-party pig-and-oval lockup in full color on #2F5E3F with a #FECE31 band; the account already has live branding with the same logo and green (#F2C300 band), so the write is held for a letter. Taste pass (fable) added Y, Z, AA, AB (full color on site red; on site black; on site black with red band; LIGHT GROUND on brand yellow, escalate before a pick); 1 kept off the sheet (pig-head-only, 288px source). Links: 6 ready (website, menu, catering, Facebook, Instagram, X); ordering and gift cards held for Travisse; careers and rewards rejected.",
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "taste pass",
+        "next_step": "review canvas and link discovery",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "Karissas-MacBook-Pro.local",
+        "updated_at": "2026-10-16T15:45:42.373Z",
+        "bundle_pushed_at": "2026-10-16T15:45:42.587Z"
+      },
+      "review_status": null,
+      "page_bytes": 11915490,
+      "blob_bytes": 3526208,
       "blob_assets": 27
     },
     {
