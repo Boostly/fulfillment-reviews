@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T18:39:53.132Z",
+  "generated_at": "2026-10-16T21:26:51.736Z",
   "count": 58,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -533,7 +533,7 @@
       "city": "Independence",
       "state": "MO",
       "requested_at": "2026-10-13T21:19:18.321Z",
-      "updated_at": "2026-10-16T18:39:32.417Z",
+      "updated_at": "2026-10-16T21:26:24.865Z",
       "cursor": "overrides",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -600,9 +600,9 @@
         "bundle_pushed_at": "2026-10-16T16:35:23.255Z"
       },
       "review_status": null,
-      "page_bytes": 10455958,
-      "blob_bytes": 4874976,
-      "blob_assets": 34
+      "page_bytes": 10491709,
+      "blob_bytes": 7972240,
+      "blob_assets": 36
     },
     {
       "slug": "slice-of-the-80-s-westland",
