@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T15:53:11.606Z",
+  "generated_at": "2026-10-16T16:05:35.746Z",
   "count": 58,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -365,15 +365,15 @@
       "city": "Boynton Beach",
       "state": "FL",
       "requested_at": "2026-10-13T23:21:46.152Z",
-      "updated_at": "2026-10-16T15:46:14.827Z",
-      "cursor": "write",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
-      "recommended_letter": "A",
+      "updated_at": "2026-10-16T16:04:33.352Z",
+      "cursor": "signage",
+      "status": "applied",
+      "status_label": "Branding applied",
+      "recommended_letter": null,
       "picked_letter": null,
       "review_url": "/park-avenue-bbq-grille-boynton-beach/",
       "figma_url": null,
-      "signage_direct": null,
+      "signage_direct": "preview_blocked",
       "print_handoff_url": null,
       "boostly_status": "digital_fulfillment",
       "steps": [
@@ -382,20 +382,20 @@
           true
         ],
         [
-          "Branding pick (Fable default A)",
+          "Branding pick (Fable default None)",
           false
         ],
         [
           "Branding applied in prod",
-          false
+          true
         ],
         [
-          "Links written (6 ready, 2 need a call)",
-          false
+          "Links written (2 still held)",
+          true
         ],
         [
-          "Signage built",
-          false
+          "Signage built (direct PDF)",
+          true
         ],
         [
           "Signage approved by you",
@@ -407,7 +407,7 @@
         ],
         [
           "Status posted to the review site",
-          false
+          true
         ],
         [
           "Store details confirmed",
@@ -415,24 +415,28 @@
         ]
       ],
       "needs_you": [
-        "pick a letter",
-        "2 link decision(s)"
+        "pick a letter"
       ],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Account-wide branding source for all Park Avenue BBQ locations: Fable (no fallback) default A, the native 724px first-party pig-and-oval lockup in full color on #2F5E3F with a #FECE31 band; the account already has live branding with the same logo and green (#F2C300 band), so the write is held for a letter. Taste pass (fable) added Y, Z, AA, AB (full color on site red; on site black; on site black with red band; LIGHT GROUND on brand yellow, escalate before a pick); 1 kept off the sheet (pig-head-only, 288px source). Links: 6 ready (website, menu, catering, Facebook, Instagram, X); ordering and gift cards held for Travisse; careers and rewards rejected.",
+      "note": "Existing account branding kept (no pick); socials, menu and catering links written; signage preview rendered at 10 of 40 tables and blocked on page count, a headline overlap and logo edge quality, waiting for your call.",
       "progress": {
-        "stage": "fulfill",
-        "last_step": "taste pass",
-        "next_step": "review canvas and link discovery",
-        "blocked_on": null,
-        "by": "fulfill-location",
+        "stage": "closeout",
+        "last_step": "signage preview rendered (blocked)",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "signage: 40-table pages, headline overlap, logo edge quality",
+        "by": "closeout-location",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-16T15:45:42.373Z",
-        "bundle_pushed_at": "2026-10-16T15:45:42.587Z"
+        "updated_at": "2026-10-16T16:05:23.597Z",
+        "bundle_pushed_at": "2026-10-16T16:05:23.927Z"
       },
-      "review_status": null,
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "signage blockers (40 tables, headline overlap, logo edges)",
+        "ease": null,
+        "updated_at": "2026-10-16T16:05:23.521Z"
+      },
       "page_bytes": 11915490,
       "blob_bytes": 3526208,
       "blob_assets": 27
