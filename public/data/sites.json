@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T16:06:02.406Z",
+  "generated_at": "2026-10-16T16:13:22.734Z",
   "count": 58,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -533,8 +533,8 @@
       "city": "Independence",
       "state": "MO",
       "requested_at": "2026-10-13T21:19:18.321Z",
-      "updated_at": "2026-10-16T15:52:53.455Z",
-      "cursor": "variants",
+      "updated_at": "2026-10-16T16:13:08.727Z",
+      "cursor": "links",
       "status": "awaiting",
       "status_label": "Awaiting pick",
       "recommended_letter": "A",
@@ -588,7 +588,7 @@
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "HOLD: crest best source is 546px (ladder complete, HQ resample to 1000px), Fable directs the full-color crest on its parchment cream (E) and needs a human accept; taste pass (fable) added M (crest on ribbon green), plus hand-built white open knockouts N, O, P on black and red; link discovery in progress.",
+      "note": "HOLD: crest best source is 546px (ladder complete incl. site PDFs; HQ resample to 1000px); Fable directs the full-color crest on its parchment cream (E), needs a human accept of the small source. Taste pass (fable) added M (crest on ribbon green); white open knockouts N, O, P hand-built from its refused p1-p3. Links: 8 ready (Toast order, menu, careers, catering PDF, OpenTable, Facebook, Instagram, YouTube), 2 holds (Tock events date, gift cards).",
       "progress": {
         "stage": "fulfill",
         "last_step": "taste pass",
@@ -600,7 +600,7 @@
         "bundle_pushed_at": "2026-10-16T15:52:47.078Z"
       },
       "review_status": null,
-      "page_bytes": 6860997,
+      "page_bytes": 6863416,
       "blob_bytes": 4601478,
       "blob_assets": 28
     },
