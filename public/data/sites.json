@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T21:26:51.736Z",
+  "generated_at": "2026-10-19T17:37:16.437Z",
   "count": 58,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -437,9 +437,9 @@
         "ease": null,
         "updated_at": "2026-10-16T16:26:25.457Z"
       },
-      "page_bytes": 11509673,
-      "blob_bytes": 3661145,
-      "blob_assets": 27
+      "page_bytes": 11510543,
+      "blob_bytes": 5635854,
+      "blob_assets": 28
     },
     {
       "slug": "the-pig-parrot-hoboken",

@@ -28,6 +28,7 @@ import { fileURLToPath } from "node:url";
 import { renderIndex } from "./index-page.mjs";
 import { loadToken, putBlob } from "./blob.mjs";
 import { STATUS_CSS, pageStrip } from "./status-ui.mjs";
+import { printFolder, injectIntoCanvas, standalonePage } from "./print-files.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, "..");
@@ -70,10 +71,14 @@ function listRuns(runRoot) {
     const dir = path.join(runRoot, name);
     const runJson = path.join(dir, "run.json");
     const canvas = path.join(dir, "review", "review-canvas.html");
-    if (!exists(runJson) || !exists(canvas)) continue;
+    if (!exists(runJson)) continue;
     let run;
     try { run = readJson(runJson); } catch (e) { console.warn(`skip ${name}: run.json unreadable (${e.message})`); continue; }
-    runs.push({ slug: name, dir, run, createdAt: run?.request?.created_at || run?.created_at || "" });
+    // Links-only siblings have no review canvas; they still get a page once their signage is built
+    // (signage.direct.status "built", Karissa 2026-10-19). See scripts/print-files.mjs.
+    const hasCanvas = exists(canvas);
+    if (!hasCanvas && run?.signage?.direct?.status !== "built") continue;
+    runs.push({ slug: name, dir, run, hasCanvas, createdAt: run?.request?.created_at || run?.created_at || "" });
   }
   runs.sort((a, b) => (a.createdAt < b.createdAt ? 1 : a.createdAt > b.createdAt ? -1 : 0));
   return runs;
@@ -123,7 +128,7 @@ function selectRuns(all, { limit, slugs }) {
   for (const slug of slugs) {
     if (chosen.some((r) => r.slug === slug)) continue;
     const r = all.find((x) => x.slug === slug);
-    if (!r) { console.warn(`--slug ${slug}: no run.json + review/review-canvas.html found, skipped`); continue; }
+    if (!r) { console.warn(`--slug ${slug}: no run.json with review/review-canvas.html or built signage found, skipped`); continue; }
     chosen.push(r);
   }
   chosen.sort((a, b) => (a.createdAt < b.createdAt ? 1 : a.createdAt > b.createdAt ? -1 : 0));
@@ -192,12 +197,16 @@ const ADMIN_ANCHOR = /<a\b[^>]*href="https?:\/\/new\.boostly\.com\/[^"]*"[^>]*>[
 // local absolute paths and API usage. Their anchors are removed; nothing else references them.
 const INTERNAL_ANCHOR = /<a\b[^>]*href="(?:\.\.\/)*[^"]*\.(?:json|md|txt|log)"[^>]*>[\s\S]*?<\/a>\s*/g;
 
-function stage(r, stagingDir, maxPx) {
+function stage(r, stagingDir, maxPx, runRoot) {
   const reviewDir = path.join(r.dir, "review");
   const slugDir = path.join(stagingDir, r.slug);
   fs.rmSync(slugDir, { recursive: true, force: true });
   fs.mkdirSync(slugDir, { recursive: true });
-  let html = fs.readFileSync(path.join(reviewDir, "review-canvas.html"), "utf8");
+  // Refs in both page kinds are relative to review/, so the pass below stages them the same way.
+  const folder = printFolder(r);
+  let html = r.hasCanvas
+    ? injectIntoCanvas(fs.readFileSync(path.join(reviewDir, "review-canvas.html"), "utf8"), r, folder)
+    : standalonePage(r, runRoot, folder);
 
   const internalLinks = (html.match(INTERNAL_ANCHOR) || []).length;
   html = html.replace(INTERNAL_ANCHOR, "");
@@ -208,7 +217,7 @@ function stage(r, stagingDir, maxPx) {
   const missing = [];
   const outside = [];
   html = html.replace(/(src|href)="([^"]+)"/g, (m, attr, ref) => {
-    if (/^(https?:|data:|#|mailto:|javascript:|\/\/)/.test(ref)) return m;
+    if (/^(https?:|data:|#|mailto:|javascript:|\/)/.test(ref)) return m;
     const src = path.resolve(reviewDir, ref.split("?")[0].split("#")[0]);
     if (!src.startsWith(r.dir + path.sep)) { outside.push(ref); return m; }
     if (!exists(src) || fs.statSync(src).isDirectory()) { missing.push(ref); return m; }
@@ -370,7 +379,7 @@ async function main() {
 
   const all = listRuns(args.runRoot);
   const chosen = selectRuns(all, args);
-  console.log(`run root: ${args.runRoot}\nruns with a review canvas: ${all.length}; selected: ${chosen.length}`);
+  console.log(`run root: ${args.runRoot}\nruns with a review canvas or built signage: ${all.length} (${all.filter((r) => !r.hasCanvas).length} without a canvas); selected: ${chosen.length}`);
 
   const indexPath = path.join(ROOT, "data", "blob-index.json");
   const blobIndex = exists(indexPath) ? readJson(indexPath) : {};
@@ -401,7 +410,7 @@ async function main() {
   const sites = [];
   let uploaded = 0;
   for (const r of chosen) {
-    const s = stage(r, stagingDir, args.maxPx);
+    const s = stage(r, stagingDir, args.maxPx, args.runRoot);
     const p = await publish(r, s, args.out, blobIndex, token, args.upload);
     uploaded += p.uploaded;
     fs.mkdirSync(path.dirname(indexPath), { recursive: true });

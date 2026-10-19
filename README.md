@@ -10,6 +10,10 @@ Audience: Boostly fulfillment staff and the print vendor. **Every page on this s
 
 The pages are generated from the brand-design run directories (one directory per location with a `run.json` and a `review/review-canvas.html`). The run root is never modified.
 
+Links-only runs (no review canvas, e.g. sister locations that inherit another run's branding) get a standalone page once `run.json` `signage.direct.status` is `built`: location name, the existing/inherited branding note with the source run, the links written/already set/held summary from `links.execution`, the signage sheets, and Print files. No canvas sections are invented (`scripts/print-files.mjs`).
+
+Every page whose run has a `print-handoff/` directory gets a **Print files** section (after Signage sheets, which is also added to canvases that predate it): one link to the location's Google Drive print folder, read from `print-handoff/handoff.json` `drive.folder_link` (written by boostly-print-handoff). Without a Drive folder it reads "Print files: not uploaded yet". The PDFs are never uploaded to Blob or served by this site.
+
 ```
 npm run build -- --run-root /Users/travisse/Programming/projects/brand-design-spike-2026-07-06/runs-prod-2026-09-18 --limit 20
 ```
@@ -17,7 +21,7 @@ npm run build -- --run-root /Users/travisse/Programming/projects/brand-design-sp
 Flags:
 
 - `--run-root <dir>`: run root to read (defaults to the path above).
-- `--limit <n>`: newest N runs by `request.created_at` that have a review canvas (default 20).
+- `--limit <n>`: newest N runs by `request.created_at` that have a review canvas or built signage (default 20).
 - `--slug <dir-name>`: include a specific run in addition to the newest N. Repeatable.
 - `--max-px <n>`: long-edge cap for bundled images (default 1600; evidence photos are capped at 1200).
 
