@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T17:37:57.761Z",
+  "generated_at": "2026-10-19T17:50:00.610Z",
   "count": 62,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -368,13 +368,13 @@
       "updated_at": "2026-10-16T16:32:28.736Z",
       "cursor": "signage",
       "status": "applied",
-      "status_label": "Branding applied",
+      "status_label": "Existing account branding (inherited)",
       "recommended_letter": null,
       "picked_letter": null,
       "review_url": "/park-avenue-bbq-grille-stuart/",
       "figma_url": null,
       "signage_direct": "built",
-      "print_handoff_url": null,
+      "print_handoff_url": "https://drive.google.com/drive/folders/1_jS3cFX_LyFgCerno61swjFBVSivkvpq",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -415,7 +415,7 @@
         ]
       ],
       "needs_you": [
-        "approve the signage (direct PDF preview)"
+        "approve the signage (print files in Drive)"
       ],
       "gaps": [],
       "hold": null,
@@ -437,9 +437,9 @@
         "ease": null,
         "updated_at": "2026-10-16T16:33:48.964Z"
       },
-      "page_bytes": 4640,
-      "blob_bytes": 2009903,
-      "blob_assets": 1
+      "page_bytes": 4265,
+      "blob_bytes": 0,
+      "blob_assets": 0
     },
     {
       "slug": "park-avenue-bbq-grille-jupiter",
@@ -451,13 +451,13 @@
       "updated_at": "2026-10-16T16:37:11.697Z",
       "cursor": "signage",
       "status": "applied",
-      "status_label": "Branding applied",
+      "status_label": "Existing account branding (inherited)",
       "recommended_letter": null,
       "picked_letter": null,
       "review_url": "/park-avenue-bbq-grille-jupiter/",
       "figma_url": null,
       "signage_direct": "built",
-      "print_handoff_url": null,
+      "print_handoff_url": "https://drive.google.com/drive/folders/1JxQERN3KD45zW0JgPd5UXrTQ0GLz-U9S",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -498,7 +498,7 @@
         ]
       ],
       "needs_you": [
-        "approve the signage (direct PDF preview)"
+        "approve the signage (print files in Drive)"
       ],
       "gaps": [],
       "hold": null,
@@ -520,9 +520,9 @@
         "ease": null,
         "updated_at": "2026-10-16T16:35:06.234Z"
       },
-      "page_bytes": 4861,
-      "blob_bytes": 1980898,
-      "blob_assets": 1
+      "page_bytes": 4482,
+      "blob_bytes": 0,
+      "blob_assets": 0
     },
     {
       "slug": "park-avenue-bbq-grille-north-palm-beach",
@@ -534,13 +534,13 @@
       "updated_at": "2026-10-16T16:32:49.870Z",
       "cursor": "signage",
       "status": "applied",
-      "status_label": "Branding applied",
+      "status_label": "Existing account branding (inherited)",
       "recommended_letter": null,
       "picked_letter": null,
       "review_url": "/park-avenue-bbq-grille-north-palm-beach/",
       "figma_url": null,
       "signage_direct": "built",
-      "print_handoff_url": null,
+      "print_handoff_url": "https://drive.google.com/drive/folders/17nxnzcFOc2Kj0jasvVY3ux3ZMbU2_WXu",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -581,7 +581,7 @@
         ]
       ],
       "needs_you": [
-        "approve the signage (direct PDF preview)"
+        "approve the signage (print files in Drive)"
       ],
       "gaps": [],
       "hold": null,
@@ -603,9 +603,9 @@
         "ease": null,
         "updated_at": "2026-10-16T16:33:32.328Z"
       },
-      "page_bytes": 4826,
-      "blob_bytes": 2007859,
-      "blob_assets": 1
+      "page_bytes": 4431,
+      "blob_bytes": 0,
+      "blob_assets": 0
     },
     {
       "slug": "park-avenue-bbq-grille-west-palm-beach",
@@ -617,13 +617,13 @@
       "updated_at": "2026-10-16T16:31:43.032Z",
       "cursor": "signage",
       "status": "applied",
-      "status_label": "Branding applied",
+      "status_label": "Existing account branding (inherited)",
       "recommended_letter": null,
       "picked_letter": null,
       "review_url": "/park-avenue-bbq-grille-west-palm-beach/",
       "figma_url": null,
       "signage_direct": "built",
-      "print_handoff_url": null,
+      "print_handoff_url": "https://drive.google.com/drive/folders/1bry61H5Gik0inP6huwgROcjVRLclVA_r",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -664,7 +664,7 @@
         ]
       ],
       "needs_you": [
-        "approve the signage (direct PDF preview)"
+        "approve the signage (print files in Drive)"
       ],
       "gaps": [],
       "hold": null,
@@ -686,9 +686,9 @@
         "ease": null,
         "updated_at": "2026-10-16T16:32:28.254Z"
       },
-      "page_bytes": 4687,
-      "blob_bytes": 1982967,
-      "blob_assets": 1
+      "page_bytes": 4292,
+      "blob_bytes": 0,
+      "blob_assets": 0
     },
     {
       "slug": "park-avenue-bbq-grille-boynton-beach",
@@ -697,7 +697,7 @@
       "city": "Boynton Beach",
       "state": "FL",
       "requested_at": "2026-10-13T23:21:46.152Z",
-      "updated_at": "2026-10-16T16:26:53.179Z",
+      "updated_at": "2026-10-19T17:49:15.904Z",
       "cursor": "signage",
       "status": "applied",
       "status_label": "Branding applied",
@@ -706,7 +706,7 @@
       "review_url": "/park-avenue-bbq-grille-boynton-beach/",
       "figma_url": null,
       "signage_direct": "built",
-      "print_handoff_url": null,
+      "print_handoff_url": "https://drive.google.com/drive/folders/1_F_ocmdnX7aCmTXXZWU2YkYqjgOaU_c8",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -747,7 +747,7 @@
         ]
       ],
       "needs_you": [
-        "approve the signage (direct PDF preview)"
+        "approve the signage (print files in Drive)"
       ],
       "gaps": [],
       "hold": null,
@@ -769,9 +769,9 @@
         "ease": null,
         "updated_at": "2026-10-16T16:26:25.457Z"
       },
-      "page_bytes": 11510543,
-      "blob_bytes": 5635854,
-      "blob_assets": 28
+      "page_bytes": 11509470,
+      "blob_bytes": 3448305,
+      "blob_assets": 26
     },
     {
       "slug": "the-pig-parrot-hoboken",

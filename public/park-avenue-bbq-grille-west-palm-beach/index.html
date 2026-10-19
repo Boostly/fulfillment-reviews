@@ -47,11 +47,10 @@
 <nav class="toc" id="toc"><a class="top" href="/" style="margin-bottom:12px">&larr; All locations</a><ol>
 <li><a href="#header">Overview</a></li>
 <li><a href="#links">Links</a></li>
-<li><a href="#signage-sheets">Signage sheets</a></li>
 <li><a href="#print-files">Print files</a></li>
 </ol></nav>
 <div class="site-status ss" id="site-status" data-slug="park-avenue-bbq-grille-west-palm-beach"></div>
-<script id="site-status-data" type="application/json">{"slug":"park-avenue-bbq-grille-west-palm-beach","status":"applied","status_label":"Branding applied","boostly_status":"digital_fulfillment","steps":[["Review sheet ready",true],["Branding pick: existing [account-level, from park-avenue-bbq-grille-boynton-beach]",true],["Branding applied in prod",true],["Links written (0 still held)",true],["Signage built (direct PDF)",true],["Signage approved by you",false],["Slack result posted",false],["Status posted to the review site",true],["Store details confirmed",false]],"needs_you":["approve the signage (direct PDF preview)"],"gaps":[],"hold":null,"done":false,"note":"Existing branding inherited from Boynton (no pick); links written incl. ordering /stores, gift card and rewards rejected; signage PDFs built at 40 tables, waiting for your review.","review_status":{"status":"waiting","waiting_on":"signage approval","ease":null,"updated_at":"2026-10-16T16:32:28.254Z"},"progress":{"stage":"closeout","last_step":"signage PDFs rendered","next_step":"closeout-finish after approval","blocked_on":"signage approval","by":"closeout-location","host":"Karissas-MacBook-Pro.local","updated_at":"2026-10-16T16:32:28.318Z","bundle_pushed_at":"2026-10-16T16:32:28.611Z"},"figma_url":null}</script>
+<script id="site-status-data" type="application/json">{"slug":"park-avenue-bbq-grille-west-palm-beach","status":"applied","status_label":"Existing account branding (inherited)","boostly_status":"digital_fulfillment","steps":[["Review sheet ready",true],["Branding pick: existing [account-level, from park-avenue-bbq-grille-boynton-beach]",true],["Branding applied in prod",true],["Links written (0 still held)",true],["Signage built (direct PDF)",true],["Signage approved by you",false],["Slack result posted",false],["Status posted to the review site",true],["Store details confirmed",false]],"needs_you":["approve the signage (print files in Drive)"],"gaps":[],"hold":null,"done":false,"note":"Existing branding inherited from Boynton (no pick); links written incl. ordering /stores, gift card and rewards rejected; signage PDFs built at 40 tables, waiting for your review.","review_status":{"status":"waiting","waiting_on":"signage approval","ease":null,"updated_at":"2026-10-16T16:32:28.254Z"},"progress":{"stage":"closeout","last_step":"signage PDFs rendered","next_step":"closeout-finish after approval","blocked_on":"signage approval","by":"closeout-location","host":"Karissas-MacBook-Pro.local","updated_at":"2026-10-16T16:32:28.318Z","bundle_pushed_at":"2026-10-16T16:32:28.611Z"},"figma_url":null,"review_url":"/park-avenue-bbq-grille-west-palm-beach/"}</script>
 <script>
 window.BoostlyStatus = (function () {
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
@@ -65,7 +64,12 @@ window.BoostlyStatus = (function () {
   }
   function needsHtml(s) {
     var out = "";
-    (s.needs_you || []).forEach(function (n) { out += '<span class="need">' + esc(n.replace("(s)", "s")) + '</span>'; });
+    // "approve the signage" points at the page's Print files section (the Drive PDFs are what gets approved).
+    (s.needs_you || []).forEach(function (n) {
+      var t = esc(n.replace("(s)", "s"));
+      if (n.indexOf("approve the signage") === 0) t = '<a href="' + esc(s.review_url || "") + '#print-files">' + t + '</a>';
+      out += '<span class="need">' + t + '</span>';
+    });
     (s.gaps || []).forEach(function (g) { out += '<span class="need soft">' + esc(g) + '</span>'; });
     if (s.hold) out += '<span class="hold" title="' + esc(s.hold) + '">HOLD</span>';
     if (!out && s.done) out += '<span class="need soft">review complete</span>';
@@ -166,13 +170,10 @@ window.BoostlyStatus = (function () {
 <h3>Already on the location</h3><ul class="lk"><li><b>Website</b> <a class="ext" href="https://www.pabbqgrille.com/" target="_blank" rel="noopener">pabbqgrille.com/</a></li></ul>
 
 </section>
-<section id="signage-sheets">
-<h2>Signage sheets</h2><p class="sub">Awaiting your approval. Every print page as it goes to customstickers.com (26 pages: table-stickers 10, review-stickers 10, bathroom-stickers 1, bathroom-review-stickers 1, pop-sign 2, togo-label 2). Click to open full size.</p>
-<div class="shot"><a href="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/park-avenue-bbq-grille-west-palm-beach/506f01c3fcd8-review-sheets.png" target="_blank"><img src="https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/assets/park-avenue-bbq-grille-west-palm-beach/506f01c3fcd8-review-sheets.png" alt="signage print sheets"></a></div>
-</section>
 <section id="print-files">
 <h2>Print files</h2>
-<p><b>Print files:</b> not uploaded yet.</p>
+<p><a class="ext" href="https://drive.google.com/drive/folders/1bry61H5Gik0inP6huwgROcjVRLclVA_r" target="_blank" rel="noopener">Print files (Google Drive folder) &#8599;</a></p>
+<p class="sub">Approve the signage here: the six vector PDFs and logos exactly as customstickers.com will print them. Later edits replace these files in place, so the link stays the same.</p>
 </section>
 
 </main>
