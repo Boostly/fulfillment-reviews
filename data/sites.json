@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T19:50:38.034Z",
+  "generated_at": "2026-10-19T19:52:12.725Z",
   "count": 65,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -558,20 +558,20 @@
       "done": false,
       "note": "Done except vendor email: Slack posted, branding complete, store details confirmed; print email drafted but not sent (gmail.js has no drafts send); secondary logo skipped",
       "progress": {
-        "stage": "closeout-finish",
-        "last_step": "signage approved",
-        "next_step": "Slack, print hand-off, branding complete",
+        "stage": "done",
+        "last_step": "vendor email sent, order date stamped",
+        "next_step": "nothing",
         "blocked_on": null,
-        "by": "closeout-finish",
+        "by": "lead",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-19T18:02:02.728Z",
-        "bundle_pushed_at": "2026-10-19T18:02:03.078Z"
+        "updated_at": "2026-10-19T19:52:03.085Z",
+        "bundle_pushed_at": "2026-10-19T19:52:03.424Z"
       },
       "review_status": {
-        "status": "waiting",
-        "waiting_on": "vendor print email not sent",
+        "status": "done",
+        "waiting_on": null,
         "ease": 4,
-        "updated_at": "2026-10-19T18:03:21.365Z"
+        "updated_at": "2026-10-19T19:52:03.031Z"
       },
       "page_bytes": 4265,
       "blob_bytes": 0,
@@ -639,20 +639,20 @@
       "done": false,
       "note": "Done except the vendor email: signage approved, Slack posted, branding complete, store details confirmed; the print email draft is created but unsent (gmail.js has no drafts send).",
       "progress": {
-        "stage": "closeout-finish",
-        "last_step": "signage approved",
-        "next_step": "Slack, print hand-off, branding complete",
+        "stage": "done",
+        "last_step": "vendor email sent, order date stamped",
+        "next_step": "nothing",
         "blocked_on": null,
-        "by": "closeout-finish",
+        "by": "lead",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-19T18:01:35.562Z",
-        "bundle_pushed_at": "2026-10-19T18:01:35.868Z"
+        "updated_at": "2026-10-19T19:51:59.258Z",
+        "bundle_pushed_at": "2026-10-19T19:51:59.595Z"
       },
       "review_status": {
-        "status": "waiting",
-        "waiting_on": "vendor email send (draft unsent)",
+        "status": "done",
+        "waiting_on": null,
         "ease": 4,
-        "updated_at": "2026-10-19T18:03:05.219Z"
+        "updated_at": "2026-10-19T19:51:59.202Z"
       },
       "page_bytes": 4482,
       "blob_bytes": 0,
@@ -665,10 +665,10 @@
       "city": "North Palm Beach",
       "state": "FL",
       "requested_at": "2026-10-13T23:23:35.073Z",
-      "updated_at": "2026-10-16T16:32:49.870Z",
-      "cursor": "signage",
-      "status": "applied",
-      "status_label": "Existing account branding (inherited)",
+      "updated_at": "2026-10-19T18:02:03.086Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": null,
       "picked_letter": null,
       "review_url": "/park-avenue-bbq-grille-north-palm-beach/",
@@ -699,11 +699,11 @@
         ],
         [
           "Signage approved by you",
-          false
+          true
         ],
         [
           "Slack result posted",
-          false
+          true
         ],
         [
           "Status posted to the review site",
@@ -714,28 +714,26 @@
           false
         ]
       ],
-      "needs_you": [
-        "approve the signage (print files in Drive)"
-      ],
+      "needs_you": [],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Existing branding inherited, links written, signage PDFs rendered, waiting for your review",
+      "note": "Done except the vendor email: signage approved, Slack posted, branding complete and store details confirmed; the print email draft is unsent (gmail.js has no drafts send), secondary logo skipped.",
       "progress": {
-        "stage": "closeout",
-        "last_step": "existing branding inherited (no letter), links written, signage PDFs rendered",
-        "next_step": "closeout-finish after approval",
-        "blocked_on": "signage approval",
-        "by": "closeout-location",
+        "stage": "done",
+        "last_step": "vendor email sent, order date stamped",
+        "next_step": "nothing",
+        "blocked_on": null,
+        "by": "lead",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-16T16:33:32.404Z",
-        "bundle_pushed_at": "2026-10-16T16:33:32.807Z"
+        "updated_at": "2026-10-19T19:52:01.187Z",
+        "bundle_pushed_at": "2026-10-19T19:52:01.483Z"
       },
       "review_status": {
-        "status": "waiting",
-        "waiting_on": "signage approval",
-        "ease": null,
-        "updated_at": "2026-10-16T16:33:32.328Z"
+        "status": "done",
+        "waiting_on": null,
+        "ease": 4,
+        "updated_at": "2026-10-19T19:52:01.131Z"
       },
       "page_bytes": 4431,
       "blob_bytes": 0,
@@ -803,20 +801,20 @@
       "done": false,
       "note": "Branding complete and store details confirmed (now physical fulfillment), Slack posted; vendor print email is a Gmail draft that did not send (gmail.js has no drafts send), needs a send.",
       "progress": {
-        "stage": "closeout-finish",
-        "last_step": "signage approved",
-        "next_step": "Slack, print hand-off, branding complete",
+        "stage": "done",
+        "last_step": "vendor email sent, order date stamped",
+        "next_step": "nothing",
         "blocked_on": null,
-        "by": "closeout-finish",
+        "by": "lead",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-19T18:01:45.473Z",
-        "bundle_pushed_at": "2026-10-19T18:01:45.841Z"
+        "updated_at": "2026-10-19T19:52:04.980Z",
+        "bundle_pushed_at": "2026-10-19T19:52:05.305Z"
       },
       "review_status": {
-        "status": "waiting",
-        "waiting_on": "vendor print email not sent (draft ready)",
+        "status": "done",
+        "waiting_on": null,
         "ease": 4,
-        "updated_at": "2026-10-19T18:03:23.639Z"
+        "updated_at": "2026-10-19T19:52:04.925Z"
       },
       "page_bytes": 4292,
       "blob_bytes": 0,
@@ -885,19 +883,19 @@
       "note": "Done: branding complete, store details confirmed, Slack posted, Drive summary row added; the vendor print email is drafted but not sent (gmail tool has no send), needs a send.",
       "progress": {
         "stage": "done",
-        "last_step": "branding complete, Slack posted, status set",
-        "next_step": "send vendor print email (draft ready); nothing else",
+        "last_step": "vendor email sent, order date stamped",
+        "next_step": "nothing",
         "blocked_on": null,
-        "by": "closeout-finish",
+        "by": "lead",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-19T19:50:28.232Z",
-        "bundle_pushed_at": "2026-10-19T18:01:33.512Z"
+        "updated_at": "2026-10-19T19:51:57.201Z",
+        "bundle_pushed_at": "2026-10-19T19:51:57.529Z"
       },
       "review_status": {
-        "status": "waiting",
-        "waiting_on": "vendor print email send (draft ready)",
+        "status": "done",
+        "waiting_on": null,
         "ease": 4,
-        "updated_at": "2026-10-19T19:50:26.412Z"
+        "updated_at": "2026-10-19T19:51:57.145Z"
       },
       "page_bytes": 11509470,
       "blob_bytes": 3448305,
