@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-19T19:50:36.207Z",
-  "count": 64,
+  "generated_at": "2026-10-19T19:50:38.034Z",
+  "count": 65,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -665,10 +665,10 @@
       "city": "North Palm Beach",
       "state": "FL",
       "requested_at": "2026-10-13T23:23:35.073Z",
-      "updated_at": "2026-10-19T18:02:03.086Z",
-      "cursor": "slack",
-      "status": "closed",
-      "status_label": "Closed out",
+      "updated_at": "2026-10-16T16:32:49.870Z",
+      "cursor": "signage",
+      "status": "applied",
+      "status_label": "Existing account branding (inherited)",
       "recommended_letter": null,
       "picked_letter": null,
       "review_url": "/park-avenue-bbq-grille-north-palm-beach/",
@@ -699,11 +699,11 @@
         ],
         [
           "Signage approved by you",
-          true
+          false
         ],
         [
           "Slack result posted",
-          true
+          false
         ],
         [
           "Status posted to the review site",
@@ -714,26 +714,28 @@
           false
         ]
       ],
-      "needs_you": [],
+      "needs_you": [
+        "approve the signage (print files in Drive)"
+      ],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Done except the vendor email: signage approved, Slack posted, branding complete and store details confirmed; the print email draft is unsent (gmail.js has no drafts send), secondary logo skipped.",
+      "note": "Existing branding inherited, links written, signage PDFs rendered, waiting for your review",
       "progress": {
-        "stage": "closeout-finish",
-        "last_step": "signage approved",
-        "next_step": "Slack, print hand-off, branding complete (secondary logo skipped: account-level)",
-        "blocked_on": null,
-        "by": "closeout-finish",
+        "stage": "closeout",
+        "last_step": "existing branding inherited (no letter), links written, signage PDFs rendered",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "signage approval",
+        "by": "closeout-location",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-19T18:01:41.269Z",
-        "bundle_pushed_at": "2026-10-19T18:01:41.586Z"
+        "updated_at": "2026-10-16T16:33:32.404Z",
+        "bundle_pushed_at": "2026-10-16T16:33:32.807Z"
       },
       "review_status": {
         "status": "waiting",
-        "waiting_on": "vendor print email send (draft ready)",
-        "ease": 4,
-        "updated_at": "2026-10-19T19:50:28.236Z"
+        "waiting_on": "signage approval",
+        "ease": null,
+        "updated_at": "2026-10-16T16:33:32.328Z"
       },
       "page_bytes": 4431,
       "blob_bytes": 0,
@@ -819,6 +821,87 @@
       "page_bytes": 4292,
       "blob_bytes": 0,
       "blob_assets": 0
+    },
+    {
+      "slug": "park-avenue-bbq-grille-boynton-beach",
+      "name": "Park Avenue BBQ Grille (Boynton Beach)",
+      "account": "Park Avenue BBQ Grille",
+      "city": "Boynton Beach",
+      "state": "FL",
+      "requested_at": "2026-10-13T23:21:46.152Z",
+      "updated_at": "2026-10-19T18:01:54.538Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
+      "recommended_letter": null,
+      "picked_letter": null,
+      "review_url": "/park-avenue-bbq-grille-boynton-beach/",
+      "figma_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1_F_ocmdnX7aCmTXXZWU2YkYqjgOaU_c8",
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick: existing",
+          true
+        ],
+        [
+          "Branding applied in prod",
+          true
+        ],
+        [
+          "Links written (0 still held)",
+          true
+        ],
+        [
+          "Signage built (direct PDF)",
+          true
+        ],
+        [
+          "Signage approved by you",
+          true
+        ],
+        [
+          "Slack result posted",
+          true
+        ],
+        [
+          "Status posted to the review site",
+          true
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": "Done: branding complete, store details confirmed, Slack posted, Drive summary row added; the vendor print email is drafted but not sent (gmail tool has no send), needs a send.",
+      "progress": {
+        "stage": "done",
+        "last_step": "branding complete, Slack posted, status set",
+        "next_step": "send vendor print email (draft ready); nothing else",
+        "blocked_on": null,
+        "by": "closeout-finish",
+        "host": "Karissas-MacBook-Pro.local",
+        "updated_at": "2026-10-19T19:50:28.232Z",
+        "bundle_pushed_at": "2026-10-19T18:01:33.512Z"
+      },
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "vendor print email send (draft ready)",
+        "ease": 4,
+        "updated_at": "2026-10-19T19:50:26.412Z"
+      },
+      "page_bytes": 11509470,
+      "blob_bytes": 3448305,
+      "blob_assets": 26
     },
     {
       "slug": "the-pig-parrot-hoboken",
