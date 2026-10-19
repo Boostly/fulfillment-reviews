@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T18:03:28.757Z",
+  "generated_at": "2026-10-19T18:03:37.000Z",
   "count": 62,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -365,10 +365,10 @@
       "city": "Stuart",
       "state": "FL",
       "requested_at": "2026-10-13T23:25:09.316Z",
-      "updated_at": "2026-10-16T16:32:28.736Z",
-      "cursor": "signage",
-      "status": "applied",
-      "status_label": "Existing account branding (inherited)",
+      "updated_at": "2026-10-19T18:03:26.383Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": null,
       "picked_letter": null,
       "review_url": "/park-avenue-bbq-grille-stuart/",
@@ -399,11 +399,11 @@
         ],
         [
           "Signage approved by you",
-          false
+          true
         ],
         [
           "Slack result posted",
-          false
+          true
         ],
         [
           "Status posted to the review site",
@@ -414,28 +414,26 @@
           false
         ]
       ],
-      "needs_you": [
-        "approve the signage (print files in Drive)"
-      ],
+      "needs_you": [],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Existing branding inherited, links written, signage PDFs rendered, waiting for your review",
+      "note": "Done except vendor email: Slack posted, branding complete, store details confirmed; print email drafted but not sent (gmail.js has no drafts send); secondary logo skipped",
       "progress": {
-        "stage": "closeout",
-        "last_step": "signage PDFs rendered",
-        "next_step": "closeout-finish after approval",
-        "blocked_on": "signage approval",
-        "by": "closeout-location",
+        "stage": "closeout-finish",
+        "last_step": "signage approved",
+        "next_step": "Slack, print hand-off, branding complete",
+        "blocked_on": null,
+        "by": "closeout-finish",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-16T16:33:49.023Z",
-        "bundle_pushed_at": "2026-10-16T16:33:49.297Z"
+        "updated_at": "2026-10-19T18:02:02.728Z",
+        "bundle_pushed_at": "2026-10-19T18:02:03.078Z"
       },
       "review_status": {
         "status": "waiting",
-        "waiting_on": "signage approval",
-        "ease": null,
-        "updated_at": "2026-10-16T16:33:48.964Z"
+        "waiting_on": "vendor print email not sent",
+        "ease": 4,
+        "updated_at": "2026-10-19T18:03:21.365Z"
       },
       "page_bytes": 4265,
       "blob_bytes": 0,
