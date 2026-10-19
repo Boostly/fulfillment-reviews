@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T20:03:40.423Z",
+  "generated_at": "2026-10-19T20:58:52.997Z",
   "count": 66,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -70,8 +70,8 @@
       "city": "Clearwater",
       "state": "FL",
       "requested_at": "2026-10-15T20:02:31.197Z",
-      "updated_at": "2026-10-19T18:21:39.095Z",
-      "cursor": "variants",
+      "updated_at": "2026-10-19T20:42:20.854Z",
+      "cursor": "links",
       "status": "awaiting",
       "status_label": "Awaiting pick",
       "recommended_letter": "A",
@@ -89,7 +89,7 @@
       "note": "Existing live branding (badge on #0A5294 navy, #E11F28 red); fresh proposal matches it with a crisp vector rebuild of the 227px site badge, sheet held for acceptance of the small-source trace (Fable's card is E, badge on navy, red band; words-only I-L for tap-card legibility). Taste pass (fable) added M, N, O, P (knockout on red, navy band; words only on red, navy band; full badge on red, logo-navy band; full badge on logo navy, red band).",
       "progress": null,
       "review_status": null,
-      "page_bytes": 6983352,
+      "page_bytes": 6983510,
       "blob_bytes": 5681436,
       "blob_assets": 25
     },
