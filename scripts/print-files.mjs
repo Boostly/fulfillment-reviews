@@ -1,4 +1,4 @@
-// Signage sheets + Print files sections, and the standalone page for runs without a review canvas.
+// Print files section, and the standalone page for runs without a review canvas.
 //
 // Print files (Karissa 2026-10-19): when <run>/print-handoff/ exists, the page carries one link to
 // the location's Google Drive print folder (the per-location folder boostly-print-handoff creates
@@ -8,7 +8,7 @@
 //
 // Links-only siblings (no review canvas, e.g. the Park Avenue BBQ Grille locations that inherit the
 // Boynton Beach branding) get a standalone page built from run.json alone when
-// signage.direct.status is "built": location name, branding note, links summary, signage sheets and
+// signage.direct.status is "built": location name, branding note, links summary and
 // print files. Nothing is fabricated: no variant sheet, no candidates, no canvas sections.
 //
 // Public page: no ship-to data (street, postal code), no Boostly admin links, no internal ids.
@@ -33,30 +33,22 @@ export function printFolder(r) {
   return { url };
 }
 
-// signage/shots copy first (design tier), the print-handoff original as fallback.
-export function signagePreview(r) {
-  const d = r.run.signage?.direct;
-  if (!d?.preview_png) return null;
-  const cands = [path.join(r.dir, "signage", "shots", "review-sheets.png"), path.join(r.dir, String(d.preview_png))];
-  const f = cands.find(exists);
-  return f ? "../" + path.relative(r.dir, f).split(path.sep).join("/") : null;
-}
+// No "Signage sheets" section (Karissa 2026-10-19): the inline review-sheets.png contact sheet is gone
+// from every page and is no longer uploaded to Blob. Reviewers approve the signage on the real vector
+// PDFs in the location's Drive folder, so Print files is the signage-approval section.
+const SIGNAGE_SECTION = /<section id="signage-sheets"[\s\S]*?<\/section>\s*/g;
+const SIGNAGE_TOC = /<li><a href="#signage-sheets"[^>]*>[^<]*<\/a><\/li>\s*/g;
+// Overview chips that pointed at the contact sheet (the anchor, or the old print-handoff preview file).
+const SIGNAGE_CHIP = /<a\b[^>]*href="(?:#signage-sheets|[^"]*review-sheets\.(?:png|jpg))"[^>]*>[\s\S]*?<\/a>\s*/g;
 
-export function signageSectionHtml(r, ref) {
-  const d = r.run.signage?.direct || {};
-  const kinds = d.kinds ? Object.entries(d.kinds).map(([k, n]) => `${k} ${n}`).join(", ") : null;
-  const sub = `${d.approved ? "Approved" : "Awaiting your approval"}. Every print page as it goes to customstickers.com${d.pages ? ` (${d.pages} pages${kinds ? `: ${kinds}` : ""})` : ""}. Click to open full size.`;
-  return `<section id="signage-sheets">
-<h2>Signage sheets</h2><p class="sub">${esc(sub)}</p>
-<div class="shot"><a href="${ref}" target="_blank"><img src="${ref}" alt="signage print sheets"></a></div>
-</section>
-`;
+export function stripSignageSheets(html) {
+  return html.replace(SIGNAGE_SECTION, "").replace(SIGNAGE_TOC, "").replace(SIGNAGE_CHIP, "");
 }
 
 export function printFilesSectionHtml(folder) {
   const body = folder.url
     ? `<p><a class="ext" href="${esc(folder.url)}" target="_blank" rel="noopener">Print files (Google Drive folder) &#8599;</a></p>
-<p class="sub">The six vector PDFs and logos sent to customstickers.com for this location.</p>`
+<p class="sub">Approve the signage here: the six vector PDFs and logos exactly as customstickers.com will print them. Later edits replace these files in place, so the link stays the same.</p>`
     : `<p><b>Print files:</b> not uploaded yet.</p>`;
   return `<section id="print-files">
 <h2>Print files</h2>
@@ -65,20 +57,13 @@ ${body}
 `;
 }
 
-// Adds Signage sheets (only when the canvas predates the inline section) and Print files to a
-// review canvas, plus their TOC entries. Inserted right after the signage sheets section, or after
-// the overview when the canvas has none.
+// Removes any Signage sheets section (and its TOC entry and overview chip) from a review canvas and
+// adds Print files right after the overview, plus its TOC entry.
 export function injectIntoCanvas(html, r, folder) {
-  const preview = signagePreview(r);
-  const hasSheets = /<section id="signage-sheets"/.test(html);
-  if (/<section id="print-files"/.test(html)) return html;
-  let block = "";
-  const toc = [];
-  if (!hasSheets && preview) { block += signageSectionHtml(r, preview); toc.push(["signage-sheets", "Signage sheets"]); }
-  if (folder) { block += printFilesSectionHtml(folder); toc.push(["print-files", "Print files"]); }
-  if (!block) return html;
-  const anchorId = hasSheets ? "signage-sheets" : "header";
-  const start = html.indexOf(`<section id="${anchorId}"`);
+  html = stripSignageSheets(html);
+  if (!folder || /<section id="print-files"/.test(html)) return html;
+  const block = printFilesSectionHtml(folder);
+  const start = html.indexOf(`<section id="header"`);
   const end = start >= 0 ? html.indexOf("</section>", start) : -1;
   if (end < 0) {
     html = html.replace(/<\/body>/i, `${block}</body>`);
@@ -86,9 +71,8 @@ export function injectIntoCanvas(html, r, folder) {
     const at = end + "</section>".length;
     html = html.slice(0, at) + "\n" + block + html.slice(at);
   }
-  const lis = toc.map(([id, label]) => `<li><a href="#${id}">${label}</a></li>`).join("\n");
-  const tocAnchor = new RegExp(`(<li><a href="#${anchorId}"[^>]*>[^<]*</a></li>)`);
-  if (tocAnchor.test(html)) html = html.replace(tocAnchor, `$1\n${lis}`);
+  const tocAnchor = /(<li><a href="#header"[^>]*>[^<]*<\/a><\/li>)/;
+  if (tocAnchor.test(html)) html = html.replace(tocAnchor, `$1\n<li><a href="#print-files">Print files</a></li>`);
   return html;
 }
 
@@ -145,9 +129,7 @@ export function standalonePage(r, runRoot, folder) {
   const place = [id.city, id.state].filter(Boolean).join(", ");
   const b = brandingNote(run, runRoot);
   const ls = linksSummary(run);
-  const preview = signagePreview(r);
   const toc = [["header", "Overview"], ["links", "Links"]];
-  if (preview) toc.push(["signage-sheets", "Signage sheets"]);
   if (folder) toc.push(["print-files", "Print files"]);
   const linksHtml = !ls.any ? `<p class="sub">No link results recorded in run.json.</p>` : `
 <p class="sum">${ls.written.length} written, ${ls.already.length} already on the location, ${ls.held.length} held for review, ${ls.notWritten.length} rejected or none found.</p>
@@ -185,7 +167,7 @@ ${b.swatches ? `<p>${b.swatches}</p>` : ""}
 <section id="links">
 <h2>Links</h2>${linksHtml}
 </section>
-${preview ? signageSectionHtml(r, preview) : ""}${folder ? printFilesSectionHtml(folder) : ""}
+${folder ? printFilesSectionHtml(folder) : ""}
 </main>
 </body></html>
 `;

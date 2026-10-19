@@ -180,11 +180,11 @@ export function renderIndex(manifest) {
   function has(s, key) { return (s.needs_you || []).some(function (n) { return n.indexOf(key) !== -1; }) && !s.done; }
   function renderSummary() {
     var picks = sites.filter(function (s) { return has(s, "pick a letter"); }).length;
-    var figs = sites.filter(function (s) { return has(s, "approve the Figma"); }).length;
+    var figs = sites.filter(function (s) { return has(s, "approve the signage"); }).length;
     var links = sites.filter(function (s) { return has(s, "link decision"); }).length;
     var store = sites.filter(function (s) { return has(s, "store details"); }).length;
     var open = sites.filter(function (s) { return s.status !== "closed"; }).length;
-    summary.innerHTML = '<span><b>' + picks + '</b> picks</span><span><b>' + figs + '</b> Figma approvals</span><span><b>' + links + '</b> link decisions</span><span><b>' + store + '</b> store details</span><span><b>' + open + '</b> open</span>'
+    summary.innerHTML = '<span><b>' + picks + '</b> picks</span><span><b>' + figs + '</b> signage approvals</span><span><b>' + links + '</b> link decisions</span><span><b>' + store + '</b> store details</span><span><b>' + open + '</b> open</span>'
       + '<span class="live' + (liveLabel ? "" : " off") + '">' + (liveLabel ? "live " + esc(liveLabel) : "status as of the last site build") + '</span>';
   }
   function render() {

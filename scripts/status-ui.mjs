@@ -49,7 +49,12 @@ window.BoostlyStatus = (function () {
   }
   function needsHtml(s) {
     var out = "";
-    (s.needs_you || []).forEach(function (n) { out += '<span class="need">' + esc(n.replace("(s)", "s")) + '</span>'; });
+    // "approve the signage" points at the page's Print files section (the Drive PDFs are what gets approved).
+    (s.needs_you || []).forEach(function (n) {
+      var t = esc(n.replace("(s)", "s"));
+      if (n.indexOf("approve the signage") === 0) t = '<a href="' + esc(s.review_url || "") + '#print-files">' + t + '</a>';
+      out += '<span class="need">' + t + '</span>';
+    });
     (s.gaps || []).forEach(function (g) { out += '<span class="need soft">' + esc(g) + '</span>'; });
     if (s.hold) out += '<span class="hold" title="' + esc(s.hold) + '">HOLD</span>';
     if (!out && s.done) out += '<span class="need soft">review complete</span>';
@@ -119,6 +124,7 @@ export function statusFields(e) {
     slug: e.slug, status: e.status, status_label: e.status_label, boostly_status: e.boostly_status ?? null,
     steps: e.steps ?? null, needs_you: e.needs_you ?? null, gaps: e.gaps ?? null, hold: e.hold ?? null,
     done: e.done ?? null, note: e.note ?? null, review_status: e.review_status ?? null, progress: e.progress ?? null, figma_url: e.figma_url ?? null,
+    review_url: e.review_url ?? null,
   };
 }
 

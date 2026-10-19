@@ -157,6 +157,10 @@ function statusFor(cursor, picked, run = {}) {
   if (i < 0) return { key: "unknown", label: "Unknown" };
   if (i >= STAGES.indexOf("slack")) return { key: "closed", label: "Closed out" };
   const w = run.write || {};
+  // Sister locations that kept the account's existing branding and inherit it from the lead run
+  // (write.existing_kept + write.inherited + write.branding_source_run) had nothing applied themselves
+  // (Karissa 2026-10-19, Park Avenue BBQ Grille siblings).
+  if (APPLIED.has(w.status) && w.existing_kept && w.inherited && w.branding_source_run) return { key: "applied", label: "Existing account branding (inherited)" };
   if (APPLIED.has(w.status)) return { key: "applied", label: "Branding applied" };
   if (w.branding_source_run) {
     const src = path.basename(String(w.branding_source_run));
