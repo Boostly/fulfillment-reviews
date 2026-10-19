@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-19T18:03:37.000Z",
-  "count": 62,
+  "generated_at": "2026-10-19T18:20:57.891Z",
+  "count": 63,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -322,6 +322,84 @@
       },
       "page_bytes": 3778551,
       "blob_bytes": 12229616,
+      "blob_assets": 34
+    },
+    {
+      "slug": "coop-s-pizza",
+      "name": "Coop's Pizza",
+      "account": "Coop's Pizza",
+      "city": "Hayward",
+      "state": "WI",
+      "requested_at": "2026-10-14T17:04:55.144Z",
+      "updated_at": "2026-10-19T18:20:31.042Z",
+      "cursor": "variants",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "A",
+      "picked_letter": null,
+      "review_url": "/coop-s-pizza/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick (Fable default A)",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (0 ready, 0 need a call)",
+          false
+        ],
+        [
+          "Signage built",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [
+        "pick a letter"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": "Fable default A is a HOLD (red/gold wordmark traced from a 330px site source, needs a trace acceptance); no live branding. Two marks in use: site red script vs green/maroon Toast and Facebook badge. Simple bold options: C's monogram Q-S, script-only X. Taste pass (fable) added T, U, V, W (red card, black card, footer brown, script-only); W rejected (its cut kept the descriptor), rebuilt as X; p4 orange tile kept off on gates. Column F green is a WordPress default token, not a brand color.",
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "taste pass",
+        "next_step": "review canvas and link discovery",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "Karissas-MacBook-Pro.local",
+        "updated_at": "2026-10-19T18:20:26.891Z",
+        "bundle_pushed_at": "2026-10-19T18:20:27.309Z"
+      },
+      "review_status": null,
+      "page_bytes": 9986133,
+      "blob_bytes": 5496589,
       "blob_assets": 34
     },
     {
