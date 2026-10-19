@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T18:23:18.506Z",
+  "generated_at": "2026-10-19T18:25:25.735Z",
   "count": 65,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -391,8 +391,8 @@
       "city": "Hayward",
       "state": "WI",
       "requested_at": "2026-10-14T17:04:55.144Z",
-      "updated_at": "2026-10-19T18:20:31.042Z",
-      "cursor": "variants",
+      "updated_at": "2026-10-19T18:25:13.010Z",
+      "cursor": "links",
       "status": "awaiting",
       "status_label": "Awaiting pick",
       "recommended_letter": "A",
@@ -458,7 +458,7 @@
         "bundle_pushed_at": "2026-10-19T18:20:27.309Z"
       },
       "review_status": null,
-      "page_bytes": 9986133,
+      "page_bytes": 9986340,
       "blob_bytes": 5496589,
       "blob_assets": 34
     },
