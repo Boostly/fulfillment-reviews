@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-19T19:52:12.725Z",
-  "count": 65,
+  "generated_at": "2026-10-19T20:03:40.423Z",
+  "count": 66,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -32,6 +32,36 @@
       "page_bytes": 4187973,
       "blob_bytes": 3965643,
       "blob_assets": 27
+    },
+    {
+      "slug": "mi-corazon-mexican-restaurant-spanish-fork",
+      "name": "Mi Corazon Mexican Restaurant (Spanish Fork)",
+      "account": "Mi Corazon Mexican Restaurant",
+      "city": "Spanish Fork",
+      "state": "UT",
+      "requested_at": "2026-10-15T20:35:17.481Z",
+      "updated_at": "2026-10-19T20:03:20.494Z",
+      "cursor": "links",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "H",
+      "picked_letter": null,
+      "review_url": "/mi-corazon-mexican-restaurant-spanish-fork/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": null,
+      "steps": null,
+      "needs_you": null,
+      "gaps": null,
+      "hold": null,
+      "done": null,
+      "note": "Pick a letter: Fable default H (full-color heart + MI CORAZON from the menu-PDF vector on yellow #FFCA28, heart-red band); simple bold options A (words-only wordmark) and O (heart icon); no live branding on the account. Taste pass (fable) added R, S (S is a light ground, escalate before a pick).",
+      "progress": null,
+      "review_status": null,
+      "page_bytes": 8248225,
+      "blob_bytes": 5667438,
+      "blob_assets": 29
     },
     {
       "slug": "five-star-pizza-clearwater",
