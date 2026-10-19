@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-19T17:37:47.849Z",
-  "count": 60,
+  "generated_at": "2026-10-19T17:37:52.972Z",
+  "count": 61,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -357,6 +357,89 @@
       "page_bytes": 8040072,
       "blob_bytes": 8518636,
       "blob_assets": 27
+    },
+    {
+      "slug": "park-avenue-bbq-grille-jupiter",
+      "name": "Park Avenue BBQ Grille (Jupiter)",
+      "account": "Park Avenue BBQ Grille",
+      "city": "Jupiter",
+      "state": "FL",
+      "requested_at": "2026-10-13T23:24:24.171Z",
+      "updated_at": "2026-10-16T16:37:11.697Z",
+      "cursor": "signage",
+      "status": "applied",
+      "status_label": "Branding applied",
+      "recommended_letter": null,
+      "picked_letter": null,
+      "review_url": "/park-avenue-bbq-grille-jupiter/",
+      "figma_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick: existing [account-level, from park-avenue-bbq-grille-boynton-beach]",
+          true
+        ],
+        [
+          "Branding applied in prod",
+          true
+        ],
+        [
+          "Links written (0 still held)",
+          true
+        ],
+        [
+          "Signage built (direct PDF)",
+          true
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          true
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [
+        "approve the signage (direct PDF preview)"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": "Existing branding inherited (no pick); all links written incl. Facebook, ordering and the Jupiter gift card, nothing held; signage PDFs rendered at 40 tables, waiting for your review.",
+      "progress": {
+        "stage": "closeout",
+        "last_step": "signage PDFs rendered; all links written incl. Facebook",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "signage approval",
+        "by": "closeout-location",
+        "host": "Karissas-MacBook-Pro.local",
+        "updated_at": "2026-10-16T16:37:29.266Z",
+        "bundle_pushed_at": "2026-10-16T16:37:29.638Z"
+      },
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "signage approval",
+        "ease": null,
+        "updated_at": "2026-10-16T16:35:06.234Z"
+      },
+      "page_bytes": 4861,
+      "blob_bytes": 1980898,
+      "blob_assets": 1
     },
     {
       "slug": "park-avenue-bbq-grille-north-palm-beach",
