@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-19T17:37:16.437Z",
-  "count": 58,
+  "generated_at": "2026-10-19T17:37:42.762Z",
+  "count": 59,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -357,6 +357,89 @@
       "page_bytes": 8040072,
       "blob_bytes": 8518636,
       "blob_assets": 27
+    },
+    {
+      "slug": "park-avenue-bbq-grille-west-palm-beach",
+      "name": "Park Avenue BBQ Grille (West Palm Beach)",
+      "account": "Park Avenue BBQ Grille",
+      "city": "West Palm Beach",
+      "state": "FL",
+      "requested_at": "2026-10-13T23:22:38.681Z",
+      "updated_at": "2026-10-16T16:31:43.032Z",
+      "cursor": "signage",
+      "status": "applied",
+      "status_label": "Branding applied",
+      "recommended_letter": null,
+      "picked_letter": null,
+      "review_url": "/park-avenue-bbq-grille-west-palm-beach/",
+      "figma_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick: existing [account-level, from park-avenue-bbq-grille-boynton-beach]",
+          true
+        ],
+        [
+          "Branding applied in prod",
+          true
+        ],
+        [
+          "Links written (0 still held)",
+          true
+        ],
+        [
+          "Signage built (direct PDF)",
+          true
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          true
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [
+        "approve the signage (direct PDF preview)"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": "Existing branding inherited from Boynton (no pick); links written incl. ordering /stores, gift card and rewards rejected; signage PDFs built at 40 tables, waiting for your review.",
+      "progress": {
+        "stage": "closeout",
+        "last_step": "signage PDFs rendered",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "signage approval",
+        "by": "closeout-location",
+        "host": "Karissas-MacBook-Pro.local",
+        "updated_at": "2026-10-16T16:32:28.318Z",
+        "bundle_pushed_at": "2026-10-16T16:32:28.611Z"
+      },
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "signage approval",
+        "ease": null,
+        "updated_at": "2026-10-16T16:32:28.254Z"
+      },
+      "page_bytes": 4687,
+      "blob_bytes": 1982967,
+      "blob_assets": 1
     },
     {
       "slug": "park-avenue-bbq-grille-boynton-beach",
