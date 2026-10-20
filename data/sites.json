@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T20:45:56.103Z",
+  "generated_at": "2026-10-20T22:59:11.315Z",
   "count": 67,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -10,7 +10,7 @@
       "city": "Scottsdale",
       "state": "AZ",
       "requested_at": "2026-10-19T18:04:29.724Z",
-      "updated_at": "2026-10-20T20:45:44.850Z",
+      "updated_at": "2026-10-20T22:59:02.890Z",
       "cursor": "links",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -29,7 +29,7 @@
       "note": "No live branding on the account. Fable default A (open white knockout of the disc on logo red #EC201C, mint band); E is the bold words-only il Capo for tap-card legibility. Taste pass (fable) added I, J (full-color disc on black, mint band; full-color disc on black, red band); K (red script on mint, LIGHT GROUND) hand-built from its held proposal; 1 kept off (red-ink lockup on mint: component-contrast).",
       "progress": null,
       "review_status": null,
-      "page_bytes": 6373826,
+      "page_bytes": 6766639,
       "blob_bytes": 14264528,
       "blob_assets": 30
     },
