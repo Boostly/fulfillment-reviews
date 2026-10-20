@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T15:09:20.326Z",
+  "generated_at": "2026-10-20T15:39:17.156Z",
   "count": 67,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -10,8 +10,8 @@
       "city": "Scottsdale",
       "state": "AZ",
       "requested_at": "2026-10-19T18:04:29.724Z",
-      "updated_at": "2026-10-20T15:08:36.632Z",
-      "cursor": "variants",
+      "updated_at": "2026-10-20T15:39:06.293Z",
+      "cursor": "links",
       "status": "awaiting",
       "status_label": "Awaiting pick",
       "recommended_letter": "A",
@@ -29,9 +29,9 @@
       "note": "No live branding on the account. Fable default A (open white knockout of the disc on logo red #EC201C, mint band); E is the bold words-only il Capo for tap-card legibility. Taste pass (fable) added I, J (full-color disc on black, mint band; full-color disc on black, red band); K (red script on mint, LIGHT GROUND) hand-built from its held proposal; 1 kept off (red-ink lockup on mint: component-contrast).",
       "progress": null,
       "review_status": null,
-      "page_bytes": 4802691,
-      "blob_bytes": 16680311,
-      "blob_assets": 30
+      "page_bytes": 4803075,
+      "blob_bytes": 13007116,
+      "blob_assets": 29
     },
     {
       "slug": "pins-bar-and-grille-bowling-and-event-center-ithaca",
