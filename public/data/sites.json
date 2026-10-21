@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T15:39:47.634Z",
+  "generated_at": "2026-10-21T15:46:53.472Z",
   "count": 73,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -130,7 +130,7 @@
       "city": "Elk Grove Village",
       "state": "IL",
       "requested_at": "2026-10-20T16:33:42.105Z",
-      "updated_at": "2026-10-21T14:57:59.764Z",
+      "updated_at": "2026-10-21T15:46:40.145Z",
       "cursor": "overrides",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -146,10 +146,10 @@
       "gaps": null,
       "hold": null,
       "done": null,
-      "note": "Fable default J (current site lockup full color on navy, red band); no existing branding on this account and no other Brown's Chicken account in Boostly. Taste pass (fable) added BB, BC (red card / green card white knockouts); bold vector options AY (classic BROWN'S) and BD/BE (yellow emblem) added for tap-card legibility. Links pending discovery.",
+      "note": "Fable default J (current site lockup on navy, red band); no live branding on this account and no other Brown's Chicken account in Boostly. Taste pass (fable) added BB, BC (red and green cards, white knockouts); bold vector options AY (classic BROWN'S) and BD/BE (yellow emblem) for tap-card legibility. Links: Facebook, Instagram, Careers ready; ordering held (store-locator Square URL for this store needs one browser read).",
       "progress": null,
       "review_status": null,
-      "page_bytes": 22696064,
+      "page_bytes": 22707718,
       "blob_bytes": 7965298,
       "blob_assets": 33
     },
