@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T19:13:43.314Z",
+  "generated_at": "2026-10-21T19:15:01.445Z",
   "count": 73,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -160,7 +160,7 @@
       "city": "Cedar Crest",
       "state": "NM",
       "requested_at": "2026-10-20T16:12:14.887Z",
-      "updated_at": "2026-10-21T19:13:36.593Z",
+      "updated_at": "2026-10-21T19:14:58.904Z",
       "cursor": "signage",
       "status": "applied",
       "status_label": "Branding applied",
@@ -217,7 +217,7 @@
       ],
       "hold": null,
       "done": false,
-      "note": null,
+      "note": "Customer's own lockup applied as AY (cyan #11DDF8 secondary), signage PDFs replaced in Drive; waiting for your look at the new sheet and PDFs, finish still waits on ship-to.",
       "progress": {
         "stage": "closeout",
         "last_step": "customer lockup branding written (AY)",
@@ -234,7 +234,7 @@
         "ease": 3,
         "updated_at": "2026-10-21T15:52:57.889Z"
       },
-      "page_bytes": 20658189,
+      "page_bytes": 20657963,
       "blob_bytes": 4164034,
       "blob_assets": 7
     },
