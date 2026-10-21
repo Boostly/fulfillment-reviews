@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-21T14:58:31.462Z",
-  "count": 70,
+  "generated_at": "2026-10-21T14:59:47.040Z",
+  "count": 71,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -62,6 +62,36 @@
       "page_bytes": 5128585,
       "blob_bytes": 12910455,
       "blob_assets": 32
+    },
+    {
+      "slug": "brown-s-chicken-elk-grove-village",
+      "name": "Brown's Chicken Elk Grove Village",
+      "account": "Brown's Chicken",
+      "city": "Elk Grove Village",
+      "state": "IL",
+      "requested_at": "2026-10-20T16:33:42.105Z",
+      "updated_at": "2026-10-21T14:57:59.764Z",
+      "cursor": "overrides",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "J",
+      "picked_letter": null,
+      "review_url": "/brown-s-chicken-elk-grove-village/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": null,
+      "steps": null,
+      "needs_you": null,
+      "gaps": null,
+      "hold": null,
+      "done": null,
+      "note": "Fable default J (current site lockup full color on navy, red band); no existing branding on this account and no other Brown's Chicken account in Boostly. Taste pass (fable) added BB, BC (red card / green card white knockouts); bold vector options AY (classic BROWN'S) and BD/BE (yellow emblem) added for tap-card legibility. Links pending discovery.",
+      "progress": null,
+      "review_status": null,
+      "page_bytes": 22696064,
+      "blob_bytes": 7965298,
+      "blob_assets": 33
     },
     {
       "slug": "trail-rider-cedar-crest",
