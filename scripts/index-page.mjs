@@ -2,9 +2,10 @@
 // in the page and a small inline script handles search, sort and the status filter.
 //
 // Since 2026-10-13 the index is also the status board (it replaced the Notion review queue and
-// the Apple Note): each row shows the pipeline steps, what Travisse owes, the one-line note,
-// waiting-on and ease. Those fields are baked from the manifest and overlaid on load from the
-// live board JSON that review-checklist.py publishes to Blob every 5 minutes.
+// the Apple Note). Since 2026-10-21 each row has one "What's next" column (status-ui.mjs whatsNext:
+// one primary chip, smaller muted secondary chips) instead of Status / Progress / Needs you; the
+// one-line note is behind a "note" toggle. Those fields are baked from the manifest and overlaid on
+// load from the live board JSON that review-checklist.py publishes to Blob every 5 minutes.
 
 import { STATUS_CSS, STATUS_JS, statusFields } from "./status-ui.mjs";
 
@@ -45,7 +46,13 @@ export function renderIndex(manifest) {
   .controls label { font-size: 12px; color: var(--ink-2); text-transform: uppercase; letter-spacing: .05em; display: flex; flex-direction: column; gap: 4px; }
   .count { color: var(--ink-2); font-size: 13px; margin: 0 0 10px; }
   .count b { color: var(--ink); }
-  table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  /* The table never forces a sideways page scroll (Karissa's laptop, 2026-10-21): fixed layout with set
+     column widths, chips wrap inside their cell, and the wrapper scrolls on its own if it ever must. */
+  html, body { max-width: 100%; }
+  .tablewrap { width: 100%; overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--card); }
+  table { width: 100%; table-layout: fixed; border-collapse: collapse; background: var(--card); }
+  col.c-date { width: 108px; } col.c-var { width: 120px; } col.c-links { width: 136px; } col.c-loc { width: 26%; }
+  td { overflow-wrap: anywhere; }
   thead th { text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-2); font-weight: 600; padding: 12px 14px; border-bottom: 1px solid var(--line); background: #fafaf8; white-space: nowrap; }
   thead th.sortable { cursor: pointer; user-select: none; }
   thead th.sortable:hover { color: var(--ink); }
@@ -58,34 +65,34 @@ export function renderIndex(manifest) {
   .place { color: var(--ink-2); font-size: 13px; margin-top: 2px; }
   .date { white-space: nowrap; color: var(--ink-2); font-variant-numeric: tabular-nums; }
   .date .lbl { display: none; }
-  .letters { white-space: nowrap; }
+  .letters { line-height: 2; }
   .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-2); margin: 0 6px 0 0; }
   .lbl + .letter, .lbl + .muted { margin-right: 14px; }
   .letter { display: inline-block; min-width: 26px; text-align: center; font-weight: 700; font-size: 13px; padding: 2px 6px; border-radius: 6px; border: 1px solid var(--line); background: #fafaf8; }
   .letter.pick { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
   .muted { color: #b5b5b0; }
-  .links { white-space: nowrap; text-align: right; }
+  .links { text-align: right; }
+  .links .btn { display: block; margin: 0 0 6px; text-align: center; white-space: nowrap; padding: 6px 8px; }
   .btn { display: inline-block; font-size: 13px; font-weight: 600; padding: 6px 10px; border-radius: 6px; border: 1px solid var(--line); color: var(--ink); text-decoration: none; margin-left: 6px; background: var(--card); }
   .btn:hover { border-color: #c9c9c4; background: #fafaf8; }
   .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
   .btn.primary:hover { background: #164ad0; }
-  .st .stage { display: block; margin-top: 4px; }
-  .st .meta { display: block; margin-top: 4px; }
-  .prog .next { display: block; margin-top: 3px; }
   .empty { padding: 40px 14px; text-align: center; color: var(--ink-2); }
   footer { margin-top: 20px; color: var(--ink-2); font-size: 12px; }
   ${STATUS_CSS}
   @media (max-width: 860px) {
     main { padding-top: 24px; }
     .controls label { flex: 1 1 45%; }
+    .tablewrap { overflow: visible; }
     table, thead, tbody, tr, td { display: block; }
+    colgroup { display: none; }
     thead { display: none; }
     tr { padding: 12px 14px; border-bottom: 1px solid var(--line); }
     td { padding: 3px 0; border: 0; }
     .date { display: inline-block; margin-right: 14px; font-size: 13px; }
     .date .lbl { display: inline; }
-    .links { text-align: left; margin-top: 6px; white-space: normal; }
-    .btn { margin: 4px 6px 0 0; }
+    .links { text-align: left; margin-top: 6px; }
+    .links .btn, .btn { display: inline-block; margin: 4px 6px 0 0; }
   }
 </style>
 </head>
@@ -93,7 +100,7 @@ export function renderIndex(manifest) {
 <main>
   <header>
     <h1>Boostly Branding Fulfillment</h1>
-    <p>Branding review pages and the status board for Tap Card, sticker, and signage orders. Each page shows the evidence, the variant sheet, the recommended and picked cells, and the signage previews for one location. Rows marked "Needs you" wait on a decision.</p>
+    <p>Branding review pages and the status board for Tap Card, sticker, and signage orders. Each page shows the evidence, the variant sheet, the recommended and picked cells, and the signage previews for one location. "What's next" names the one thing each location needs, then anything else owed in smaller chips.</p>
     <div class="summary" id="summary"></div>
   </header>
   <div class="controls">
@@ -117,17 +124,17 @@ export function renderIndex(manifest) {
         <option value="updated_asc">Last updated, oldest first</option>
         <option value="requested">Request date, newest first</option>
         <option value="requested_asc">Request date, oldest first</option>
-        <option value="ease">Ease, easiest first</option>
         <option value="name">Location name, A to Z</option>
       </select>
     </label>
   </div>
   <p class="count" id="count"></p>
-  <table>
-    <thead><tr><th class="sortable" data-sort="name">Location</th><th class="sortable" data-sort="requested">Requested</th><th class="sortable" data-sort="updated">Updated</th><th>Status</th><th>Progress</th><th>Needs you</th><th>Variant</th><th></th></tr></thead>
+  <div class="tablewrap"><table>
+    <colgroup><col class="c-loc"><col class="c-date"><col class="c-date"><col class="c-next"><col class="c-var"><col class="c-links"></colgroup>
+    <thead><tr><th class="sortable" data-sort="name">Location</th><th class="sortable" data-sort="requested">Requested</th><th class="sortable" data-sort="updated">Updated</th><th>What's next</th><th>Variant</th><th></th></tr></thead>
     <tbody id="rows"></tbody>
-  </table>
-  <footer>Built ${esc(fmtDate(manifest.generated_at))}. "Rec" is the default cell the pipeline recommended; "Pick" is the cell chosen for production. Progress is the pipeline checklist for the location (hover a square for the step). The board refreshes from the open-request list every 5 minutes; a location leaves the open list once it reaches physical fulfillment. Figma opens the generated production sheets; Print files opens the vendor hand-off folder.</footer>
+  </table></div>
+  <footer>Built ${esc(fmtDate(manifest.generated_at))}. "Rec" is the default cell the pipeline recommended; "Pick" is the cell chosen for production. "What's next" shows the first thing owed (pick, signage approval, link review, store details), else what the agents are doing, done, or a hold. The board refreshes from the open-request list every 5 minutes; a location leaves the open list once it reaches physical fulfillment. Figma opens the generated production sheets; Print files opens the vendor hand-off folder.</footer>
 </main>
 <script id="sites" type="application/json">${data}</script>
 <script>${STATUS_JS}</script>
@@ -144,45 +151,43 @@ export function renderIndex(manifest) {
   function fdate(iso) { var t = parse(iso); return t ? fmt.format(new Date(t)) : ""; }
   function letter(l, kind) { return l ? '<span class="letter ' + kind + '">' + esc(l) + '</span>' : '<span class="muted">&ndash;</span>'; }
   function norm(s) { return String(s || "").toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g, ""); }
-  function needs(s) { return !!((s.needs_you && s.needs_you.length) || s.hold) && !s.done; }
   function prep() {
     sites.forEach(function (s) {
-      s._hay = norm([s.name, s.city, s.state, s.slug, s.note, (s.needs_you || []).join(" "), (s.review_status || {}).waiting_on].join(" "));
-      s._req = parse(s.requested_at); s._upd = parse(s.updated_at); s._needs = needs(s);
-      s._ease = (s.review_status && s.review_status.ease) || 99;
+      var w = S.whatsNext(s);
+      s._w = w; s._needs = !!(w.owed.length || (s.hold && !s.done)); s._rank = w.rank;
+      s._hay = norm([s.name, s.city, s.state, s.slug, s.note, w.primary.text, w.rest.map(function (r) { return r.text; }).join(" "), (s.review_status || {}).waiting_on].join(" "));
+      s._req = parse(s.requested_at); s._upd = parse(s.updated_at);
     });
   }
+  // "Needs you first": owed rows by the What's next priority (pick, signage, links, store), then holds, then the rest; newest update first within each.
   var sorters = {
-    needs: function (a, b) { return (b._needs - a._needs) || (b._upd - a._upd); },
+    needs: function (a, b) { return (a._rank - b._rank) || (b._upd - a._upd); },
     updated: function (a, b) { return b._upd - a._upd; },
     updated_asc: function (a, b) { return a._upd - b._upd; },
     requested: function (a, b) { return b._req - a._req; },
     requested_asc: function (a, b) { return a._req - b._req; },
-    ease: function (a, b) { return (a._ease - b._ease) || (b._upd - a._upd); },
     name: function (a, b) { return a.name.localeCompare(b.name); }
   };
   function row(s) {
     var place = [s.city, s.state].filter(Boolean).join(", ");
-    var stage = S.stageLabel(s.boostly_status), meta = S.metaHtml(s);
     var links = '<a class="btn primary" href="' + esc(s.review_url) + '">Review page</a>'
       + (s.figma_url ? '<a class="btn" href="' + esc(s.figma_url) + '" target="_blank" rel="noopener">Figma</a>' : "")
       + (s.print_url ? '<a class="btn" href="' + esc(s.print_url) + '" target="_blank" rel="noopener">Print files</a>' : "");
     return '<tr class="' + (s._needs ? "needs" : "") + '">'
-      + '<td class="loc"><a href="' + esc(s.review_url) + '" class="name">' + esc(s.name) + '</a><div class="place">' + esc(place) + '</div>' + (s.note ? '<div class="note">' + esc(s.note) + '</div>' : "") + '</td>'
+      + '<td class="loc"><a href="' + esc(s.review_url) + '" class="name">' + esc(s.name) + '</a><div class="place">' + esc(place) + '</div>' + S.noteHtml(s) + '</td>'
       + '<td class="date"><span class="lbl">Requested</span>' + esc(fdate(s.requested_at)) + '</td>'
       + '<td class="date"><span class="lbl">Updated</span>' + esc(fdate(s.updated_at)) + '</td>'
-      + '<td class="st"><span class="pill ' + esc(s.status) + '">' + esc(s.status_label) + '</span>' + (stage ? '<span class="stage">' + esc(stage) + '</span>' : "") + (meta ? '<span class="meta">' + meta + '</span>' : "") + '</td>'
-      + '<td class="prog">' + (s.steps ? S.stepsHtml(s.steps) : '<span class="muted">&ndash;</span>') + '</td>'
-      + '<td class="needs-cell">' + S.needsHtml(s) + '</td>'
+      + '<td class="next-cell">' + S.nextHtml(s) + '</td>'
       + '<td class="letters"><span class="lbl">Rec</span>' + letter(s.rec, "rec") + '<span class="lbl">Pick</span>' + letter(s.pick, "pick") + '</td>'
       + '<td class="links">' + links + '</td></tr>';
   }
-  function has(s, key) { return (s.needs_you || []).some(function (n) { return n.indexOf(key) !== -1; }) && !s.done; }
+  // Summary counts use the same owed list as the column (primary or secondary chip).
+  function has(s, kind) { return s._w.owed.some(function (o) { return o.kind === kind; }); }
   function renderSummary() {
-    var picks = sites.filter(function (s) { return has(s, "pick a letter"); }).length;
-    var figs = sites.filter(function (s) { return has(s, "approve the signage"); }).length;
-    var links = sites.filter(function (s) { return has(s, "link decision"); }).length;
-    var store = sites.filter(function (s) { return has(s, "store details"); }).length;
+    var picks = sites.filter(function (s) { return has(s, "pick"); }).length;
+    var figs = sites.filter(function (s) { return has(s, "signage"); }).length;
+    var links = sites.filter(function (s) { return has(s, "links"); }).length;
+    var store = sites.filter(function (s) { return has(s, "store"); }).length;
     var open = sites.filter(function (s) { return s.status !== "closed"; }).length;
     summary.innerHTML = '<span><b>' + picks + '</b> picks</span><span><b>' + figs + '</b> signage approvals</span><span><b>' + links + '</b> link decisions</span><span><b>' + store + '</b> store details</span><span><b>' + open + '</b> open</span>'
       + '<span class="live' + (liveLabel ? "" : " off") + '">' + (liveLabel ? "live " + esc(liveLabel) : "status as of the last site build") + '</span>';
@@ -195,7 +200,7 @@ export function renderIndex(manifest) {
       else if (st && s.status !== st) return false;
       return terms.every(function (t) { return s._hay.indexOf(t) !== -1; });
     }).sort(sorters[sort] || sorters.needs);
-    rows.innerHTML = list.length ? list.map(row).join("") : '<tr><td class="empty" colspan="8">No locations match.</td></tr>';
+    rows.innerHTML = list.length ? list.map(row).join("") : '<tr><td class="empty" colspan="6">No locations match.</td></tr>';
     count.innerHTML = "<b>" + list.length + "</b> of " + sites.length + " locations";
     Array.prototype.forEach.call(document.querySelectorAll("th.sortable"), function (th) { th.classList.toggle("sorted", sort.replace(/_asc$/, "") === th.dataset.sort); });
     renderSummary();

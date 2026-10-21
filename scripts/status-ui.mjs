@@ -27,6 +27,18 @@ export const STATUS_CSS = `
   .ss .pstage { display: inline-block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; padding: 2px 7px; border-radius: 4px; background: #eef2f7; color: #334155; border: 1px solid #d5dde8; margin-right: 6px; }
   .ss .pnext { font-size: 13px; color: #161616; margin-right: 8px; }
   .ss .pwho { font-size: 12px; color: #5c5c5c; }
+  /* "What's next" (2026-10-21): one primary chip, smaller muted secondary chips. Chips wrap inside their cell. */
+  .ss .wn { display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; min-width: 0; }
+  .ss .wn .need, .ss .wn .hold, .ss .wn .prog-chip, .ss .wn .done-chip, .ss .wn .sec { white-space: normal; overflow-wrap: anywhere; max-width: 100%; margin: 0; }
+  .ss .wn a { color: inherit; }
+  .ss .prog-chip { display: inline-block; font-size: 12px; padding: 3px 9px; border-radius: 6px; background: #eef2f7; color: #334155; border: 1px solid #d5dde8; }
+  .ss .done-chip { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 6px; background: #e6f4ea; color: #1b7a3d; border: 1px solid #bfe0c9; }
+  .ss .sec { display: inline-block; font-size: 11px; padding: 2px 7px; border-radius: 5px; background: #f3f3f0; color: #5c5c5c; border: 1px solid #e3e3df; }
+  .ss .sec.owed { color: #b3261e; border-color: #f3c2bd; background: #fdf5f4; }
+  .ss details.note-d { margin-top: 4px; font-size: 12px; color: #5c5c5c; }
+  .ss details.note-d summary { cursor: pointer; display: inline; list-style: none; text-decoration: underline dotted; }
+  .ss details.note-d summary::-webkit-details-marker { display: none; }
+  .ss details.note-d .note { margin-top: 4px; overflow-wrap: anywhere; }
   .site-status { position: sticky; top: 8px; z-index: 20; background: #fffdf7; border: 1px solid #ecdfb8; border-radius: 10px; padding: 10px 14px; margin: 0 0 20px; display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
   .site-status .grp { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; }
   .site-status .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: #5c5c5c; }
@@ -35,7 +47,7 @@ export const STATUS_CSS = `
   @media (max-width: 1000px) { .site-status { position: static; } }
 `;
 
-// Client code. Exposes window.BoostlyStatus = { overlay(url, onItems), stepsHtml, needsHtml, strip }.
+// Client code. Exposes window.BoostlyStatus = { whatsNext, nextHtml, noteHtml, overlay(url, onItems), strip, ... }.
 export const STATUS_JS = `
 window.BoostlyStatus = (function () {
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
@@ -62,6 +74,67 @@ window.BoostlyStatus = (function () {
     else if (!out && s.status !== "closed") out += '<span class="need soft">with the agents, nothing for you</span>';
     return out;
   }
+  // "What's next" (Travisse 2026-10-21): the one derivation behind the index column, its summary counts and
+  // sort, and the strip on each location page. Owed items come from needs_you in this priority; with nothing
+  // owed: an editing claim under 2 h -> in progress; done; a run-progress stage that is not blocked on
+  // Travisse -> in progress; hold; else the blocked_on / waiting_on / with-the-agents fallbacks.
+  var RANK = { pick: 1, signage: 2, links: 3, store: 4, other: 5 };
+  var CLAIM_MS = 2 * 3600 * 1000;
+  function owed(s) {
+    if (s.done) return [];
+    var out = [];
+    (s.needs_you || []).forEach(function (n) {
+      var low = String(n).toLowerCase(), m;
+      if (low.indexOf("pick a letter") === 0) out.push({ kind: "pick", text: "pick a letter" + (s.rec ? " (Fable default " + s.rec + ")" : "") });
+      else if (/^approve the (figma )?signage/.test(low)) {
+        var figma = low.indexOf("figma") !== -1 && s.figma_url;
+        var href = s.print_url || (figma ? s.figma_url : (s.review_url || "") + "#print-files");
+        out.push({ kind: "signage", text: "approve signage", href: href, ext: !!(s.print_url || figma) });
+      }
+      else if ((m = low.match(/(\\d+)\\s+link decision/))) out.push({ kind: "links", text: "finish link review (" + m[1] + " held)", href: (s.review_url || "") + "#links" });
+      else if (low.indexOf("link decision") !== -1) out.push({ kind: "links", text: "finish link review", href: (s.review_url || "") + "#links" });
+      else if (low.indexOf("store details") !== -1) out.push({ kind: "store", text: "confirm store details" });
+      else out.push({ kind: "other", text: String(n).replace("(s)", "s") });
+    });
+    return out.sort(function (a, b) { return RANK[a.kind] - RANK[b.kind]; });
+  }
+  function isDone(s) {
+    var rs = s.review_status || {}, p = s.progress || {};
+    return !!(s.done || s.status === "closed" || rs.status === "done" || p.stage === "done");
+  }
+  function claimed(s) {
+    var ed = (s.progress && s.progress.editing) || s.editing, t = ed && Date.parse(ed.since);
+    return !!(t && Date.now() - t < CLAIM_MS);
+  }
+  function progressText(s) {
+    var p = s.progress || {};
+    return "in progress: " + (p.stage || "working") + (p.next_step && p.stage !== "done" ? ", next " + p.next_step : "");
+  }
+  function whatsNext(s) {
+    var o = owed(s), p = s.progress || {}, primary, rest = [];
+    if (o.length) { primary = o[0]; rest = o.slice(1); }
+    else if (claimed(s)) primary = { kind: "progress", text: progressText(s) };
+    else if (isDone(s)) primary = { kind: "done", text: "done" };
+    else if (p.stage && p.stage !== "done" && !p.blocked_on) primary = { kind: "progress", text: progressText(s) };
+    else if (s.hold) primary = { kind: "hold", text: "hold: " + s.hold };
+    else if (p.blocked_on) primary = { kind: "other", text: p.blocked_on };
+    else if (s.review_status && s.review_status.waiting_on) primary = { kind: "progress", text: "waiting on " + s.review_status.waiting_on };
+    else primary = { kind: "progress", text: s.steps ? "with the agents, nothing for you" : "not on the open-request list" };
+    if (s.hold && primary.kind !== "hold") rest.push({ kind: "hold", text: "hold: " + s.hold });
+    (s.gaps || []).forEach(function (g) { rest.push({ kind: "gap", text: g }); });
+    return { primary: primary, rest: rest, owed: o, rank: o.length ? RANK[o[0].kind] : (s.hold && !isDone(s) ? 6 : 9) };
+  }
+  function clip(t, n) { t = String(t); return t.length > n ? t.slice(0, n - 1) + "\u2026" : t; }
+  function chipLink(c, inner) { return c.href ? '<a href="' + esc(c.href) + '"' + (c.ext ? ' target="_blank" rel="noopener"' : "") + '>' + inner + '</a>' : inner; }
+  function nextHtml(s) {
+    var w = whatsNext(s), c = w.primary, cls = { progress: "prog-chip", done: "done-chip", hold: "hold" }[c.kind] || "need";
+    var out = '<span class="' + cls + '" title="' + esc(c.text) + '">' + chipLink(c, esc(clip(c.text, 90))) + '</span>';
+    w.rest.forEach(function (r) {
+      out += '<span class="sec' + (RANK[r.kind] ? " owed" : "") + '" title="' + esc(r.text) + '">' + chipLink(r, esc(clip(r.text, 60))) + '</span>';
+    });
+    return '<div class="wn">' + out + '</div>';
+  }
+  function noteHtml(s) { return s.note ? '<details class="note-d"><summary>note</summary><div class="note">' + esc(s.note) + '</div></details>' : ""; }
   function stageLabel(st) { return st ? String(st).replace(/_/g, " ").replace(/^./, function (c) { return c.toUpperCase(); }) : ""; }
   function metaHtml(s) {
     var rs = s.review_status || {}, parts = [];
@@ -81,14 +154,12 @@ window.BoostlyStatus = (function () {
   }
   function strip(el, s, live) {
     if (!el) return;
-    var stage = stageLabel(s.boostly_status);
+    // Same derivation and chips as the index's "What's next" column (2026-10-21); the note sits behind a toggle.
+    var p = s.progress || {}, who = [p.by, p.host ? "on " + p.host : "", p.updated_at ? fmtTime(p.updated_at) : ""].filter(Boolean).join(" ");
     el.innerHTML =
-      '<div class="grp"><span class="pill ' + esc(s.status) + '">' + esc(s.status_label) + '</span>' + (stage ? '<span class="stage">' + esc(stage) + '</span>' : "") + '</div>' +
-      '<div class="grp">' + stepsHtml(s.steps) + '</div>' +
-      '<div class="grp"><span class="lbl">Needs you</span>' + needsHtml(s) + '</div>' +
-      (metaHtml(s) ? '<div class="grp meta">' + metaHtml(s) + '</div>' : "") +
-      (progressHtml(s) ? '<div class="grp prog">' + progressHtml(s) + '</div>' : "") +
-      (s.note ? '<div class="note" style="flex-basis:100%">' + esc(s.note) + '</div>' : "") +
+      '<div class="grp"><span class="lbl">What\\'s next</span>' + nextHtml(s) + '</div>' +
+      (who ? '<span class="pwho" title="last stamped by">' + esc(who) + '</span>' : "") +
+      (s.note ? '<div style="flex-basis:100%">' + noteHtml(s) + '</div>' : "") +
       '<span class="live' + (live ? "" : " off") + '">' + (live ? "live " + esc(live) : "as of the last site build") + '</span>';
   }
   function merge(s, it) {
@@ -112,7 +183,7 @@ window.BoostlyStatus = (function () {
       .then(function (r) { return r.ok ? r.json() : null; }).then(cb).catch(function () { cb(null); });
   }
   function fmtTime(iso) { var t = Date.parse(iso); return isNaN(t) ? "" : new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/Denver" }).format(new Date(t)); }
-  return { esc: esc, stepsHtml: stepsHtml, needsHtml: needsHtml, metaHtml: metaHtml, progressHtml: progressHtml, strip: strip, merge: merge, overlay: overlay, overlayOne: overlayOne, fmtTime: fmtTime, stageLabel: stageLabel };
+  return { whatsNext: whatsNext, nextHtml: nextHtml, noteHtml: noteHtml, owed: owed, isDone: isDone, esc: esc, stepsHtml: stepsHtml, needsHtml: needsHtml, metaHtml: metaHtml, progressHtml: progressHtml, strip: strip, merge: merge, overlay: overlay, overlayOne: overlayOne, fmtTime: fmtTime, stageLabel: stageLabel };
 })();
 `;
 
@@ -125,6 +196,8 @@ export function statusFields(e) {
     steps: e.steps ?? null, needs_you: e.needs_you ?? null, gaps: e.gaps ?? null, hold: e.hold ?? null,
     done: e.done ?? null, note: e.note ?? null, review_status: e.review_status ?? null, progress: e.progress ?? null, figma_url: e.figma_url ?? null,
     review_url: e.review_url ?? null,
+    // for the "What's next" chips: Fable's default letter and the Drive print folder
+    rec: e.recommended_letter ?? null, print_url: e.print_handoff_url ?? null,
   };
 }
 
@@ -151,7 +224,7 @@ export function pageStrip(entry, liveUrl) {
     if (!p || !p.progress) return;
     var cur = s.progress;
     if (cur && String(cur.updated_at || "") > String(p.progress.updated_at || "")) return;
-    s.progress = p.progress; if (p.review_status) s.review_status = p.review_status;
+    s.progress = p.progress; if (p.review_status) s.review_status = p.review_status; if (p.editing !== undefined) s.editing = p.editing;
     window.BoostlyStatus.strip(el, s, "live " + window.BoostlyStatus.fmtTime(p.generated_at));
   });
 })();

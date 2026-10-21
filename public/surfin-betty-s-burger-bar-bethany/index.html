@@ -21,17 +21,14 @@
 .bs-cell.selectable { cursor: pointer; }
 .bs-cell.selected .bs-frame { border-color: #00C853; box-shadow: inset 0 0 0 2px #fff; }
 .bs-focus { position: absolute; pointer-events: none; border: 7px solid #1B5E20; }
-.bs-focus.hold { border-color: #B71C1C; }
 .bs-focus-tag { position: absolute; height: 32px; line-height: 32px; padding: 0 10px; background: #1B5E20; color: #fff; font-size: 22px; font-weight: 700; white-space: nowrap; }
-.bs-focus-tag.hold { background: #B71C1C; }
 .bs-compare { display: grid; gap: 16px; align-items: start; }
 .bs-compare .col { border: 2px solid #ddd; padding: 10px; background: #fff; }
-.bs-compare .col.travisse_pick { border-color: #B7791F; } .bs-compare .col.fable_pick { border-color: #1565C0; } .bs-compare .col.hold { border-color: #B71C1C; } .bs-compare .col.rejected { border-color: #616161; }
+.bs-compare .col.travisse_pick { border-color: #B7791F; } .bs-compare .col.fable_pick { border-color: #1565C0; } .bs-compare .col.rejected { border-color: #616161; }
 .bs-compare h3 { margin: 0 0 4px; font-size: 24px; } .bs-compare p { margin: 2px 0; font-size: 14px; } .bs-compare .piece { margin-top: 8px; background: #E5E5E5; display: flex; justify-content: center; }
 .bs-compare small { font-weight: 400; color: #666; }
 
   .cell-html .bs-cell { border: 6px solid #1b5e20; box-sizing: content-box; }
-  .cell.hold .cell-html .bs-cell { border-color: #B71C1C; }
   .sheet-wrap { border: 1px solid #ddd; overflow: auto; background: #C8C8C8; cursor: zoom-in; }
   .sheet-wrap.native { cursor: zoom-out; }
   .sheet-zoom { width: max-content; }
@@ -81,7 +78,6 @@
   .shot.zoom img { cursor: zoom-in; }
   .cell img.zoom3x { margin-top: 10px; border: 3px solid #444; image-rendering: pixelated; }
   .cell img.zoom3x.bad { border-color: #B71C1C; }
-  .cell.hold > a > img:first-of-type { border-color: #B71C1C; }
   .shot.zoom.native img { width: auto; max-width: none; cursor: zoom-out; }
   .grid { display: grid; gap: 14px; }
   .grid.cols3 { grid-template-columns: repeat(3, 1fr); }
@@ -147,6 +143,18 @@
   .ss .pstage { display: inline-block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; padding: 2px 7px; border-radius: 4px; background: #eef2f7; color: #334155; border: 1px solid #d5dde8; margin-right: 6px; }
   .ss .pnext { font-size: 13px; color: #161616; margin-right: 8px; }
   .ss .pwho { font-size: 12px; color: #5c5c5c; }
+  /* "What's next" (2026-10-21): one primary chip, smaller muted secondary chips. Chips wrap inside their cell. */
+  .ss .wn { display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; min-width: 0; }
+  .ss .wn .need, .ss .wn .hold, .ss .wn .prog-chip, .ss .wn .done-chip, .ss .wn .sec { white-space: normal; overflow-wrap: anywhere; max-width: 100%; margin: 0; }
+  .ss .wn a { color: inherit; }
+  .ss .prog-chip { display: inline-block; font-size: 12px; padding: 3px 9px; border-radius: 6px; background: #eef2f7; color: #334155; border: 1px solid #d5dde8; }
+  .ss .done-chip { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 6px; background: #e6f4ea; color: #1b7a3d; border: 1px solid #bfe0c9; }
+  .ss .sec { display: inline-block; font-size: 11px; padding: 2px 7px; border-radius: 5px; background: #f3f3f0; color: #5c5c5c; border: 1px solid #e3e3df; }
+  .ss .sec.owed { color: #b3261e; border-color: #f3c2bd; background: #fdf5f4; }
+  .ss details.note-d { margin-top: 4px; font-size: 12px; color: #5c5c5c; }
+  .ss details.note-d summary { cursor: pointer; display: inline; list-style: none; text-decoration: underline dotted; }
+  .ss details.note-d summary::-webkit-details-marker { display: none; }
+  .ss details.note-d .note { margin-top: 4px; overflow-wrap: anywhere; }
   .site-status { position: sticky; top: 8px; z-index: 20; background: #fffdf7; border: 1px solid #ecdfb8; border-radius: 10px; padding: 10px 14px; margin: 0 0 20px; display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
   .site-status .grp { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; }
   .site-status .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: #5c5c5c; }
@@ -160,13 +168,12 @@
 <li><a href="#header">Overview</a></li>
 <li><a href="#website">Website</a></li>
 <li><a href="#gbp">Google Business Profile</a></li>
-<li><a href="#logo-search">Logo image search</a></li>
 <li><a href="#candidates">Logo candidates</a></li>
 <li><a href="#sheet">Variant sheet</a></li>
 <li><a href="#links">Links (5 held for review)</a></li>
 </ol></nav>
 <div class="site-status ss" id="site-status" data-slug="surfin-betty-s-burger-bar-bethany"></div>
-<script id="site-status-data" type="application/json">{"slug":"surfin-betty-s-burger-bar-bethany","status":"inherits","status_label":"Branding: inherits surfin-betty-s-burger-bar-downtown (pending pick)","boostly_status":"digital_fulfillment","steps":[["Review sheet ready",false],["Branding pick [account-level, from surfin-betty-s-burger-bar-downtown]",false],["Branding applied in prod",false],["Links written (2 ready, 5 need a call)",false],["Figma signage built",false],["Figma approved by you",false],["Slack result posted",false],["Status posted to the review site",false],["Store details confirmed",true]],"needs_you":["pick a letter","5 link decision(s)"],"gaps":[],"hold":null,"done":false,"note":"Links only, branding inherits the Downtown pick. Ready: menu and the store's own Google review link (V2 has a manual Place ID placeholder). Held: Toast ordering, Facebook, Instagram, TikTok and gift cards because both browser transports failed today (Codex reads error; duplicate Boostly.com Chrome profiles block the fallback). Call gives 12 tables vs 10 requested.","review_status":null,"progress":{"stage":"review","last_step":"links-only review page built (static pass; browser reads blocked)","next_step":"Downtown branding pick, then rerun browser reads for held links","blocked_on":"Downtown branding pick","by":"fulfill-location","host":"MacBook-Pro-2.domain","updated_at":"2026-10-15T15:52:44.049Z","bundle_pushed_at":"2026-10-15T15:52:44.329Z"},"figma_url":null}</script>
+<script id="site-status-data" type="application/json">{"slug":"surfin-betty-s-burger-bar-bethany","status":"inherits","status_label":"Branding: inherits surfin-betty-s-burger-bar-downtown (pending pick)","boostly_status":"digital_fulfillment","steps":[["Review sheet ready",true],["Branding pick: F [account-level, from surfin-betty-s-burger-bar-downtown]",true],["Branding applied in prod",false],["Links written (2 ready, 5 need a call)",false],["Signage built",false],["Signage approved by you",false],["Slack result posted",false],["Status posted to the review site",false],["Store details confirmed",true]],"needs_you":["5 link decision(s)"],"gaps":[],"hold":null,"done":false,"note":"Links only, branding inherits the Downtown pick. Ready: menu and the store's own Google review link (V2 has a manual Place ID placeholder). Held: Toast ordering, Facebook, Instagram, TikTok and gift cards because both browser transports failed today (Codex reads error; duplicate Boostly.com Chrome profiles block the fallback). Call gives 12 tables vs 10 requested.","review_status":null,"progress":{"stage":"review","last_step":"links-only review page built (static pass; browser reads blocked)","next_step":"Downtown branding pick, then rerun browser reads for held links","blocked_on":"Downtown branding pick","by":"fulfill-location","host":"MacBook-Pro-2.domain","updated_at":"2026-10-15T15:52:44.049Z","bundle_pushed_at":"2026-10-15T15:52:44.329Z"},"figma_url":null,"review_url":"/surfin-betty-s-burger-bar-bethany/","rec":null,"print_url":null}</script>
 <script>
 window.BoostlyStatus = (function () {
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
@@ -180,7 +187,12 @@ window.BoostlyStatus = (function () {
   }
   function needsHtml(s) {
     var out = "";
-    (s.needs_you || []).forEach(function (n) { out += '<span class="need">' + esc(n.replace("(s)", "s")) + '</span>'; });
+    // "approve the signage" points at the page's Print files section (the Drive PDFs are what gets approved).
+    (s.needs_you || []).forEach(function (n) {
+      var t = esc(n.replace("(s)", "s"));
+      if (n.indexOf("approve the signage") === 0) t = '<a href="' + esc(s.review_url || "") + '#print-files">' + t + '</a>';
+      out += '<span class="need">' + t + '</span>';
+    });
     (s.gaps || []).forEach(function (g) { out += '<span class="need soft">' + esc(g) + '</span>'; });
     if (s.hold) out += '<span class="hold" title="' + esc(s.hold) + '">HOLD</span>';
     if (!out && s.done) out += '<span class="need soft">review complete</span>';
@@ -188,6 +200,67 @@ window.BoostlyStatus = (function () {
     else if (!out && s.status !== "closed") out += '<span class="need soft">with the agents, nothing for you</span>';
     return out;
   }
+  // "What's next" (Travisse 2026-10-21): the one derivation behind the index column, its summary counts and
+  // sort, and the strip on each location page. Owed items come from needs_you in this priority; with nothing
+  // owed: an editing claim under 2 h -> in progress; done; a run-progress stage that is not blocked on
+  // Travisse -> in progress; hold; else the blocked_on / waiting_on / with-the-agents fallbacks.
+  var RANK = { pick: 1, signage: 2, links: 3, store: 4, other: 5 };
+  var CLAIM_MS = 2 * 3600 * 1000;
+  function owed(s) {
+    if (s.done) return [];
+    var out = [];
+    (s.needs_you || []).forEach(function (n) {
+      var low = String(n).toLowerCase(), m;
+      if (low.indexOf("pick a letter") === 0) out.push({ kind: "pick", text: "pick a letter" + (s.rec ? " (Fable default " + s.rec + ")" : "") });
+      else if (/^approve the (figma )?signage/.test(low)) {
+        var figma = low.indexOf("figma") !== -1 && s.figma_url;
+        var href = s.print_url || (figma ? s.figma_url : (s.review_url || "") + "#print-files");
+        out.push({ kind: "signage", text: "approve signage", href: href, ext: !!(s.print_url || figma) });
+      }
+      else if ((m = low.match(/(\d+)\s+link decision/))) out.push({ kind: "links", text: "finish link review (" + m[1] + " held)", href: (s.review_url || "") + "#links" });
+      else if (low.indexOf("link decision") !== -1) out.push({ kind: "links", text: "finish link review", href: (s.review_url || "") + "#links" });
+      else if (low.indexOf("store details") !== -1) out.push({ kind: "store", text: "confirm store details" });
+      else out.push({ kind: "other", text: String(n).replace("(s)", "s") });
+    });
+    return out.sort(function (a, b) { return RANK[a.kind] - RANK[b.kind]; });
+  }
+  function isDone(s) {
+    var rs = s.review_status || {}, p = s.progress || {};
+    return !!(s.done || s.status === "closed" || rs.status === "done" || p.stage === "done");
+  }
+  function claimed(s) {
+    var ed = (s.progress && s.progress.editing) || s.editing, t = ed && Date.parse(ed.since);
+    return !!(t && Date.now() - t < CLAIM_MS);
+  }
+  function progressText(s) {
+    var p = s.progress || {};
+    return "in progress: " + (p.stage || "working") + (p.next_step && p.stage !== "done" ? ", next " + p.next_step : "");
+  }
+  function whatsNext(s) {
+    var o = owed(s), p = s.progress || {}, primary, rest = [];
+    if (o.length) { primary = o[0]; rest = o.slice(1); }
+    else if (claimed(s)) primary = { kind: "progress", text: progressText(s) };
+    else if (isDone(s)) primary = { kind: "done", text: "done" };
+    else if (p.stage && p.stage !== "done" && !p.blocked_on) primary = { kind: "progress", text: progressText(s) };
+    else if (s.hold) primary = { kind: "hold", text: "hold: " + s.hold };
+    else if (p.blocked_on) primary = { kind: "other", text: p.blocked_on };
+    else if (s.review_status && s.review_status.waiting_on) primary = { kind: "progress", text: "waiting on " + s.review_status.waiting_on };
+    else primary = { kind: "progress", text: s.steps ? "with the agents, nothing for you" : "not on the open-request list" };
+    if (s.hold && primary.kind !== "hold") rest.push({ kind: "hold", text: "hold: " + s.hold });
+    (s.gaps || []).forEach(function (g) { rest.push({ kind: "gap", text: g }); });
+    return { primary: primary, rest: rest, owed: o, rank: o.length ? RANK[o[0].kind] : (s.hold && !isDone(s) ? 6 : 9) };
+  }
+  function clip(t, n) { t = String(t); return t.length > n ? t.slice(0, n - 1) + "…" : t; }
+  function chipLink(c, inner) { return c.href ? '<a href="' + esc(c.href) + '"' + (c.ext ? ' target="_blank" rel="noopener"' : "") + '>' + inner + '</a>' : inner; }
+  function nextHtml(s) {
+    var w = whatsNext(s), c = w.primary, cls = { progress: "prog-chip", done: "done-chip", hold: "hold" }[c.kind] || "need";
+    var out = '<span class="' + cls + '" title="' + esc(c.text) + '">' + chipLink(c, esc(clip(c.text, 90))) + '</span>';
+    w.rest.forEach(function (r) {
+      out += '<span class="sec' + (RANK[r.kind] ? " owed" : "") + '" title="' + esc(r.text) + '">' + chipLink(r, esc(clip(r.text, 60))) + '</span>';
+    });
+    return '<div class="wn">' + out + '</div>';
+  }
+  function noteHtml(s) { return s.note ? '<details class="note-d"><summary>note</summary><div class="note">' + esc(s.note) + '</div></details>' : ""; }
   function stageLabel(st) { return st ? String(st).replace(/_/g, " ").replace(/^./, function (c) { return c.toUpperCase(); }) : ""; }
   function metaHtml(s) {
     var rs = s.review_status || {}, parts = [];
@@ -207,14 +280,12 @@ window.BoostlyStatus = (function () {
   }
   function strip(el, s, live) {
     if (!el) return;
-    var stage = stageLabel(s.boostly_status);
+    // Same derivation and chips as the index's "What's next" column (2026-10-21); the note sits behind a toggle.
+    var p = s.progress || {}, who = [p.by, p.host ? "on " + p.host : "", p.updated_at ? fmtTime(p.updated_at) : ""].filter(Boolean).join(" ");
     el.innerHTML =
-      '<div class="grp"><span class="pill ' + esc(s.status) + '">' + esc(s.status_label) + '</span>' + (stage ? '<span class="stage">' + esc(stage) + '</span>' : "") + '</div>' +
-      '<div class="grp">' + stepsHtml(s.steps) + '</div>' +
-      '<div class="grp"><span class="lbl">Needs you</span>' + needsHtml(s) + '</div>' +
-      (metaHtml(s) ? '<div class="grp meta">' + metaHtml(s) + '</div>' : "") +
-      (progressHtml(s) ? '<div class="grp prog">' + progressHtml(s) + '</div>' : "") +
-      (s.note ? '<div class="note" style="flex-basis:100%">' + esc(s.note) + '</div>' : "") +
+      '<div class="grp"><span class="lbl">What\'s next</span>' + nextHtml(s) + '</div>' +
+      (who ? '<span class="pwho" title="last stamped by">' + esc(who) + '</span>' : "") +
+      (s.note ? '<div style="flex-basis:100%">' + noteHtml(s) + '</div>' : "") +
       '<span class="live' + (live ? "" : " off") + '">' + (live ? "live " + esc(live) : "as of the last site build") + '</span>';
   }
   function merge(s, it) {
@@ -238,7 +309,7 @@ window.BoostlyStatus = (function () {
       .then(function (r) { return r.ok ? r.json() : null; }).then(cb).catch(function () { cb(null); });
   }
   function fmtTime(iso) { var t = Date.parse(iso); return isNaN(t) ? "" : new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/Denver" }).format(new Date(t)); }
-  return { esc: esc, stepsHtml: stepsHtml, needsHtml: needsHtml, metaHtml: metaHtml, progressHtml: progressHtml, strip: strip, merge: merge, overlay: overlay, overlayOne: overlayOne, fmtTime: fmtTime, stageLabel: stageLabel };
+  return { whatsNext: whatsNext, nextHtml: nextHtml, noteHtml: noteHtml, owed: owed, isDone: isDone, esc: esc, stepsHtml: stepsHtml, needsHtml: needsHtml, metaHtml: metaHtml, progressHtml: progressHtml, strip: strip, merge: merge, overlay: overlay, overlayOne: overlayOne, fmtTime: fmtTime, stageLabel: stageLabel };
 })();
 
 (function () {
@@ -256,18 +327,15 @@ window.BoostlyStatus = (function () {
     if (!p || !p.progress) return;
     var cur = s.progress;
     if (cur && String(cur.updated_at || "") > String(p.progress.updated_at || "")) return;
-    s.progress = p.progress; if (p.review_status) s.review_status = p.review_status;
+    s.progress = p.progress; if (p.review_status) s.review_status = p.review_status; if (p.editing !== undefined) s.editing = p.editing;
     window.BoostlyStatus.strip(el, s, "live " + window.BoostlyStatus.fmtTime(p.generated_at));
   });
 })();
 </script>
 <section id="header">
-<p class="links"><a class="ext chip" href="https://www.eatbettysburgers.com/" target="_blank" rel="noopener"><b>Website</b> eatbettysburgers.com/</a> <a class="ext chip held" href="https://surfinbettysburgerbarnorthoc.toast.site/order/bettys_bethany" target="_blank" rel="noopener"><b>Ordering</b> surfinbettysburgerbarnorth…er/bettys_bethany <em>held</em></a> <a class="ext chip" href="https://www.eatbettysburgers.com/menu" target="_blank" rel="noopener"><b>Menu</b> eatbettysburgers.com/menu</a> <a class="ext chip held" href="https://www.facebook.com/SurfinBettysBurgerBar" target="_blank" rel="noopener"><b>Facebook</b> facebook.com/SurfinBettysBurgerBar <em>held</em></a> <a class="ext chip held" href="https://www.instagram.com/surfin_bettys_burger_bar/" target="_blank" rel="noopener"><b>Instagram</b> instagram.com/surfin_bettys_burger_bar/ <em>held</em></a> <a class="ext chip held" href="https://www.tiktok.com/@surfinbettysburgerbar" target="_blank" rel="noopener"><b>TikTok</b> tiktok.com/@surfinbettysburgerbar <em>held</em></a> <a class="ext chip held" href="https://www.toasttab.com/surfin_bettys_ocmd/giftcards" target="_blank" rel="noopener"><b>Gift cards</b> toasttab.com/surfin_bettys_ocmd/giftcards <em>held</em></a> <a class="ext chip" href="https://search.google.com/local/writereview?placeid=ChIJDXiSnePPuIkRv6YMKTzhhnI" target="_blank" rel="noopener"><b>google review</b> search.google.com/local/wr…PPuIkRv6YMKTzhhnI</a></p>
+<p class="links"></p>
 <div class="hdr"><div><p style="font-size:44px;font-weight:700;">Surfin Betty's Burger Bar</p>
-<p style="font-size:20px;color:#444444;margin-top:6px;">Bethany Beach, DE   ·   request wjfs04rsokt060eyf67xp415   ·   full order</p>
-<p style="font-size:29px;font-weight:700;color:#1B5E20;margin-top:22px;">Fable named no default letter</p>
-<p style="font-size:19px;margin-top:6px;">No rationale recorded.</p>
-<p style="font-size:16px;color:#666666;margin-top:8px;">Confidence: unknown</p></div></div>
+<p style="font-size:20px;color:#444444;margin-top:6px;">Bethany Beach, DE   ·   request wjfs04rsokt060eyf67xp415   ·   full order</p></div></div>
 </section>
 <section id="website">
 <h2>Website</h2><p class="sub"><a class="ext" href="https://www.eatbettysburgers.com/" target="_blank" rel="noopener">https://www.eatbettysburgers.com/</a></p>
@@ -281,14 +349,9 @@ window.BoostlyStatus = (function () {
 <div class="gray">No in-store (Vibe) photos in the evidence: no brand-environment photos in the evidence</div>
 <div class="gray">Live Google Maps photo view skipped (--skip-google) and no earlier capture under review/ to reuse.</div>
 </section>
-<section id="logo-search">
-<h2>Logo image search</h2><p class="sub">&quot;Surfin Betty's Burger Bar Bethany Beach logo&quot;</p>
-<p class="links"><a class="ext" href="https://www.google.com/search?tbm=isch&amp;q=Surfin%20Betty's%20Burger%20Bar%20Bethany%20Beach%20logo" target="_blank" rel="noopener">Open Google Images &#8599;</a></p>
-<div class="gray">Logo image search skipped (--skip-google) and no cached results under review/logo-search/.</div>
-</section>
 <section id="candidates">
 <h2>Logo candidates</h2><p class="sub">from the evidence packet; green frame = the file Fable chose. Gray background so white knockouts stay visible.</p>
-<p class="links"><a class="ext" href="https://www.eatbettysburgers.com/" target="_blank" rel="noopener">Website &#8599;</a></p>
+<p class="links"><a class="ext" href="https://www.eatbettysburgers.com/" target="_blank" rel="noopener">Website &#8599;</a> <a class="ext" href="https://www.google.com/search?tbm=isch&amp;q=Surfin%20Betty's%20Burger%20Bar%20Bethany%20Beach%20logo" target="_blank" rel="noopener">Google Images logo search &#8599;</a></p>
 <div class="gray">No logo candidates listed in the evidence packet.</div>
 </section>
 <section id="sheet">
@@ -301,27 +364,28 @@ window.BoostlyStatus = (function () {
 <p class="links"></p>
 <p style="font-size:15px;color:#444444;">Run: links only static pass; no link writes applied; by fulfill-location (links-surfin-siblings).</p>
 <p style="font-size:15px;color:#444444;margin-top:4px;">Website on file: <a class="ext" href="https://www.eatbettysburgers.com/" target="_blank" rel="noopener">https://www.eatbettysburgers.com/</a>.</p>
-<p style="font-size:15px;color:#444444;margin-top:4px;">Discovery report link-discovery-report.json (2026-10-15 15:47): 18 categories, 16 for manual review, 0 proposed field updates, 1 proposed events.</p>
+<p style="font-size:15px;color:#444444;margin-top:4px;">Discovery report link-discovery-report.json (2026-10-15 18:36): 18 categories, 12 for manual review, 1 proposed field updates, 2 proposed events.</p>
+<p style="font-size:15px;color:#6B6B6B;margin-top:4px;">16 URLs still waiting on the live Chrome check.</p>
 <p style="font-size:15px;font-weight:700;margin-top:8px;">19 categories: 0 written, 3 verified or already live, 5 held for review, 0 pending browser, 2 rejected, 9 none found.</p>
-<table class="links"><thead><tr><th>Category</th><th>URL</th><th>Status</th><th>Verdict</th></tr></thead><tbody><tr class="st-existing"><td class="cat">Website</td><td class="url"><a class="ext" href="https://www.eatbettysburgers.com/" target="_blank" rel="noopener">eatbettysburgers.com/</a></td><td><span class="chip" style="background:#1B5E20">already live</span></td><td class="ev"><div class="verdict">Already on the location, kept as is. Stored V2 website; static 200, and the Google listing for this store links the same site.</div><details><summary>raw evidence</summary><div class="raw">Stored V2 website; static 200, and the Google listing for this store links the same site.<br>V2 locations.website_url<br>Places websiteUri matches</div></details></td></tr>
-<tr class="st-held"><td class="cat">Online ordering</td><td class="url"><a class="ext" href="https://surfinbettysburgerbarnorthoc.toast.site/order/bettys_bethany" target="_blank" rel="noopener">surfinbettysburgerbarnorthoc.toast.site/order/bettys_bethany</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: Site-published per-store Toast ordering link; only the destination read is missing. Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">Site-published per-store Toast ordering link; only the destination read is missing. Destination not read: both browser transports were unavailable on 2026-10-15. Codex attached to the Boostly.com profile but every page read failed ('Unable to load browser feature gates', 3 runs); the claude-chrome fallback refused because Chrome Local State has two profiles named Boostly.com and boostly.com. Rerun the browser read, then write it.<br>Linked as ORDER NOW under the exact Bethany address (786 Garfield Parkway) on the site's /locations page<br>Static fetch returns 403 (Toast bot challenge), which is not proof of a bad link</div></details></td></tr>
-<tr class="st-ready"><td class="cat">Menu</td><td class="url"><a class="ext" href="https://www.eatbettysburgers.com/menu" target="_blank" rel="noopener">eatbettysburgers.com/menu</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. First-party Menu page in the site nav, static 200, the brand's one menu for all three stores (no per-store menu page exists).</div><details><summary>raw evidence</summary><div class="raw">First-party Menu page in the site nav, static 200, the brand's one menu for all three stores (no per-store menu page exists).<br>site nav Menu<br>static 200</div></details></td></tr>
+<table class="links"><thead><tr><th>Category</th><th>URL</th><th>Status</th><th>Verdict</th></tr></thead><tbody><tr class="st-held"><td class="cat">Online ordering</td><td class="url"><a class="ext" href="https://surfinbettysburgerbarnorthoc.toast.site/order/bettys_bethany" target="_blank" rel="noopener">surfinbettysburgerbarnorthoc.toast.site/order/bettys_bethany</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: Site-published per-store Toast ordering link; only the destination read is missing. Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">Site-published per-store Toast ordering link; only the destination read is missing. Destination not read: both browser transports were unavailable on 2026-10-15. Codex attached to the Boostly.com profile but every page read failed ('Unable to load browser feature gates', 3 runs); the claude-chrome fallback refused because Chrome Local State has two profiles named Boostly.com and boostly.com. Rerun the browser read, then write it.<br>Linked as ORDER NOW under the exact Bethany address (786 Garfield Parkway) on the site's /locations page<br>Static fetch returns 403 (Toast bot challenge), which is not proof of a bad link</div></details></td></tr>
 <tr class="st-held"><td class="cat">Facebook</td><td class="url"><a class="ext" href="https://www.facebook.com/SurfinBettysBurgerBar" target="_blank" rel="noopener">facebook.com/SurfinBettysBurgerBar</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: Brand Facebook linked from every page of the official site (shared by all three stores); destination-side identity not confirmed. Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">Brand Facebook linked from every page of the official site (shared by all three stores); destination-side identity not confirmed. Destination not read: both browser transports were unavailable on 2026-10-15. Codex attached to the Boostly.com profile but every page read failed ('Unable to load browser feature gates', 3 runs); the claude-chrome fallback refused because Chrome Local State has two profiles named Boostly.com and boostly.com.<br>the website links to it<br>found as an anchor<br>The official website links to this social profile, but the destination did not independently confirm the exact business or location</div></details></td></tr>
 <tr class="st-held"><td class="cat">Instagram</td><td class="url"><a class="ext" href="https://www.instagram.com/surfin_bettys_burger_bar/" target="_blank" rel="noopener">instagram.com/surfin_bettys_burger_bar/</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: Brand Instagram linked from every page of the official site (shared by all three stores); destination-side identity not confirmed. Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">Brand Instagram linked from every page of the official site (shared by all three stores); destination-side identity not confirmed. Destination not read: both browser transports were unavailable on 2026-10-15. Codex attached to the Boostly.com profile but every page read failed ('Unable to load browser feature gates', 3 runs); the claude-chrome fallback refused because Chrome Local State has two profiles named Boostly.com and boostly.com.<br>the website links to it<br>found as an anchor<br>The official website links to this social profile, but the destination did not independently confirm the exact business or location</div></details></td></tr>
-<tr class="st-none"><td class="cat">X (Twitter)</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
-<tr class="st-held"><td class="cat">TikTok</td><td class="url"><a class="ext" href="https://www.tiktok.com/@surfinbettysburgerbar" target="_blank" rel="noopener">tiktok.com/@surfinbettysburgerbar</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: Brand-named handle from external search (not linked by the site); needs a destination read for business signal before it is written or rejected. Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">Brand-named handle from external search (not linked by the site); needs a destination read for business signal before it is written or rejected. Destination not read: both browser transports were unavailable on 2026-10-15. Codex attached to the Boostly.com profile but every page read failed ('Unable to load browser feature gates', 3 runs); the claude-chrome fallback refused because Chrome Local State has two profiles named Boostly.com and boostly.com.<br>canonical form of <a class="ext" href="https://www.tiktok.com/@surfinbettysburgerbar/video/7254251698783538478" target="_blank" rel="noopener">https://www.tiktok.com/@surfinbettysburgerbar/video/7254251698783538478</a><br>google organic candidate<br>Loaded destination exposed little or no business identity evidence</div></details></td></tr>
-<tr class="st-none"><td class="cat">YouTube</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
-<tr class="st-rejected"><td class="cat">Careers</td><td class="url"><a class="ext" href="https://www.eatbettysburgers.com/careers" target="_blank" rel="noopener">eatbettysburgers.com/careers</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: Probed path, not linked by the site; HTTP 404</div><details><summary>raw evidence</summary><div class="raw">Probed path, not linked by the site; HTTP 404</div></details></td></tr>
-<tr class="st-none"><td class="cat">Catering</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
-<tr class="st-rejected"><td class="cat">Events</td><td class="url"><a class="ext" href="https://delmarva.info/dining/surfin-bettys-burger-bar-2/" target="_blank" rel="noopener">delmarva.info/dining/surfin-bettys-burger-bar-2/</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: Regional dining directory listing, not a first-party events page</div><details><summary>raw evidence</summary><div class="raw">Regional dining directory listing, not a first-party events page</div></details></td></tr>
-<tr class="st-none"><td class="cat">Reservations</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-held"><td class="cat">TikTok</td><td class="url"><a class="ext" href="https://www.tiktok.com/@surfinbettysburgerbar" target="_blank" rel="noopener">tiktok.com/@surfinbettysburgerbar</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: Brand-named handle from external search (not linked by the site); needs a destination read for business signal before it is written or rejected. Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">Brand-named handle from external search (not linked by the site); needs a destination read for business signal before it is written or rejected. Destination not read: both browser transports were unavailable on 2026-10-15. Codex attached to the Boostly.com profile but every page read failed ('Unable to load browser feature gates', 3 runs); the claude-chrome fallback refused because Chrome Local State has two profiles named Boostly.com and boostly.com.<br>title &quot;TikTok - Make Your Day&quot;<br>social destination identity signal<br>canonical form of <a class="ext" href="https://www.tiktok.com/@surfinbettysburgerbar/video/7254251698783538478" target="_blank" rel="noopener">https://www.tiktok.com/@surfinbettysburgerbar/video/7254251698783538478</a><br>google organic candidate</div></details></td></tr>
 <tr class="st-held"><td class="cat">Gift cards</td><td class="url"><a class="ext" href="https://www.toasttab.com/surfin_bettys_ocmd/giftcards" target="_blank" rel="noopener">toasttab.com/surfin_bettys_ocmd/giftcards</a></td><td><span class="chip" style="background:#B7791F">held for review</span></td><td class="ev"><div class="verdict">Held: Toast gift card page linked only from the orphan /ocean-city-locations page and owned by the Downtown Toast restaurant (ocmd); needs a read and a yes… Needs a yes to proceed.</div><details><summary>raw evidence</summary><div class="raw">Toast gift card page linked only from the orphan /ocean-city-locations page and owned by the Downtown Toast restaurant (ocmd); needs a read and a yes that it is honored at this store. Destination not read: both browser transports were unavailable on 2026-10-15. Codex attached to the Boostly.com profile but every page read failed ('Unable to load browser feature gates', 3 runs); the claude-chrome fallback refused because Chrome Local State has two profiles named Boostly.com and boostly.com.</div></details></td></tr>
+<tr class="st-ready"><td class="cat">Menu</td><td class="url"><a class="ext" href="https://www.eatbettysburgers.com/menu" target="_blank" rel="noopener">eatbettysburgers.com/menu</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. First-party Menu page in the site nav, static 200, the brand's one menu for all three stores (no per-store menu page exists).</div><details><summary>raw evidence</summary><div class="raw">First-party Menu page in the site nav, static 200, the brand's one menu for all three stores (no per-store menu page exists).<br>site nav Menu<br>static 200</div></details></td></tr>
+<tr class="st-ready"><td class="cat">google review</td><td class="url"><a class="ext" href="https://search.google.com/local/writereview?placeid=ChIJDXiSnePPuIkRv6YMKTzhhnI" target="_blank" rel="noopener">search.google.com/local/writereview?placeid=ChIJDXiSnePPuIkRv6YMKTzhhnI</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Matches the store's address.</div><details><summary>raw evidence</summary><div class="raw">V2 google_place_id is a 'manual:' placeholder, so the Reviews link has no real Place ID. Places search finds 'Surfin Betty’s Burger Bar' at 786 Garfield Pkwy, Bethany Beach, DE 19930, USA, OPERATIONAL, 136 reviews, same phone as the site, website eatbettysburgers.com; distinct from Downtown's Place ID. Closeout writes it with location set --google-place-id (replaces the manual placeholder) and confirms the Reviews event.<br>exact street address match<br>site backlink from the listing<br>Place ID differs from Downtown and the other sibling</div></details></td></tr>
+<tr class="st-existing"><td class="cat">Website</td><td class="url"><a class="ext" href="https://www.eatbettysburgers.com/" target="_blank" rel="noopener">eatbettysburgers.com/</a></td><td><span class="chip" style="background:#1B5E20">already live</span></td><td class="ev"><div class="verdict">Already on the location, kept as is. Stored V2 website; static 200, and the Google listing for this store links the same site.</div><details><summary>raw evidence</summary><div class="raw">Stored V2 website; static 200, and the Google listing for this store links the same site.<br>V2 locations.website_url<br>Places websiteUri matches</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">Careers</td><td class="url"><a class="ext" href="https://www.eatbettysburgers.com/careers" target="_blank" rel="noopener">eatbettysburgers.com/careers</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: Probed path, not linked by the site; HTTP 404</div><details><summary>raw evidence</summary><div class="raw">Probed path, not linked by the site; HTTP 404</div></details></td></tr>
+<tr class="st-rejected"><td class="cat">Events</td><td class="url"><a class="ext" href="https://delmarva.info/dining/surfin-bettys-burger-bar-2/" target="_blank" rel="noopener">delmarva.info/dining/surfin-bettys-burger-bar-2/</a></td><td><span class="chip" style="background:#6B6B6B">rejected</span></td><td class="ev"><div class="verdict">Rejected: Regional dining directory listing, not a first-party events page</div><details><summary>raw evidence</summary><div class="raw">Regional dining directory listing, not a first-party events page</div></details></td></tr>
+<tr class="st-none"><td class="cat">X (Twitter)</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">YouTube</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Catering</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
+<tr class="st-none"><td class="cat">Reservations</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
 <tr class="st-none"><td class="cat">Loyalty / rewards</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
 <tr class="st-none"><td class="cat">iOS app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
 <tr class="st-none"><td class="cat">Android app</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
 <tr class="st-none"><td class="cat">App downloads</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
-<tr class="st-none"><td class="cat">Other</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr>
-<tr class="st-ready"><td class="cat">google review</td><td class="url"><a class="ext" href="https://search.google.com/local/writereview?placeid=ChIJDXiSnePPuIkRv6YMKTzhhnI" target="_blank" rel="noopener">search.google.com/local/writereview?placeid=ChIJDXiSnePPuIkRv6YMKTzhhnI</a></td><td><span class="chip" style="background:#1B5E20">verified, ready to write</span></td><td class="ev"><div class="verdict">Will be written at closeout. Matches the store's address.</div><details><summary>raw evidence</summary><div class="raw">V2 google_place_id is a 'manual:' placeholder, so the Reviews link has no real Place ID. Places search finds 'Surfin Betty’s Burger Bar' at 786 Garfield Pkwy, Bethany Beach, DE 19930, USA, OPERATIONAL, 136 reviews, same phone as the site, website eatbettysburgers.com; distinct from Downtown's Place ID. Closeout writes it with location set --google-place-id (replaces the manual placeholder) and confirms the Reviews event.<br>exact street address match<br>site backlink from the listing<br>Place ID differs from Downtown and the other sibling</div></details></td></tr></tbody></table>
+<tr class="st-none"><td class="cat">Other</td><td class="url"><span class="none">none</span></td><td><span class="chip" style="background:#6B6B6B">none found</span></td><td class="ev"><div class="verdict">Nothing found.</div><span class="none">no evidence recorded</span></td></tr></tbody></table>
 </section>
 
 <script>

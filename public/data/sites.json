@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T15:56:18.982Z",
+  "generated_at": "2026-10-21T16:42:41.064Z",
   "count": 73,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -310,11 +310,11 @@
         "by": "fulfill-location",
         "host": "Karissas-MacBook-Pro.local",
         "updated_at": "2026-10-20T15:39:28.293Z",
-        "bundle_pushed_at": "2026-10-20T15:08:13.099Z"
+        "bundle_pushed_at": "2026-10-21T15:18:27.744Z"
       },
       "review_status": null,
-      "page_bytes": 8734880,
-      "blob_bytes": 11189162,
+      "page_bytes": 8330621,
+      "blob_bytes": 14113364,
       "blob_assets": 10
     },
     {
@@ -441,19 +441,19 @@
       "done": false,
       "note": "Fable default F (chain badge on red #E2181E, navy band); U is the Ocala SE/NE live red/navy precedent; live account row is the old July spike (blue, 417px logo) and the closeout overwrites it. Taste pass (fable) added V, W, X, Y (full color on navy card, red band (site footer ground); white open knockout on navy card, red band; white stars and words, no ring, on red card, navy band; white stars and words, no ring, on navy card, red band). Links: website, Order Online (weborder store 3477) and Careers ready; discovery browser pass failed (validator exit 2), rerun after the website write. Quantities 4 tables / 30 tap cards vs call 6 / 10, CSM DM drafted.",
       "progress": {
-        "stage": "fulfill",
-        "last_step": "taste pass",
-        "next_step": "review canvas and link discovery",
-        "blocked_on": null,
+        "stage": "review",
+        "last_step": "review canvas built, site published",
+        "next_step": "Travisse picks a letter",
+        "blocked_on": "letter pick",
         "by": "fulfill-location",
         "host": "MacBook-Pro-2.local",
-        "updated_at": "2026-10-21T15:07:16.314Z",
-        "bundle_pushed_at": "2026-10-21T15:07:16.681Z"
+        "updated_at": "2026-10-21T15:13:08.491Z",
+        "bundle_pushed_at": "2026-10-21T15:23:09.134Z"
       },
       "review_status": null,
-      "page_bytes": 10640569,
-      "blob_bytes": 6721059,
-      "blob_assets": 30
+      "page_bytes": 10235439,
+      "blob_bytes": 3075142,
+      "blob_assets": 28
     },
     {
       "slug": "shawarma-inn-chicago",
@@ -470,6 +470,7 @@
       "picked_letter": "U",
       "review_url": "/shawarma-inn-chicago/",
       "figma_url": "https://www.figma.com/design/5LsXaingsVCdMuJhWzR0g3/In-Store-Fulfillment-9?node-id=14-2",
+      "signage_direct": null,
       "print_handoff_url": null,
       "boostly_status": "digital_fulfillment",
       "steps": [
@@ -490,11 +491,11 @@
           true
         ],
         [
-          "Figma signage built",
+          "Signage built (Figma)",
           true
         ],
         [
-          "Figma approved by you",
+          "Signage approved by you",
           false
         ],
         [
@@ -511,7 +512,7 @@
         ]
       ],
       "needs_you": [
-        "approve the Figma signage"
+        "approve the signage (Figma)"
       ],
       "gaps": [],
       "hold": "PICK 2026-10-15 (Travisse): U, account scope, open facts for the signage review",
@@ -533,9 +534,9 @@
         "ease": null,
         "updated_at": "2026-10-15T19:09:24.347Z"
       },
-      "page_bytes": 9660817,
-      "blob_bytes": 9668065,
-      "blob_assets": 29
+      "page_bytes": 9263689,
+      "blob_bytes": 9640342,
+      "blob_assets": 28
     },
     {
       "slug": "surfin-betty-s-burger-bar-uptown-ocean-city-127th",
@@ -552,16 +553,17 @@
       "picked_letter": null,
       "review_url": "/surfin-betty-s-burger-bar-uptown-ocean-city-127th/",
       "figma_url": null,
+      "signage_direct": null,
       "print_handoff_url": null,
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
           "Review sheet ready",
-          false
+          true
         ],
         [
-          "Branding pick [account-level, from surfin-betty-s-burger-bar-downtown]",
-          false
+          "Branding pick: F [account-level, from surfin-betty-s-burger-bar-downtown]",
+          true
         ],
         [
           "Branding applied in prod",
@@ -572,11 +574,11 @@
           false
         ],
         [
-          "Figma signage built",
+          "Signage built",
           false
         ],
         [
-          "Figma approved by you",
+          "Signage approved by you",
           false
         ],
         [
@@ -593,7 +595,6 @@
         ]
       ],
       "needs_you": [
-        "pick a letter",
         "5 link decision(s)"
       ],
       "gaps": [],
@@ -611,7 +612,7 @@
         "bundle_pushed_at": "2026-10-15T15:52:46.460Z"
       },
       "review_status": null,
-      "page_bytes": 86004,
+      "page_bytes": 83897,
       "blob_bytes": 4784494,
       "blob_assets": 1
     },
@@ -630,16 +631,17 @@
       "picked_letter": null,
       "review_url": "/surfin-betty-s-burger-bar-bethany/",
       "figma_url": null,
+      "signage_direct": null,
       "print_handoff_url": null,
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
           "Review sheet ready",
-          false
+          true
         ],
         [
-          "Branding pick [account-level, from surfin-betty-s-burger-bar-downtown]",
-          false
+          "Branding pick: F [account-level, from surfin-betty-s-burger-bar-downtown]",
+          true
         ],
         [
           "Branding applied in prod",
@@ -650,11 +652,11 @@
           false
         ],
         [
-          "Figma signage built",
+          "Signage built",
           false
         ],
         [
-          "Figma approved by you",
+          "Signage approved by you",
           false
         ],
         [
@@ -671,7 +673,6 @@
         ]
       ],
       "needs_you": [
-        "pick a letter",
         "5 link decision(s)"
       ],
       "gaps": [],
@@ -689,7 +690,7 @@
         "bundle_pushed_at": "2026-10-15T15:52:44.329Z"
       },
       "review_status": null,
-      "page_bytes": 86013,
+      "page_bytes": 84192,
       "blob_bytes": 4784494,
       "blob_assets": 1
     },
@@ -708,6 +709,7 @@
       "picked_letter": "F",
       "review_url": "/surfin-betty-s-burger-bar-downtown/",
       "figma_url": "https://www.figma.com/design/5LsXaingsVCdMuJhWzR0g3/In-Store-Fulfillment-9?node-id=12-3",
+      "signage_direct": null,
       "print_handoff_url": null,
       "boostly_status": "digital_fulfillment",
       "steps": [
@@ -728,11 +730,11 @@
           false
         ],
         [
-          "Figma signage built",
+          "Signage built (Figma)",
           true
         ],
         [
-          "Figma approved by you",
+          "Signage approved by you",
           false
         ],
         [
@@ -749,7 +751,7 @@
         ]
       ],
       "needs_you": [
-        "approve the Figma signage",
+        "approve the signage (Figma)",
         "1 link decision(s)"
       ],
       "gaps": [],
@@ -772,8 +774,8 @@
         "ease": null,
         "updated_at": "2026-10-15T18:57:47.422Z"
       },
-      "page_bytes": 3778551,
-      "blob_bytes": 12229616,
+      "page_bytes": 3374525,
+      "blob_bytes": 16550373,
       "blob_assets": 34
     },
     {
