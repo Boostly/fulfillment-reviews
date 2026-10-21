@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T15:12:49.068Z",
+  "generated_at": "2026-10-21T15:16:24.517Z",
   "count": 72,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -2149,7 +2149,7 @@
       "city": "Ocala",
       "state": "FL",
       "requested_at": "2026-10-01T16:51:58.671",
-      "updated_at": "2026-10-02T23:14:05.748Z",
+      "updated_at": "2026-10-21T15:16:15.624Z",
       "cursor": "notion",
       "status": "closed",
       "status_label": "Closed out",
@@ -2157,6 +2157,7 @@
       "picked_letter": "P",
       "review_url": "/five-star-pizza-ocala-se/",
       "figma_url": "https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=377-2",
+      "signage_direct": null,
       "print_handoff_url": null,
       "boostly_status": null,
       "steps": null,
@@ -2165,10 +2166,11 @@
       "hold": null,
       "done": null,
       "note": "Done: P (full-color chain badge on red #E21D24, navy #211F7F band) is live, signage approved, Slack posted, branding complete; request moved to store_details (store_details_confirmed_at still null, so it is short of physical fulfillment, not a bug). 7 links written, ordering_url overwrite held for your call. James Lowder still needs store details confirmation and quantities (wizard values, 09/28 transcript pending). To-go labels updated (offer + logo), review in Figma: https://www.figma.com/design/N5uzBBdCz7ySxxaNTxfKGm/In-Store-Fulfillment-8?node-id=377-11677",
+      "progress": null,
       "review_status": null,
-      "page_bytes": 39460,
-      "blob_bytes": 10616754,
-      "blob_assets": 26
+      "page_bytes": 4144530,
+      "blob_bytes": 11153797,
+      "blob_assets": 29
     },
     {
       "slug": "valenti-s-italian-restaurant-vass",
