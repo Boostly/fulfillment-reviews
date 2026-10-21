@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T15:17:27.205Z",
+  "generated_at": "2026-10-21T15:17:51.305Z",
   "count": 73,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -40,7 +40,7 @@
       "city": "Provo",
       "state": "UT",
       "requested_at": "2026-10-20T20:47:14.084Z",
-      "updated_at": "2026-10-21T14:55:52.542Z",
+      "updated_at": "2026-10-21T15:17:36.035Z",
       "cursor": "overrides",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -56,12 +56,12 @@
       "gaps": null,
       "hold": null,
       "done": null,
-      "note": "Fable default E (live FD2024 lockup on black, red band, same as the branding already live since mid-2026); simple bold options I-L, Q-R; Taste pass (fable) added S, T (red card, black band: disc-free color lockup, white words-only); 2 color words-only proposals left unbuilt (shadow fused to ribbon).",
+      "note": "Pick a letter: Fable default E (FD2024 lockup on black, red band) matches the branding already live since mid-2026; simple bold options I-L and Q-R; Taste pass (fable) added S, T (red card, black band). Links: 7 ready, 2 waiting (dead Order Online event link, /events unverified); offer mismatch and stall count (call says 2) need the CSM.",
       "progress": null,
       "review_status": null,
-      "page_bytes": 5128585,
-      "blob_bytes": 12910455,
-      "blob_assets": 32
+      "page_bytes": 5128881,
+      "blob_bytes": 8763987,
+      "blob_assets": 31
     },
     {
       "slug": "colarusso-s-coal-fired-pizza",
