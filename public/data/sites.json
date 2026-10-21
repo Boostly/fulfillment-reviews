@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T15:53:28.928Z",
+  "generated_at": "2026-10-21T15:56:18.982Z",
   "count": 73,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -160,7 +160,7 @@
       "city": "Cedar Crest",
       "state": "NM",
       "requested_at": "2026-10-20T16:12:14.887Z",
-      "updated_at": "2026-10-21T15:38:06.728Z",
+      "updated_at": "2026-10-21T15:54:14.320Z",
       "cursor": "signage",
       "status": "applied",
       "status_label": "Branding applied",
@@ -170,7 +170,7 @@
       "figma_url": null,
       "signage_direct": "built",
       "print_handoff_url": "https://drive.google.com/drive/folders/11JYgJaEsxWgsbAHfGJGHWxyXtJmxlFtK",
-      "boostly_status": "digital_fulfillment",
+      "boostly_status": "store_details",
       "steps": [
         [
           "Review sheet ready",
@@ -185,8 +185,8 @@
           true
         ],
         [
-          "Links written (6 ready, 0 need a call)",
-          false
+          "Links written (0 still held)",
+          true
         ],
         [
           "Signage built (direct PDF)",
@@ -210,23 +210,24 @@
         ]
       ],
       "needs_you": [
-        "approve the signage (print files in Drive)"
+        "approve the signage (print files in Drive)",
+        "confirm store details (ship-to, quantities)"
       ],
       "gaps": [
         "ship-to missing"
       ],
       "hold": null,
       "done": false,
-      "note": "Branding complete (store details pending); signage approved, print files in Drive; Slack post not sent (slack-tools config missing); vendor email blocked on empty ship-to; links held.",
+      "note": "Branding complete (store details pending); signage approved, print files in Drive; Slack post not sent (slack-tools config missing); vendor email blocked on empty ship-to; 6 links written with readback (website, Order Online, menu kept inactive since Order Online is active, catering, jobs, events).",
       "progress": {
         "stage": "closeout-finish",
-        "last_step": "signage approved",
-        "next_step": "Slack, print hand-off, branding complete",
-        "blocked_on": null,
+        "last_step": "branding complete, print files and summary row in Drive, status set",
+        "next_step": "Slack post, ship-to, then vendor email",
+        "blocked_on": "ship-to address missing; Slack config missing on this machine",
         "by": "closeout-finish",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-21T15:51:59.691Z",
-        "bundle_pushed_at": "2026-10-21T15:52:00.146Z"
+        "updated_at": "2026-10-21T15:53:01.471Z",
+        "bundle_pushed_at": "2026-10-21T15:53:01.806Z"
       },
       "review_status": {
         "status": "waiting",
