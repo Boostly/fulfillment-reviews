@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T19:15:01.445Z",
+  "generated_at": "2026-10-21T19:19:12.321Z",
   "count": 73,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -160,12 +160,12 @@
       "city": "Cedar Crest",
       "state": "NM",
       "requested_at": "2026-10-20T16:12:14.887Z",
-      "updated_at": "2026-10-21T19:14:58.904Z",
+      "updated_at": "2026-10-21T19:19:10.051Z",
       "cursor": "signage",
       "status": "applied",
       "status_label": "Branding applied",
       "recommended_letter": "AE",
-      "picked_letter": "AY",
+      "picked_letter": "AZ",
       "review_url": "/trail-rider-cedar-crest/",
       "figma_url": null,
       "signage_direct": "built",
@@ -217,16 +217,16 @@
       ],
       "hold": null,
       "done": false,
-      "note": "Customer's own lockup applied as AY (cyan #11DDF8 secondary), signage PDFs replaced in Drive; waiting for your look at the new sheet and PDFs, finish still waits on ship-to.",
+      "note": "Customer's own lockup live as AZ (cyan #11DDF8 secondary, black print digit), signage PDFs replaced in Drive; waiting for your look at the new sheet and PDFs, finish still waits on ship-to.",
       "progress": {
         "stage": "closeout",
-        "last_step": "customer lockup branding written (AY)",
-        "next_step": "proofs and signage PDFs",
-        "blocked_on": "ship-to address missing; Slack config missing on this machine",
+        "last_step": "customer lockup applied, PDFs replaced in Drive",
+        "next_step": "Travisse approves the new sheet and PDFs; finish still waits on ship-to",
+        "blocked_on": "ship-to address missing",
         "by": "trail-rider-swap",
         "host": "MacBook-Pro-2.local",
-        "updated_at": "2026-10-21T19:10:22.120Z",
-        "bundle_pushed_at": "2026-10-21T19:10:22.357Z"
+        "updated_at": "2026-10-21T19:14:48.252Z",
+        "bundle_pushed_at": "2026-10-21T19:17:03.746Z"
       },
       "review_status": {
         "status": "waiting",
@@ -234,7 +234,7 @@
         "ease": 3,
         "updated_at": "2026-10-21T15:52:57.889Z"
       },
-      "page_bytes": 20657963,
+      "page_bytes": 21060413,
       "blob_bytes": 4164034,
       "blob_assets": 7
     },
