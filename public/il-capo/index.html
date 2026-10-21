@@ -13,6 +13,7 @@
 .bs-hdr.row { width: 120px; padding: 8px; line-height: 1.2; display: flex; align-items: center; overflow-wrap: anywhere; }
 .bs-cell { position: absolute; }
 .bs-cell .bs-label { position: absolute; left: 0; top: 0; right: 0; height: 34px; line-height: 34px; padding: 0 8px; color: #fff; font-weight: 700; font-size: 15px; white-space: nowrap; overflow: hidden; }
+.bs-cell .bs-label .bs-letter { display: inline-block; min-width: 30px; margin: 0 8px 0 -4px; padding: 0 6px; border-radius: 4px; background: #fff; color: #111; font-size: 22px; line-height: 26px; vertical-align: middle; text-align: center; }
 .bs-cell .bs-tile { position: absolute; background: #E5E5E5; overflow: hidden; display: flex; align-items: center; justify-content: center; }
 .bs-cell.rejected .bs-tile { filter: grayscale(1) contrast(0.55) brightness(1.3); }
 .bs-cell .bs-frame { position: absolute; inset: 0; pointer-events: none; border: 4px solid transparent; }
@@ -164,7 +165,7 @@
 </style></head><body id="top">
 <nav class="toc" id="toc"><a class="top" href="/" style="margin-bottom:12px">&larr; All locations</a><button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-list">Sections</button>
 <ol id="toc-list">
-<li><a href="#top" class="top">Top</a></li>
+
 <li><a href="#header">Overview</a></li>
 <li><a href="#website">Website</a></li>
 <li><a href="#gbp">Google Business Profile</a></li>
@@ -174,7 +175,7 @@
 <li><a href="#links">Links (6 held for review)</a></li>
 </ol></nav>
 <div class="site-status ss" id="site-status" data-slug="il-capo"></div>
-<script id="site-status-data" type="application/json">{"slug":"il-capo","status":"awaiting","status_label":"Awaiting pick","boostly_status":"digital_fulfillment","steps":[["Review sheet ready",true],["Branding pick (Fable default A)",false],["Branding applied in prod",false],["Links written (0 ready, 0 need a call)",false],["Signage built",false],["Signage approved by you",false],["Slack result posted",false],["Status posted to the review site",false],["Store details confirmed",false]],"needs_you":["pick a letter"],"gaps":[],"hold":null,"done":false,"note":null,"review_status":null,"progress":{"stage":"review","last_step":"review canvas built, site published","next_step":"Travisse picks a letter","blocked_on":"letter pick","by":"fulfill-location","host":"Karissas-MacBook-Pro.local","updated_at":"2026-10-20T15:39:28.293Z","bundle_pushed_at":"2026-10-21T15:18:27.744Z"},"figma_url":null,"review_url":"/il-capo/","rec":"A","print_url":null}</script>
+<script id="site-status-data" type="application/json">{"slug":"il-capo","status":"awaiting","status_label":"Awaiting pick","boostly_status":"digital_fulfillment","steps":[["Review sheet ready",true],["Branding pick (Fable default A)",false],["Branding applied in prod",false],["Links written (0 ready, 0 need a call)",false],["Signage built",false],["Signage approved by you",false],["Slack result posted",false],["Status posted to the review site",false],["Store details confirmed",false]],"needs_you":["pick a letter"],"gaps":[],"hold":null,"done":false,"note":null,"review_status":null,"progress":{"stage":"review","last_step":"review canvas built, site published","next_step":"Travisse picks a letter","blocked_on":"letter pick","by":"fulfill-location","host":"Karissas-MacBook-Pro.local","updated_at":"2026-10-20T15:39:28.293Z","bundle_pushed_at":"2026-10-21T17:12:23.872Z"},"figma_url":null,"review_url":"/il-capo/","rec":"A","print_url":null}</script>
 <script>
 window.BoostlyStatus = (function () {
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
@@ -398,7 +399,7 @@ site header, original file"></a><figcaption>site-logo-original.png<br>site heade
 <div class="bs-hdr row" style="left: 0; top: 5946px; height: 454px;">full-color disc with white keyline on red, mint darkened 15% band (P&#39;s colors with the full logo) #EC201C</div>
 <div class="bs-hdr row" style="left: 0; top: 6400px; height: 454px;">full-color disc, no keyline, on red, mint darkened 15% band (P&#39;s colors with the plain full logo; builder: disc ink vanishes on red, rendered on request) #EC201C</div>
 <div class="bs-cell fable_pick selectable" data-letter="A" style="left: 120px; top: 44px; width: 434px; height: 454px;">
-  <div class="bs-label" style="background: #B71C1C;">A   #ABD1C2 Fable&#39;s pick   digit 1.66:1 LOW, use black digit</div>
+  <div class="bs-label" style="background: #B71C1C;"><span class="bs-letter">A</span>#ABD1C2 Fable&#39;s pick   digit 1.66:1 LOW, use black digit</div>
   <div class="bs-tile" style="left: 8px; top: 42px; width: 260px; height: 404px;"><div class="bs-badge-shot" style="position: relative; width: 260px; height: 404px; background: #ffffff; overflow: hidden;">
     <div style="position: absolute; left: 50%; top: 50%; width: 216px; height: 336px; transform: translate(-50%, -50%) scale(1.202813); transform-origin: center center; filter: drop-shadow(0 12.124352331606216px 18.860103626943005px rgb(15 23 42 / 0.22));"><div style="position: relative; width: 216px; height: 336px; border-radius: 12px; overflow: hidden; background-color: #EC201C; text-align: center; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
     <div style="position: absolute; top: 16px; left: 0; right: 0; width: 56px; height: 8px; margin: 0 auto; border-radius: 9999px; background-color: white;"></div>
@@ -434,7 +435,7 @@ site header, original file"></a><figcaption>site-logo-original.png<br>site heade
   <div class="bs-frame" style="border-color: #1565C0;"></div><div class="bs-tag" style="right: 4px; top: 42px; background: #1565C0; color: #FFFFFF;">FABLE PICK</div>
 </div>
 <div class="bs-cell selectable" data-letter="B" style="left: 554px; top: 44px; width: 434px; height: 454px;">
-  <div class="bs-label" style="background: #B71C1C;">B   #B2C1B1 logo ink 4%   digit 1.88:1 LOW, use black digit</div>
+  <div class="bs-label" style="background: #B71C1C;"><span class="bs-letter">B</span>#B2C1B1 logo ink 4%   digit 1.88:1 LOW, use black digit</div>
   <div class="bs-tile" style="left: 8px; top: 42px; width: 260px; height: 404px;"><div class="bs-badge-shot" style="position: relative; width: 260px; height: 404px; background: #ffffff; overflow: hidden;">
     <div style="position: absolute; left: 50%; top: 50%; width: 216px; height: 336px; transform: translate(-50%, -50%) scale(1.202813); transform-origin: center center; filter: drop-shadow(0 12.124352331606216px 18.860103626943005px rgb(15 23 42 / 0.22));"><div style="position: relative; width: 216px; height: 336px; border-radius: 12px; overflow: hidden; background-color: #EC201C; text-align: center; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
     <div style="position: absolute; top: 16px; left: 0; right: 0; width: 56px; height: 8px; margin: 0 auto; border-radius: 9999px; background-color: white;"></div>
@@ -470,7 +471,7 @@ site header, original file"></a><figcaption>site-logo-original.png<br>site heade
   <div class="bs-frame"></div>
 </div>
 <div class="bs-cell selectable" data-letter="C" style="left: 988px; top: 44px; width: 434px; height: 454px;">
-  <div class="bs-label" style="background: #B71C1C;">C   #8ABFAA 10% darker step, synthetic (allowed when real ink fails contrast)   digit 2.08:1 LOW, use black digit</div>
+  <div class="bs-label" style="background: #B71C1C;"><span class="bs-letter">C</span>#8ABFAA 10% darker step, synthetic (allowed when real ink fails contrast)   digit 2.08:1 LOW, use black digit</div>
   <div class="bs-tile" style="left: 8px; top: 42px; width: 260px; height: 404px;"><div class="bs-badge-shot" style="position: relative; width: 260px; height: 404px; background: #ffffff; overflow: hidden;">
     <div style="position: absolute; left: 50%; top: 50%; width: 216px; height: 336px; transform: translate(-50%, -50%) scale(1.202813); transform-origin: center center; filter: drop-shadow(0 12.124352331606216px 18.860103626943005px rgb(15 23 42 / 0.22));"><div style="position: relative; width: 216px; height: 336px; border-radius: 12px; overflow: hidden; background-color: #EC201C; text-align: center; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
     <div style="position: absolute; top: 16px; left: 0; right: 0; width: 56px; height: 8px; margin: 0 auto; border-radius: 9999px; background-color: white;"></div>
@@ -506,7 +507,7 @@ site header, original file"></a><figcaption>site-logo-original.png<br>site heade
   <div class="bs-frame"></div>
 </div>
 <div class="bs-cell selectable" data-letter="D" style="left: 1422px; top: 44px; width: 434px; height: 454px;">
-  <div class="bs-label" style="background: #B71C1C;">D   #69AD92 20% darker step, synthetic (allowed when real ink fails contrast)   digit 2.63:1 LOW, use black digit</div>
+  <div class="bs-label" style="background: #B71C1C;"><span class="bs-letter">D</span>#69AD92 20% darker step, synthetic (allowed when real ink fails contrast)   digit 2.63:1 LOW, use black digit</div>
   <div class="bs-tile" style="left: 8px; top: 42px; width: 260px; height: 404px;"><div class="bs-badge-shot" style="position: relative; width: 260px; height: 404px; background: #ffffff; overflow: hidden;">
     <div style="position: absolute; left: 50%; top: 50%; width: 216px; height: 336px; transform: translate(-50%, -50%) scale(1.202813); transform-origin: center center; filter: drop-shadow(0 12.124352331606216px 18.860103626943005px rgb(15 23 42 / 0.22));"><div style="position: relative; width: 216px; height: 336px; border-radius: 12px; overflow: hidden; background-color: #EC201C; text-align: center; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
     <div style="position: absolute; top: 16px; left: 0; right: 0; width: 56px; height: 8px; margin: 0 auto; border-radius: 9999px; background-color: white;"></div>
@@ -542,7 +543,7 @@ site header, original file"></a><figcaption>site-logo-original.png<br>site heade
   <div class="bs-frame"></div>
 </div>
 <div class="bs-cell selectable" data-letter="E" style="left: 120px; top: 498px; width: 434px; height: 454px;">
-  <div class="bs-label" style="background: #B71C1C;">E   #ABD1C2 Fable&#39;s pick   digit 1.66:1 LOW, use black digit</div>
+  <div class="bs-label" style="background: #B71C1C;"><span class="bs-letter">E</span>#ABD1C2 Fable&#39;s pick   digit 1.66:1 LOW, use black digit</div>
   <div class="bs-tile" style="left: 8px; top: 42px; width: 260px; height: 404px;"><div class="bs-badge-shot" style="position: relative; width: 260px; height: 404px; background: #ffffff; overflow: hidden;">
     <div style="position: absolute; left: 50%; top: 50%; width: 216px; height: 336px; transform: translate(-50%, -50%) scale(1.202813); transform-origin: center center; filter: drop-shadow(0 12.124352331606216px 18.860103626943005px rgb(15 23 42 / 0.22));"><div style="position: relative; width: 216px; height: 336px; border-radius: 12px; overflow: hidden; background-color: #EC201C; text-align: center; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
     <div style="position: absolute; top: 16px; left: 0; right: 0; width: 56px; height: 8px; margin: 0 auto; border-radius: 9999px; background-color: white;"></div>
@@ -578,7 +579,7 @@ site header, original file"></a><figcaption>site-logo-original.png<br>site heade
   <div class="bs-frame"></div>
 </div>
 <div class="bs-cell selectable" data-letter="F" style="left: 554px; top: 498px; width: 434px; height: 454px;">
-  <div class="bs-label" style="background: #B71C1C;">F   #B2C1B1 logo ink 4%   digit 1.88:1 LOW, use black digit</div>
+  <div class="bs-label" style="background: #B71C1C;"><span class="bs-letter">F</span>#B2C1B1 logo ink 4%   digit 1.88:1 LOW, use black digit</div>
   <div class="bs-tile" style="left: 8px; top: 42px; width: 260px; height: 404px;"><div class="bs-badge-shot" style="position: relative; width: 260px; height: 404px; background: #ffffff; overflow: hidden;">
     <div style="position: absolute; left: 50%; top: 50%; width: 216px; height: 336px; transform: translate(-50%, -50%) scale(1.202813); transform-origin: center center; filter: drop-shadow(0 12.124352331606216px 18.860103626943005px rgb(15 23 42 / 0.22));"><div style="position: relative; width: 216px; height: 336px; border-radius: 12px; overflow: hidden; background-color: #EC201C; text-align: center; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
     <div style="position: absolute; top: 16px; left: 0; right: 0; width: 56px; height: 8px; margin: 0 auto; border-radius: 9999px; background-color: white;"></div>
@@ -614,7 +615,7 @@ site header, original file"></a><figcaption>site-logo-original.png<br>site heade
   <div class="bs-frame"></div>
 </div>
 <div class="bs-cell selectable" data-letter="G" style="left: 988px; top: 498px; width: 434px; height: 454px;">
-  <div class="bs-label" style="background: #B71C1C;">G   #8ABFAA 10% darker step, synthetic (allowed when real ink fails contrast)   digit 2.08:1 LOW, use black digit</div>
+  <div class="bs-label" style="background: #B71C1C;"><span class="bs-letter">G</span>#8ABFAA 10% darker step, synthetic (allowed when real ink fails contrast)   digit 2.08:1 LOW, use black digit</div>
   <div class="bs-tile" style="left: 8px; top: 42px; width: 260px; height: 404px;"><div class="bs-badge-shot" style="position: relative; width: 260px; height: 404px; background: #ffffff; overflow: hidden;">
     <div style="position: absolute; left: 50%; top: 50%; width: 216px; height: 336px; transform: translate(-50%, -50%) scale(1.202813); transform-origin: center center; filter: drop-shadow(0 12.124352331606216px 18.860103626943005px rgb(15 23 42 / 0.22));"><div style="position: relative; width: 216px; height: 336px; border-radius: 12px; overflow: hidden; background-color: #EC201C; text-align: center; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
     <div style="position: absolute; top: 16px; left: 0; right: 0; width: 56px; height: 8px; margin: 0 auto; border-radius: 9999px; background-color: white;"></div>
@@ -650,7 +651,7 @@ site header, original file"></a><figcaption>site-logo-original.png<br>site heade
   <div class="bs-frame"></div>
 </div>
 <div class="bs-cell selectable" data-letter="H" style="left: 1422px; top: 498px; width: 434px; height: 454px;">
-  <div class="bs-label" style="background: #B71C1C;">H   #69AD92 20% darker step, synthetic (allowed when real ink fails contrast)   digit 2.63:1 LOW, use black digit</div>
+  <div class="bs-label" style="background: #B71C1C;"><span class="bs-letter">H</span>#69AD92 20% darker step, synthetic (allowed when real ink fails contrast)   digit 2.63:1 LOW, use black digit</div>
   <div class="bs-tile" style="left: 8px; top: 42px; width: 260px; height: 404px;"><div class="bs-badge-shot" style="position: relative; width: 260px; height: 404px; background: #ffffff; overflow: hidden;">
     <div style="position: absolute; left: 50%; top: 50%; width: 216px; height: 336px; transform: translate(-50%, -50%) scale(1.202813); transform-origin: center center; filter: drop-shadow(0 12.124352331606216px 18.860103626943005px rgb(15 23 42 / 0.22));"><div style="position: relative; width: 216px; height: 336px; border-radius: 12px; overflow: hidden; background-color: #EC201C; text-align: center; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
     <div style="position: absolute; top: 16px; left: 0; right: 0; width: 56px; height: 8px; margin: 0 auto; border-radius: 9999px; background-color: white;"></div>
@@ -686,7 +687,7 @@ site header, original file"></a><figcaption>site-logo-original.png<br>site heade
   <div class="bs-frame"></div>
 </div>
 <div class="bs-cell selectable" data-letter="I" style="left: 120px; top: 952px; width: 434px; height: 454px;">
-  <div class="bs-label" style="background: #B71C1C;">I   #ABD1C2 Fable&#39;s pick   digit 1.66:1 LOW, use black digit</div>
+  <div class="bs-label" style="background: #B71C1C;"><span class="bs-letter">I</span>#ABD1C2 Fable&#39;s pick   digit 1.66:1 LOW, use black digit</div>
   <div class="bs-tile" style="left: 8px; top: 42px; width: 260px; height: 404px;"><div class="bs-badge-shot" style="position: relative; width: 260px; height: 404px; background: #ffffff; overflow: hidden;">
     <div style="position: absolute; left: 50%; top: 50%; width: 216px; height: 336px; transform: translate(-50%, -50%) scale(1.202813); transform-origin: center center; filter: drop-shadow(0 12.124352331606216px 18.860103626943005px rgb(15 23 42 / 0.22));"><div style="position: relative; width: 216px; height: 336px; border-radius: 12px; overflow: hidden; background-color: #000000; text-align: center; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
     <div style="position: absolute; top: 16px; left: 0; right: 0; width: 56px; height: 8px; margin: 0 auto; border-radius: 9999px; background-color: white;"></div>
@@ -722,7 +723,7 @@ site header, original file"></a><figcaption>site-logo-original.png<br>site heade
   <div class="bs-frame"></div>
 </div>
 <div class="bs-cell selectable" data-letter="J" style="left: 1856px; top: 1406px; width: 434px; height: 454px;">
-  <div class="bs-label" style="background: #1B5E20;">J   #EC201C one-off: one-off #EC201C   digit 4.38:1 ok</div>
+  <div class="bs-label" style="background: #1B5E20;"><span class="bs-letter">J</span>#EC201C one-off: one-off #EC201C   digit 4.38:1 ok</div>
   <div class="bs-tile" style="left: 8px; top: 42px; width: 260px; height: 404px;"><div class="bs-badge-shot" style="position: relative; width: 260px; height: 404px; background: #ffffff; overflow: hidden;">
     <div style="position: absolute; left: 50%; top: 50%; width: 216px; height: 336px; transform: translate(-50%, -50%) scale(1.202813); transform-origin: center center; filter: drop-shadow(0 12.124352331606216px 18.860103626943005px rgb(15 23 42 / 0.22));"><div style="position: relative; width: 216px; height: 336px; border-radius: 12px; overflow: hidden; background-color: #000000; text-align: center; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
     <div style="position: absolute; top: 16px; left: 0; right: 0; width: 56px; height: 8px; margin: 0 auto; border-radius: 9999px; background-color: white;"></div>
@@ -758,7 +759,7 @@ site header, original file"></a><figcaption>site-logo-original.png<br>site heade
   <div class="bs-frame"></div>
 </div>
 <div class="bs-cell selectable" data-letter="K" style="left: 1856px; top: 1860px; width: 434px; height: 454px;">
-  <div class="bs-label" style="background: #1B5E20;">K   #EC201C one-off: one-off #EC201C   digit 4.79:1 ok</div>
+  <div class="bs-label" style="background: #1B5E20;"><span class="bs-letter">K</span>#EC201C one-off: one-off #EC201C   digit 4.79:1 ok</div>
   <div class="bs-tile" style="left: 8px; top: 42px; width: 260px; height: 404px;"><div class="bs-badge-shot" style="position: relative; width: 260px; height: 404px; background: #ffffff; overflow: hidden;">
     <div style="position: absolute; left: 50%; top: 50%; width: 216px; height: 336px; transform: translate(-50%, -50%) scale(1.202813); transform-origin: center center; filter: drop-shadow(0 12.124352331606216px 18.860103626943005px rgb(15 23 42 / 0.22));"><div style="position: relative; width: 216px; height: 336px; border-radius: 12px; overflow: hidden; background-color: #ABD1C2; text-align: center; color: #000000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
     <div style="position: absolute; top: 16px; left: 0; right: 0; width: 56px; height: 8px; margin: 0 auto; border-radius: 9999px; background-color: white;"></div>
@@ -794,7 +795,7 @@ site header, original file"></a><figcaption>site-logo-original.png<br>site heade
   <div class="bs-frame"></div>
 </div>
 <div class="bs-cell selectable" data-letter="L" style="left: 2290px; top: 2314px; width: 434px; height: 454px;">
-  <div class="bs-label" style="background: #1B5E20;">L   #000000 one-off: one-off #000000   digit 21:1 ok   upload 13 KB</div>
+  <div class="bs-label" style="background: #1B5E20;"><span class="bs-letter">L</span>#000000 one-off: one-off #000000   digit 21:1 ok   upload 13 KB</div>
   <div class="bs-tile" style="left: 8px; top: 42px; width: 260px; height: 404px;"><div class="bs-badge-shot" style="position: relative; width: 260px; height: 404px; background: #ffffff; overflow: hidden;">
     <div style="position: absolute; left: 50%; top: 50%; width: 216px; height: 336px; transform: translate(-50%, -50%) scale(1.202813); transform-origin: center center; filter: drop-shadow(0 12.124352331606216px 18.860103626943005px rgb(15 23 42 / 0.22));"><div style="position: relative; width: 216px; height: 336px; border-radius: 12px; overflow: hidden; background-color: #EC201C; text-align: center; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
     <div style="position: absolute; top: 16px; left: 0; right: 0; width: 56px; height: 8px; margin: 0 auto; border-radius: 9999px; background-color: white;"></div>
@@ -830,7 +831,7 @@ site header, original file"></a><figcaption>site-logo-original.png<br>site heade
   <div class="bs-frame"></div>
 </div>
 <div class="bs-cell selectable" data-letter="M" style="left: 120px; top: 2768px; width: 434px; height: 454px;">
-  <div class="bs-label" style="background: #B71C1C;">M   #ABD1C2 Fable&#39;s pick   digit 1.66:1 LOW, use black digit   upload 1235 KB</div>
+  <div class="bs-label" style="background: #B71C1C;"><span class="bs-letter">M</span>#ABD1C2 Fable&#39;s pick   digit 1.66:1 LOW, use black digit   upload 1235 KB</div>
   <div class="bs-tile" style="left: 8px; top: 42px; width: 260px; height: 404px;"><div class="bs-badge-shot" style="position: relative; width: 260px; height: 404px; background: #ffffff; overflow: hidden;">
     <div style="position: absolute; left: 50%; top: 50%; width: 216px; height: 336px; transform: translate(-50%, -50%) scale(1.202813); transform-origin: center center; filter: drop-shadow(0 12.124352331606216px 18.860103626943005px rgb(15 23 42 / 0.22));"><div style="position: relative; width: 216px; height: 336px; border-radius: 12px; overflow: hidden; background-color: #2E4A3A; text-align: center; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
     <div style="position: absolute; top: 16px; left: 0; right: 0; width: 56px; height: 8px; margin: 0 auto; border-radius: 9999px; background-color: white;"></div>
@@ -866,7 +867,7 @@ site header, original file"></a><figcaption>site-logo-original.png<br>site heade
   <div class="bs-frame"></div>
 </div>
 <div class="bs-cell selectable" data-letter="N" style="left: 2724px; top: 3222px; width: 434px; height: 454px;">
-  <div class="bs-label" style="background: #1B5E20;">N   #2E4A3A one-off: one-off #2E4A3A   digit 9.74:1 ok   upload 13 KB</div>
+  <div class="bs-label" style="background: #1B5E20;"><span class="bs-letter">N</span>#2E4A3A one-off: one-off #2E4A3A   digit 9.74:1 ok   upload 13 KB</div>
   <div class="bs-tile" style="left: 8px; top: 42px; width: 260px; height: 404px;"><div class="bs-badge-shot" style="position: relative; width: 260px; height: 404px; background: #ffffff; overflow: hidden;">
     <div style="position: absolute; left: 50%; top: 50%; width: 216px; height: 336px; transform: translate(-50%, -50%) scale(1.202813); transform-origin: center center; filter: drop-shadow(0 12.124352331606216px 18.860103626943005px rgb(15 23 42 / 0.22));"><div style="position: relative; width: 216px; height: 336px; border-radius: 12px; overflow: hidden; background-color: #EC201C; text-align: center; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
     <div style="position: absolute; top: 16px; left: 0; right: 0; width: 56px; height: 8px; margin: 0 auto; border-radius: 9999px; background-color: white;"></div>
@@ -902,7 +903,7 @@ site header, original file"></a><figcaption>site-logo-original.png<br>site heade
   <div class="bs-frame"></div>
 </div>
 <div class="bs-cell selectable" data-letter="O" style="left: 120px; top: 3676px; width: 434px; height: 454px;">
-  <div class="bs-label" style="background: #B71C1C;">O   #ABD1C2 Fable&#39;s pick   digit 1.66:1 LOW, use black digit   upload 1233 KB</div>
+  <div class="bs-label" style="background: #B71C1C;"><span class="bs-letter">O</span>#ABD1C2 Fable&#39;s pick   digit 1.66:1 LOW, use black digit   upload 1233 KB</div>
   <div class="bs-tile" style="left: 8px; top: 42px; width: 260px; height: 404px;"><div class="bs-badge-shot" style="position: relative; width: 260px; height: 404px; background: #ffffff; overflow: hidden;">
     <div style="position: absolute; left: 50%; top: 50%; width: 216px; height: 336px; transform: translate(-50%, -50%) scale(1.202813); transform-origin: center center; filter: drop-shadow(0 12.124352331606216px 18.860103626943005px rgb(15 23 42 / 0.22));"><div style="position: relative; width: 216px; height: 336px; border-radius: 12px; overflow: hidden; background-color: #EC201C; text-align: center; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
     <div style="position: absolute; top: 16px; left: 0; right: 0; width: 56px; height: 8px; margin: 0 auto; border-radius: 9999px; background-color: white;"></div>
@@ -938,7 +939,7 @@ site header, original file"></a><figcaption>site-logo-original.png<br>site heade
   <div class="bs-frame"></div>
 </div>
 <div class="bs-cell selectable" data-letter="P" style="left: 3158px; top: 4130px; width: 434px; height: 454px;">
-  <div class="bs-label" style="background: #B71C1C;">P   #7AB69E one-off: one-off #7AB69E   digit 2.33:1 LOW, use black digit   upload 13 KB</div>
+  <div class="bs-label" style="background: #B71C1C;"><span class="bs-letter">P</span>#7AB69E one-off: one-off #7AB69E   digit 2.33:1 LOW, use black digit   upload 13 KB</div>
   <div class="bs-tile" style="left: 8px; top: 42px; width: 260px; height: 404px;"><div class="bs-badge-shot" style="position: relative; width: 260px; height: 404px; background: #ffffff; overflow: hidden;">
     <div style="position: absolute; left: 50%; top: 50%; width: 216px; height: 336px; transform: translate(-50%, -50%) scale(1.202813); transform-origin: center center; filter: drop-shadow(0 12.124352331606216px 18.860103626943005px rgb(15 23 42 / 0.22));"><div style="position: relative; width: 216px; height: 336px; border-radius: 12px; overflow: hidden; background-color: #EC201C; text-align: center; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
     <div style="position: absolute; top: 16px; left: 0; right: 0; width: 56px; height: 8px; margin: 0 auto; border-radius: 9999px; background-color: white;"></div>
@@ -974,7 +975,7 @@ site header, original file"></a><figcaption>site-logo-original.png<br>site heade
   <div class="bs-frame"></div>
 </div>
 <div class="bs-cell selectable" data-letter="Q" style="left: 120px; top: 4584px; width: 434px; height: 454px;">
-  <div class="bs-label" style="background: #B71C1C;">Q   #ABD1C2 Fable&#39;s pick   digit 1.66:1 LOW, use black digit   upload 13 KB</div>
+  <div class="bs-label" style="background: #B71C1C;"><span class="bs-letter">Q</span>#ABD1C2 Fable&#39;s pick   digit 1.66:1 LOW, use black digit   upload 13 KB</div>
   <div class="bs-tile" style="left: 8px; top: 42px; width: 260px; height: 404px;"><div class="bs-badge-shot" style="position: relative; width: 260px; height: 404px; background: #ffffff; overflow: hidden;">
     <div style="position: absolute; left: 50%; top: 50%; width: 216px; height: 336px; transform: translate(-50%, -50%) scale(1.202813); transform-origin: center center; filter: drop-shadow(0 12.124352331606216px 18.860103626943005px rgb(15 23 42 / 0.22));"><div style="position: relative; width: 216px; height: 336px; border-radius: 12px; overflow: hidden; background-color: #9E0D03; text-align: center; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
     <div style="position: absolute; top: 16px; left: 0; right: 0; width: 56px; height: 8px; margin: 0 auto; border-radius: 9999px; background-color: white;"></div>
@@ -1010,7 +1011,7 @@ site header, original file"></a><figcaption>site-logo-original.png<br>site heade
   <div class="bs-frame"></div>
 </div>
 <div class="bs-cell selectable" data-letter="R" style="left: 3592px; top: 5038px; width: 434px; height: 454px;">
-  <div class="bs-label" style="background: #1B5E20;">R   #9E0D03 one-off: one-off #9E0D03   digit 8.36:1 ok   upload 13 KB</div>
+  <div class="bs-label" style="background: #1B5E20;"><span class="bs-letter">R</span>#9E0D03 one-off: one-off #9E0D03   digit 8.36:1 ok   upload 13 KB</div>
   <div class="bs-tile" style="left: 8px; top: 42px; width: 260px; height: 404px;"><div class="bs-badge-shot" style="position: relative; width: 260px; height: 404px; background: #ffffff; overflow: hidden;">
     <div style="position: absolute; left: 50%; top: 50%; width: 216px; height: 336px; transform: translate(-50%, -50%) scale(1.202813); transform-origin: center center; filter: drop-shadow(0 12.124352331606216px 18.860103626943005px rgb(15 23 42 / 0.22));"><div style="position: relative; width: 216px; height: 336px; border-radius: 12px; overflow: hidden; background-color: #333333; text-align: center; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
     <div style="position: absolute; top: 16px; left: 0; right: 0; width: 56px; height: 8px; margin: 0 auto; border-radius: 9999px; background-color: white;"></div>
@@ -1046,7 +1047,7 @@ site header, original file"></a><figcaption>site-logo-original.png<br>site heade
   <div class="bs-frame"></div>
 </div>
 <div class="bs-cell selectable" data-letter="S" style="left: 120px; top: 5492px; width: 434px; height: 454px;">
-  <div class="bs-label" style="background: #B71C1C;">S   #ABD1C2 Fable&#39;s pick   digit 1.66:1 LOW, use black digit   upload 1233 KB</div>
+  <div class="bs-label" style="background: #B71C1C;"><span class="bs-letter">S</span>#ABD1C2 Fable&#39;s pick   digit 1.66:1 LOW, use black digit   upload 1233 KB</div>
   <div class="bs-tile" style="left: 8px; top: 42px; width: 260px; height: 404px;"><div class="bs-badge-shot" style="position: relative; width: 260px; height: 404px; background: #ffffff; overflow: hidden;">
     <div style="position: absolute; left: 50%; top: 50%; width: 216px; height: 336px; transform: translate(-50%, -50%) scale(1.202813); transform-origin: center center; filter: drop-shadow(0 12.124352331606216px 18.860103626943005px rgb(15 23 42 / 0.22));"><div style="position: relative; width: 216px; height: 336px; border-radius: 12px; overflow: hidden; background-color: #9E0D03; text-align: center; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
     <div style="position: absolute; top: 16px; left: 0; right: 0; width: 56px; height: 8px; margin: 0 auto; border-radius: 9999px; background-color: white;"></div>
@@ -1082,7 +1083,7 @@ site header, original file"></a><figcaption>site-logo-original.png<br>site heade
   <div class="bs-frame"></div>
 </div>
 <div class="bs-cell selectable" data-letter="T" style="left: 3158px; top: 5946px; width: 434px; height: 454px;">
-  <div class="bs-label" style="background: #B71C1C;">T   #7AB69E one-off: one-off #7AB69E   digit 2.33:1 LOW, use black digit   upload 1233 KB</div>
+  <div class="bs-label" style="background: #B71C1C;"><span class="bs-letter">T</span>#7AB69E one-off: one-off #7AB69E   digit 2.33:1 LOW, use black digit   upload 1233 KB</div>
   <div class="bs-tile" style="left: 8px; top: 42px; width: 260px; height: 404px;"><div class="bs-badge-shot" style="position: relative; width: 260px; height: 404px; background: #ffffff; overflow: hidden;">
     <div style="position: absolute; left: 50%; top: 50%; width: 216px; height: 336px; transform: translate(-50%, -50%) scale(1.202813); transform-origin: center center; filter: drop-shadow(0 12.124352331606216px 18.860103626943005px rgb(15 23 42 / 0.22));"><div style="position: relative; width: 216px; height: 336px; border-radius: 12px; overflow: hidden; background-color: #EC201C; text-align: center; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
     <div style="position: absolute; top: 16px; left: 0; right: 0; width: 56px; height: 8px; margin: 0 auto; border-radius: 9999px; background-color: white;"></div>
@@ -1118,7 +1119,7 @@ site header, original file"></a><figcaption>site-logo-original.png<br>site heade
   <div class="bs-frame"></div>
 </div>
 <div class="bs-cell selectable" data-letter="U" style="left: 3158px; top: 6400px; width: 434px; height: 454px;">
-  <div class="bs-label" style="background: #B71C1C;">U   #7AB69E one-off: one-off #7AB69E   digit 2.33:1 LOW, use black digit   upload 1235 KB</div>
+  <div class="bs-label" style="background: #B71C1C;"><span class="bs-letter">U</span>#7AB69E one-off: one-off #7AB69E   digit 2.33:1 LOW, use black digit   upload 1235 KB</div>
   <div class="bs-tile" style="left: 8px; top: 42px; width: 260px; height: 404px;"><div class="bs-badge-shot" style="position: relative; width: 260px; height: 404px; background: #ffffff; overflow: hidden;">
     <div style="position: absolute; left: 50%; top: 50%; width: 216px; height: 336px; transform: translate(-50%, -50%) scale(1.202813); transform-origin: center center; filter: drop-shadow(0 12.124352331606216px 18.860103626943005px rgb(15 23 42 / 0.22));"><div style="position: relative; width: 216px; height: 336px; border-radius: 12px; overflow: hidden; background-color: #EC201C; text-align: center; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
     <div style="position: absolute; top: 16px; left: 0; right: 0; width: 56px; height: 8px; margin: 0 auto; border-radius: 9999px; background-color: white;"></div>
