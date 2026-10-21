@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T18:37:38.322Z",
+  "generated_at": "2026-10-21T19:13:43.314Z",
   "count": 73,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -160,12 +160,12 @@
       "city": "Cedar Crest",
       "state": "NM",
       "requested_at": "2026-10-20T16:12:14.887Z",
-      "updated_at": "2026-10-21T15:54:14.320Z",
+      "updated_at": "2026-10-21T19:13:36.593Z",
       "cursor": "signage",
       "status": "applied",
       "status_label": "Branding applied",
       "recommended_letter": "AE",
-      "picked_letter": "AG",
+      "picked_letter": "AY",
       "review_url": "/trail-rider-cedar-crest/",
       "figma_url": null,
       "signage_direct": "built",
@@ -177,7 +177,7 @@
           true
         ],
         [
-          "Branding pick: AG",
+          "Branding pick: AY",
           true
         ],
         [
@@ -206,28 +206,27 @@
         ],
         [
           "Store details confirmed",
-          false
+          true
         ]
       ],
       "needs_you": [
-        "approve the signage (print files in Drive)",
-        "confirm store details (ship-to, quantities)"
+        "approve the signage (print files in Drive)"
       ],
       "gaps": [
         "ship-to missing"
       ],
       "hold": null,
       "done": false,
-      "note": "Branding complete (store details pending); signage approved, print files in Drive; Slack post not sent (slack-tools config missing); vendor email blocked on empty ship-to; 6 links written with readback (website, Order Online, menu kept inactive since Order Online is active, catering, jobs, events).",
+      "note": null,
       "progress": {
-        "stage": "closeout-finish",
-        "last_step": "branding complete, print files and summary row in Drive, status set",
-        "next_step": "Slack post, ship-to, then vendor email",
+        "stage": "closeout",
+        "last_step": "customer lockup branding written (AY)",
+        "next_step": "proofs and signage PDFs",
         "blocked_on": "ship-to address missing; Slack config missing on this machine",
-        "by": "closeout-finish",
-        "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-21T15:53:01.471Z",
-        "bundle_pushed_at": "2026-10-21T15:53:01.806Z"
+        "by": "trail-rider-swap",
+        "host": "MacBook-Pro-2.local",
+        "updated_at": "2026-10-21T19:10:22.120Z",
+        "bundle_pushed_at": "2026-10-21T19:10:22.357Z"
       },
       "review_status": {
         "status": "waiting",
@@ -235,9 +234,9 @@
         "ease": 3,
         "updated_at": "2026-10-21T15:52:57.889Z"
       },
-      "page_bytes": 20638112,
-      "blob_bytes": 14580529,
-      "blob_assets": 36
+      "page_bytes": 20658189,
+      "blob_bytes": 4164034,
+      "blob_assets": 7
     },
     {
       "slug": "il-capo",
