@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T15:17:51.305Z",
+  "generated_at": "2026-10-21T15:23:03.579Z",
   "count": 73,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -10,7 +10,7 @@
       "city": "Charlotte",
       "state": "NC",
       "requested_at": "2026-10-20T21:23:09.831Z",
-      "updated_at": "2026-10-21T14:55:25.766Z",
+      "updated_at": "2026-10-21T15:22:47.058Z",
       "cursor": "overrides",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -26,10 +26,10 @@
       "gaps": null,
       "hold": null,
       "done": null,
-      "note": "Fable default F (red serif Lulu's Express wordmark on black, logo-red band); no existing branding on this or any sibling account. Taste pass (fable) added W, X; Y (white script on site red) built by hand from the refused p1; S-V are the bold script words-only option.",
+      "note": "Pick a letter: Fable default F (red serif Lulu's Express wordmark on black, logo-red band); S-V and Y are the bold script option; no existing branding here or on any sibling account. Taste pass (fable) added W, X; Y built by hand from its refused p1. Links: 7 ready, gift cards need one live read.",
       "progress": null,
       "review_status": null,
-      "page_bytes": 10589927,
+      "page_bytes": 10591090,
       "blob_bytes": 6959925,
       "blob_assets": 26
     },
