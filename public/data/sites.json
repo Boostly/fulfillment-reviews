@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-21T15:11:18.068Z",
-  "count": 71,
+  "generated_at": "2026-10-21T15:12:49.068Z",
+  "count": 72,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -62,6 +62,36 @@
       "page_bytes": 5128585,
       "blob_bytes": 12910455,
       "blob_assets": 32
+    },
+    {
+      "slug": "cooper-s-bar-grill-arlington",
+      "name": "Cooper's Bar & Grill (Arlington)",
+      "account": "Cooper's Bar & Grill",
+      "city": "Arlington",
+      "state": "TX",
+      "requested_at": "2026-10-20T17:32:53.573Z",
+      "updated_at": "2026-10-21T15:11:12.096Z",
+      "cursor": "overrides",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "J",
+      "picked_letter": null,
+      "review_url": "/cooper-s-bar-grill-arlington/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": null,
+      "steps": null,
+      "needs_you": null,
+      "gaps": null,
+      "hold": null,
+      "done": null,
+      "note": "Fable default J (full tap-handle badge on the site's near-black green, amber band); A-E and P-S are the bold COOPER'S words-only cut for tap-card legibility. Taste pass (fable) added P, Q, R, S, T. Links: 5 ready (SkyTab order, Instagram, Facebook, menu PDF, events), 2 held (reservations URL, TikTok). No existing branding on this or any other Cooper's account.",
+      "progress": null,
+      "review_status": null,
+      "page_bytes": 8413965,
+      "blob_bytes": 10838040,
+      "blob_assets": 29
     },
     {
       "slug": "brown-s-chicken-elk-grove-village",
