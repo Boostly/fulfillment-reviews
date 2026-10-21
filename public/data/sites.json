@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T14:59:47.040Z",
+  "generated_at": "2026-10-21T15:11:18.068Z",
   "count": 71,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -267,29 +267,77 @@
       "account": "Five Star Pizza (Clearwater)",
       "city": "Clearwater",
       "state": "FL",
-      "requested_at": "2026-10-15T20:02:31.197Z",
-      "updated_at": "2026-10-19T20:42:20.854Z",
-      "cursor": "links",
+      "requested_at": "2026-10-15T20:02:31.197",
+      "updated_at": "2026-10-21T15:07:46.424Z",
+      "cursor": "write",
       "status": "awaiting",
       "status_label": "Awaiting pick",
-      "recommended_letter": "A",
+      "recommended_letter": "F",
       "picked_letter": null,
       "review_url": "/five-star-pizza-clearwater/",
       "figma_url": null,
       "signage_direct": null,
       "print_handoff_url": null,
-      "boostly_status": null,
-      "steps": null,
-      "needs_you": null,
-      "gaps": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick (Fable default F)",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (3 ready, 0 need a call)",
+          false
+        ],
+        [
+          "Signage built",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [
+        "pick a letter"
+      ],
+      "gaps": [],
       "hold": null,
-      "done": null,
-      "note": "Existing live branding (badge on #0A5294 navy, #E11F28 red); fresh proposal matches it with a crisp vector rebuild of the 227px site badge, sheet held for acceptance of the small-source trace (Fable's card is E, badge on navy, red band; words-only I-L for tap-card legibility). Taste pass (fable) added M, N, O, P (knockout on red, navy band; words only on red, navy band; full badge on red, logo-navy band; full badge on logo navy, red band).",
-      "progress": null,
+      "done": false,
+      "note": "Fable default F (chain badge on red #E2181E, navy band); U is the Ocala SE/NE live red/navy precedent; live account row is the old July spike (blue, 417px logo) and the closeout overwrites it. Taste pass (fable) added V, W, X, Y (full color on navy card, red band (site footer ground); white open knockout on navy card, red band; white stars and words, no ring, on red card, navy band; white stars and words, no ring, on navy card, red band). Links: website, Order Online (weborder store 3477) and Careers ready; discovery browser pass failed (validator exit 2), rerun after the website write. Quantities 4 tables / 30 tap cards vs call 6 / 10, CSM DM drafted.",
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "taste pass",
+        "next_step": "review canvas and link discovery",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "MacBook-Pro-2.local",
+        "updated_at": "2026-10-21T15:07:16.314Z",
+        "bundle_pushed_at": "2026-10-21T15:07:16.681Z"
+      },
       "review_status": null,
-      "page_bytes": 6983510,
-      "blob_bytes": 5681436,
-      "blob_assets": 25
+      "page_bytes": 10640569,
+      "blob_bytes": 6721059,
+      "blob_assets": 30
     },
     {
       "slug": "shawarma-inn-chicago",
