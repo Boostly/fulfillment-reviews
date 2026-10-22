@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T16:05:20.310Z",
+  "generated_at": "2026-10-22T16:13:29.826Z",
   "count": 73,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -91,7 +91,7 @@
       "city": "Provo",
       "state": "UT",
       "requested_at": "2026-10-20T20:47:14.084Z",
-      "updated_at": "2026-10-22T15:57:49.481Z",
+      "updated_at": "2026-10-22T16:11:22.258Z",
       "cursor": "signage",
       "status": "applied",
       "status_label": "Branding applied",
@@ -153,7 +153,7 @@
         "by": "closeout-location",
         "host": "Karissas-MacBook-Pro.local",
         "updated_at": "2026-10-22T15:42:05.932Z",
-        "bundle_pushed_at": "2026-10-22T15:52:12.648Z"
+        "bundle_pushed_at": "2026-10-22T15:58:50.211Z"
       },
       "review_status": {
         "status": "waiting",
@@ -161,7 +161,7 @@
         "ease": null,
         "updated_at": "2026-10-22T15:42:05.871Z"
       },
-      "page_bytes": 5164961,
+      "page_bytes": 5165114,
       "blob_bytes": 14135922,
       "blob_assets": 33
     },
@@ -232,7 +232,7 @@
       "city": "Elk Grove Village",
       "state": "IL",
       "requested_at": "2026-10-20T16:33:42.105Z",
-      "updated_at": "2026-10-22T15:58:52.291Z",
+      "updated_at": "2026-10-22T16:12:32.196Z",
       "cursor": "slack",
       "status": "closed",
       "status_label": "Closed out",
@@ -242,60 +242,14 @@
       "figma_url": null,
       "signage_direct": "built",
       "print_handoff_url": "https://drive.google.com/drive/folders/1x4l1E3mFg1tXiYb_9WBz73djDj9O1x_o",
-      "boostly_status": "digital_fulfillment",
-      "steps": [
-        [
-          "Review sheet ready",
-          true
-        ],
-        [
-          "Branding pick: J",
-          true
-        ],
-        [
-          "Branding applied in prod",
-          true
-        ],
-        [
-          "Links written (0 ready, 0 need a call)",
-          false
-        ],
-        [
-          "Signage built (direct PDF)",
-          true
-        ],
-        [
-          "Signage approved by you",
-          true
-        ],
-        [
-          "Slack result posted",
-          true
-        ],
-        [
-          "Status posted to the review site",
-          true
-        ],
-        [
-          "Store details confirmed",
-          true
-        ]
-      ],
-      "needs_you": [],
-      "gaps": [],
+      "boostly_status": null,
+      "steps": null,
+      "needs_you": null,
+      "gaps": null,
       "hold": null,
-      "done": false,
+      "done": null,
       "note": "Done: J is live, signage approved, Slack posted, branding complete, print files and vendor email sent; links still being written, offer text on the request reads TBD (print files use Get 20% Off)",
-      "progress": {
-        "stage": "closeout-finish",
-        "last_step": "signage approved",
-        "next_step": "Slack, print hand-off, branding complete",
-        "blocked_on": null,
-        "by": "closeout-finish",
-        "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-22T15:58:22.833Z",
-        "bundle_pushed_at": "2026-10-22T15:58:23.339Z"
-      },
+      "progress": null,
       "review_status": {
         "status": "waiting",
         "waiting_on": "link writes; offer text on request reads TBD",
