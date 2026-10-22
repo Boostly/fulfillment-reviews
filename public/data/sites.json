@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T22:16:56.696Z",
+  "generated_at": "2026-10-22T22:28:24.175Z",
   "count": 80,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -836,10 +836,10 @@
       "city": "Scottsdale",
       "state": "AZ",
       "requested_at": "2026-10-19T18:04:29.724Z",
-      "updated_at": "2026-10-22T21:21:00.184Z",
-      "cursor": "signage",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "updated_at": "2026-10-22T22:25:48.410Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "A",
       "picked_letter": "G",
       "review_url": "/il-capo/",
@@ -870,11 +870,11 @@
         ],
         [
           "Signage approved by you",
-          false
+          true
         ],
         [
           "Slack result posted",
-          false
+          true
         ],
         [
           "Status posted to the review site",
@@ -885,13 +885,11 @@
           false
         ]
       ],
-      "needs_you": [
-        "approve the signage (print files in Drive)"
-      ],
+      "needs_you": [],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Branding G written, signage PDFs in Drive, waiting for your review",
+      "note": "Done: G is live, signage approved, Slack posted, print files sent to vendor, branding complete; 2 links held for your call (TikTok, Events).",
       "progress": {
         "stage": "closeout",
         "last_step": "signage PDFs rendered",
@@ -900,15 +898,15 @@
         "by": "closeout-location",
         "host": "Unknown.domain",
         "updated_at": "2026-10-22T21:20:46.682Z",
-        "bundle_pushed_at": "2026-10-22T21:20:48.056Z"
+        "bundle_pushed_at": "2026-10-22T21:21:12.987Z"
       },
       "review_status": {
         "status": "waiting",
-        "waiting_on": "signage approval",
-        "ease": null,
-        "updated_at": "2026-10-22T21:20:46.642Z"
+        "waiting_on": "TikTok and Events links held",
+        "ease": 3,
+        "updated_at": "2026-10-22T22:27:38.615Z"
       },
-      "page_bytes": 8764910,
+      "page_bytes": 8765053,
       "blob_bytes": 18631431,
       "blob_assets": 21
     },
