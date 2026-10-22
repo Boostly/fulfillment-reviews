@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T22:47:08.593Z",
+  "generated_at": "2026-10-22T22:49:05.439Z",
   "count": 80,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -1410,78 +1410,29 @@
       "city": "Ocean City",
       "state": "MD",
       "requested_at": "2026-10-14T19:07:46.99",
-      "updated_at": "2026-10-22T20:59:08.443Z",
-      "cursor": "signage",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "updated_at": "2026-10-22T22:45:46.716Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "B",
       "picked_letter": "F",
       "review_url": "/surfin-betty-s-burger-bar-downtown/",
       "figma_url": "https://www.figma.com/design/5LsXaingsVCdMuJhWzR0g3/In-Store-Fulfillment-9?node-id=12-3",
       "signage_direct": "built",
       "print_handoff_url": "https://drive.google.com/drive/folders/1psauf2kbnxfl-BS4QSIKTmOLrfC2wnuf",
-      "boostly_status": "digital_fulfillment",
-      "steps": [
-        [
-          "Review sheet ready",
-          true
-        ],
-        [
-          "Branding pick: F",
-          true
-        ],
-        [
-          "Branding applied in prod",
-          true
-        ],
-        [
-          "Links written (3 ready, 1 need a call)",
-          false
-        ],
-        [
-          "Signage built (direct PDF)",
-          true
-        ],
-        [
-          "Signage approved by you",
-          false
-        ],
-        [
-          "Slack result posted",
-          false
-        ],
-        [
-          "Status posted to the review site",
-          true
-        ],
-        [
-          "Store details confirmed",
-          true
-        ]
-      ],
-      "needs_you": [
-        "approve the signage (Figma)",
-        "1 link decision(s)"
-      ],
-      "gaps": [],
-      "hold": "QUANTITIES DECIDED 2026-10-22 (Travisse): Downtown prints 15 tables, 6 stalls, 30 tap cards",
-      "done": false,
-      "note": "Signage PDFs re-rendered at 15 tables (your 10/22 call), in Drive waiting for your review.",
-      "progress": {
-        "stage": "closeout",
-        "last_step": "signage PDFs rendered at 15 tables",
-        "next_step": "closeout-finish after approval",
-        "blocked_on": "signage approval",
-        "by": "closeout-location",
-        "host": "Unknown.domain",
-        "updated_at": "2026-10-22T20:58:45.507Z",
-        "bundle_pushed_at": "2026-10-22T20:58:53.509Z"
-      },
+      "boostly_status": null,
+      "steps": null,
+      "needs_you": null,
+      "gaps": null,
+      "hold": null,
+      "done": null,
+      "note": "Done: F is live, direct-PDF signage approved in Drive, Slack result posted, secondary logo backfilled, print files sent to customstickers.com (6 vector PDFs, vendor email sent), branding complete (request now in physical fulfillment), store details already confirmed 10/14. Quantities decided 2026-10-22: 15 tables / 6 stalls / 30 tap cards for this location (Downtown; Bethany and Uptown have their own quantities and their own closeouts still pending). Flag: the Slack post split into two message entries in the thread because the note text exceeded Slack's single-message length limit; both carry the two images; not a second deliberate post.",
+      "progress": null,
       "review_status": {
-        "status": "waiting",
-        "waiting_on": "signage approval",
-        "ease": null,
-        "updated_at": "2026-10-22T20:58:45.471Z"
+        "status": "done",
+        "waiting_on": null,
+        "ease": 4,
+        "updated_at": "2026-10-22T22:48:12.284Z"
       },
       "page_bytes": 3376131,
       "blob_bytes": 16550373,
