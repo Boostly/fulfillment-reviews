@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T18:55:35.373Z",
+  "generated_at": "2026-10-22T18:57:43.690Z",
   "count": 76,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -10,8 +10,8 @@
       "city": "Pooler",
       "state": "GA",
       "requested_at": "2026-10-22T14:19:38.226",
-      "updated_at": "2026-10-22T18:55:12.641Z",
-      "cursor": "variants",
+      "updated_at": "2026-10-22T18:57:39.741Z",
+      "cursor": "links",
       "status": "awaiting",
       "status_label": "Awaiting pick",
       "recommended_letter": "P",
@@ -65,19 +65,19 @@
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Fulfill running: lead run for the one-brand NaaN Appetit account (Pooler, Nexton, Northwoods); pick here writes at account scope so both siblings inherit.",
+      "note": "Pick a letter: default P (dark ground, coral), Fable's navy card is A. Lead run for the one-brand NaaN Appetit account; the pick writes at account scope at closeout so Nexton and Northwoods inherit. Mark carries the APPETIT descriptor; store-neutral cut was refused by the sheet gate, decide before the account write. Taste pass (fable) added V, W; W is a light ground, escalate before a pick. Links: catering and reservations ready; no working ordering link on the site (empty SpotHopper spot_id). Tap cards 10 vs 30 on the call.",
       "progress": {
         "stage": "fulfill",
-        "last_step": "variant sheet",
-        "next_step": "taste pass",
+        "last_step": "taste pass",
+        "next_step": "review canvas and link discovery",
         "blocked_on": null,
         "by": "fulfill-location",
         "host": "Unknown.domain",
-        "updated_at": "2026-10-22T18:52:28.319Z",
-        "bundle_pushed_at": "2026-10-22T18:52:29.226Z"
+        "updated_at": "2026-10-22T18:54:50.041Z",
+        "bundle_pushed_at": "2026-10-22T18:55:27.468Z"
       },
       "review_status": null,
-      "page_bytes": 9098523,
+      "page_bytes": 9099410,
       "blob_bytes": 8441685,
       "blob_assets": 33
     },
