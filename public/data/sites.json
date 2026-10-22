@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T23:40:33.757Z",
+  "generated_at": "2026-10-22T23:44:08.732Z",
   "count": 80,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -1198,10 +1198,10 @@
       "city": "OCEAN CITY",
       "state": "MD",
       "requested_at": "2026-10-14T19:07:47.398",
-      "updated_at": "2026-10-22T22:41:00.211Z",
-      "cursor": "signage",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "updated_at": "2026-10-22T23:16:01.218Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "B",
       "picked_letter": "F",
       "review_url": "/surfin-betty-s-burger-bar-uptown-ocean-city-127th/",
@@ -1232,11 +1232,11 @@
         ],
         [
           "Signage approved by you",
-          false
+          true
         ],
         [
           "Slack result posted",
-          false
+          true
         ],
         [
           "Status posted to the review site",
@@ -1247,30 +1247,28 @@
           true
         ]
       ],
-      "needs_you": [
-        "approve the signage (print files in Drive)"
-      ],
+      "needs_you": [],
       "gaps": [],
-      "hold": "QUANTITY MISMATCH OPEN 2026-10-22 (closeout-location): live items 45 tables, signage built at 14",
-      "done": false,
-      "note": "Signage PDFs rendered at 14 tables (inherits Downtown's F), waiting for your review; live table items still say 45.",
+      "hold": "QUANTITY MISMATCH, COUNT DECIDED 2026-10-22, LIVE ITEMS STILL UNRESOLVED (closeout-finish)",
+      "done": true,
+      "note": "Done: inherited pick F is live (account scope, from Downtown), signage approved at 14 tables / 6 stalls, Slack posted, branding complete (now in physical fulfillment), store details already confirmed 10/14. Secondary logo already at account scope, inherited, no write here. Open for you: the live fulfillment table items still read 45 (account total); boostly-links has no quantity-edit command, so this run did not change them (Downtown used a bespoke replay script outside the CLI for the same fix). The vendor email and print order summary row stay held (HOLD.md) until the live items are corrected to 14 or you say ship as is. Gift cards link still held for your call.",
       "progress": {
-        "stage": "closeout",
-        "last_step": "signage PDFs rendered",
-        "next_step": "closeout-finish after approval",
-        "blocked_on": "signage approval",
-        "by": "closeout-location",
+        "stage": "closeout-finish",
+        "last_step": "signage approved",
+        "next_step": "quantity CLI gap, secondary logo check, Slack, print hand-off, branding complete",
+        "blocked_on": null,
+        "by": "closeout-finish",
         "host": "Unknown.domain",
-        "updated_at": "2026-10-22T22:40:48.528Z",
-        "bundle_pushed_at": "2026-10-22T22:40:50.867Z"
+        "updated_at": "2026-10-22T22:56:10.809Z",
+        "bundle_pushed_at": "2026-10-22T22:56:16.727Z"
       },
       "review_status": {
         "status": "waiting",
-        "waiting_on": "signage approval",
-        "ease": null,
-        "updated_at": "2026-10-22T22:40:48.481Z"
+        "waiting_on": "table count: live items 45 vs built 14 (vendor email/summary row held)",
+        "ease": 3,
+        "updated_at": "2026-10-22T23:36:25.596Z"
       },
-      "page_bytes": 3366132,
+      "page_bytes": 3366315,
       "blob_bytes": 11230048,
       "blob_assets": 10
     },
