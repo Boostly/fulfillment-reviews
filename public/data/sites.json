@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T22:13:31.944Z",
+  "generated_at": "2026-10-22T22:16:56.696Z",
   "count": 80,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -635,28 +635,79 @@
       "city": "Arlington",
       "state": "TX",
       "requested_at": "2026-10-20T17:32:53.573Z",
-      "updated_at": "2026-10-21T15:11:12.096Z",
-      "cursor": "overrides",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-22T22:16:38.114Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "J",
-      "picked_letter": null,
+      "picked_letter": "A",
       "review_url": "/cooper-s-bar-grill-arlington/",
       "figma_url": null,
-      "signage_direct": null,
-      "print_handoff_url": null,
-      "boostly_status": null,
-      "steps": null,
-      "needs_you": null,
-      "gaps": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/19kZR05SeBhc_dX6X4Peya5IaD39GGBKt",
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick: A",
+          true
+        ],
+        [
+          "Branding applied in prod",
+          true
+        ],
+        [
+          "Links written (0 still held)",
+          true
+        ],
+        [
+          "Signage built (direct PDF)",
+          true
+        ],
+        [
+          "Signage approved by you",
+          true
+        ],
+        [
+          "Slack result posted",
+          true
+        ],
+        [
+          "Status posted to the review site",
+          true
+        ],
+        [
+          "Store details confirmed",
+          true
+        ]
+      ],
+      "needs_you": [],
+      "gaps": [],
       "hold": null,
-      "done": null,
-      "note": "Fable default J (full tap-handle badge on the site's near-black green, amber band); A-E and P-S are the bold COOPER'S words-only cut for tap-card legibility. Taste pass (fable) added P, Q, R, S, T. Links: 5 ready (SkyTab order, Instagram, Facebook, menu PDF, events), 2 held (reservations URL, TikTok). No existing branding on this or any other Cooper's account.",
-      "progress": null,
-      "review_status": null,
-      "page_bytes": 8413965,
-      "blob_bytes": 10838040,
-      "blob_assets": 29
+      "done": true,
+      "note": "Done: A is live and signage approved, Slack posted, print hand-off emailed, branding complete; 2 links held (Reservations URL, TikTok) for your call.",
+      "progress": {
+        "stage": "closeout-finish",
+        "last_step": "signage approved",
+        "next_step": "secondary logo, Slack, branding complete",
+        "blocked_on": null,
+        "by": "closeout-finish",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-22T22:09:41.382Z",
+        "bundle_pushed_at": "2026-10-22T22:09:42.282Z"
+      },
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "held links: Reservations URL, TikTok",
+        "ease": 2,
+        "updated_at": "2026-10-22T22:16:08.925Z"
+      },
+      "page_bytes": 8044225,
+      "blob_bytes": 15933682,
+      "blob_assets": 8
     },
     {
       "slug": "brown-s-chicken-elk-grove-village",
