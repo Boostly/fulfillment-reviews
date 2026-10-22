@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T22:45:47.976Z",
+  "generated_at": "2026-10-22T22:46:00.946Z",
   "count": 80,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -10,10 +10,10 @@
       "city": "Fenton",
       "state": "MI",
       "requested_at": "2026-10-22T17:54:02.333",
-      "updated_at": "2026-10-22T19:56:39.913Z",
-      "cursor": "signage",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "updated_at": "2026-10-22T22:43:44.394Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "D",
       "picked_letter": "S",
       "review_url": "/mancino-s-of-fenton/",
@@ -44,11 +44,11 @@
         ],
         [
           "Signage approved by you",
-          false
+          true
         ],
         [
           "Slack result posted",
-          false
+          true
         ],
         [
           "Status posted to the review site",
@@ -59,30 +59,28 @@
           false
         ]
       ],
-      "needs_you": [
-        "approve the signage (print files in Drive)"
-      ],
+      "needs_you": [],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "S applied at account scope (new branding, website, Facebook and Order Online written); signage PDFs rendered in the Drive folder, waiting for your review; menu, catering and careers links held.",
+      "note": "Done: pick S is live, signage approved, Slack posted, print hand-off sent to vendor, branding complete, store details confirmed; 5 links held for your call (menu, catering, careers, tiktok, instagram).",
       "progress": {
-        "stage": "closeout",
-        "last_step": "signage PDFs rendered",
-        "next_step": "closeout-finish after approval",
-        "blocked_on": "signage approval",
-        "by": "closeout-location",
+        "stage": "closeout-finish",
+        "last_step": "signage approved",
+        "next_step": "secondary logo (already written), Slack, print hand-off, branding complete",
+        "blocked_on": null,
+        "by": "closeout-finish",
         "host": "Unknown.domain",
-        "updated_at": "2026-10-22T19:56:26.248Z",
-        "bundle_pushed_at": "2026-10-22T19:56:30.623Z"
+        "updated_at": "2026-10-22T22:42:54.882Z",
+        "bundle_pushed_at": "2026-10-22T22:43:04.143Z"
       },
       "review_status": {
         "status": "waiting",
-        "waiting_on": "signage approval",
-        "ease": null,
-        "updated_at": "2026-10-22T19:56:26.212Z"
+        "waiting_on": "held links (menu, catering, careers, tiktok, instagram)",
+        "ease": 4,
+        "updated_at": "2026-10-22T22:45:16.895Z"
       },
-      "page_bytes": 7718075,
+      "page_bytes": 7718258,
       "blob_bytes": 16021025,
       "blob_assets": 37
     },
