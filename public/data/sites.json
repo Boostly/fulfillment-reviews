@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T15:38:39.217Z",
+  "generated_at": "2026-10-22T15:38:55.487Z",
   "count": 73,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -10,7 +10,7 @@
       "city": "Charlotte",
       "state": "NC",
       "requested_at": "2026-10-20T21:23:09.831Z",
-      "updated_at": "2026-10-21T15:22:47.058Z",
+      "updated_at": "2026-10-22T15:38:37.501Z",
       "cursor": "overrides",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -20,18 +20,66 @@
       "figma_url": null,
       "signage_direct": null,
       "print_handoff_url": null,
-      "boostly_status": null,
-      "steps": null,
-      "needs_you": null,
-      "gaps": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick (Fable default F)",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (0 ready, 0 need a call)",
+          false
+        ],
+        [
+          "Signage built",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          true
+        ]
+      ],
+      "needs_you": [
+        "pick a letter"
+      ],
+      "gaps": [],
       "hold": null,
-      "done": null,
+      "done": false,
       "note": "Pick a letter: Fable default F (red serif Lulu's Express wordmark on black, logo-red band); S-V and Y are the bold script option; no existing branding here or on any sibling account. Taste pass (fable) added W, X; Y built by hand from its refused p1. Links: 7 ready, gift cards need one live read.",
-      "progress": null,
+      "progress": {
+        "stage": "review",
+        "last_step": "review canvas built, site published",
+        "next_step": "Travisse picks a letter",
+        "blocked_on": "letter pick",
+        "by": "fulfill-location",
+        "host": "Karissas-MacBook-Pro.local",
+        "updated_at": "2026-10-21T15:23:11.708Z",
+        "bundle_pushed_at": "2026-10-21T15:23:12.054Z"
+      },
       "review_status": null,
-      "page_bytes": 10591090,
-      "blob_bytes": 6959925,
-      "blob_assets": 26
+      "page_bytes": 10995181,
+      "blob_bytes": 7624140,
+      "blob_assets": 27
     },
     {
       "slug": "fat-daddy-s",
