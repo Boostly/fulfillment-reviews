@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T22:41:13.567Z",
+  "generated_at": "2026-10-22T22:45:30.379Z",
   "count": 80,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -605,28 +605,79 @@
       "city": "Dickson City",
       "state": "PA",
       "requested_at": "2026-10-20T17:41:59.501Z",
-      "updated_at": "2026-10-21T15:16:49.016Z",
-      "cursor": "overrides",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-22T22:45:19.779Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "E",
-      "picked_letter": null,
+      "picked_letter": "K",
       "review_url": "/colarusso-s-coal-fired-pizza/",
       "figma_url": null,
-      "signage_direct": null,
-      "print_handoff_url": null,
-      "boostly_status": null,
-      "steps": null,
-      "needs_you": null,
-      "gaps": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1y79SaMDTc67vQRf102drg5OhP7m4h03U",
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick: K",
+          true
+        ],
+        [
+          "Branding applied in prod",
+          true
+        ],
+        [
+          "Links written (0 still held)",
+          true
+        ],
+        [
+          "Signage built (direct PDF)",
+          true
+        ],
+        [
+          "Signage approved by you",
+          true
+        ],
+        [
+          "Slack result posted",
+          true
+        ],
+        [
+          "Status posted to the review site",
+          true
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [],
+      "gaps": [],
       "hold": null,
-      "done": null,
-      "note": "Pick a letter: Fable default E (site lockup on charcoal #1E1E1E, flame-red band); words-only COLARUSSO'S cut I-L for tap-card legibility. Taste pass (fable) added Q, R (words only, red card, charcoal band; knockout lockup, red card, charcoal band). No existing branding on this or any other Colarusso's account. Links: website (bootstrap), ordering (matches site), menu, catering, Instagram, Facebook ready; TikTok rejected; no holds. Picking E also OKs the sticker size (117 KB).",
-      "progress": null,
-      "review_status": null,
-      "page_bytes": 7871246,
-      "blob_bytes": 9074368,
-      "blob_assets": 34
+      "done": false,
+      "note": "Done: K is live, signage approved, Slack posted, print hand-off emailed, branding complete; store details confirmed; no links held, nothing waiting on you.",
+      "progress": {
+        "stage": "closeout-finish",
+        "last_step": "signage approved",
+        "next_step": "secondary logo, Slack, branding complete",
+        "blocked_on": null,
+        "by": "closeout-finish",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-22T22:42:27.815Z",
+        "bundle_pushed_at": "2026-10-22T22:42:29.226Z"
+      },
+      "review_status": {
+        "status": "done",
+        "waiting_on": null,
+        "ease": 4,
+        "updated_at": "2026-10-22T22:44:52.423Z"
+      },
+      "page_bytes": 7491703,
+      "blob_bytes": 9003726,
+      "blob_assets": 17
     },
     {
       "slug": "cooper-s-bar-grill-arlington",
