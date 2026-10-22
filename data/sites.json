@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-22T21:21:06.950Z",
-  "count": 78,
+  "generated_at": "2026-10-22T22:12:08.069Z",
+  "count": 79,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -246,6 +246,41 @@
       "page_bytes": 9099410,
       "blob_bytes": 8441685,
       "blob_assets": 33
+    },
+    {
+      "slug": "naan-at-northwoods-north-charleston",
+      "name": "Naan at Northwoods (North Charleston)",
+      "account": "NaaN Appetit",
+      "city": "North Charleston",
+      "state": "SC",
+      "requested_at": "2026-10-22T14:19:38.104",
+      "updated_at": "2026-10-22T22:10:23.786Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
+      "recommended_letter": "P",
+      "picked_letter": "E",
+      "review_url": "/naan-at-northwoods-north-charleston/",
+      "figma_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1iFmymzwDtOWx7u21D0MVI6otJN_XVRWV",
+      "boostly_status": null,
+      "steps": null,
+      "needs_you": null,
+      "gaps": null,
+      "hold": null,
+      "done": null,
+      "note": "Done: E is live (inherited from the Pooler account-scope pick), signage approved, Slack posted, print files handed to customstickers.com (vendor email sent), and branding is marked complete, so the request is in physical fulfillment. Catering and reservations links written; menu and careers stay configured but inactive. Held: the stored Instagram @naan_at_northwoods 404s, clear it or give a new handle.",
+      "progress": null,
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "Instagram link: clear @naan_at_northwoods or confirm new handle",
+        "ease": 2,
+        "updated_at": "2026-10-22T22:09:46.142Z"
+      },
+      "page_bytes": 9125026,
+      "blob_bytes": 3627748,
+      "blob_assets": 7
     },
     {
       "slug": "the-parish-webberville",
