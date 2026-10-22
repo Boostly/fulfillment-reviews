@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T19:00:13.366Z",
+  "generated_at": "2026-10-22T19:47:18.999Z",
   "count": 78,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -88,16 +88,16 @@
       "city": "Lynnwood",
       "state": "WA",
       "requested_at": "2026-10-22T16:54:41.013",
-      "updated_at": "2026-10-22T19:00:07.934Z",
-      "cursor": "variants",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-22T19:47:11.569Z",
+      "cursor": "signage",
+      "status": "applied",
+      "status_label": "Branding applied",
       "recommended_letter": "A",
-      "picked_letter": null,
+      "picked_letter": "F",
       "review_url": "/avanti-pizza-pasta/",
       "figma_url": null,
-      "signage_direct": null,
-      "print_handoff_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1ISejWtddDJWBXchuLyCDm0OWSStg6-6i",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -105,20 +105,20 @@
           true
         ],
         [
-          "Branding pick (Fable default A)",
-          false
+          "Branding pick: F",
+          true
         ],
         [
           "Branding applied in prod",
-          false
+          true
         ],
         [
-          "Links written (0 ready, 0 need a call)",
-          false
+          "Links written (0 still held)",
+          true
         ],
         [
-          "Signage built",
-          false
+          "Signage built (direct PDF)",
+          true
         ],
         [
           "Signage approved by you",
@@ -130,7 +130,7 @@
         ],
         [
           "Status posted to the review site",
-          false
+          true
         ],
         [
           "Store details confirmed",
@@ -138,26 +138,31 @@
         ]
       ],
       "needs_you": [
-        "pick a letter"
+        "approve the signage (print files in Drive)"
       ],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": null,
+      "note": "F applied with 5 links written; signage PDFs rendered in Drive, waiting for your review (ordering link held).",
       "progress": {
-        "stage": "fulfill",
-        "last_step": "variant sheet",
-        "next_step": "taste pass",
-        "blocked_on": null,
-        "by": "fulfill-location",
+        "stage": "closeout",
+        "last_step": "signage PDFs rendered",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "signage approval",
+        "by": "closeout-location",
         "host": "Unknown.domain",
-        "updated_at": "2026-10-22T18:58:20.412Z",
-        "bundle_pushed_at": "2026-10-22T18:58:20.580Z"
+        "updated_at": "2026-10-22T19:46:56.745Z",
+        "bundle_pushed_at": "2026-10-22T19:46:59.677Z"
       },
-      "review_status": null,
-      "page_bytes": 2408082,
-      "blob_bytes": 3658015,
-      "blob_assets": 38
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "signage approval",
+        "ease": null,
+        "updated_at": "2026-10-22T19:46:56.705Z"
+      },
+      "page_bytes": 2454903,
+      "blob_bytes": 8770133,
+      "blob_assets": 40
     },
     {
       "slug": "naan-appetit-pooler",
