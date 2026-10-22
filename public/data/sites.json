@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T22:54:32.227Z",
+  "generated_at": "2026-10-22T23:40:33.757Z",
   "count": 80,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -1281,10 +1281,10 @@
       "city": "Bethany Beach",
       "state": "DE",
       "requested_at": "2026-10-14T19:07:47.273",
-      "updated_at": "2026-10-22T22:40:08.559Z",
-      "cursor": "signage",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "updated_at": "2026-10-22T23:10:05.399Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "B",
       "picked_letter": "F",
       "review_url": "/surfin-betty-s-burger-bar-bethany/",
@@ -1315,11 +1315,11 @@
         ],
         [
           "Signage approved by you",
-          false
+          true
         ],
         [
           "Slack result posted",
-          false
+          true
         ],
         [
           "Status posted to the review site",
@@ -1330,30 +1330,28 @@
           true
         ]
       ],
-      "needs_you": [
-        "approve the signage (print files in Drive)"
-      ],
+      "needs_you": [],
       "gaps": [],
       "hold": null,
-      "done": false,
-      "note": "Signage PDFs rendered at 16 tables and 6 stalls with the inherited F branding, waiting for your review in Drive; live items still say 45 tables, and Toast ordering plus gift cards are held.",
+      "done": true,
+      "note": "Done: F is live (inherited from Downtown), signage approved, Slack posted, branding complete; live table item quantity still says 45 (approved print run/vendor email used 16, needs your call to reconcile the request); ordering and gift cards held.",
       "progress": {
-        "stage": "closeout",
-        "last_step": "signage PDFs rendered",
-        "next_step": "closeout-finish after approval",
-        "blocked_on": "signage approval",
-        "by": "closeout-location",
+        "stage": "closeout-finish",
+        "last_step": "signage approved",
+        "next_step": "secondary logo, Slack, branding complete",
+        "blocked_on": null,
+        "by": "closeout-finish",
         "host": "Unknown.domain",
-        "updated_at": "2026-10-22T22:39:57.509Z",
-        "bundle_pushed_at": "2026-10-22T22:39:59.822Z"
+        "updated_at": "2026-10-22T22:56:14.792Z",
+        "bundle_pushed_at": "2026-10-22T22:56:20.055Z"
       },
       "review_status": {
         "status": "waiting",
-        "waiting_on": "signage approval",
-        "ease": null,
-        "updated_at": "2026-10-22T22:39:57.473Z"
+        "waiting_on": "held links: Bethany ordering + gift cards; live request item quantity (45 tables) still doesn't match the approved 16-table print run / vendor order",
+        "ease": 4,
+        "updated_at": "2026-10-22T23:35:52.222Z"
       },
-      "page_bytes": 3367348,
+      "page_bytes": 3367539,
       "blob_bytes": 11092862,
       "blob_assets": 10
     },
