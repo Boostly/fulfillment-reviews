@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T15:38:55.487Z",
+  "generated_at": "2026-10-22T15:42:48.331Z",
   "count": 73,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -88,28 +88,79 @@
       "city": "Provo",
       "state": "UT",
       "requested_at": "2026-10-20T20:47:14.084Z",
-      "updated_at": "2026-10-21T15:17:36.035Z",
-      "cursor": "overrides",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-22T15:41:04.088Z",
+      "cursor": "signage",
+      "status": "applied",
+      "status_label": "Branding applied",
       "recommended_letter": "E",
-      "picked_letter": null,
+      "picked_letter": "E",
       "review_url": "/fat-daddy-s/",
       "figma_url": null,
-      "signage_direct": null,
+      "signage_direct": "blocked",
       "print_handoff_url": null,
-      "boostly_status": null,
-      "steps": null,
-      "needs_you": null,
-      "gaps": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick: E",
+          true
+        ],
+        [
+          "Branding applied in prod",
+          true
+        ],
+        [
+          "Links written (0 still held)",
+          true
+        ],
+        [
+          "Signage built (direct PDF)",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          true
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [],
+      "gaps": [],
       "hold": null,
-      "done": null,
-      "note": "Pick a letter: Fable default E (FD2024 lockup on black, red band) matches the branding already live since mid-2026; simple bold options I-L and Q-R; Taste pass (fable) added S, T (red card, black band). Links: 7 ready, 2 waiting (dead Order Online event link, /events unverified); offer mismatch and stall count (call says 2) need the CSM.",
-      "progress": null,
-      "review_status": null,
-      "page_bytes": 5128881,
-      "blob_bytes": 8763987,
-      "blob_assets": 31
+      "done": false,
+      "note": "E applied (red #B11E29 band, sticker logo added, website written); signage is blocked because the account has no review or bathroom QR touchpoints, 4 ready links wait on a browser check, and the offer ($10 sign vs $5 keyword) and stall count need Jordan.",
+      "progress": {
+        "stage": "closeout",
+        "last_step": "branding E applied, website written; signage render blocked",
+        "next_step": "create missing signage touchpoints, then render and Drive upload",
+        "blocked_on": "signage touchpoints (review, bathroom, to-go review)",
+        "by": "closeout-location",
+        "host": "Karissas-MacBook-Pro.local",
+        "updated_at": "2026-10-22T15:42:05.932Z",
+        "bundle_pushed_at": "2026-10-22T15:42:06.333Z"
+      },
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "signage touchpoints and link check",
+        "ease": null,
+        "updated_at": "2026-10-22T15:42:05.871Z"
+      },
+      "page_bytes": 5164961,
+      "blob_bytes": 14135922,
+      "blob_assets": 33
     },
     {
       "slug": "colarusso-s-coal-fired-pizza",
