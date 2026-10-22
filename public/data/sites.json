@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T18:59:25.133Z",
+  "generated_at": "2026-10-22T18:59:37.006Z",
   "count": 77,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -244,7 +244,7 @@
       "city": "Columbus",
       "state": "OH",
       "requested_at": "2026-10-21T15:07:26.567",
-      "updated_at": "2026-10-22T18:53:50.257Z",
+      "updated_at": "2026-10-22T18:59:31.008Z",
       "cursor": "overrides",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -269,7 +269,7 @@
           false
         ],
         [
-          "Links written (0 ready, 0 need a call)",
+          "Links written (8 ready, 2 need a call)",
           false
         ],
         [
@@ -294,25 +294,26 @@
         ]
       ],
       "needs_you": [
-        "pick a letter"
+        "pick a letter",
+        "2 link decision(s)"
       ],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": null,
+      "note": "Lead location for the 12 open Romeo's Pizza (Jeff) requests: no shipped branding on this or any of the 11 other Romeo's accounts, so branding runs once here and the pick is written at ACCOUNT scope at closeout so every sibling inherits it. Recommend G (full authored lockup on site red #D70000, banner-green #3F824D band); the sheet default is I (black band) and Fable's own pick is A (white knockout). Taste pass (fable) added U, V, W, X, Y (green card, red band, knockout; black card, red band, full color; black card, red band, knockout; black card, green band, full color; black card, red band, Award Winning badge). Links: 7 ready (website = Clintonville store page, menu, careers, Instagram/Facebook/X Columbus accounts, iOS and Android apps); held: ordering (stored homepage vs HungerRush order picker, mismatch) and rewards; discovery is static-only and must rerun after the website write.",
       "progress": {
         "stage": "fulfill",
-        "last_step": "variant sheet",
-        "next_step": "taste pass",
+        "last_step": "taste pass",
+        "next_step": "review canvas and link discovery",
         "blocked_on": null,
         "by": "fulfill-location",
         "host": "Unknown.domain",
-        "updated_at": "2026-10-22T18:50:20.754Z",
-        "bundle_pushed_at": "2026-10-22T18:50:20.961Z"
+        "updated_at": "2026-10-22T18:53:22.737Z",
+        "bundle_pushed_at": "2026-10-22T18:54:08.372Z"
       },
       "review_status": null,
-      "page_bytes": 6165779,
-      "blob_bytes": 11681400,
+      "page_bytes": 6180118,
+      "blob_bytes": 11680186,
       "blob_assets": 22
     },
     {
