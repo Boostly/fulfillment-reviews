@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T22:13:00.587Z",
+  "generated_at": "2026-10-22T22:13:31.944Z",
   "count": 80,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -176,76 +176,33 @@
       "city": "Pooler",
       "state": "GA",
       "requested_at": "2026-10-22T14:19:38.226",
-      "updated_at": "2026-10-22T18:57:39.741Z",
-      "cursor": "links",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-22T22:09:08.096Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "P",
-      "picked_letter": null,
+      "picked_letter": "E",
       "review_url": "/naan-appetit-pooler/",
       "figma_url": null,
-      "signage_direct": null,
-      "print_handoff_url": null,
-      "boostly_status": "digital_fulfillment",
-      "steps": [
-        [
-          "Review sheet ready",
-          true
-        ],
-        [
-          "Branding pick (Fable default P)",
-          false
-        ],
-        [
-          "Branding applied in prod",
-          false
-        ],
-        [
-          "Links written (0 ready, 0 need a call)",
-          false
-        ],
-        [
-          "Signage built",
-          false
-        ],
-        [
-          "Signage approved by you",
-          false
-        ],
-        [
-          "Slack result posted",
-          false
-        ],
-        [
-          "Status posted to the review site",
-          false
-        ],
-        [
-          "Store details confirmed",
-          true
-        ]
-      ],
-      "needs_you": [
-        "pick a letter"
-      ],
-      "gaps": [],
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1nuvGbjWdh6oXKoGcm1XiAwGwdmz015xX",
+      "boostly_status": null,
+      "steps": null,
+      "needs_you": null,
+      "gaps": null,
       "hold": null,
-      "done": false,
-      "note": "Pick a letter: default P (dark ground, coral), Fable's navy card is A. Lead run for the one-brand NaaN Appetit account; the pick writes at account scope at closeout so Nexton and Northwoods inherit. Mark carries the APPETIT descriptor; store-neutral cut was refused by the sheet gate, decide before the account write. Taste pass (fable) added V, W; W is a light ground, escalate before a pick. Links: catering and reservations ready; no working ordering link on the site (empty SpotHopper spot_id). Tap cards 10 vs 30 on the call.",
-      "progress": {
-        "stage": "fulfill",
-        "last_step": "taste pass",
-        "next_step": "review canvas and link discovery",
-        "blocked_on": null,
-        "by": "fulfill-location",
-        "host": "Unknown.domain",
-        "updated_at": "2026-10-22T18:54:50.041Z",
-        "bundle_pushed_at": "2026-10-22T18:55:27.468Z"
+      "done": null,
+      "note": "Done: E live at Pooler location scope, signage approved and sent to vendor, branding complete; Nexton and Northwoods finished separately.",
+      "progress": null,
+      "review_status": {
+        "status": "done",
+        "waiting_on": null,
+        "ease": 2,
+        "updated_at": "2026-10-22T22:10:14.632Z"
       },
-      "review_status": null,
-      "page_bytes": 9099410,
-      "blob_bytes": 8441685,
-      "blob_assets": 33
+      "page_bytes": 9136880,
+      "blob_bytes": 14741558,
+      "blob_assets": 35
     },
     {
       "slug": "naan-at-northwoods-north-charleston",
