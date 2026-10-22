@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T15:51:57.942Z",
+  "generated_at": "2026-10-22T15:54:57.862Z",
   "count": 73,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -10,16 +10,16 @@
       "city": "Charlotte",
       "state": "NC",
       "requested_at": "2026-10-20T21:23:09.831Z",
-      "updated_at": "2026-10-22T15:38:37.501Z",
-      "cursor": "overrides",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-22T15:53:19.061Z",
+      "cursor": "signage",
+      "status": "applied",
+      "status_label": "Branding applied",
       "recommended_letter": "F",
-      "picked_letter": null,
+      "picked_letter": "Z",
       "review_url": "/lulu-s-express-charlotte/",
       "figma_url": null,
-      "signage_direct": null,
-      "print_handoff_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/13K-i5pmVSmHwytd1eKVPU8MUfBXZA3Qc",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -27,20 +27,20 @@
           true
         ],
         [
-          "Branding pick (Fable default F)",
-          false
+          "Branding pick: Z",
+          true
         ],
         [
           "Branding applied in prod",
-          false
+          true
         ],
         [
-          "Links written (0 ready, 0 need a call)",
-          false
+          "Links written (0 still held)",
+          true
         ],
         [
-          "Signage built",
-          false
+          "Signage built (direct PDF)",
+          true
         ],
         [
           "Signage approved by you",
@@ -52,7 +52,7 @@
         ],
         [
           "Status posted to the review site",
-          false
+          true
         ],
         [
           "Store details confirmed",
@@ -60,26 +60,31 @@
         ]
       ],
       "needs_you": [
-        "pick a letter"
+        "approve the signage (print files in Drive)"
       ],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Pick a letter: Fable default F (red serif Lulu's Express wordmark on black, logo-red band); S-V and Y are the bold script option; no existing branding here or on any sibling account. Taste pass (fable) added W, X; Y built by hand from its refused p1. Links: 7 ready, gift cards need one live read.",
+      "note": "Pick Z applied and 7 links written; signage PDFs in Drive at 10 tables (call said 6), waiting for your review",
       "progress": {
-        "stage": "review",
-        "last_step": "review canvas built, site published",
-        "next_step": "Travisse picks a letter",
-        "blocked_on": "letter pick",
-        "by": "fulfill-location",
+        "stage": "closeout",
+        "last_step": "signage PDFs rendered",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "signage approval",
+        "by": "closeout-location",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-21T15:23:11.708Z",
-        "bundle_pushed_at": "2026-10-21T15:23:12.054Z"
+        "updated_at": "2026-10-22T15:54:11.438Z",
+        "bundle_pushed_at": "2026-10-22T15:54:11.850Z"
       },
-      "review_status": null,
-      "page_bytes": 10995181,
-      "blob_bytes": 7624140,
-      "blob_assets": 27
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "signage approval, table count",
+        "ease": 3,
+        "updated_at": "2026-10-22T15:54:11.355Z"
+      },
+      "page_bytes": 11034328,
+      "blob_bytes": 12684429,
+      "blob_assets": 29
     },
     {
       "slug": "fat-daddy-s",
