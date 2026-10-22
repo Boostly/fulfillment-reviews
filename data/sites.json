@@ -1,8 +1,86 @@
 {
-  "generated_at": "2026-10-22T18:58:52.887Z",
-  "count": 76,
+  "generated_at": "2026-10-22T18:59:25.133Z",
+  "count": 77,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
+    {
+      "slug": "mancino-s-of-fenton",
+      "name": "Mancino's of Fenton",
+      "account": "Mancino's of Fenton",
+      "city": "Fenton",
+      "state": "MI",
+      "requested_at": "2026-10-22T17:54:02.333",
+      "updated_at": "2026-10-22T18:59:16.340Z",
+      "cursor": "overrides",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "D",
+      "picked_letter": null,
+      "review_url": "/mancino-s-of-fenton/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick (Fable default D)",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (0 ready, 0 need a call)",
+          false
+        ],
+        [
+          "Signage built",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [
+        "pick a letter"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": null,
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "taste pass",
+        "next_step": "review canvas and link discovery",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-22T18:58:50.684Z",
+        "bundle_pushed_at": "2026-10-22T18:58:51.024Z"
+      },
+      "review_status": null,
+      "page_bytes": 7671480,
+      "blob_bytes": 10163456,
+      "blob_assets": 34
+    },
     {
       "slug": "naan-appetit-pooler",
       "name": "NaaN Appetit (Pooler)",
