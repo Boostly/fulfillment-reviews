@@ -1,8 +1,86 @@
 {
-  "generated_at": "2026-10-22T16:20:49.951Z",
-  "count": 73,
+  "generated_at": "2026-10-22T18:53:59.196Z",
+  "count": 74,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
+    {
+      "slug": "romeo-s-pizza-clintonville",
+      "name": "Romeo's Pizza (Clintonville)",
+      "account": "Romeo's Pizza (Jeff)",
+      "city": "Columbus",
+      "state": "OH",
+      "requested_at": "2026-10-21T15:07:26.567",
+      "updated_at": "2026-10-22T18:53:50.257Z",
+      "cursor": "overrides",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "I",
+      "picked_letter": null,
+      "review_url": "/romeo-s-pizza-clintonville/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick (Fable default I)",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (0 ready, 0 need a call)",
+          false
+        ],
+        [
+          "Signage built",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [
+        "pick a letter"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": null,
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "variant sheet",
+        "next_step": "taste pass",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-22T18:50:20.754Z",
+        "bundle_pushed_at": "2026-10-22T18:50:20.961Z"
+      },
+      "review_status": null,
+      "page_bytes": 6165779,
+      "blob_bytes": 11681400,
+      "blob_assets": 22
+    },
     {
       "slug": "lulu-s-express-charlotte",
       "name": "LuLu's Express (Charlotte)",
