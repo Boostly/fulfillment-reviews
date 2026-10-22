@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T22:28:24.175Z",
+  "generated_at": "2026-10-22T22:31:59.597Z",
   "count": 80,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -93,10 +93,10 @@
       "city": "Lynnwood",
       "state": "WA",
       "requested_at": "2026-10-22T16:54:41.013",
-      "updated_at": "2026-10-22T19:47:11.569Z",
-      "cursor": "signage",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "updated_at": "2026-10-22T22:29:34.241Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "A",
       "picked_letter": "F",
       "review_url": "/avanti-pizza-pasta/",
@@ -127,11 +127,11 @@
         ],
         [
           "Signage approved by you",
-          false
+          true
         ],
         [
           "Slack result posted",
-          false
+          true
         ],
         [
           "Status posted to the review site",
@@ -142,30 +142,28 @@
           false
         ]
       ],
-      "needs_you": [
-        "approve the signage (print files in Drive)"
-      ],
+      "needs_you": [],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "F applied with 5 links written; signage PDFs rendered in Drive, waiting for your review (ordering link held).",
+      "note": "Done: F is live, signage approved, Slack posted, print files sent to customstickers.com (6 vector PDFs, Drive folder, vendor email sent), branding complete and store details confirmed (request now in physical fulfillment). 5 links written (website, Facebook, Instagram, Menu, Reservations); ordering link held for your call (site's Thrive id 373 vs stored Slice id e11d81d3). CSM open: offer 25% OFF vs the SUBSCRIBE keyword's 25% OFF $25+, and table count 12 (live) vs 9 (10/22 call).",
       "progress": {
-        "stage": "closeout",
-        "last_step": "signage PDFs rendered",
-        "next_step": "closeout-finish after approval",
-        "blocked_on": "signage approval",
-        "by": "closeout-location",
+        "stage": "done",
+        "last_step": "branding complete, Slack posted, status set",
+        "next_step": "nothing; open decisions are on the notes line",
+        "blocked_on": null,
+        "by": "closeout-finish",
         "host": "Unknown.domain",
-        "updated_at": "2026-10-22T19:46:56.745Z",
-        "bundle_pushed_at": "2026-10-22T19:46:59.677Z"
+        "updated_at": "2026-10-22T22:31:38.894Z",
+        "bundle_pushed_at": "2026-10-22T19:47:28.139Z"
       },
       "review_status": {
-        "status": "waiting",
-        "waiting_on": "signage approval",
-        "ease": null,
-        "updated_at": "2026-10-22T19:46:56.705Z"
+        "status": "done",
+        "waiting_on": null,
+        "ease": 2,
+        "updated_at": "2026-10-22T22:31:11.046Z"
       },
-      "page_bytes": 2454903,
+      "page_bytes": 2455086,
       "blob_bytes": 8770133,
       "blob_assets": 40
     },
