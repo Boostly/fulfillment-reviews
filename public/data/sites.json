@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-22T22:12:08.069Z",
-  "count": 79,
+  "generated_at": "2026-10-22T22:13:00.587Z",
+  "count": 80,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -281,6 +281,41 @@
       "page_bytes": 9125026,
       "blob_bytes": 3627748,
       "blob_assets": 7
+    },
+    {
+      "slug": "naan-at-nexton-summerville",
+      "name": "Naan at Nexton (Summerville)",
+      "account": "NaaN Appetit",
+      "city": "Summerville",
+      "state": "SC",
+      "requested_at": "2026-10-22T14:19:37.84",
+      "updated_at": "2026-10-22T22:12:45.782Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
+      "recommended_letter": "P",
+      "picked_letter": "E",
+      "review_url": "/naan-at-nexton-summerville/",
+      "figma_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/12YOnu1Y25zzFwan6Ql7GQzmszMG6fDnp",
+      "boostly_status": null,
+      "steps": null,
+      "needs_you": null,
+      "gaps": null,
+      "hold": null,
+      "done": null,
+      "note": "Done: letter E (inherited from Pooler, promoted to account), signage approved, Slack posted, print hand-off sent, branding complete; Facebook socials held for Travisse (shared NaaN Appetit page vs own).",
+      "progress": null,
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "Facebook: shared NaaN Appetit page or Nexton's own?",
+        "ease": 2,
+        "updated_at": "2026-10-22T22:10:13.328Z"
+      },
+      "page_bytes": 9123721,
+      "blob_bytes": 9105579,
+      "blob_assets": 9
     },
     {
       "slug": "the-parish-webberville",
