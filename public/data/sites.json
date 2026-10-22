@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T20:44:55.440Z",
+  "generated_at": "2026-10-22T20:59:15.505Z",
   "count": 78,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -1223,16 +1223,16 @@
       "city": "Ocean City",
       "state": "MD",
       "requested_at": "2026-10-14T19:07:46.99",
-      "updated_at": "2026-10-15T18:52:39.097Z",
-      "cursor": "figma",
+      "updated_at": "2026-10-22T20:59:08.443Z",
+      "cursor": "signage",
       "status": "applied",
       "status_label": "Branding applied",
       "recommended_letter": "B",
       "picked_letter": "F",
       "review_url": "/surfin-betty-s-burger-bar-downtown/",
       "figma_url": "https://www.figma.com/design/5LsXaingsVCdMuJhWzR0g3/In-Store-Fulfillment-9?node-id=12-3",
-      "signage_direct": null,
-      "print_handoff_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1psauf2kbnxfl-BS4QSIKTmOLrfC2wnuf",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -1252,7 +1252,7 @@
           false
         ],
         [
-          "Signage built (Figma)",
+          "Signage built (direct PDF)",
           true
         ],
         [
@@ -1277,26 +1277,26 @@
         "1 link decision(s)"
       ],
       "gaps": [],
-      "hold": "PICK 2026-10-15 (Travisse): F, account scope, open facts for the signage review",
+      "hold": "QUANTITIES DECIDED 2026-10-22 (Travisse): Downtown prints 15 tables, 6 stalls, 30 tap cards",
       "done": false,
-      "note": "Branding F applied at account level and signage built in Figma (45 tables, two sections), waiting for your review; table count looks triple counted across the three stores.",
+      "note": "Signage PDFs re-rendered at 15 tables (your 10/22 call), in Drive waiting for your review.",
       "progress": {
         "stage": "closeout",
-        "last_step": "Figma signage built",
+        "last_step": "signage PDFs rendered at 15 tables",
         "next_step": "closeout-finish after approval",
-        "blocked_on": "Figma signage approval",
+        "blocked_on": "signage approval",
         "by": "closeout-location",
         "host": "Unknown.domain",
-        "updated_at": "2026-10-15T18:57:47.460Z",
-        "bundle_pushed_at": "2026-10-21T16:41:30.401Z"
+        "updated_at": "2026-10-22T20:58:45.507Z",
+        "bundle_pushed_at": "2026-10-22T20:58:53.509Z"
       },
       "review_status": {
         "status": "waiting",
-        "waiting_on": "Figma signage approval",
+        "waiting_on": "signage approval",
         "ease": null,
-        "updated_at": "2026-10-15T18:57:47.422Z"
+        "updated_at": "2026-10-22T20:58:45.471Z"
       },
-      "page_bytes": 3375494,
+      "page_bytes": 3376131,
       "blob_bytes": 16550373,
       "blob_assets": 34
     },
