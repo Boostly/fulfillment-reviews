@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T20:59:15.505Z",
+  "generated_at": "2026-10-22T21:02:40.840Z",
   "count": 78,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -1307,16 +1307,16 @@
       "city": "Hayward",
       "state": "WI",
       "requested_at": "2026-10-14T17:04:55.144Z",
-      "updated_at": "2026-10-19T18:25:13.010Z",
-      "cursor": "links",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-22T21:02:35.542Z",
+      "cursor": "signage",
+      "status": "applied",
+      "status_label": "Branding applied",
       "recommended_letter": "A",
-      "picked_letter": null,
+      "picked_letter": "X",
       "review_url": "/coop-s-pizza/",
       "figma_url": null,
-      "signage_direct": null,
-      "print_handoff_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1QzswOCduBrpsdI7seYVpymsw2wiiJS4B",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -1324,20 +1324,20 @@
           true
         ],
         [
-          "Branding pick (Fable default A)",
-          false
+          "Branding pick: X",
+          true
         ],
         [
           "Branding applied in prod",
-          false
+          true
         ],
         [
-          "Links written (0 ready, 0 need a call)",
-          false
+          "Links written (0 still held)",
+          true
         ],
         [
-          "Signage built",
-          false
+          "Signage built (direct PDF)",
+          true
         ],
         [
           "Signage approved by you",
@@ -1349,7 +1349,7 @@
         ],
         [
           "Status posted to the review site",
-          false
+          true
         ],
         [
           "Store details confirmed",
@@ -1357,26 +1357,31 @@
         ]
       ],
       "needs_you": [
-        "pick a letter"
+        "approve the signage (print files in Drive)"
       ],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Fable default A is a HOLD (red/gold wordmark traced from a 330px site source, needs a trace acceptance); no live branding. Two marks in use: site red script vs green/maroon Toast and Facebook badge. Simple bold options: C's monogram Q-S, script-only X. Taste pass (fable) added T, U, V, W (red card, black card, footer brown, script-only); W rejected (its cut kept the descriptor), rebuilt as X; p4 orange tile kept off on gates. Column F green is a WordPress default token, not a brand color.",
+      "note": "Branding X is live and the signage PDFs are in Drive, waiting for your review (open question: Join the club! or Get $5 Off $25+ on the signs)",
       "progress": {
-        "stage": "fulfill",
-        "last_step": "taste pass",
-        "next_step": "review canvas and link discovery",
-        "blocked_on": null,
-        "by": "fulfill-location",
-        "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-19T18:20:26.891Z",
-        "bundle_pushed_at": "2026-10-19T18:20:27.309Z"
+        "stage": "closeout",
+        "last_step": "signage PDFs rendered",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "signage approval",
+        "by": "closeout-location",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-22T21:02:21.236Z",
+        "bundle_pushed_at": "2026-10-22T21:02:22.579Z"
       },
-      "review_status": null,
-      "page_bytes": 9986340,
-      "blob_bytes": 5496589,
-      "blob_assets": 34
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "signage approval",
+        "ease": null,
+        "updated_at": "2026-10-22T21:02:21.199Z"
+      },
+      "page_bytes": 9615993,
+      "blob_bytes": 6081991,
+      "blob_assets": 17
     },
     {
       "slug": "scoops-ice-cream",
