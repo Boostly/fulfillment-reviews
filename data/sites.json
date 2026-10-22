@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T18:57:43.690Z",
+  "generated_at": "2026-10-22T18:58:52.887Z",
   "count": 76,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -88,7 +88,7 @@
       "city": "Webberville",
       "state": "MI",
       "requested_at": "2026-10-21T15:47:03.048",
-      "updated_at": "2026-10-22T18:55:25.577Z",
+      "updated_at": "2026-10-22T18:58:46.209Z",
       "cursor": "overrides",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -113,7 +113,7 @@
           false
         ],
         [
-          "Links written (0 ready, 0 need a call)",
+          "Links written (3 ready, 0 need a call)",
           false
         ],
         [
@@ -143,20 +143,20 @@
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": null,
+      "note": "Fable default D (two-ink lockup, white letters and gold crown, on the site's black with the gold #AE8643 band, from the 1920px Toast original). Taste pass (fable) added J, K, L (red card, white + gold lockup; red card, black band, knockout; green card, white knockout, gold band). 2 kept off the sheet (p2: gate hold: component-contrast (component_invisible_on_primary); p4: gate hold: component-contrast (component_invisible_on_primary)). Links ready: Facebook, Instagram @theparish100, Toast menu; Toast online ordering is switched off so no order link. CSM questions: call said $20 vs keyword 20% OFF, call mentions 30 tables vs 10, tap card count unconfirmed.",
       "progress": {
         "stage": "fulfill",
-        "last_step": "variant sheet",
-        "next_step": "taste pass",
+        "last_step": "taste pass",
+        "next_step": "review canvas and link discovery",
         "blocked_on": null,
         "by": "fulfill-location",
         "host": "Unknown.domain",
-        "updated_at": "2026-10-22T18:50:47.478Z",
-        "bundle_pushed_at": "2026-10-22T18:54:09.940Z"
+        "updated_at": "2026-10-22T18:55:04.256Z",
+        "bundle_pushed_at": "2026-10-22T18:55:41.675Z"
       },
       "review_status": null,
-      "page_bytes": 4839794,
-      "blob_bytes": 13664179,
+      "page_bytes": 4840251,
+      "blob_bytes": 13895054,
       "blob_assets": 31
     },
     {
