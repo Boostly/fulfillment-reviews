@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T22:50:38.926Z",
+  "generated_at": "2026-10-22T22:54:32.227Z",
   "count": 80,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -1090,69 +1090,23 @@
       "figma_url": null,
       "signage_direct": "built",
       "print_handoff_url": "https://drive.google.com/drive/folders/1DetueP9RfvPGEd5lXxUijIFp3GuJQ50f",
-      "boostly_status": "digital_fulfillment",
-      "steps": [
-        [
-          "Review sheet ready",
-          true
-        ],
-        [
-          "Branding pick: F",
-          true
-        ],
-        [
-          "Branding applied in prod",
-          true
-        ],
-        [
-          "Links written (0 still held)",
-          true
-        ],
-        [
-          "Signage built (direct PDF)",
-          true
-        ],
-        [
-          "Signage approved by you",
-          true
-        ],
-        [
-          "Slack result posted",
-          true
-        ],
-        [
-          "Status posted to the review site",
-          true
-        ],
-        [
-          "Store details confirmed",
-          false
-        ]
-      ],
-      "needs_you": [],
-      "gaps": [],
+      "boostly_status": null,
+      "steps": null,
+      "needs_you": null,
+      "gaps": null,
       "hold": null,
-      "done": false,
-      "note": "Done: F is live, signage approved, Slack posted, branding complete, store details confirmed, physical fulfillment pinged, print hand-off sent to the vendor. Links held: Menu repoint and Catering wait for your call. Open flag: Text Club reward pays FREE Small Pizza while signs say $10 OFF $20+; James was asked.",
-      "progress": {
-        "stage": "closeout-finish",
-        "last_step": "signage approved",
-        "next_step": "secondary logo, Slack, branding complete",
-        "blocked_on": null,
-        "by": "closeout-finish",
-        "host": "Unknown.domain",
-        "updated_at": "2026-10-22T22:28:48.880Z",
-        "bundle_pushed_at": "2026-10-22T22:28:55.943Z"
-      },
+      "done": null,
+      "note": "Done: F is live, signage approved, Slack posted, branding complete, store details confirmed, physical fulfillment pinged, print hand-off sent to the vendor. Text Club reward repointed to $10 OFF $20+ on 2026-10-22 (was FREE Small Pizza). Links held: Menu repoint and Catering wait for your call.",
+      "progress": null,
       "review_status": {
         "status": "waiting",
-        "waiting_on": "text club reward (FREE Small Pizza vs $10 OFF $20+)",
+        "waiting_on": "held links (Menu repoint, Catering)",
         "ease": 3,
-        "updated_at": "2026-10-22T22:31:17.701Z"
+        "updated_at": "2026-10-22T22:54:15.204Z"
       },
-      "page_bytes": 10268917,
-      "blob_bytes": 8599543,
-      "blob_assets": 30
+      "page_bytes": 10674399,
+      "blob_bytes": 12245688,
+      "blob_assets": 32
     },
     {
       "slug": "shawarma-inn-chicago",
