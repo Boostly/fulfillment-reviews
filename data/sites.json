@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T22:46:45.883Z",
+  "generated_at": "2026-10-22T22:47:08.593Z",
   "count": 80,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -964,31 +964,77 @@
       "city": "Ithaca",
       "state": "MI",
       "requested_at": "2026-10-19T15:34:05.100Z",
-      "updated_at": "2026-10-22T20:44:47.540Z",
-      "cursor": "signage",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "updated_at": "2026-10-22T22:46:59.960Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "A",
       "picked_letter": "A",
       "review_url": "/pins-bar-and-grille-bowling-and-event-center-ithaca/",
       "figma_url": null,
       "signage_direct": "built",
       "print_handoff_url": "https://drive.google.com/drive/folders/1_82jLwT9zeVZZtkWEzX5MDDeST9HiQ5x",
-      "boostly_status": null,
-      "steps": null,
-      "needs_you": null,
-      "gaps": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick: A",
+          true
+        ],
+        [
+          "Branding applied in prod",
+          true
+        ],
+        [
+          "Links written (0 still held)",
+          true
+        ],
+        [
+          "Signage built (direct PDF)",
+          true
+        ],
+        [
+          "Signage approved by you",
+          true
+        ],
+        [
+          "Slack result posted",
+          true
+        ],
+        [
+          "Status posted to the review site",
+          true
+        ],
+        [
+          "Store details confirmed",
+          true
+        ]
+      ],
+      "needs_you": [],
+      "gaps": [],
       "hold": null,
-      "done": null,
-      "note": "Branding A is live and the signage PDFs are in Drive, waiting for your review",
-      "progress": null,
+      "done": true,
+      "note": "Done: A is live, signage approved, Slack posted, print hand-off emailed, branding complete; Event Center link held for your call.",
+      "progress": {
+        "stage": "closeout-finish",
+        "last_step": "signage approved",
+        "next_step": "secondary logo, Slack, branding complete",
+        "blocked_on": null,
+        "by": "closeout-finish",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-22T22:43:20.055Z",
+        "bundle_pushed_at": "2026-10-22T22:43:24.056Z"
+      },
       "review_status": {
         "status": "waiting",
-        "waiting_on": "signage approval",
-        "ease": null,
-        "updated_at": "2026-10-22T20:44:29.275Z"
+        "waiting_on": "Event Center link: add pinsbarandgrille.com/event-center as a custom Event Center link?",
+        "ease": 4,
+        "updated_at": "2026-10-22T22:46:28.699Z"
       },
-      "page_bytes": 3803928,
+      "page_bytes": 3804661,
       "blob_bytes": 6963539,
       "blob_assets": 6
     },
