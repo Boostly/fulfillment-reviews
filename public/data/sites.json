@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T22:40:18.472Z",
+  "generated_at": "2026-10-22T22:41:13.567Z",
   "count": 80,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -1151,16 +1151,16 @@
       "city": "OCEAN CITY",
       "state": "MD",
       "requested_at": "2026-10-14T19:07:47.398",
-      "updated_at": "2026-10-15T15:52:23.641Z",
-      "cursor": "write",
-      "status": "inherits",
-      "status_label": "Branding: inherits surfin-betty-s-burger-bar-downtown (pending pick)",
-      "recommended_letter": null,
-      "picked_letter": null,
+      "updated_at": "2026-10-22T22:41:00.211Z",
+      "cursor": "signage",
+      "status": "applied",
+      "status_label": "Branding applied",
+      "recommended_letter": "B",
+      "picked_letter": "F",
       "review_url": "/surfin-betty-s-burger-bar-uptown-ocean-city-127th/",
       "figma_url": null,
-      "signage_direct": null,
-      "print_handoff_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1DqP8uEhYkFuRCQFRpX1l81L4mvuqFlcI",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -1173,15 +1173,15 @@
         ],
         [
           "Branding applied in prod",
-          false
+          true
         ],
         [
-          "Links written (2 ready, 5 need a call)",
-          false
+          "Links written (1 still held)",
+          true
         ],
         [
-          "Signage built",
-          false
+          "Signage built (direct PDF)",
+          true
         ],
         [
           "Signage approved by you",
@@ -1193,7 +1193,7 @@
         ],
         [
           "Status posted to the review site",
-          false
+          true
         ],
         [
           "Store details confirmed",
@@ -1201,26 +1201,31 @@
         ]
       ],
       "needs_you": [
-        "5 link decision(s)"
+        "approve the signage (print files in Drive)"
       ],
       "gaps": [],
-      "hold": null,
+      "hold": "QUANTITY MISMATCH OPEN 2026-10-22 (closeout-location): live items 45 tables, signage built at 14",
       "done": false,
-      "note": "Links only, branding inherits the Downtown pick. Ready: menu and the store's own Google review link (V2 has a manual Place ID placeholder). Held: Toast ordering, Facebook, Instagram, TikTok and gift cards because both browser transports failed today (Codex reads error; duplicate Boostly.com Chrome profiles block the fallback). Call gives 10 tables vs 10 requested.",
+      "note": "Signage PDFs rendered at 14 tables (inherits Downtown's F), waiting for your review; live table items still say 45.",
       "progress": {
-        "stage": "review",
-        "last_step": "links-only review page built (static pass; browser reads blocked)",
-        "next_step": "Downtown branding pick, then rerun browser reads for held links",
-        "blocked_on": "Downtown branding pick",
-        "by": "fulfill-location",
-        "host": "MacBook-Pro-2.domain",
-        "updated_at": "2026-10-15T15:52:46.192Z",
-        "bundle_pushed_at": "2026-10-21T16:41:35.200Z"
+        "stage": "closeout",
+        "last_step": "signage PDFs rendered",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "signage approval",
+        "by": "closeout-location",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-22T22:40:48.528Z",
+        "bundle_pushed_at": "2026-10-22T22:40:50.867Z"
       },
-      "review_status": null,
-      "page_bytes": 84642,
-      "blob_bytes": 4784494,
-      "blob_assets": 1
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "signage approval",
+        "ease": null,
+        "updated_at": "2026-10-22T22:40:48.481Z"
+      },
+      "page_bytes": 3366132,
+      "blob_bytes": 11230048,
+      "blob_assets": 10
     },
     {
       "slug": "surfin-betty-s-burger-bar-bethany",
