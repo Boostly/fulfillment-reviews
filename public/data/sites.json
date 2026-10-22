@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T21:02:40.840Z",
+  "generated_at": "2026-10-22T21:19:36.080Z",
   "count": 78,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -871,28 +871,81 @@
       "city": "Spanish Fork",
       "state": "UT",
       "requested_at": "2026-10-15T20:35:17.481Z",
-      "updated_at": "2026-10-20T15:02:43.525Z",
-      "cursor": "links",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-22T21:19:30.568Z",
+      "cursor": "signage",
+      "status": "applied",
+      "status_label": "Branding applied",
       "recommended_letter": "H",
-      "picked_letter": null,
+      "picked_letter": "H",
       "review_url": "/mi-corazon-mexican-restaurant-spanish-fork/",
       "figma_url": null,
-      "signage_direct": null,
-      "print_handoff_url": null,
-      "boostly_status": null,
-      "steps": null,
-      "needs_you": null,
-      "gaps": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/11JRbjRcIuaE-eDL0u0tDvaZ50LxSfpZt",
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick: H",
+          true
+        ],
+        [
+          "Branding applied in prod",
+          true
+        ],
+        [
+          "Links written (0 still held)",
+          true
+        ],
+        [
+          "Signage built (direct PDF)",
+          true
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          true
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [
+        "approve the signage (print files in Drive)"
+      ],
+      "gaps": [],
       "hold": null,
-      "done": null,
-      "note": "Pick a letter: Fable default H (full-color heart + MI CORAZON from the menu-PDF vector on yellow #FFCA28, heart-red band); simple bold options A (words-only wordmark) and O (heart icon); no live branding on the account. Taste pass (fable) added R, S (S is a light ground, escalate before a pick).",
-      "progress": null,
-      "review_status": null,
-      "page_bytes": 9472360,
-      "blob_bytes": 5938679,
-      "blob_assets": 30
+      "done": false,
+      "note": "Branding H is live and the signage PDFs are in Drive, waiting for your review (check the black POP logo: heart in color, wordmark knocked out white)",
+      "progress": {
+        "stage": "closeout",
+        "last_step": "signage PDFs rendered",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "signage approval",
+        "by": "closeout-location",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-22T21:19:07.340Z",
+        "bundle_pushed_at": "2026-10-22T21:19:08.489Z"
+      },
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "signage approval",
+        "ease": null,
+        "updated_at": "2026-10-22T21:19:07.300Z"
+      },
+      "page_bytes": 7867739,
+      "blob_bytes": 6398231,
+      "blob_assets": 16
     },
     {
       "slug": "five-star-pizza-clearwater",
