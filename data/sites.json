@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T21:19:36.080Z",
+  "generated_at": "2026-10-22T21:21:06.950Z",
   "count": 78,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -758,16 +758,16 @@
       "city": "Scottsdale",
       "state": "AZ",
       "requested_at": "2026-10-19T18:04:29.724Z",
-      "updated_at": "2026-10-20T15:39:06.293Z",
-      "cursor": "links",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-22T21:21:00.184Z",
+      "cursor": "signage",
+      "status": "applied",
+      "status_label": "Branding applied",
       "recommended_letter": "A",
-      "picked_letter": null,
+      "picked_letter": "G",
       "review_url": "/il-capo/",
       "figma_url": null,
-      "signage_direct": null,
-      "print_handoff_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1Mj4HuTZ6LCQCRZjbVQ7mMe4MUT8qnvnp",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -775,20 +775,20 @@
           true
         ],
         [
-          "Branding pick (Fable default A)",
-          false
+          "Branding pick: G",
+          true
         ],
         [
           "Branding applied in prod",
-          false
+          true
         ],
         [
-          "Links written (0 ready, 0 need a call)",
-          false
+          "Links written (0 still held)",
+          true
         ],
         [
-          "Signage built",
-          false
+          "Signage built (direct PDF)",
+          true
         ],
         [
           "Signage approved by you",
@@ -800,7 +800,7 @@
         ],
         [
           "Status posted to the review site",
-          false
+          true
         ],
         [
           "Store details confirmed",
@@ -808,26 +808,31 @@
         ]
       ],
       "needs_you": [
-        "pick a letter"
+        "approve the signage (print files in Drive)"
       ],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": null,
+      "note": "Branding G written, signage PDFs in Drive, waiting for your review",
       "progress": {
-        "stage": "review",
-        "last_step": "review canvas built, site published",
-        "next_step": "Travisse picks a letter",
-        "blocked_on": "letter pick",
-        "by": "fulfill-location",
-        "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-20T15:39:28.293Z",
-        "bundle_pushed_at": "2026-10-21T17:12:23.872Z"
+        "stage": "closeout",
+        "last_step": "signage PDFs rendered",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "signage approval",
+        "by": "closeout-location",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-22T21:20:46.682Z",
+        "bundle_pushed_at": "2026-10-22T21:20:48.056Z"
       },
-      "review_status": null,
-      "page_bytes": 8331954,
-      "blob_bytes": 14113364,
-      "blob_assets": 10
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "signage approval",
+        "ease": null,
+        "updated_at": "2026-10-22T21:20:46.642Z"
+      },
+      "page_bytes": 8764910,
+      "blob_bytes": 18631431,
+      "blob_assets": 21
     },
     {
       "slug": "pins-bar-and-grille-bowling-and-event-center-ithaca",
