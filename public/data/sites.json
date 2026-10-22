@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T22:46:00.946Z",
+  "generated_at": "2026-10-22T22:46:45.883Z",
   "count": 80,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -1448,10 +1448,10 @@
       "city": "Hayward",
       "state": "WI",
       "requested_at": "2026-10-14T17:04:55.144Z",
-      "updated_at": "2026-10-22T21:02:35.542Z",
-      "cursor": "signage",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "updated_at": "2026-10-22T22:46:40.170Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "A",
       "picked_letter": "X",
       "review_url": "/coop-s-pizza/",
@@ -1482,11 +1482,11 @@
         ],
         [
           "Signage approved by you",
-          false
+          true
         ],
         [
           "Slack result posted",
-          false
+          true
         ],
         [
           "Status posted to the review site",
@@ -1497,30 +1497,28 @@
           false
         ]
       ],
-      "needs_you": [
-        "approve the signage (print files in Drive)"
-      ],
+      "needs_you": [],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Branding X is live and the signage PDFs are in Drive, waiting for your review (open question: Join the club! or Get $5 Off $25+ on the signs)",
+      "note": "Done: X is live, signage approved, Slack posted, print hand-off emailed, branding complete, store details confirmed; 2 catering links held and the offer copy question (Join the club! vs $5 off $25+) are for your call.",
       "progress": {
-        "stage": "closeout",
-        "last_step": "signage PDFs rendered",
-        "next_step": "closeout-finish after approval",
-        "blocked_on": "signage approval",
-        "by": "closeout-location",
+        "stage": "closeout-finish",
+        "last_step": "signage approved",
+        "next_step": "secondary logo, Slack, branding complete",
+        "blocked_on": null,
+        "by": "closeout-finish",
         "host": "Unknown.domain",
-        "updated_at": "2026-10-22T21:02:21.236Z",
-        "bundle_pushed_at": "2026-10-22T21:02:22.579Z"
+        "updated_at": "2026-10-22T22:42:55.120Z",
+        "bundle_pushed_at": "2026-10-22T22:42:58.276Z"
       },
       "review_status": {
         "status": "waiting",
-        "waiting_on": "signage approval",
-        "ease": null,
-        "updated_at": "2026-10-22T21:02:21.199Z"
+        "waiting_on": "2 held catering links, offer copy (Join the club! vs 5 dollars off 25)",
+        "ease": 3,
+        "updated_at": "2026-10-22T22:46:11.811Z"
       },
-      "page_bytes": 9615993,
+      "page_bytes": 9616962,
       "blob_bytes": 6081991,
       "blob_assets": 17
     },
