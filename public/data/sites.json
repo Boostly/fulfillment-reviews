@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T22:32:13.038Z",
+  "generated_at": "2026-10-22T22:33:09.098Z",
   "count": 80,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -362,16 +362,16 @@
       "city": "Columbus",
       "state": "OH",
       "requested_at": "2026-10-21T15:07:26.567",
-      "updated_at": "2026-10-22T18:59:31.008Z",
-      "cursor": "overrides",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-22T22:30:03.472Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "I",
-      "picked_letter": null,
+      "picked_letter": "I",
       "review_url": "/romeo-s-pizza-clintonville/",
       "figma_url": null,
-      "signage_direct": null,
-      "print_handoff_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1WrJtJEV1k_nHLaljShocBfDWeGw0PTQQ",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -379,60 +379,62 @@
           true
         ],
         [
-          "Branding pick (Fable default I)",
-          false
+          "Branding pick: I",
+          true
         ],
         [
           "Branding applied in prod",
-          false
+          true
         ],
         [
-          "Links written (8 ready, 2 need a call)",
-          false
+          "Links written (2 still held)",
+          true
         ],
         [
-          "Signage built",
-          false
+          "Signage built (direct PDF)",
+          true
         ],
         [
           "Signage approved by you",
-          false
+          true
         ],
         [
           "Slack result posted",
-          false
+          true
         ],
         [
           "Status posted to the review site",
-          false
+          true
         ],
         [
           "Store details confirmed",
           false
         ]
       ],
-      "needs_you": [
-        "pick a letter",
-        "2 link decision(s)"
-      ],
+      "needs_you": [],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Lead location for the 12 open Romeo's Pizza (Jeff) requests: no shipped branding on this or any of the 11 other Romeo's accounts, so branding runs once here and the pick is written at ACCOUNT scope at closeout so every sibling inherits it. Recommend G (full authored lockup on site red #D70000, banner-green #3F824D band); the sheet default is I (black band) and Fable's own pick is A (white knockout). Taste pass (fable) added U, V, W, X, Y (green card, red band, knockout; black card, red band, full color; black card, red band, knockout; black card, green band, full color; black card, red band, Award Winning badge). Links: 7 ready (website = Clintonville store page, menu, careers, Instagram/Facebook/X Columbus accounts, iOS and Android apps); held: ordering (stored homepage vs HungerRush order picker, mismatch) and rewards; discovery is static-only and must rerun after the website write.",
+      "note": "Done: I is live at account scope, signage approved, Slack posted, print hand-off sent to vendor, branding complete; 2 links held (ordering URL, loyalty rewards) and offer confirmation (20% proposed, not confirmed) are open for your call.",
       "progress": {
-        "stage": "fulfill",
-        "last_step": "taste pass",
-        "next_step": "review canvas and link discovery",
+        "stage": "closeout-finish",
+        "last_step": "signage approved",
+        "next_step": "secondary logo, Slack, branding complete",
         "blocked_on": null,
-        "by": "fulfill-location",
+        "by": "closeout-finish",
         "host": "Unknown.domain",
-        "updated_at": "2026-10-22T18:53:22.737Z",
-        "bundle_pushed_at": "2026-10-22T18:54:08.372Z"
+        "updated_at": "2026-10-22T22:28:30.482Z",
+        "bundle_pushed_at": "2026-10-22T22:28:35.389Z"
       },
-      "review_status": null,
-      "page_bytes": 6180118,
-      "blob_bytes": 11680186,
-      "blob_assets": 22
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "ordering link, offer confirmation (2 links held)",
+        "ease": 2,
+        "updated_at": "2026-10-22T22:32:12.604Z"
+      },
+      "page_bytes": 6215784,
+      "blob_bytes": 17300886,
+      "blob_assets": 24
     },
     {
       "slug": "lulu-s-express-charlotte",
