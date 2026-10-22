@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T22:31:59.597Z",
+  "generated_at": "2026-10-22T22:32:13.038Z",
   "count": 80,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -1033,10 +1033,10 @@
       "city": "Clearwater",
       "state": "FL",
       "requested_at": "2026-10-15T20:02:31.197",
-      "updated_at": "2026-10-22T20:32:13.859Z",
-      "cursor": "signage",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "updated_at": "2026-10-22T22:29:48.331Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "F",
       "picked_letter": "F",
       "review_url": "/five-star-pizza-clearwater/",
@@ -1067,11 +1067,11 @@
         ],
         [
           "Signage approved by you",
-          false
+          true
         ],
         [
           "Slack result posted",
-          false
+          true
         ],
         [
           "Status posted to the review site",
@@ -1082,30 +1082,28 @@
           false
         ]
       ],
-      "needs_you": [
-        "approve the signage (print files in Drive)"
-      ],
+      "needs_you": [],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Branding F written and signage PDFs rendered, waiting for your review in Drive; Text Club reward (FREE Small Pizza) differs from the sign offer.",
+      "note": "Done: F is live, signage approved, Slack posted, branding complete, store details confirmed, physical fulfillment pinged, print hand-off sent to the vendor. Links held: Menu repoint and Catering wait for your call. Open flag: Text Club reward pays FREE Small Pizza while signs say $10 OFF $20+; James was asked.",
       "progress": {
-        "stage": "closeout",
-        "last_step": "signage PDFs rendered",
-        "next_step": "closeout-finish after approval",
-        "blocked_on": "signage approval",
-        "by": "closeout-location",
+        "stage": "closeout-finish",
+        "last_step": "signage approved",
+        "next_step": "secondary logo, Slack, branding complete",
+        "blocked_on": null,
+        "by": "closeout-finish",
         "host": "Unknown.domain",
-        "updated_at": "2026-10-22T20:32:02.286Z",
-        "bundle_pushed_at": "2026-10-22T20:32:04.264Z"
+        "updated_at": "2026-10-22T22:28:48.880Z",
+        "bundle_pushed_at": "2026-10-22T22:28:55.943Z"
       },
       "review_status": {
         "status": "waiting",
-        "waiting_on": "signage approval",
-        "ease": null,
-        "updated_at": "2026-10-22T20:32:02.250Z"
+        "waiting_on": "text club reward (FREE Small Pizza vs $10 OFF $20+)",
+        "ease": 3,
+        "updated_at": "2026-10-22T22:31:17.701Z"
       },
-      "page_bytes": 10268734,
+      "page_bytes": 10268917,
       "blob_bytes": 8599543,
       "blob_assets": 30
     },
