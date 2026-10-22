@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T16:13:29.826Z",
+  "generated_at": "2026-10-22T16:15:15.600Z",
   "count": 73,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -91,7 +91,7 @@
       "city": "Provo",
       "state": "UT",
       "requested_at": "2026-10-20T20:47:14.084Z",
-      "updated_at": "2026-10-22T16:11:22.258Z",
+      "updated_at": "2026-10-22T16:13:17.320Z",
       "cursor": "signage",
       "status": "applied",
       "status_label": "Branding applied",
@@ -99,8 +99,8 @@
       "picked_letter": "E",
       "review_url": "/fat-daddy-s/",
       "figma_url": null,
-      "signage_direct": "blocked",
-      "print_handoff_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1pxj4C-Qg4pTvB43cumn0zG7ckjHVX10A",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -121,7 +121,7 @@
         ],
         [
           "Signage built (direct PDF)",
-          false
+          true
         ],
         [
           "Signage approved by you",
@@ -140,28 +140,30 @@
           false
         ]
       ],
-      "needs_you": [],
+      "needs_you": [
+        "approve the signage (print files in Drive)"
+      ],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "E applied (red #B11E29 band, sticker logo added, website written); signage is blocked because the account has no review or bathroom QR touchpoints, 4 ready links wait on a browser check, and the offer ($10 sign vs $5 keyword) and stall count need Jordan.",
+      "note": "E live, website/Menu/Catering/Careers/Order Online (SpotOn) written; held: /events, X. 4 missing QR touchpoints created; signage PDFs in Drive waiting for your review. Jordan: $10 OFF sign vs $5 keyword; 2 vs 4 stalls.",
       "progress": {
         "stage": "closeout",
-        "last_step": "branding E applied, website written; signage render blocked",
-        "next_step": "create missing signage touchpoints, then render and Drive upload",
-        "blocked_on": "signage touchpoints (review, bathroom, to-go review)",
+        "last_step": "signage PDFs rendered",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "signage approval",
         "by": "closeout-location",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-22T15:42:05.932Z",
-        "bundle_pushed_at": "2026-10-22T15:58:50.211Z"
+        "updated_at": "2026-10-22T16:14:39.784Z",
+        "bundle_pushed_at": "2026-10-22T16:14:40.146Z"
       },
       "review_status": {
         "status": "waiting",
-        "waiting_on": "signage touchpoints and link check",
+        "waiting_on": "signage approval",
         "ease": null,
-        "updated_at": "2026-10-22T15:42:05.871Z"
+        "updated_at": "2026-10-22T16:14:39.704Z"
       },
-      "page_bytes": 5165114,
+      "page_bytes": 5165440,
       "blob_bytes": 14135922,
       "blob_assets": 33
     },
