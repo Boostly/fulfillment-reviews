@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T19:56:50.291Z",
+  "generated_at": "2026-10-22T20:26:38.806Z",
   "count": 78,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -254,16 +254,16 @@
       "city": "Webberville",
       "state": "MI",
       "requested_at": "2026-10-21T15:47:03.048",
-      "updated_at": "2026-10-22T18:58:46.209Z",
-      "cursor": "overrides",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-22T20:26:27.755Z",
+      "cursor": "signage",
+      "status": "applied",
+      "status_label": "Branding applied",
       "recommended_letter": "D",
-      "picked_letter": null,
+      "picked_letter": "N",
       "review_url": "/the-parish-webberville/",
       "figma_url": null,
-      "signage_direct": null,
-      "print_handoff_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1SskuIezxyRCm-o2AryWiR42gkHlIIe5Z",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -271,20 +271,20 @@
           true
         ],
         [
-          "Branding pick (Fable default D)",
-          false
+          "Branding pick: N",
+          true
         ],
         [
           "Branding applied in prod",
-          false
+          true
         ],
         [
           "Links written (3 ready, 0 need a call)",
           false
         ],
         [
-          "Signage built",
-          false
+          "Signage built (direct PDF)",
+          true
         ],
         [
           "Signage approved by you",
@@ -304,26 +304,31 @@
         ]
       ],
       "needs_you": [
-        "pick a letter"
+        "approve the signage (print files in Drive)"
       ],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Fable default D (two-ink lockup, white letters and gold crown, on the site's black with the gold #AE8643 band, from the 1920px Toast original). Taste pass (fable) added J, K, L (red card, white + gold lockup; red card, black band, knockout; green card, white knockout, gold band). 2 kept off the sheet (p2: gate hold: component-contrast (component_invisible_on_primary); p4: gate hold: component-contrast (component_invisible_on_primary)). Links ready: Facebook, Instagram @theparish100, Toast menu; Toast online ordering is switched off so no order link. CSM questions: call said $20 vs keyword 20% OFF, call mentions 30 tables vs 10, tap card count unconfirmed.",
+      "note": "Branding N applied (green card, white + gold lockup) with Facebook, Instagram and Menu links; signage PDFs rendered, waiting for your review.",
       "progress": {
-        "stage": "fulfill",
-        "last_step": "taste pass",
-        "next_step": "review canvas and link discovery",
+        "stage": "closeout",
+        "last_step": "branding written",
+        "next_step": "proofs and signage PDFs",
         "blocked_on": null,
-        "by": "fulfill-location",
+        "by": "closeout-location",
         "host": "Unknown.domain",
-        "updated_at": "2026-10-22T18:55:04.256Z",
-        "bundle_pushed_at": "2026-10-22T18:55:41.675Z"
+        "updated_at": "2026-10-22T20:17:27.258Z",
+        "bundle_pushed_at": "2026-10-22T20:17:31.313Z"
       },
-      "review_status": null,
-      "page_bytes": 4840251,
-      "blob_bytes": 13895054,
-      "blob_assets": 31
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "signage approval",
+        "ease": null,
+        "updated_at": "2026-10-22T20:26:01.495Z"
+      },
+      "page_bytes": 6065970,
+      "blob_bytes": 19926383,
+      "blob_assets": 33
     },
     {
       "slug": "romeo-s-pizza-clintonville",
