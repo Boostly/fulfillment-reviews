@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-22T18:55:19.688Z",
-  "count": 75,
+  "generated_at": "2026-10-22T18:55:35.373Z",
+  "count": 76,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -80,6 +80,84 @@
       "page_bytes": 9098523,
       "blob_bytes": 8441685,
       "blob_assets": 33
+    },
+    {
+      "slug": "the-parish-webberville",
+      "name": "The Parish (Webberville)",
+      "account": "The Parish",
+      "city": "Webberville",
+      "state": "MI",
+      "requested_at": "2026-10-21T15:47:03.048",
+      "updated_at": "2026-10-22T18:55:25.577Z",
+      "cursor": "overrides",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "D",
+      "picked_letter": null,
+      "review_url": "/the-parish-webberville/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick (Fable default D)",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (0 ready, 0 need a call)",
+          false
+        ],
+        [
+          "Signage built",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          true
+        ]
+      ],
+      "needs_you": [
+        "pick a letter"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": null,
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "variant sheet",
+        "next_step": "taste pass",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-22T18:50:47.478Z",
+        "bundle_pushed_at": "2026-10-22T18:54:09.940Z"
+      },
+      "review_status": null,
+      "page_bytes": 4839794,
+      "blob_bytes": 13664179,
+      "blob_assets": 31
     },
     {
       "slug": "romeo-s-pizza-clintonville",
