@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T16:15:15.600Z",
+  "generated_at": "2026-10-22T16:20:49.951Z",
   "count": 73,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -91,10 +91,10 @@
       "city": "Provo",
       "state": "UT",
       "requested_at": "2026-10-20T20:47:14.084Z",
-      "updated_at": "2026-10-22T16:13:17.320Z",
-      "cursor": "signage",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "updated_at": "2026-10-22T16:19:33.947Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "E",
       "picked_letter": "E",
       "review_url": "/fat-daddy-s/",
@@ -125,11 +125,11 @@
         ],
         [
           "Signage approved by you",
-          false
+          true
         ],
         [
           "Slack result posted",
-          false
+          true
         ],
         [
           "Status posted to the review site",
@@ -140,28 +140,26 @@
           false
         ]
       ],
-      "needs_you": [
-        "approve the signage (print files in Drive)"
-      ],
+      "needs_you": [],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "E live, website/Menu/Catering/Careers/Order Online (SpotOn) written; held: /events, X. 4 missing QR touchpoints created; signage PDFs in Drive waiting for your review. Jordan: $10 OFF sign vs $5 keyword; 2 vs 4 stalls.",
+      "note": "Done: E is live, signage approved, Slack posted, print files emailed to the vendor, branding complete and store details confirmed; Jordan to confirm the $10 vs $5 offer and 2 vs 4 stalls, Events and X links held.",
       "progress": {
-        "stage": "closeout",
-        "last_step": "signage PDFs rendered",
-        "next_step": "closeout-finish after approval",
-        "blocked_on": "signage approval",
-        "by": "closeout-location",
+        "stage": "closeout-finish",
+        "last_step": "signage approved",
+        "next_step": "Slack, vendor email, branding complete",
+        "blocked_on": null,
+        "by": "closeout-finish",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-22T16:14:39.784Z",
-        "bundle_pushed_at": "2026-10-22T16:14:40.146Z"
+        "updated_at": "2026-10-22T16:19:11.340Z",
+        "bundle_pushed_at": "2026-10-22T16:19:11.679Z"
       },
       "review_status": {
-        "status": "waiting",
-        "waiting_on": "signage approval",
-        "ease": null,
-        "updated_at": "2026-10-22T16:14:39.704Z"
+        "status": "done",
+        "waiting_on": null,
+        "ease": 2,
+        "updated_at": "2026-10-22T16:20:18.711Z"
       },
       "page_bytes": 5165440,
       "blob_bytes": 14135922,
