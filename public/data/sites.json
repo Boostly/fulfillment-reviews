@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T22:45:30.379Z",
+  "generated_at": "2026-10-22T22:45:47.976Z",
   "count": 80,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -279,10 +279,10 @@
       "city": "Webberville",
       "state": "MI",
       "requested_at": "2026-10-21T15:47:03.048",
-      "updated_at": "2026-10-22T20:26:27.755Z",
-      "cursor": "signage",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "updated_at": "2026-10-22T22:43:24.153Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "D",
       "picked_letter": "N",
       "review_url": "/the-parish-webberville/",
@@ -304,8 +304,8 @@
           true
         ],
         [
-          "Links written (3 ready, 0 need a call)",
-          false
+          "Links written (0 still held)",
+          true
         ],
         [
           "Signage built (direct PDF)",
@@ -313,45 +313,43 @@
         ],
         [
           "Signage approved by you",
-          false
+          true
         ],
         [
           "Slack result posted",
-          false
+          true
         ],
         [
           "Status posted to the review site",
-          false
+          true
         ],
         [
           "Store details confirmed",
           true
         ]
       ],
-      "needs_you": [
-        "approve the signage (print files in Drive)"
-      ],
+      "needs_you": [],
       "gaps": [],
       "hold": null,
-      "done": false,
-      "note": "Branding N applied (green card, white + gold lockup) with Facebook, Instagram and Menu links; signage PDFs rendered, waiting for your review.",
+      "done": true,
+      "note": "Done: N (the restaurant's own white + gold lockup on a green card) is live, signage approved, Slack result posted, branding marked complete, request now in physical fulfillment. Print hand-off sent to the vendor (all six kinds vector). Links written: Facebook, Instagram, Menu; socials on. Order Online not written, Toast ordering is off at the store. Open: the 10/19 sales demo call still has no transcript (TRANSCRIPT_PENDING).",
       "progress": {
-        "stage": "closeout",
-        "last_step": "branding written",
-        "next_step": "proofs and signage PDFs",
+        "stage": "done",
+        "last_step": "branding complete, Slack posted, status set",
+        "next_step": "nothing; open decisions are on the notes line",
         "blocked_on": null,
-        "by": "closeout-location",
+        "by": "closeout-finish",
         "host": "Unknown.domain",
-        "updated_at": "2026-10-22T20:17:27.258Z",
-        "bundle_pushed_at": "2026-10-22T20:17:31.313Z"
+        "updated_at": "2026-10-22T22:45:12.678Z",
+        "bundle_pushed_at": "2026-10-22T22:45:20.604Z"
       },
       "review_status": {
-        "status": "waiting",
-        "waiting_on": "signage approval",
-        "ease": null,
-        "updated_at": "2026-10-22T20:26:01.495Z"
+        "status": "done",
+        "waiting_on": null,
+        "ease": 2,
+        "updated_at": "2026-10-22T22:44:46.983Z"
       },
-      "page_bytes": 6065970,
+      "page_bytes": 6066153,
       "blob_bytes": 19926383,
       "blob_assets": 33
     },
