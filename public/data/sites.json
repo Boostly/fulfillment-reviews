@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T15:42:48.331Z",
+  "generated_at": "2026-10-22T15:51:57.942Z",
   "count": 73,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -88,7 +88,7 @@
       "city": "Provo",
       "state": "UT",
       "requested_at": "2026-10-20T20:47:14.084Z",
-      "updated_at": "2026-10-22T15:41:04.088Z",
+      "updated_at": "2026-10-22T15:51:31.452Z",
       "cursor": "signage",
       "status": "applied",
       "status_label": "Branding applied",
@@ -150,7 +150,7 @@
         "by": "closeout-location",
         "host": "Karissas-MacBook-Pro.local",
         "updated_at": "2026-10-22T15:42:05.932Z",
-        "bundle_pushed_at": "2026-10-22T15:42:06.333Z"
+        "bundle_pushed_at": "2026-10-22T15:42:58.099Z"
       },
       "review_status": {
         "status": "waiting",
