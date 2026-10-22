@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T20:26:38.806Z",
+  "generated_at": "2026-10-22T20:32:22.818Z",
   "count": 78,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -896,16 +896,16 @@
       "city": "Clearwater",
       "state": "FL",
       "requested_at": "2026-10-15T20:02:31.197",
-      "updated_at": "2026-10-21T15:07:46.424Z",
-      "cursor": "write",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-22T20:32:13.859Z",
+      "cursor": "signage",
+      "status": "applied",
+      "status_label": "Branding applied",
       "recommended_letter": "F",
-      "picked_letter": null,
+      "picked_letter": "F",
       "review_url": "/five-star-pizza-clearwater/",
       "figma_url": null,
-      "signage_direct": null,
-      "print_handoff_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1DetueP9RfvPGEd5lXxUijIFp3GuJQ50f",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -913,20 +913,20 @@
           true
         ],
         [
-          "Branding pick (Fable default F)",
-          false
+          "Branding pick: F",
+          true
         ],
         [
           "Branding applied in prod",
-          false
+          true
         ],
         [
-          "Links written (3 ready, 0 need a call)",
-          false
+          "Links written (0 still held)",
+          true
         ],
         [
-          "Signage built",
-          false
+          "Signage built (direct PDF)",
+          true
         ],
         [
           "Signage approved by you",
@@ -938,7 +938,7 @@
         ],
         [
           "Status posted to the review site",
-          false
+          true
         ],
         [
           "Store details confirmed",
@@ -946,26 +946,31 @@
         ]
       ],
       "needs_you": [
-        "pick a letter"
+        "approve the signage (print files in Drive)"
       ],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Fable default F (chain badge on red #E2181E, navy band); U is the Ocala SE/NE live red/navy precedent; live account row is the old July spike (blue, 417px logo) and the closeout overwrites it. Taste pass (fable) added V, W, X, Y (full color on navy card, red band (site footer ground); white open knockout on navy card, red band; white stars and words, no ring, on red card, navy band; white stars and words, no ring, on navy card, red band). Links: website, Order Online (weborder store 3477) and Careers ready; discovery browser pass failed (validator exit 2), rerun after the website write. Quantities 4 tables / 30 tap cards vs call 6 / 10, CSM DM drafted.",
+      "note": "Branding F written and signage PDFs rendered, waiting for your review in Drive; Text Club reward (FREE Small Pizza) differs from the sign offer.",
       "progress": {
-        "stage": "review",
-        "last_step": "review canvas built, site published",
-        "next_step": "Travisse picks a letter",
-        "blocked_on": "letter pick",
-        "by": "fulfill-location",
-        "host": "MacBook-Pro-2.local",
-        "updated_at": "2026-10-21T15:13:08.491Z",
-        "bundle_pushed_at": "2026-10-21T17:12:53.247Z"
+        "stage": "closeout",
+        "last_step": "signage PDFs rendered",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "signage approval",
+        "by": "closeout-location",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-22T20:32:02.286Z",
+        "bundle_pushed_at": "2026-10-22T20:32:04.264Z"
       },
-      "review_status": null,
-      "page_bytes": 10236884,
-      "blob_bytes": 3075142,
-      "blob_assets": 28
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "signage approval",
+        "ease": null,
+        "updated_at": "2026-10-22T20:32:02.250Z"
+      },
+      "page_bytes": 10268734,
+      "blob_bytes": 8599543,
+      "blob_assets": 30
     },
     {
       "slug": "shawarma-inn-chicago",
