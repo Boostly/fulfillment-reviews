@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T16:00:37.644Z",
+  "generated_at": "2026-10-22T16:05:20.310Z",
   "count": 73,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -10,10 +10,10 @@
       "city": "Charlotte",
       "state": "NC",
       "requested_at": "2026-10-20T21:23:09.831Z",
-      "updated_at": "2026-10-22T15:53:19.061Z",
-      "cursor": "signage",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "updated_at": "2026-10-22T16:04:15.890Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "F",
       "picked_letter": "Z",
       "review_url": "/lulu-s-express-charlotte/",
@@ -44,11 +44,11 @@
         ],
         [
           "Signage approved by you",
-          false
+          true
         ],
         [
           "Slack result posted",
-          false
+          true
         ],
         [
           "Status posted to the review site",
@@ -59,28 +59,26 @@
           true
         ]
       ],
-      "needs_you": [
-        "approve the signage (print files in Drive)"
-      ],
+      "needs_you": [],
       "gaps": [],
       "hold": null,
-      "done": false,
-      "note": "Pick Z applied and 7 links written; signage PDFs in Drive at 10 tables (call said 6), waiting for your review",
+      "done": true,
+      "note": "Done: Z is live, signage approved, Slack posted, print email sent, branding complete; gift cards link held and the table count (10 built vs 6 on the call) waits on Shaun",
       "progress": {
-        "stage": "closeout",
-        "last_step": "signage PDFs rendered",
-        "next_step": "closeout-finish after approval",
-        "blocked_on": "signage approval",
-        "by": "closeout-location",
+        "stage": "closeout-finish",
+        "last_step": "signage approved",
+        "next_step": "Slack, print email, branding complete",
+        "blocked_on": null,
+        "by": "closeout-finish",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-22T15:54:11.438Z",
-        "bundle_pushed_at": "2026-10-22T15:54:11.850Z"
+        "updated_at": "2026-10-22T16:03:55.663Z",
+        "bundle_pushed_at": "2026-10-22T16:03:56.019Z"
       },
       "review_status": {
         "status": "waiting",
-        "waiting_on": "signage approval, table count",
+        "waiting_on": "table count (CSM), gift cards link",
         "ease": 3,
-        "updated_at": "2026-10-22T15:54:11.355Z"
+        "updated_at": "2026-10-22T16:04:52.084Z"
       },
       "page_bytes": 11034328,
       "blob_bytes": 12684429,
