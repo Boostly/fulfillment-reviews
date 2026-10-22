@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T19:19:12.321Z",
+  "generated_at": "2026-10-22T15:38:39.217Z",
   "count": 73,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -130,28 +130,81 @@
       "city": "Elk Grove Village",
       "state": "IL",
       "requested_at": "2026-10-20T16:33:42.105Z",
-      "updated_at": "2026-10-21T15:46:40.145Z",
-      "cursor": "overrides",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-22T15:37:06.595Z",
+      "cursor": "signage",
+      "status": "applied",
+      "status_label": "Branding applied",
       "recommended_letter": "J",
-      "picked_letter": null,
+      "picked_letter": "J",
       "review_url": "/brown-s-chicken-elk-grove-village/",
       "figma_url": null,
-      "signage_direct": null,
-      "print_handoff_url": null,
-      "boostly_status": null,
-      "steps": null,
-      "needs_you": null,
-      "gaps": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1x4l1E3mFg1tXiYb_9WBz73djDj9O1x_o",
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick: J",
+          true
+        ],
+        [
+          "Branding applied in prod",
+          true
+        ],
+        [
+          "Links written (0 ready, 0 need a call)",
+          false
+        ],
+        [
+          "Signage built (direct PDF)",
+          true
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          true
+        ],
+        [
+          "Store details confirmed",
+          true
+        ]
+      ],
+      "needs_you": [
+        "approve the signage (print files in Drive)"
+      ],
+      "gaps": [],
       "hold": null,
-      "done": null,
-      "note": "Fable default J (current site lockup on navy, red band); no live branding on this account and no other Brown's Chicken account in Boostly. Taste pass (fable) added BB, BC (red and green cards, white knockouts); bold vector options AY (classic BROWN'S) and BD/BE (yellow emblem) for tap-card legibility. Links: Facebook, Instagram, Careers ready; ordering held (store-locator Square URL for this store needs one browser read).",
-      "progress": null,
-      "review_status": null,
-      "page_bytes": 22707718,
-      "blob_bytes": 7965298,
-      "blob_assets": 33
+      "done": false,
+      "note": "J applied (navy #010F1C, red #ED1D25); signage PDFs in Drive at 13 tables / 2 stalls, waiting for your review; 3 ready links and the Square order link wait on 2 browser reads.",
+      "progress": {
+        "stage": "closeout",
+        "last_step": "signage PDFs rendered",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "signage approval",
+        "by": "closeout-location",
+        "host": "Karissas-MacBook-Pro.local",
+        "updated_at": "2026-10-22T15:37:52.116Z",
+        "bundle_pushed_at": "2026-10-22T15:37:52.537Z"
+      },
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "signage approval",
+        "ease": null,
+        "updated_at": "2026-10-22T15:37:52.062Z"
+      },
+      "page_bytes": 22744571,
+      "blob_bytes": 13803892,
+      "blob_assets": 35
     },
     {
       "slug": "trail-rider-cedar-crest",
