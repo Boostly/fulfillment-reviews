@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T22:33:09.098Z",
+  "generated_at": "2026-10-22T22:34:08.995Z",
   "count": 80,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -952,81 +952,33 @@
       "city": "Spanish Fork",
       "state": "UT",
       "requested_at": "2026-10-15T20:35:17.481Z",
-      "updated_at": "2026-10-22T21:19:30.568Z",
-      "cursor": "signage",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "updated_at": "2026-10-22T22:29:08.061Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "H",
       "picked_letter": "H",
       "review_url": "/mi-corazon-mexican-restaurant-spanish-fork/",
       "figma_url": null,
       "signage_direct": "built",
       "print_handoff_url": "https://drive.google.com/drive/folders/11JRbjRcIuaE-eDL0u0tDvaZ50LxSfpZt",
-      "boostly_status": "digital_fulfillment",
-      "steps": [
-        [
-          "Review sheet ready",
-          true
-        ],
-        [
-          "Branding pick: H",
-          true
-        ],
-        [
-          "Branding applied in prod",
-          true
-        ],
-        [
-          "Links written (0 still held)",
-          true
-        ],
-        [
-          "Signage built (direct PDF)",
-          true
-        ],
-        [
-          "Signage approved by you",
-          false
-        ],
-        [
-          "Slack result posted",
-          false
-        ],
-        [
-          "Status posted to the review site",
-          true
-        ],
-        [
-          "Store details confirmed",
-          false
-        ]
-      ],
-      "needs_you": [
-        "approve the signage (print files in Drive)"
-      ],
-      "gaps": [],
+      "boostly_status": null,
+      "steps": null,
+      "needs_you": null,
+      "gaps": null,
       "hold": null,
-      "done": false,
-      "note": "Branding H is live and the signage PDFs are in Drive, waiting for your review (check the black POP logo: heart in color, wordmark knocked out white)",
-      "progress": {
-        "stage": "closeout",
-        "last_step": "signage PDFs rendered",
-        "next_step": "closeout-finish after approval",
-        "blocked_on": "signage approval",
-        "by": "closeout-location",
-        "host": "Unknown.domain",
-        "updated_at": "2026-10-22T21:19:07.340Z",
-        "bundle_pushed_at": "2026-10-22T21:19:08.489Z"
-      },
+      "done": null,
+      "note": "Done: H is live, signage approved by you in Drive, Slack result posted, branding complete, store details confirmed, request in physical fulfillment. Print files sent to customstickers.com (vendor email sent, order placed stamped). 6 links written (website, order online, menu, catering, Facebook, Instagram); 1 link held for your call (Reservations: generic Shift4 page, no merchant id).",
+      "progress": null,
       "review_status": {
-        "status": "waiting",
-        "waiting_on": "signage approval",
-        "ease": null,
-        "updated_at": "2026-10-22T21:19:07.300Z"
+        "status": "done",
+        "waiting_on": null,
+        "ease": 3,
+        "updated_at": "2026-10-22T22:33:28.051Z"
       },
-      "page_bytes": 7867739,
-      "blob_bytes": 6398231,
-      "blob_assets": 16
+      "page_bytes": 7867202,
+      "blob_bytes": 4224629,
+      "blob_assets": 6
     },
     {
       "slug": "five-star-pizza-clearwater",
