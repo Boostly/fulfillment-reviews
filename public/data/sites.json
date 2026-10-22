@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T19:47:18.999Z",
+  "generated_at": "2026-10-22T19:56:50.291Z",
   "count": 78,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -10,16 +10,16 @@
       "city": "Fenton",
       "state": "MI",
       "requested_at": "2026-10-22T17:54:02.333",
-      "updated_at": "2026-10-22T18:59:16.340Z",
-      "cursor": "overrides",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-22T19:56:39.913Z",
+      "cursor": "signage",
+      "status": "applied",
+      "status_label": "Branding applied",
       "recommended_letter": "D",
-      "picked_letter": null,
+      "picked_letter": "S",
       "review_url": "/mancino-s-of-fenton/",
       "figma_url": null,
-      "signage_direct": null,
-      "print_handoff_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1zqEf2wZ0fxyZ6fFbpLX2du7XCqdivxYc",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -27,20 +27,20 @@
           true
         ],
         [
-          "Branding pick (Fable default D)",
-          false
+          "Branding pick: S",
+          true
         ],
         [
           "Branding applied in prod",
-          false
+          true
         ],
         [
-          "Links written (0 ready, 0 need a call)",
-          false
+          "Links written (2 still held)",
+          true
         ],
         [
-          "Signage built",
-          false
+          "Signage built (direct PDF)",
+          true
         ],
         [
           "Signage approved by you",
@@ -52,7 +52,7 @@
         ],
         [
           "Status posted to the review site",
-          false
+          true
         ],
         [
           "Store details confirmed",
@@ -60,26 +60,31 @@
         ]
       ],
       "needs_you": [
-        "pick a letter"
+        "approve the signage (print files in Drive)"
       ],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": null,
+      "note": "S applied at account scope (new branding, website, Facebook and Order Online written); signage PDFs rendered in the Drive folder, waiting for your review; menu, catering and careers links held.",
       "progress": {
-        "stage": "fulfill",
-        "last_step": "taste pass",
-        "next_step": "review canvas and link discovery",
-        "blocked_on": null,
-        "by": "fulfill-location",
+        "stage": "closeout",
+        "last_step": "signage PDFs rendered",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "signage approval",
+        "by": "closeout-location",
         "host": "Unknown.domain",
-        "updated_at": "2026-10-22T18:58:50.684Z",
-        "bundle_pushed_at": "2026-10-22T18:58:51.024Z"
+        "updated_at": "2026-10-22T19:56:26.248Z",
+        "bundle_pushed_at": "2026-10-22T19:56:30.623Z"
       },
-      "review_status": null,
-      "page_bytes": 7671480,
-      "blob_bytes": 10163456,
-      "blob_assets": 34
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "signage approval",
+        "ease": null,
+        "updated_at": "2026-10-22T19:56:26.212Z"
+      },
+      "page_bytes": 7718075,
+      "blob_bytes": 16021025,
+      "blob_assets": 37
     },
     {
       "slug": "avanti-pizza-pasta",
