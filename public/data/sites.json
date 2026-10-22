@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T15:58:33.612Z",
+  "generated_at": "2026-10-22T16:00:37.644Z",
   "count": 73,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -234,10 +234,10 @@
       "city": "Elk Grove Village",
       "state": "IL",
       "requested_at": "2026-10-20T16:33:42.105Z",
-      "updated_at": "2026-10-22T15:37:06.595Z",
-      "cursor": "signage",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "updated_at": "2026-10-22T15:58:52.291Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "J",
       "picked_letter": "J",
       "review_url": "/brown-s-chicken-elk-grove-village/",
@@ -268,11 +268,11 @@
         ],
         [
           "Signage approved by you",
-          false
+          true
         ],
         [
           "Slack result posted",
-          false
+          true
         ],
         [
           "Status posted to the review site",
@@ -283,28 +283,26 @@
           true
         ]
       ],
-      "needs_you": [
-        "approve the signage (print files in Drive)"
-      ],
+      "needs_you": [],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "J applied (navy #010F1C, red #ED1D25); signage PDFs in Drive at 13 tables / 2 stalls, waiting for your review; 3 ready links and the Square order link wait on 2 browser reads.",
+      "note": "Done: J is live, signage approved, Slack posted, branding complete, print files and vendor email sent; links still being written, offer text on the request reads TBD (print files use Get 20% Off)",
       "progress": {
-        "stage": "closeout",
-        "last_step": "signage PDFs rendered",
-        "next_step": "closeout-finish after approval",
-        "blocked_on": "signage approval",
-        "by": "closeout-location",
+        "stage": "closeout-finish",
+        "last_step": "signage approved",
+        "next_step": "Slack, print hand-off, branding complete",
+        "blocked_on": null,
+        "by": "closeout-finish",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-22T15:37:52.116Z",
-        "bundle_pushed_at": "2026-10-22T15:37:52.537Z"
+        "updated_at": "2026-10-22T15:58:22.833Z",
+        "bundle_pushed_at": "2026-10-22T15:58:23.339Z"
       },
       "review_status": {
         "status": "waiting",
-        "waiting_on": "signage approval",
-        "ease": null,
-        "updated_at": "2026-10-22T15:37:52.062Z"
+        "waiting_on": "link writes; offer text on request reads TBD",
+        "ease": 3,
+        "updated_at": "2026-10-22T16:00:05.995Z"
       },
       "page_bytes": 22744571,
       "blob_bytes": 13803892,
