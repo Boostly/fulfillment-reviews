@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-23T16:41:23.143Z",
-  "count": 99,
+  "generated_at": "2026-10-23T16:42:32.410Z",
+  "count": 100,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -236,6 +236,84 @@
       "page_bytes": 18485039,
       "blob_bytes": 2740264,
       "blob_assets": 22
+    },
+    {
+      "slug": "nonnas-plainfield",
+      "name": "Nonna's",
+      "account": "Nonna’s by So Italian",
+      "city": "Plainfield",
+      "state": "IN",
+      "requested_at": "2026-10-23T04:38:31.669Z",
+      "updated_at": "2026-10-23T16:42:15.120Z",
+      "cursor": "overrides",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "E",
+      "picked_letter": null,
+      "review_url": "/nonnas-plainfield/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick (Fable default E)",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (0 ready, 0 need a call)",
+          false
+        ],
+        [
+          "Signage built",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [
+        "pick a letter"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": "Fable default E (Facebook NONNA'S Ristorante Italiano lockup on black, chef-hat red band); sign wordmark 'Nonna's By So Italian!' is AG/AH (generated). Taste pass (fable) added AI, AJ, AK (red card, black band, white knockout; red card, black band, words only; black card, green band, full color). Website held: root or Nonna's page.",
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "variant sheet",
+        "next_step": "taste pass",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "Karissas-MacBook-Pro.local",
+        "updated_at": "2026-10-23T16:39:30.606Z",
+        "bundle_pushed_at": "2026-10-23T16:41:38.661Z"
+      },
+      "review_status": null,
+      "page_bytes": 15049220,
+      "blob_bytes": 5501211,
+      "blob_assets": 34
     },
     {
       "slug": "nonna-s",
