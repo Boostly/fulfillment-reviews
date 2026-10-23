@@ -1,8 +1,86 @@
 {
-  "generated_at": "2026-10-23T16:34:34.903Z",
-  "count": 95,
+  "generated_at": "2026-10-23T16:36:24.851Z",
+  "count": 96,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
+    {
+      "slug": "hungry-howie-s-pizza-clinton",
+      "name": "Hungry Howie's Pizza (Clinton)",
+      "account": "Hungry Howie's Pizza",
+      "city": "Clinton",
+      "state": "UT",
+      "requested_at": "2026-10-23T14:16:41.394Z",
+      "updated_at": "2026-10-23T16:36:17.494Z",
+      "cursor": "overrides",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "H",
+      "picked_letter": null,
+      "review_url": "/hungry-howie-s-pizza-clinton/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick (Fable default H)",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (0 ready, 0 need a call)",
+          false
+        ],
+        [
+          "Signage built",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          true
+        ]
+      ],
+      "needs_you": [
+        "pick a letter"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": "Fable default H (full-color national lockup on black #191919, -20% yellow step band); taste pass (fable) added M, N and hand-added O (red band; no Flavored Crust pill; knockout on red card), stacked lockup left off (keyline joins disc and wordmark); I-L rejected silhouette twins; links pending.",
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "variant sheet",
+        "next_step": "taste pass",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "Karissas-MacBook-Pro.local",
+        "updated_at": "2026-10-23T16:33:07.452Z",
+        "bundle_pushed_at": "2026-10-23T16:33:05.166Z"
+      },
+      "review_status": null,
+      "page_bytes": 6132994,
+      "blob_bytes": 2998445,
+      "blob_assets": 20
+    },
     {
       "slug": "nonna-s",
       "name": "Nonna's",
