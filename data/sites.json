@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T18:35:20.222Z",
+  "generated_at": "2026-10-23T18:40:12.230Z",
   "count": 101,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -10,16 +10,16 @@
       "city": "Winnsboro",
       "state": "TX",
       "requested_at": "2026-10-23T15:38:06.238Z",
-      "updated_at": "2026-10-23T16:52:37.203Z",
-      "cursor": "overrides",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-23T18:39:38.112Z",
+      "cursor": "signage",
+      "status": "applied",
+      "status_label": "Branding applied",
       "recommended_letter": "D",
-      "picked_letter": null,
+      "picked_letter": "H",
       "review_url": "/pyke-s-crossroads-restaurant-winnsboro/",
       "figma_url": null,
-      "signage_direct": null,
-      "print_handoff_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1I01_TCxIUAeXkIsGjBLl6W4Ym2XH_G1L",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -27,20 +27,20 @@
           true
         ],
         [
-          "Branding pick (Fable default D)",
-          false
+          "Branding pick: H",
+          true
         ],
         [
           "Branding applied in prod",
-          false
+          true
         ],
         [
-          "Links written (0 ready, 0 need a call)",
-          false
+          "Links written (0 still held)",
+          true
         ],
         [
-          "Signage built",
-          false
+          "Signage built (direct PDF)",
+          true
         ],
         [
           "Signage approved by you",
@@ -52,7 +52,7 @@
         ],
         [
           "Status posted to the review site",
-          false
+          true
         ],
         [
           "Store details confirmed",
@@ -60,26 +60,31 @@
         ]
       ],
       "needs_you": [
-        "pick a letter"
+        "approve the signage (print files in Drive)"
       ],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Fable default D (grey cowboy head on #161616, silver band); the only authored mark is wordless, R-T carry a generated sign lockup from the window decal. Taste pass (fable) added U, V (logo-ink grey card, white knockout head, near-black band; in-store brown card, near-black band, white knockout head); W (silver card, black sign lockup, LIGHT GROUND) added by hand after an asset crop fix; the words-only decal cut was left off (cut kept the head, dropped RESTAURANT). Links: 3 ready, 3 held (site unreachable during discovery), 1 rejected. Offer mismatch flagged by preflight.",
+      "note": "Pick H applied at account scope (white cowboy head on #161616); Instagram, Facebook, Order Online, Events and Menu (off) written, careers rejected; signage PDFs (22 pages, 25 tables, 6 stalls) in Drive, waiting for your review; open: sign says $10 off $40+ but signup pays 20% off.",
       "progress": {
-        "stage": "review",
-        "last_step": "review canvas built, site published",
-        "next_step": "Travisse picks a letter",
-        "blocked_on": "letter pick",
-        "by": "fulfill-location",
+        "stage": "closeout",
+        "last_step": "signage PDFs rendered",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "signage approval",
+        "by": "closeout-location",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-23T16:41:52.749Z",
-        "bundle_pushed_at": "2026-10-23T16:54:07.881Z"
+        "updated_at": "2026-10-23T18:39:14.961Z",
+        "bundle_pushed_at": "2026-10-23T18:39:25.884Z"
       },
-      "review_status": null,
-      "page_bytes": 9026717,
-      "blob_bytes": 11382466,
-      "blob_assets": 28
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "signage approval",
+        "ease": null,
+        "updated_at": "2026-10-23T18:39:14.907Z"
+      },
+      "page_bytes": 9063208,
+      "blob_bytes": 17758168,
+      "blob_assets": 30
     },
     {
       "slug": "hungry-howie-s-pizza-clinton",
