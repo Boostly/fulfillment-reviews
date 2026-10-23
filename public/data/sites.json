@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T17:11:31.103Z",
+  "generated_at": "2026-10-23T17:15:34.039Z",
   "count": 101,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -322,7 +322,7 @@
       "city": "Plainfield",
       "state": "IN",
       "requested_at": "2026-10-23T04:38:31.669Z",
-      "updated_at": "2026-10-23T17:10:58.881Z",
+      "updated_at": "2026-10-23T17:15:06.787Z",
       "cursor": "signage",
       "status": "applied",
       "status_label": "Branding applied",
@@ -377,7 +377,7 @@
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Pick I applied and links written; signage PDFs rendered and in Drive, waiting for your review (website held)",
+      "note": "Pick I applied, website and ready links written; signage PDFs in Drive waiting for your review; events, catering, jobs, gift cards held until a browser reads the site",
       "progress": {
         "stage": "closeout",
         "last_step": "signage PDFs rendered",
@@ -385,16 +385,16 @@
         "blocked_on": "signage approval",
         "by": "closeout-location",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-23T17:10:46.678Z",
-        "bundle_pushed_at": "2026-10-23T17:10:51.637Z"
+        "updated_at": "2026-10-23T17:14:39.825Z",
+        "bundle_pushed_at": "2026-10-23T17:14:59.722Z"
       },
       "review_status": {
         "status": "waiting",
         "waiting_on": "signage approval",
         "ease": null,
-        "updated_at": "2026-10-23T17:10:46.620Z"
+        "updated_at": "2026-10-23T17:14:39.761Z"
       },
-      "page_bytes": 15087718,
+      "page_bytes": 15089351,
       "blob_bytes": 10879673,
       "blob_assets": 36
     },
