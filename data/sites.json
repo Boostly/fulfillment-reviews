@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T18:33:56.865Z",
+  "generated_at": "2026-10-23T18:35:20.222Z",
   "count": 101,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -171,80 +171,31 @@
       "city": "Logan",
       "state": "UT",
       "requested_at": "2026-10-23T14:16:41.334Z",
-      "updated_at": "2026-10-23T18:22:35.548Z",
-      "cursor": "signage",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "updated_at": "2026-10-23T18:33:54.831Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "B",
       "picked_letter": "BB",
       "review_url": "/hungry-howie-s-pizza-logan/",
       "figma_url": null,
       "signage_direct": "built",
       "print_handoff_url": "https://drive.google.com/drive/folders/1FYCNPSCxKDoV4ttwXu_sYmJydCtDvENV",
-      "boostly_status": "digital_fulfillment",
-      "steps": [
-        [
-          "Review sheet ready",
-          true
-        ],
-        [
-          "Branding pick: BB",
-          true
-        ],
-        [
-          "Branding applied in prod",
-          true
-        ],
-        [
-          "Links written (0 ready, 4 need a call)",
-          false
-        ],
-        [
-          "Signage built (direct PDF)",
-          true
-        ],
-        [
-          "Signage approved by you",
-          false
-        ],
-        [
-          "Slack result posted",
-          false
-        ],
-        [
-          "Status posted to the review site",
-          true
-        ],
-        [
-          "Store details confirmed",
-          true
-        ]
-      ],
-      "needs_you": [
-        "approve the signage (print files in Drive)",
-        "4 link decision(s)"
-      ],
-      "gaps": [],
+      "boostly_status": null,
+      "steps": null,
+      "needs_you": null,
+      "gaps": null,
       "hold": null,
-      "done": false,
-      "note": "BB applied at location scope; signage PDFs rendered and in Drive, waiting for your review (Order Online and corporate socials held).",
-      "progress": {
-        "stage": "closeout",
-        "last_step": "signage PDFs rendered",
-        "next_step": "closeout-finish after approval",
-        "blocked_on": "signage approval",
-        "by": "closeout-location",
-        "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-23T18:23:13.006Z",
-        "bundle_pushed_at": "2026-10-23T18:23:15.499Z"
-      },
+      "done": null,
+      "note": "Done: BB is live, signage approved, Slack posted, print order emailed, branding complete; held: Logan Order Online page and corporate socials, table/stall counts unconfirmed",
+      "progress": null,
       "review_status": {
         "status": "waiting",
-        "waiting_on": "signage approval",
-        "ease": null,
-        "updated_at": "2026-10-23T18:23:12.946Z"
+        "waiting_on": "held links and table/stall counts",
+        "ease": 3,
+        "updated_at": "2026-10-23T18:34:27.254Z"
       },
-      "page_bytes": 18877828,
+      "page_bytes": 18878011,
       "blob_bytes": 8932467,
       "blob_assets": 24
     },
