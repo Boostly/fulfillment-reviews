@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T02:54:03.902Z",
+  "generated_at": "2026-10-23T02:55:40.230Z",
   "count": 80,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -1198,7 +1198,7 @@
       "city": "OCEAN CITY",
       "state": "MD",
       "requested_at": "2026-10-14T19:07:47.398",
-      "updated_at": "2026-10-22T23:16:01.218Z",
+      "updated_at": "2026-10-23T02:54:11.829Z",
       "cursor": "slack",
       "status": "closed",
       "status_label": "Closed out",
@@ -1208,65 +1208,19 @@
       "figma_url": null,
       "signage_direct": "built",
       "print_handoff_url": "https://drive.google.com/drive/folders/1DqP8uEhYkFuRCQFRpX1l81L4mvuqFlcI",
-      "boostly_status": "digital_fulfillment",
-      "steps": [
-        [
-          "Review sheet ready",
-          true
-        ],
-        [
-          "Branding pick: F [account-level, from surfin-betty-s-burger-bar-downtown]",
-          true
-        ],
-        [
-          "Branding applied in prod",
-          true
-        ],
-        [
-          "Links written (1 still held)",
-          true
-        ],
-        [
-          "Signage built (direct PDF)",
-          true
-        ],
-        [
-          "Signage approved by you",
-          true
-        ],
-        [
-          "Slack result posted",
-          true
-        ],
-        [
-          "Status posted to the review site",
-          true
-        ],
-        [
-          "Store details confirmed",
-          true
-        ]
-      ],
-      "needs_you": [],
-      "gaps": [],
-      "hold": "QUANTITY MISMATCH, COUNT DECIDED 2026-10-22, LIVE ITEMS STILL UNRESOLVED (closeout-finish)",
-      "done": true,
-      "note": "Done: inherited pick F is live (account scope, from Downtown), signage approved at 14 tables / 6 stalls, Slack posted, branding complete (now in physical fulfillment), store details already confirmed 10/14. Secondary logo already at account scope, inherited, no write here. Open for you: the live fulfillment table items still read 45 (account total); boostly-links has no quantity-edit command, so this run did not change them (Downtown used a bespoke replay script outside the CLI for the same fix). The vendor email and print order summary row stay held (HOLD.md) until the live items are corrected to 14 or you say ship as is. Gift cards link still held for your call.",
-      "progress": {
-        "stage": "closeout-finish",
-        "last_step": "signage approved",
-        "next_step": "quantity CLI gap, secondary logo check, Slack, print hand-off, branding complete",
-        "blocked_on": null,
-        "by": "closeout-finish",
-        "host": "Unknown.domain",
-        "updated_at": "2026-10-22T22:56:10.809Z",
-        "bundle_pushed_at": "2026-10-22T22:56:16.727Z"
-      },
+      "boostly_status": null,
+      "steps": null,
+      "needs_you": null,
+      "gaps": null,
+      "hold": null,
+      "done": null,
+      "note": "Done: inherited pick F is live (account scope, from Downtown), signage approved at 14 tables / 6 stalls, Slack posted, branding complete (physical fulfillment), store details confirmed 10/14. Secondary logo already at account scope, inherited, no write here. Live table quantity corrected to 14 (lead wrote it through the admin quantity action; boostly-links has no quantity-edit command). Print files sent to customstickers.com (6 vector PDFs, Drive folder, vendor email and summary row both say 14 tables, sent). Gift cards link still held for your call (Downtown Toast page, never read at this store).",
+      "progress": null,
       "review_status": {
-        "status": "waiting",
-        "waiting_on": "table count: live items 45 vs built 14 (vendor email/summary row held)",
-        "ease": 3,
-        "updated_at": "2026-10-22T23:36:25.596Z"
+        "status": "done",
+        "waiting_on": null,
+        "ease": 4,
+        "updated_at": "2026-10-23T02:55:01.787Z"
       },
       "page_bytes": 3366315,
       "blob_bytes": 11230048,
