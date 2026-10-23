@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-23T04:45:01.437Z",
-  "count": 87,
+  "generated_at": "2026-10-23T04:45:50.206Z",
+  "count": 88,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -350,6 +350,84 @@
       "page_bytes": 6066153,
       "blob_bytes": 19926383,
       "blob_assets": 33
+    },
+    {
+      "slug": "romeo-s-pizza-mansfield",
+      "name": "Romeo's Pizza (Mansfield)",
+      "account": "Romeo's Pizza (Jeff)",
+      "city": "Mansfield",
+      "state": "OH",
+      "requested_at": "2026-10-21T15:11:47.464",
+      "updated_at": "2026-10-23T04:45:44.358Z",
+      "cursor": "write",
+      "status": "applied",
+      "status_label": "Branding applied",
+      "recommended_letter": "I",
+      "picked_letter": "I",
+      "review_url": "/romeo-s-pizza-mansfield/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick: I [account-level, from romeo-s-pizza-clintonville]",
+          true
+        ],
+        [
+          "Branding applied in prod",
+          true
+        ],
+        [
+          "Links written (7 ready, 3 need a call)",
+          false
+        ],
+        [
+          "Signage built",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [
+        "3 link decision(s)"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": "Inherits the Romeo's Pizza (Clintonville) pick: branding is written once at account scope on the Jeff account at the Clintonville closeout, so no evidence, Fable or sheet runs here. Links-only run comes in a later wave.",
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "inherit readback and static link pass",
+        "next_step": "review canvas and site publish",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-23T04:45:08.828Z",
+        "bundle_pushed_at": "2026-10-23T04:45:09.223Z"
+      },
+      "review_status": null,
+      "page_bytes": 6170624,
+      "blob_bytes": 4192136,
+      "blob_assets": 6
     },
     {
       "slug": "romeo-s-pizza-hilliard",
