@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T18:23:46.084Z",
+  "generated_at": "2026-10-23T18:24:19.222Z",
   "count": 101,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -88,16 +88,16 @@
       "city": "Clinton",
       "state": "UT",
       "requested_at": "2026-10-23T14:16:41.394Z",
-      "updated_at": "2026-10-23T16:52:07.475Z",
-      "cursor": "overrides",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-23T18:23:28.562Z",
+      "cursor": "signage",
+      "status": "applied",
+      "status_label": "Branding applied",
       "recommended_letter": "H",
-      "picked_letter": null,
+      "picked_letter": "E",
       "review_url": "/hungry-howie-s-pizza-clinton/",
       "figma_url": null,
-      "signage_direct": null,
-      "print_handoff_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1FJoxfcIJ6HDKAJ_Sedng6WhKVKRDV1wE",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -105,20 +105,20 @@
           true
         ],
         [
-          "Branding pick (Fable default H)",
-          false
+          "Branding pick: E",
+          true
         ],
         [
           "Branding applied in prod",
-          false
+          true
         ],
         [
-          "Links written (0 ready, 0 need a call)",
-          false
+          "Links written (0 still held)",
+          true
         ],
         [
-          "Signage built",
-          false
+          "Signage built (direct PDF)",
+          true
         ],
         [
           "Signage approved by you",
@@ -130,7 +130,7 @@
         ],
         [
           "Status posted to the review site",
-          false
+          true
         ],
         [
           "Store details confirmed",
@@ -138,26 +138,31 @@
         ]
       ],
       "needs_you": [
-        "pick a letter"
+        "approve the signage (print files in Drive)"
       ],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Pick a letter: Fable default H (full-color lockup on black, -20% yellow step band). Taste pass (fable) added M, N; O hand-added (knockout on red); I-L rejected silhouette twins. Links: Order Online (HungerRush store 674) ready; Instagram and ezCater catering ready after a discovery rerun; validator exit 2 (2 directory pages unreadable). Offer has no promotion linked.",
+      "note": "Pick E is live at location scope with Order Online, Instagram and Catering written; signage PDFs are in Drive waiting for your review (table and stall counts unconfirmed)",
       "progress": {
-        "stage": "fulfill",
-        "last_step": "taste pass",
-        "next_step": "review canvas and link discovery",
-        "blocked_on": null,
-        "by": "fulfill-location",
+        "stage": "closeout",
+        "last_step": "signage PDFs rendered",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "signage approval",
+        "by": "closeout-location",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-23T16:36:06.630Z",
-        "bundle_pushed_at": "2026-10-23T16:36:29.946Z"
+        "updated_at": "2026-10-23T18:23:12.706Z",
+        "bundle_pushed_at": "2026-10-23T18:23:15.550Z"
       },
-      "review_status": null,
-      "page_bytes": 6134506,
-      "blob_bytes": 2998445,
-      "blob_assets": 20
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "signage approval",
+        "ease": null,
+        "updated_at": "2026-10-23T18:23:12.649Z"
+      },
+      "page_bytes": 6177963,
+      "blob_bytes": 8708182,
+      "blob_assets": 22
     },
     {
       "slug": "hungry-howie-s-pizza-logan",
