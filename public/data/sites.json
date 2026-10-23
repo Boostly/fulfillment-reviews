@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T21:21:20.464Z",
+  "generated_at": "2026-10-23T21:25:43.441Z",
   "count": 102,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -10,7 +10,7 @@
       "city": "Lilburn",
       "state": "GA",
       "requested_at": "2026-10-23T20:56:04.62",
-      "updated_at": "2026-10-23T21:21:02.208Z",
+      "updated_at": "2026-10-23T21:25:33.390Z",
       "cursor": "overrides",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -35,7 +35,7 @@
           false
         ],
         [
-          "Links written (0 ready, 0 need a call)",
+          "Links written (1 ready, 7 need a call)",
           false
         ],
         [
@@ -60,25 +60,26 @@
         ]
       ],
       "needs_you": [
-        "pick a letter"
+        "pick a letter",
+        "7 link decision(s)"
       ],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": null,
+      "note": "Awaiting pick: recommend G (full-color header lockup on black, red band); AY is the same mark with both descriptor lines dropped and reads larger. Taste pass (fable) added AW, AX (full color, site magenta band; knockout on the red ink, black band); AY, AZ hand-built from its namaste-plus-crown proposals. Links: Instagram ready; site pages held behind a Cloudflare challenge until a browser read at closeout. Call facts (10/15 onboarding with Anu): 20% confirmed, about 20 tables, 10 tap cards, stalls default 4, birthday Gulab Jamun; all match the request and live promos.",
       "progress": {
         "stage": "fulfill",
-        "last_step": "variant sheet",
-        "next_step": "taste pass",
+        "last_step": "review canvas built, site published",
+        "next_step": "link discovery record and run.json validate",
         "blocked_on": null,
         "by": "fulfill-location",
         "host": "Unknown.domain",
-        "updated_at": "2026-10-23T21:14:53.073Z",
-        "bundle_pushed_at": "2026-10-23T21:16:59.162Z"
+        "updated_at": "2026-10-23T21:21:44.540Z",
+        "bundle_pushed_at": "2026-10-23T21:21:48.982Z"
       },
       "review_status": null,
-      "page_bytes": 20883935,
-      "blob_bytes": 10705427,
+      "page_bytes": 20884135,
+      "blob_bytes": 10867877,
       "blob_assets": 33
     },
     {
