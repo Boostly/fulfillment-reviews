@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T05:02:50.700Z",
+  "generated_at": "2026-10-23T05:05:43.429Z",
   "count": 95,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -88,7 +88,7 @@
       "city": "Glendale",
       "state": "AZ",
       "requested_at": "2026-10-23T04:36:28.468",
-      "updated_at": "2026-10-23T04:58:20.505Z",
+      "updated_at": "2026-10-23T05:05:35.355Z",
       "cursor": "overrides",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -143,20 +143,20 @@
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": null,
+      "note": "Full run (own lockup, not Il Capo's). Default D, full-color lockup on black. Taste pass (fable) added M, N (knockout on red, black band; full color on red, black band). Links: website (Places, dry run), Facebook, Instagram, Menu, Order Online (stored Popmenu URL kept) ready; catering and careers held, unread behind Cloudflare; Toast rejected as a second ordering URL. Static pass only, rerun discovery after the website write at closeout. Tables 20 vs 13 on the call.",
       "progress": {
         "stage": "fulfill",
-        "last_step": "variant sheet",
-        "next_step": "taste pass",
+        "last_step": "taste pass",
+        "next_step": "review canvas and link discovery",
         "blocked_on": null,
         "by": "fulfill-location",
         "host": "Unknown.domain",
-        "updated_at": "2026-10-23T04:55:37.380Z",
-        "bundle_pushed_at": "2026-10-23T04:57:33.488Z"
+        "updated_at": "2026-10-23T04:57:57.826Z",
+        "bundle_pushed_at": "2026-10-23T04:58:42.044Z"
       },
       "review_status": null,
-      "page_bytes": 5659436,
-      "blob_bytes": 9542816,
+      "page_bytes": 5670564,
+      "blob_bytes": 9598295,
       "blob_assets": 28
     },
     {
