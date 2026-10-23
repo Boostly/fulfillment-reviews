@@ -1,8 +1,86 @@
 {
-  "generated_at": "2026-10-23T04:58:35.232Z",
-  "count": 94,
+  "generated_at": "2026-10-23T05:00:44.584Z",
+  "count": 95,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
+    {
+      "slug": "nonna-s",
+      "name": "Nonna's",
+      "account": "Nonna’s by So Italian",
+      "city": "Plainfield",
+      "state": "IN",
+      "requested_at": "2026-10-23T04:38:31.669",
+      "updated_at": "2026-10-23T05:00:30.896Z",
+      "cursor": "overrides",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "F",
+      "picked_letter": null,
+      "review_url": "/nonna-s/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick (Fable default F)",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (0 ready, 0 need a call)",
+          false
+        ],
+        [
+          "Signage built",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [
+        "pick a letter"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": null,
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "taste pass",
+        "next_step": "review canvas and link discovery",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-23T04:58:18.869Z",
+        "bundle_pushed_at": "2026-10-23T04:58:19.028Z"
+      },
+      "review_status": null,
+      "page_bytes": 9387906,
+      "blob_bytes": 10597453,
+      "blob_assets": 31
+    },
     {
       "slug": "lil-capo",
       "name": "Lil Capo",
