@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T04:42:19.995Z",
+  "generated_at": "2026-10-23T04:42:51.148Z",
   "count": 86,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -596,7 +596,7 @@
       "city": "Dublin",
       "state": "OH",
       "requested_at": "2026-10-21T15:08:24.94",
-      "updated_at": "2026-10-23T04:40:37.894Z",
+      "updated_at": "2026-10-23T04:42:43.296Z",
       "cursor": "write",
       "status": "applied",
       "status_label": "Existing account branding (inherited)",
@@ -651,7 +651,7 @@
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Inherits the Romeo's Pizza (Clintonville) pick: branding is written once at account scope on the Jeff account at the Clintonville closeout, so no evidence, Fable or sheet runs here. Links-only run comes in a later wave.",
+      "note": "Links-only sibling: branding inherits Clintonville letter I (account row, no Dublin override; readback matches). Links ready: website (Dublin store page), store order link order.romeospizza.com id 8HL4V (replaces chain homepage), menu, careers, @romeospizzacbus IG/X and FB page 105054254442301 (differs from Clintonville's FB). Rewards held (no touchpoint). Discovery rerun due at closeout after the website write.",
       "progress": {
         "stage": "fulfill",
         "last_step": "inherit readback (letter I) and link discovery (static pass)",
@@ -662,10 +662,15 @@
         "updated_at": "2026-10-23T04:40:21.928Z",
         "bundle_pushed_at": "2026-10-23T04:29:34.473Z"
       },
-      "review_status": null,
-      "page_bytes": 6168126,
-      "blob_bytes": 1244876,
-      "blob_assets": 5
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "Travisse: confirm inherited pick I and the link review",
+        "ease": null,
+        "updated_at": "2026-10-23T04:42:35.414Z"
+      },
+      "page_bytes": 6173344,
+      "blob_bytes": 6143065,
+      "blob_assets": 16
     },
     {
       "slug": "romeo-s-pizza-clintonville",
