@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-23T04:37:59.236Z",
-  "count": 81,
+  "generated_at": "2026-10-23T04:39:06.882Z",
+  "count": 82,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -1981,6 +1981,86 @@
       "page_bytes": 5724267,
       "blob_bytes": 8918404,
       "blob_assets": 27
+    },
+    {
+      "slug": "pig-and-parrot-last-resort-hoboken",
+      "name": "Pig and Parrot Last Resort (Hoboken)",
+      "account": "The Pig & Parrot",
+      "city": "Hoboken",
+      "state": "NJ",
+      "requested_at": "2026-10-13T21:55:35.755",
+      "updated_at": "2026-10-23T04:39:04.324Z",
+      "cursor": "write",
+      "status": "applied",
+      "status_label": "Branding applied",
+      "recommended_letter": "A",
+      "picked_letter": "K",
+      "review_url": "/pig-and-parrot-last-resort-hoboken/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick: K [account-level, from the-pig-parrot-hoboken]",
+          true
+        ],
+        [
+          "Branding applied in prod",
+          true
+        ],
+        [
+          "Links written (0 ready, 6 need a call)",
+          false
+        ],
+        [
+          "Signage built",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [
+        "6 link decision(s)"
+      ],
+      "gaps": [
+        "ship-to missing"
+      ],
+      "hold": "PRINT HOLD 2026-10-15 (Shaun Young, CSM), account-wide",
+      "done": false,
+      "note": "Links only: branding comes from The Pig & Parrot (Hoboken) pick; 0 ready, 6 held because browser reads failed today (Codex extension error, and the Claude Chrome fallback is blocked by two Chrome profiles named Boostly.com), so no link is verified yet. DUPLICATE: a second open request o5xc for this same restaurant sits under a separate account; Travisse/CS must cancel one (nothing canceled).",
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "inherit readback (K from the Hoboken run, no override row)",
+        "next_step": "link discovery, then review page",
+        "blocked_on": "account print hold (CSM confirming counts with each GM)",
+        "by": "fulfill-location",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-23T04:34:14.589Z",
+        "bundle_pushed_at": "2026-10-23T04:34:14.878Z"
+      },
+      "review_status": null,
+      "page_bytes": 5271342,
+      "blob_bytes": 80101,
+      "blob_assets": 1
     },
     {
       "slug": "v-s-italiano-ristorante-independence",
