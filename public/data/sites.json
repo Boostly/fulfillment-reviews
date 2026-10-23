@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T18:27:20.892Z",
+  "generated_at": "2026-10-23T18:33:56.865Z",
   "count": 101,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -255,10 +255,10 @@
       "city": "Layton",
       "state": "UT",
       "requested_at": "2026-10-23T14:16:41.203Z",
-      "updated_at": "2026-10-23T18:21:45.431Z",
-      "cursor": "signage",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "updated_at": "2026-10-23T18:32:27.569Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "G",
       "picked_letter": "G",
       "review_url": "/hungry-howie-s-pizza-layton/",
@@ -289,11 +289,11 @@
         ],
         [
           "Signage approved by you",
-          false
+          true
         ],
         [
           "Slack result posted",
-          false
+          true
         ],
         [
           "Status posted to the review site",
@@ -304,30 +304,28 @@
           true
         ]
       ],
-      "needs_you": [
-        "approve the signage (print files in Drive)"
-      ],
+      "needs_you": [],
       "gaps": [],
       "hold": null,
-      "done": false,
-      "note": "Branding G applied at location scope, order and Instagram links written, signage PDFs in Drive waiting for your review; chain Facebook held.",
+      "done": true,
+      "note": "Done: G is live, print files approved, Slack posted, vendor email sent, branding complete; chain Facebook and table/stall counts still need a call",
       "progress": {
-        "stage": "closeout",
-        "last_step": "signage PDFs rendered",
-        "next_step": "closeout-finish after approval",
-        "blocked_on": "signage approval",
-        "by": "closeout-location",
+        "stage": "closeout-finish",
+        "last_step": "signage approved",
+        "next_step": "secondary logo, Slack, branding complete",
+        "blocked_on": null,
+        "by": "closeout-finish",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-23T18:23:03.661Z",
-        "bundle_pushed_at": "2026-10-23T18:23:07.383Z"
+        "updated_at": "2026-10-23T18:31:45.505Z",
+        "bundle_pushed_at": "2026-10-23T18:32:09.732Z"
       },
       "review_status": {
         "status": "waiting",
-        "waiting_on": "signage approval",
-        "ease": null,
-        "updated_at": "2026-10-23T18:23:03.603Z"
+        "waiting_on": "chain Facebook call, table and stall counts",
+        "ease": 4,
+        "updated_at": "2026-10-23T18:32:59.612Z"
       },
-      "page_bytes": 12263434,
+      "page_bytes": 12269398,
       "blob_bytes": 10554194,
       "blob_assets": 29
     },
