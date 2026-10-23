@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T05:00:44.584Z",
+  "generated_at": "2026-10-23T05:02:50.700Z",
   "count": 95,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -10,7 +10,7 @@
       "city": "Plainfield",
       "state": "IN",
       "requested_at": "2026-10-23T04:38:31.669",
-      "updated_at": "2026-10-23T05:00:30.896Z",
+      "updated_at": "2026-10-23T05:02:42.169Z",
       "cursor": "overrides",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -65,7 +65,7 @@
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": null,
+      "note": "Pick a letter: rec F (black card, hat-red band, full NONNA'S Ristorante Italiano lockup from the 1002px Facebook avatar); picking F also OKs the sticker size (133 KB). Taste pass (fable) added U, V, W (white ink on red, black band; words only on red, black band; full color on site footer grey, red band). Links: 6 ready, ordering held (stored Toast vs site Slice), browser rerun after the website write at closeout.",
       "progress": {
         "stage": "fulfill",
         "last_step": "taste pass",
@@ -77,8 +77,8 @@
         "bundle_pushed_at": "2026-10-23T04:58:19.028Z"
       },
       "review_status": null,
-      "page_bytes": 9387906,
-      "blob_bytes": 10597453,
+      "page_bytes": 9389959,
+      "blob_bytes": 10600908,
       "blob_assets": 31
     },
     {
