@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T17:23:30.089Z",
+  "generated_at": "2026-10-23T18:11:39.994Z",
   "count": 101,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -166,7 +166,7 @@
       "city": "Logan",
       "state": "UT",
       "requested_at": "2026-10-23T14:16:41.334Z",
-      "updated_at": "2026-10-23T16:39:21.080Z",
+      "updated_at": "2026-10-23T18:11:36.017Z",
       "cursor": "links",
       "status": "awaiting",
       "status_label": "Awaiting pick",
@@ -191,7 +191,7 @@
           false
         ],
         [
-          "Links written (0 ready, 0 need a call)",
+          "Links written (0 ready, 4 need a call)",
           false
         ],
         [
@@ -216,24 +216,25 @@
         ]
       ],
       "needs_you": [
-        "pick a letter"
+        "pick a letter",
+        "4 link decision(s)"
       ],
       "gaps": [],
       "hold": null,
       "done": false,
       "note": "Pick a letter: Fable default B (black outline wordmark on brand yellow #FFDA00, red mark-ink band); AY is the same look as Clinton's H (full color on black) for sibling consistency. Taste pass (fable) added AZ, BA (red card, full color lockup, black band; red card, white knockout, yellow band); p2 stack not built (disc and wordmark share one keyline halo), p1 disc-only held on ship-gate. Links: 0 ready, 4 held (order link is chain-level, corporate socials), 5 rejected. Quantities unconfirmed, 2 call transcripts pending.",
       "progress": {
-        "stage": "fulfill",
-        "last_step": "variant sheet",
-        "next_step": "taste pass",
-        "blocked_on": null,
+        "stage": "review",
+        "last_step": "review canvas built, site published",
+        "next_step": "Travisse picks a letter",
+        "blocked_on": "letter pick",
         "by": "fulfill-location",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-23T16:36:23.136Z",
-        "bundle_pushed_at": "2026-10-23T16:36:23.461Z"
+        "updated_at": "2026-10-23T16:39:55.789Z",
+        "bundle_pushed_at": "2026-10-23T16:39:58.298Z"
       },
       "review_status": null,
-      "page_bytes": 18485039,
+      "page_bytes": 18834967,
       "blob_bytes": 2740264,
       "blob_assets": 22
     },
