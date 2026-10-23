@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T04:39:40.374Z",
+  "generated_at": "2026-10-23T04:39:45.100Z",
   "count": 84,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -2141,7 +2141,7 @@
       "city": "Hoboken",
       "state": "NJ",
       "requested_at": "2026-10-13T21:55:35.755",
-      "updated_at": "2026-10-23T04:39:04.324Z",
+      "updated_at": "2026-10-23T04:39:41.472Z",
       "cursor": "write",
       "status": "applied",
       "status_label": "Branding applied",
@@ -2210,9 +2210,9 @@
         "bundle_pushed_at": "2026-10-23T04:34:14.878Z"
       },
       "review_status": null,
-      "page_bytes": 5271342,
-      "blob_bytes": 80101,
-      "blob_assets": 1
+      "page_bytes": 5274423,
+      "blob_bytes": 853411,
+      "blob_assets": 6
     },
     {
       "slug": "v-s-italiano-ristorante-independence",
