@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-23T04:41:10.953Z",
-  "count": 85,
+  "generated_at": "2026-10-23T04:42:19.995Z",
+  "count": 86,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -2131,6 +2131,91 @@
       "page_bytes": 11509470,
       "blob_bytes": 3448305,
       "blob_assets": 26
+    },
+    {
+      "slug": "the-pig-and-parrot-sandbar-brielle",
+      "name": "The Pig and Parrot Sandbar (Brielle)",
+      "account": "The Pig & Parrot",
+      "city": "Brielle",
+      "state": "NJ",
+      "requested_at": "2026-10-13T21:55:36.093",
+      "updated_at": "2026-10-23T04:42:17.306Z",
+      "cursor": "write",
+      "status": "inherits",
+      "status_label": "Branding: inherits the-pig-parrot-hoboken (pending apply)",
+      "recommended_letter": "A",
+      "picked_letter": "K",
+      "review_url": "/the-pig-and-parrot-sandbar-brielle/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick: K [account-level, from the-pig-parrot-hoboken]",
+          true
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (0 ready, 6 need a call)",
+          false
+        ],
+        [
+          "Signage built",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [
+        "6 link decision(s)"
+      ],
+      "gaps": [
+        "ship-to missing"
+      ],
+      "hold": "PRINT HOLD 2026-10-15 (Shaun Young, CSM), account yxufl9lssey1cis5wt0jwiqb",
+      "done": false,
+      "note": "Inherits K from The Pig & Parrot (Hoboken) at account scope (readback 2026-10-22: no override row, effective = K). PRINT HOLD from CSM Shaun Young: nothing prints until the GM confirmations are back. Links rerun with live reads: 3 ready (Sandbar Instagram, Sandbar Facebook, Brielle events), 2 held (menu: the site's Brielle menu links land on the Hoboken menu; DoorDash unread). No taste pass or new sheet (inherited).",
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "started (inherited branding, links-only rerun)",
+        "next_step": "production readback and link discovery",
+        "blocked_on": "Hoboken branding pick (the-pig-parrot-hoboken)",
+        "by": "fulfill-location",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-23T04:31:08.556Z",
+        "bundle_pushed_at": "2026-10-23T04:31:08.756Z"
+      },
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "print hold from the CSM (GM confirmations); menu link question",
+        "ease": null,
+        "updated_at": "2026-10-23T04:42:09.068Z"
+      },
+      "page_bytes": 5270182,
+      "blob_bytes": 86453,
+      "blob_assets": 1
     },
     {
       "slug": "the-pig-parrot-hoboken",
