@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-23T04:50:09.099Z",
-  "count": 89,
+  "generated_at": "2026-10-23T04:50:25.111Z",
+  "count": 90,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -350,6 +350,84 @@
       "page_bytes": 6066153,
       "blob_bytes": 19926383,
       "blob_assets": 33
+    },
+    {
+      "slug": "romeo-s-pizza-pickerington",
+      "name": "Romeo's Pizza (Pickerington)",
+      "account": "Romeo's Pizza (Jeff)",
+      "city": "Pickerington",
+      "state": "OH",
+      "requested_at": "2026-10-21T15:12:38.12",
+      "updated_at": "2026-10-23T04:50:16.945Z",
+      "cursor": "write",
+      "status": "applied",
+      "status_label": "Branding applied",
+      "recommended_letter": "I",
+      "picked_letter": "I",
+      "review_url": "/romeo-s-pizza-pickerington/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          false
+        ],
+        [
+          "Branding pick",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (0 ready, 0 need a call)",
+          false
+        ],
+        [
+          "Signage built",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [
+        "not started: pipeline has not produced a review sheet"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": "Inherits the Romeo's Pizza (Clintonville) pick: branding is written once at account scope on the Jeff account at the Clintonville closeout, so no evidence, Fable or sheet runs here. Links-only run comes in a later wave.",
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "started (links-only inherited run)",
+        "next_step": "inherit readback and link discovery",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-23T04:44:41.765Z",
+        "bundle_pushed_at": "2026-10-23T04:44:42.170Z"
+      },
+      "review_status": null,
+      "page_bytes": 6172011,
+      "blob_bytes": 5333305,
+      "blob_assets": 7
     },
     {
       "slug": "romeo-s-pizza-newark",
