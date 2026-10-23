@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T17:15:34.039Z",
+  "generated_at": "2026-10-23T17:23:30.089Z",
   "count": 101,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -322,10 +322,10 @@
       "city": "Plainfield",
       "state": "IN",
       "requested_at": "2026-10-23T04:38:31.669Z",
-      "updated_at": "2026-10-23T17:15:06.787Z",
-      "cursor": "signage",
-      "status": "applied",
-      "status_label": "Branding applied",
+      "updated_at": "2026-10-23T17:21:54.862Z",
+      "cursor": "slack",
+      "status": "closed",
+      "status_label": "Closed out",
       "recommended_letter": "E",
       "picked_letter": "I",
       "review_url": "/nonnas-plainfield/",
@@ -356,11 +356,11 @@
         ],
         [
           "Signage approved by you",
-          false
+          true
         ],
         [
           "Slack result posted",
-          false
+          true
         ],
         [
           "Status posted to the review site",
@@ -371,30 +371,28 @@
           false
         ]
       ],
-      "needs_you": [
-        "approve the signage (print files in Drive)"
-      ],
+      "needs_you": [],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Pick I applied, website and ready links written; signage PDFs in Drive waiting for your review; events, catering, jobs, gift cards held until a browser reads the site",
+      "note": "Done: pick I is live, signage approved, Slack posted, print files sent to the vendor, branding complete and store details confirmed; 4 site links pending, table and stall counts unconfirmed",
       "progress": {
-        "stage": "closeout",
-        "last_step": "signage PDFs rendered",
-        "next_step": "closeout-finish after approval",
-        "blocked_on": "signage approval",
-        "by": "closeout-location",
+        "stage": "closeout-finish",
+        "last_step": "signage approved",
+        "next_step": "secondary logo, Slack, branding complete",
+        "blocked_on": null,
+        "by": "closeout-finish",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-23T17:14:39.825Z",
-        "bundle_pushed_at": "2026-10-23T17:14:59.722Z"
+        "updated_at": "2026-10-23T17:21:08.247Z",
+        "bundle_pushed_at": "2026-10-23T17:21:28.185Z"
       },
       "review_status": {
         "status": "waiting",
-        "waiting_on": "signage approval",
-        "ease": null,
-        "updated_at": "2026-10-23T17:14:39.761Z"
+        "waiting_on": "4 held site links, table/stall counts",
+        "ease": 3,
+        "updated_at": "2026-10-23T17:22:36.810Z"
       },
-      "page_bytes": 15089351,
+      "page_bytes": 15089534,
       "blob_bytes": 10879673,
       "blob_assets": 36
     },
