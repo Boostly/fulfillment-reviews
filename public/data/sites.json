@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T16:53:54.907Z",
+  "generated_at": "2026-10-23T17:11:31.103Z",
   "count": 101,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -322,16 +322,16 @@
       "city": "Plainfield",
       "state": "IN",
       "requested_at": "2026-10-23T04:38:31.669Z",
-      "updated_at": "2026-10-23T16:42:15.120Z",
-      "cursor": "overrides",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-23T17:10:58.881Z",
+      "cursor": "signage",
+      "status": "applied",
+      "status_label": "Branding applied",
       "recommended_letter": "E",
-      "picked_letter": null,
+      "picked_letter": "I",
       "review_url": "/nonnas-plainfield/",
       "figma_url": null,
-      "signage_direct": null,
-      "print_handoff_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1wTLVI-4Mbfp7GFWdxPdTsWaXM6saUGKC",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -339,20 +339,20 @@
           true
         ],
         [
-          "Branding pick (Fable default E)",
-          false
+          "Branding pick: I",
+          true
         ],
         [
           "Branding applied in prod",
-          false
+          true
         ],
         [
-          "Links written (0 ready, 0 need a call)",
-          false
+          "Links written (0 still held)",
+          true
         ],
         [
-          "Signage built",
-          false
+          "Signage built (direct PDF)",
+          true
         ],
         [
           "Signage approved by you",
@@ -364,7 +364,7 @@
         ],
         [
           "Status posted to the review site",
-          false
+          true
         ],
         [
           "Store details confirmed",
@@ -372,26 +372,31 @@
         ]
       ],
       "needs_you": [
-        "pick a letter"
+        "approve the signage (print files in Drive)"
       ],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Fable default E (Facebook NONNA'S Ristorante Italiano lockup on black, chef-hat red band); sign wordmark 'Nonna's By So Italian!' is AG/AH (generated). Taste pass (fable) added AI, AJ, AK (red card, black band, white knockout; red card, black band, words only; black card, green band, full color). Website held: root or Nonna's page.",
+      "note": "Pick I applied and links written; signage PDFs rendered and in Drive, waiting for your review (website held)",
       "progress": {
-        "stage": "fulfill",
-        "last_step": "variant sheet",
-        "next_step": "taste pass",
-        "blocked_on": null,
-        "by": "fulfill-location",
+        "stage": "closeout",
+        "last_step": "signage PDFs rendered",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "signage approval",
+        "by": "closeout-location",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-23T16:39:30.606Z",
-        "bundle_pushed_at": "2026-10-23T16:41:38.661Z"
+        "updated_at": "2026-10-23T17:10:46.678Z",
+        "bundle_pushed_at": "2026-10-23T17:10:51.637Z"
       },
-      "review_status": null,
-      "page_bytes": 15049220,
-      "blob_bytes": 5501211,
-      "blob_assets": 34
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "signage approval",
+        "ease": null,
+        "updated_at": "2026-10-23T17:10:46.620Z"
+      },
+      "page_bytes": 15087718,
+      "blob_bytes": 10879673,
+      "blob_assets": 36
     },
     {
       "slug": "nonna-s",
