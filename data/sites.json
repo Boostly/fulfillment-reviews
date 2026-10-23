@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T04:37:33.390Z",
+  "generated_at": "2026-10-23T04:37:59.236Z",
   "count": 81,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -428,9 +428,9 @@
         "ease": null,
         "updated_at": "2026-10-23T04:37:28.591Z"
       },
-      "page_bytes": 6164130,
-      "blob_bytes": 17350,
-      "blob_assets": 1
+      "page_bytes": 6169394,
+      "blob_bytes": 1244876,
+      "blob_assets": 5
     },
     {
       "slug": "romeo-s-pizza-clintonville",
