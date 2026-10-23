@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T04:39:56.500Z",
+  "generated_at": "2026-10-23T04:40:06.900Z",
   "count": 84,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -411,7 +411,7 @@
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Inherits the Romeo's Pizza (Clintonville) pick: branding is written once at account scope on the Jeff account at the Clintonville closeout, so no evidence, Fable or sheet runs here. Links-only run comes in a later wave.",
+      "note": "Inherits Clintonville's I (account scope, no override row, readback matches); links-only: 6 ready (website, menu, careers, Instagram cbus, Facebook store page, X cbus), held: ordering (store page links its own Grove City order page order.romeospizza.com/?id=5CXYN, replace the chain homepage? recommended yes) and rewards (standing); static pass only, both browser transports blocked.",
       "progress": {
         "stage": "fulfill",
         "last_step": "started",
@@ -422,10 +422,15 @@
         "updated_at": "2026-10-23T04:30:05.259Z",
         "bundle_pushed_at": "2026-10-23T04:30:05.598Z"
       },
-      "review_status": null,
-      "page_bytes": 6164928,
-      "blob_bytes": 17350,
-      "blob_assets": 1
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "ordering link decision, then close-out",
+        "ease": null,
+        "updated_at": "2026-10-23T04:40:02.919Z"
+      },
+      "page_bytes": 6170381,
+      "blob_bytes": 1244876,
+      "blob_assets": 5
     },
     {
       "slug": "romeo-s-pizza-grandview",
