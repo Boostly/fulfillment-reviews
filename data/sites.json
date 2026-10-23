@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-23T02:55:40.230Z",
-  "count": 80,
+  "generated_at": "2026-10-23T04:37:33.390Z",
+  "count": 81,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -350,6 +350,87 @@
       "page_bytes": 6066153,
       "blob_bytes": 19926383,
       "blob_assets": 33
+    },
+    {
+      "slug": "romeo-s-pizza-gahanna",
+      "name": "Romeo's Pizza (Gahanna)",
+      "account": "Romeo's Pizza (Jeff)",
+      "city": "Gahanna",
+      "state": "OH",
+      "requested_at": "2026-10-21T15:08:58.378",
+      "updated_at": "2026-10-23T04:37:30.282Z",
+      "cursor": "write",
+      "status": "applied",
+      "status_label": "Branding applied",
+      "recommended_letter": "I",
+      "picked_letter": "I",
+      "review_url": "/romeo-s-pizza-gahanna/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick: I [account-level, from romeo-s-pizza-clintonville]",
+          true
+        ],
+        [
+          "Branding applied in prod",
+          true
+        ],
+        [
+          "Links written (0 ready, 0 need a call)",
+          false
+        ],
+        [
+          "Signage built",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": "Inherits I from Clintonville (account scope, readback 2026-10-22 shows no Gahanna override). Links reviewed: website, menu, careers, Instagram, Facebook, X ready; ordering held (replace chain homepage with the Gahanna order.romeospizza.com page?) and rewards held. Facebook id differs from Clintonville's.",
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "started (links-only, branding inherits Clintonville letter I)",
+        "next_step": "inherit readback and link discovery",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-23T04:29:43.983Z",
+        "bundle_pushed_at": "2026-10-23T04:29:44.272Z"
+      },
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "link review (ordering URL question)",
+        "ease": null,
+        "updated_at": "2026-10-23T04:37:28.591Z"
+      },
+      "page_bytes": 6164130,
+      "blob_bytes": 17350,
+      "blob_assets": 1
     },
     {
       "slug": "romeo-s-pizza-clintonville",
