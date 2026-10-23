@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T18:24:47.638Z",
+  "generated_at": "2026-10-23T18:25:38.063Z",
   "count": 101,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -88,7 +88,7 @@
       "city": "Clinton",
       "state": "UT",
       "requested_at": "2026-10-23T14:16:41.394Z",
-      "updated_at": "2026-10-23T18:23:28.562Z",
+      "updated_at": "2026-10-23T18:25:09.631Z",
       "cursor": "signage",
       "status": "applied",
       "status_label": "Branding applied",
