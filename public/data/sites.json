@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T04:45:50.206Z",
+  "generated_at": "2026-10-23T04:46:29.548Z",
   "count": 88,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -358,7 +358,7 @@
       "city": "Mansfield",
       "state": "OH",
       "requested_at": "2026-10-21T15:11:47.464",
-      "updated_at": "2026-10-23T04:45:44.358Z",
+      "updated_at": "2026-10-23T04:46:22.984Z",
       "cursor": "write",
       "status": "applied",
       "status_label": "Branding applied",
@@ -425,9 +425,9 @@
         "bundle_pushed_at": "2026-10-23T04:45:09.223Z"
       },
       "review_status": null,
-      "page_bytes": 6170624,
-      "blob_bytes": 4192136,
-      "blob_assets": 6
+      "page_bytes": 6170793,
+      "blob_bytes": 5304561,
+      "blob_assets": 7
     },
     {
       "slug": "romeo-s-pizza-hilliard",
