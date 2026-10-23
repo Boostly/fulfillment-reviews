@@ -1,8 +1,86 @@
 {
-  "generated_at": "2026-10-23T18:45:58.431Z",
-  "count": 101,
+  "generated_at": "2026-10-23T21:21:20.464Z",
+  "count": 102,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
+    {
+      "slug": "namaste-by-cake-world",
+      "name": "Namaste by Cake World",
+      "account": "Namaste by Cake World",
+      "city": "Lilburn",
+      "state": "GA",
+      "requested_at": "2026-10-23T20:56:04.62",
+      "updated_at": "2026-10-23T21:21:02.208Z",
+      "cursor": "overrides",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "G",
+      "picked_letter": null,
+      "review_url": "/namaste-by-cake-world/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick (Fable default G)",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (0 ready, 0 need a call)",
+          false
+        ],
+        [
+          "Signage built",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [
+        "pick a letter"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": null,
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "variant sheet",
+        "next_step": "taste pass",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-23T21:14:53.073Z",
+        "bundle_pushed_at": "2026-10-23T21:16:59.162Z"
+      },
+      "review_status": null,
+      "page_bytes": 20883935,
+      "blob_bytes": 10705427,
+      "blob_assets": 33
+    },
     {
       "slug": "pyke-s-crossroads-restaurant-winnsboro",
       "name": "Pyke's Crossroads Restaurant (Winnsboro)",
