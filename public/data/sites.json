@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-23T16:36:24.851Z",
-  "count": 96,
+  "generated_at": "2026-10-23T16:39:28.077Z",
+  "count": 97,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -80,6 +80,84 @@
       "page_bytes": 6132994,
       "blob_bytes": 2998445,
       "blob_assets": 20
+    },
+    {
+      "slug": "hungry-howie-s-pizza-logan",
+      "name": "Hungry Howie's Pizza (Logan)",
+      "account": "Hungry Howie's Pizza",
+      "city": "Logan",
+      "state": "UT",
+      "requested_at": "2026-10-23T14:16:41.334Z",
+      "updated_at": "2026-10-23T16:39:21.080Z",
+      "cursor": "links",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "B",
+      "picked_letter": null,
+      "review_url": "/hungry-howie-s-pizza-logan/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick (Fable default B)",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (0 ready, 0 need a call)",
+          false
+        ],
+        [
+          "Signage built",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          true
+        ]
+      ],
+      "needs_you": [
+        "pick a letter"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": "Pick a letter: Fable default B (black outline wordmark on brand yellow #FFDA00, red mark-ink band); AY is the same look as Clinton's H (full color on black) for sibling consistency. Taste pass (fable) added AZ, BA (red card, full color lockup, black band; red card, white knockout, yellow band); p2 stack not built (disc and wordmark share one keyline halo), p1 disc-only held on ship-gate. Links: 0 ready, 4 held (order link is chain-level, corporate socials), 5 rejected. Quantities unconfirmed, 2 call transcripts pending.",
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "variant sheet",
+        "next_step": "taste pass",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "Karissas-MacBook-Pro.local",
+        "updated_at": "2026-10-23T16:36:23.136Z",
+        "bundle_pushed_at": "2026-10-23T16:36:23.461Z"
+      },
+      "review_status": null,
+      "page_bytes": 18485039,
+      "blob_bytes": 2740264,
+      "blob_assets": 22
     },
     {
       "slug": "nonna-s",
