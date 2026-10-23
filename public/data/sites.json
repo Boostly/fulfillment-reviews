@@ -1,8 +1,86 @@
 {
-  "generated_at": "2026-10-23T04:57:18.463Z",
-  "count": 93,
+  "generated_at": "2026-10-23T04:58:35.232Z",
+  "count": 94,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
+    {
+      "slug": "lil-capo",
+      "name": "Lil Capo",
+      "account": "Il Capo",
+      "city": "Glendale",
+      "state": "AZ",
+      "requested_at": "2026-10-23T04:36:28.468",
+      "updated_at": "2026-10-23T04:58:20.505Z",
+      "cursor": "overrides",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "D",
+      "picked_letter": null,
+      "review_url": "/lil-capo/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick (Fable default D)",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (0 ready, 0 need a call)",
+          false
+        ],
+        [
+          "Signage built",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [
+        "pick a letter"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": null,
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "variant sheet",
+        "next_step": "taste pass",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "Unknown.domain",
+        "updated_at": "2026-10-23T04:55:37.380Z",
+        "bundle_pushed_at": "2026-10-23T04:57:33.488Z"
+      },
+      "review_status": null,
+      "page_bytes": 5659436,
+      "blob_bytes": 9542816,
+      "blob_assets": 28
+    },
     {
       "slug": "mancino-s-of-fenton",
       "name": "Mancino's of Fenton",
