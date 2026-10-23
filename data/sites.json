@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T16:32:56.022Z",
+  "generated_at": "2026-10-23T16:34:34.903Z",
   "count": 95,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -1695,7 +1695,7 @@
       "city": "Elk Grove Village",
       "state": "IL",
       "requested_at": "2026-10-20T16:33:42.105Z",
-      "updated_at": "2026-10-22T16:12:32.196Z",
+      "updated_at": "2026-10-23T16:33:55.721Z",
       "cursor": "slack",
       "status": "closed",
       "status_label": "Closed out",
@@ -1711,16 +1711,16 @@
       "gaps": null,
       "hold": null,
       "done": null,
-      "note": "Done: J is live, signage approved, Slack posted, branding complete, print files and vendor email sent; links still being written, offer text on the request reads TBD (print files use Get 20% Off)",
+      "note": "Done: J live, signage approved and sent to the vendor, Slack posted, branding complete; Facebook/Instagram/Careers written; ordering (store Square page) held for your call. Offer field on the request still says TBD.",
       "progress": null,
       "review_status": {
         "status": "waiting",
-        "waiting_on": "link writes; offer text on request reads TBD",
-        "ease": 3,
-        "updated_at": "2026-10-22T16:00:05.995Z"
+        "waiting_on": "ordering link (store Square page) needs your call",
+        "ease": 4,
+        "updated_at": "2026-10-22T16:14:34.998Z"
       },
-      "page_bytes": 22744571,
-      "blob_bytes": 13803892,
+      "page_bytes": 22360077,
+      "blob_bytes": 17049246,
       "blob_assets": 35
     },
     {
