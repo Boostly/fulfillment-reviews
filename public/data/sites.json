@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T18:25:38.063Z",
+  "generated_at": "2026-10-23T18:26:08.378Z",
   "count": 101,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -497,16 +497,16 @@
       "city": "Glendale",
       "state": "AZ",
       "requested_at": "2026-10-23T04:36:28.468Z",
-      "updated_at": "2026-10-23T16:39:40.897Z",
-      "cursor": "overrides",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-23T18:25:42.874Z",
+      "cursor": "signage",
+      "status": "applied",
+      "status_label": "Branding applied",
       "recommended_letter": "D",
-      "picked_letter": null,
+      "picked_letter": "A",
       "review_url": "/lil-capo-glendale/",
       "figma_url": null,
-      "signage_direct": null,
-      "print_handoff_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1WpF_qRiKs45dORgGMkHGezqmBUXxa3AD",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -514,20 +514,20 @@
           true
         ],
         [
-          "Branding pick (Fable default D)",
-          false
+          "Branding pick: A",
+          true
         ],
         [
           "Branding applied in prod",
-          false
+          true
         ],
         [
-          "Links written (0 ready, 0 need a call)",
-          false
+          "Links written (0 still held)",
+          true
         ],
         [
-          "Signage built",
-          false
+          "Signage built (direct PDF)",
+          true
         ],
         [
           "Signage approved by you",
@@ -539,7 +539,7 @@
         ],
         [
           "Status posted to the review site",
-          false
+          true
         ],
         [
           "Store details confirmed",
@@ -547,26 +547,31 @@
         ]
       ],
       "needs_you": [
-        "pick a letter"
+        "approve the signage (print files in Drive)"
       ],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Lil Capo is its own sub-brand: Fable default D (full-color Lil' Capo lockup on black, logo red #FF0101 band), location-scope branding; taste pass (fable) added M (open white knockout on the blade-sign red, black band); words-only cuts not added (one held on filled counters, one not buildable because the peel and Pizzeria are fused to the lettering); G-I marked rejected (solid white silhouette). Links: website, ordering match, Instagram and Facebook ready; menu, catering, careers, gift cards wait for the website write and a discovery rerun. Duplicate of the earlier lil-capo page for the same request.",
+      "note": "Pick A applied at Lil Capo location scope (white knockout on black, #FF0101); website, ordering, Instagram, Facebook written; menu, catering, careers, gift cards held for a browser discovery pass; signage PDFs (16 pages, 20 tables) in Drive, waiting for your review.",
       "progress": {
-        "stage": "fulfill",
-        "last_step": "variant sheet",
-        "next_step": "taste pass",
-        "blocked_on": null,
-        "by": "fulfill-location",
+        "stage": "closeout",
+        "last_step": "signage PDFs rendered",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "signage approval",
+        "by": "closeout-location",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-23T16:37:08.100Z",
-        "bundle_pushed_at": "2026-10-23T16:37:08.258Z"
+        "updated_at": "2026-10-23T18:25:22.072Z",
+        "bundle_pushed_at": "2026-10-23T18:25:25.916Z"
       },
-      "review_status": null,
-      "page_bytes": 5273071,
-      "blob_bytes": 4054503,
-      "blob_assets": 26
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "signage approval",
+        "ease": null,
+        "updated_at": "2026-10-23T18:25:22.015Z"
+      },
+      "page_bytes": 5317983,
+      "blob_bytes": 9683009,
+      "blob_assets": 28
     },
     {
       "slug": "lil-capo",
