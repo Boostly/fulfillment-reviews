@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T18:24:19.222Z",
+  "generated_at": "2026-10-23T18:24:47.638Z",
   "count": 101,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -171,16 +171,16 @@
       "city": "Logan",
       "state": "UT",
       "requested_at": "2026-10-23T14:16:41.334Z",
-      "updated_at": "2026-10-23T18:11:36.017Z",
-      "cursor": "links",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-23T18:22:35.548Z",
+      "cursor": "signage",
+      "status": "applied",
+      "status_label": "Branding applied",
       "recommended_letter": "B",
-      "picked_letter": null,
+      "picked_letter": "BB",
       "review_url": "/hungry-howie-s-pizza-logan/",
       "figma_url": null,
-      "signage_direct": null,
-      "print_handoff_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1FYCNPSCxKDoV4ttwXu_sYmJydCtDvENV",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -188,20 +188,20 @@
           true
         ],
         [
-          "Branding pick (Fable default B)",
-          false
+          "Branding pick: BB",
+          true
         ],
         [
           "Branding applied in prod",
-          false
+          true
         ],
         [
           "Links written (0 ready, 4 need a call)",
           false
         ],
         [
-          "Signage built",
-          false
+          "Signage built (direct PDF)",
+          true
         ],
         [
           "Signage approved by you",
@@ -213,7 +213,7 @@
         ],
         [
           "Status posted to the review site",
-          false
+          true
         ],
         [
           "Store details confirmed",
@@ -221,27 +221,32 @@
         ]
       ],
       "needs_you": [
-        "pick a letter",
+        "approve the signage (print files in Drive)",
         "4 link decision(s)"
       ],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Pick a letter: Fable default B (black outline wordmark on brand yellow #FFDA00, red mark-ink band); AY is the same look as Clinton's H (full color on black) for sibling consistency. Taste pass (fable) added AZ, BA (red card, full color lockup, black band; red card, white knockout, yellow band); p2 stack not built (disc and wordmark share one keyline halo), p1 disc-only held on ship-gate. Links: 0 ready, 4 held (order link is chain-level, corporate socials), 5 rejected. Quantities unconfirmed, 2 call transcripts pending.",
+      "note": "BB applied at location scope; signage PDFs rendered and in Drive, waiting for your review (Order Online and corporate socials held).",
       "progress": {
-        "stage": "review",
-        "last_step": "review canvas built, site published",
-        "next_step": "Travisse picks a letter",
-        "blocked_on": "letter pick",
-        "by": "fulfill-location",
+        "stage": "closeout",
+        "last_step": "signage PDFs rendered",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "signage approval",
+        "by": "closeout-location",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-23T16:39:55.789Z",
-        "bundle_pushed_at": "2026-10-23T16:39:58.298Z"
+        "updated_at": "2026-10-23T18:23:13.006Z",
+        "bundle_pushed_at": "2026-10-23T18:23:15.499Z"
       },
-      "review_status": null,
-      "page_bytes": 18834967,
-      "blob_bytes": 2740264,
-      "blob_assets": 22
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "signage approval",
+        "ease": null,
+        "updated_at": "2026-10-23T18:23:12.946Z"
+      },
+      "page_bytes": 18877828,
+      "blob_bytes": 8932467,
+      "blob_assets": 24
     },
     {
       "slug": "hungry-howie-s-pizza-layton",
