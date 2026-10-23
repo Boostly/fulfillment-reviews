@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T05:05:43.429Z",
+  "generated_at": "2026-10-23T16:31:23.727Z",
   "count": 95,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -1463,7 +1463,7 @@
       "city": "Charlotte",
       "state": "NC",
       "requested_at": "2026-10-20T21:23:09.831Z",
-      "updated_at": "2026-10-22T16:04:15.890Z",
+      "updated_at": "2026-10-23T16:30:49.543Z",
       "cursor": "slack",
       "status": "closed",
       "status_label": "Closed out",
@@ -1473,68 +1473,22 @@
       "figma_url": null,
       "signage_direct": "built",
       "print_handoff_url": "https://drive.google.com/drive/folders/13K-i5pmVSmHwytd1eKVPU8MUfBXZA3Qc",
-      "boostly_status": "digital_fulfillment",
-      "steps": [
-        [
-          "Review sheet ready",
-          true
-        ],
-        [
-          "Branding pick: Z",
-          true
-        ],
-        [
-          "Branding applied in prod",
-          true
-        ],
-        [
-          "Links written (0 still held)",
-          true
-        ],
-        [
-          "Signage built (direct PDF)",
-          true
-        ],
-        [
-          "Signage approved by you",
-          true
-        ],
-        [
-          "Slack result posted",
-          true
-        ],
-        [
-          "Status posted to the review site",
-          true
-        ],
-        [
-          "Store details confirmed",
-          true
-        ]
-      ],
-      "needs_you": [],
-      "gaps": [],
+      "boostly_status": null,
+      "steps": null,
+      "needs_you": null,
+      "gaps": null,
       "hold": null,
-      "done": true,
+      "done": null,
       "note": "Done: Z is live, signage approved, Slack posted, print email sent, branding complete; gift cards link held and the table count (10 built vs 6 on the call) waits on Shaun",
-      "progress": {
-        "stage": "closeout-finish",
-        "last_step": "signage approved",
-        "next_step": "Slack, print email, branding complete",
-        "blocked_on": null,
-        "by": "closeout-finish",
-        "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-22T16:03:55.663Z",
-        "bundle_pushed_at": "2026-10-22T16:03:56.019Z"
-      },
+      "progress": null,
       "review_status": {
         "status": "waiting",
         "waiting_on": "table count (CSM), gift cards link",
         "ease": 3,
         "updated_at": "2026-10-22T16:04:52.084Z"
       },
-      "page_bytes": 11034328,
-      "blob_bytes": 12684429,
+      "page_bytes": 10633424,
+      "blob_bytes": 16104366,
       "blob_assets": 29
     },
     {
