@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T04:39:45.100Z",
+  "generated_at": "2026-10-23T04:39:56.500Z",
   "count": 84,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -499,9 +499,9 @@
         "bundle_pushed_at": "2026-10-23T04:30:01.416Z"
       },
       "review_status": null,
-      "page_bytes": 6170158,
-      "blob_bytes": 249479,
-      "blob_assets": 4
+      "page_bytes": 6170302,
+      "blob_bytes": 1244876,
+      "blob_assets": 5
     },
     {
       "slug": "romeo-s-pizza-gahanna",
