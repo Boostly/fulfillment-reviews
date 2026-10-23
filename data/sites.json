@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-23T16:42:32.410Z",
-  "count": 100,
+  "generated_at": "2026-10-23T16:48:33.820Z",
+  "count": 101,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -236,6 +236,84 @@
       "page_bytes": 18485039,
       "blob_bytes": 2740264,
       "blob_assets": 22
+    },
+    {
+      "slug": "hungry-howie-s-pizza-layton",
+      "name": "Hungry Howie's Pizza (Layton)",
+      "account": "Hungry Howie's Pizza",
+      "city": "Layton",
+      "state": "UT",
+      "requested_at": "2026-10-23T14:16:41.203Z",
+      "updated_at": "2026-10-23T16:48:25.405Z",
+      "cursor": "overrides",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "G",
+      "picked_letter": null,
+      "review_url": "/hungry-howie-s-pizza-layton/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick (Fable default G)",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (0 ready, 0 need a call)",
+          false
+        ],
+        [
+          "Signage built",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          true
+        ]
+      ],
+      "needs_you": [
+        "pick a letter"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": "Pick a letter: Fable default G (full-color national lockup on black #191919, yellow logo-ink band #FEE004; same cell as Clinton E); AE is the same look as Clinton H and Logan AY (-20% yellow band) for sibling consistency. Taste pass (fable) added AB, AC, AD (stacked disc above wordmark; LIGHT GROUND full color on brand yellow, escalate before a pick; knockout on brand red); disc-only kept off (ship-gate 451px), words-only refused. K-O rejected silhouette twins. Links: 2 ready (store order page, Layton Instagram), 1 decision (chain Facebook), 5 rejected. Quantities unconfirmed, 2 call transcripts pending.",
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "taste pass",
+        "next_step": "review canvas and link discovery",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "Karissas-MacBook-Pro.local",
+        "updated_at": "2026-10-23T16:40:55.122Z",
+        "bundle_pushed_at": "2026-10-23T16:47:52.262Z"
+      },
+      "review_status": null,
+      "page_bytes": 12225319,
+      "blob_bytes": 4312927,
+      "blob_assets": 27
     },
     {
       "slug": "nonnas-plainfield",
