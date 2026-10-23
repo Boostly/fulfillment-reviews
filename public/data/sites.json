@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T18:11:39.994Z",
+  "generated_at": "2026-10-23T18:23:46.084Z",
   "count": 101,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
@@ -245,16 +245,16 @@
       "city": "Layton",
       "state": "UT",
       "requested_at": "2026-10-23T14:16:41.203Z",
-      "updated_at": "2026-10-23T16:48:25.405Z",
-      "cursor": "overrides",
-      "status": "awaiting",
-      "status_label": "Awaiting pick",
+      "updated_at": "2026-10-23T18:21:45.431Z",
+      "cursor": "signage",
+      "status": "applied",
+      "status_label": "Branding applied",
       "recommended_letter": "G",
-      "picked_letter": null,
+      "picked_letter": "G",
       "review_url": "/hungry-howie-s-pizza-layton/",
       "figma_url": null,
-      "signage_direct": null,
-      "print_handoff_url": null,
+      "signage_direct": "built",
+      "print_handoff_url": "https://drive.google.com/drive/folders/1A83cI-qRfFBjul10vunqvl9_MUaXEYZg",
       "boostly_status": "digital_fulfillment",
       "steps": [
         [
@@ -262,20 +262,20 @@
           true
         ],
         [
-          "Branding pick (Fable default G)",
-          false
+          "Branding pick: G",
+          true
         ],
         [
           "Branding applied in prod",
-          false
+          true
         ],
         [
-          "Links written (0 ready, 0 need a call)",
-          false
+          "Links written (0 still held)",
+          true
         ],
         [
-          "Signage built",
-          false
+          "Signage built (direct PDF)",
+          true
         ],
         [
           "Signage approved by you",
@@ -287,7 +287,7 @@
         ],
         [
           "Status posted to the review site",
-          false
+          true
         ],
         [
           "Store details confirmed",
@@ -295,26 +295,31 @@
         ]
       ],
       "needs_you": [
-        "pick a letter"
+        "approve the signage (print files in Drive)"
       ],
       "gaps": [],
       "hold": null,
       "done": false,
-      "note": "Pick a letter: Fable default G (full-color national lockup on black #191919, yellow logo-ink band #FEE004; same cell as Clinton E); AE is the same look as Clinton H and Logan AY (-20% yellow band) for sibling consistency. Taste pass (fable) added AB, AC, AD (stacked disc above wordmark; LIGHT GROUND full color on brand yellow, escalate before a pick; knockout on brand red); disc-only kept off (ship-gate 451px), words-only refused. K-O rejected silhouette twins. Links: 2 ready (store order page, Layton Instagram), 1 decision (chain Facebook), 5 rejected. Quantities unconfirmed, 2 call transcripts pending.",
+      "note": "Branding G applied at location scope, order and Instagram links written, signage PDFs in Drive waiting for your review; chain Facebook held.",
       "progress": {
-        "stage": "fulfill",
-        "last_step": "taste pass",
-        "next_step": "review canvas and link discovery",
-        "blocked_on": null,
-        "by": "fulfill-location",
+        "stage": "closeout",
+        "last_step": "signage PDFs rendered",
+        "next_step": "closeout-finish after approval",
+        "blocked_on": "signage approval",
+        "by": "closeout-location",
         "host": "Karissas-MacBook-Pro.local",
-        "updated_at": "2026-10-23T16:40:55.122Z",
-        "bundle_pushed_at": "2026-10-23T16:47:52.262Z"
+        "updated_at": "2026-10-23T18:23:03.661Z",
+        "bundle_pushed_at": "2026-10-23T18:23:07.383Z"
       },
-      "review_status": null,
-      "page_bytes": 12225319,
-      "blob_bytes": 4312927,
-      "blob_assets": 27
+      "review_status": {
+        "status": "waiting",
+        "waiting_on": "signage approval",
+        "ease": null,
+        "updated_at": "2026-10-23T18:23:03.603Z"
+      },
+      "page_bytes": 12263434,
+      "blob_bytes": 10554194,
+      "blob_assets": 29
     },
     {
       "slug": "nonnas-plainfield",
