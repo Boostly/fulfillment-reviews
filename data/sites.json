@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-23T16:39:28.077Z",
-  "count": 97,
+  "generated_at": "2026-10-23T16:39:49.275Z",
+  "count": 98,
   "live_status_url": "https://qaxk53bi1gx16yrs.public.blob.vercel-storage.com/status/checklist.json",
   "sites": [
     {
@@ -236,6 +236,84 @@
       "page_bytes": 9389959,
       "blob_bytes": 10600908,
       "blob_assets": 31
+    },
+    {
+      "slug": "lil-capo-glendale",
+      "name": "Lil Capo",
+      "account": "Il Capo",
+      "city": "Glendale",
+      "state": "AZ",
+      "requested_at": "2026-10-23T04:36:28.468Z",
+      "updated_at": "2026-10-23T16:39:40.897Z",
+      "cursor": "overrides",
+      "status": "awaiting",
+      "status_label": "Awaiting pick",
+      "recommended_letter": "D",
+      "picked_letter": null,
+      "review_url": "/lil-capo-glendale/",
+      "figma_url": null,
+      "signage_direct": null,
+      "print_handoff_url": null,
+      "boostly_status": "digital_fulfillment",
+      "steps": [
+        [
+          "Review sheet ready",
+          true
+        ],
+        [
+          "Branding pick (Fable default D)",
+          false
+        ],
+        [
+          "Branding applied in prod",
+          false
+        ],
+        [
+          "Links written (0 ready, 0 need a call)",
+          false
+        ],
+        [
+          "Signage built",
+          false
+        ],
+        [
+          "Signage approved by you",
+          false
+        ],
+        [
+          "Slack result posted",
+          false
+        ],
+        [
+          "Status posted to the review site",
+          false
+        ],
+        [
+          "Store details confirmed",
+          false
+        ]
+      ],
+      "needs_you": [
+        "pick a letter"
+      ],
+      "gaps": [],
+      "hold": null,
+      "done": false,
+      "note": "Lil Capo is its own sub-brand: Fable default D (full-color Lil' Capo lockup on black, logo red #FF0101 band), location-scope branding; taste pass (fable) added M (open white knockout on the blade-sign red, black band); words-only cuts not added (one held on filled counters, one not buildable because the peel and Pizzeria are fused to the lettering); G-I marked rejected (solid white silhouette). Links: website, ordering match, Instagram and Facebook ready; menu, catering, careers, gift cards wait for the website write and a discovery rerun. Duplicate of the earlier lil-capo page for the same request.",
+      "progress": {
+        "stage": "fulfill",
+        "last_step": "variant sheet",
+        "next_step": "taste pass",
+        "blocked_on": null,
+        "by": "fulfill-location",
+        "host": "Karissas-MacBook-Pro.local",
+        "updated_at": "2026-10-23T16:37:08.100Z",
+        "bundle_pushed_at": "2026-10-23T16:37:08.258Z"
+      },
+      "review_status": null,
+      "page_bytes": 5273071,
+      "blob_bytes": 4054503,
+      "blob_assets": 26
     },
     {
       "slug": "lil-capo",
